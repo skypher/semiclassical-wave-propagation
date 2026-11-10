@@ -2572,3 +2572,9 @@ import Qschubert
 #print axioms Qschubert.differentiable_mellT
 #print axioms Qschubert.integrable_mellT_line
 #print axioms Qschubert.mellT_inversion
+#print axioms Qschubert.shiftW_eq
+#print axioms Qschubert.shiftF_one
+#print axioms Qschubert.norm_shiftW_le
+#print axioms Qschubert.integrable_shiftW_line
+#print axioms Qschubert.rect_shiftW
+#print axioms Qschubert.shift_residue
