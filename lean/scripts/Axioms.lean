@@ -2598,3 +2598,7 @@ import Qschubert
 #print axioms Qschubert.im_npSec_smul
 #print axioms Qschubert.finite_npair_im_ge
 #print axioms Qschubert.perio_stripFn
+#print axioms Qschubert.hasSum_intervalIntegral_translates
+#print axioms Qschubert.sum_coprime_fin
+#print axioms Qschubert.norm_test_le_exp_log
+#print axioms Qschubert.integrable_test_hgt

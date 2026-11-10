@@ -214,3 +214,4 @@ import Qschubert.ScatShift
 import Qschubert.EisSeries
 import Qschubert.ModCosets
 import Qschubert.EisPointwise
+import Qschubert.EisZeroA
