@@ -239,3 +239,7 @@ import Qschubert.EvModProj
 import Qschubert.MultAnalytic
 import Qschubert.EvModRect
 import Qschubert.EvModLow
+import Qschubert.EvModMeanL1
+import Qschubert.EvModEnv
+import Qschubert.EvModNorm
+import Qschubert.EvModNormEst
