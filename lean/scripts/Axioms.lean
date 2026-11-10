@@ -2697,3 +2697,10 @@ import Qschubert
 #print axioms Qschubert.integral_outF_sq
 #print axioms Qschubert.memLp_fhat
 #print axioms Qschubert.integral_outF_fhat_sq
+#print axioms Qschubert.sq_norm_add_ge
+#print axioms Qschubert.proj_const_le
+#print axioms Qschubert.integral_Ioi_inv_sq
+#print axioms Qschubert.integral_cusp_ge
+#print axioms Qschubert.norm_integral_Ioi_invM_sq_le
+#print axioms Qschubert.norm_critS_ge
+#print axioms Qschubert.integral_fhat_div_le
