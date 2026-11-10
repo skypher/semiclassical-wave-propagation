@@ -319,10 +319,11 @@ theorem slice_lintegral_le (hα : 0 < α) (hd : ModData h h₀) (ham : Measurabl
   rw [hLHS]
   exact iSup_le hterm
 
-/-- **The mean lemma in slice form**, for `a' E ∈ L¹(ℍ)`. -/
-theorem integral_amp_mul_slice_L1 (hα : 0 < α) (hd : ModData h h₀) (ham : Measurable a') (hai : Integrable a')
+/-- The mean lemma in slice form for `a' E ∈ L¹(ℍ)`: integrability of the right side, and the identity. -/
+theorem amp_mul_slice_L1 (hα : 0 < α) (hd : ModData h h₀) (ham : Measurable a') (hai : Integrable a')
     (ha : a' =ᵐ[volume] ampMod α hα.le hd.test) {E : ℍ → ℂ} (hEm : Measurable E)
     (hEper : ∀ (n : ℤ) (z : ℍ), E (transGL (n : ℝ) • z) = E z) (hint : Integrable fun z : ℍ => a' z * E z) :
+    IntegrableOn (fun y : ℝ => ((y ^ 2)⁻¹ : ℝ) • (zeroModeH a' y * ∫ s in (0 : ℝ)..1, E (ptH s y))) (Ioi 0) ∧
     ∫ z : ℍ, a' z * E z
       = ∫ y in Ioi (0 : ℝ), ((y ^ 2)⁻¹ : ℝ) • (zeroModeH a' y * ∫ s in (0 : ℝ)..1, E (ptH s y)) := by
   have hzm := measurable_zeroModeH ham
@@ -451,6 +452,27 @@ theorem integral_amp_mul_slice_L1 (hα : 0 < α) (hd : ModData h h₀) (ham : Me
       (𝓝 (∫ y in Ioi (0 : ℝ), ((y ^ 2)⁻¹ : ℝ) • (zeroModeH a' y * ∫ s in (0 : ℝ)..1, E (ptH s y)))) := by
     simp_rw [hJ0]
     exact hR
-  exact tendsto_nhds_unique hL hR'
+  have hInt : IntegrableOn (fun y : ℝ => ((y ^ 2)⁻¹ : ℝ) • (zeroModeH a' y * ∫ s in (0 : ℝ)..1, E (ptH s y)))
+      (Ioi 0) := by
+    refine hBint.mono' ((measurable_id.pow_const 2).inv.smul
+      (hzm.mul (measurable_sliceMean hEm))).aestronglyMeasurable ?_
+    filter_upwards [hBae] with y hBy
+    exact le_of_tendsto' ((key y hBy).2.norm) fun n => (key y hBy).1 n
+  exact ⟨hInt, tendsto_nhds_unique hL hR'⟩
+
+/-- **The mean lemma in slice form**, for `a' E ∈ L¹(ℍ)`. -/
+theorem integral_amp_mul_slice_L1 (hα : 0 < α) (hd : ModData h h₀) (ham : Measurable a') (hai : Integrable a')
+    (ha : a' =ᵐ[volume] ampMod α hα.le hd.test) {E : ℍ → ℂ} (hEm : Measurable E)
+    (hEper : ∀ (n : ℤ) (z : ℍ), E (transGL (n : ℝ) • z) = E z) (hint : Integrable fun z : ℍ => a' z * E z) :
+    ∫ z : ℍ, a' z * E z
+      = ∫ y in Ioi (0 : ℝ), ((y ^ 2)⁻¹ : ℝ) • (zeroModeH a' y * ∫ s in (0 : ℝ)..1, E (ptH s y)) :=
+  (amp_mul_slice_L1 hα hd ham hai ha hEm hEper hint).2
+
+/-- The right side of the mean lemma is integrable. -/
+theorem integrableOn_amp_mul_slice_L1 (hα : 0 < α) (hd : ModData h h₀) (ham : Measurable a') (hai : Integrable a')
+    (ha : a' =ᵐ[volume] ampMod α hα.le hd.test) {E : ℍ → ℂ} (hEm : Measurable E)
+    (hEper : ∀ (n : ℤ) (z : ℍ), E (transGL (n : ℝ) • z) = E z) (hint : Integrable fun z : ℍ => a' z * E z) :
+    IntegrableOn (fun y : ℝ => ((y ^ 2)⁻¹ : ℝ) • (zeroModeH a' y * ∫ s in (0 : ℝ)..1, E (ptH s y))) (Ioi 0) :=
+  (amp_mul_slice_L1 hα hd ham hai ha hEm hEper hint).1
 
 end Qschubert

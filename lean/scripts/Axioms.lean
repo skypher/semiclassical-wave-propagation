@@ -2787,3 +2787,5 @@ import Qschubert
 #print axioms Qschubert.norm_sq_Lp_eq_integral
 #print axioms Qschubert.integrable_sq_Lp
 #print axioms Qschubert.setIntegral_sq_le
+#print axioms Qschubert.amp_mul_slice_L1
+#print axioms Qschubert.integrableOn_amp_mul_slice_L1
