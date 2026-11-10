@@ -2509,3 +2509,8 @@ import Qschubert
 #print axioms Qschubert.isTestFn_powCut
 #print axioms Qschubert.lapTestFun_powCut
 #print axioms Qschubert.pair_powCut_cosD
+#print axioms Qschubert.omC_inv_sq
+#print axioms Qschubert.psiF_ge_abs_log
+#print axioms Qschubert.integral_hF_slice
+#print axioms Qschubert.integrableOn_inv_mul_log_rpow
+#print axioms Qschubert.lintegral_omC_inv_lt_top
