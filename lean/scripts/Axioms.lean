@@ -2633,3 +2633,6 @@ import Qschubert
 #print axioms Qschubert.transGL_smul_eq_ofComplex
 #print axioms Qschubert.integral_comp_transGL
 #print axioms Qschubert.integral_amp_mul_eq_mean
+#print axioms Qschubert.measurable_perio_stripFn_lift
+#print axioms Qschubert.surfMk_transGL_int
+#print axioms Qschubert.mean_perio_stripFn
