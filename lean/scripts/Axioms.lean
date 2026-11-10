@@ -2537,3 +2537,6 @@ import Qschubert
 #print axioms Qschubert.fc_glU
 #print axioms Qschubert.coe_transGL_smul
 #print axioms Qschubert.expCut_J_glU
+#print axioms Qschubert.transSumL_ae
+#print axioms Qschubert.sum_pair_trans
+#print axioms Qschubert.tendsto_sum_pair_trans
