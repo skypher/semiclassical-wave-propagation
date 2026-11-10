@@ -2,21 +2,92 @@ name: Lean build and axiom audit
 
 # Builds the Lean development in lean/ from a fresh checkout and runs the two axiom audits.
 # Mathlib comes from its prebuilt cache; physicslib4 and this project are compiled here.
+#
+# The build runs only when lean/ differs from every state of lean/ that already has a result.
+# A push that leaves lean/ unchanged runs the job "decide" alone: it finds the latest finished run
+# of this workflow on a commit with the same lean/ tree and takes over its result (success or failure).
+# A run started by hand (workflow_dispatch) always builds.
 
 on:
   push:
     branches: [master]
-    paths:
-      - 'lean/**'
-      - '.github/workflows/lean.yml'
   workflow_dispatch:
 
+# A new run waits for a running one; it never cancels it.
 concurrency:
   group: lean-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  actions: read
 
 jobs:
+  decide:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      full: ${{ steps.decide.outputs.full }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          filter: blob:none
+
+      - name: Build, or take over the result for the same lean/ tree
+        id: decide
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tree=$(git rev-parse HEAD:lean)
+          echo "lean/ tree of this commit: $tree"
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "Started by hand: full build."
+            echo "full=true" >> "$GITHUB_OUTPUT"
+            echo "Started by hand: full build of lean/ (tree \`$tree\`)." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          # Commits (newest first) whose lean/ tree is the one of this commit.
+          same="$RUNNER_TEMP/same_tree.txt"
+          : > "$same"
+          for c in $(git rev-list -n 1000 HEAD); do
+            t=$(git rev-parse -q --verify "$c:lean" || true)
+            if [ "$t" = "$tree" ]; then echo "$c" >> "$same"; fi
+          done
+          echo "commits with this lean/ tree: $(wc -l < "$same")"
+          # Finished runs of this workflow, newest first: id, commit, conclusion, url.
+          runs="$RUNNER_TEMP/runs.tsv"
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/lean.yml/runs?status=completed&per_page=100" \
+            --jq '.workflow_runs[] | [.id, .head_sha, .conclusion, .html_url] | @tsv' > "$runs"
+          pick() {  # first finished run with conclusion $1 on a commit with this lean/ tree
+            while IFS=$'\t' read -r id sha concl url; do
+              if [ "$concl" = "$1" ] && grep -qx "$sha" "$same"; then echo "$id $sha $url"; return 0; fi
+            done < "$runs"
+            return 0
+          }
+          ok=$(pick success)
+          bad=$(pick failure)
+          if [ -n "$ok" ]; then
+            set -- $ok
+            echo "lean/ is unchanged since commit $2; result taken over from run $1: success. No build."
+            echo "full=false" >> "$GITHUB_OUTPUT"
+            echo "\`lean/\` (tree \`$tree\`) is the one of commit \`$2\`. Result taken over from [run $1]($3): **success**. No build was run." >> "$GITHUB_STEP_SUMMARY"
+          elif [ -n "$bad" ]; then
+            set -- $bad
+            echo "full=false" >> "$GITHUB_OUTPUT"
+            echo "\`lean/\` (tree \`$tree\`) is the one of commit \`$2\`. Result taken over from [run $1]($3): **failure**. Re-run that run, or start this workflow by hand, to build again." >> "$GITHUB_STEP_SUMMARY"
+            echo "::error::lean/ is unchanged since commit $2, whose run $1 failed. Re-run that run or start this workflow by hand."
+            exit 1
+          else
+            echo "No finished run for this lean/ tree: full build."
+            echo "full=true" >> "$GITHUB_OUTPUT"
+            echo "No finished run for \`lean/\` tree \`$tree\`: full build." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
   build:
+    needs: decide
+    if: needs.decide.outputs.full == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 330
     defaults:

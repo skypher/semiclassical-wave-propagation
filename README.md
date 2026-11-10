@@ -16,7 +16,9 @@ Corollaries 1.5 and 1.6. Schubert's files are not part of this repository.
 - `lean/`: the Lean 4 development, namespace `Qschubert` (Lean `v4.35.0`, Mathlib `v4.35.0`, `physicslib4`).
   Appendix "Formalization" of the manuscript says which statements are formalized, in which reading, and
   which are not; its table maps every labelled statement of the manuscript to a Lean theorem.
-- `.github/workflows/lean.yml`: builds `lean/` from a fresh checkout and runs the two axiom audits.
+- `.github/workflows/lean.yml`: builds `lean/` from a fresh checkout and runs the two axiom audits. The build
+  runs when `lean/` has changed; a commit that leaves `lean/` unchanged takes over the result of the last run
+  on the same Lean sources.
 
 ## Checking the formalization
 
