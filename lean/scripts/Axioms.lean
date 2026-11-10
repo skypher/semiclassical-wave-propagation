@@ -2674,3 +2674,11 @@ import Qschubert
 #print axioms Qschubert.integrable_amp
 #print axioms Qschubert.pair_real_test
 #print axioms Qschubert.zeroMode_approx_ae
+#print axioms Qschubert.im_npMap_smul_le_of_pos
+#print axioms Qschubert.eq_one_of_smul_mem_cuspS
+#print axioms Qschubert.one_le_normSq_of_fd
+#print axioms Qschubert.not_mem_cuspS_of_fd
+#print axioms Qschubert.cuspN_le_one
+#print axioms Qschubert.cuspN_eq_zero_of_compactPart
+#print axioms Qschubert.enorm_integral_Ico_sq_le
+#print axioms Qschubert.lintegral_compactPart_add_zeroMode_le
