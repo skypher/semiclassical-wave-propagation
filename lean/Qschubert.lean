@@ -215,3 +215,4 @@ import Qschubert.EisSeries
 import Qschubert.ModCosets
 import Qschubert.EisPointwise
 import Qschubert.EisZeroA
+import Qschubert.EisZero

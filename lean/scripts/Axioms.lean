@@ -2602,3 +2602,11 @@ import Qschubert
 #print axioms Qschubert.sum_coprime_fin
 #print axioms Qschubert.norm_test_le_exp_log
 #print axioms Qschubert.integrable_test_hgt
+#print axioms Qschubert.im_npSec_smul_mk
+#print axioms Qschubert.hcd_eq_hgt
+#print axioms Qschubert.norm_test_hcd_le
+#print axioms Qschubert.npNat_injective
+#print axioms Qschubert.eisF_npNat
+#print axioms Qschubert.eisF_eq_zero_of_notMem
+#print axioms Qschubert.tsum_eisF_succ
+#print axioms Qschubert.zeroMode_perio_stripFn
