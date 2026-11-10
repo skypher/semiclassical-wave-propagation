@@ -2586,3 +2586,12 @@ import Qschubert
 #print axioms Qschubert.integrable_lineG
 #print axioms Qschubert.eisR_eq_line
 #print axioms Qschubert.eisR_eq
+#print axioms Qschubert.modQ_smul
+#print axioms Qschubert.modQ_surjective
+#print axioms Qschubert.modQ_neg
+#print axioms Qschubert.modQ_eq
+#print axioms Qschubert.npSec_row
+#print axioms Qschubert.npMap_injective
+#print axioms Qschubert.npMap_surjective
+#print axioms Qschubert.npMap_bijective
+#print axioms Qschubert.tsum_modGroup_smul
