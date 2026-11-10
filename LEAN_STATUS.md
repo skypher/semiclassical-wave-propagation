@@ -42,7 +42,7 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Corollary 4.1 (`ev:transfer`) | P | an immediate consequence of the theorems |
+| Corollary 4.1 (`ev:transfer`) | L | `evTransfer_main`, `evTransfer_pc`; `ev_transfer_core` |
 | Proposition 4.3 (`ev:mod`) | P |  |
 
 ## Appendices A (`app:kl`)--C (`app:ws`)
