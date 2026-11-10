@@ -2535,3 +2535,5 @@ import Qschubert
 #print axioms Qschubert.integral_powIm_half_ne_zero
 #print axioms Qschubert.massMod_pos
 #print axioms Qschubert.fc_glU
+#print axioms Qschubert.coe_transGL_smul
+#print axioms Qschubert.expCut_J_glU
