@@ -2494,3 +2494,5 @@ import Qschubert
 #print axioms Qschubert.integrable_betaF
 #print axioms Qschubert.integral_betaF_v
 #print axioms Qschubert.integral_one_add_sq_cpow
+#print axioms Qschubert.Gammaℝ_ratio
+#print axioms Qschubert.scatPhi_eq_series

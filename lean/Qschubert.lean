@@ -190,3 +190,4 @@ import Qschubert.ZetaInv
 import Qschubert.GammaRatio
 import Qschubert.PhiBound
 import Qschubert.BetaLine
+import Qschubert.PhiSeries
