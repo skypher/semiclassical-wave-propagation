@@ -2462,3 +2462,8 @@ import Qschubert
 #print axioms Qschubert.hSM_major
 #print axioms Qschubert.thm14Rmain_exp_smooth
 #print axioms Qschubert.thm14Rmain_exp
+#print axioms Qschubert.norm_solM
+#print axioms Qschubert.approxErr_zero_eq
+#print axioms Qschubert.ev_transfer_core
+#print axioms Qschubert.evTransfer_pc
+#print axioms Qschubert.evTransfer_main
