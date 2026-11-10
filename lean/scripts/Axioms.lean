@@ -2625,3 +2625,4 @@ import Qschubert
 #print axioms Qschubert.lintegral_stripFn_lt_top
 #print axioms Qschubert.integrable_lift_mul_conj_stripFn
 #print axioms Qschubert.integral_mul_conj_perio_stripFn
+#print axioms Qschubert.integral_conj_perio_stripFn_mul

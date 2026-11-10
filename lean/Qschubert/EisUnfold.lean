@@ -126,4 +126,24 @@ theorem integral_mul_conj_perio_stripFn {w : Surf modGroup → ℂ}
   rw [h]
   simp_rw [perio_conj_stripFn]
 
+/-- **Unfolding the periodization against an incomplete Eisenstein series**: for `F` integrable on `ℍ` with
+absolutely convergent orbit sums, `∫_M conj(E_g) F_Γ dμ = ∫_ℍ conj(E_g(π z)) F(z) dν`. -/
+theorem integral_conj_perio_stripFn_mul {F : ℍ → ℂ} (hFm : Measurable F) (hFi : Integrable F)
+    (hS : ∀ᵐ z ∂(volume : Measure ℍ), z ∈ absSet modGroup F) {g : ℝ → ℂ} (hg : IsKTest g) :
+    ∫ x, conj (perio modGroup (stripFn g) x) * perio modGroup F x ∂surfMeasure modGroup
+      = ∫ z : ℍ, conj (perio modGroup (stripFn g) (surfMk modGroup z)) * F z := by
+  obtain ⟨M, hM, hMb⟩ := norm_perio_stripFn_le hg
+  have hEm := aestronglyMeasurable_perio_stripFn hg
+  have hqmp := quasiMeasurePreserving_surfMk modGroup
+  have hint : Integrable fun z : ℍ => conj (perio modGroup (stripFn g) (surfMk modGroup z)) * F z := by
+    refine (hFi.norm.const_mul M).mono'
+      ((Complex.continuous_conj.comp_aestronglyMeasurable (hEm.comp_quasiMeasurePreserving hqmp)).mul hFi.1)
+      (Eventually.of_forall fun z => ?_)
+    rw [norm_mul, RCLike.norm_conj]
+    exact mul_le_mul_of_nonneg_right (hMb _) (norm_nonneg _)
+  have hm : AEStronglyMeasurable (fun x : Surf modGroup => conj (perio modGroup (stripFn g) x) * perio modGroup F x)
+      (surfMeasure modGroup) :=
+    (Complex.continuous_conj.comp_aestronglyMeasurable hEm).mul (aestronglyMeasurable_perio modGroup hFm hS)
+  exact (integral_lift_mul_eq modGroup (w := fun x => conj (perio modGroup (stripFn g) x)) hint hm).symm
+
 end Qschubert
