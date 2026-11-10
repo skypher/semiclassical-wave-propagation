@@ -2621,3 +2621,7 @@ import Qschubert
 #print axioms Qschubert.aestronglyMeasurable_perio_stripFn
 #print axioms Qschubert.absSum_stripFn_eq
 #print axioms Qschubert.absSum_stripFn_le
+#print axioms Qschubert.perio_conj_stripFn
+#print axioms Qschubert.lintegral_stripFn_lt_top
+#print axioms Qschubert.integrable_lift_mul_conj_stripFn
+#print axioms Qschubert.integral_mul_conj_perio_stripFn
