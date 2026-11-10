@@ -2540,3 +2540,6 @@ import Qschubert
 #print axioms Qschubert.transSumL_ae
 #print axioms Qschubert.sum_pair_trans
 #print axioms Qschubert.tendsto_sum_pair_trans
+#print axioms Qschubert.mem_stripZ_transGL
+#print axioms Qschubert.tendsto_Icc_neg_atTop
+#print axioms Qschubert.integral_expCut_mul_periodic
