@@ -2546,3 +2546,12 @@ import Qschubert
 #print axioms Qschubert.hasSum_transDiff
 #print axioms Qschubert.expCut_transDiff_ae
 #print axioms Qschubert.integral_amp_trans_periodic
+#print axioms Qschubert.scatPhiR_eq
+#print axioms Qschubert.scatPhiR_half
+#print axioms Qschubert.scatD_ne_zero_of_zeta
+#print axioms Qschubert.scatD_ne_zero
+#print axioms Qschubert.differentiableAt_scatPhiR
+#print axioms Qschubert.scatPhiR_eq_scatH
+#print axioms Qschubert.differentiableAt_scatH
+#print axioms Qschubert.completedRiemannZeta_two
+#print axioms Qschubert.scatH_one
