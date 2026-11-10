@@ -2530,3 +2530,7 @@ import Qschubert
 #print axioms Qschubert.lintegral_omC_inv_slice_le
 #print axioms Qschubert.measurable_mk_line
 #print axioms Qschubert.lintegral_zeroModeH_sq_le
+#print axioms Qschubert.lintegral_omC_amp_lt_top
+#print axioms Qschubert.measurable_zeroModeH
+#print axioms Qschubert.integral_powIm_half_ne_zero
+#print axioms Qschubert.massMod_pos
