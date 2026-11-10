@@ -2543,3 +2543,6 @@ import Qschubert
 #print axioms Qschubert.mem_stripZ_transGL
 #print axioms Qschubert.tendsto_Icc_neg_atTop
 #print axioms Qschubert.integral_expCut_mul_periodic
+#print axioms Qschubert.hasSum_transDiff
+#print axioms Qschubert.expCut_transDiff_ae
+#print axioms Qschubert.integral_amp_trans_periodic

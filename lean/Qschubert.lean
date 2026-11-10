@@ -205,3 +205,4 @@ import Qschubert.SpecCommute
 import Qschubert.TransGL
 import Qschubert.PerioZero
 import Qschubert.PerioZero2
+import Qschubert.PerioInv
