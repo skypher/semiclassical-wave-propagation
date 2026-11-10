@@ -38,6 +38,13 @@ All Lean names are in the namespace `Qschubert`.
 | Corollary 3.8 (`pc:cor16`) | L | `pccor16_half` |
 | Theorem 3.10 (`cl:main`), Lemmas 3.14 (`cl:ssob`), 3.15 (`cl:asym`), 3.16 (`cl:kernel`), 3.17 (`cl:amp`) | P |  |
 
+## Section 4 (`sec:expect`): expectation values
+
+| Statement | Status | Lean theorem; difference |
+|---|---|---|
+| Corollary 4.1 (`ev:transfer`) | P | an immediate consequence of the theorems |
+| Proposition 4.3 (`ev:mod`) | P |  |
+
 ## Appendices A (`app:kl`)--C (`app:ws`)
 
 | Statement | Status | Lean theorem; difference |

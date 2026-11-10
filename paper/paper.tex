@@ -146,7 +146,10 @@ $\ue^{d/2}$ and an interpolation between two weights for the maps of the proof. 
 approximation is of order $\hbar t$; on the hyperbolic plane this order is attained, so it cannot be replaced by
 $\hbar$ as in the preprint. The pointwise form of the estimates holds on surfaces of bounded geometry, and on
 every hyperbolic surface with an additional factor $m(z)^{1/2}$, where $m(z)$ is a local multiplicity that is
-comparable to the cusp height in a cusp; on the modular surface this factor cannot be removed. The proofs of the
+comparable to the cusp height in a cusp; on the modular surface this factor cannot be removed. Accuracy of the
+approximation is not classical behaviour of expectation values: on the modular surface, for states attached to the cusp,
+the approximation remains accurate up to times of order $\hbar^{-1/2}$, while after a time of order
+$\log(1/\hbar)\log\log(1/\hbar)$ the state has left every compact set, contrary to the classical transport of its density. The proofs of the
 approximation theorems and of their corollaries, in both classes, are formalized in Lean~4; the lower bound on
 the modular surface is not.
 
@@ -184,7 +187,10 @@ This paper proves these statements for every Fuchsian group $\Gamma$, with two m
 differences are listed in Section~\ref{sec:changes}. The error of the leading approximation is of order $\hbar t$,
 not $\hbar$ (Proposition~\ref{prop:g5}). The pointwise bound holds on every surface with a factor $m(z)^{1/2}$, where
 $m(z)$ is a local multiplicity that is comparable to the cusp height in a cusp (Corollary~\ref{pc:cor16}), and on
-the modular surface this factor cannot be removed (Theorem~\ref{cl:main}). The strategy is
+the modular surface this factor cannot be removed (Theorem~\ref{cl:main}). Section~\ref{sec:expect} draws the consequences for expectation
+values: they are those of the explicit periodized approximation (Corollary~\ref{ev:transfer}), and on the modular surface this
+approximation, although accurate up to times of order $\hbar^{-1/2}$, does not behave classically after a time of order
+$\log(1/\hbar)\log\log(1/\hbar)$ (Proposition~\ref{ev:mod}). The strategy is
 Schubert's: the factorization, the approximations $u^{(K)}$, the analytic norms and the mollified flow are
 taken from \cite{S}, and all credit for them belongs to him. What is new is the organization of the error
 term and the treatment of the weights (Section~\ref{subsec:method}). The proofs of Theorems~1.3R and~1.4R and of
@@ -408,9 +414,10 @@ $u^{(K)}(t)_\Gamma$ sums over all these sheets, and beyond the Ehrenfest time th
 interference between them, which the classical prediction ignores, governs the
 fine behaviour. This geometry is compatible with Brooks's result; it is not a
 proof of escape, since it does not compare the mass or phase of the
-contributing sheets. We do not compare the two results directly, and neither confirms nor
-excludes the other. Brooks's initial states carry a fixed smooth cutoff in $y$
-and so are not analytic amplitudes of the class of Theorem~\ref{pc:main}.
+contributing sheets. Brooks's initial states carry a fixed smooth cutoff in $y$
+and so are not analytic amplitudes of the class of Theorem~\ref{pc:main}, and he uses the wave group; we do not compare the
+two results directly. Proposition~\ref{ev:mod} proves the corresponding statement for the Schr\"odinger flow and for
+amplitudes of the printed class whose periodization along the cusp does not depend on $x$.
 
 \subsection{Relation to the preprint}\label{sec:changes}
 We list how the statements above relate to those of \cite{S}, equations (1.15)--(1.36) there.
@@ -451,7 +458,7 @@ surface (Theorem~\ref{cl:main}, Remark~\ref{cl:reading}). In \cite[(1.36)]{S}, $
 \subsection{Organization}
 Section~\ref{sec:g5} shows that the order $\hbar t$ is attained. Section~\ref{sec:printed} treats the printed class: the theorem
 and its proof, the corollaries with the pointwise bounds, and the lower bound on the modular surface.
-Section~\ref{sec:outlook} collects open problems. The appendices contain the proofs for the swapped class: the mollified flow
+Section~\ref{sec:expect} treats expectation values, and Section~\ref{sec:outlook} collects open problems. The appendices contain the proofs for the swapped class: the mollified flow
 (Appendix~\ref{app:kl}), multiplication by weights in analytic norms (Appendix~\ref{app:m}), the weighted bounds
 (Appendix~\ref{app:ws}), the proof of Theorem~1.4R (Appendix~\ref{sec:dd}) and the periodization lemmas
 (Appendix~\ref{sec:t2}). Appendix~\ref{app:o1st} contains the estimates at the critical weight used in
@@ -485,6 +492,8 @@ $\norm{u^{(0)}(t)_\Gamma-\cU(t)(a\ue^{i\varphi_b/\hbar})_\Gamma}_{L^2(M)}\le C\h
 
 \input{sec_printed}
 
+\input{sec_expect}
+
 \section{Open problems and outlook}\label{sec:outlook}
 \begin{enumerate}
 \item \emph{Longer times.} The window $t\le\delta(\alpha/\hbar)^{1/2}$ comes from the mollification at scale
@@ -494,26 +503,18 @@ compared with $\alpha$ (Lemma~\ref{lem:unw}). \cite[Conjecture~1]{S} is a disper
 time scale $1/\hbar$; according to \cite{S} it would allow one to extend the time scale from $\hbar^{-1/2}$ to $\hbar^{-1}$. We have
 not examined which of the other steps of the present proofs would then extend. Whether the periodized approximation stays accurate beyond
 $\hbar^{-1/2}$ is open.
-\item \emph{The approximation itself.} The theorems reduce questions about $\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma$ on the
-time scale $\hbar^{-1/2}$ to questions about the explicit sum $u^{(K)}(t)_\Gamma$. Its expectation values and its statistics
-between the Ehrenfest time and $\hbar^{-1/2}$ are not analysed here: neither equidistribution in the sense of \cite{Sch05}
-nor the random wave behaviour of \cite{BB79,IR22}.
-\item \emph{Expectation values on the modular surface.} The result of Brooks \cite{Bro17} (Section~\ref{subsec:context}) concerns
-expectation values, and the theorems of this paper are $L^2$ bounds.
-An $L^2$ error bound does control bounded observables of the two states
-it compares, since $|\langle Bu,u\rangle-\langle Bv,v\rangle|\le\|B\|(\|u\|+\|v\|)\|u-v\|$.
-What is missing is a transfer to Brooks's states. Approximating them in $L^2$ by
-amplitudes of the class does not control the periodized transported
-approximation of the difference, which Proposition~\ref{os:p1} bounds only with
-the factor $\ue^{t/2}(1+t/\log2)^{c'}$ and a weighted norm. Moreover
-Theorem~\ref{pc:main} compares $\cU(t)$ with the periodized approximation
-$u^{(K)}(t)_\Gamma$, and it does not identify the expectation values of that
-approximation with Brooks's classical ones.
-The difference of evolutions (Brooks uses the wave propagator, this paper
-$\cU(t)=\ue^{i\hbar t\Delta/2}$) does not by itself decide the question: for
-spectral parameter near $r$ with $\hbar=1/r$ the two phases differ, up to a
-scalar phase, by $O(t(\lambda-r)^2/r)$, so a narrow-band comparison can persist for
-logarithmic times.
+\item \emph{Expectation values on compact surfaces.} By Corollary~\ref{ev:transfer} the expectation values of
+$\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma$ up to times of order $\hbar^{-1/2}$ are those of the explicit sum $u^{(K)}(t)_\Gamma$. Beyond the Ehrenfest time
+the sum is not evaluated here, except in the case of Proposition~\ref{ev:mod}. On a compact surface there is no cusp to
+escape into, and neither equidistribution in the sense of \cite{Sch05} nor the random wave behaviour of \cite{BB79,IR22} is
+known for these states between the Ehrenfest time and $\hbar^{-1/2}$.
+\item \emph{Expectation values on the modular surface.} Proposition~\ref{ev:mod} concerns amplitudes whose periodization along
+the cusp does not depend on $x$, and it does not give the sharp time: by Remark~\ref{ev:time} the state should leave after
+about $2\log(1/\hbar)$, and the classical prediction should hold before. For general amplitudes of the class the part with
+nonzero Fourier modes in $x$ is not treated. The states of Brooks \cite{Bro17} are not in the class
+(Section~\ref{subsec:context}); a transfer to them by approximation in $L^2$ would need a bound for the periodized
+approximation of the difference, which Proposition~\ref{os:p1} gives only with the factor $\ue^{t/2}(1+t/\log2)^{c'}$ and a
+weighted norm.
 \item \emph{The cusp factor.} Whether the factor $m(z)^{1/2}$ in Corollary~\ref{pc:cor16} is needed for irrational $b$,
 and on cusped surfaces other than the modular surface. The proof of
 Theorem~\ref{cl:main} would have to be redone with the cusp and $b$ at different
@@ -560,8 +561,9 @@ multiplier theorem at the critical weight (Theorem~\ref{os:cw}). Claude
 Fable~5.2 developed the proof of Theorem~\ref{pc:main} by transfer between
 two weights (Lemma~\ref{os:transfer} and Section~\ref{subsec:pc-proof}), which
 was reviewed by an OpenAI Codex session before it was formalized,
-rewrote the manuscript on these proofs, and wrote the introduction and
-the outlook in their present form; this text was reviewed by an OpenAI
+rewrote the manuscript on these proofs, wrote the introduction and
+the outlook in their present form, and developed and wrote
+Section~\ref{sec:expect}; this text and that section were reviewed by an OpenAI
 Codex session, and the bibliographic data of the references added there
 were checked against publishers' and authors' records. They replace proofs of an earlier
 version that are no longer part of the paper: a weighted Sobolev
@@ -1146,10 +1148,20 @@ B.~Kr\"otz,
 Contemp.\ Math.\ \textbf{488} (2009),
 \href{https://arxiv.org/abs/0705.1243}{arXiv:0705.1243}.
 
+\bibitem[MV07]{MV07}
+H.~L.~Montgomery and R.~C.~Vaughan,
+\emph{Multiplicative Number Theory I. Classical Theory},
+Cambridge Stud.\ Adv.\ Math.\ 97, Cambridge University Press, 2007.
+
 \bibitem[Olv97]{O}
 F.~W.~J.~Olver,
 \emph{Asymptotics and Special Functions},
 A~K~Peters, Wellesley, MA, 1997.
+
+\bibitem[Sar81]{Sar81}
+P.~Sarnak,
+\emph{Asymptotic behavior of periodic orbits of the horocycle flow and Eisenstein series},
+Comm.\ Pure Appl.\ Math.\ \textbf{34} (1981), no.~6, 719--739.
 
 \bibitem[Sch05]{Sch05}
 R.~Schubert,
