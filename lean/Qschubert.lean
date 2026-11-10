@@ -211,3 +211,4 @@ import Qschubert.ZetaStrip
 import Qschubert.ScatPhiStrip
 import Qschubert.MellinTest
 import Qschubert.ScatShift
+import Qschubert.EisSeries

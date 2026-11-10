@@ -2578,3 +2578,11 @@ import Qschubert
 #print axioms Qschubert.integrable_shiftW_line
 #print axioms Qschubert.rect_shiftW
 #print axioms Qschubert.shift_residue
+#print axioms Qschubert.powR_hgt
+#print axioms Qschubert.integral_powR_hgt
+#print axioms Qschubert.integral_test_hgt
+#print axioms Qschubert.term_totC_eq
+#print axioms Qschubert.term_mul_lineG
+#print axioms Qschubert.integrable_lineG
+#print axioms Qschubert.eisR_eq_line
+#print axioms Qschubert.eisR_eq
