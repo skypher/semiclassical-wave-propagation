@@ -2774,3 +2774,16 @@ import Qschubert
 #print axioms Qschubert.decay_sq
 #print axioms Qschubert.integral_fhat_overlap_le
 #print axioms Qschubert.norm_init_sq_sub_le
+#print axioms Qschubert.integrableOn_outF_sq
+#print axioms Qschubert.compact_mass_approx
+#print axioms Qschubert.evmod_final_arith
+#print axioms Qschubert.evmod
+#print axioms Qschubert.prNormX_ampMod_lt_top
+#print axioms Qschubert.compact_mass_le
+#print axioms Qschubert.norm_fT
+#print axioms Qschubert.tail_fT
+#print axioms Qschubert.ddBound_zero_le
+#print axioms Qschubert.norm_le_of_enorm_le
+#print axioms Qschubert.norm_sq_Lp_eq_integral
+#print axioms Qschubert.integrable_sq_Lp
+#print axioms Qschubert.setIntegral_sq_le
