@@ -229,3 +229,6 @@ import Qschubert.EvModPair
 import Qschubert.EvModMellin
 import Qschubert.EvModStar
 import Qschubert.EvModTranspose
+import Qschubert.EvModSlice
+import Qschubert.EvModOut
+import Qschubert.EvModAe
