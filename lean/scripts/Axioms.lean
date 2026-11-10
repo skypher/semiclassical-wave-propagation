@@ -2619,3 +2619,5 @@ import Qschubert
 #print axioms Qschubert.measurable_stripFn
 #print axioms Qschubert.mem_absSet_stripFn
 #print axioms Qschubert.aestronglyMeasurable_perio_stripFn
+#print axioms Qschubert.absSum_stripFn_eq
+#print axioms Qschubert.absSum_stripFn_le
