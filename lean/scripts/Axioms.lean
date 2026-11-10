@@ -2595,3 +2595,6 @@ import Qschubert
 #print axioms Qschubert.npMap_surjective
 #print axioms Qschubert.npMap_bijective
 #print axioms Qschubert.tsum_modGroup_smul
+#print axioms Qschubert.im_npSec_smul
+#print axioms Qschubert.finite_npair_im_ge
+#print axioms Qschubert.perio_stripFn
