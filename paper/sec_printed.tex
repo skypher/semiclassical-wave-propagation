@@ -49,6 +49,23 @@ below uses its frame and its lemmas. The proof gives $\delta=\min(\tfrac1{64},c_
 for $\tau_0=1$; this $\delta$ does not depend on $\Gamma$, $\beta$ or $\kappa$.
 \end{remark}
 
+\begin{remark}[the two classes, and the range of $\alpha$]\label{pc:classes}
+Let $\beta>\tfrac12$ and $0\le\alpha'<\alpha<\pi/2$, and put $h:=\ue^{-\beta\langle d\rangle}\mathbf 1_{B(x_0,1)}$ and $a:=\ue^{-\alpha\Lambda}h$, so that
+$\pcNorm a=\norm{\mathbf 1_{B(x_0,1)}}<\infty$ at $(\alpha,\beta)$. For $0<\tau<\pi/2$ the function $\ue^{-\tau\Lambda}h$ is the convolution of $h$ with the
+radial kernel $k_\tau$ of Lemma~\ref{os:poisson}, and $d(z,w)\in[d(z)-1,d(z)+1]$ for $w\in B(x_0,1)$. So by \eqref{os:lb}, for $d(z)\ge2$,
+\[
+  (\ue^{-\tau\Lambda}h)(z)\ge c\,(d(z)+1)^{-3/2}\ue^{-d(z)},
+\]
+with $c>0$ depending on $\tau$ and $\beta$. Since $\langle d\rangle\ge d-1$, for every $\beta'>\tfrac12$ the square of
+$\ue^{\beta'\langle d\rangle}\ue^{-\tau\Lambda}h$ is at least $c'\ue^{(2\beta'-2)d}(d+1)^{-3}$ where $d\ge2$, which is not integrable against the area
+element $\sinh\rho\,d\rho\,d\theta$; so this function is not in $L^2(\Hb)$. Two consequences follow.
+With $\tau=\alpha$: the amplitude $a$ of the printed class lies in no swapped class with an exponent $\beta'>\tfrac12$, because
+$\norm{\ue^{\alpha''\Lambda}\ue^{\beta'\langle d\rangle}a}\ge\norm{\ue^{\beta'\langle d\rangle}a}$ for $\alpha''\ge0$.
+With $\tau=\alpha-\alpha'$ and $\beta'=\beta$: the printed norm of $a$ at $(\alpha',\beta)$ is infinite, since
+$\ue^{\alpha'\Lambda}a=\ue^{-(\alpha-\alpha')\Lambda}h$. So the printed norms are not monotone in $\alpha$, and Theorem~\ref{pc:main}, which is stated for
+$\alpha\le\tfrac12$, does not cover larger radii by a comparison of norms; in the swapped class it does (Section~\ref{sec:repair}).
+\end{remark}
+
 \begin{corollary}[Theorem 1.3 for the printed class]\label{pc:thm13}
 Under the hypotheses of Theorem~\ref{pc:main}, with $K=N=0$,
 \[
@@ -236,7 +253,7 @@ Corollary~\ref{pc:cor16}. Under the hypothesis of Corollary~\ref{pc:cor16bg}, $m
 \begin{remark}[cusps]\label{pc:remcusp}
 On a bounded-geometry quotient $m(z)\le C(r_0)$, so Corollary~\ref{pc:cor16bg} is the case of Corollary~\ref{pc:cor16}. In an embedded cusp of
 height $H$, deep enough, $m(z)\asymp H$, so the factor $m(z)^{1/2}$ grows like the square root of the cusp height. Lemma~\ref{pc:g43} is sharp in this sense:
-the cusp bump of Section~\ref{sec:g4} at height $H$ has $\sup|u|/(\norm{\Delta u}+\norm{u})\asymp H^{1/2}$.
+the cusp bump $u_S$ of Remark~\ref{rem:g4} at height $H=\ue^{S}$ has $\sup|u|/(\norm{\Delta u}+\norm{u})\asymp H^{1/2}$.
 
 The proofs of the two corollaries use one Laplacian and give the exponent $-2N-2$ of $\alpha\hbar$; we state them with $-2N-4$ for the comparison with
 \cite[(1.34)]{S}. Since $m(z)^{1/2}(\alpha\hbar)^{-2N-4}\le(\alpha\hbar)^{-2N-8}$ when $m(z)\le(\alpha\hbar)^{-8}$, Corollary~\ref{pc:cor16} gives the printed

@@ -26,7 +26,7 @@
   urlcolor={purple},
   citecolor={blue!80!black},
   pdfauthor={Leslie P. Polzer},
-  pdftitle={On Semiclassical Wave Propagation for Large Times: Gaps, a Counterexample, and a Repaired Statement},
+  pdftitle={Semiclassical wave propagation beyond the Ehrenfest time on hyperbolic surfaces},
   pdfsubject={Long-time semiclassical propagation of analytic Lagrangian states on hyperbolic surfaces},
   pdfkeywords={semiclassical analysis, Schroedinger equation, hyperbolic surfaces, Fuchsian groups, analytic amplitudes, Dyson expansion}
 }
@@ -52,6 +52,9 @@
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
+% The four statements that correspond to numbered statements of [S] are numbered 1.3R, 1.4R, 1.5R, 1.6R.
+\newtheorem{theoremR}{Theorem}
+\newtheorem{corollaryR}{Corollary}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
@@ -63,12 +66,12 @@
 \newcommand{\ue}{\mathrm{e}}
 \newcommand{\cU}{\mathcal{U}}
 
-\title{On ``Semiclassical wave propagation for large times'':\\
-gaps, a counterexample, and a repaired statement}
+\title{Semiclassical wave propagation beyond the Ehrenfest time\\
+on hyperbolic surfaces}
 \author{Leslie P. Polzer}
 \newcommand{\authoraffiliation}{Independent Researcher}
 \newcommand{\authoremail}{polzer@fastmail.com}
-\date{November 8, 2026}
+\date{November 10, 2026}
 
 \makeatletter
 \renewcommand{\section}{%
@@ -84,7 +87,7 @@ gaps, a counterexample, and a repaired statement}
 \renewcommand{\eqref}[1]{%
   \textup{{\normalfont(\oldstylenums{\ref{#1}}}\normalfont)}}
 
-\newcommand{\shorttitle}{SEMICLASSICAL PROPAGATION FOR LARGE TIMES: A REPAIR}
+\newcommand{\shorttitle}{SEMICLASSICAL PROPAGATION BEYOND THE EHRENFEST TIME}
 \newcommand{\shortauthors}{LESLIE P. POLZER}
 \newcommand{\ps@bookheader}{%
   \renewcommand\@oddfoot{\hfil}%
@@ -126,25 +129,25 @@ gaps, a counterexample, and a repaired statement}
 \maketitle
 
 \begin{abstract}
-We examine R.~Schubert's preprint \emph{Semiclassical wave propagation for large times}
-(arXiv:0705.0134v1, 2007; withdrawn by the author in v2, 2011, for ``a gap in the proof of the
-dispersive estimates''). We locate two independent defects in the dispersive estimate (Theorem~4.4
-there): an operator inequality is exponentiated, and the weighted analytic norms used in the
-definition do not nest when the decay exponent exceeds $1/2$, so that Theorem~4.4 is false as
-printed. We also show that the printed Theorem~1.3 overstates its accuracy: on the hyperbolic plane
-the error of the leading semiclassical approximation is of order $\hbar t$, not $\hbar$. Following
-Schubert's strategy, but with a different ordering of the expansion, we prove the corrected Theorem~1.3
-(error $O(\hbar t)$ up to times $\delta\hbar^{-1/2}$), and Theorem~1.4 with Schubert's explicit constants
-$C^{N+K+1}N^{2N}K!$, together with the exponentially accurate Corollary~1.5. Both hold for every Fuchsian
-group, every $\beta>1/2$ and analyticity radii down to $\alpha^3\ge\kappa\hbar$. These proofs are first given for amplitudes with the two weights in the order used by Schubert's proofs.
-We then prove Theorem~1.4 and Corollary~1.5 for Schubert's printed amplitude class itself, whose
-amplitudes decay at the critical rate, by a multiplier theorem at the critical weight $\ue^{d/2}$ and an interpolation between two weights for the maps of the proof.
-The proofs of the corrected Theorems~1.3 and~1.4 and of Corollaries~1.5 and~1.6, in both classes, are formalized in Lean~4; the lower bound on the modular surface is not.
-The pointwise Corollary~1.6 holds on surfaces of bounded geometry, and on every hyperbolic surface up to
-a factor $(\text{cusp height})^{1/2}$. On the modular surface this factor cannot be removed, so the printed
-Corollary~1.6, read with constants independent of $\hbar$, is false there (for the printed class this uses our printed-class theorem). In our counterexample in
-the swapped class the solution and its approximation grow in the same way high in the cusp, and their relative
-error stays $O(\hbar t)$: what fails is the form of the printed bound.
+On a hyperbolic surface $M=\Hb/\Gamma$, with $\Gamma$ an arbitrary Fuchsian group, we study the Schr\"odinger
+evolution of Lagrangian states $a\,\ue^{i\varphi_b/\hbar}$ attached to an unstable manifold of the geodesic flow.
+We prove that the explicit semiclassical approximations $u^{(K)}(t)$ introduced by R.~Schubert are accurate in
+$L^2(M)$ up to times $\delta(\alpha/\hbar)^{1/2}$, far beyond the Ehrenfest time. For amplitudes $a$ with a finite
+norm that measures analyticity in a strip of width $\alpha$, $\alpha^3\ge\kappa\hbar$, and exponential decay, the
+error after $N$ applications of the Laplacian is at most
+$C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$ times the norm of $a$, and a suitable choice of $K$
+makes it exponentially small. Estimates of this form were stated, with these constants, in Schubert's preprint
+\emph{Semiclassical wave propagation for large times} (arXiv:0705.0134v1, 2007), which its author withdrew in
+2011 for ``a gap in the proof of the dispersive estimates''. We follow his strategy, with a different ordering
+of the expansion. The theorems are proved for two classes of amplitudes: the class in which the two weights of
+the norm are taken in the order used in Schubert's proofs, and the class of his definition, whose amplitudes
+decay only at the critical rate. The second class requires a multiplier theorem at the critical weight
+$\ue^{d/2}$ and an interpolation between two weights for the maps of the proof. The error of the leading
+approximation is of order $\hbar t$; on the hyperbolic plane this order is attained, so it cannot be replaced by
+$\hbar$ as in the preprint. The pointwise form of the estimates holds on surfaces of bounded geometry, and on
+every hyperbolic surface with an additional factor $(\text{cusp height})^{1/2}$; on the modular surface this
+factor cannot be removed. The proofs of the theorems and of their corollaries, in both classes, are formalized
+in Lean~4; the lower bound on the modular surface is not.
 
 \vskip5pt
 \noindent\textbf{Keywords.}\enspace Semiclassical analysis; time-dependent
@@ -160,28 +163,182 @@ amplitudes; Dyson expansion.
 \baselineskip=13.5pt
 \section{Introduction}\label{sec:intro}
 
-R.~Schubert's preprint \cite{S} proposes long-time semiclassical
-approximations, with explicit constants, for Lagrangian states on
-hyperbolic surfaces, and was withdrawn by its author for a gap in the
-dispersive estimates. This paper locates the defects, shows that the
-printed Theorem~1.3 of \cite{S} is false as stated, and proves corrected
-versions of Theorems~1.3 and~1.4 and of Corollaries~1.5 and~1.6 of
-\cite{S}. All credit for the strategy belongs to R.~Schubert; the repair
-follows his construction and changes the ordering of the expansion.
+Semiclassical approximations describe the solutions of the Schr\"odinger equation
+$i\hbar\,\partial_t\psi=-\tfrac{\hbar^2}{2}\Delta\psi$ for small $\hbar$ through the geodesic flow. When the flow
+is hyperbolic, rigorous approximations are in general under control only up to the Ehrenfest time
+$T\sim\lambda^{-1}\log(1/\hbar)$, where $\lambda$ is a Lyapunov exponent (Section~\ref{subsec:context}).
 
-\emph{Scope.} Section~\ref{sec:repair} and Appendix~\ref{sec:dd} treat amplitudes
-in the class with the two weights in the order used in the proofs of \cite{S}.
-Most amplitudes of the printed class \cite[Def.~1.1]{S} are not in that class:
-they decay at the critical rate. Section~\ref{sec:printed} proves Theorems~1.3 and~1.4,
-Corollary~1.5, and Corollary~1.6 on bounded geometry, for the printed class
-itself, using estimates at the critical weight (Appendix~\ref{app:o1st}); on surfaces with cusps it proves Corollary~1.6 with a
-factor $m(z)^{1/2}$ that grows like the square root of the cusp height. On the
-modular surface, for $b$ a cusp, the factor cannot be removed (Theorem~\ref{cl:main}),
-so the printed Corollary~1.6 is false when its constants do not depend on $\hbar$
-(\cite{S} does not say; Remark~\ref{cl:reading}); for other cusped surfaces and other $b$ its
-necessity is not decided here.
+In 2007 R.~Schubert \cite{S} proposed that for one family of states the error can be controlled much
+longer. On a hyperbolic surface $M=\Hb/\Gamma$ he considered Lagrangian states $a\,\ue^{i\varphi_b/\hbar}$
+whose phase $\varphi_b$ is attached to a boundary point $b$, so that the state is carried by an unstable
+manifold of the geodesic flow. For such a state the evolution on the universal cover factorizes exactly
+into the transport along the flow and a unitary dispersive part whose generator carries a factor $\hbar$
+(equation \eqref{eq:factor} below). Expanding the dispersive part to order $K$ gives an explicit approximation
+$u^{(K)}(t)$, and the preprint \cite{S} states that its periodization $u^{(K)}(t)_\Gamma$ is accurate in $L^2(M)$
+up to times of order $\hbar^{-1/2}$, with explicit constants, for amplitudes $a$ that are analytic in a strip
+and decay exponentially. The preprint was withdrawn by its author in 2011 for ``a gap in the proof of the
+dispersive estimates''.
 
-\emph{Relation to previous work.} Rigorous semiclassical approximations for
+This paper proves these statements for every Fuchsian group $\Gamma$, in a form that differs from the
+preprint in two places. The error of the leading approximation is of order $\hbar t$, not $\hbar$
+(Proposition~\ref{prop:g5}), and on surfaces with cusps the pointwise bound needs a factor that grows like the
+square root of the cusp height (Corollary~\ref{pc:cor16} and Theorem~\ref{cl:main}). The strategy is
+Schubert's: the factorization, the approximations $u^{(K)}$, the analytic norms and the mollified flow are
+taken from \cite{S}, and all credit for them belongs to him. What is new is the organization of the error
+term and the treatment of the weights (Section~\ref{subsec:method}). The proofs of the theorems and of their
+corollaries are formalized in Lean~4 (Appendix~\ref{app:lean}).
+
+\subsection{Setting and notation}\label{sec:setup}
+We use the notation of \cite{S}. Let $\Hb=\{x+iy:y>0\}$ with the metric
+$y^{-2}(dx^2+dy^2)$, volume $d\nu=y^{-2}dx\,dy$, and Laplacian $\Delta=y^2(\partial_x^2+\partial_y^2)$; the
+spectrum of $-\Delta$ on $L^2(\Hb)$ is $[1/4,\infty)$. Put $X=y\partial_x$, $Y=y\partial_y$; then
+$\Delta=X^2+Y^2-Y$. The boundary point is $b=\infty$, with $\varphi=\varphi_b=-\log y$ \cite[(2.1)]{S}.
+The transport $S(t)a(x,y)=\ue^{-t/2}a(x,\ue^t y)$ is unitary \cite[Lemma~2.1]{S}, and the dispersive part
+$V(t)$ solves $i\partial_tV=-\tfrac{\hbar}{2}\Delta(t)V$, $V(0)=I$, with
+\[
+\Delta(t)=S(t)^*\Delta S(t)=y^2(\partial_y^2+\ue^{-2t}\partial_x^2)=\ue^{-2t}X^2+Y^2-Y
+\]
+\cite[(2.9)]{S}. With $\cU(t)=\ue^{i\hbar t\Delta/2}$ one has the exact factorization \cite[Prop.~2.2]{S}
+\begin{equation}\label{eq:factor}
+\ue^{-i\varphi/\hbar}\,\cU(t)\,\ue^{i\varphi/\hbar}=\ue^{-it/(2\hbar)}S(t)V(t).
+\end{equation}
+For a Fuchsian group $\Gamma$ and $u$ on $\Hb$, $u_\Gamma=\sum_{\gamma\in\Gamma}u\circ\gamma^{-1}$.
+The leading approximation is $u^{(0)}(t)=\ue^{-it/(2\hbar)}(S(t)a)\ue^{i\varphi/\hbar}$ \cite[(1.20)]{S}.
+
+Schubert's amplitude norm is \cite[Def.~1.1]{S}
+\[
+\norm{a}_{\alpha,\beta}:=\norm{\ue^{\beta\langle d\rangle}\ue^{\alpha\sqrt{-\Delta}}a}_{L^2},\qquad
+\langle d\rangle=(1+d(x_0,\cdot)^2)^{1/2}-1 .
+\]
+Throughout, $\Lambda=\sqrt{-\Delta}$, $X_0=\cosh d(x_0,\cdot)$, $\tilde\psi=\log X_0$ and $W_\gamma=\ue^{\gamma\tilde\psi}$.
+
+\subsection{Results}\label{sec:repair}
+The definition of the amplitude norm in \cite{S} and the proofs there take the two weights in different orders, and for
+$\beta>\tfrac12$ the two orders define different classes (Remark~\ref{pc:classes}). We treat both. In this subsection
+\[
+\norm a:=\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}_{L^2(\Hb)} ,
+\]
+the order used in the proofs of \cite{S}. We call the amplitudes with $\norm a<\infty$ the \emph{swapped class}, and those with
+$\norm a_{\alpha,\beta}<\infty$ the \emph{printed class}.
+By Lemma~\ref{lem:m2w} below, a finite norm $\norm a$ at radius $\alpha$ gives a finite norm with the weight
+$\ue^{\beta\tilde\psi}$ in place of $\ue^{\beta\langle d\rangle}$, at the radius $c_0\alpha$ for a fixed
+$c_0=c_0(\beta)\in(0,1]$; the proofs use $\tilde\psi$.
+The four statements of this subsection carry the numbers of the corresponding statements of \cite{S} followed by R: Theorem 1.3R is
+our version of \cite[Theorem~1.3]{S}.
+\renewcommand{\thetheoremR}{1.3R}
+\begin{theoremR}\label{thm:main}
+Let $\Gamma$ be any Fuchsian group, $\beta>1$ and $\alpha\in(0,\alpha_0]$ constants ($\alpha_0<\pi/4$ fixed).
+There are $C,\delta>0$ such that for all $0<\hbar\le1$, every $b\in\partial\Hb$ and every $a$ with $\norm a<\infty$,
+\[
+\norm{u^{(0)}(t)_\Gamma-\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma}_{L^2(\Hb/\Gamma)}\le C\hbar t\norm a,\qquad 0\le t\le\delta\hbar^{-1/2}.
+\]
+\end{theoremR}
+For $\alpha>\alpha_0$ the class with radius $\alpha$ is contained in the class with radius $\alpha_0$
+(in the swapped order this nesting is trivial), so the theorem holds for every constant $\alpha>0$,
+as in \cite{S}. By Proposition~\ref{prop:g5} the order $\hbar t$ cannot be improved.
+
+\begin{proof}
+This is the case $K=N=0$ of Theorem~\ref{thm:dd14} below, with $\kappa:=\alpha^3$ and with $\alpha_0$ as here: then
+$\alpha^3\ge\kappa\hbar$ for all $0<\hbar\le1$, $u^{(0)}$ is the approximation of order $0$, and the bound of Theorem~\ref{thm:dd14} reads
+$C\alpha^{-2}\hbar t\norm a$ for $0\le t\le\delta\alpha^{1/2}\hbar^{-1/2}$. The constants of the present theorem are
+$C\alpha^{-2}$ and $\delta\alpha^{1/2}$; they depend on the fixed $\alpha$.
+\end{proof}
+
+\begin{remark}
+No Volterra resummation and no Sobolev inequality on $M$ is used, so the proof holds for every Fuchsian
+group; the cusp issue of Remark~\ref{rem:g4} does not arise. Since Theorem~\ref{thm:dd14} holds for every $\beta>1/2$, so does
+the present theorem; we state it with $\beta>1$ as in \cite{S}.
+\end{remark}
+
+\medskip\noindent\textbf{Theorem 1.4 and its corollaries.}
+Let $u^{(K)}$ be Schubert's $K$-th order approximation \cite[(1.27)--(1.29)]{S}.
+\renewcommand{\thetheoremR}{1.4R}
+\begin{theoremR}\label{thm:dd14}
+Fix $\beta>1/2$, $\kappa>0$ and $\alpha_0\in(0,\min(1,\pi/4))$. There are $C,\delta>0$ such that for every Fuchsian group
+$\Gamma$, all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$
+with $\norm a<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
+\[
+\norm{\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(\Hb/\Gamma)}
+\le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\norm a .
+\]
+($\delta$ does not depend on $\Gamma$, and $C$ depends on $\Gamma$ only through the Poincar\'e series bound
+$\sup_z\sum_\gamma\ue^{-(\beta+1/2)\,d(x_0,\gamma z)}$ of Lemma~\ref{lem:p1}, at the exponent $\beta+\tfrac12>1$; see the end of the
+proof of Theorem~\ref{thm:dd-appx}.)
+\end{theoremR}
+This implies \cite[(1.30)]{S} on Schubert's window $t\le\delta\alpha^{3/2}\hbar^{-1/2}$, with an extra factor
+$(\alpha\hbar)^4\hbar t/\alpha^2\le1$. The proof is in Appendix~\ref{sec:dd}.
+
+\renewcommand{\thecorollaryR}{1.5R}
+\begin{corollaryR}\label{cor:dd15}
+Under the hypotheses of Theorem~\ref{thm:dd14}, with $\delta\le\kappa^{1/2}/\max(1,C)$, put $\delta_K=C\hbar t/\alpha^2$ and let $\epsilon\in(0,1)$. For every integer $K$ with
+$(1-\epsilon)/\delta_K\le K\le(1-\epsilon/2)/\delta_K$,
+\[
+\norm{\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}\le C'\epsilon^{-1/2}C^{N+1}N^{2N}(\alpha\hbar)^{-2N}\ue^{-(1-\epsilon)\alpha^2/(C\hbar t)}\norm a .
+\]
+with $C'$ an absolute constant.
+\end{corollaryR}
+The window for $K$ is the one used in Schubert's proof of his Corollary~1.5; the window printed in its statement
+does not match that proof.
+
+\renewcommand{\thecorollaryR}{1.6R}
+\begin{corollaryR}\label{cor:dd16}
+If moreover the injectivity radius of $\Hb/\Gamma$ is at least $r_0>0$, then pointwise
+\[
+\big|\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]\big|\le C^{N+K+1}(2N)!\,K!\,(\alpha\hbar)^{-2N-4}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\norm a ,
+\]
+with $C$ depending also on $r_0$, and correspondingly for the window of Corollary~\ref{cor:dd15}.
+\end{corollaryR}
+
+\begin{remark}[cusps]\label{rem:g4}
+The hypothesis on the injectivity radius cannot simply be dropped. The pointwise bound in \cite{S} rests on the Sobolev
+inequality \cite[(3.3)]{S}, which fails for every integer $s\ge1$ when $M=\Hb/\Gamma$ has a cusp: in a cusp neighbourhood
+$\{y>Y\}/(x\sim x+1)$, the functions $u_S=\chi(\log y-S)$ satisfy $\norm{u_S}_{L^1}\asymp\norm{\Delta^su_S}_{L^1}\asymp\ue^{-S}$
+while $\norm{u_S}_{L^2}\asymp\ue^{-S/2}$. On surfaces with cusps the pointwise statement holds with the factor $m(z)^{1/2}$
+(Corollary~\ref{pc:cor16}), and on the modular surface that factor is necessary (Theorem~\ref{cl:main}).
+\end{remark}
+
+\medskip\noindent\textbf{The printed class.} Section~\ref{sec:printed} proves the bound of Theorem 1.4R with the norm
+$\norm a_{\alpha,\beta}$ of \cite[Def.~1.1]{S}, for every Fuchsian group, every $\beta>\tfrac12$ and $\alpha\in(0,\tfrac12]$, on the same
+time window (Theorem~\ref{pc:main}); the constant $C$ there depends on $\Gamma$. Corollaries~\ref{pc:thm13}, \ref{pc:cor15},
+\ref{pc:cor16bg} and~\ref{pc:cor16} are the corresponding versions of Theorem~1.3 and of Corollaries~1.5 and~1.6.
+Schubert's example $\hbar^{-\delta/2}\ue^{-\hbar^{-\delta}\langle d\rangle}$ is covered already by the swapped class, for $0<\delta<2/3$
+(Lemma~\ref{lem:ex}).
+
+\subsection{Method of proof}\label{subsec:method}
+By \eqref{eq:factor} the error of $u^{(K)}$ is governed by the dispersive part $V(t)$, and $u^{(K)}$ corresponds to the Dyson
+expansion of $V(t)$ to order $K$.
+
+\emph{An exact remainder.} We write the remainder of the Dyson expansion with the unitary propagator on the outside
+(Proposition~\ref{prop:dd-id}). The error is then $(\hbar/2)^{K+1}$ times an integral over the simplex
+$t>s_1>\dots>s_{K+1}>0$ of a periodized propagator applied to
+$b'(s)=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a$, a fixed polynomial in the vector fields $X,Y$ applied
+to the amplitude. No resummation of the series is needed, and all derivatives fall on $a$. Analyticity of $a$ in a strip of
+width $\alpha$ bounds a word of length $k$ in $X,Y$ applied to $a$ by $C^kk!\,\alpha^{-k}$ (Cauchy estimates,
+Lemmas~\ref{lem:fc}--\ref{lem:wb}), and the integration over the simplex then gives the factor
+$C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$.
+
+\emph{The periodized flow.} It remains to bound the periodized propagator applied to $b'$ in $L^2(M)$, uniformly in $s_1\le t$.
+Periodization over $\Gamma$ is bounded on $L^2$ only with a weight above the critical one $\ue^{d/2}$, and for transported
+functions its bound grows exponentially in time (Lemma~\ref{lem:t2}). The flow $V$ is not known to preserve weighted
+analytic norms on the time scale in question; this is \cite[Conjecture~1]{S}. As in \cite{S} we compare $V$ with the flow
+$V_\varepsilon$ of the generator mollified at scale $\varepsilon$; the estimate for $V_\varepsilon$ is the step whose proof
+in \cite{S} has the gap (Section~\ref{sec:changes}). The mollified flow preserves analytic norms, with a loss of radius, and
+power weights $X_0^\gamma$, both up to times of order $\varepsilon/\hbar$ (Propositions~\ref{prop:a0} and~\ref{prop:ws}); the first
+is proved by an energy estimate with a clipped weight. The defect of the mollifier is exponentially small, of size
+$\ue^{-a/(8\varepsilon)}$, on vectors analytic in a strip of width $a$ (Lemma~\ref{lem:unw}), but only without a weight; with the
+weight $X_0^\beta$ it is bounded only by a power of $\varepsilon^{-1}$ (Lemma~\ref{lem:path}). Interpolation gives smallness at an
+intermediate weight, still above the critical one, and this pays for the growth of the periodization bound. With
+$\varepsilon=(\alpha\hbar)^{1/2}/2$ all requirements are met for $t\le\delta(\alpha/\hbar)^{1/2}$.
+
+\emph{The printed class.} An amplitude of the printed class is $a=\ue^{-\alpha\Lambda}f$ with $f$ in the weighted space of a
+weight that is critical up to a logarithm. No weight above the critical one is available, so the vectors above cannot be
+interpolated. Instead we interpolate the linear maps that produce these vectors from the data, between $L^2(\Hb)$ and a
+power weight (Lemma~\ref{os:transfer}). This needs the smoothing operators of the proof to be bounded at the critical weight,
+which follows from a multiplier theorem proved by finite propagation speed (Theorem~\ref{os:cw}), and a periodization bound at
+the critical weight with a logarithmic factor (Proposition~\ref{os:p1}).
+
+\subsection{Context and related work}\label{subsec:context}
+Rigorous semiclassical approximations for
 the Schr\"odinger flow are in general controlled only up to the Ehrenfest
 time $T\sim\lambda^{-1}\log(1/\hbar)$, where $\lambda$ is a Lyapunov exponent.
 For coherent states this is due to Combescure and Robert \cite{CR97} and
@@ -192,12 +349,34 @@ coherent states equidistribute on the logarithmic time scale. For Lagrangian
 states on Anosov manifolds, Schubert proved equidistribution of expectation
 values up to the Ehrenfest time \cite{Sch05}, and with Vallejos and Toscano
 described how localized states become Lagrangian states on that time scale
-\cite{STV12}. The preprint \cite{S} aimed to go far beyond the Ehrenfest time on
+\cite{STV12}. Estimates for the propagator on time scales that are multiples of the
+Ehrenfest time are also the main tool in the work of Anantharaman \cite{Ana08} and of
+Anantharaman and Nonnenmacher \cite{AN07} on the entropy of semiclassical measures,
+and, on hyperbolic surfaces, in the proof of Dyatlov and Jin \cite{DJ18} that
+semiclassical measures have full support. All these results concern times that are
+logarithmic in $\hbar$.
+
+Beyond that scale the evidence has been numerical. Tomsovic and Heller
+\cite{TH91,TH93} studied the accuracy of semiclassical propagation for the stadium
+billiard, found no breakdown at the Ehrenfest time, and argued that the approximation
+should remain accurate up to times of order $1/\hbar$ when the classical system has no
+singularities. The obstacle to a proof is that the approximation is a sum of
+oscillating terms whose number grows exponentially with time, and the error terms
+are of the same nature \cite{S}. The preprint \cite{S} aimed to control the error far
+beyond the Ehrenfest time on
 surfaces of constant negative curvature, up to $T\sim\hbar^{-1/2}$, for
 Lagrangian states attached to an unstable manifold, and was withdrawn because of
 a gap in its dispersive estimates. To the author's knowledge, no proof of a
 semiclassical approximation of this kind beyond the Ehrenfest time has appeared
 since. The present paper supplies one, with the explicit constants of \cite{S}.
+
+The theorems control the error of the approximation; they do not describe the
+approximation itself, which is again a sum over exponentially many sheets of the
+cover. In the picture that goes back to Berry and Balazs \cite{BB79}, waves
+propagated in a classically chaotic system behave at large times like random
+superpositions of plane waves; Ingremeau and Rivera \cite{IR22} proved a statement of
+this kind for Lagrangian states on compact manifolds of negative curvature, for a
+wide family of phases.
 
 The approximation here is the periodization $u^{(K)}(t)_\Gamma$ of an explicit
 solution on the universal cover; it is not classical transport of the Lagrangian
@@ -219,6 +398,95 @@ proof of escape, since it does not compare the mass or phase of the
 contributing sheets. We do not compare the two results directly, and neither confirms nor
 excludes the other. Brooks's initial states carry a fixed smooth cutoff in $y$
 and so are not analytic amplitudes of the class of Theorem~\ref{pc:main}.
+
+\subsection{Relation to the preprint}\label{sec:changes}
+We list how the statements above relate to those of \cite{S}, equations (1.15)--(1.36) there.
+\begin{itemize}
+\item \emph{The gap.} In the proofs of \cite[Theorems~4.1 and~4.4]{S}, the steps (4.16)$\to$(4.17), (4.55)$\to$(4.56) and
+(4.62)$\to$(4.63) infer $\norm{\ue^{X}a}\le\norm{\ue^{Y}a}$ from an operator inequality $X\le Y$ between non-commuting
+self-adjoint operators. The exponential is not operator monotone: with $X=\mathrm{diag}(0,1)$,
+$H=\begin{pmatrix}1&1\\1&1\end{pmatrix}\ge0$ and $v=(-3,1)$, the function $g(s)=\norm{\ue^{X+sH}v}^2$ has
+$g'(0)=4(6-\ue^2)<0$. In addition, \cite[Def.~1.1]{S} and the proofs of \cite[Prop.~3.5, Lemma~3.11]{S} take the two weights
+of the norm in different orders.
+\item \emph{Amplitude class.} Theorems 1.3R and 1.4R and their corollaries use the order of the proofs, with the weight
+$\langle d\rangle$ of \cite{S}. Theorem~\ref{pc:main} and its corollaries give the same bounds with the norm of
+\cite[Def.~1.1]{S}, for $\alpha\le\tfrac12$.
+\item \emph{Theorem 1.3.} \cite[(1.18)--(1.19)]{S} states the error $C\hbar\norm a_{\alpha,\beta}$ for $0\le t\le\delta\hbar^{-1/2}$.
+The error is of order $\hbar t$ (Theorem 1.3R), and this order is attained on $\Hb$ (Proposition~\ref{prop:g5}). The window
+and the generality in $\Gamma$ are unchanged.
+\item \emph{Theorem 1.4.} \cite[(1.30)--(1.31)]{S} states the bound
+\[C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N-4}(\hbar t/\alpha^2)^K\norm a_{\alpha,\beta}\]
+for $\alpha^3\ge\beta^2\hbar$ and $0\le t\le\delta\alpha^{3/2}\hbar^{-1/2}$. Theorem 1.4R has the same constants $C^{N+K+1}N^{2N}K!$, the condition
+$\alpha^3\ge\kappa\hbar$ for any fixed $\kappa>0$ ($\kappa=\beta^2$ is the printed one), the longer window
+$t\le\delta(\alpha/\hbar)^{1/2}$, and a bound that is smaller than the printed one by the factor $(\alpha\hbar)^4\hbar t/\alpha^2\le1$.
+It is stated for $\alpha\le\alpha_0$; in the swapped class larger $\alpha$ are covered by nesting, with constants that depend
+on an upper bound for $\alpha$.
+\item \emph{Corollary 1.5.} The window for $K$ printed in \cite[(1.32)]{S} is replaced by the multiplicative window
+$K\delta_K\in[1-\epsilon,1-\epsilon/2]$, which is the one used in the proof in \cite{S}. The prefactor is $(\alpha\hbar)^{-2N}$
+instead of $(\alpha\hbar)^{-2N-4}$.
+\item \emph{Corollary 1.6.} \cite[(1.34)--(1.36)]{S} states the pointwise bound
+\[C^{N+K+1}(2N)!\,K!\,(\alpha\hbar)^{-2N-8}(\hbar t)^K\norm a_{\alpha,\beta}\]
+for every $\Gamma$. Corollary 1.6R assumes a positive
+injectivity radius and has the prefactor $(\alpha\hbar)^{-2N-4}$ and the time factor $(\hbar t/\alpha^2)^{K+1}$. For fixed
+$\alpha$ the factor $\alpha^{-2K}$ can be put into $C^K$, and the printed time factor follows; with constants uniform in
+$\alpha$ the factor $\hbar t/\alpha^2$ is what Theorem~1.4 gives. On surfaces with cusps the bound holds with the factor
+$m(z)^{1/2}$ (Corollary~\ref{pc:cor16}). Below cusp height $\asymp(\alpha\hbar)^{-8}$ the printed prefactor
+$(\alpha\hbar)^{-2N-8}$ absorbs this factor (Remark~\ref{pc:remcusp}); above that height it cannot be removed on the modular
+surface (Theorem~\ref{cl:main}, Remark~\ref{cl:reading}). In \cite[(1.36)]{S}, $\psi^{(K)}$ should read $u^{(K)}$.
+\end{itemize}
+
+\subsection{Organization}
+Section~\ref{sec:g5} shows that the order $\hbar t$ is attained. Section~\ref{sec:printed} treats the printed class: the theorem
+and its proof, the corollaries with the pointwise bounds, and the lower bound on the modular surface.
+Section~\ref{sec:outlook} collects open problems. The appendices contain the proofs for the swapped class: the mollified flow
+(Appendix~\ref{app:kl}), multiplication by weights in analytic norms (Appendix~\ref{app:m}), the weighted bounds
+(Appendix~\ref{app:ws}), the proof of Theorem~1.4R (Appendix~\ref{sec:dd}) and the periodization lemmas
+(Appendix~\ref{sec:t2}). Appendix~\ref{app:o1st} contains the estimates at the critical weight used in
+Section~\ref{sec:printed}, and Appendix~\ref{app:lean} describes the formalization.
+
+\section{The order \texorpdfstring{$\hbar t$}{ht} of the leading error is attained}\label{sec:g5}
+\begin{proposition}\label{prop:g5}
+Let $\Gamma=\{\mathrm{id}\}$, allowed in \cite{S} since a Fuchsian group there is any discrete subgroup.
+Let $a\ne0$ lie in every Sobolev space, e.g.\ $a=\ue^{-\alpha\sqrt{-\Delta}}\ue^{-\beta\langle d\rangle}f$ with
+$f\in C_c^\infty$. Then for $t=d\,\hbar^{-1/2}$, $d>0$ fixed,
+\[
+\norm{u^{(0)}(t)-\cU(t)(a\ue^{i\varphi/\hbar})}_{L^2(\Hb)}=\tfrac d2\sqrt\hbar\,\norm{Aa}+O_{a,d}(\hbar),\qquad A=Y^2-Y,
+\]
+and $\norm{Aa}\ge\norm a/4>0$. Hence the order $\hbar t$ of Theorem~\ref{thm:main} is attained, and the bound
+$C\hbar\norm a_{\alpha,\beta}$ of \cite[(1.18)]{S} cannot hold on the window \cite[(1.19)]{S}.
+\end{proposition}
+\begin{proof}
+By \eqref{eq:factor} and unitarity of $\cU,V$, the left side equals $\norm{V(t)a-a}$. Backward Duhamel on
+the fixed input gives
+\[V(t)a-a=\tfrac{i\hbar}{2}\int_0^t\Delta(s)a\,ds+R\]
+with $\norm R\le\tfrac{\hbar^2t^2}{8}\sup_{r,s}\norm{\Delta(r)\Delta(s)a}$,
+and
+\[\int_0^t\Delta(s)\,ds=tA+\tfrac{1-\ue^{-2t}}2X^2.\] In the variable $r=\log y$ and after the unitary
+gauge $a=\ue^{r/2}g$, $A$ becomes $\partial_r^2-1/4$, so $-A\ge1/4$.
+\end{proof}
+
+\begin{remark}[The formalized statement]\label{rem:g5-lean}
+The formal theorem is the negation of the printed theorem; it does not prove the asymptotic formula. The printed statement is formalized as: for every Fuchsian $\Gamma$ and all $\alpha>0$, $\beta>1$ there are $C,\delta,\hbar_0>0$ such that
+$\norm{u^{(0)}(t)_\Gamma-\cU(t)(a\ue^{i\varphi_b/\hbar})_\Gamma}_{L^2(M)}\le C\hbar\norm a_{\alpha,\beta}$ for all $0<\hbar\le\hbar_0$, all $0\le t\le\delta\hbar^{-1/2}$, all $b$ and all $C^\infty$ amplitudes of finite printed norm. The restrictions to $\hbar\le\hbar_0$ and to $C^\infty$ amplitudes weaken the printed claim, and the formal theorem states that this weaker claim is false. Its proof uses $\Gamma=\{\mathrm{id}\}$, $\alpha=\tfrac12$, $\beta=2$, $b=\infty$ and the amplitude $a=\ue^{-\alpha\Lambda}\ue^{-3X_0}$, $X_0=\cosh d(i,\cdot)$. It takes the Dyson identity (D4) of Proposition~\ref{prop:dd-id} at $K=0$ and $K=1$, which gives the expansion above with $R$ the second-order term, and uses that periodization over the trivial group is an isometry. The bound $\norm R\le\tfrac{\hbar^2t^2}8\sup_{r,s}\norm{\Delta(r)\Delta(s)a}$ comes from Lemma~\ref{lem:wb} at $N=0$, and $\norm{Aa}\ge\norm a/4$ from $Y^*=1-Y$ on $\operatorname{Dom}(\Delta)$: $\langle a,Aa\rangle=-\norm{Ya}^2$ and $2\operatorname{Re}\langle a,Ya\rangle=\norm a^2$.
+\end{remark}
+
+\input{sec_printed}
+
+\section{Open problems and outlook}\label{sec:outlook}
+\begin{enumerate}
+\item \emph{Longer times.} The window $t\le\delta(\alpha/\hbar)^{1/2}$ comes from the mollification at scale
+$\varepsilon=(\alpha\hbar)^{1/2}/2$: the mollified flow is controlled up to times of order $\varepsilon/\hbar$
+(Propositions~\ref{prop:a0} and~\ref{prop:ws}), and the defect of the mollifier is small only when $\varepsilon$ is small
+compared with $\alpha$ (Lemma~\ref{lem:unw}). \cite[Conjecture~1]{S} is a dispersive estimate for the unmollified flow on the
+time scale $1/\hbar$, which would extend the time scale of the theorems from $\hbar^{-1/2}$ to $\hbar^{-1}$; the numerical
+studies \cite{TH91,TH93} point in the same direction. Whether the periodized approximation stays accurate beyond
+$\hbar^{-1/2}$ is open.
+\item \emph{The approximation itself.} The theorems reduce questions about $\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma$ on the
+time scale $\hbar^{-1/2}$ to questions about the explicit sum $u^{(K)}(t)_\Gamma$. Its expectation values and its statistics
+between the Ehrenfest time and $\hbar^{-1/2}$ are not analysed here: neither equidistribution in the sense of \cite{Sch05}
+nor the random wave behaviour of \cite{BB79,IR22}.
+\item \emph{Expectation values on the modular surface.} The result of Brooks \cite{Bro17} (Section~\ref{subsec:context}) concerns
+expectation values, and the theorems of this paper are $L^2$ bounds.
 An $L^2$ error bound does control bounded observables of the two states
 it compares, since $|\langle Bu,u\rangle-\langle Bv,v\rangle|\le\|B\|(\|u\|+\|v\|)\|u-v\|$.
 What is missing is a transfer to Brooks's states. Approximating them in $L^2$ by
@@ -233,278 +501,22 @@ $\cU(t)=\ue^{i\hbar t\Delta/2}$) does not by itself decide the question: for
 spectral parameter near $r$ with $\hbar=1/r$ the two phases differ, up to a
 scalar phase, by $O(t(\lambda-r)^2/r)$, so a narrow-band comparison can persist for
 logarithmic times.
-
-\section{Setting}\label{sec:setup}
-We use the notation of arXiv:0705.0134v1 (cited as \cite{S}). Let $\Hb=\{x+iy:y>0\}$ with the metric
-$y^{-2}(dx^2+dy^2)$, volume $d\nu=y^{-2}dx\,dy$, and Laplacian $\Delta=y^2(\partial_x^2+\partial_y^2)$; the
-spectrum of $-\Delta$ on $L^2(\Hb)$ is $[1/4,\infty)$. Put $X=y\partial_x$, $Y=y\partial_y$; then
-$\Delta=X^2+Y^2-Y$. The boundary point is $b=\infty$, with $\varphi=\varphi_b=-\log y$ \cite[(2.1)]{S}.
-The transport $S(t)a(x,y)=\ue^{-t/2}a(x,\ue^t y)$ is unitary \cite[Lemma~2.1]{S}, and the dispersive part
-$V(t)$ solves $i\partial_tV=-\tfrac{\hbar}{2}\Delta(t)V$, $V(0)=I$, with
-\[
-\Delta(t)=S(t)^*\Delta S(t)=y^2(\partial_y^2+\ue^{-2t}\partial_x^2)=\ue^{-2t}X^2+Y^2-Y
-\]
-\cite[(2.9)]{S}. With $\cU(t)=\ue^{i\hbar t\Delta/2}$ one has the exact factorization \cite[Prop.~2.2]{S}
-\begin{equation}\label{eq:factor}
-\ue^{-i\varphi/\hbar}\,\cU(t)\,\ue^{i\varphi/\hbar}=\ue^{-it/(2\hbar)}S(t)V(t).
-\end{equation}
-For a Fuchsian group $\Gamma$ and $u$ on $\Hb$, $u_\Gamma=\sum_{\gamma\in\Gamma}u\circ\gamma^{-1}$.
-The leading approximation is $u^{(0)}(t)=\ue^{-it/(2\hbar)}(S(t)a)\ue^{i\varphi/\hbar}$ \cite[(1.20)]{S}.
-
-Schubert's amplitude norm is \cite[Def.~1.1]{S}
-\[
-\norm{a}_{\alpha,\beta}:=\norm{\ue^{\beta\langle d\rangle}\ue^{\alpha\sqrt{-\Delta}}a}_{L^2},\qquad
-\langle d\rangle=(1+d(x_0,\cdot)^2)^{1/2}-1 .
-\]
-
-\section{The exponentiated operator inequality}\label{sec:g1}
-In the proof of \cite[Theorem~4.4]{S}, the steps (4.55)$\to$(4.56) and (4.62)$\to$(4.63), and in the proof of
-\cite[Theorem~4.1]{S} the step (4.16)$\to$(4.17), infer $\norm{\ue^{X}a}\le\norm{\ue^{Y}a}$ from the operator
-inequality $X\le Y$ for non-commuting self-adjoint $X,Y$. This is invalid: the exponential is not
-operator monotone. For instance, with $X=\mathrm{diag}(0,1)$, $H=\begin{pmatrix}1&1\\1&1\end{pmatrix}\ge0$ and
-$v=(-3,1)$, the function $g(s)=\norm{\ue^{X+sH}v}^2$ satisfies $g'(0)=4(6-\ue^2)<0$, so
-$\norm{\ue^{X+sH}v}<\norm{\ue^{X}v}$ for small $s>0$ although $X+sH\ge X$.
-
-\section{The norms are not nested; Theorem 4.4 of \texorpdfstring{\cite{S}}{[S]} is false as printed}\label{sec:g2}
-Let $p_t(\rho)$ be the heat kernel of $\Hb$ and, for $m\ge1/2$, $K^{(m)}_\gamma(\rho)$ the kernel of
-$\ue^{-\gamma(-\Delta+m^2-1/4)^{1/2}}$; $m=1/2$ gives $\ue^{-\gamma\sqrt{-\Delta}}$.
-
-\begin{lemma}\label{lem:tail}
-For $\gamma>0$ and $m\ge1/2$ there is $c>0$ with $K^{(m)}_\gamma(\rho)\ge c\,\rho^{-3/2}\ue^{-(m+1/2)\rho}$ for $\rho\ge1$.
-\end{lemma}
-\begin{proof}
-By McKean's formula
-\[
-p_t(\rho)=\sqrt2\,\ue^{-t/4}(4\pi t)^{-3/2}\int_\rho^\infty s\,\ue^{-s^2/(4t)}(\cosh s-\cosh\rho)^{-1/2}\,ds,
-\]
-restricting to $s\in[\rho,\rho+1]$ and using $\cosh s-\cosh\rho\le(s-\rho)\sinh(\rho+1)$ gives
-\[
-p_t(\rho)\ge 2\sqrt2(4\pi)^{-3/2}t^{-3/2}\rho\,\ue^{-t/4-(\rho+1)^2/(4t)}\sinh(\rho+1)^{-1/2}.
-\]
-By subordination,
-\[K^{(m)}_\gamma(\rho)=\int_0^\infty\eta_\gamma(t)\ue^{-(m^2-1/4)t}p_t(\rho)\,dt\]
-with $\eta_\gamma(t)=\gamma(4\pi)^{-1/2}t^{-3/2}\ue^{-\gamma^2/(4t)}$. With $R=\rho+1$, the exponent
-\[f(t)=-m^2t-R^2/(4t)\]
-is maximal at $T=R/(2m)$, $f(T)=-mR$, and $|f''|\le 4m^3/R$ on $[T,\infty)$; so
-\[f\ge-mR-2m^3\]
-on $[T,T+\sqrt R]\subset[T,2T]$ for $R\ge4m^2$. Integrating over this interval gives the
-bound for large $\rho$; continuity and positivity cover the compact remainder.
-\end{proof}
-
-\begin{proposition}\label{prop:nonnest}
-Let $\beta>1/2$ and $0\le\alpha'<\alpha$. There is $a$ with $\norm{a}_{\alpha,\beta}<\infty$ and
-$\norm{a}_{\alpha',\beta}=\infty$.
-\end{proposition}
-\begin{proof}
-Let $h=\ue^{-\beta\langle d\rangle}\mathbf 1_{B(x_0,1)}$ and $a=\ue^{-\alpha\sqrt{-\Delta}}h$, so
-$\norm{a}_{\alpha,\beta}=\norm{\mathbf 1_{B(x_0,1)}}$. With $\gamma=\alpha-\alpha'$,
-$\ue^{\alpha'\sqrt{-\Delta}}a=K^{(1/2)}_\gamma*h$, and for $d(z)\ge2$ Lemma~\ref{lem:tail} gives
-$(K^{(1/2)}_\gamma*h)(z)\ge c'(d(z)+1)^{-3/2}\ue^{-d(z)}$. Since $\langle d\rangle\ge d-1$,
-\[
-|\ue^{\beta\langle d\rangle}\ue^{\alpha'\sqrt{-\Delta}}a|^2\ge c''\ue^{(2\beta-2)d}(d+1)^{-3},
-\]
-which is not integrable against $\sinh\rho\,d\rho$ when $\beta>1/2$.
-\end{proof}
-
-\begin{corollary}
-For $\beta>1/2$: \cite[Theorem~4.4]{S} fails at $t=0$ (where $V_\varepsilon(0)=I$); \cite[Theorem~4.1]{S} fails at
-$t=0$; \cite[Lemma~3.11]{S} fails for $\beta>1$; \cite[Prop.~7.1, (7.2)]{S} fails; and \cite[Prop.~3.5]{S} can hold only
-with $\beta_0\le1/2$ (take $A=I$), whereas its uses require $\beta>1/2$.
-\end{corollary}
-
-\begin{remark}
-Several proofs in \cite{S} (Prop.~3.5, Lemma~3.11) compute with the reverse order
-\[
-\norm{\ue^{\alpha\sqrt{-\Delta}}\ue^{\beta\langle d\rangle}a},
-\]
-and Lemma~4.2 mixes the two orders; the
-equivalence asserted in \cite[Prop.~7.1]{S} fails for $\beta>1/2$ by the corollary. In the reverse order the
-norms are trivially nested.
-\end{remark}
-
-\section{The Sobolev inequality (3.3) of \texorpdfstring{\cite{S}}{[S]} on cusped surfaces}\label{sec:g4}
-If $M=\Hb/\Gamma$ has a cusp, \cite[(3.3)]{S} fails for every integer $s\ge1$, and for every real $s>1$ in its printed range (by a fractional-power argument): in a cusp neighbourhood
-$\{y>Y\}/(x\sim x+1)$, the functions $u_S=\chi(\log y-S)$ satisfy $\norm{u_S}_{L^1}\asymp\norm{\Delta^su_S}_{L^1}\asymp\ue^{-S}$
-while $\norm{u_S}_{L^2}\asymp\ue^{-S/2}$.
-
-\section{Theorem 1.3 of \texorpdfstring{\cite{S}}{[S]} is false as printed}\label{sec:g5}
-\begin{proposition}\label{prop:g5}
-Let $\Gamma=\{\mathrm{id}\}$, allowed in \cite{S} since a Fuchsian group there is any discrete subgroup.
-Let $a\ne0$ lie in every Sobolev space, e.g.\ $a=\ue^{-\alpha\sqrt{-\Delta}}\ue^{-\beta\langle d\rangle}f$ with
-$f\in C_c^\infty$. Then for $t=d\,\hbar^{-1/2}$, $d>0$ fixed,
-\[
-\norm{u^{(0)}(t)-\cU(t)(a\ue^{i\varphi/\hbar})}_{L^2(\Hb)}=\tfrac d2\sqrt\hbar\,\norm{Aa}+O_{a,d}(\hbar),\qquad A=Y^2-Y,
-\]
-and $\norm{Aa}\ge\norm a/4>0$. Hence the bound $C\hbar\norm a_{\alpha,\beta}$ of \cite[(1.18)]{S} fails on the
-window \cite[(1.19)]{S}.
-\end{proposition}
-\begin{proof}
-By \eqref{eq:factor} and unitarity of $\cU,V$, the left side equals $\norm{V(t)a-a}$. Backward Duhamel on
-the fixed input gives
-\[V(t)a-a=\tfrac{i\hbar}{2}\int_0^t\Delta(s)a\,ds+R\]
-with $\norm R\le\tfrac{\hbar^2t^2}{8}\sup_{r,s}\norm{\Delta(r)\Delta(s)a}$,
-and
-\[\int_0^t\Delta(s)\,ds=tA+\tfrac{1-\ue^{-2t}}2X^2.\] In the variable $r=\log y$ and after the unitary
-gauge $a=\ue^{r/2}g$, $A$ becomes $\partial_r^2-1/4$, so $-A\ge1/4$.
-\end{proof}
-
-\begin{remark}
-The failing step in \cite{S} is the bound after (5.57) (p.~32), which treats the amplitudes $a_k^{(K)}$ of
-(5.48) as $O(1)$; they grow like $t^k$.
-\end{remark}
-
-\begin{remark}[The formalized statement]\label{rem:g5-lean}
-The formal theorem is the negation of the printed theorem; it does not prove the asymptotic formula. The printed statement is formalized as: for every Fuchsian $\Gamma$ and all $\alpha>0$, $\beta>1$ there are $C,\delta,\hbar_0>0$ such that
-$\norm{u^{(0)}(t)_\Gamma-\cU(t)(a\ue^{i\varphi_b/\hbar})_\Gamma}_{L^2(M)}\le C\hbar\norm a_{\alpha,\beta}$ for all $0<\hbar\le\hbar_0$, all $0\le t\le\delta\hbar^{-1/2}$, all $b$ and all $C^\infty$ amplitudes of finite printed norm. The restrictions to $\hbar\le\hbar_0$ and to $C^\infty$ amplitudes weaken the printed claim, and the formal theorem states that this weaker claim is false. Its proof uses $\Gamma=\{\mathrm{id}\}$, $\alpha=\tfrac12$, $\beta=2$, $b=\infty$ and the amplitude $a=\ue^{-\alpha\Lambda}\ue^{-3X_0}$, $X_0=\cosh d(i,\cdot)$. It takes the Dyson identity (D4) of Proposition~\ref{prop:dd-id} at $K=0$ and $K=1$, which gives the expansion above with $R$ the second-order term, and uses that periodization over the trivial group is an isometry. The bound $\norm R\le\tfrac{\hbar^2t^2}8\sup_{r,s}\norm{\Delta(r)\Delta(s)a}$ comes from Lemma~\ref{lem:wb} at $N=0$, and $\norm{Aa}\ge\norm a/4$ from $Y^*=1-Y$ on $\operatorname{Dom}(\Delta)$: $\langle a,Aa\rangle=-\norm{Ya}^2$ and $2\operatorname{Re}\langle a,Ya\rangle=\norm a^2$.
-\end{remark}
-
-\section{The repaired statement}\label{sec:repair}
-Let $\Lambda=\sqrt{-\Delta}$, $X_0=\cosh d(x_0,\cdot)$, $\tilde\psi=\log X_0$, $W_\gamma=\ue^{\gamma\tilde\psi}$, and
-\[
-\norm a:=\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}_{L^2(\Hb)} ,
-\]
-i.e.\ Schubert's norm with the two weights in the order in which his proofs use them (Section~\ref{sec:g2}).
-By Lemma~\ref{lem:m2w} below, a finite norm $\norm a$ at radius $\alpha$ gives a finite norm with the weight
-$\ue^{\beta\tilde\psi}$, $\tilde\psi=\log\cosh d$, in place of $\ue^{\beta\langle d\rangle}$, at the radius $c_0\alpha$ for a fixed
-$c_0=c_0(\beta)\in(0,1]$; the proofs use $\tilde\psi$.
-A repaired statement carries the number of the printed one followed by R (Theorem 1.3R repairs \cite[Theorem~1.3]{S}).
-\begin{theorem}[Theorem 1.3R]\label{thm:main}
-Let $\Gamma$ be any Fuchsian group, $\beta>1$ and $\alpha\in(0,\alpha_0]$ constants ($\alpha_0<\pi/4$ fixed).
-There are $C,\delta>0$ such that for all $0<\hbar\le1$, every $b\in\partial\Hb$ and every $a$ with $\norm a<\infty$,
-\[
-\norm{u^{(0)}(t)_\Gamma-\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma}_{L^2(\Hb/\Gamma)}\le C\hbar t\norm a,\qquad 0\le t\le\delta\hbar^{-1/2}.
-\]
-\end{theorem}
-For $\alpha>\alpha_0$ the class with radius $\alpha$ is contained in the class with radius $\alpha_0$
-(in the swapped order this nesting is trivial), so the theorem holds for every constant $\alpha>0$,
-as in \cite{S}. By Proposition~\ref{prop:g5} the order $\hbar t$ cannot be improved.
-
-\begin{proof}
-This is the case $K=N=0$ of Theorem~\ref{thm:dd14} below, with $\kappa:=\alpha^3$ and with $\alpha_0$ as here: then
-$\alpha^3\ge\kappa\hbar$ for all $0<\hbar\le1$, $u^{(0)}$ is the approximation of order $0$, and the bound of Theorem~\ref{thm:dd14} reads
-$C\alpha^{-2}\hbar t\norm a$ for $0\le t\le\delta\alpha^{1/2}\hbar^{-1/2}$. The constants of the present theorem are
-$C\alpha^{-2}$ and $\delta\alpha^{1/2}$; they depend on the fixed $\alpha$.
-\end{proof}
-
-\begin{remark}
-No Volterra resummation and no Sobolev inequality on $M$ is used, so the proof holds for every Fuchsian
-group; the cusp issue of Section~\ref{sec:g4} does not arise. Since Theorem~\ref{thm:dd14} holds for every $\beta>1/2$, so does
-the present theorem; we state it with $\beta>1$ as in \cite{S}.
-\end{remark}
-
-\subsection*{Theorem 1.4 and its corollaries}
-Let $u^{(K)}$ be Schubert's $K$-th order approximation \cite[(1.27)--(1.29)]{S}.
-\begin{theorem}[Theorem 1.4R]\label{thm:dd14}
-Fix $\beta>1/2$, $\kappa>0$ and $\alpha_0\in(0,\min(1,\pi/4))$. There are $C,\delta>0$ such that for every Fuchsian group
-$\Gamma$, all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$
-with $\norm a<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
-\[
-\norm{\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(\Hb/\Gamma)}
-\le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\norm a .
-\]
-($\delta$ does not depend on $\Gamma$, and $C$ depends on $\Gamma$ only through the Poincar\'e series bound
-$\sup_z\sum_\gamma\ue^{-(\beta+1/2)\,d(x_0,\gamma z)}$ of Lemma~\ref{lem:p1}, at the exponent $\beta+\tfrac12>1$; see the end of the
-proof of Theorem~\ref{thm:dd-appx}.)
-\end{theorem}
-This implies \cite[(1.30)]{S} on Schubert's window $t\le\delta\alpha^{3/2}\hbar^{-1/2}$, with an extra factor
-$(\alpha\hbar)^4\hbar t/\alpha^2\le1$. The proof is in Appendix~\ref{sec:dd}.
-
-\begin{corollary}[Corollary 1.5R]\label{cor:dd15}
-Under the hypotheses of Theorem~\ref{thm:dd14}, with $\delta\le\kappa^{1/2}/\max(1,C)$, put $\delta_K=C\hbar t/\alpha^2$ and let $\epsilon\in(0,1)$. For every integer $K$ with
-$(1-\epsilon)/\delta_K\le K\le(1-\epsilon/2)/\delta_K$,
-\[
-\norm{\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}\le C'\epsilon^{-1/2}C^{N+1}N^{2N}(\alpha\hbar)^{-2N}\ue^{-(1-\epsilon)\alpha^2/(C\hbar t)}\norm a .
-\]
-with $C'$ an absolute constant.
-\end{corollary}
-The window for $K$ is the one used in Schubert's proof of his Corollary~1.5; the window printed in its statement
-does not match that proof.
-
-\begin{corollary}[Corollary 1.6R]\label{cor:dd16}
-If moreover the injectivity radius of $\Hb/\Gamma$ is at least $r_0>0$, then pointwise
-\[
-\big|\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]\big|\le C^{N+K+1}(2N)!\,K!\,(\alpha\hbar)^{-2N-4}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\norm a ,
-\]
-with $C$ depending also on $r_0$, and correspondingly for the window of Corollary~\ref{cor:dd15}.
-\end{corollary}
-On surfaces with cusps the pointwise statement holds with the factor $m(z)^{1/2}$ (Corollary~\ref{pc:cor16}); on the modular surface that factor is necessary (Theorem~\ref{cl:main}).
-\begin{remark}[scope]
-All statements of this section concern the swapped class $\norm a<\infty$; the printed class is treated in Section~\ref{sec:printed}. An amplitude $\ue^{-\alpha\Lambda}h$ of the printed class \cite[Def.~1.1]{S}, with
-$h$ compactly supported, has a tail of order $d^{-3/2}\ue^{-d}$ and lies in no swapped class with exponent above $1/2$.
-Schubert's example $\hbar^{-\delta/2}\ue^{-\hbar^{-\delta}\langle d\rangle}$ is covered for $0<\delta<2/3$ (Lemma~\ref{lem:ex}).
-\end{remark}
-
-\input{sec_printed}
-
-\section{Comparison with the printed statements}\label{sec:changes}
-Printed statements are those of Schubert's arXiv:0705.0134v1, equations (1.15)--(1.36) \cite{S}. Repaired statements are Theorem~\ref{thm:main} (Theorem 1.3R), Theorem~\ref{thm:dd14} and Corollaries~\ref{cor:dd15}, \ref{cor:dd16} (Theorem 1.4R and its corollaries), Theorem~\ref{pc:main} and its corollaries (the printed class, Section~\ref{sec:printed}), and the appendices. Labels: \textsc{Weaker} means the repair assumes more or proves less; \textsc{Stronger} means the repair proves more or assumes less; \textsc{Typo-repair} means a misprint in the printed statement, corrected to what its proof gives.
-
-\medskip\noindent\textbf{Common to every result: the amplitude class.} Printed Definition 1.1 \cite[(1.15)]{S} uses $\|\ue^{\beta\langle d\rangle}\ue^{\alpha\sqrt{-\Delta}}a\|$. Theorems 1.3R and 1.4R and their corollaries use the swapped order $\|\ue^{\alpha\sqrt{-\Delta}}\ue^{\beta\langle d\rangle}a\|$, with the weight $\langle d\rangle$ of \cite{S}, the order that Schubert's proofs use; the weight itself is not a difference, since the proofs use $\log\cosh d$ internally (Lemma~\ref{lem:m2w}). The printed class itself is treated in Section~\ref{sec:printed}: Theorem~\ref{pc:main} and Corollaries~\ref{pc:thm13}, \ref{pc:cor15}, \ref{pc:cor16bg} and~\ref{pc:cor16} give the bounds below with the printed norm, for every $\beta>1/2$. Schubert's named example $\hbar^{-\delta/2}\ue^{-\hbar^{-\delta}\langle d\rangle}$ is covered already by the swapped class for $0<\delta<2/3$ (Lemma~\ref{lem:ex}); $\delta=0$ is not covered. The mathematical content of all results was reviewed in the project notes.
-
-\medskip\noindent\textbf{Theorem 1.3 (printed \cite[(1.18)]{S}--\cite[(1.19)]{S}) and Theorem 1.3R (Theorem~\ref{thm:main}).}
-\begin{itemize}
-\item Printed: for every constant $\alpha>0$, $\beta>1$, Fuchsian $\Gamma$, $a\in H_{\alpha,\beta}$, $b\in\partial\D$, the error is at most $C\|a\|_{\alpha,\beta}\hbar$ for $0\le t\le\delta\hbar^{-1/2}$.
-\item \textsc{Weaker}: the error is $C\hbar t\|a\|$ instead of $C\hbar\|a\|$. The printed claim is false: on $\mathbb D$ ($\Gamma=\{\mathrm{id}\}$) the error is $\asymp\hbar t\|Aa\|$ (Proposition~\ref{prop:g5}), and $\hbar t$ is sharp there.
-\item Amplitude class: Theorem 1.3R uses the swapped class; the printed class is covered by Corollary~\ref{pc:thm13}, with error $C\hbar t\alpha^{-2}$ on the window $\delta(\alpha/\hbar)^{1/2}$ of Theorem~\ref{pc:main}; for fixed $\alpha$ these are the error and window of Theorem 1.3R.
-\item \textsc{Stronger} (remark only): $\beta>1/2$ via Lemma~\ref{lem:t2}.
-\item No change: the window $\delta\hbar^{-1/2}$; $\Gamma$ any Fuchsian group.
-\end{itemize}
-
-\medskip\noindent\textbf{Theorem 1.4 (printed \cite[(1.30)]{S}--\cite[(1.31)]{S}) and Theorem 1.4R (Theorem~\ref{thm:dd14}).}
-\begin{itemize}
-\item Printed: for $\beta>1/2$ and $\alpha^3\ge\beta^2\hbar$, Fuchsian $\Gamma$, any $K,N$, the bound
-\[C^{N+K+1}N^{2N}K!(\alpha\hbar)^{-2N-4}(\hbar t/\alpha^2)^K\|a\|_{\alpha,\beta}\]
-holds for $0\le t\le\delta\alpha^{3/2}\hbar^{-1/2}$.
-\item Repaired: every Fuchsian $\Gamma$, every $\beta>1/2$, $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$ ($\kappa>0$ fixed; $C,\delta$ depend on $\kappa$), all $K,N$, bound $C^{N+K+1}N^{2N}K!(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}\|a\|$ for $0\le t\le\delta(\alpha/\hbar)^{1/2}$, swapped class.
-\item Amplitude class: Theorem 1.4R uses the swapped class; Theorem~\ref{pc:main} gives the same bound with the printed norm (see above).
-\item No change: $\alpha^3\ge\kappa\hbar$ with any fixed $\kappa>0$; $\kappa=\beta^2$ gives exactly the printed condition. Constants are uniform in $\alpha$, as the printed intent requires (see Theorem~\ref{thm:dd14} and Appendix~\ref{sec:dd}).
-\item \textsc{Weaker} (minor): $\alpha\le\alpha_0<\min(1,\pi/4)$. Larger $\alpha$ are covered by nesting, with constants depending on an upper bound for $\alpha$. For the printed class, Theorem~\ref{pc:main} is stated for $\alpha\le\tfrac12$.
-\item \textsc{Stronger}: window $t\le\delta(\alpha/\hbar)^{1/2}$ instead of $\delta\alpha^{3/2}\hbar^{-1/2}$. Since $\alpha\le1$ this window is longer.
-\item \textsc{Stronger}: better than printed (1.30) by the factor $(\alpha\hbar)^4\hbar t/\alpha^2\le1$, the extra factor $\hbar t/\alpha^2$ and the smaller power of $\alpha\hbar$.
-\item $(\hbar t/\alpha^2)^K$ versus printed $(\hbar t)^K$: see Corollary 1.6 below. Theorem 1.4R keeps $(\hbar t/\alpha^2)$ with power $K+1$.
-\end{itemize}
-
-\medskip\noindent\textbf{Corollary 1.5 (printed \cite[(1.32)]{S}--\cite[(1.33)]{S}) and Corollary 1.5R (Corollary~\ref{cor:dd15}).}
-\begin{itemize}
-\item Printed: under the hypotheses of Theorem 1.4, for $K\in[C\alpha^2/\hbar t-\varepsilon,\,C\alpha^2/\hbar t-\varepsilon/2]$ (as printed), the bound $\varepsilon^{-1/2}C^{N+1}N^{2N}(\alpha\hbar)^{-2N-4}e^{-(1-\varepsilon)\alpha^2/(C\hbar t)}\|a\|$ holds for $0\le t\le\delta\alpha^{3/2}\hbar^{-1/2}$ \cite[(1.33)]{S}.
-\item \textsc{Typo-repair}: the printed $K$-window is replaced by the multiplicative window $K\delta_K\in[1-\varepsilon,1-\varepsilon/2]$, $\delta_K:=C\hbar t/\alpha^2$. Schubert's own proof of his Corollary 1.5 \cite{S} uses this window.
-\item \textsc{Stronger}: prefactor $(\alpha\hbar)^{-2N}$ instead of $(\alpha\hbar)^{-2N-4}$.
-\item \textsc{Stronger}: the window is inherited from Theorem 1.4R (see above).
-\item Amplitude class: the printed class is covered by Corollary~\ref{pc:cor15}.
-\end{itemize}
-
-\medskip\noindent\textbf{Corollary 1.6 (printed \cite[(1.34)]{S}--\cite[(1.36)]{S}) and Corollary 1.6R (Corollary~\ref{cor:dd16}).}
-\begin{itemize}
-\item Printed: for every Fuchsian $\Gamma$, $\beta>1/2$, $\alpha^3\ge\beta^2\hbar$, $0\le t\le\delta\alpha^{3/2}\hbar^{-1/2}$ \cite[(1.35)]{S}: the $L^\infty$ bound $C^{N+K+1}(\alpha\hbar)^{-2N-8}(\hbar t)^K(2N)!K!\|a\|$ \cite[(1.34)]{S}. \cite[(1.36)]{S} gives the same with an exponentially small factor.
-\item Repaired: assume in addition that the injectivity radius of $\Hb/\Gamma$ is at least $r_0>0$. Then the pointwise bound $C^{N+K+1}(2N)!K!(\alpha\hbar)^{-2N-4}(\hbar t/\alpha^2)^{K+1}\|a\|$ holds on the window of Theorem 1.4R. The pointwise step uses Lemma~\ref{pc:g43}, with one Laplacian; the proof gives the exponent $-2N-2$.
-\item \textsc{Weaker} on cusped $M$, above cusp height $\asymp(\alpha\hbar)^{-8}$ only: there the bound carries the factor $m(z)^{1/2}$ (Corollary~\ref{pc:cor16}), which grows like the square root of the cusp height. Below that height the printed prefactor $(\alpha\hbar)^{-2N-8}$ absorbs the factor (Remark~\ref{pc:remcusp}). The $L^\infty$ Sobolev inequality without the factor fails on cusped $M$ (Section~\ref{sec:g4}), and on $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$ the factor-free bound itself is false (Theorem~\ref{cl:main}). Printed (1.34) claims all $\Gamma$ and all $b$ without a factor, so it is false as printed when its constants do not depend on $\hbar$ (Remark~\ref{cl:reading}); for the printed class this is part (ii) of Theorem~\ref{cl:main}, which uses Theorem~\ref{pc:main}, while part (i) refutes the swapped-class analogue.
-\item Amplitude class: the printed class is covered by Corollaries~\ref{pc:cor16bg} and~\ref{pc:cor16}.
-\item \textsc{Stronger}: power $(\alpha\hbar)^{-2N-4}$ instead of $(\alpha\hbar)^{-2N-8}$.
-\item Differs: $(\hbar t/\alpha^2)^K$ (repaired, with $K+1$) versus $(\hbar t)^K$ (printed). For fixed $\alpha$, $\alpha^{-2K}$ can go into $C^K$, which Schubert's quantifiers allow, so on bounded geometry \cite[(1.34)]{S} follows from \cite[(1.30)]{S} in that reading (this concerns the time factor only; on cusped $M$ the geometric obstruction above remains); neither \textsc{Weaker} nor \textsc{Stronger} there. With constants uniform in shrinking $\alpha$, the printed $(\hbar t)^K$ is not what (1.30) gives, and the repair keeps $\hbar t/\alpha^2$.
-\item \textsc{Typo-repair} \cite[(1.36)]{S}: $\psi^{(K)}$ is corrected to $u^{(K)}$.
-\end{itemize}
-
-\medskip\noindent\textbf{Open.}
-\begin{itemize}
-\item Corollary 1.6 on cusped $M$: it holds with the factor $m(z)^{1/2}$, which grows like the square root of the cusp height (Corollary~\ref{pc:cor16}), and in the printed form, with prefactor $(\alpha\hbar)^{-2N-8}$, below cusp height $\asymp(\alpha\hbar)^{-8}$. Above that height the factor is necessary on $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$ for $b$ a cusp (Theorem~\ref{cl:main}); for other cusped surfaces and irrational $b$ this is not decided (Remark~\ref{cl:scope}). The $L^2$ statements (Theorems~\ref{thm:dd14} and~\ref{pc:main}) cover cusped $M$.
-\item Printed Theorem 1.3 on closed surfaces: not shown false, only the swapped restatement's $\hbar t$ order is shown sharp (Proposition~\ref{prop:g5} and its sharpness remark).
-\end{itemize}
-
-\subsection*{Open problems}
-\begin{enumerate}
-\item Whether the factor $m(z)^{1/2}$ in Corollary~1.6 is needed for irrational $b$,
+\item \emph{The cusp factor.} Whether the factor $m(z)^{1/2}$ in Corollary~\ref{pc:cor16} is needed for irrational $b$,
 and on cusped surfaces other than the modular surface. The proof of
 Theorem~\ref{cl:main} would have to be redone with the cusp and $b$ at different
 points (Remark~\ref{cl:scope}); a bound depending on $b$ may be smaller there.
-\item Longer times. The window $t\le\delta(\alpha/\hbar)^{1/2}$ comes from the
-mollification at scale $\varepsilon=(\alpha\hbar)^{1/2}$. Whether the periodized
-approximation stays accurate up to times of order $\hbar^{-1}$, as numerical
-studies cited in \cite{S} suggest, is open.
+\item \emph{Compact surfaces.} Proposition~\ref{prop:g5} shows that the order $\hbar t$ of the leading error is attained on
+$\Hb$, that is, for the trivial group. Whether it is attained on compact surfaces is not decided here.
+\item \emph{Larger radii in the printed class.} Theorem~\ref{pc:main} is stated for $\alpha\le\tfrac12$, and the printed norms
+are not monotone in $\alpha$ (Remark~\ref{pc:classes}). Whether the theorem holds for larger $\alpha$ is not examined here.
+\item \emph{Other geometries.} The exact factorization \eqref{eq:factor} is specific to constant curvature and to phases
+attached to a boundary point. An extension to variable negative curvature, to hyperbolic manifolds of higher dimension, or
+to other Lagrangian states would need a replacement for it.
 \end{enumerate}
 
 \section*{AI-use disclosure}
 
-The repair was developed with assistance from AI systems. Anthropic's
+This work was developed with assistance from AI systems. Anthropic's
 Claude Opus 5.5 (\texttt{claude-opus-5-5}), running in Claude Code,
 developed and wrote out the arguments, coordinated the reviews, and
 prepared the manuscript; Claude Haiku~5.5 (\texttt{claude-haiku-5-5})
@@ -531,8 +543,10 @@ Appendices~\ref{app:kl}--\ref{app:ws} in their present form and the
 multiplier theorem at the critical weight (Theorem~\ref{os:cw}). Claude
 Fable~5.2 developed the proof of Theorem~\ref{pc:main} by transfer between
 two weights (Lemma~\ref{os:transfer} and Section~\ref{subsec:pc-proof}), which
-was reviewed by an OpenAI Codex session before it was formalized, and
-rewrote the manuscript on these proofs. They replace proofs of an earlier
+was reviewed by an OpenAI Codex session before it was formalized,
+rewrote the manuscript on these proofs, and wrote the introduction and
+the outlook in their present form; the references added there were
+checked against the publishers' records. They replace proofs of an earlier
 version that are no longer part of the paper: a weighted Sobolev
 propagation of the mollified flow and a periodization lemma, to which
 GPT-6.1 Sol had contributed, and a proof of Theorem~\ref{pc:main} by
@@ -699,8 +713,7 @@ $L\ge4/\varepsilon$, and monotone convergence in the spectral representation of 
 Here $X_0=\cosh d(x_0,\cdot)$ and $\tilde\psi=\log X_0$. The theorems use the two lemmas of the first subsection, in which the radius
 is reduced by a fixed factor. A fixed factor changes only constants, since $\alpha$ enters the conclusions through
 $(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$, the condition $\alpha^3\ge\kappa\hbar$ and the time window. The second subsection contains
-the sharp forms, by the Gutzmer identity. They are not used by the theorems of this paper; the Gutzmer identity is used for
-Lemma~\ref{lem:ex}.
+sharp forms, by the Gutzmer identity. They are not used by the theorems; they are used for Lemma~\ref{lem:ex}.
 
 \subsection{The forms used by the theorems}
 \begin{lemma}[analytic vectors from word bounds]\label{lem:expw}
@@ -784,8 +797,8 @@ with $M:=\max(c,\ue C_1,1)$. Lemma~\ref{lem:expw} gives the claim with $c_0=1/(4
 \end{proof}
 
 \subsection{Sharp forms by the Gutzmer identity}
-The statements of this subsection give the same conclusions with an arbitrarily small loss of radius. They are not used in the proofs
-of the theorems.
+The statements of this subsection give the same conclusions with an arbitrarily small loss of radius. They are used only in
+Lemma~\ref{lem:ex}.
 \begin{lemma}[M]\label{lem:m-gen}
 For $0\le\alpha''<\alpha<\pi/2$, fix $r=(\alpha''+\alpha)/4$. If $h$ is bounded and holomorphic on the sub-crown $\Xi_R=G\exp(i(-R,R)h_0)x_0$ ($h_0=\mathrm{diag}(1,-1)$) for some $R\in(r,\pi/4]$, then
 $\norm{\ue^{\alpha''\Lambda}h\,\ue^{-\alpha\Lambda}}\le C(\alpha'',\alpha)\sup_{G\exp(irh_0)x_0}|h|$.
@@ -802,15 +815,6 @@ $\sigma\in(0,\pi)$. On the orbit,
 where $X_0=\cosh d$ is the hyperboloid coordinate. So $\ue^{-\beta\tilde\psi}=X_0^{-\beta}$ is holomorphic with modulus at most $\cos(2r)^{-\beta}$,
 and multiplication by it is bounded in the orbit norm. Choose $2\alpha''<\sigma<2\alpha$ (strictly, so that
 $\ue^{-\alpha\Lambda}g$ is holomorphic on a slightly larger tube, as the Gutzmer identity requires) and compare.
-\end{proof}
-
-\begin{corollary}[M, decay weight]\label{lem:m}
-For $0\le\alpha''<\alpha<\pi/2$ and $\beta\ge0$:
-\[\norm{\ue^{\alpha''\Lambda}\ue^{-\beta\tilde\psi}\ue^{-\alpha\Lambda}}\le C(\alpha'',\alpha)\cos(\alpha)^{-\beta},\]
-with $\tilde\psi=\log\cosh d$.
-\end{corollary}
-\begin{proof}
-Apply Lemma~\ref{lem:m-gen} with $h=X_0^{-\beta}=\ue^{-\beta\tilde\psi}$ and $\alpha''<2r<\alpha$ as in the proof above; on the orbit $h$ is bounded by $\cos(2r)^{-\beta}$.
 \end{proof}
 
 \begin{lemma}[\texorpdfstring{M2: the weights $\langle d\rangle$ and $\tilde\psi$}{M2: the weights d and psi}]\label{lem:m2}
@@ -1009,6 +1013,24 @@ $L^2(X_0^{2\gamma}d\nu)$ for $Z\in\mathcal S$, and so is $J_\varepsilon\Delta(s)
 
 \begin{thebibliography}{DLMF}
 
+\bibitem[AN07]{AN07}
+N.~Anantharaman and S.~Nonnenmacher,
+\emph{Half-delocalization of eigenfunctions for the Laplacian on an Anosov manifold},
+Ann.\ Inst.\ Fourier (Grenoble) \textbf{57} (2007), no.~7, 2465--2523,
+\href{https://doi.org/10.5802/aif.2340}{doi:\allowbreak 10.5802/aif.2340},
+\href{https://arxiv.org/abs/math-ph/0610019}{arXiv:math-ph/0610019}.
+
+\bibitem[Ana08]{Ana08}
+N.~Anantharaman,
+\emph{Entropy and the localization of eigenfunctions},
+Ann.\ of Math.\ (2) \textbf{168} (2008), no.~2, 435--475,
+\href{https://doi.org/10.4007/annals.2008.168.435}{doi:\allowbreak 10.4007/annals.2008.168.435}.
+
+\bibitem[BB79]{BB79}
+M.~V.~Berry and N.~L.~Balazs,
+\emph{Evolution of semiclassical quantum states in phase space},
+J.\ Phys.\ A \textbf{12} (1979), no.~5, 625--642.
+
 \bibitem[BGP99]{BGP99}
 D.~Bambusi, S.~Graffi and T.~Paul,
 \emph{Long time semiclassical approximation of quantum flows: a proof of the
@@ -1050,6 +1072,13 @@ unstable fixed points of the classical flow},
 Asymptot.\ Anal.\ \textbf{14} (1997) 377--404,
 \href{https://doi.org/10.3233/ASY-1997-14405}{doi:\allowbreak 10.3233/ASY-1997-14405}.
 
+\bibitem[DJ18]{DJ18}
+S.~Dyatlov and L.~Jin,
+\emph{Semiclassical measures on hyperbolic surfaces have full support},
+Acta Math.\ \textbf{220} (2018), no.~2, 297--339,
+\href{https://doi.org/10.4310/ACTA.2018.v220.n2.a3}{doi:\allowbreak 10.4310/ACTA.2018.v220.n2.a3},
+\href{https://arxiv.org/abs/1705.05019}{arXiv:1705.05019}.
+
 \bibitem[DLMF]{DLMF}
 NIST Digital Library of Mathematical Functions,
 \href{https://dlmf.nist.gov}{dlmf.nist.gov}.
@@ -1067,6 +1096,13 @@ Ehrenfest times, scattering, and more general states},
 Ann.\ Henri Poincar\'e \textbf{1} (2000) 837--883,
 \href{https://doi.org/10.1007/PL00001017}{doi:\allowbreak 10.1007/PL00001017},
 \href{https://arxiv.org/abs/math-ph/9911036}{arXiv:math-ph/9911036}.
+
+\bibitem[IR22]{IR22}
+M.~Ingremeau and A.~Rivera,
+\emph{How Lagrangian states evolve into random waves},
+J.\ \'Ec.\ polytech.\ Math.\ \textbf{9} (2022) 177--212,
+\href{https://doi.org/10.5802/jep.181}{doi:\allowbreak 10.5802/jep.181},
+\href{https://arxiv.org/abs/2011.02943}{arXiv:2011.02943}.
 
 \bibitem[Kr\"o09]{K}
 B.~Kr\"otz,
@@ -1099,6 +1135,16 @@ R.~Schubert, R.~O.~Vallejos and F.~Toscano,
 J.\ Phys.\ A \textbf{45} (2012) 215307,
 \href{https://doi.org/10.1088/1751-8113/45/21/215307}{doi:\allowbreak 10.1088/1751-8113/45/21/215307},
 \href{https://arxiv.org/abs/1112.4056}{arXiv:1112.4056}.
+
+\bibitem[TH91]{TH91}
+S.~Tomsovic and E.~J.~Heller,
+\emph{Semiclassical dynamics of chaotic motion: unexpected long-time accuracy},
+Phys.\ Rev.\ Lett.\ \textbf{67} (1991), no.~6, 664--667.
+
+\bibitem[TH93]{TH93}
+S.~Tomsovic and E.~J.~Heller,
+\emph{Long-time semiclassical dynamics of chaos: the stadium billiard},
+Phys.\ Rev.\ E \textbf{47} (1993), no.~1, 282--299.
 
 \bibitem[Yak08]{Y}
 S.~B.~Yakubovich,

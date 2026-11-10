@@ -476,9 +476,9 @@ The hypothesis $g\,x_0=x_0$ is used in (iii): the Poincar\'e sum of $\Gamma$ is 
 has parabolic elements, so the base point of the weight must be the point at which the sum is taken.
 \end{remark}
 
-\subsection{The stronger form of Theorem 1.4 (Theorem 1.4R)}\label{subsec:dd-thm}
+\subsection{Theorem 1.4R with the weight \texorpdfstring{$X_0^\beta$}{X0}}\label{subsec:dd-thm}
 
-\begin{theorem}[Theorem 1.4R]\label{thm:dd-appx}
+\begin{theorem}[Theorem 1.4R, weight $X_0^\beta$]\label{thm:dd-appx}
 Let $\Gamma$ be any Fuchsian group, $\beta>1/2$ and $\kappa>0$, and $\alpha_0\in(0,\min(1,\pi/4))$. Let $\chi$ be the cutoff of \cite[(4.20)]{S} with the standing hypotheses of Appendix~\ref{app:kl} (real, even, $0\le\chi\le1$).
 There are $C,\delta>0$, depending only on $\beta,\kappa,\alpha_0,\chi,\Gamma$, such that the following holds for all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, every $b\in\partial\Hb$, every $a$ with $\norm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$:
 \[
@@ -602,7 +602,7 @@ $C:=C_{\rm int}\,c_0^{-2}\max(1,C')$. The dependence on $\Gamma$ is that of Theo
 
 \subsection{Corollaries of Theorem 1.4R}\label{subsec:dd-cor}
 
-\begin{corollary}[Corollary 1.5R]\label{cor:dd15-appx}
+\begin{corollary}[Corollary 1.5R, weight $X_0^\beta$]\label{cor:dd15-appx}
 Under the hypotheses of Theorem~\ref{thm:dd-appx}, with $\delta\le\kappa^{1/2}/\max(1,C)$, let $C$ be its constant, put $\delta_K:=C\hbar t/\alpha^2$, and let $\varepsilon\in(0,1)$. Then for every integer $K$ with $(1-\varepsilon)/\delta_K\le K\le(1-\varepsilon/2)/\delta_K$,
 \[
 \norm{\Delta^N\bigl[\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr]}_{L^2(M)}\le C'\varepsilon^{-1/2}C^{N+1}N^{2N}(\alpha\hbar)^{-2N}\ue^{-(1-\varepsilon)\alpha^2/(C\hbar t)}\norm a,
@@ -623,7 +623,7 @@ with $C'$ an absolute constant.
 The printed window ``$K\in[C\alpha^2/\hbar t-\varepsilon,\;C\alpha^2/\hbar t-\varepsilon/2]$'' says it uses the same $C$ as \cite[(1.30)]{S}. Schubert's own proof of Corollary 1.5 uses the multiplicative window $K\delta_K\in[1-\varepsilon,1-\varepsilon/2]$; we follow the proof and record the mismatch. Growth of $K!\delta_K^K$ needs $K\delta_K>e$ at leading Stirling order. If the window contains no integer the statement is vacuous; at $t=0$ the error is $0$.
 \end{remark}
 
-\begin{corollary}[Corollary 1.6R]\label{cor:dd16-appx}
+\begin{corollary}[Corollary 1.6R, weight $X_0^\beta$]\label{cor:dd16-appx}
 Assume, in addition, that $M$ has injectivity radius $\ge r_0>0$. Then, under the hypotheses of Theorem~\ref{thm:dd-appx}, the error
 $\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma-u^{(K)}(t)_\Gamma$ lies in $\operatorname{Dom}(\Delta_M^N)$, its image under $\Delta^N$ has a continuous
 representative, and at every point of $M$
@@ -646,18 +646,11 @@ $(N+1)^{2N+2}\le54^{N+1}(2N)!$ and $\alpha\hbar\le1$. \qed
 
 \begin{remark}
 The proof uses one Laplacian and gives the exponent $-2N-2$ of $\alpha\hbar$. We state the corollary with $-2N-4$, the exponent that
-enters the comparison with \cite[(1.34)]{S} below and in Section~\ref{sec:changes}.
-\end{remark}
-
-\begin{remark}[Comparison with the print]
-\begin{itemize}
-\item \cite[(1.34)--(1.35)]{S} prints $(\hbar t)^K$ instead of $(\hbar t/\alpha^2)^K$, and carries $(\alpha\hbar)^{-2N-8}$ where the bound here has $(\alpha\hbar)^{-2N-4}$ (the present bound is smaller by $(\alpha\hbar)^4\le1$). For a fixed $\alpha$ (the quantifiers there let $C$ depend on $\alpha$), $\alpha^{-2K}$ goes into $C^K$ and \cite[(1.34)]{S} follows. With constants uniform in $\alpha$, as here, the printed $(\hbar t)^K$ is not what (1.30) gives; we keep $(\hbar t/\alpha^2)^K$ and record it.
-\item The superscript $\psi^{(K)}$ for $u^{(K)}$ is a typo in \cite[(1.36)]{S}.
-\end{itemize}
+enters the comparison with \cite[(1.34)]{S} in Section~\ref{sec:changes}.
 \end{remark}
 
 \begin{remark}[Cusped $M$]
-The $L^\infty$ Sobolev inequality fails on $M$ with cusps (Section~\ref{sec:g4}). On such $M$ the same proof, with Lemma~\ref{pc:g43} as it stands, gives the pointwise bound with the additional factor $C\,m(z)^{1/2}$, as in Corollary~\ref{pc:cor16}.
+The Sobolev inequality \cite[(3.3)]{S} fails on $M$ with cusps (Remark~\ref{rem:g4}). On such $M$ the same proof, with Lemma~\ref{pc:g43} as it stands, gives the pointwise bound with the additional factor $C\,m(z)^{1/2}$, as in Corollary~\ref{pc:cor16}.
 \end{remark}
 
 % The corollary body ends before the remarks.
@@ -733,36 +726,6 @@ Prove this first for finite partial sums, then pass to the limit by monotone con
   \end{itemize}
 \item Finally $\ue^{sd}\le2^s\ue^{s\tilde\psi}$, since $\tilde\psi=\log\cosh d\ge d-\log2$. \qed
 \end{itemize}
-\end{proof}
-
-\begin{lemma}[bounded geometry]\label{lem:g42}
-Suppose the injectivity radius of $M$ is at least $r_0>0$ (e.g.\ $M$ compact, or $\Gamma$ convex cocompact). Then
-\[
-\norm{u}_{L^2(M)}\le C(r_0)\bigl(\norm{\Delta^2u}_{L^1(M)}+\norm{u}_{L^1(M)}\bigr).
-\]
-\end{lemma}
-This is the inequality \cite[(3.3)]{S} with $s=2$, under bounded geometry; without that hypothesis it fails (Section~\ref{sec:g4}). The
-pointwise corollaries of this paper do not use it; they use Lemma~\ref{pc:g43}.
-
-\begin{proof}
-Put $r:=\min(r_0,1)$.
-\medskip\noindent\textbf{Local estimate on $\Hb$.} For $z\in\Hb$ and $u\in C^4(B(z,r))$:
-\[
-|u(z)|\le C_r\bigl(\norm{\Delta^2u}_{L^1(B(z,r))}+\norm{u}_{L^1(B(z,r))}\bigr).
-\]
-\begin{itemize}
-\item $G$ acts transitively by isometries that commute with $\Delta$, so take $z=i$.
-\item Let $g(\rho):=(1/2\pi)\log\coth(\rho/2)$, the Green function of $-\Delta$ on $\Hb$ ($-\Delta$ is invertible, spectrum in $[1/4,\infty)$). Here $g\sim(1/2\pi)\log(1/\rho)$ at $0$ and $g\sim(1/\pi)\ue^{-\rho}$ at $\infty$, so $\int_\Hb g(d(i,w))^2\,dw=2\pi\int g(\rho)^2\sinh\rho\,d\rho<\infty$.
-\item $\mathcal G(z):=\int g(d(z,w))\,g(d(w,i))\,dw$ satisfies $\Delta^2\mathcal G=\delta_i$. By Cauchy--Schwarz and invariance, $|\mathcal G|\le\norm{g}_{L^2}^2$ everywhere. $\mathcal G$ is radial about $i$ and smooth on $\Hb\setminus\{i\}$ ($\Delta^2\mathcal G=0$ there; elliptic regularity).
-\item Take $\varphi\in C_c^\infty(B(i,r))$ with $\varphi=1$ on $B(i,r/2)$. Then $(\varphi u)(i)=\langle\Delta^2\mathcal G,\varphi u\rangle=\int\mathcal G\,\Delta^2(\varphi u)$.
-\item Write $\Delta^2(\varphi u)=\varphi\Delta^2u+Qu$, where $Q:=[\Delta^2,\varphi]$ has order $3$ and coefficients supported in the annulus $A:=B(i,r)\setminus B(i,r/2)$. Integrating by parts in $A$, where $\mathcal G$ is smooth:
-\[
-(\varphi u)(i)=\int\mathcal G\varphi\,\Delta^2u+\int(Q^t\mathcal G)\,u.
-\]
-Hence $|u(i)|\le\sup|\mathcal G|\cdot\norm{\Delta^2u}_{L^1(B)}+\sup_A|Q^t\mathcal G|\cdot\norm{u}_{L^1(B)}$.
-\end{itemize}
-\medskip\noindent\textbf{On $M$.} For $x\in M$, the ball $B_M(x,r)$ is isometric to $B_\Hb(i,r)$, since $r\le r_0$. So $|u(x)|\le C_r(\norm{\Delta^2u}_{L^1(M)}+\norm{u}_{L^1(M)})$, and $\norm{u}_{L^2}^2\le\norm{u}_{L^\infty}\norm{u}_{L^1}$ gives the claim (AM--GM).
-\qed
 \end{proof}
 
 % End of dd_appendix.tex
