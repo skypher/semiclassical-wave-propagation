@@ -2496,3 +2496,5 @@ import Qschubert
 #print axioms Qschubert.integral_one_add_sq_cpow
 #print axioms Qschubert.Gammaℝ_ratio
 #print axioms Qschubert.scatPhi_eq_series
+#print axioms Qschubert.re_natCast_div
+#print axioms Qschubert.logDerivZeta_log_bound

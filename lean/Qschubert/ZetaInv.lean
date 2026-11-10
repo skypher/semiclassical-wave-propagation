@@ -3,14 +3,14 @@ import Qschubert.ZetaRegion
 /-!
 # A bound for `1/ζ` in the classical zero-free region
 
-Stage M5 of the plan for Proposition `ev:mod` (`lean/BLUEPRINT.md`). From the bound `|ζ'/ζ| ≤ C log²|t|` in the region
+Stage M5 of the plan for Proposition `ev:mod` (`lean/BLUEPRINT.md`). From the bound `|ζ'/ζ| ≤ C log|t|` in the region
 (`zetaRegion`) and the bound for `1/ζ` to the right of the line `Re w = 1` (`ZetaInvBound2` of the project
-`PrimeNumberTheoremAnd`) we get, for every `a ∈ (0, A]`,
+`PrimeNumberTheoremAnd`) we get
 
-`1/|ζ(σ + it)| ≤ K_a log|t| · |t|^{2aC}` for `|t| > 3`, `1 - a/log|t| ≤ σ ≤ 1 + a/log|t|`
+`1/|ζ(σ + it)| ≤ K log|t|` for `|t| > 3`, `1 - A/log|t| ≤ σ ≤ 1 + A/log|t|`
 
-(`zeta_inv_region`). The power of `|t|` is the price of the exponent `2` in the bound for `ζ'/ζ`; with `|ζ'/ζ| ≤ C log|t|`
-it would be a constant.
+(`zeta_inv_region`): along the segment from `σ + it` to `σ₁ + it`, `σ₁ = 1 + A/log|t|`, the function `log|ζ|` changes by at
+most `C log|t| · 2A/log|t| = 2AC`.
 -/
 
 namespace Qschubert
@@ -63,14 +63,15 @@ lemma one_lt_log_of_three_lt {t : ℝ} (ht : 3 < |t|) : 1 < Real.log |t| := by
   rw [Real.lt_log_iff_exp_lt (by linarith)]
   exact Real.exp_one_lt_three.trans ht
 
-/-- **`1/ζ` in the classical zero-free region.** -/
+/-- **`1/ζ` in the classical zero-free region**: `1/|ζ(σ + it)| ≤ K log|t|` for `|t| > 3` and
+`1 - A/log|t| ≤ σ ≤ 1 + A/log|t|`. -/
 theorem zeta_inv_region :
-    ∃ A : ℝ, 0 < A ∧ A ≤ 1 / 2 ∧ ∃ C : ℝ, 0 < C ∧ ∀ a : ℝ, 0 < a → a ≤ A → ∃ K : ℝ, 0 < K ∧
-      ∀ σ t : ℝ, 3 < |t| → 1 - a / Real.log |t| ≤ σ → σ ≤ 1 + a / Real.log |t| →
-        1 / ‖riemannZeta (σ + t * I)‖ ≤ K * Real.log |t| * |t| ^ (2 * a * C) := by
+    ∃ A : ℝ, 0 < A ∧ A ≤ 1 / 2 ∧ ∃ K : ℝ, 0 < K ∧
+      ∀ σ t : ℝ, 3 < |t| → 1 - A / Real.log |t| ≤ σ → σ ≤ 1 + A / Real.log |t| →
+        1 / ‖riemannZeta (σ + t * I)‖ ≤ K * Real.log |t| := by
   obtain ⟨A, hA0, hA1, C, hC, hreg⟩ := zetaRegion
   obtain ⟨C₂, hC₂, hinv⟩ := ZetaInvBound2
-  refine ⟨A, hA0, hA1, C, hC, fun a ha0 haA => ⟨C₂ * a ^ (-(3 : ℝ) / 4), by positivity, fun σ t ht hσ1 hσ2 => ?_⟩⟩
+  refine ⟨A, hA0, hA1, C₂ * A ^ (-(3 : ℝ) / 4) * Real.exp (2 * A * C), by positivity, fun σ t ht hσ1 hσ2 => ?_⟩
   set L := Real.log |t| with hLdef
   have hL1 : 1 < L := one_lt_log_of_three_lt ht
   have hL0 : 0 < L := by linarith
@@ -78,23 +79,20 @@ theorem zeta_inv_region :
     intro h
     rw [h, abs_zero] at ht
     linarith
-  have habs : 0 < |t| := by linarith
-  have haL : 0 < a / L := div_pos ha0 hL0
-  have haL1 : a / L ≤ 1 / 2 := by
-    have : a / L ≤ a := div_le_self ha0.le hL1.le
+  have haL : 0 < A / L := div_pos hA0 hL0
+  have haL1 : A / L ≤ 1 / 2 := by
+    have : A / L ≤ A := div_le_self hA0.le hL1.le
     linarith
-  set σ₁ := 1 + a / L with hσ₁
+  set σ₁ := 1 + A / L with hσ₁
   have hne1 : ∀ x : ℝ, (x : ℂ) + t * I ≠ 1 := by
     intro x h
     have := congrArg Complex.im h
     simp at this
     exact ht0 this
   have hin : ∀ x ∈ Icc σ σ₁, riemannZeta (x + t * I) ≠ 0 ∧
-      ‖deriv riemannZeta (x + t * I) / riemannZeta (x + t * I)‖ ≤ C * L ^ 2 := by
+      ‖deriv riemannZeta (x + t * I) / riemannZeta (x + t * I)‖ ≤ C * L := by
     intro x hx
-    have h1 : 1 - A / L ≤ x := by
-      have : a / L ≤ A / L := div_le_div_of_nonneg_right haA hL0.le
-      linarith [hx.1]
+    have h1 : 1 - A / L ≤ x := by linarith [hx.1]
     have h2 : x ≤ 2 := by linarith [hx.2]
     obtain ⟨hz, -, hd⟩ := hreg x t ht h1 h2
     exact ⟨hz, hd⟩
@@ -103,7 +101,7 @@ theorem zeta_inv_region :
     intro x hx
     obtain ⟨d, hd, -⟩ := hasDerivAt_log_norm_zeta (hne1 x) (hin x hx).1
     exact hd.differentiableAt
-  have hbound : ∀ x ∈ Icc σ σ₁, ‖deriv f x‖ ≤ C * L ^ 2 := by
+  have hbound : ∀ x ∈ Icc σ σ₁, ‖deriv f x‖ ≤ C * L := by
     intro x hx
     obtain ⟨d, hd, hdb⟩ := hasDerivAt_log_norm_zeta (hne1 x) (hin x hx).1
     rw [hd.deriv, Real.norm_eq_abs]
@@ -111,51 +109,48 @@ theorem zeta_inv_region :
   have hσσ₁ : σ ≤ σ₁ := hσ2
   have hmv := (convex_Icc σ σ₁).norm_image_sub_le_of_norm_deriv_le hdiff hbound
     (left_mem_Icc.mpr hσσ₁) (right_mem_Icc.mpr hσσ₁)
-  have hlen : ‖σ₁ - σ‖ ≤ 2 * a / L := by
+  have hlen : ‖σ₁ - σ‖ ≤ 2 * A / L := by
     rw [Real.norm_eq_abs, abs_of_nonneg (by linarith)]
-    have : 2 * a / L = a / L + a / L := by ring
+    have : 2 * A / L = A / L + A / L := by ring
     rw [this]
     linarith
-  have hdiffL : f σ₁ - f σ ≤ 2 * a * C * L := by
-    have h1 : f σ₁ - f σ ≤ C * L ^ 2 * (2 * a / L) :=
+  have hdiffL : f σ₁ - f σ ≤ 2 * A * C := by
+    have h1 : f σ₁ - f σ ≤ C * L * (2 * A / L) :=
       (le_abs_self _).trans ((Real.norm_eq_abs _ ▸ hmv).trans (by gcongr))
-    have h2 : C * L ^ 2 * (2 * a / L) = 2 * a * C * L := by
+    have h2 : C * L * (2 * A / L) = 2 * A * C := by
       field_simp
     linarith
   have hz1 : riemannZeta (σ + t * I) ≠ 0 := (hin σ (left_mem_Icc.mpr hσσ₁)).1
   have hz2 : riemannZeta (σ₁ + t * I) ≠ 0 := (hin σ₁ (right_mem_Icc.mpr hσσ₁)).1
   have hn1 : 0 < ‖riemannZeta (σ + t * I)‖ := norm_pos_iff.mpr hz1
   have hn2 : 0 < ‖riemannZeta (σ₁ + t * I)‖ := norm_pos_iff.mpr hz2
-  -- `1/‖ζ(σ)‖ ≤ (1/‖ζ(σ₁)‖) · |t|^{2aC}`
-  have hratio : 1 / ‖riemannZeta (σ + t * I)‖ ≤ 1 / ‖riemannZeta (σ₁ + t * I)‖ * |t| ^ (2 * a * C) := by
-    have hexp : ‖riemannZeta (σ₁ + t * I)‖ ≤ ‖riemannZeta (σ + t * I)‖ * |t| ^ (2 * a * C) := by
-      have h1 : Real.log ‖riemannZeta (σ₁ + t * I)‖ ≤ Real.log ‖riemannZeta (σ + t * I)‖ + 2 * a * C * L := by
+  -- `1/‖ζ(σ)‖ ≤ (1/‖ζ(σ₁)‖) · e^{2AC}`
+  have hratio : 1 / ‖riemannZeta (σ + t * I)‖ ≤ 1 / ‖riemannZeta (σ₁ + t * I)‖ * Real.exp (2 * A * C) := by
+    have hexp : ‖riemannZeta (σ₁ + t * I)‖ ≤ ‖riemannZeta (σ + t * I)‖ * Real.exp (2 * A * C) := by
+      have h1 : Real.log ‖riemannZeta (σ₁ + t * I)‖ ≤ Real.log ‖riemannZeta (σ + t * I)‖ + 2 * A * C := by
         have := hdiffL
         simp only [hf] at this
         linarith
       have h2 := Real.exp_le_exp.mpr h1
-      rw [Real.exp_log hn2, Real.exp_add, Real.exp_log hn1] at h2
-      have h3 : Real.exp (2 * a * C * L) = |t| ^ (2 * a * C) := by
-        rw [Real.rpow_def_of_pos habs, hLdef]
-        ring_nf
-      rwa [h3] at h2
+      rwa [Real.exp_log hn2, Real.exp_add, Real.exp_log hn1] at h2
     rw [div_mul_eq_mul_div, one_mul, div_le_div_iff₀ hn1 hn2, one_mul]
     linarith [hexp]
-  -- `1/‖ζ(σ₁)‖ ≤ C₂ a^{-3/4} L`
+  -- `1/‖ζ(σ₁)‖ ≤ C₂ A^{-3/4} L`
   have hσ₁mem : σ₁ ∈ Ioc (1 : ℝ) 2 := ⟨by linarith, by linarith⟩
   have h1 := hinv hσ₁mem t ht
-  have hsub : σ₁ - 1 = a / L := by simp [hσ₁]
+  have hsub : σ₁ - 1 = A / L := by simp [hσ₁]
   rw [hsub] at h1
-  have hpow : (a / L) ^ (-(3 : ℝ) / 4) * L ^ ((1 : ℝ) / 4) = a ^ (-(3 : ℝ) / 4) * L := by
-    rw [Real.div_rpow ha0.le hL0.le, div_mul_eq_mul_div, mul_div_assoc]
+  have hpow : (A / L) ^ (-(3 : ℝ) / 4) * L ^ ((1 : ℝ) / 4) = A ^ (-(3 : ℝ) / 4) * L := by
+    rw [Real.div_rpow hA0.le hL0.le, div_mul_eq_mul_div, mul_div_assoc]
     congr 1
     rw [← Real.rpow_sub hL0]
     norm_num
-  have h2 : 1 / ‖riemannZeta (σ₁ + t * I)‖ ≤ C₂ * a ^ (-(3 : ℝ) / 4) * L := by
-    calc 1 / ‖riemannZeta (σ₁ + t * I)‖ ≤ C₂ * (a / L) ^ (-(3 : ℝ) / 4) * L ^ ((1 : ℝ) / 4) := h1
-      _ = C₂ * ((a / L) ^ (-(3 : ℝ) / 4) * L ^ ((1 : ℝ) / 4)) := by ring
-      _ = C₂ * a ^ (-(3 : ℝ) / 4) * L := by rw [hpow]; ring
-  calc 1 / ‖riemannZeta (σ + t * I)‖ ≤ 1 / ‖riemannZeta (σ₁ + t * I)‖ * |t| ^ (2 * a * C) := hratio
-    _ ≤ C₂ * a ^ (-(3 : ℝ) / 4) * L * |t| ^ (2 * a * C) := by gcongr
+  have h2 : 1 / ‖riemannZeta (σ₁ + t * I)‖ ≤ C₂ * A ^ (-(3 : ℝ) / 4) * L := by
+    calc 1 / ‖riemannZeta (σ₁ + t * I)‖ ≤ C₂ * (A / L) ^ (-(3 : ℝ) / 4) * L ^ ((1 : ℝ) / 4) := h1
+      _ = C₂ * ((A / L) ^ (-(3 : ℝ) / 4) * L ^ ((1 : ℝ) / 4)) := by ring
+      _ = C₂ * A ^ (-(3 : ℝ) / 4) * L := by rw [hpow]; ring
+  calc 1 / ‖riemannZeta (σ + t * I)‖ ≤ 1 / ‖riemannZeta (σ₁ + t * I)‖ * Real.exp (2 * A * C) := hratio
+    _ ≤ C₂ * A ^ (-(3 : ℝ) / 4) * L * Real.exp (2 * A * C) := by gcongr
+    _ = C₂ * A ^ (-(3 : ℝ) / 4) * Real.exp (2 * A * C) * L := by ring
 
 end Qschubert

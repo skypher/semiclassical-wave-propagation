@@ -185,6 +185,7 @@ import Qschubert.EvTransfer
 import Qschubert.EvModStatement
 import Qschubert.ScatPhi
 import Qschubert.TotientSeries
+import Qschubert.ZetaLogDeriv
 import Qschubert.ZetaRegion
 import Qschubert.ZetaInv
 import Qschubert.GammaRatio

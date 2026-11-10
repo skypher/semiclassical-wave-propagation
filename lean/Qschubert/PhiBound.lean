@@ -6,9 +6,9 @@ import Qschubert.GammaRatio
 # The scattering coefficient to the left of the critical line (`ev:PhiD`)
 
 Stage M5/M6 of the plan for Proposition `ev:mod` (`lean/BLUEPRINT.md`). For `s = σ + ir` with `|2r| > 3` and
-`1/2 - a/(2 log|2r|) ≤ σ ≤ 1/2`,
+`1/2 - A/(2 log|2r|) ≤ σ ≤ 1/2`,
 
-`|Φ(s)| ≤ K_a log²|2r| · |2r|^{2aC}` (`norm_scatPhi_le`),
+`|Φ(s)| ≤ K log²|2r|` (`norm_scatPhi_le`),
 
 from the form `Φ(s) = π^{2s-1} Γ(1-s) ζ(2-2s) / (Γ(s) ζ(2s))`, the bound for the Gamma quotient
 (`norm_Gamma_ratio_le`), the bound for `ζ` to the right of the line `Re w = 1` (`zetaRegion`) and the bound for `1/ζ` in the
@@ -43,20 +43,17 @@ lemma norm_scatPhi_eq {s : ℂ} (hs0 : 0 < s.re) (hs1 : s.re < 1) :
   rw [norm_div, norm_mul, norm_mul, norm_mul, norm_mul, norm_mul, norm_inv, n1, n2, ← hquot]
   field_simp
 
-/-- **The scattering coefficient to the left of the critical line.** There are `A, C > 0` such that for every
-`a ∈ (0, A]` there is `K` with `‖Φ(σ + ir)‖ ≤ K log²|2r| · |2r|^{2aC}` for `|2r| > 3` and
-`1/2 - a/(2 log|2r|) ≤ σ ≤ 1/2`. -/
+/-- **The scattering coefficient to the left of the critical line.** There are `A ∈ (0, 1/2]` and `K > 0` with
+`‖Φ(σ + ir)‖ ≤ K log²|2r|` for `|2r| > 3` and `1/2 - A/(2 log|2r|) ≤ σ ≤ 1/2`. -/
 theorem norm_scatPhi_le :
-    ∃ A C : ℝ, 0 < A ∧ A ≤ 1 / 2 ∧ 0 < C ∧ ∀ a : ℝ, 0 < a → a ≤ A → ∃ K : ℝ, 0 < K ∧
-      ∀ s : ℂ, 3 < |2 * s.im| → 1 / 2 - a / (2 * Real.log |2 * s.im|) ≤ s.re → s.re ≤ 1 / 2 →
-        ‖scatPhi s‖ ≤ K * Real.log |2 * s.im| ^ 2 * |2 * s.im| ^ (2 * a * C) := by
+    ∃ A K : ℝ, 0 < A ∧ A ≤ 1 / 2 ∧ 0 < K ∧
+      ∀ s : ℂ, 3 < |2 * s.im| → 1 / 2 - A / (2 * Real.log |2 * s.im|) ≤ s.re → s.re ≤ 1 / 2 →
+        ‖scatPhi s‖ ≤ K * Real.log |2 * s.im| ^ 2 := by
   obtain ⟨A₀, hA₀0, hA₀1, C₀, hC₀, hreg⟩ := zetaRegion
-  obtain ⟨A₁, hA₁0, hA₁1, C₁, hC₁, hinv⟩ := zeta_inv_region
-  refine ⟨min A₀ A₁, C₁, lt_min hA₀0 hA₁0, (min_le_left _ _).trans hA₀1, hC₁, fun a ha0 haA => ?_⟩
-  have haA₀ : a ≤ A₀ := haA.trans (min_le_left _ _)
-  have haA₁ : a ≤ A₁ := haA.trans (min_le_right _ _)
-  obtain ⟨K, hK, hK'⟩ := hinv a ha0 haA₁
-  refine ⟨2 * Real.exp 1 ^ 2 * Real.exp 1 * C₀ * K, by positivity, fun s ht hσ1 hσ2 => ?_⟩
+  obtain ⟨A₁, hA₁0, hA₁1, K, hK, hK'⟩ := zeta_inv_region
+  refine ⟨A₁, 2 * Real.exp 1 ^ 2 * Real.exp 1 * C₀ * K, hA₁0, hA₁1, by positivity, fun s ht hσ1 hσ2 => ?_⟩
+  set a : ℝ := A₁ with hadef
+  have ha0 : 0 < a := hA₁0
   set t : ℝ := 2 * s.im with htdef
   set L := Real.log |t| with hLdef
   have hL1 : 1 < L := one_lt_log_of_three_lt ht
@@ -64,7 +61,7 @@ theorem norm_scatPhi_le :
   have habs : 0 < |t| := by linarith
   have ha2L : a / (2 * L) ≤ 1 / 4 := by
     rw [div_le_iff₀ (by positivity)]
-    nlinarith [hA₀1]
+    nlinarith [hA₁1]
   have ha2L0 : 0 < a / (2 * L) := by positivity
   have hs0 : 0 < s.re := by linarith
   have hs1 : s.re < 1 := by linarith
@@ -74,7 +71,7 @@ theorem norm_scatPhi_le :
     apply Complex.ext <;> simp [htdef]
   have haLeq : a / L = 2 * (a / (2 * L)) := by field_simp
   -- `1/|ζ(2s)|`
-  have hz1 : 1 / ‖riemannZeta (2 * s)‖ ≤ K * L * |t| ^ (2 * a * C₁) := by
+  have hz1 : 1 / ‖riemannZeta (2 * s)‖ ≤ K * L := by
     rw [e2s]
     exact hK' (2 * s.re) t ht (by rw [haLeq]; linarith) (by rw [haLeq]; linarith)
   -- `|ζ(2 - 2s)|`
@@ -113,8 +110,8 @@ theorem norm_scatPhi_le :
   rw [norm_scatPhi_eq hs0 hs1]
   calc π ^ (2 * s.re - 1) * ‖Gamma (1 - s) * (Gamma s)⁻¹‖ * ‖riemannZeta (2 - 2 * s)‖
         * (1 / ‖riemannZeta (2 * s)‖)
-      ≤ 1 * (2 * Real.exp 1 ^ 2 * Real.exp 1) * (C₀ * L) * (K * L * |t| ^ (2 * a * C₁)) := by
+      ≤ 1 * (2 * Real.exp 1 ^ 2 * Real.exp 1) * (C₀ * L) * (K * L) := by
         gcongr
-    _ = 2 * Real.exp 1 ^ 2 * Real.exp 1 * C₀ * K * L ^ 2 * |t| ^ (2 * a * C₁) := by ring
+    _ = 2 * Real.exp 1 ^ 2 * Real.exp 1 * C₀ * K * L ^ 2 := by ring
 
 end Qschubert
