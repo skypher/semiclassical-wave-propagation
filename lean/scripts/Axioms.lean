@@ -2616,3 +2616,6 @@ import Qschubert
 #print axioms Qschubert.norm_test_npSec_le
 #print axioms Qschubert.norm_perio_stripFn_strip_le
 #print axioms Qschubert.norm_perio_stripFn_le
+#print axioms Qschubert.measurable_stripFn
+#print axioms Qschubert.mem_absSet_stripFn
+#print axioms Qschubert.aestronglyMeasurable_perio_stripFn
