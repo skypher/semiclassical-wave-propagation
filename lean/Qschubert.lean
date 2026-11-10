@@ -192,3 +192,5 @@ import Qschubert.GammaRatio
 import Qschubert.PhiBound
 import Qschubert.BetaLine
 import Qschubert.PhiSeries
+import Qschubert.ZeroModeWave
+import Qschubert.ZeroModePow

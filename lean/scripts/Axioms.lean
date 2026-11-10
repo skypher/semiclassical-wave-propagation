@@ -2498,3 +2498,14 @@ import Qschubert
 #print axioms Qschubert.scatPhi_eq_series
 #print axioms Qschubert.re_natCast_div
 #print axioms Qschubert.logDerivZeta_log_bound
+#print axioms Qschubert.cosDOp_zero
+#print axioms Qschubert.norm_cosDOp_apply_le
+#print axioms Qschubert.measurable_inner_cosDOp
+#print axioms Qschubert.pair_cosD_eq
+#print axioms Qschubert.hasDerivAt_pair_cosD
+#print axioms Qschubert.pair_shiftLap_cosD
+#print axioms Qschubert.pair_cosD_cosh
+#print axioms Qschubert.lapE_powIm
+#print axioms Qschubert.isTestFn_powCut
+#print axioms Qschubert.lapTestFun_powCut
+#print axioms Qschubert.pair_powCut_cosD
