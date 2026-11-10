@@ -21,3 +21,9 @@ rev = "v4.35.0"
 
 [[lean_lib]]
 name = "Qschubert"
+
+# The classical zero-free region of the Riemann zeta function and bounds near Re s = 1 (used for Proposition ev:mod).
+[[require]]
+name = "PrimeNumberTheoremAnd"
+git = "https://github.com/AlexKontorovich/PrimeNumberTheoremAnd.git"
+rev = "127b50e33f6033e2147921167a117af96d9ba4ea"

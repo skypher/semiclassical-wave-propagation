@@ -182,3 +182,7 @@ import Qschubert.KLCor16m
 import Qschubert.KLPcCor
 import Qschubert.KLG5
 import Qschubert.EvTransfer
+import Qschubert.EvModStatement
+import Qschubert.ScatPhi
+import Qschubert.TotientSeries
+import Qschubert.ZetaRegion

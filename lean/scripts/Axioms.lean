@@ -2467,3 +2467,13 @@ import Qschubert
 #print axioms Qschubert.ev_transfer_core
 #print axioms Qschubert.evTransfer_pc
 #print axioms Qschubert.evTransfer_main
+#print axioms Qschubert.scatPhi_eq
+#print axioms Qschubert.scatPhi_mul_one_sub
+#print axioms Qschubert.scatPhi_conj
+#print axioms Qschubert.completedRiemannZeta_one_add_ne_zero
+#print axioms Qschubert.norm_scatPhi_critical
+#print axioms Qschubert.scatPhi_eq_zeta
+#print axioms Qschubert.totC_convolution_zeta
+#print axioms Qschubert.LSeries_idC
+#print axioms Qschubert.LSeries_totient
+#print axioms Qschubert.zetaRegion
