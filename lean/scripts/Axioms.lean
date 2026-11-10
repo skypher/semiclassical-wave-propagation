@@ -2487,3 +2487,5 @@ import Qschubert
 #print axioms Qschubert.norm_gamG_zero
 #print axioms Qschubert.norm_gamG_le_exp
 #print axioms Qschubert.norm_Gamma_ratio_le
+#print axioms Qschubert.norm_scatPhi_eq
+#print axioms Qschubert.norm_scatPhi_le
