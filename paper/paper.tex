@@ -147,9 +147,10 @@ approximation is of order $\hbar t$; on the hyperbolic plane this order is attai
 $\hbar$ as in the preprint. The pointwise form of the estimates holds on surfaces of bounded geometry, and on
 every hyperbolic surface with an additional factor $m(z)^{1/2}$, where $m(z)$ is a local multiplicity that is
 comparable to the cusp height in a cusp; on the modular surface this factor cannot be removed. Accuracy of the
-approximation is not classical behaviour of expectation values: on the modular surface, for states attached to the cusp,
-the approximation remains accurate up to times of order $\hbar^{-1/2}$, while after a time of order
-$\log(1/\hbar)\log\log(1/\hbar)$ the state has left every compact set, contrary to the classical transport of its density. The proofs of the
+approximation is not classical behaviour of expectation values: on the modular surface, for suitable states attached to the
+cusp, the approximation remains accurate up to times of order $\hbar^{-1/2}$, while from a time of order
+$\log(1/\hbar)\log\log(1/\hbar)$ on, within this window, the mass of the state in every compact set tends to zero, contrary to the classical
+transport of its density. The proofs of the
 approximation theorems and of their corollaries, in both classes, are formalized in Lean~4; the lower bound on
 the modular surface is not.
 
@@ -188,9 +189,9 @@ differences are listed in Section~\ref{sec:changes}. The error of the leading ap
 not $\hbar$ (Proposition~\ref{prop:g5}). The pointwise bound holds on every surface with a factor $m(z)^{1/2}$, where
 $m(z)$ is a local multiplicity that is comparable to the cusp height in a cusp (Corollary~\ref{pc:cor16}), and on
 the modular surface this factor cannot be removed (Theorem~\ref{cl:main}). Section~\ref{sec:expect} draws the consequences for expectation
-values: they are those of the explicit periodized approximation (Corollary~\ref{ev:transfer}), and on the modular surface this
-approximation, although accurate up to times of order $\hbar^{-1/2}$, does not behave classically after a time of order
-$\log(1/\hbar)\log\log(1/\hbar)$ (Proposition~\ref{ev:mod}). The strategy is
+values: they are those of the explicit periodized approximation (Corollary~\ref{ev:transfer}), and on the modular surface, for suitable
+states attached to the cusp, this approximation, although accurate up to times of order $\hbar^{-1/2}$, does not behave
+classically from a time of order $\log(1/\hbar)\log\log(1/\hbar)$ on, within this window (Proposition~\ref{ev:mod}). The strategy is
 Schubert's: the factorization, the approximations $u^{(K)}$, the analytic norms and the mollified flow are
 taken from \cite{S}, and all credit for them belongs to him. What is new is the organization of the error
 term and the treatment of the weights (Section~\ref{subsec:method}). The proofs of Theorems~1.3R and~1.4R and of
@@ -509,8 +510,8 @@ the sum is not evaluated here, except in the case of Proposition~\ref{ev:mod}. O
 escape into, and neither equidistribution in the sense of \cite{Sch05} nor the random wave behaviour of \cite{BB79,IR22} is
 known for these states between the Ehrenfest time and $\hbar^{-1/2}$.
 \item \emph{Expectation values on the modular surface.} Proposition~\ref{ev:mod} concerns amplitudes whose periodization along
-the cusp does not depend on $x$, and it does not give the sharp time: by Remark~\ref{ev:time} the state should leave after
-about $2\log(1/\hbar)$, and the classical prediction should hold before. For general amplitudes of the class the part with
+the cusp does not depend on $x$, and it gives a sufficient time only. We conjecture, on the heuristic of Remark~\ref{ev:time},
+that the state leaves after about $2\log(1/\hbar)$ and that the classical prediction holds before; neither is proved here. For general amplitudes of the class the part with
 nonzero Fourier modes in $x$ is not treated. The states of Brooks \cite{Bro17} are not in the class
 (Section~\ref{subsec:context}); a transfer to them by approximation in $L^2$ would need a bound for the periodized
 approximation of the difference, which Proposition~\ref{os:p1} gives only with the factor $\ue^{t/2}(1+t/\log2)^{c'}$ and a
@@ -564,7 +565,7 @@ was reviewed by an OpenAI Codex session before it was formalized,
 rewrote the manuscript on these proofs, wrote the introduction and
 the outlook in their present form, and developed and wrote
 Section~\ref{sec:expect}; this text and that section were reviewed by an OpenAI
-Codex session, and the bibliographic data of the references added there
+Codex session, whose corrections were applied, and the bibliographic data of the references added there
 were checked against publishers' and authors' records. They replace proofs of an earlier
 version that are no longer part of the paper: a weighted Sobolev
 propagation of the mollified flow and a periodization lemma, to which
@@ -1151,7 +1152,8 @@ Contemp.\ Math.\ \textbf{488} (2009),
 \bibitem[MV07]{MV07}
 H.~L.~Montgomery and R.~C.~Vaughan,
 \emph{Multiplicative Number Theory I. Classical Theory},
-Cambridge Stud.\ Adv.\ Math.\ 97, Cambridge University Press, 2007.
+Cambridge Stud.\ Adv.\ Math.\ 97, Cambridge University Press, 2007,
+ISBN 978-0-521-84903-6.
 
 \bibitem[Olv97]{O}
 F.~W.~J.~Olver,
@@ -1197,6 +1199,12 @@ Phys.\ Rev.\ E \textbf{47} (1993), no.~1, 282--299.
 \bibitem[Yak08]{Y}
 S.~B.~Yakubovich,
 Math.\ Model.\ Anal.\ \textbf{13} (2008), no.~2, 289--302.
+
+\bibitem[Zag81]{Zag81}
+D.~Zagier,
+\emph{Eisenstein series and the Riemann zeta-function},
+in: Automorphic Forms, Representation Theory and Arithmetic (Bombay, 1979),
+Tata Inst.\ Fund.\ Res.\ Studies in Math.\ 10, Springer, 1981, pp.~275--301.
 
 \end{thebibliography}
 

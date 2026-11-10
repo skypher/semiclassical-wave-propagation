@@ -32,19 +32,20 @@ $\norm u\le\norm{\psi(0)}+\epsilon_K$.
 
 \begin{remark}[cancellation]\label{ev:cancel}
 At $K=0$, (ii) says that $\norm{[(S(t)a)\,\ue^{i\varphi_b/\hbar}]_\Gamma}_{L^2(M)}$ stays within $C\hbar t\alpha^{-2}\norm a$ of its value at $t=0$,
-for all $t\le\delta(\alpha/\hbar)^{1/2}$. Without the phase this fails: if $M$ has finite area, then by the Cauchy--Schwarz inequality
-and unfolding
+for all $t\le\delta(\alpha/\hbar)^{1/2}$. Without the phase this fails: if $M$ has finite area and $a\in L^1(\Hb)$, then by the
+Cauchy--Schwarz inequality and unfolding
 \[
   \norm{[S(t)|a|]_\Gamma}_{L^2(M)}\ge\operatorname{area}(M)^{-1/2}\int_\Hb S(t)|a|\,d\nu=\operatorname{area}(M)^{-1/2}\,\ue^{t/2}\norm a_{L^1(\Hb)} .
 \]
-So the terms of the periodization, whose number grows like $\ue^{t}$, cancel in $L^2(M)$ up to a factor of order $\ue^{-t/2}$.
-Up to the Ehrenfest time $\log(1/\hbar)$ this cancellation can be seen term by term: the terms have different phase gradients and are
-almost orthogonal. Beyond it the phase gradients of many pairs of terms differ by less than $\hbar$, and the cancellation is a
-property of the sum.
+So the norm of the periodization with the phase is smaller than the norm of the periodization of the moduli by a factor of order
+at most $\ue^{-t/2}$: the terms cancel. The following picture is geometric intuition and is not proved here. The terms that
+contribute at a point come from about $\ue^{t}$ sheets of the cover. Up to the Ehrenfest time $\log(1/\hbar)$ their phase
+gradients differ by more than $\hbar$, so that they are almost orthogonal one by one; beyond it the phase gradients of many pairs
+differ by less than $\hbar$, and the cancellation is a property of the sum.
 \end{remark}
 
-By (i), every question about expectation values of $\psi(t)$ up to times $\delta(\alpha/\hbar)^{1/2}$ is a question about the
-explicit sum $u^{(K)}(t)_\Gamma$. The next subsection answers one such question in a case where the sum can be evaluated.
+By (i), for bounded observables the expectation values of $\psi(t)$ up to times $\delta(\alpha/\hbar)^{1/2}$ are those of the
+explicit sum $u^{(K)}(t)_\Gamma$, up to an error that tends to $0$ with $\hbar$ for fixed $\alpha$ and $K$. The next subsection answers one such question in a case where the sum can be evaluated.
 
 \subsection{The modular surface}\label{subsec:ev-mod}
 In this subsection $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $M=\Gamma\backslash\Hb$, $x_0=i$, $b=\infty$ and $\varphi=-\log y$. Let
@@ -94,17 +95,21 @@ The left side of (iii) is the classical prediction for $\langle q\,\psi(t),\psi(
 $\Gamma_\infty\backslash\Hb$, transported by the geodesic flow for the time $t$ and projected to $M$; it is the sum of the squared
 moduli of the terms of $u^{(0)}(t)_\Gamma$, summed over $\Gamma_\infty\backslash\Gamma$. By (iii) this prediction tends to the
 equidistributed value. By (ii), for $q\ge0$ with support in $M_Y$,
-$\langle q\,\psi(t),\psi(t)\rangle\le\sup q\int_{M_Y}|\psi(t)|^2\to0$ on the window of (ii): the state has left every compact set, into
-the cusp. So after the time $T(\hbar)$ the expectation values of compactly supported observables are not given by the
-classical transport, although by (i) and (ii) the periodized approximation remains accurate and has the same behaviour. For the wave
+$\langle q\,\psi(t),\psi(t)\rangle\le\sup q\int_{M_Y}|\psi(t)|^2\to0$ uniformly on the window of (ii): the $L^2$ mass of the state in every
+compact set tends to $0$; the state has moved into the cusp. So on this window the expectation value of a compactly supported
+$q\ge0$, $q\not\equiv0$, is not given by the classical transport, whose limit $\tfrac3\pi\mu_0\int_Mq\,d\nu$ is positive, although by (i) and
+(ii) the periodized approximation remains accurate and has the same behaviour. The time $T(\hbar)$ is a sufficient time; it is not
+claimed to be the time at which the departure begins. For the wave
 group and Lagrangian states on unstable horocycles of the modular surface, the departure from classical transport at logarithmic
 times is due to Brooks \cite{Bro17}.
 
 \begin{remark}[the time scale]\label{ev:time}
-The proof uses the classical zero-free region of the Riemann zeta function, which gives $T(\hbar)$. The time at which the state
-leaves is governed by the phase of the scattering coefficient $\Phi$ of \eqref{ev:Phi}: $-\tfrac{d}{dr}\arg\Phi(\tfrac12+ir)=
-2\log(r/\pi)+4\operatorname{Re}\tfrac{\zeta'}{\zeta}(1+2ir)+O(r^{-2})$, a time delay close to twice the Ehrenfest time $\log(1/\hbar)$ at $r=1/\hbar$.
-We do not prove a statement with the constant $2$, and we do not prove that the classical prediction holds before that time.
+The proof uses the classical zero-free region of the Riemann zeta function, which gives the sufficient time $T(\hbar)$. For $r>0$
+and a continuous choice of the argument, the scattering coefficient $\Phi$ of \eqref{ev:Phi} satisfies
+$-\tfrac{d}{dr}\arg\Phi(\tfrac12+ir)=2\log(r/\pi)+4\operatorname{Re}\tfrac{\zeta'}{\zeta}(1+2ir)+O(r^{-2})$. Heuristically this is the time delay of a wave
+packet at $r=1/\hbar$, and its first term is twice the Ehrenfest time $\log(1/\hbar)$, up to a constant. The bound for $\zeta'/\zeta$ used here is
+of the same order $\log r$ as that term, so this is an indication only: we do not prove a statement with the constant $2$, and we
+do not prove that the classical prediction holds before that time.
 \end{remark}
 
 \subsubsection*{Proof of Proposition~\ref{ev:mod}}
@@ -118,8 +123,8 @@ integrable, \eqref{ev:a0} gives $0<a_0\le\norm{k_\alpha}_{L^1(\Hb)}\sup h_0$, an
 Hence $\mu_0\le\sup a_0\int_0^\infty a_0\,dy/y^2<\infty$, and $\mu_0>0$. Convolution with a radial kernel commutes with the isometries
 $z\mapsto\lambda z$, $\lambda>0$, whose generator acts on functions of $y$ alone as $y\partial_y$. So
 $(y\partial_y)^ja_0$ is given by \eqref{ev:a0} with $(y\partial_y)^jh_0$ in place of $h_0$, and since
-$|(y\partial_y)^jh_0|\le C_j\tilde h_0$ for some $\tilde h_0\in C_c^\infty((0,\infty))$, $\tilde h_0\ge0$, the same bounds hold: with
-$\tilde a_0$ defined by \eqref{ev:a0} from $\tilde h_0$,
+$|(y\partial_y)^jh_0|\le C_j\tilde h_0$ for a fixed $\tilde h_0\in C_c^\infty((0,\infty))$, $\tilde h_0\ge0$, that equals $1$ on the support of $h_0$, the same
+bounds hold: with $\tilde a_0$ defined by \eqref{ev:a0} from $\tilde h_0$,
 \begin{equation}\label{ev:a0bd}
   |(y\partial_y)^ja_0|\le C_j\tilde a_0,\qquad \sup\tilde a_0<\infty,\qquad\int_0^\infty\tilde a_0\,\frac{dy}{y^2}<\infty\qquad(j\ge0).
 \end{equation}
@@ -167,7 +172,7 @@ For $f\in C_c^\infty((0,\infty))$, $\hat f$ is entire and rapidly decreasing on 
   =\frac1{2\pi i}\int_{(2)}\hat f(s)\,\Phi(s)\,y^{1-s}\,ds ,
 \]
 because $\sum_cN_cc^{-2s}=\zeta(2s-1)/\zeta(2s)$ and $\int_{\mathbb R}(1+v^2)^{-s}dv=\sqrt\pi\,\Gamma(s-\tfrac12)/\Gamma(s)$. Moving the line to
-$\operatorname{Re}s=\tfrac12$ gives \eqref{ev:R}. For general $f\in\mathcal F$ take $f_j=f\chi(j^{-1}\log y)$ with $\chi\in C_c^\infty(\mathbb R)$, $\chi=1$ near $0$:
+$\operatorname{Re}s=\tfrac12$ gives \eqref{ev:R}. For general $f\in\mathcal F$ take $f_j=f\chi(j^{-1}\log y)$ with $\chi\in C_c^\infty(\mathbb R)$, $0\le\chi\le1$, $\chi=1$ near $0$:
 then $f_j\to f$ in $L^1$ and in $L^2$ of $dy/y^2$, so $R_{f_j}\to R_f$ in $L^1((y_1,\infty),dy/y^2)$ for every $y_1>0$, $\hat f_j(1)\to\hat f(1)$ and
 $\mathcal O_{f_j}\to\mathcal O_f$ in $L^2(dy/y^2)$, and \eqref{ev:R} follows.
 
@@ -198,8 +203,9 @@ $t\le\delta(\alpha/\hbar)^{1/2}$ we have $\epsilon_0\le C\delta\alpha^{-3/2}\hba
 where the three integrals converge absolutely because $f_0\in\mathcal F$ and $\mathcal O_{f_0}\in L^2(dy/y^2)$, and $\int_0^\infty f_0\,dy/y^2=\hat f_0(1)$.
 By \eqref{ev:ft} and \eqref{ev:mellin}, $|\hat f_0(1)|=|\hat a_0(1+i/\hbar)|\le C_n\hbar^n$. The Mellin transform of $\mathcal O_{f_0}$ at
 $\tfrac12+ir$ is $\Phi(\tfrac12-ir)\hat f_0(\tfrac12-ir)$, so by the Parseval formula and \eqref{ev:ft} the last integral is at most
-$\tfrac1{2\pi}\int|\hat a_0(\tfrac12+i(r+\tfrac1\hbar))|\,|\hat a_0(\tfrac12+i(-r+\tfrac1\hbar))|\,dr\le C_n\hbar^n$, because one of the two arguments has
-imaginary part at least $1/\hbar$ in modulus. Hence $\norm{\psi(t)}^2=\norm{\psi(0)}^2=\mu_0+O(\hbar^n)$, which is the first statement of (i).
+$\tfrac1{2\pi}\int|\hat a_0(\tfrac12+i(r+\tfrac1\hbar))|\,|\hat a_0(\tfrac12+i(-r+\tfrac1\hbar))|\,dr\le C_n\hbar^n$: at every $r$ one of the two arguments has
+imaginary part at least $1/\hbar$ in modulus, and \eqref{ev:mellin} is used with the power $n+2$ for that factor and with the power $2$ for the
+other, which is integrable in $r$. Hence $\norm{\psi(t)}^2=\norm{\psi(0)}^2=\mu_0+O(\hbar^n)$, which is the first statement of (i).
 
 Since $M$ has finite area, the constant function $1$ lies in $L^2(M)$ and $\cU(t)1=1$. So $\langle\psi(t),1\rangle=\langle\psi(0),1\rangle=\hat f_0(1)$ and
 $\langle E(\cdot|f_t),1\rangle=\hat f_t(1)$ (unfolding), and by the theorem
@@ -207,21 +213,25 @@ $\langle E(\cdot|f_t),1\rangle=\hat f_t(1)$ (unfolding), and by the theorem
   |\hat f_t(1)|\le|\hat f_0(1)|+\operatorname{area}(M)^{1/2}\epsilon_0\le C_n\hbar^n+2\epsilon_0\qquad(0\le t\le\delta(\alpha/\hbar)^{1/2}).
 \end{equation}
 
-\emph{Step 5: the outgoing term below height $Y$.} We bound $\int_0^Y|\mathcal O_{f_t}|^2dy/y^2$. Let $c_0\in(0,1]$ be a constant such that, in the region $\operatorname{Re}w\ge1-c_0/(2\log(|\operatorname{Im}w|+4))$, $\zeta(w)\ne0$, and
-$|\log\zeta(w)|\le\log\log(|\operatorname{Im}w|+4)+C$ where moreover $|\operatorname{Im}w|\ge\tfrac78$ \cite[Theorems~6.6 and~6.7]{MV07}. Put
+\emph{Step 5: the outgoing term below height $Y$.} We bound $\int_0^Y|\mathcal O_{f_t}|^2dy/y^2$. Let $c_0\in(0,1]$ be strictly smaller than the constant $c$ of \cite[Theorem~6.6]{MV07}. Then the closed region
+$\operatorname{Re}w\ge1-c_0/(2\log(|\operatorname{Im}w|+4))$ has a neighbourhood in which $\zeta(w)\ne0$, and in this region
+$|\log\zeta(w)|\le\log\log(|\operatorname{Im}w|+4)+C$ where $|\operatorname{Im}w|\ge\tfrac78$, and $\zeta(w)(w-1)$ is bounded above and away from $0$ where
+$|\operatorname{Im}w|\le\tfrac78$ \cite[Theorems~6.6 and~6.7]{MV07}. Put
 \[
   \vartheta(r):=\frac{c_0}{4\log(2|r|+4)}\in(0,\tfrac14),\qquad D:=\{s=\sigma+ir:\ \tfrac12-\vartheta(r)\le\sigma\le\tfrac12\}.
 \]
 For $s\in D$ the points $2s$ and $2-2s$ lie in that region. So for $|r|\ge1$, $|\zeta(2-2s)|$ and $|1/\zeta(2s)|$ are at most
 $C\log(|r|+3)$; and $|\Gamma(1-s)/\Gamma(s)|\le C(1+|r|)^{1-2\sigma}\le C(1+|r|)^{2\vartheta(r)}\le C'$ by Stirling's formula \cite[5.11.9]{DLMF}. For
-$|r|\le1$, $\Phi$ is holomorphic on a neighbourhood of the compact set $D\cap\{|r|\le1\}$: $\zeta(2s)$ has no zero there, and its pole at
-$s=\tfrac12$ cancels the pole of $\zeta(2-2s)$. So by the second form in \eqref{ev:Phi}, $\Phi$ is holomorphic on a neighbourhood of $D$ and
+$|r|\le1$, $\Phi$ is holomorphic on a neighbourhood of the compact set $D\cap\{|r|\le1\}$: $\zeta(2s)$ has no zero there, and in the
+quotient $\zeta(2-2s)/\zeta(2s)$ the two poles at $s=\tfrac12$ cancel. So by the second form in \eqref{ev:Phi}, $\Phi$ is holomorphic on a neighbourhood of $D$ and
 \begin{equation}\label{ev:PhiD}
   |\Phi(s)|\le C\log^2(|r|+3)\qquad(s\in D).
 \end{equation}
 By \eqref{ev:ft} and \eqref{ev:mellin}, on $D$ the function $\hat f_t$ is holomorphic and
 $|\hat f_t(\sigma+ir)|\le\ue^{-t(1/2-\sigma)}C_n(1+|r+\tfrac1\hbar|)^{-n}$. So in the integral that defines $\mathcal O_{f_t}(y)$, written as
-$\tfrac1{2\pi i}\int_{(1/2)}\Phi(s)\hat f_t(s)y^{1-s}ds$, the line may be moved to the left edge $\sigma=\tfrac12-\vartheta(r)$ of $D$; for $f_t$ the integral converges absolutely and defines the $L^2$ inverse Mellin transform pointwise. On that edge $|y^{1-s}|=y^{1/2+\vartheta(r)}$, the
+$\tfrac1{2\pi i}\int_{(1/2)}\Phi(s)\hat f_t(s)y^{1-s}ds$, the line may be moved to the left edge $\sigma=\tfrac12-\vartheta(r)$ of $D$, a piecewise smooth curve: for $f_t$ the integral converges
+absolutely and defines the $L^2$ inverse Mellin transform pointwise, and the integrals over the horizontal segments $\{\sigma+ir:\tfrac12-\vartheta(r)\le\sigma\le\tfrac12\}$
+tend to $0$ as $|r|\to\infty$, by \eqref{ev:PhiD} and the decay of $\hat f_t$. On that edge $|y^{1-s}|=y^{1/2+\vartheta(r)}$, the
 norm of $y^{1/2+\vartheta}$ in $L^2((0,Y),dy/y^2)$ is $Y^{\vartheta}(2\vartheta)^{-1/2}$, and $|ds|\le2\,dr$. Minkowski's inequality gives, for $t\ge\log Y$,
 \[
   \Big(\int_0^Y|\mathcal O_{f_t}|^2\frac{dy}{y^2}\Big)^{1/2}
@@ -252,5 +262,7 @@ $\norm{\mathbf 1_{M_Y}u^{(K)}(t)_\Gamma}\le\norm{\mathbf 1_{M_Y}\psi(t)}+\epsilo
 fixed $K$. This proves (ii).
 
 \emph{Step 7: the classical transport.} For $q$ continuous with compact support in $M$, the closed horocycles equidistribute:
-$\int_0^1q(x+iy)\,dx\to\tfrac3\pi\int_Mq\,d\nu$ as $y\to0$ \cite{Sar81}. The left side of (iii) equals
+$\int_0^1q(x+iy)\,dx\to\tfrac3\pi\int_Mq\,d\nu$ as $y\to0$. For smooth $q$ with compact support this is in \cite[Section~1, pp.~279--280]{Zag81}
+(see also \cite{Sar81}); for continuous $q$ it follows by uniform approximation, since the measures $dx$ on the horocycles and
+$\tfrac3\pi d\nu$ have mass $1$. The left side of (iii) equals
 $\int_0^\infty|a_0(\eta)|^2\big(\int_0^1q(x+i\ue^{-t}\eta)\,dx\big)\,d\eta/\eta^2$, and (iii) follows by dominated convergence. \qed
