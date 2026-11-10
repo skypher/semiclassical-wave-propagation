@@ -17,7 +17,8 @@ the cusp height. Schubert's files are not part of this repository.
 
 - `paper/`: LaTeX source of the manuscript (`paper.tex` with its input files). Build with `pdflatex paper.tex`
   (run it three times).
-- `lean/`: the Lean 4 development, namespace `Qschubert` (Lean `v4.35.0`, Mathlib `v4.35.0`, `physicslib4`).
+- `lean/`: the Lean 4 development, namespace `Qschubert` (Lean `v4.35.0`, Mathlib `v4.35.0`, `physicslib4`, and
+  `PrimeNumberTheoremAnd` for the zero-free region of the Riemann zeta function).
   Appendix "Formalization" of the manuscript says which statements are formalized, in which reading, and
   which are not.
 - `LEAN_STATUS.md`: for every labelled statement of the manuscript, whether it is formalized and by which Lean
