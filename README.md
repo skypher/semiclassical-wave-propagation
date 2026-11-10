@@ -50,3 +50,9 @@ manuscript or in the formal statements depends on them.
 A kernel check certifies the proofs of the formal statements. Whether a formal statement says what the
 corresponding statement of the manuscript says is a matter of reading; the manuscript's appendix lists the
 reading choices.
+
+## License
+
+The Lean development in `lean/` (including `lean/scripts/`) and the CI workflow in `.github/` are licensed under the
+Apache License, Version 2.0 (file `LICENSE`; copyright notice in `NOTICE`). The manuscript sources in `paper/` are not
+covered by that license; all rights in them are reserved (`paper/COPYRIGHT.md`).

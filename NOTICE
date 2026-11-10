@@ -1,0 +1,10 @@
+Semiclassical wave propagation beyond the Ehrenfest time on hyperbolic surfaces: Lean 4 formalization
+Copyright 2026 Leslie P. Polzer
+
+The Lean development in the directory lean/ (including lean/scripts/) and the continuous-integration workflow in
+.github/ are licensed under the Apache License, Version 2.0; see the file LICENSE.
+
+The manuscript sources in the directory paper/ are not covered by that license. All rights in them are reserved.
+
+The Lean development depends on Mathlib, physicslib4 and PrimeNumberTheoremAnd, which are separate works under
+their own licenses (Apache License, Version 2.0, at the pinned versions).
