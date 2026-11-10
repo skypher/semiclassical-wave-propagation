@@ -1,0 +1,23 @@
+name = "qschubert"
+version = "0.1.0"
+defaultTargets = ["Qschubert"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+autoImplicit = false
+maxSynthPendingDepth = 3
+
+# physicslib4 pinned to the commit surveyed on 2026-11-08; it pins Mathlib v4.35.0 (56a0058).
+[[require]]
+name = "physicslib4"
+git = "https://github.com/physicslib/physicslib4.git"
+rev = "2337279e729998740898c4be8f6c7d24f3e641e1"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.35.0"
+
+[[lean_lib]]
+name = "Qschubert"

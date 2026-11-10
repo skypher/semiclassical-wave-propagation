@@ -1,0 +1,82 @@
+name: Lean build and axiom audit
+
+# Builds the Lean development in lean/ from a fresh checkout and runs the two axiom audits.
+# Mathlib comes from its prebuilt cache; physicslib4 and this project are compiled here.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'lean/**'
+      - '.github/workflows/lean.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: lean-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Versions
+        run: |
+          cat lean-toolchain
+          lean --version
+          lake --version
+          nproc
+          free -g
+
+      - name: Fetch the Mathlib build cache
+        run: lake exe cache get
+
+      - name: Build
+        run: |
+          lake build 2>&1 | tee build_full.log | grep -E --line-buffered "Built Qschubert|Built Physicslib4|error|Build completed|✖" || true
+          tail -n 3 build_full.log
+          grep -q "Build completed successfully" build_full.log
+
+      - name: Axiom audit, named declarations (scripts/Axioms.lean)
+        run: |
+          lake env lean scripts/Axioms.lean > axioms.log 2>&1
+          python3 -u scripts/check_axioms.py named axioms.log scripts/Axioms.lean | tee axioms_summary.txt
+
+      - name: Axiom audit, every declaration (scripts/AxiomsAll.lean)
+        run: |
+          lake env lean scripts/AxiomsAll.lean > axioms_all.log 2>&1
+          python3 -u scripts/check_axioms.py all axioms_all.log | tee -a axioms_summary.txt
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Lean build and axiom audit"
+            echo "commit: \`${GITHUB_SHA}\`"
+            echo '```'
+            tail -n 1 build_full.log 2>/dev/null || true
+            cat axioms_summary.txt 2>/dev/null || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lean-logs
+          path: |
+            lean/build_full.log
+            lean/axioms.log
+            lean/axioms_all.log
+            lean/axioms_summary.txt
+          if-no-files-found: ignore
