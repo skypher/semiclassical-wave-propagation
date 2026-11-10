@@ -2654,3 +2654,8 @@ import Qschubert
 #print axioms Qschubert.measurable_approxSolB_zero
 #print axioms Qschubert.integrable_approxSolB_zero
 #print axioms Qschubert.zeroMode_approx_star
+#print axioms Qschubert.fubini_powR
+#print axioms Qschubert.scatPhiR_conj
+#print axioms Qschubert.continuous_scatPhiR_critS
+#print axioms Qschubert.conj_mellT
+#print axioms Qschubert.transpose_out
