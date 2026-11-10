@@ -236,3 +236,6 @@ import Qschubert.CuspGeom
 import Qschubert.MellinPlancherel
 import Qschubert.EvModMass
 import Qschubert.EvModProj
+import Qschubert.MultAnalytic
+import Qschubert.EvModRect
+import Qschubert.EvModLow
