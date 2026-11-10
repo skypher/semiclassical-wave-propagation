@@ -2524,3 +2524,6 @@ import Qschubert
 #print axioms Qschubert.norm_cosh_le
 #print axioms Qschubert.zeroMode_mult
 #print axioms Qschubert.zeroMode_mult_critical
+#print axioms Qschubert.ampMod_eq
+#print axioms Qschubert.zeroMode_mult_amp
+#print axioms Qschubert.integral_powIm_mul_slice
