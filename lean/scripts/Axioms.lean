@@ -2643,3 +2643,9 @@ import Qschubert
 #print axioms Qschubert.pairE_periodic
 #print axioms Qschubert.mean_pairE
 #print axioms Qschubert.pairing_approx_eis
+#print axioms Qschubert.prof_zero_eq
+#print axioms Qschubert.integral_powIm_test
+#print axioms Qschubert.integral_powIm_amp_critical
+#print axioms Qschubert.norm_cT
+#print axioms Qschubert.norm_fhat_le
+#print axioms Qschubert.mellin_fT
