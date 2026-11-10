@@ -2527,3 +2527,6 @@ import Qschubert
 #print axioms Qschubert.ampMod_eq
 #print axioms Qschubert.zeroMode_mult_amp
 #print axioms Qschubert.integral_powIm_mul_slice
+#print axioms Qschubert.lintegral_omC_inv_slice_le
+#print axioms Qschubert.measurable_mk_line
+#print axioms Qschubert.lintegral_zeroModeH_sq_le
