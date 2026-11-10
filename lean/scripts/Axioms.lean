@@ -2628,3 +2628,5 @@ import Qschubert
 #print axioms Qschubert.integral_conj_perio_stripFn_mul
 #print axioms Qschubert.approxSolB_one_zero
 #print axioms Qschubert.initState_one
+#print axioms Qschubert.volume_strip_above_lt_top
+#print axioms Qschubert.integral_amp_trans_periodic_bdd
