@@ -2610,3 +2610,5 @@ import Qschubert
 #print axioms Qschubert.eisF_eq_zero_of_notMem
 #print axioms Qschubert.tsum_eisF_succ
 #print axioms Qschubert.zeroMode_perio_stripFn
+#print axioms Qschubert.perio_lift_mul
+#print axioms Qschubert.integral_lift_mul_eq
