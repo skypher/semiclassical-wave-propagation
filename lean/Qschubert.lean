@@ -209,3 +209,4 @@ import Qschubert.PerioInv
 import Qschubert.ScatPhiReg
 import Qschubert.ZetaStrip
 import Qschubert.ScatPhiStrip
+import Qschubert.MellinTest

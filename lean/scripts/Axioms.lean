@@ -2565,3 +2565,10 @@ import Qschubert
 #print axioms Qschubert.norm_scatPhiR_critical
 #print axioms Qschubert.norm_scatPhiR_strip
 #print axioms Qschubert.norm_scatPhi_strip
+#print axioms Qschubert.mellT_eq_mellin
+#print axioms Qschubert.mellT_dMul
+#print axioms Qschubert.mellT_iterate_dMul
+#print axioms Qschubert.mellT_decay
+#print axioms Qschubert.differentiable_mellT
+#print axioms Qschubert.integrable_mellT_line
+#print axioms Qschubert.mellT_inversion
