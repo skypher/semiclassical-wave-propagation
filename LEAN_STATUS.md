@@ -43,7 +43,8 @@ All Lean names are in the namespace `Qschubert`.
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Corollary 4.1 (`ev:transfer`) | L | `evTransfer_main`, `evTransfer_pc`; `ev_transfer_core` |
-| Proposition 4.3 (`ev:mod`) | P | in progress: the statement of parts (i), (ii) is `Stmt_evmod` (not proved); first lemmas `norm_scatPhi_critical`, `LSeries_totient`, `zetaRegion` |
+| Proposition 4.3 (`ev:mod`) | L′ | parts (i), (ii): `evmod`, with the statement `Stmt_evmod`; part (iii) is a cited theorem and is not formalized |
+| Lemma 4.5 (`ev:meanlem`) | L | `integral_amp_mul_slice_L1`, `integrableOn_amp_mul_slice_L1`, `slice_lintegral_le` |
 
 ## Appendices A (`app:kl`)--C (`app:ws`)
 
