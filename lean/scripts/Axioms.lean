@@ -2514,3 +2514,9 @@ import Qschubert
 #print axioms Qschubert.integral_hF_slice
 #print axioms Qschubert.integrableOn_inv_mul_log_rpow
 #print axioms Qschubert.lintegral_omC_inv_lt_top
+#print axioms Qschubert.tail_exp_integrable
+#print axioms Qschubert.exists_psiF_bound
+#print axioms Qschubert.lintegral_omC_test_lt_top
+#print axioms Qschubert.norm_powIm_sq_le
+#print axioms Qschubert.integrable_powIm_mul
+#print axioms Qschubert.norm_toL2_powCut_sq_le
