@@ -223,3 +223,4 @@ import Qschubert.EisAbs
 import Qschubert.EisUnfold
 import Qschubert.EvModForm
 import Qschubert.PerioInv2
+import Qschubert.PerioMean

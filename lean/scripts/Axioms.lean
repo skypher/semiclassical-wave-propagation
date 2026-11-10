@@ -2630,3 +2630,6 @@ import Qschubert
 #print axioms Qschubert.initState_one
 #print axioms Qschubert.volume_strip_above_lt_top
 #print axioms Qschubert.integral_amp_trans_periodic_bdd
+#print axioms Qschubert.transGL_smul_eq_ofComplex
+#print axioms Qschubert.integral_comp_transGL
+#print axioms Qschubert.integral_amp_mul_eq_mean
