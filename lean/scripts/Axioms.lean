@@ -2477,3 +2477,13 @@ import Qschubert
 #print axioms Qschubert.LSeries_idC
 #print axioms Qschubert.LSeries_totient
 #print axioms Qschubert.zetaRegion
+#print axioms Qschubert.hasDerivAt_log_norm_zeta
+#print axioms Qschubert.zeta_inv_region
+#print axioms Qschubert.norm_sin_le_exp
+#print axioms Qschubert.abs_arg_le_of_re_nonneg
+#print axioms Qschubert.norm_gamH_ge
+#print axioms Qschubert.norm_gamH_le
+#print axioms Qschubert.norm_gamG_half
+#print axioms Qschubert.norm_gamG_zero
+#print axioms Qschubert.norm_gamG_le_exp
+#print axioms Qschubert.norm_Gamma_ratio_le
