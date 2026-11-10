@@ -2636,3 +2636,10 @@ import Qschubert
 #print axioms Qschubert.measurable_perio_stripFn_lift
 #print axioms Qschubert.surfMk_transGL_int
 #print axioms Qschubert.mean_perio_stripFn
+#print axioms Qschubert.norm_phs
+#print axioms Qschubert.approxSolB_one_zero_eq
+#print axioms Qschubert.dilate_transGL
+#print axioms Qschubert.measurable_pairE
+#print axioms Qschubert.pairE_periodic
+#print axioms Qschubert.mean_pairE
+#print axioms Qschubert.pairing_approx_eis

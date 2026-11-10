@@ -225,3 +225,4 @@ import Qschubert.EvModForm
 import Qschubert.PerioInv2
 import Qschubert.PerioMean
 import Qschubert.EisLift
+import Qschubert.EvModPair
