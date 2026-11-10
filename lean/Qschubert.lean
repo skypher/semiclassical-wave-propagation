@@ -197,3 +197,4 @@ import Qschubert.ZeroModePow
 import Qschubert.ZeroModeWeight
 import Qschubert.ZeroModeTail
 import Qschubert.ZeroModeBounds
+import Qschubert.ZeroModeMult

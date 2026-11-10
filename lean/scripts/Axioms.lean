@@ -2520,3 +2520,7 @@ import Qschubert
 #print axioms Qschubert.norm_powIm_sq_le
 #print axioms Qschubert.integrable_powIm_mul
 #print axioms Qschubert.norm_toL2_powCut_sq_le
+#print axioms Qschubert.inner_powCut
+#print axioms Qschubert.norm_cosh_le
+#print axioms Qschubert.zeroMode_mult
+#print axioms Qschubert.zeroMode_mult_critical
