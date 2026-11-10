@@ -2626,3 +2626,5 @@ import Qschubert
 #print axioms Qschubert.integrable_lift_mul_conj_stripFn
 #print axioms Qschubert.integral_mul_conj_perio_stripFn
 #print axioms Qschubert.integral_conj_perio_stripFn_mul
+#print axioms Qschubert.approxSolB_one_zero
+#print axioms Qschubert.initState_one
