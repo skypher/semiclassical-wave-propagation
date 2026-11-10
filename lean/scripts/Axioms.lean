@@ -2555,3 +2555,13 @@ import Qschubert
 #print axioms Qschubert.differentiableAt_scatH
 #print axioms Qschubert.completedRiemannZeta_two
 #print axioms Qschubert.scatH_one
+#print axioms Qschubert.zeta_strip_le
+#print axioms Qschubert.zeta_inv_right
+#print axioms Qschubert.zeta_inv_far
+#print axioms Qschubert.scatPhi_form1
+#print axioms Qschubert.norm_betaInt_le
+#print axioms Qschubert.norm_gamG_le_exp'
+#print axioms Qschubert.norm_scatPhi_crude
+#print axioms Qschubert.norm_scatPhiR_critical
+#print axioms Qschubert.norm_scatPhiR_strip
+#print axioms Qschubert.norm_scatPhi_strip

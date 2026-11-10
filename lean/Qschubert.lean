@@ -207,3 +207,5 @@ import Qschubert.PerioZero
 import Qschubert.PerioZero2
 import Qschubert.PerioInv
 import Qschubert.ScatPhiReg
+import Qschubert.ZetaStrip
+import Qschubert.ScatPhiStrip
