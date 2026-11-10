@@ -1,0 +1,106 @@
+% Formalization status. \leanrepo is the public repository; \leancommit is a commit of it (not of the working
+% repository). \leandecls is taken from the build and audit of lean/ at that commit
+% (lake build exit 0, 9249 jobs; lean/scripts/Axioms.lean).
+\providecommand{\lean}[1]{\texttt{\detokenize{#1}}}
+\providecommand{\leancommit}{\texttt{7c2f892}}
+\providecommand{\leanrepo}{\url{https://github.com/skypher/semiclassical-wave-propagation}}
+\providecommand{\leandecls}{2462}
+
+\section{Formalization}\label{app:lean}
+
+The statements marked \textbf{L} or \textbf{L$'$} in Table~\ref{tab:lean}, in the variants stated there, are formalized in Lean~4 and checked by its kernel. This appendix says what is checked, in which reading, and what is not. The proofs given in this paper for these statements follow the formal proofs, at the level of detail of a paper; the table names the Lean theorems that state each lemma. The asymptotic formula of Proposition~\ref{prop:g5}, the non-nesting of the norms and the results on cusped surfaces are not formalized.
+
+\subsection*{What is checked}
+The formal development is the directory \texttt{lean/} of the repository \leanrepo, namespace \lean{Qschubert}, at commit \leancommit. It is built with Lean~4 (toolchain \texttt{v4.35.0}), Mathlib at the tag \texttt{v4.35.0}, and \texttt{physicslib4} (commit \texttt{2337279}), which supplies the spectral theorem for unbounded self-adjoint operators. The command \texttt{lake build} completes without errors. The file \texttt{lean/scripts/AxiomsAll.lean} checks every declaration of the development, 6883 in all, of which 5645 are theorems: each depends only on \lean{propext}, \lean{Classical.choice} and \lean{Quot.sound}, the three axioms of Mathlib's classical logic, and none uses \lean{sorryAx}. The file \texttt{lean/scripts/Axioms.lean} prints the axioms of \leandecls\ named declarations one by one, among them every theorem named in Table~\ref{tab:lean}. The workflow \texttt{.github/workflows/lean.yml} of the repository runs the build and both checks from a fresh checkout on a hosted runner; it passes at this commit.
+
+A kernel check certifies the proofs of the formal statements. Whether a formal statement says what the corresponding statement of this paper says is a matter of reading; the choices made are listed next. The formal statements were compared with the text in independent reviews of the statements, which did not repeat the build or the axiom check.
+
+\subsection*{Reading choices}
+\begin{itemize}
+\item \emph{Groups and surfaces.} A Fuchsian group is a subgroup $\Gamma\le\mathrm{PGL}(2,\mathbb R)$ that acts properly discontinuously on $\Hb$ and consists of classes of matrices of positive determinant. $M$ is the orbit space with the measure induced from a fundamental domain; no manifold structure on $M$ is used.
+\item \emph{Operators.} $-\Delta$ on $L^2(\Hb)$ and on $L^2(M)$ is the Friedrichs extension from test functions, respectively from periodized test functions; $\Lambda$, $\ue^{\alpha\Lambda}$, $\cU(t)$ and $\Delta^N$ are functions of it by the spectral theorem.
+\item \emph{Boundary points.} The base point $x_0\in\Hb$ is a parameter, and $b=g\,\infty$ with $g\in\mathrm{SL}(2,\mathbb R)$, $g\,x_0=x_0$. Every $b\in\partial\Hb$ arises, and the objects depend on $b$ only (\lean{exists_stab_smul_infty}, \lean{initState_eq_of_stab}, \lean{approxSolB_eq_of_stab}).
+\item \emph{Amplitudes.} An amplitude is a function on $\Hb$ whose class has finite norm. The formal theorems produce its $C^\infty$ representative $a'$, equal to $a$ almost everywhere, before $\hbar,t,K,N,b$ are chosen, and $u^{(K)}$ is built from $a'$. Nonzero amplitudes of finite norm exist in both classes (\lean{printed_class_nonvacuous_beta}, \lean{swappedD_class_nonvacuous}).
+\item \emph{Conclusions.} Each $L^2$ theorem asserts that the two orbit sums converge absolutely almost everywhere and define elements of $L^2(M)$, and then bounds $\norm{\Delta^N[\,\cdot\,]}$, an element of $[0,\infty]$ that equals $\infty$ outside the domain of $\Delta^N$. The pointwise corollaries assert that the error lies in the domain of $\Delta^N$ and that $\Delta^NE$ has a continuous representative with the stated bound at every point of $M$.
+\item \emph{The cap on $\delta$ in Corollary 1.5.} For Corollary~\ref{pc:cor15} the condition $\delta\le\kappa^{1/2}/\max(1,C)$ is part of the formal statement. For Corollaries~\ref{cor:dd15} and~\ref{cor:dd15-appx} the formal statements assert that some $C$ and $\delta>0$ exist for which the bound holds on the window; their proofs take $\delta\le\kappa^{1/2}/\max(1,C)$, and $\delta$ may always be decreased, since this only shortens the time window.
+\item \emph{Ranges.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$. For the printed class the formal statements have the range $0<\alpha\le\tfrac12$ of Theorem~\ref{pc:main}, with constants $C,\delta$ that serve every $\alpha$ in it.
+\end{itemize}
+
+\subsection*{Status of the labelled statements}
+In Table~\ref{tab:lean}, \textbf{L} means that the statement is stated by the Lean theorems named in the last column, in the reading above, with the same hypotheses and the same form of the conclusion; where this paper names a constant without giving its value (``a constant $C$''), the Lean theorem gives a value or asserts existence. Consequences that a statement draws from its main assertion (introduced by ``hence'', ``consequently'' or ``in particular'') are proved in the text. \textbf{L$'$} means that a Lean theorem covers the statement in a variant, and the last column states the difference; \textbf{P} means that it is proved in this paper only. The statements marked \textbf{P} are of three kinds: the non-nesting of the norms (Section~\ref{sec:g2}); the sharpness results on cusped surfaces (Sections~\ref{sec:g4} and~\ref{subsec:cl}), with the kernel lemmas they use; and statements that the theorems do not use (the sharp forms of Appendix~\ref{app:m}, Lemma~\ref{lem:ex} and Lemma~\ref{lem:g42}). For the sharpness results the development contains only implications from a formal statement of Theorem~\ref{cl:main}(ii), which is itself not proved formally.
+
+\begin{longtable}{@{}p{0.27\textwidth}p{0.06\textwidth}p{0.62\textwidth}@{}}
+\caption{Lean status of the labelled statements.}\label{tab:lean}\\
+\hline
+Statement & Status & Lean theorem; difference\\
+\hline
+\endfirsthead
+\hline
+Statement & Status & Lean theorem; difference\\
+\hline
+\endhead
+\hline
+\endfoot
+\multicolumn{3}{@{}l}{\emph{Main text}}\\
+Lemma~\ref{lem:tail} & P & \\
+Proposition~\ref{prop:nonnest} & P & \\
+Proposition~\ref{prop:g5} & L$'$ & \lean{printedThm13_false}: the negation of the printed theorem; the asymptotic formula is not formalized (Remark~\ref{rem:g5-lean})\\
+Theorem~\ref{thm:main} (1.3R) & L & \lean{thm13R_rep}\\
+Theorem~\ref{thm:dd14} (1.4R) & L & \lean{thm14Rmain_exp}\\
+Corollary~\ref{cor:dd15} (1.5R) & L & \lean{cor15Rmain_rep}\\
+Corollary~\ref{cor:dd16} (1.6R) & L & \lean{cor16Rmain_rep}\\[2pt]
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:printed}: the printed class}}\\
+Theorem~\ref{pc:main} & L & \lean{pcmain_half}\\
+Corollary~\ref{pc:thm13} & L & \lean{pcthm13_half}\\
+Corollary~\ref{pc:cor15} & L & \lean{pccor15_half}\\
+Lemma~\ref{pc:g43} & L & \lean{sobolev_M_mult}\\
+Corollary~\ref{pc:cor16bg} & L & \lean{pccor16bg_half}\\
+Corollary~\ref{pc:cor16} & L & \lean{pccor16_half}\\
+Theorem~\ref{cl:main}, Lemmas~\ref{cl:ssob}, \ref{cl:asym}, \ref{cl:kernel}, \ref{cl:amp} & P & \\[2pt]
+\multicolumn{3}{@{}l}{\emph{Appendices~\ref{app:kl}--\ref{app:ws}}}\\
+Lemma~\ref{lem:ell} & L & \lean{inner_X_left}, \lean{inner_Y_left}, \lean{elliptic_identity}, \lean{elliptic_estimate}\\
+Lemma~\ref{lem:clip} & L & \lean{norm_Rplus_le}, \lean{norm_Rminus_le}, \lean{im_bound}\\
+Proposition~\ref{prop:a0} & L & \lean{prop_a0_eps}\\
+Lemma~\ref{lem:expw} & L & \lean{exp_of_words}\\
+Lemma~\ref{lem:mw} & L & \lean{lem_m_weak}\\
+Lemma~\ref{lem:m2w} & L & \lean{swX_le_swD}\\
+Lemma~\ref{lem:m-gen}, Corollary~\ref{lem:m}, Lemma~\ref{lem:m2} & P & not used by the theorems\\
+Lemma~\ref{lem:wave} & L & \lean{wave_weight}, \lean{wave_Bx'}, \lean{wave_By'}; \lean{wave_weightD}\\
+Lemma~\ref{lem:wcomm} & L & \lean{comm_wave}\\
+Lemma~\ref{lem:wmoll} & L & \lean{w_J}, \lean{w_Bx}, \lean{w_By}, \lean{w_JS}, \lean{w_XX}, \lean{w_YY}, \lean{w_comm}\\
+Proposition~\ref{prop:ws} & L & \lean{ws0_trunc}, \lean{ws0_cosh}\\
+Lemma~\ref{lem:path} & L & \lean{WOps.pathG_eq}, \lean{norm_pathH_le}, \lean{norm_xInt_le}, \lean{xInt_chart}, \lean{path_duhamel}\\[2pt]
+\multicolumn{3}{@{}l}{\emph{Appendix~\ref{sec:dd}}}\\
+Proposition~\ref{prop:dd-id} & L & \lean{dd_D12_simplex}, \lean{dd_D3}, \lean{SurfW.surf_D4}, \lean{SurfW.surf_D4_bound}\\
+Lemma~\ref{lem:surf-lap} & L & \lean{SurfW.surf_lap}\\
+Lemma~\ref{lem:surf-duh} & L & \lean{SurfW.surf_duhamel}\\
+Corollary~\ref{cor:surf-dyson} & L & \lean{SurfW.surf_dyson}\\
+Lemma~\ref{lem:fc} & L & \lean{lem_fc}\\
+Lemma~\ref{lem:wc} & L & \lean{lem_wc}\\
+Lemma~\ref{lem:fdb} & L & \lean{fdb}\\
+Lemma~\ref{lem:sc} & L & \lean{lem_sc}\\
+Lemma~\ref{lem:wb} & L & \lean{lem_wb_w}, \lean{lem_wb_u}\\
+Lemma~\ref{lem:unw} & L & \lean{unw_err}\\
+Lemma~\ref{lem:lift} & L & \lean{allWords_of_exp}, \lean{patch_smooth}, \lean{glue_smooth}, \lean{lift1}\\
+Lemma~\ref{lem:base} & L & \lean{exists_stab_smul_infty}, \lean{initState_mul}, \lean{approxSolB_mul}, \lean{expLambda_iso}, \lean{poincareSup_conj_move}\\
+Theorem~\ref{thm:dd-appx} & L & \lean{thm14R_rep}\\
+Corollary~\ref{cor:dd15-appx} & L & \lean{cor15R_rep}\\
+Corollary~\ref{cor:dd16-appx} & L & \lean{cor16R_rep}\\
+Lemma~\ref{lem:ex} & P & \\[2pt]
+\multicolumn{3}{@{}l}{\emph{Appendix~\ref{sec:t2}}}\\
+Lemma~\ref{lem:p1} & L & \lean{poincareSup_lt_top}\\
+Lemma~\ref{lem:t2} & L & \lean{lem_t2}\\
+Lemma~\ref{lem:g42} & P & not used by the theorems\\[2pt]
+\multicolumn{3}{@{}l}{\emph{Appendix~\ref{app:o1st}}}\\
+Lemma~\ref{os:int} & L & \lean{wI0}, \lean{wI2}\\
+Lemma~\ref{os:prof} & L & \lean{gTauM_symbol}, \lean{gTauM_expmass}, \lean{hSM_symbol}, \lean{hSM_expmass}, \lean{gTau_TailB}, \lean{bProf_symbol}, \lean{bProf_TailB}\\
+Lemma~\ref{os:speed} & L & \lean{finite_speed}, \lean{finite_speed_inner}\\
+Theorem~\ref{os:cw} & L & \lean{cw_abstract}\\
+Corollary~\ref{os:cwp} & L & \lean{poisson_cw}, \lean{B_cw}\\
+Proposition~\ref{os:data} & L & \lean{data_factor}, \lean{omP_le_exp_angle}\\
+Lemma~\ref{os:words} & L & \lean{poissonM_w}, \lean{lamM_w}, \lean{lamM_pow_w}, \lean{words_rec}, \lean{words_w}\\
+Lemma~\ref{os:transfer} & L & \lean{transfer} (there for the weight $X_0^\beta$ with any $\beta>\tfrac12$; this is the case $\beta=1$)\\
+Proposition~\ref{os:p1} & L & \lean{poincare_omP}, \lean{mS_printed_sharp}, \lean{norm_surfV_printed_le}, \lean{mS_printed_le}\\
+Remark~\ref{os:indep} & L & \lean{surfV_indep}\\
+Lemmas~\ref{os:poisson}, \ref{os:hk} & P & used only in Section~\ref{subsec:cl}\\
+\end{longtable}
