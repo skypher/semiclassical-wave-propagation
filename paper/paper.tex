@@ -145,9 +145,10 @@ decay only at the critical rate. The second class requires a multiplier theorem 
 $\ue^{d/2}$ and an interpolation between two weights for the maps of the proof. The error of the leading
 approximation is of order $\hbar t$; on the hyperbolic plane this order is attained, so it cannot be replaced by
 $\hbar$ as in the preprint. The pointwise form of the estimates holds on surfaces of bounded geometry, and on
-every hyperbolic surface with an additional factor $(\text{cusp height})^{1/2}$; on the modular surface this
-factor cannot be removed. The proofs of the theorems and of their corollaries, in both classes, are formalized
-in Lean~4; the lower bound on the modular surface is not.
+every hyperbolic surface with an additional factor $m(z)^{1/2}$, where $m(z)$ is a local multiplicity that is
+comparable to the cusp height in a cusp; on the modular surface this factor cannot be removed. The proofs of the
+approximation theorems and of their corollaries, in both classes, are formalized in Lean~4; the lower bound on
+the modular surface is not.
 
 \vskip5pt
 \noindent\textbf{Keywords.}\enspace Semiclassical analysis; time-dependent
@@ -179,14 +180,15 @@ up to times of order $\hbar^{-1/2}$, with explicit constants, for amplitudes $a$
 and decay exponentially. The preprint was withdrawn by its author in 2011 for ``a gap in the proof of the
 dispersive estimates''.
 
-This paper proves these statements for every Fuchsian group $\Gamma$, in a form that differs from the
-preprint in two places. The error of the leading approximation is of order $\hbar t$, not $\hbar$
-(Proposition~\ref{prop:g5}), and on surfaces with cusps the pointwise bound needs a factor that grows like the
-square root of the cusp height (Corollary~\ref{pc:cor16} and Theorem~\ref{cl:main}). The strategy is
+This paper proves these statements for every Fuchsian group $\Gamma$, with two main corrections; all
+differences are listed in Section~\ref{sec:changes}. The error of the leading approximation is of order $\hbar t$,
+not $\hbar$ (Proposition~\ref{prop:g5}). The pointwise bound holds on every surface with a factor $m(z)^{1/2}$, where
+$m(z)$ is a local multiplicity that is comparable to the cusp height in a cusp (Corollary~\ref{pc:cor16}), and on
+the modular surface this factor cannot be removed (Theorem~\ref{cl:main}). The strategy is
 Schubert's: the factorization, the approximations $u^{(K)}$, the analytic norms and the mollified flow are
 taken from \cite{S}, and all credit for them belongs to him. What is new is the organization of the error
-term and the treatment of the weights (Section~\ref{subsec:method}). The proofs of the theorems and of their
-corollaries are formalized in Lean~4 (Appendix~\ref{app:lean}).
+term and the treatment of the weights (Section~\ref{subsec:method}). The proofs of Theorems~1.3R and~1.4R and of
+Theorem~\ref{pc:main}, with their corollaries, are formalized in Lean~4 (Appendix~\ref{app:lean}); Theorem~\ref{cl:main} is not.
 
 \subsection{Setting and notation}\label{sec:setup}
 We use the notation of \cite{S}. Let $\Hb=\{x+iy:y>0\}$ with the metric
@@ -254,16 +256,16 @@ the present theorem; we state it with $\beta>1$ as in \cite{S}.
 Let $u^{(K)}$ be Schubert's $K$-th order approximation \cite[(1.27)--(1.29)]{S}.
 \renewcommand{\thetheoremR}{1.4R}
 \begin{theoremR}\label{thm:dd14}
-Fix $\beta>1/2$, $\kappa>0$ and $\alpha_0\in(0,\min(1,\pi/4))$. There are $C,\delta>0$ such that for every Fuchsian group
-$\Gamma$, all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$
+Fix $\beta>1/2$, $\kappa>0$ and $\alpha_0\in(0,\min(1,\pi/4))$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$,
+such that for every Fuchsian group $\Gamma$ with $\sup_z\sum_{\gamma\in\Gamma}\ue^{-(\beta+1/2)\,d(x_0,\gamma z)}\le P$, all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$
 with $\norm a<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
 \[
 \norm{\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(\Hb/\Gamma)}
 \le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\norm a .
 \]
-($\delta$ does not depend on $\Gamma$, and $C$ depends on $\Gamma$ only through the Poincar\'e series bound
-$\sup_z\sum_\gamma\ue^{-(\beta+1/2)\,d(x_0,\gamma z)}$ of Lemma~\ref{lem:p1}, at the exponent $\beta+\tfrac12>1$; see the end of the
-proof of Theorem~\ref{thm:dd-appx}.)
+(The supremum is finite for every Fuchsian group, by Lemma~\ref{lem:p1} at the exponent $\beta+\tfrac12>1$. So $\delta$ does not
+depend on $\Gamma$, and $C$ depends on $\Gamma$ only through this Poincar\'e series bound; see the end of the proof of
+Theorem~\ref{thm:dd-appx}.)
 \end{theoremR}
 This implies \cite[(1.30)]{S} on Schubert's window $t\le\delta\alpha^{3/2}\hbar^{-1/2}$, with an extra factor
 $(\alpha\hbar)^4\hbar t/\alpha^2\le1$. The proof is in Appendix~\ref{sec:dd}.
@@ -318,21 +320,20 @@ Lemmas~\ref{lem:fc}--\ref{lem:wb}), and the integration over the simplex then gi
 $C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$.
 
 \emph{The periodized flow.} It remains to bound the periodized propagator applied to $b'$ in $L^2(M)$, uniformly in $s_1\le t$.
-Periodization over $\Gamma$ is bounded on $L^2$ only with a weight above the critical one $\ue^{d/2}$, and for transported
-functions its bound grows exponentially in time (Lemma~\ref{lem:t2}). The flow $V$ is not known to preserve weighted
-analytic norms on the time scale in question; this is \cite[Conjecture~1]{S}. As in \cite{S} we compare $V$ with the flow
+The periodization estimate used here (Lemma~\ref{lem:t2}) needs a weight $\ue^{sd}$ with $s>\tfrac12$, that is, above the
+critical weight $\ue^{d/2}$, and for transported functions its bound grows like $\ue^{st}$. It is not known whether the flow
+$V$ preserves weighted analytic norms on such time scales; \cite[Conjecture~1]{S} asserts this up to times of order $1/\hbar$. As in \cite{S} we compare $V$ with the flow
 $V_\varepsilon$ of the generator mollified at scale $\varepsilon$; the estimate for $V_\varepsilon$ is the step whose proof
 in \cite{S} has the gap (Section~\ref{sec:changes}). The mollified flow preserves analytic norms, with a loss of radius, and
 power weights $X_0^\gamma$, both up to times of order $\varepsilon/\hbar$ (Propositions~\ref{prop:a0} and~\ref{prop:ws}); the first
-is proved by an energy estimate with a clipped weight. The defect of the mollifier is exponentially small, of size
-$\ue^{-a/(8\varepsilon)}$, on vectors analytic in a strip of width $a$ (Lemma~\ref{lem:unw}), but only without a weight; with the
-weight $X_0^\beta$ it is bounded only by a power of $\varepsilon^{-1}$ (Lemma~\ref{lem:path}). Interpolation gives smallness at an
+is proved by an energy estimate with a clipped weight. Without a weight, the defect of the mollifier is exponentially small, of size
+$\ue^{-a/(8\varepsilon)}$, on vectors analytic in a strip of width $a$ (Lemma~\ref{lem:unw}); with the
+weight $X_0^\beta$ the bound we use is a power of $\varepsilon^{-1}$ (Lemma~\ref{lem:path}). Interpolation gives smallness at an
 intermediate weight, still above the critical one, and this pays for the growth of the periodization bound. With
 $\varepsilon=(\alpha\hbar)^{1/2}/2$ all requirements are met for $t\le\delta(\alpha/\hbar)^{1/2}$.
 
 \emph{The printed class.} An amplitude of the printed class is $a=\ue^{-\alpha\Lambda}f$ with $f$ in the weighted space of a
-weight that is critical up to a logarithm. No weight above the critical one is available, so the vectors above cannot be
-interpolated. Instead we interpolate the linear maps that produce these vectors from the data, between $L^2(\Hb)$ and a
+weight that is critical up to a logarithm. No weight above the critical one is available for the data, so the interpolation of the vectors is not available. Instead we interpolate the linear maps that produce these vectors from the data, between $L^2(\Hb)$ and a
 power weight (Lemma~\ref{os:transfer}). This needs the smoothing operators of the proof to be bounded at the critical weight,
 which follows from a multiplier theorem proved by finite propagation speed (Theorem~\ref{os:cw}), and a periodization bound at
 the critical weight with a logarithmic factor (Proposition~\ref{os:p1}).
@@ -352,31 +353,34 @@ described how localized states become Lagrangian states on that time scale
 \cite{STV12}. Estimates for the propagator on time scales that are multiples of the
 Ehrenfest time are also the main tool in the work of Anantharaman \cite{Ana08} and of
 Anantharaman and Nonnenmacher \cite{AN07} on the entropy of semiclassical measures,
-and, on hyperbolic surfaces, in the proof of Dyatlov and Jin \cite{DJ18} that
-semiclassical measures have full support. All these results concern times that are
-logarithmic in $\hbar$.
+and, on compact hyperbolic surfaces, in the proof of Dyatlov and Jin \cite{DJ18} that
+semiclassical measures have full support. All of these use propagation estimates on time
+scales that are logarithmic in $\hbar$.
 
-Beyond that scale the evidence has been numerical. Tomsovic and Heller
+For the accuracy of semiclassical approximations of a propagated state beyond the Ehrenfest
+time, \cite{S} points to numerical evidence. In the account given there, Tomsovic and Heller
 \cite{TH91,TH93} studied the accuracy of semiclassical propagation for the stadium
 billiard, found no breakdown at the Ehrenfest time, and argued that the approximation
 should remain accurate up to times of order $1/\hbar$ when the classical system has no
-singularities. The obstacle to a proof is that the approximation is a sum of
+singularities. The obstacle to a proof named in \cite{S} is that the approximation is a sum of
 oscillating terms whose number grows exponentially with time, and the error terms
-are of the same nature \cite{S}. The preprint \cite{S} aimed to control the error far
+are of the same nature. The preprint \cite{S} aimed to control the error far
 beyond the Ehrenfest time on
 surfaces of constant negative curvature, up to $T\sim\hbar^{-1/2}$, for
 Lagrangian states attached to an unstable manifold, and was withdrawn because of
-a gap in its dispersive estimates. To the author's knowledge, no proof of a
-semiclassical approximation of this kind beyond the Ehrenfest time has appeared
-since. The present paper supplies one, with the explicit constants of \cite{S}.
+a gap in its dispersive estimates. To the author's knowledge, no proof of an $L^2$
+approximation of a propagated Lagrangian state with an explicit error bound, on a time
+scale that is a power of $1/\hbar$, has appeared since. The present paper supplies one, with the
+explicit constants of \cite{S}.
 
 The theorems control the error of the approximation; they do not describe the
 approximation itself, which is again a sum over exponentially many sheets of the
 cover. In the picture that goes back to Berry and Balazs \cite{BB79}, waves
 propagated in a classically chaotic system behave at large times like random
-superpositions of plane waves; Ingremeau and Rivera \cite{IR22} proved a statement of
-this kind for Lagrangian states on compact manifolds of negative curvature, for a
-wide family of phases.
+superpositions of plane waves. Ingremeau and Rivera \cite{IR22} proved that on compact
+manifolds of negative curvature, for a wide family of phases, a Lagrangian state evolved
+for a long time behaves like a random Gaussian field; we refer to \cite{IR22} for the
+precise statement and its time scales.
 
 The approximation here is the periodization $u^{(K)}(t)_\Gamma$ of an explicit
 solution on the universal cover; it is not classical transport of the Lagrangian
@@ -478,8 +482,8 @@ $\norm{u^{(0)}(t)_\Gamma-\cU(t)(a\ue^{i\varphi_b/\hbar})_\Gamma}_{L^2(M)}\le C\h
 $\varepsilon=(\alpha\hbar)^{1/2}/2$: the mollified flow is controlled up to times of order $\varepsilon/\hbar$
 (Propositions~\ref{prop:a0} and~\ref{prop:ws}), and the defect of the mollifier is small only when $\varepsilon$ is small
 compared with $\alpha$ (Lemma~\ref{lem:unw}). \cite[Conjecture~1]{S} is a dispersive estimate for the unmollified flow on the
-time scale $1/\hbar$, which would extend the time scale of the theorems from $\hbar^{-1/2}$ to $\hbar^{-1}$; the numerical
-studies \cite{TH91,TH93} point in the same direction. Whether the periodized approximation stays accurate beyond
+time scale $1/\hbar$; according to \cite{S} it would allow one to extend the time scale from $\hbar^{-1/2}$ to $\hbar^{-1}$. We have
+not examined which of the other steps of the present proofs would then extend. Whether the periodized approximation stays accurate beyond
 $\hbar^{-1/2}$ is open.
 \item \emph{The approximation itself.} The theorems reduce questions about $\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma$ on the
 time scale $\hbar^{-1/2}$ to questions about the explicit sum $u^{(K)}(t)_\Gamma$. Its expectation values and its statistics
@@ -509,9 +513,12 @@ points (Remark~\ref{cl:scope}); a bound depending on $b$ may be smaller there.
 $\Hb$, that is, for the trivial group. Whether it is attained on compact surfaces is not decided here.
 \item \emph{Larger radii in the printed class.} Theorem~\ref{pc:main} is stated for $\alpha\le\tfrac12$, and the printed norms
 are not monotone in $\alpha$ (Remark~\ref{pc:classes}). Whether the theorem holds for larger $\alpha$ is not examined here.
-\item \emph{Other geometries.} The exact factorization \eqref{eq:factor} is specific to constant curvature and to phases
-attached to a boundary point. An extension to variable negative curvature, to hyperbolic manifolds of higher dimension, or
-to other Lagrangian states would need a replacement for it.
+\item \emph{Other geometries.} The exact factorization \eqref{eq:factor} uses constant curvature and a phase attached to a
+boundary point. On real hyperbolic space of dimension $n$, in the upper half-space model with $Y=y\partial_y$, the
+analogous factorization holds, with $S(t)a(x,y)=\ue^{-(n-1)t/2}a(x,\ue^ty)$ and
+$\Delta(t)=\ue^{-2t}y^2\Delta_x+Y^2-(n-1)Y$; an extension to quotients of dimension $n$ would need the analytic, weighted and
+periodization estimates of this paper in that dimension. In variable negative curvature, and for other Lagrangian states,
+the factorization itself is not available.
 \end{enumerate}
 
 \section*{AI-use disclosure}
@@ -545,8 +552,9 @@ Fable~5.2 developed the proof of Theorem~\ref{pc:main} by transfer between
 two weights (Lemma~\ref{os:transfer} and Section~\ref{subsec:pc-proof}), which
 was reviewed by an OpenAI Codex session before it was formalized,
 rewrote the manuscript on these proofs, and wrote the introduction and
-the outlook in their present form; the references added there were
-checked against the publishers' records. They replace proofs of an earlier
+the outlook in their present form; this text was reviewed by an OpenAI
+Codex session, and the bibliographic data of the references added there
+were checked against publishers' and authors' records. They replace proofs of an earlier
 version that are no longer part of the paper: a weighted Sobolev
 propagation of the mollified flow and a periodization lemma, to which
 GPT-6.1 Sol had contributed, and a proof of Theorem~\ref{pc:main} by

@@ -18,6 +18,7 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
+| Remark 1.2 (`rem:g4`) | P |  |
 | Proposition 2.1 (`prop:g5`) | L′ | `printedThm13_false`: the negation of the printed theorem; the asymptotic formula is not formalized (Remark 2.2 (`rem:g5-lean`)) |
 | Theorem 1.3R (`thm:main`) | L | `thm13R_rep` |
 | Theorem 1.4R (`thm:dd14`) | L | `thm14Rmain_exp` |
@@ -96,4 +97,5 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma F.8 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
 | Proposition F.9 (`os:p1`) | L | `poincare_omP`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
 | Remark F.10 (`os:indep`) | L | `surfV_indep` |
-| Lemmas F.11 (`os:poisson`), F.12 (`os:hk`) | P | used only in Section 3.5 (`subsec:cl`) |
+| Lemma F.11 (`os:poisson`) | P | used only in Remark 3.3 (`pc:classes`) and Section 3.5 (`subsec:cl`) |
+| Lemma F.12 (`os:hk`) | P | used only in Section 3.5 (`subsec:cl`) |
