@@ -1,6 +1,6 @@
 import Qschubert.SpecCommute
 import Qschubert.PoincareP1
-import Qschubert.FC0
+import Qschubert.KLFCX
 
 /-!
 # Horizontal translations and `e^{-αΛ}`
@@ -31,24 +31,13 @@ lemma coe_transGL_smul (s : ℝ) (z : ℍ) : ((transGL s • z : ℍ) : ℂ) = (
   simp only [num, denom, h00, h01, h10, h11]
   simp
 
-lemma continuous_expCut_g {α : ℝ} (hα : 0 < α) : Continuous (expCut α hα).g := by
+lemma continuous_expCut_symbol {α : ℝ} (hα : 0 < α) : Continuous (expCut α hα).g := by
   unfold Cutoff.g expCut
   fun_prop
-
-lemma tendsto_expCut_g {α : ℝ} (hα : 0 < α) : Tendsto (expCut α hα).g (cocompact ℝ) (𝓝 0) := by
-  have h1 : Tendsto (fun s : ℝ => α * Real.sqrt |s|) (cocompact ℝ) atTop := by
-    have h2 : Tendsto (fun s : ℝ => |s|) (cocompact ℝ) atTop := tendsto_norm_cocompact_atTop (E := ℝ)
-    exact (Real.tendsto_sqrt_atTop.comp h2).const_mul_atTop hα
-  have h3 : Tendsto (fun s : ℝ => Real.exp (-(α * Real.sqrt |s|))) (cocompact ℝ) (𝓝 0) :=
-    Real.tendsto_exp_neg_atTop_nhds_zero.comp h1
-  have h4 : Tendsto (fun s : ℝ => ((Real.exp (-(α * Real.sqrt |s|)) : ℝ) : ℂ)) (cocompact ℝ) (𝓝 0) := by
-    have h5 := (Complex.continuous_ofReal.tendsto 0).comp h3
-    rwa [Complex.ofReal_zero] at h5
-  exact h4
 
 /-- **`e^{-αΛ}` commutes with the isometries of `ℍ`.** -/
 theorem expCut_J_glU {α : ℝ} (hα : 0 < α) (g : GL (Fin 2) ℝ) (η : L2H) :
     (expCut α hα).J (glU g η) = glU g ((expCut α hα).J η) :=
-  fc_glU (continuous_expCut_g hα) (tendsto_expCut_g hα) g η
+  fc_glU (continuous_expCut_symbol hα) (tendsto_expCut_g hα) g η
 
 end Qschubert
