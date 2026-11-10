@@ -227,3 +227,4 @@ import Qschubert.PerioMean
 import Qschubert.EisLift
 import Qschubert.EvModPair
 import Qschubert.EvModMellin
+import Qschubert.EvModStar

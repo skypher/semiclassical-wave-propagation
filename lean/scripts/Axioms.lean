@@ -2649,3 +2649,8 @@ import Qschubert
 #print axioms Qschubert.norm_cT
 #print axioms Qschubert.norm_fhat_le
 #print axioms Qschubert.mellin_fT
+#print axioms Qschubert.integral_mul_conj_eis_eq_zeroMode
+#print axioms Qschubert.mem_absSet_of_summable
+#print axioms Qschubert.measurable_approxSolB_zero
+#print axioms Qschubert.integrable_approxSolB_zero
+#print axioms Qschubert.zeroMode_approx_star
