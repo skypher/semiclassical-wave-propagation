@@ -217,3 +217,4 @@ import Qschubert.EisPointwise
 import Qschubert.EisZeroA
 import Qschubert.EisZero
 import Qschubert.UnfoldPair
+import Qschubert.EisBound

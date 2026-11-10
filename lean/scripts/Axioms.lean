@@ -2612,3 +2612,7 @@ import Qschubert
 #print axioms Qschubert.zeroMode_perio_stripFn
 #print axioms Qschubert.perio_lift_mul
 #print axioms Qschubert.integral_lift_mul_eq
+#print axioms Qschubert.norm_test_le_exp_log'
+#print axioms Qschubert.norm_test_npSec_le
+#print axioms Qschubert.norm_perio_stripFn_strip_le
+#print axioms Qschubert.norm_perio_stripFn_le
