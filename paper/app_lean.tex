@@ -1,17 +1,17 @@
 % Formalization status. \leanrepo is the public repository; \leancommit is a commit of it (not of the working
 % repository). \leandecls is taken from the build and audit of lean/ at that commit
-% (lake build exit 0, 9343 jobs; lean/scripts/Axioms.lean).
+% (lake build exit 0, 9344 jobs; lean/scripts/Axioms.lean).
 \providecommand{\lean}[1]{\texttt{\detokenize{#1}}}
-\providecommand{\leancommit}{\texttt{3afa608}}
+\providecommand{\leancommit}{\texttt{9a4603a}}
 \providecommand{\leanrepo}{\url{https://github.com/skypher/semiclassical-wave-propagation}}
-\providecommand{\leandecls}{2806}
+\providecommand{\leandecls}{2863}
 
 \section{Formalization}\label{app:lean}
 
 The theorems of this paper and the statements used in their proofs are formalized in Lean~4 and checked by its kernel. This appendix says what is checked, in which reading, and what is not. The proofs given in this paper follow the formal proofs, at the level of detail of a paper. The asymptotic formula of Proposition~\ref{prop:g5}, the comparison of the two classes, the failure of the Sobolev inequality in a cusp (Remark~\ref{rem:g4}), part (iii) of Proposition~\ref{ev:mod} on the modular surface (a cited equidistribution theorem) and the sharpness results on cusped surfaces are not formalized.
 
 \subsection*{What is checked}
-The formal development is the directory \texttt{lean/} of the repository \leanrepo, namespace \lean{Qschubert}, at commit \leancommit. It is built with Lean~4 \cite{Lean4} (toolchain \texttt{v4.35.0}), Mathlib \cite{Mathlib} at the tag \texttt{v4.35.0}, and \texttt{physicslib4} \cite{Phys} (commit \texttt{2337279}), which supplies the spectral theorem for unbounded self-adjoint operators. The development also depends on the project \emph{Prime Number Theorem And \dots} \cite{PNT} (commit \texttt{127b50e}), from which it takes the classical zero-free region of the Riemann zeta function; this is used only in the proof of Proposition~\ref{ev:mod}. The command \texttt{lake build} completes without errors. The file \texttt{lean/scripts/AxiomsAll.lean} checks every declaration of the development, 7896 in all, of which 6535 are theorems: each depends only on \lean{propext}, \lean{Classical.choice} and \lean{Quot.sound}, the three axioms of Mathlib's classical logic, and none uses \lean{sorryAx}. The file \texttt{lean/scripts/Axioms.lean} prints the axioms of \leandecls\ named declarations one by one, among them every theorem named in Table~\ref{tab:lean} and in \texttt{LEAN\_STATUS.md}. The workflow \texttt{.github/workflows/lean.yml} of the repository runs the build and both checks from a fresh checkout on a hosted runner; it passes at this commit.
+The formal development is the directory \texttt{lean/} of the repository \leanrepo, namespace \lean{Qschubert}, at commit \leancommit. It is built with Lean~4 \cite{Lean4} (toolchain \texttt{v4.35.0}), Mathlib \cite{Mathlib} at the tag \texttt{v4.35.0}, and \texttt{physicslib4} \cite{Phys} (commit \texttt{2337279}), which supplies the spectral theorem for unbounded self-adjoint operators. The development also depends on the project \emph{Prime Number Theorem And \dots} \cite{PNT} (commit \texttt{127b50e}), from which it takes the classical zero-free region of the Riemann zeta function; this is used only in the proof of Proposition~\ref{ev:mod}. The command \texttt{lake build} completes without errors. The file \texttt{lean/scripts/AxiomsAll.lean} checks every declaration of the development, 8004 in all, of which 6625 are theorems: each depends only on \lean{propext}, \lean{Classical.choice} and \lean{Quot.sound}, the three axioms of Mathlib's classical logic, and none uses \lean{sorryAx}. The file \texttt{lean/scripts/Axioms.lean} prints the axioms of \leandecls\ named declarations one by one, among them every theorem named in Table~\ref{tab:lean} and in \texttt{LEAN\_STATUS.md}. The workflow \texttt{.github/workflows/lean.yml} of the repository runs the build and both checks from a fresh checkout on a hosted runner; it passes at this commit.
 
 A kernel check certifies the proofs of the formal statements. Whether a formal statement says what the corresponding statement of this paper says is a matter of reading; the choices made are listed next. The formal statements were compared with the text in independent reviews of the statements, which did not repeat the build or the axiom check.
 
@@ -23,7 +23,7 @@ A kernel check certifies the proofs of the formal statements. Whether a formal s
 \item \emph{Amplitudes.} An amplitude is a function on $\Hb$ whose class has finite norm. The formal theorems produce its $C^\infty$ representative $a'$, equal to $a$ almost everywhere, before $\hbar,t,K,N,b$ are chosen, and $u^{(K)}$ is built from $a'$. Nonzero amplitudes of finite norm exist in both classes (\lean{printed_class_nonvacuous_beta}, \lean{swappedD_class_nonvacuous}).
 \item \emph{Conclusions.} Each $L^2$ theorem asserts that the two orbit sums converge absolutely almost everywhere and define elements of $L^2(M)$, and then bounds $\norm{\Delta^N[\,\cdot\,]}$, an element of $[0,\infty]$ that equals $\infty$ outside the domain of $\Delta^N$. The pointwise corollaries assert that the error lies in the domain of $\Delta^N$ and that $\Delta^NE$ has a continuous representative with the stated bound at every point of $M$.
 \item \emph{The cap on $\delta$ in Corollary 1.5.} For Corollary~\ref{pc:cor15} the condition $\delta\le\kappa^{1/2}/\max(1,C)$ is part of the formal statement. For Corollaries~\ref{cor:dd15} and~\ref{cor:dd15-appx} the formal statements assert that some $C$ and $\delta>0$ exist for which the bound holds on the window; their proofs take $\delta\le\kappa^{1/2}/\max(1,C)$, and $\delta$ may always be decreased, since this only shortens the time window.
-\item \emph{Ranges.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$. For the printed class the formal statements have the range $0<\alpha\le\tfrac12$ of Theorem~\ref{pc:main}, with constants $C,\delta$ that serve every $\alpha$ in it; the formal statements of Corollary~\ref{pc:allalpha} have the range $0<\alpha\le A$ for an arbitrary real $A$, with constants chosen after $A$.
+\item \emph{Ranges.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$. For the printed class the formal statements have the range $0<\alpha\le\tfrac12$ of Theorem~\ref{pc:main}, with constants $C,\delta$ that serve every $\alpha$ in it; the formal statements of Corollary~\ref{pc:allalpha} have the range $0<\alpha\le A$ for an arbitrary real $A$, with constants chosen after $A$. The formal statement of Proposition~\ref{prop:mean} has every $\hbar>0$ and every real $t$, and no hypothesis on the area: its inequality is one in $[0,\infty]$ with $0\cdot\infty=0$.
 \end{itemize}
 
 \subsection*{Status of the statements}
@@ -44,6 +44,7 @@ Corollary~\ref{cor:dd15} & \lean{cor15Rmain_rep}\\
 Corollary~\ref{cor:dd16} & \lean{cor16Rmain_rep}\\
 Theorem~\ref{thm:dd-appx} & \lean{thm14R_rep}\\
 Proposition~\ref{prop:g5} & \lean{printedThm13_false} (negation of the printed bound)\\
+Proposition~\ref{prop:mean} & \lean{meanGrowth}\\
 Theorem~\ref{pc:main} & \lean{pcmain_half}\\
 Corollary~\ref{pc:thm13} & \lean{pcthm13_half}\\
 Corollary~\ref{pc:cor15} & \lean{pccor15_half}\\

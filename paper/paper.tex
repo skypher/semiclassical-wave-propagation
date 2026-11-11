@@ -336,6 +336,11 @@ $\alpha\in(0,A]$, with any $A$, the same statements hold with constants dependin
 Schubert's example $\hbar^{-\delta/2}\ue^{-\hbar^{-\delta}\langle d\rangle}$ is covered already by the swapped class, for $0<\delta<2/3$
 (Lemma~\ref{lem:ex}).
 
+\medskip\noindent\textbf{Large times.} For the swapped class with $\beta>\tfrac12$ the integral of $u^{(K)}(t)$ over $\Hb$ equals
+$\ue^{-z}T_K(z)J$, where $z=-t/2-it/(2\hbar)$, $J=\int_{\Hb}a\,\ue^{i\varphi_b/\hbar}d\nu$ and $T_K$ is the Taylor polynomial of the
+exponential function of degree $K$ (Proposition~\ref{prop:mean}). On a surface of finite area, when $J\ne0$, this bounds the error of
+each $u^{(K)}(t)_\Gamma$ of fixed order from below at large times (Remark~\ref{rem:mean}).
+
 \subsection{Method of proof}\label{subsec:method}
 By \eqref{eq:factor} the error of $u^{(K)}$ is governed by the dispersive part $V(t)$, and $u^{(K)}$ corresponds to the Dyson
 expansion of $V(t)$ to order $K$.
@@ -485,7 +490,8 @@ surface (Theorem~\ref{cl:main}, Remark~\ref{cl:reading}). In \cite[(1.36)]{S}, $
 \end{itemize}
 
 \subsection{Organization}
-Section~\ref{sec:g5} shows that the order $\hbar t$ is attained. Section~\ref{sec:printed} treats the printed class: the theorem
+Section~\ref{sec:g5} shows that the order $\hbar t$ is attained, and computes the integral of the approximation over $\Hb$, which
+bounds the error from below at large times on surfaces of finite area. Section~\ref{sec:printed} treats the printed class: the theorem
 and its proof, the corollaries with the pointwise bounds, the extension to every radius, and the lower bound on the modular surface.
 Section~\ref{sec:expect} treats expectation values, and Section~\ref{sec:outlook} collects open problems. The appendices contain the proofs for the swapped class: the mollified flow
 (Appendix~\ref{app:kl}), multiplication by weights in analytic norms (Appendix~\ref{app:m}), the weighted bounds
@@ -528,6 +534,82 @@ In the formalization (Appendix~\ref{app:lean}) the statement of this section is 
 $\norm{u^{(0)}(t)_\Gamma-\cU(t)(a\ue^{i\varphi_b/\hbar})_\Gamma}_{L^2(M)}\le C\hbar\norm a_{\alpha,\beta}$ for all $0<\hbar\le\hbar_0$, all $0\le t\le\delta\hbar^{-1/2}$, all $b$ and all $C^\infty$ amplitudes of finite printed norm. The restrictions to $\hbar\le\hbar_0$ and to $C^\infty$ amplitudes weaken the printed claim, and the formal theorem states that this weaker claim is false. Its proof uses $\Gamma=\{\mathrm{id}\}$, $\alpha=\tfrac12$, $\beta=2$, $b=\infty$ and the amplitude $a=\ue^{-\alpha\Lambda}\ue^{-3X_0}$, $X_0=\cosh d(i,\cdot)$. It takes the Dyson identity (D4) of Proposition~\ref{prop:dd-id} at $K=0$ and $K=1$, which gives the expansion above with $R$ the second-order term, and uses that periodization over the trivial group is an isometry. The bound $\norm R\le\tfrac{\hbar^2t^2}8\sup_{r,s}\norm{\Delta(r)\Delta(s)a}$ comes from Lemma~\ref{lem:wb} at $N=0$, and $\norm{Aa}\ge\norm a/4$ from $Y^*=1-Y$ on $\operatorname{Dom}(\Delta)$: $\langle a,Aa\rangle=-\norm{Ya}^2$ and $2\operatorname{Re}\langle a,Ya\rangle=\norm a^2$.
 \end{remark}
 
+\subsection{The mean of the approximation}\label{subsec:mean}
+The integral of $u^{(K)}(t)$ over $\Hb$ can be computed exactly. On a surface of finite area this bounds the error of the
+approximation from below at large times. For $z\in\mathbb C$ let $T_K(z):=\sum_{k=0}^{K}z^k/k!$.
+
+\begin{proposition}[the mean of the approximation]\label{prop:mean}
+Let $\beta>\tfrac12$, $0<\alpha\le1$ and let $a$ have finite swapped norm $\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}<\infty$.
+Let $b\in\partial\Hb$, $\hbar>0$, $K\in\mathbb N_0$ and $t\ge0$. Then $a\,\ue^{i\varphi_b/\hbar}$ and $u^{(K)}(t)$ are integrable
+over $\Hb$, and
+\[
+  \int_{\Hb}u^{(K)}(t)\,d\nu=\ue^{-z}\,T_K(z)\,J,\qquad z:=-\frac t2-\frac{it}{2\hbar},\qquad
+  J:=\int_{\Hb}a\,\ue^{i\varphi_b/\hbar}\,d\nu .
+\]
+Consequently, for every Fuchsian group $\Gamma$ with $\operatorname{area}(M)<\infty$, with $\psi_0:=(a\,\ue^{i\varphi_b/\hbar})_\Gamma$,
+\[
+  \ue^{t/2}\,|T_K(z)|\,|J|\le\operatorname{area}(M)^{1/2}\Bigl(\norm{\cU(t)\psi_0-u^{(K)}(t)_\Gamma}_{L^2(M)}+\norm{\psi_0}_{L^2(M)}\Bigr).
+\]
+\end{proposition}
+\begin{proof}
+By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: with $q$ as there, $q$ is an isometry, and both
+$a\,\ue^{i\varphi_b/\hbar}$ and $u^{(K)}_b(t)[a]$ are carried to the corresponding functions for $\infty$ and $a\circ q$, times the same
+constant of modulus $1$; the norm of $a\circ q$ with base point $i$ is that of $a$ with base point $x_0$. Write $e:=\ue^{i\varphi/\hbar}=y^{-i/\hbar}$ and $J(g):=\int_{\Hb}g\,e\,d\nu$ for $g\in L^1(\Hb)$.
+
+\emph{Step 1 (the words of $a$ are integrable).} The amplitude $a$ is $C^\infty$ (Lemma~\ref{lem:lift}). By Lemma~\ref{lem:m2w} and
+Lemma~\ref{lem:sc}, $X_0^\beta Z_Sa\in L^2(\Hb)$ for every word $Z_S$ in $X,Y$. Since $2\beta>1$, $X_0^{-\beta}\in L^2(\Hb)$. So
+$Z_Sa\in L^1(\Hb)$ by the Cauchy--Schwarz inequality.
+
+\emph{Step 2 (two integrations by parts).} Let $g$ be $C^\infty$ with $g$, $Xg$, $Yg$ in $L^1(\Hb)$. Then
+\[
+  J(Xg)=0,\qquad J(Yg)=\Bigl(1+\frac i\hbar\Bigr)J(g).
+\]
+For the first identity let $\sigma_s(x+iy):=x+sy+iy$. This shear preserves $\nu$ and $y$, and
+$\tfrac{d}{ds}(g\circ\sigma_s)=(Xg)\circ\sigma_s$. So $g\circ\sigma_1-g=\int_0^1(Xg)\circ\sigma_s\,ds$ pointwise. Multiply by $e$ and
+integrate over $\Hb$; the order of integration may be exchanged, because $\int_{\Hb}|(Xg)\circ\sigma_s|\,d\nu=\norm{Xg}_{L^1}$ for
+every $s$. Since $J(h\circ\sigma_s)=J(h)$ for $h\in L^1$, this gives $0=J(g\circ\sigma_1)-J(g)=J(Xg)$. For the second identity let
+$\delta_s(x+iy):=x+i\ue^sy$. Then $(\delta_s)_*\nu=\ue^s\nu$, $e\circ\delta_s=\ue^{-is/\hbar}e$ and
+$\tfrac{d}{ds}(g\circ\delta_s)=(Yg)\circ\delta_s$, so that $J(h\circ\delta_s)=\ue^{cs}J(h)$ for $h\in L^1$, with $c:=1+i/\hbar$. In
+the same way
+\[
+  (\ue^{c}-1)J(g)=J(g\circ\delta_1)-J(g)=\int_0^1J\bigl((Yg)\circ\delta_s\bigr)ds=J(Yg)\,\frac{\ue^{c}-1}{c},
+\]
+and $\ue^c\ne1$ because $|\ue^c|=\ue$.
+
+\emph{Step 3 (the Dyson terms).} By Steps~1 and~2, $J(Z_Sa)=\chi(S)J(a)$ for every word, where $\chi$ is multiplicative on
+words, $\chi(X)=0$ and $\chi(Y)=c$. So for every finite linear combination $g$ of words of $a$,
+\[
+  J(\Delta(s)g)=\lambda J(g),\qquad\lambda:=c^2-c=\frac i\hbar-\frac1{\hbar^2},
+\]
+because $\Delta(s)=\ue^{-2s}X^2+Y^2-Y$. The function $P_k(t)a$ is such a combination, with coefficients that are continuous in
+$t$, and $P_{k+1}(t)a=\int_0^t\Delta(s)P_k(s)a\,ds$. By induction on $k$, $J(P_k(t)a)=(\lambda t)^kJ(a)/k!$. Since
+$\tfrac{i\hbar}2\lambda t=z$,
+\[
+  J\bigl(a^{(K)}(t)\bigr)=\sum_{k=0}^{K}\Bigl(\frac{i\hbar}2\Bigr)^k\frac{(\lambda t)^k}{k!}J(a)=T_K(z)\,J(a).
+\]
+
+\emph{Step 4 (the transport).} By definition $u^{(K)}(t)=\ue^{-it/(2\hbar)}\ue^{-t/2}\bigl(a^{(K)}(t)\circ\delta_t\bigr)e$. So
+$u^{(K)}(t)$ is integrable, and by Step~2
+\[
+  \int_{\Hb}u^{(K)}(t)\,d\nu=\ue^{-it/(2\hbar)-t/2}\,\ue^{ct}\,J\bigl(a^{(K)}(t)\bigr)=\ue^{-z}\,T_K(z)\,J(a).
+\]
+
+\emph{Step 5 (the surface).} Let $u\in L^1(\Hb)$ be such that $\sum_\gamma|u(\gamma z)|<\infty$ for almost every $z$ and
+$u_\Gamma\in L^2(M)$. Unfolding gives $\int_{\Hb}u\,d\nu=\int_Mu_\Gamma\,d\nu$, hence
+$|\int_{\Hb}u\,d\nu|\le\operatorname{area}(M)^{1/2}\norm{u_\Gamma}_{L^2(M)}$. For $u=u^{(K)}(t)$ the hypotheses hold by Step~4 and by
+Lemma~\ref{lem:t2} with Lemma~\ref{lem:sc}, as in the proof of Theorem~\ref{thm:dd-appx}. Finally
+$\norm{u^{(K)}(t)_\Gamma}\le\norm{\cU(t)\psi_0-u^{(K)}(t)_\Gamma}+\norm{\psi_0}$, because $\cU(t)$ is unitary on $L^2(M)$, and
+$|\ue^{-z}|=\ue^{t/2}$.
+\end{proof}
+
+\begin{remark}[the time of validity on a surface of finite area]\label{rem:mean}
+On a surface of finite area the solution $\cU(t)\psi_0$ has the norm $\norm{\psi_0}$ at all times, and by
+Proposition~\ref{prop:mean} the error of the approximation of order $K$ is at least
+$\operatorname{area}(M)^{-1/2}\,\ue^{t/2}|T_K(z)||J|-\norm{\psi_0}$. For $K=0$, where $T_0=1$, and $J\ne0$ the error is at least
+$\norm{\psi_0}$ for all $t\ge2\log\bigl(2\operatorname{area}(M)^{1/2}\norm{\psi_0}/|J|\bigr)$. The number $J$ depends on $\hbar$ and
+on $a$; it is not estimated here. On $\Hb$ itself, and on surfaces of infinite area, the proposition gives no such bound.
+\end{remark}
+
 \input{sec_printed}
 
 \input{sec_expect}
@@ -540,7 +622,9 @@ $\varepsilon=(\alpha\hbar)^{1/2}/2$: the mollified flow is controlled up to time
 compared with $\alpha$ (Lemma~\ref{lem:unw}). \cite[Conjecture~1]{S} is a dispersive estimate for the unmollified flow on the
 time scale $1/\hbar$; according to \cite{S} it would allow one to extend the time scale from $\hbar^{-1/2}$ to $\hbar^{-1}$. We have
 not examined which of the other steps of the present proofs would then extend. Whether the periodized approximation stays accurate beyond
-$\hbar^{-1/2}$ is open.
+$\hbar^{-1/2}$ is open. When $J\ne0$, on a surface of finite area Proposition~\ref{prop:mean} limits the time of validity of each
+approximation $u^{(K)}(t)_\Gamma$ of fixed order $K$ in terms of $J$ (Remark~\ref{rem:mean}); the size of $J$ as $\hbar\to0$ is not
+determined here.
 \item \emph{Expectation values on compact surfaces.} By Corollary~\ref{ev:transfer} the expectation values of
 $\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma$ up to times of order $\hbar^{-1/2}$ are those of the explicit sum $u^{(K)}(t)_\Gamma$. Beyond the Ehrenfest time
 the sum is not evaluated here, except in the case of Proposition~\ref{ev:mod}. On a compact surface there is no cusp to
@@ -597,8 +681,9 @@ Claude Fable~5.2 then refereed the whole manuscript at commit \texttt{9ae1503}. 
 Lemma~\ref{cl:amp}(i), which had used the Gutzmer identity, by an elementary one, restated the comparison by the Gutzmer identity as
 Lemma~\ref{lem:gutzmer} and rewrote the proof of Lemma~\ref{lem:ex} on it, defined the approximations in Section~\ref{sec:setup}, and
 corrected wording and citations. It also proved and formalized the extension of Theorem~\ref{pc:main} to every radius
-(Corollary~\ref{pc:allalpha}). An OpenAI ChatGPT session reviewed these changes and compared Corollary~\ref{pc:allalpha} with its
-formal statements; its four clarifications of wording were applied.
+(Corollary~\ref{pc:allalpha}) and the formula for the mean of the approximation (Proposition~\ref{prop:mean}). An OpenAI ChatGPT
+session reviewed these changes and compared Corollary~\ref{pc:allalpha} and Proposition~\ref{prop:mean} with their
+formal statements; its clarifications of wording and its one correction (the condition $J\ne0$ in Section~\ref{sec:outlook}) were applied.
 
 The Lean formalization described in Appendix~\ref{app:lean} was
 written in Claude Code by Claude Opus~5.5 and, for the printed class

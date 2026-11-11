@@ -20,6 +20,7 @@ All Lean names are in the namespace `Qschubert`.
 |---|---|---|
 | Remark 1.2 (`rem:g4`) | P |  |
 | Proposition 2.1 (`prop:g5`) | L′ | `printedThm13_false`: the negation of the printed theorem; the asymptotic formula is not formalized (Remark 2.2 (`rem:g5-lean`)) |
+| Proposition 2.3 (`prop:mean`) | L | `meanGrowth`; `integral_approxSolB`, `J_vecX`, `J_vecY`, `chP_dysT`, `swapped_setup`, `enorm_integral_le_perio` |
 | Theorem 1.3R (`thm:main`) | L | `thm13R_rep` |
 | Theorem 1.4R (`thm:dd14`) | L | `thm14Rmain_exp` |
 | Corollary 1.5R (`cor:dd15`) | L | `cor15Rmain_rep` |
