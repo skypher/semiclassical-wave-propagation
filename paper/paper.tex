@@ -78,7 +78,7 @@ on hyperbolic surfaces}
 \author{Leslie P. Polzer}
 \newcommand{\authoraffiliation}{Independent Researcher}
 \newcommand{\authoremail}{polzer@fastmail.com}
-\date{November 10, 2026}
+\date{November 11, 2026}
 
 \makeatletter
 \renewcommand{\section}{%
@@ -246,6 +246,9 @@ Schubert's amplitude norm is \cite[Def.~1.1]{S}
 \langle d\rangle=(1+d(x_0,\cdot)^2)^{1/2}-1 .
 \]
 Throughout, $\Lambda=\sqrt{-\Delta}$, $X_0=\cosh d(x_0,\cdot)$, $\tilde\psi=\log X_0$ and $W_\gamma=\ue^{\gamma\tilde\psi}$.
+We measure analytic regularity spectrally: the analytic radius $\alpha$ is the parameter in
+$\operatorname{Dom}(\ue^{\alpha\Lambda})$. The estimates below use this definition; the holomorphic extension needed for
+Schubert's example amplitudes is described in Appendix~\ref{subsec:gutzmer}.
 We use the following amplitude-norm notation throughout:
 \[
 \pcNorm a=\norm a_{\alpha,\beta},\qquad
@@ -340,6 +343,35 @@ $0\le t\le\delta(\alpha/\hbar)^{1/2}$; here $\pcNorm a$ is the printed norm at t
 
 The proof is in Section~\ref{subsec:pc-all}. Thus the approximation theorem and its corollaries cover every fixed analytic radius.
 
+\begin{remark}[constructing amplitudes]\label{rem:amplitude-examples}
+The printed class is obtained by Poisson smoothing of spatially decaying data. More precisely, for $f\in L^2(\Hb)$ with
+$\ue^{\beta\langle d\rangle}f\in L^2(\Hb)$, the amplitude $a=\ue^{-\alpha\Lambda}f$ satisfies
+\[
+  \pcNorm a=\norm{\ue^{\beta\langle d\rangle}f}.
+\]
+Conversely, every amplitude of finite printed norm has this form, with $f=\ue^{\alpha\Lambda}a$.
+For example, $f=\ue^{-qX_0}$ with any $q>0$ gives a nonzero amplitude at every fixed analytic radius.
+
+In the swapped class one instead writes $a=\ue^{-\beta\langle d\rangle}F$, with
+$F\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, and $\swNorm a=\norm{\ue^{\alpha\Lambda}F}$.
+Thus the two constructions impose decay at different stages. They need not give the same amplitudes
+(Remark~\ref{pc:classes}). Schubert's localized family
+$\hbar^{-\eta/2}\ue^{-\hbar^{-\eta}\langle d\rangle}$ is treated through the swapped class in
+Section~\ref{subsec:dd-ex}.
+\end{remark}
+\begin{proof}
+The spectral calculus gives $\ue^{\alpha\Lambda}\ue^{-\alpha\Lambda}f=f$ for $f\in L^2$ and
+$a=\ue^{-\alpha\Lambda}\ue^{\alpha\Lambda}a$ for $a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$.
+These identities give the printed-norm assertions, and multiplication by $\ue^{\beta\langle d\rangle}$ gives the
+swapped-norm identity. For the example, $\langle d\rangle\le d$ and polar coordinates give
+\[
+  \norm{\ue^{\beta\langle d\rangle}\ue^{-qX_0}}^2
+  \le2\pi\int_0^\infty\ue^{2\beta r-2q\cosh r}\sinh r\,dr<\infty.
+\]
+The integral is finite since $\cosh r\ge\ue^r/2$ and $\sinh r\le\ue^r$.
+The smoothed amplitude is nonzero because the multiplier $\ue^{-\alpha\lambda}$ is strictly positive.
+\end{proof}
+
 \medskip\noindent\emph{Companion results and sharpness.}
 The reversed-order norm
 \[
@@ -362,9 +394,9 @@ expansion of $V(t)$ to order $K$.
 The error is then bounded by $(\hbar/2)^{K+1}$ times an integral over the simplex
 $t>s_1>\dots>s_{K+1}>0$ of a periodized propagator applied to
 $b'(s)=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a$, a fixed polynomial in the vector fields $X,Y$ applied
-to the amplitude. The quotient operator and the remainder estimate are displayed at the beginning of Section~\ref{sec:printed}.
-No resummation of the series is needed, and all derivatives fall on $a$. Analyticity of $a$ in a strip of
-width $\alpha$ bounds a word of length $k$ in $X,Y$ applied to $a$ by $C^kk!\,\alpha^{-k}$ (Cauchy estimates,
+to the amplitude. The quotient operator is defined in Section~\ref{subsec:dd-surf}; the remainder estimate is recalled at the beginning of Section~\ref{sec:printed}.
+No resummation of the series is needed, and all derivatives fall on $a$. Analytic regularity of $a$ at radius
+$\alpha$ bounds a word of length $k$ in $X,Y$ applied to $a$ by $C^kk!\,\alpha^{-k}$ (Cauchy estimates,
 Lemmas~\ref{lem:fc}--\ref{lem:wb}), and the integration over the simplex then gives the factor
 $C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$.
 
@@ -376,7 +408,7 @@ $V_\varepsilon$ of the generator mollified at scale $\varepsilon$; the estimate 
 in \cite{S} has the gap (Section~\ref{sec:changes}). The mollified flow preserves analytic norms, with a loss of radius, and
 power weights $X_0^\gamma$, both up to times of order $\varepsilon/\hbar$ (Propositions~\ref{prop:a0} and~\ref{prop:ws}); the first
 is proved by an energy estimate with a clipped weight. Without a weight, the defect of the mollifier is exponentially small, of size
-$\ue^{-a/(8\varepsilon)}$, on vectors analytic in a strip of width $a$ (Lemma~\ref{lem:unw}); with the
+$\ue^{-a/(8\varepsilon)}$, on vectors of analytic radius $a$ (Lemma~\ref{lem:unw}); with the
 weight $X_0^\beta$ the bound we use is a power of $\varepsilon^{-1}$ (Lemma~\ref{lem:path}). Interpolation gives smallness at an
 intermediate weight, still above the critical one, and this pays for the growth of the periodization bound. With
 $\varepsilon=(\alpha\hbar)^{1/2}/2$ all requirements are met for $t\le\delta(\alpha/\hbar)^{1/2}$.
@@ -536,7 +568,7 @@ $C\hbar\norm a_{\alpha,\beta}$ of \cite[(1.18)]{S} cannot hold on the window \ci
 \end{proposition}
 \begin{proof}
 By \eqref{eq:factor} and unitarity of $\cU$ and $V(t)$, the left side equals $\norm{V(t)a-a}=\norm{a-V(t)^*a}$. The Dyson
-identity (D1) of Proposition~\ref{prop:dd-id} at $K=1$, whose hypothesis is the one made on $a$, reads, with $c=i\hbar/2$,
+identity (i) of Proposition~\ref{prop:dd-id} at $K=1$, whose hypothesis is the one made on $a$, reads, with $c=i\hbar/2$,
 \[a-V(t)^*a=c\,V(t)^*P_1(t)a+R,\qquad R=c^2\int_{t>s_1>s_2>0}V(s_1)^*\Delta(s_1)\Delta(s_2)a\,ds_1\,ds_2,\]
 and, since $\Delta(s)=A+\ue^{-2s}X^2$,
 \[P_1(t)=\int_0^t\Delta(s)\,ds=tA+\tfrac{1-\ue^{-2t}}2X^2\]
@@ -685,14 +717,10 @@ OpenAI GPT-6.1 Sol (\texttt{gpt-6.1-sol}) supplied the counterexample on $\Hb$ (
 the Mellin product computation in Appendix~\ref{app:special}, the Mehler comparison in Lemma~\ref{lem:gutzmer}, and contributions to
 the tail bounds and truncation in Section~\ref{subsec:cl}; Fable completed the cusp proofs and the treatment of the example amplitudes. Sol, Google Gemini~4 Argon (\texttt{gemini-4-argon}),
 OpenAI GPT-6~Pro (\texttt{gpt-6-pro}), and Claude Fable~5.2 performed AI reviews of working notes or manuscript versions.
-Gemini also contributed to an earlier proof route that was subsequently replaced.
 OpenAI Codex and ChatGPT sessions checked revisions and compared manuscript statements with their formal counterparts;
-Codex also carried out presentation reviews and editorial revisions, including the exposition of the exact remainder,
-the distinction between the transfer constant and the truncation order, and the literature comparisons.
-At the author's request, Codex reorganized the central proof into the main text, reduced the appendices to
-auxiliary calculations and formalization, and standardized the amplitude-norm notation.
-These were AI checks and do not constitute external peer review. The chronological contribution record is retained in earlier
-repository revisions; the account preceding this editorial revision is at commit \texttt{a223ee5}.
+Codex also reviewed the presentation and bibliography, reorganized the exposition, and revised the text.
+These were AI checks and do not constitute external peer review. The detailed contribution history is retained in the
+repository revisions.
 
 The main approximation results and the supporting results specified in Appendix~\ref{app:lean} have been formalized in Lean~4;
 that appendix states the precise scope and the exclusions. Numerical computations served only as consistency checks, never as

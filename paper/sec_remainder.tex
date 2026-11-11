@@ -5,7 +5,7 @@ The analytic estimates needed to bound that remainder are developed in Sections~
 
 \subsection{Periodization by Cauchy--Schwarz}\label{sec:t2}
 
-\begin{lemma}[P1]\label{lem:p1}
+\begin{lemma}[uniform Poincar\'e series bound]\label{lem:p1}
 For every Fuchsian $\Gamma$ and $s>1$: $\sup_{z}\sum_{\gamma}\ue^{-s\,d(x_0,\gamma z)}<\infty$.
 \end{lemma}
 \begin{proof}
@@ -13,7 +13,7 @@ The orbit $\Gamma x_0$ is uniformly separated, and its stabilizer is finite. Pac
 around orbit points gives $\#\{\gamma:d(z,\gamma x_0)<n+1\}\le C\ue^{n}$, uniformly in $z$.
 \end{proof}
 
-\begin{lemma}[T2]\label{lem:t2}
+\begin{lemma}[weighted periodization and transport]\label{lem:t2}
 For every Fuchsian $\Gamma$, every $s>1/2$, $t\ge0$, every real phase $\varphi$ and every measurable $w$ with $\ue^{s\tilde\psi}w\in L^2(\Hb)$:
 \[
 \norm{\bigl[(S(t)w)\,\ue^{i\varphi/\hbar}\bigr]_\Gamma}_{L^2(M)}\le C(\Gamma,s)\,\ue^{st}\,\norm{\ue^{s\tilde\psi}w}_{L^2(\Hb)},
@@ -22,24 +22,29 @@ with $C(\Gamma,s)=2^sP_\Gamma(2s)^{1/2}$, where $P_\Gamma(\sigma):=\sup_z\sum_{\
 \end{lemma}
 
 \begin{proof}
-\begin{itemize}
-\item \emph{Pointwise Cauchy--Schwarz.} For $f$ on $\Hb$ and $z\in\Hb$:
+
+\emph{Pointwise Cauchy--Schwarz.} For $f$ on $\Hb$ and $z\in\Hb$:
 \[
 \Bigl|\sum_\gamma f(\gamma z)\Bigr|^2\le\Bigl(\sum_\gamma\ue^{-2sd(\gamma z,x_0)}\Bigr)\Bigl(\sum_\gamma\ue^{2sd(\gamma z,x_0)}|f(\gamma z)|^2\Bigr).
 \]
 The first factor is $\le P_\Gamma(2s)$ for every $z$, by Lemma~\ref{lem:p1} with exponent $2s>1$ (since $d(\gamma z,x_0)=d(z,\gamma^{-1}x_0)$).
-\item \emph{Unfolding.} Integrate over a fundamental domain (Lemma 3.1 of \cite{S}, Tonelli). This gives
+
+\emph{Unfolding.} Integrate over a fundamental domain (Lemma 3.1 of \cite{S}, Tonelli). This gives
 \[
 \norm{[f]_\Gamma}^2_{L^2(M)}\le P_\Gamma(2s)\int_\Hb\ue^{2sd(z,x_0)}|f(z)|^2\,d\nu(z).
 \]
 Prove this first for finite partial sums, then pass to the limit by monotone convergence. In particular $\sum_\gamma|f\circ\gamma|$ converges a.e. and in $L^2(M)$. Torsion-freeness is not needed: the fixed sets of elliptic elements are null, so unfolding over a fundamental domain carries no stabilizer factor, and any multiplicity is already counted in the orbit series $P_\Gamma(2s)$.
-\item \emph{Transport.} Take $f=(S(t)w)\ue^{i\varphi/\hbar}$, so $|f|=|S(t)w|$.
-  \begin{itemize}
-  \item $(S(t)w)(z)=\ue^{-t/2}w(z_t)$, where $z_t$ is at distance $t$ from $z$, so $d(z,x_0)\le d(z_t,x_0)+t$.
-  \item $S(t)$ is unitary, so $\int\ue^{2sd(z)}|S(t)w(z)|^2\,d\nu(z)\le\ue^{2st}\int\ue^{2sd(z')}|w(z')|^2\,d\nu(z')$.
-  \end{itemize}
-\item Finally $\ue^{sd}\le2^s\ue^{s\tilde\psi}$, since $\tilde\psi=\log\cosh d\ge d-\log2$. \qedhere
-\end{itemize}
+
+\emph{Transport.} Take $f=(S(t)w)\ue^{i\varphi/\hbar}$, so $|f|=|S(t)w|$.
+Since $(S(t)w)(z)=\ue^{-t/2}w(z_t)$, where $z_t$ is at distance $t$ from $z$, we have
+$d(z,x_0)\le d(z_t,x_0)+t$. Unitarity of $S(t)$ therefore gives
+\[
+  \int\ue^{2sd(z)}|S(t)w(z)|^2\,d\nu(z)
+  \le\ue^{2st}\int\ue^{2sd(z')}|w(z')|^2\,d\nu(z').
+\]
+
+Finally $\ue^{sd}\le2^s\ue^{s\tilde\psi}$, since $\tilde\psi=\log\cosh d\ge d-\log2$. \qedhere
+
 \end{proof}
 
 
@@ -57,23 +62,27 @@ representative.
 \end{lemma}
 
 \begin{proof}
-\begin{itemize}
-\item By Lemma~\ref{lem:wc} at $\alpha''=0$ (with $\tau_0=1$), every word applied to $F$ in the sense of distributions lies in $L^2$. The same holds
+
+By Lemma~\ref{lem:wc} at $\alpha''=0$ (with $\tau_0=1$), every word applied to $F$ in the sense of distributions lies in $L^2$. The same holds
 for $F\circ p$ for every affine isometry $p(z)=p_1z+p_2$, $p_1>0$: these commute with $X$, $Y$ and $\Lambda$, so
 $F\circ p\in\operatorname{Dom}(\ue^{\alpha\Lambda})$.
-\item Let $w\in L^2$ be such that all words applied to $w$ lie in $L^2$, and let $c\in C_c^\infty(\Hb)$ be real. With the Euclidean
+
+Let $w\in L^2$ be such that all words applied to $w$ lie in $L^2$, and let $c\in C_c^\infty(\Hb)$ be real. With the Euclidean
 Laplacian $\Delta_{\mathrm E}=\partial_x^2+\partial_y^2=y^{-2}(X^2+Y^2-Y)$,
 \[
 \Delta_{\mathrm E}(cw)=(\Delta_{\mathrm E}c)\,w+2y^{-2}\bigl((Xc)(Xw)+(Yc)(Yw)\bigr)+c\,y^{-2}(X^2+Y^2-Y)w,
 \]
 a finite sum of terms $c'w'$ of the same kind. So $\Delta_{\mathrm E}^n(cw)\in L^2(\mathbb R^2)$ for every $n$; on $\operatorname{supp}c$
 the measures $dx\,dy$ and $d\nu$ are comparable.
-\item Hence $|\xi|^{2n}\widehat{cw}\in L^2(\mathbb R^2)$ for every $n$, all moments of $\widehat{cw}$ are integrable, and $cw$ has a
+
+Hence $|\xi|^{2n}\widehat{cw}\in L^2(\mathbb R^2)$ for every $n$, all moments of $\widehat{cw}$ are integrable, and $cw$ has a
 $C^\infty$ representative.
-\item Take $c=1$ near $i$. This gives a $C^\infty$ representative of $F\circ p$ near $i$ for every $p$, that is, of $F$ near
+
+Take $c=1$ near $i$. This gives a $C^\infty$ representative of $F\circ p$ near $i$ for every $p$, that is, of $F$ near
 every point. Two continuous representatives on an open set coincide, so they glue to a $C^\infty$ representative of $F$, which is unique.
-\item For the consequences take $F=X_0^\beta a$, respectively $F=a$; $X_0^{-\beta}$ is smooth and positive. \qedhere
-\end{itemize}
+
+For the consequences take $F=X_0^\beta a$, respectively $F=a$; $X_0^{-\beta}$ is smooth and positive. \qedhere
+
 \end{proof}
 
 \begin{lemma}[base point]\label{lem:base}
@@ -116,86 +125,7 @@ The hypothesis $g\,x_0=x_0$ is used in (iii): the Poincar\'e sum of $\Gamma$ is 
 has parabolic elements, so the base point of the weight must be the point at which the sum is taken.
 \end{remark}
 
-\subsection{Exact identities}\label{subsec:dd-id}
-
-Let $V(t)$ be the unitary operator of \eqref{eq:factor}, let $V(t,s):=V(t)V(s)^{-1}$, the propagator of
-$i\partial_tV=-\tfrac{\hbar}{2}\Delta(t)V$ (\cite[(1.22)]{S}), and let $c:=i\hbar/2$. By \eqref{eq:factor} (which is \cite[(1.23)]{S}),
-\[
-\cU(t)(a\,\ue^{i\varphi/\hbar})=\ue^{-it/(2\hbar)}\bigl(S(t)V(t)a\bigr)\ue^{i\varphi/\hbar},
-\qquad (S(t)w)(x,y)=\ue^{-t/2}w(x,\ue^{t}y),
-\]
-with $S(t)$ unitary. Then
-\[S(t)^{-1}XS(t)=\ue^{-t}X,\qquad S(t)^{-1}YS(t)=Y,\]
-hence $S(t)^{-1}\Delta S(t)=\Delta(t)$.
-Multiplication by $\ue^{i\varphi/\hbar}=y^{-i/\hbar}$ preserves every Sobolev space $H^k$, and so do $\cU(t)$ and $S(t)$.
-By the factorization, so do $V(t)^{\pm1}$ and $V(t,s)$.
-
-\begin{proposition}[Exact identities (D1), (D3), (D4)]\label{prop:dd-id}
-\begin{enumerate}
-\item[\textup{(D1)}] \emph{Dyson expansion.} Let $a$ be such that every word in $X,Y$ applied to $a$ lies in $L^2(\Hb)$, and put
-\[
-P_k(t)=\int_{t>s_1>\cdots>s_k>0}\Delta(s_1)\cdots\Delta(s_k)\,ds,\qquad a^{(K)}(t)=\sum_{k=0}^{K}c^kP_k(t)a .
-\]
-Then, with $\Sigma_{K+1}(t)=\{t>s_1>\cdots>s_{K+1}>0\}$,
-\[
-a-V(t)^*a^{(K)}(t)=c^{K+1}\int_{\Sigma_{K+1}(t)}V(s_1)^*\,\Delta(s_1)\cdots\Delta(s_{K+1})a\,ds .
-\]
-This $P_k$ is exactly the $P_k$ of \cite{S}
-(the display before the semiclassical approximation of order $K$). Every amplitude $a$ of Theorem~\ref{thm:dd-appx} satisfies the
-hypothesis, by Lemma~\ref{lem:sc}.
-\item[\textup{(D3)}] \emph{Transport of $\Delta^N$} (the conjugated operator is that of \cite[Proposition~2.2 and the proof of Proposition~3.10, (3.31)--(3.34)]{S}). Put $\Delta_\varphi:=e^{-i\varphi/\hbar}\Delta e^{i\varphi/\hbar}$, so that
-$\hbar^2\Delta_\varphi=\hbar^2\Delta-2i\hbar Y-1+i\hbar$. Put $\Delta_\varphi(s):=S(s)^{-1}\Delta_\varphi S(s)$, so that
-$\hbar^2\Delta_\varphi(s)=\hbar^2\Delta(s)-2i\hbar Y-1+i\hbar$. Then for every $b$ such that every word in $X,Y$ applied to $b$ lies in $L^2(\Hb)$,
-\[
-\Delta_\varphi^N V(s)^*b=V(s)^*\Delta_\varphi(s)^Nb.
-\]
-\item[\textup{(D4)}] \emph{The error.} Let $E:=\Delta^N\bigl[\cU(t)(a\,\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr]$, with $u^{(K)}$ as in \cite{S}. If every word in $X,Y$ applied to $a$ lies in $L^2_\omega$, for a weight $\omega$ as in Section~\ref{subsec:dd-surf}, then
-\[
-\begin{gathered}
-\norm{E}_{L^2(M)}\le\Bigl(\frac{\hbar}{2}\Bigr)^{K+1}\int_{\Sigma_{K+1}(t)}\bigl\|\mathcal V_{s_1}b'(s)\bigr\|_{L^2(M)}\,ds,\\
-b'(s):=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a.
-\end{gathered}
-\]
-Everything of high order is now inside $b'(s)$, which is a fixed word-polynomial in $X,Y$ applied to $a$.
-\end{enumerate}
-\end{proposition}
-
-\begin{proof}
-\medskip\noindent\textbf{(D1).}
-
-$V(s)^*=V(0,s)$ and $\partial_sV(t,s)=-c\,V(t,s)\Delta(s)$ on $H^\infty$. So for $b$ with all words in $L^2$, $s\mapsto V(s)^*b$ is
-differentiable in $L^2$ with derivative $-c\,V(s)^*\Delta(s)b$. (In integrated form this is Lemma~\ref{lem:surf-duh} for the trivial
-group, the weight $\omega=1$ and the constant path $g(s)=b$: then $\mathcal V_sg=\ue^{i\varphi/\hbar}V(s)^*g$ by \eqref{eq:factor}; the proof
-of that lemma does not use (D1).)
-
-$P_k(s)a$ is a finite sum of continuous scalar functions of $s$ times fixed words applied to $a$; $\partial_sP_k(s)=\Delta(s)P_{k-1}(s)$
-and $P_k(0)=0$ for $k\ge1$.
-
-With $J_k(t):=\int_0^tV(s)^*\Delta(s)P_k(s)a\,ds$ this gives $V(t)^*P_k(t)a=J_{k-1}(t)-cJ_k(t)$ for $k\ge1$, and $V(t)^*a-a=-cJ_0(t)$.
-
-Multiplying by $c^k$ and summing telescopes to $a-V(t)^*a^{(K)}(t)=c^{K+1}J_K(t)$. Expanding $P_K$ gives the integral over $\Sigma_{K+1}(t)$.
-
-\medskip\noindent\textbf{(D3).}
-
-For $c'\in H^2$, the commutation of the propagator with the Laplacian gives the following identity.
-
-$\cU(s)$ commutes with $\Delta$, so $\cU(s)(e^{i\varphi/\hbar}\Delta_\varphi c')=\Delta\,\cU(s)(e^{i\varphi/\hbar}c')$.
-
-By \cite[(1.23)]{S} this reads $S(s)V(s)\Delta_\varphi c'=\Delta_\varphi S(s)V(s)c'$, i.e. $V(s)\Delta_\varphi=\Delta_\varphi(s)V(s)$ on $H^2$.
-
-Multiplying by $V(s)^*$ on both sides is legitimate because $V(s)^*$ preserves $H^2$. Iterating $N$ times gives the assertion, since $b$ lies in every $H^k$.
-
-\medskip\noindent\textbf{(D4).}
-
-By definition $u^{(K)}(t)=\ue^{-it/(2\hbar)}\ue^{i\varphi/\hbar}S(t)a^{(K)}(t)$, so $u^{(K)}(t)_\Gamma=\cU(t)\mathcal V_ta^{(K)}(t)$. Since $\cU(t)$ is unitary on $L^2(M)$ and commutes with $\Delta_M$, $\norm E=\norm{\Delta_M^N(\mathcal V_0a-\mathcal V_ta^{(K)}(t))}$. (No commutation of $\cU(t)$ with periodization is used.)
-
-By Corollary~\ref{cor:surf-dyson}, $\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}(\Delta(s_1)\cdots\Delta(s_{K+1})a)\,ds$.
-
-By Lemma~\ref{lem:surf-lap} $N$ times, $\Delta_M^N\mathcal V_{s_1}g=\mathcal V_{s_1}\Delta_\varphi(s_1)^Ng$. Closedness of $\Delta_M^N$ and Minkowski's inequality give the bound, with $|c|^{K+1}=(\hbar/2)^{K+1}$.
-(D1) and (D3) are identities on $\Hb$; on $M$ the proof of (D4) uses their surface versions in Section~\ref{subsec:dd-surf}. \qedhere
-\end{proof}
-
-\subsection{The surface object}\label{subsec:dd-surf}
+\subsection{The quotient propagator and Duhamel formula}\label{subsec:dd-surf}
 
 Periodization needs decay, and Proposition~\ref{prop:ws} gives weighted bounds only for $V_\varepsilon$, not for $V$. So $[\ue^{i\varphi/\hbar}V(s)^*g]_\Gamma$ cannot be read as a convergent sum, and the identity $\cU(t)u_\Gamma=\sum_\gamma(\cU(t)u)\circ\gamma^{-1}$ of \cite{S} is not available for $u=\ue^{i\varphi/\hbar}V(s)^*g$. We therefore define this object on $M$ through the surface propagator, and prove the Duhamel formula on $M$.
 
@@ -217,13 +147,19 @@ with $\cU$ the propagator on $M$. Thus
 \]
 This $\mathcal V_sg$ is what $[\ue^{i\varphi/\hbar}V(s)^*g]_\Gamma$ formally means by \cite[(1.23)]{S}.
 
+Put $\Delta_\varphi:=\ue^{-i\varphi/\hbar}\Delta\ue^{i\varphi/\hbar}$ and
+$\Delta_\varphi(s):=S(s)^{-1}\Delta_\varphi S(s)$, so that
+\[
+  \Delta_\varphi(s)=\Delta(s)-\frac{2i}{\hbar}(Y-\tfrac12)-\hbar^{-2}.
+\]
+
 \begin{lemma}[Laplacian on the weighted class]\label{lem:surf-lap}
 For $g\in\mathcal D_\omega$ and $s\in\mathbb R$, $[\ue^{i\varphi/\hbar}S(s)g]_\Gamma\in\operatorname{Dom}(\Delta_M)$ and $\Delta_M[\ue^{i\varphi/\hbar}S(s)g]_\Gamma=[\ue^{i\varphi/\hbar}S(s)\Delta_\varphi(s)g]_\Gamma$. Hence $\mathcal V_sg\in\operatorname{Dom}(\Delta_M)$ and $\Delta_M\mathcal V_sg=\mathcal V_s\Delta_\varphi(s)g$.
 \end{lemma}
 
 \begin{proof}
-\begin{itemize}
-\item Put $f:=\ue^{i\varphi/\hbar}S(s)g$. Then
+
+Put $f:=\ue^{i\varphi/\hbar}S(s)g$. Then
 \[
 \begin{aligned}
 Xf&=\ue^{-s}\ue^{i\varphi/\hbar}S(s)Xg,\\
@@ -232,12 +168,15 @@ Yf&=\ue^{i\varphi/\hbar}S(s)(Y-i/\hbar)g,\\
 \end{aligned}
 \]
 So $f,Xf,Yf,\Delta f\in L^2_\omega$ by (W2), and $f\in\operatorname{Dom}(\Delta)$ because $\Delta$ is essentially self-adjoint on $C_c^\infty(\Hb)$.
-\item Take radial $\chi_n=\rho(d(x_0,\cdot)/n)$, with $\rho\in C_c^\infty$, $\rho=1$ near $0$. Then $0\le\chi_n\le1$, $\chi_n\to1$, and $|X\chi_n|+|Y\chi_n|+|\Delta\chi_n|\le C/n$. Since
+
+Take radial $\chi_n=\rho(d(x_0,\cdot)/n)$, with $\rho\in C_c^\infty$, $\rho=1$ near $0$. Then $0\le\chi_n\le1$, $\chi_n\to1$, and $|X\chi_n|+|Y\chi_n|+|\Delta\chi_n|\le C/n$. Since
 \[\Delta(\chi_nf)=\chi_n\Delta f+2(X\chi_n\,Xf+Y\chi_n\,Yf)+(\Delta\chi_n)f,\]
 dominated convergence gives $\chi_nf\to f$ and $\Delta(\chi_nf)\to\Delta f$ in $L^2_\omega$.
-\item Fix $n$. Essential self-adjointness gives test functions $F_m\to\chi_nf$ in graph norm. With a fixed $\theta\in C_c^\infty(\Hb)$, $\theta=1$ on $\operatorname{supp}\chi_n$, the test functions $\theta F_m$ converge to $\chi_nf$ in graph norm, since $\norm{\nabla F}^2=\langle F,-\Delta F\rangle$ controls the cross term. Their supports lie in the compact set $\operatorname{supp}\theta$, where $\omega$ is bounded.
-\item For a test function $F$, $F_\Gamma\in\operatorname{Dom}(\Delta_M)$ and $\Delta_MF_\Gamma=(\Delta F)_\Gamma$. By (W1) and closedness of $\Delta_M$, first in $m$ and then in $n$, the claim for $f$ follows. The statement for $\mathcal V_s$ follows since $\cU(-s)$ commutes with $\Delta_M$.\qedhere
-\end{itemize}
+
+Fix $n$. Essential self-adjointness gives test functions $F_m\to\chi_nf$ in graph norm. With a fixed $\theta\in C_c^\infty(\Hb)$, $\theta=1$ on $\operatorname{supp}\chi_n$, the test functions $\theta F_m$ converge to $\chi_nf$ in graph norm, since $\norm{\nabla F}^2=\langle F,-\Delta F\rangle$ controls the cross term. Their supports lie in the compact set $\operatorname{supp}\theta$, where $\omega$ is bounded.
+
+For a test function $F$, $F_\Gamma\in\operatorname{Dom}(\Delta_M)$ and $\Delta_MF_\Gamma=(\Delta F)_\Gamma$. By (W1) and closedness of $\Delta_M$, first in $m$ and then in $n$, the claim for $f$ follows. The statement for $\mathcal V_s$ follows since $\cU(-s)$ commutes with $\Delta_M$.\qedhere
+
 \end{proof}
 
 \begin{lemma}[Duhamel on $M$]\label{lem:surf-duh}
@@ -248,14 +187,18 @@ Let $g\in C^1([0,T];L^2_\omega)$ with $g(s)\in\mathcal D_\omega$ and $Yg,X^2g,Y^
 \end{lemma}
 
 \begin{proof}
-\begin{itemize}
-\item For $g_0$ with $g_0,Yg_0\in L^2_\omega$: $S(s)g_0-S(r)g_0=\int_r^sS(\tau)(Y-\tfrac12)g_0\,d\tau$. This holds in $L^2(\Hb)$ (generator of the dilation group), the right side converges in $L^2_\omega$ by strong continuity, and $L^2_\omega\subset L^2$ since $\omega\ge1$.
-\item Hence $s\mapsto S(s)g(s)$ is $C^1$ into $L^2_\omega$, and by (W1) $h(s):=[\ue^{i\varphi/\hbar}S(s)g(s)]_\Gamma$ is $C^1$ into $L^2(M)$ with $h'=[\ue^{i\varphi/\hbar}S(s)((Y-\tfrac12)g+g')]_\Gamma$.
-\item By Lemma~\ref{lem:surf-lap}, $h(s)\in\operatorname{Dom}(\Delta_M)$ and $\Delta_Mh=[\ue^{i\varphi/\hbar}S(s)\Delta_\varphi(s)g]_\Gamma$, continuous in $s$. So $\tfrac{d}{ds}\cU(-s)h(s)=\cU(-s)\bigl(h'(s)-\tfrac{i\hbar}{2}\Delta_Mh(s)\bigr)$.
-\item Since $\Delta_\varphi(s)=\Delta(s)-\tfrac{2i}{\hbar}(Y-\tfrac12)-\hbar^{-2}$, we have $-\tfrac{i\hbar}{2}\Delta_\varphi(s)=-c\Delta(s)-(Y-\tfrac12)+\tfrac{i}{2\hbar}$. The $(Y-\tfrac12)$ terms cancel, and $\tfrac{i}{2\hbar}$ cancels the derivative of $\ue^{-is/(2\hbar)}$. Thus $\tfrac{d}{ds}\mathcal V_sg(s)=\mathcal V_s(g'(s)-c\Delta(s)g(s))$; integrate.\qedhere
-\end{itemize}
+
+For $g_0$ with $g_0,Yg_0\in L^2_\omega$: $S(s)g_0-S(r)g_0=\int_r^sS(\tau)(Y-\tfrac12)g_0\,d\tau$. This holds in $L^2(\Hb)$ (generator of the dilation group), the right side converges in $L^2_\omega$ by strong continuity, and $L^2_\omega\subset L^2$ since $\omega\ge1$.
+
+Hence $s\mapsto S(s)g(s)$ is $C^1$ into $L^2_\omega$, and by (W1) $h(s):=[\ue^{i\varphi/\hbar}S(s)g(s)]_\Gamma$ is $C^1$ into $L^2(M)$ with $h'=[\ue^{i\varphi/\hbar}S(s)((Y-\tfrac12)g+g')]_\Gamma$.
+
+By Lemma~\ref{lem:surf-lap}, $h(s)\in\operatorname{Dom}(\Delta_M)$ and $\Delta_Mh=[\ue^{i\varphi/\hbar}S(s)\Delta_\varphi(s)g]_\Gamma$, continuous in $s$. So $\tfrac{d}{ds}\cU(-s)h(s)=\cU(-s)\bigl(h'(s)-\tfrac{i\hbar}{2}\Delta_Mh(s)\bigr)$.
+
+Since $\Delta_\varphi(s)=\Delta(s)-\tfrac{2i}{\hbar}(Y-\tfrac12)-\hbar^{-2}$, we have $-\tfrac{i\hbar}{2}\Delta_\varphi(s)=-c\Delta(s)-(Y-\tfrac12)+\tfrac{i}{2\hbar}$. The $(Y-\tfrac12)$ terms cancel, and $\tfrac{i}{2\hbar}$ cancels the derivative of $\ue^{-is/(2\hbar)}$. Thus $\tfrac{d}{ds}\mathcal V_sg(s)=\mathcal V_s(g'(s)-c\Delta(s)g(s))$; integrate.\qedhere
+
 \end{proof}
 
+For $k\ge1$ put $\Sigma_k(t):=\{t>s_1>\cdots>s_k>0\}$ and let $c:=i\hbar/2$.
 \begin{corollary}[Dyson expansion on $M$]\label{cor:surf-dyson}
 If every word in $X,Y$ applied to $a$ lies in $L^2_\omega$, then with $a^{(K)}(t)=\sum_{k\le K}c^kP_k(t)a$,
 \[
@@ -267,6 +210,84 @@ If every word in $X,Y$ applied to $a$ lies in $L^2_\omega$, then with $a^{(K)}(t
 $P_k(s)a$ is a finite sum of continuous scalar functions times fixed words applied to $a$, so Lemma~\ref{lem:surf-duh} applies to it. Since $\partial_sP_{k}(s)=\Delta(s)P_{k-1}(s)$ for $k\ge1$ and $P_k(0)=0$, with $J_k(t):=\int_0^t\mathcal V_s\Delta(s)P_k(s)a\,ds$ we get $\mathcal V_tP_k(t)a=J_{k-1}(t)-cJ_k(t)$ for $k\ge1$, and $\mathcal V_ta-\mathcal V_0a=-cJ_0(t)$. Multiplying by $c^k$ and summing telescopes to $\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c^{K+1}J_K(t)$. Expanding $P_K$ gives the integral over $\Sigma_{K+1}(t)$.
 \end{proof}
 
+
+\subsection{Dyson identities and the exact remainder}\label{subsec:dd-id}
+
+Let $V(t)$ be the unitary operator of \eqref{eq:factor}, let $V(t,s):=V(t)V(s)^{-1}$, the propagator of
+$i\partial_tV=-\tfrac{\hbar}{2}\Delta(t)V$ (\cite[(1.22)]{S}), and let $c:=i\hbar/2$. By \eqref{eq:factor} (which is \cite[(1.23)]{S}),
+\[
+\cU(t)(a\,\ue^{i\varphi/\hbar})=\ue^{-it/(2\hbar)}\bigl(S(t)V(t)a\bigr)\ue^{i\varphi/\hbar},
+\qquad (S(t)w)(x,y)=\ue^{-t/2}w(x,\ue^{t}y),
+\]
+with $S(t)$ unitary. Then
+\[S(t)^{-1}XS(t)=\ue^{-t}X,\qquad S(t)^{-1}YS(t)=Y,\]
+hence $S(t)^{-1}\Delta S(t)=\Delta(t)$.
+Multiplication by $\ue^{i\varphi/\hbar}=y^{-i/\hbar}$ preserves every Sobolev space $H^k$, and so do $\cU(t)$ and $S(t)$.
+By the factorization, so do $V(t)^{\pm1}$ and $V(t,s)$.
+
+\begin{proposition}[Dyson identities and quotient remainder]\label{prop:dd-id}
+\begin{enumerate}
+\item[\textup{(i)}] \emph{Dyson expansion.} Let $a$ be such that every word in $X,Y$ applied to $a$ lies in $L^2(\Hb)$, and put
+\[
+P_k(t)=\int_{t>s_1>\cdots>s_k>0}\Delta(s_1)\cdots\Delta(s_k)\,ds,\qquad a^{(K)}(t)=\sum_{k=0}^{K}c^kP_k(t)a .
+\]
+Then, with $\Sigma_{K+1}(t)=\{t>s_1>\cdots>s_{K+1}>0\}$,
+\[
+a-V(t)^*a^{(K)}(t)=c^{K+1}\int_{\Sigma_{K+1}(t)}V(s_1)^*\,\Delta(s_1)\cdots\Delta(s_{K+1})a\,ds .
+\]
+This $P_k$ is exactly the $P_k$ of \cite{S}
+(the display before the semiclassical approximation of order $K$). Every amplitude $a$ of Theorem~\ref{thm:dd-appx} satisfies the
+hypothesis, by Lemma~\ref{lem:sc}.
+\item[\textup{(ii)}] \emph{Transport of $\Delta^N$} (the conjugated operator is that of \cite[Proposition~2.2 and the proof of Proposition~3.10, (3.31)--(3.34)]{S}). Put $\Delta_\varphi:=e^{-i\varphi/\hbar}\Delta e^{i\varphi/\hbar}$, so that
+$\hbar^2\Delta_\varphi=\hbar^2\Delta-2i\hbar Y-1+i\hbar$. Put $\Delta_\varphi(s):=S(s)^{-1}\Delta_\varphi S(s)$, so that
+$\hbar^2\Delta_\varphi(s)=\hbar^2\Delta(s)-2i\hbar Y-1+i\hbar$. Then for every $b$ such that every word in $X,Y$ applied to $b$ lies in $L^2(\Hb)$,
+\[
+\Delta_\varphi^N V(s)^*b=V(s)^*\Delta_\varphi(s)^Nb.
+\]
+\item[\textup{(iii)}] \emph{The error.} Let $E:=\Delta^N\bigl[\cU(t)(a\,\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr]$, with $u^{(K)}$ as in \cite{S}. If every word in $X,Y$ applied to $a$ lies in $L^2_\omega$, for a weight $\omega$ as in Section~\ref{subsec:dd-surf}, then
+\[
+\begin{gathered}
+\norm{E}_{L^2(M)}\le\Bigl(\frac{\hbar}{2}\Bigr)^{K+1}\int_{\Sigma_{K+1}(t)}\bigl\|\mathcal V_{s_1}b'(s)\bigr\|_{L^2(M)}\,ds,\\
+b'(s):=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a.
+\end{gathered}
+\]
+Everything of high order is now inside $b'(s)$, which is a fixed word-polynomial in $X,Y$ applied to $a$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\medskip\noindent\textbf{(i).}
+
+$V(s)^*=V(0,s)$ and $\partial_sV(t,s)=-c\,V(t,s)\Delta(s)$ on $H^\infty$. So for $b$ with all words in $L^2$, $s\mapsto V(s)^*b$ is
+differentiable in $L^2$ with derivative $-c\,V(s)^*\Delta(s)b$. (In integrated form this is Lemma~\ref{lem:surf-duh} for the trivial
+group, the weight $\omega=1$ and the constant path $g(s)=b$: then $\mathcal V_sg=\ue^{i\varphi/\hbar}V(s)^*g$ by \eqref{eq:factor}; that lemma was proved directly on the quotient.)
+
+$P_k(s)a$ is a finite sum of continuous scalar functions of $s$ times fixed words applied to $a$; $\partial_sP_k(s)=\Delta(s)P_{k-1}(s)$
+and $P_k(0)=0$ for $k\ge1$.
+
+With $J_k(t):=\int_0^tV(s)^*\Delta(s)P_k(s)a\,ds$ this gives $V(t)^*P_k(t)a=J_{k-1}(t)-cJ_k(t)$ for $k\ge1$, and $V(t)^*a-a=-cJ_0(t)$.
+
+Multiplying by $c^k$ and summing telescopes to $a-V(t)^*a^{(K)}(t)=c^{K+1}J_K(t)$. Expanding $P_K$ gives the integral over $\Sigma_{K+1}(t)$.
+
+\medskip\noindent\textbf{(ii).}
+
+For $c'\in H^2$, the commutation of the propagator with the Laplacian gives the following identity.
+
+$\cU(s)$ commutes with $\Delta$, so $\cU(s)(e^{i\varphi/\hbar}\Delta_\varphi c')=\Delta\,\cU(s)(e^{i\varphi/\hbar}c')$.
+
+By \cite[(1.23)]{S} this reads $S(s)V(s)\Delta_\varphi c'=\Delta_\varphi S(s)V(s)c'$, i.e. $V(s)\Delta_\varphi=\Delta_\varphi(s)V(s)$ on $H^2$.
+
+Multiplying by $V(s)^*$ on both sides is legitimate because $V(s)^*$ preserves $H^2$. Iterating $N$ times gives the assertion, since $b$ lies in every $H^k$.
+
+\medskip\noindent\textbf{(iii).}
+
+By definition $u^{(K)}(t)=\ue^{-it/(2\hbar)}\ue^{i\varphi/\hbar}S(t)a^{(K)}(t)$, so $u^{(K)}(t)_\Gamma=\cU(t)\mathcal V_ta^{(K)}(t)$. Since $\cU(t)$ is unitary on $L^2(M)$ and commutes with $\Delta_M$, $\norm E=\norm{\Delta_M^N(\mathcal V_0a-\mathcal V_ta^{(K)}(t))}$. (No commutation of $\cU(t)$ with periodization is used.)
+
+By Corollary~\ref{cor:surf-dyson}, $\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}(\Delta(s_1)\cdots\Delta(s_{K+1})a)\,ds$.
+
+By Lemma~\ref{lem:surf-lap} $N$ times, $\Delta_M^N\mathcal V_{s_1}g=\mathcal V_{s_1}\Delta_\varphi(s_1)^Ng$. Closedness of $\Delta_M^N$ and Minkowski's inequality give the bound, with $|c|^{K+1}=(\hbar/2)^{K+1}$.
+(i) and (ii) are identities on $\Hb$; on $M$ the proof of (iii) uses their surface versions in Section~\ref{subsec:dd-surf}. \qedhere
+\end{proof}
 
 \subsection{Local pointwise control}
 \begin{lemma}[local Sobolev inequality on a Fuchsian quotient]\label{pc:g43}

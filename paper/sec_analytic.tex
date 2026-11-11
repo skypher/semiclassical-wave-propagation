@@ -55,9 +55,9 @@ $\norm{\Delta J_\varepsilon}\le\sup_\lambda\lambda^2j_\varepsilon(\lambda)<\inft
 $\operatorname{Dom}(\Delta)$, and $\Delta_\varepsilon(t)-\Delta_\varepsilon(t')=(\ue^{-2t}-\ue^{-2t'})J_\varepsilon X^2J_\varepsilon$.
 \end{proof}
 
-\subsection{First-order Cauchy estimates (Lemma FC)}\label{subsec:dd-fc}
+\subsection{First-order Cauchy estimates}\label{subsec:dd-fc}
 
-\begin{lemma}[FC]\label{lem:fc}
+\begin{lemma}[first-order Cauchy estimate]\label{lem:fc}
 For $\tau_0<\pi/2$ there is $C_1=C_1(\tau_0)$ such that for $Z\in\{X,Y\}$ and $0\le\alpha''<\alpha'\le\tau_0$,
 \[
 \norm{\ue^{\alpha''\Lambda}Z\,\ue^{-\alpha'\Lambda}}_{L^2(\Hb)}\le\frac{C_1}{\alpha'-\alpha''}.
@@ -68,9 +68,9 @@ For $\tau_0<\pi/2$ there is $C_1=C_1(\tau_0)$ such that for $Z\in\{X,Y\}$ and $0
 The Kontorovich--Lebedev kernel calculation is given in Appendix~\ref{app:special}, Section~\ref{app:fc-proof}.
 \end{proof}
 
-\subsection{Unweighted Cauchy estimate for words (Lemma WC)}\label{subsec:dd-wc}
+\subsection{Cauchy estimates for words}\label{subsec:dd-wc}
 
-\begin{lemma}[WC]\label{lem:wc}
+\begin{lemma}[Cauchy estimate for words]\label{lem:wc}
 For a word $Z_1\cdots Z_m$ with $Z_i\in\{X,Y\}$, and $0\le\alpha''<\alpha\le\tau_0<\pi/2$:
 \[
 \norm{\ue^{\alpha''\Lambda}Z_1\cdots Z_m\ue^{-\alpha\Lambda}}\le\Bigl(\frac{C_1m}{\alpha-\alpha''}\Bigr)^m\le\Bigl(\frac{eC_1}{\alpha-\alpha''}\Bigr)^m m!.
@@ -79,10 +79,10 @@ For a word $Z_1\cdots Z_m$ with $Z_i\in\{X,Y\}$, and $0\le\alpha''<\alpha\le\tau
 
 \begin{proof}
 Take equally spaced radii $\alpha''=r_0<r_1<\cdots<r_m=\alpha$, and insert $\ue^{-r_i\Lambda}\ue^{r_i\Lambda}$.
-Each factor $\ue^{r_{i-1}\Lambda}Z_i\ue^{-r_i\Lambda}$ is bounded by $C_1m/(\alpha-\alpha'')$ (Lemma~\ref{lem:fc}). The identity extends from $\mathcal C$ by closure, since each $\ue^{r_i\Lambda}$ is closed. Finally $m^m\le e^m m!$. \qedhere
+Each factor $\ue^{r_{i-1}\Lambda}Z_i\ue^{-r_i\Lambda}$ is bounded by $C_1m/(\alpha-\alpha'')$ (Lemma~\ref{lem:fc}). The identity extends from the spectral core of Appendix~\ref{app:fc-proof} by closure, since each $\ue^{r_i\Lambda}$ is closed. Finally $m^m\le e^m m!$. \qedhere
 \end{proof}
 
-\subsection{Static weighted Cauchy estimates (Lemma SC)}\label{subsec:dd-sc}
+\subsection{Weighted Cauchy estimates}\label{subsec:dd-sc}
 
 Let $\mathcal A:=\operatorname{span}\{y,\;x,\;(x^2+1)/y\}$.
 \begin{itemize}
@@ -102,15 +102,18 @@ For $\beta\ge0$ and a word $Z_S$ of length $j$:
 \end{lemma}
 
 \begin{proof}
-\begin{itemize}
-\item Expand by induction on $j$: $Z_S\varphi(X_0)=\sum_{\pi}\varphi^{(|\pi|)}(X_0)\prod_{B\in\pi}Z_BX_0$, the sum over partitions $\pi$ of $S$, where each block $B$ inherits the order of $S$.
-\item With $\varphi(u)=u^{-\beta}$, $|\varphi^{(k)}(u)|=(\beta)_ku^{-\beta-k}$. So the bound is $2^j\sum_kS(j,k)(\beta)_k2^k$.
-\item The exponential generating function of $\sum_kS(j,k)(\beta)_k2^k$ is $(3-2\ue^z)^{-\beta}$, which is holomorphic on $|z|<\log(3/2)$.
-\item Cauchy's estimate on $|z|=\rho<\log(3/2)$ gives the bound $C_{\beta,\rho}\,j!\,\rho^{-j}$. Combined with the factor $2^j$, this gives $\rho_\beta=\rho/2$. \qedhere
-\end{itemize}
+
+Expand by induction on $j$: $Z_S\varphi(X_0)=\sum_{\pi}\varphi^{(|\pi|)}(X_0)\prod_{B\in\pi}Z_BX_0$, the sum over partitions $\pi$ of $S$, where each block $B$ inherits the order of $S$.
+
+With $\varphi(u)=u^{-\beta}$, $|\varphi^{(k)}(u)|=(\beta)_ku^{-\beta-k}$. So the bound is $2^j\sum_kS(j,k)(\beta)_k2^k$.
+
+The exponential generating function of $\sum_kS(j,k)(\beta)_k2^k$ is $(3-2\ue^z)^{-\beta}$, which is holomorphic on $|z|<\log(3/2)$.
+
+Cauchy's estimate on $|z|=\rho<\log(3/2)$ gives the bound $C_{\beta,\rho}\,j!\,\rho^{-j}$. Combined with the factor $2^j$, this gives $\rho_\beta=\rho/2$. \qedhere
+
 \end{proof}
 
-\begin{lemma}[SC]\label{lem:sc}
+\begin{lemma}[weighted Cauchy estimate for words]\label{lem:sc}
 For $\beta\ge0$, a word $Z_1\cdots Z_m$ and $0<\alpha\le\tau_0$, with $F:=X_0^\beta a$ and $\norm{\ue^{\alpha\Lambda}F}<\infty$:
 \[
 \norm{X_0^\beta Z_1\cdots Z_m a}\le B_\beta(m+1)\,m!\,(C_3/\alpha)^m\,\norm{\ue^{\alpha\Lambda}X_0^\beta a},
@@ -119,12 +122,14 @@ For $\beta\ge0$, a word $Z_1\cdots Z_m$ and $0<\alpha\le\tau_0$, with $F:=X_0^\b
 \end{lemma}
 
 \begin{proof}
-\begin{itemize}
-\item Leibniz for words of derivations: \[X_0^\beta Z_1\cdots Z_m(X_0^{-\beta}F)=\sum_{S\subseteq[m]}(X_0^\beta Z_SX_0^{-\beta})\,(Z_{S^c}F)\]
+
+Leibniz for words of derivations: \[X_0^\beta Z_1\cdots Z_m(X_0^{-\beta}F)=\sum_{S\subseteq[m]}(X_0^\beta Z_SX_0^{-\beta})\,(Z_{S^c}F)\]
 pointwise.
-\item Bound each term by $B_\beta|S|!\rho_\beta^{-|S|}\norm{Z_{S^c}F}$, and the second factor by Lemma~\ref{lem:wc} with $\alpha''=0$: $\norm{Z_{S^c}F}\le(\ue C_1/\alpha)^{m-|S|}(m-|S|)!\,\norm{\ue^{\alpha\Lambda}F}$.
-\item Since $\sum_{|S|=j}j!(m-j)!=m!$, the sum is $\le B_\beta\,m!\sum_j\rho_\beta^{-j}(\ue C_1/\alpha)^{m-j}\le B_\beta(m+1)m!(C_3/\alpha)^m$. \qedhere
-\end{itemize}
+
+Bound each term by $B_\beta|S|!\rho_\beta^{-|S|}\norm{Z_{S^c}F}$, and the second factor by Lemma~\ref{lem:wc} with $\alpha''=0$: $\norm{Z_{S^c}F}\le(\ue C_1/\alpha)^{m-|S|}(m-|S|)!\,\norm{\ue^{\alpha\Lambda}F}$.
+
+Since $\sum_{|S|=j}j!(m-j)!=m!$, the sum is $\le B_\beta\,m!\sum_j\rho_\beta^{-j}(\ue C_1/\alpha)^{m-j}\le B_\beta(m+1)m!(C_3/\alpha)^m$. \qedhere
+
 \end{proof}
 
 \subsection{Multiplication by spatial weights}\label{app:m}
@@ -148,7 +153,7 @@ The partial sums of $\sum_n(b\lambda)^{2n}/(2n)!$ increase to $\cosh(b\lambda)$,
 of $\Lambda$ gives $\norm{\cosh(b\Lambda)G}\le2BN_0$, and $\ue^{b\lambda}\le2\cosh(b\lambda)$. So $C_*=4$ works.
 \end{proof}
 
-\begin{lemma}[M, reduced radius]\label{lem:mw}
+\begin{lemma}[removing a spatial weight with loss of analytic radius]\label{lem:mw}
 Let $\beta\ge0$ and $\tau_0<\pi/2$, let $B_\beta$, $C_3$ be the constants of Lemma~\ref{lem:sc}, and put $c_M:=1/(4\max(C_3,1))$. For
 $0<\alpha\le\min(1,\tau_0)$ and every $a$ with $\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$,
 \[
@@ -162,7 +167,7 @@ $\norm{Z_1\cdots Z_ma}\le\norm{X_0^\beta Z_1\cdots Z_ma}\le B_\beta(m+1)m!(C_3/\
 Apply Lemma~\ref{lem:expw} with $M=\max(C_3,1)$.
 \end{proof}
 
-\begin{lemma}[\texorpdfstring{M2, reduced radius: the weights $\langle d\rangle$ and $\tilde\psi$}{M2, reduced radius}]\label{lem:m2w}
+\begin{lemma}[comparison of the spatial weights]\label{lem:m2w}
 For $\beta\ge0$ there are $c_0\in(0,1]$ and $C$, depending only on $\beta$, such that for every base point $x_0$, every
 $0<\alpha\le1$ and every $a$ with $\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}<\infty$,
 \[
@@ -270,7 +275,7 @@ so
 $|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle|\le2\norm P\norm Q$.
 \end{proof}
 
-\begin{proposition}[A0]\label{prop:a0}
+\begin{proposition}[analytic propagation for the mollified flow]\label{prop:a0}
 Let $\tau_0<\pi/2$ and $c_A:=(1+32A_1A_2)^{-1}$, with $A_1,A_2$ as in Lemma~\ref{lem:clip}. Let $0<\varepsilon\le1$, $\hbar>0$,
 $0\le\alpha'\le\alpha\le\tau_0$ with $\alpha>0$, and $s_0,s_1\ge0$ with
 \[
@@ -434,7 +439,7 @@ $\norm{WZ^2f}$ by a constant times $\norm{W\Delta f}+\max_Z\norm{WZf}+\norm{Wf}$
 Lemma~\ref{lem:wcomm} and \eqref{eq:hmom} with $k=1,2$. The last claim holds because $\Delta(s)=\ue^{-2s}X^2+Y^2-Y$.
 \end{proof}
 
-\begin{proposition}[WS: the mollified flow at a weight]\label{prop:ws}
+\begin{proposition}[weighted propagation for the mollified flow]\label{prop:ws}
 Let $W\in\mathcal W(\rho,K)$. There is $G=G(\rho,K,\chi)$ such that for $0<\varepsilon\le1$, $\hbar>0$, $s_0,s_1\ge0$ and $a\in L^2(\Hb)$,
 \[
 \norm{W\,V_\varepsilon(s_1,s_0)a}\le\ue^{G\hbar|s_1-s_0|/(2\varepsilon)}\norm{Wa}.
@@ -485,16 +490,16 @@ $(3M+3M^3)\varepsilon^{-2}\norm{X_0^\gamma h(s)}$. (c) follows from (a) and Lemm
 $L^2(X_0^{2\gamma}d\nu)$ for $Z\in\mathcal S$, and so is $J_\varepsilon\Delta(s)J_\varepsilon$, continuously in $s$.
 \end{proof}
 
-\subsection{\texorpdfstring{Bounds for $b'(s)$ (Lemma WB)}{Bounds for b'(s) (Lemma WB)}}\label{subsec:dd-wb}
+\subsection{Derivative bounds for the remainder amplitude}\label{subsec:dd-wb}
 
-\begin{lemma}[WB]\label{lem:wb}
+\begin{lemma}[derivative bounds for the remainder amplitude]\label{lem:wb}
 Assume $0<\hbar\le1$ and $0<\alpha\le\alpha_0\le\min(1,\tau_0)$. Let $J$ be a word of length $\le n$, and let $\mathfrak D^J:=Z_1\cdots Z_m$ with $Z_i\in\{X,Y\}$ and $m=|J|$ be the ordered word it determines (the empty word is the identity). Uniformly in $s\in\Sigma_{K+1}(t)$:
 \begin{itemize}
-\item \textup{(WB-w)}
+\item[\textup{(i)}]
 \[
 \norm{X_0^\beta\mathfrak D^Jb'(s)}\le B_\beta C_4^{N+K+n+1}(2N)!\,(n+2K+2)!\,\alpha^{-(n+2K+2)}(\alpha\hbar)^{-2N}\pwNorm a
 \]
-\item \textup{(WB-u)} for $0\le\alpha_1<\alpha_0'\le\alpha_0$ with $\alpha_0'-\alpha_1\ge\alpha/4$:
+\item[\textup{(ii)}] for $0\le\alpha_1<\alpha_0'\le\alpha_0$ with $\alpha_0'-\alpha_1\ge\alpha/4$:
 \[
 \norm{\ue^{\alpha_1\Lambda}b'(s)}\le C_4^{N+K+1}(2N)!\,(2K+2)!\,\alpha^{-(2K+2)}(\alpha\hbar)^{-2N}\norm{\ue^{\alpha_0'\Lambda}a}.
 \]
@@ -502,16 +507,20 @@ Assume $0<\hbar\le1$ and $0<\alpha\le\alpha_0\le\min(1,\tau_0)$. Let $J$ be a wo
 \end{lemma}
 
 \begin{proof}
-\begin{itemize}
-\item Expand $b'$ as a sum over choices of one term from each factor:
-  \begin{itemize}
-  \item from each $\Delta(s_j)$: $\ue^{-2s_j}X^2$, $Y^2$ or $-Y$ (coefficients of modulus $\le1$, length $\le2$);
-  \item from each $\Delta_\varphi(s_1)$: $\hbar^{-2}(-1+i\hbar)$ (length $0$, $|\text{coeff}|\le2\hbar^{-2}$), $-2i\hbar^{-1}Y$ (length $1$, $|\text{coeff}|=2\hbar^{-1}$), or one of the three length-$\le2$ terms (coefficient $\le1$).
-  \end{itemize}
-\item Suppose $n_0,n_1,n_2$ of the $N$ $\Delta_\varphi$-factors choose these three kinds. The coefficient is $\le2^{n_0+n_1}\hbar^{-2n_0-n_1}$, and the word length is $\le L:=n+\ell+2K+2$, with $\ell:=n_1+2n_2\le2N$.
-\item Since $2n_0+n_1=2N-\ell$, the coefficient is $\le2^N\hbar^{-2N+\ell}$.
-\item By Lemma~\ref{lem:sc}, and since $m\mapsto(m+1)m!(C_3/\alpha)^m$ is increasing, each term is $\le B_\beta(L+1)L!(C_3/\alpha)^L\pwNorm a$.
-\item Use $L!\le2^L\ell!(n+2K+2)!$, and then
+
+Expand $b'$ by choosing one term from each factor. Each $\Delta(s_j)$ contributes $\ue^{-2s_j}X^2$, $Y^2$ or $-Y$,
+with coefficients of modulus at most $1$ and length at most $2$. Each $\Delta_\varphi(s_1)$ contributes
+$\hbar^{-2}(-1+i\hbar)$ (length $0$, coefficient of modulus at most $2\hbar^{-2}$), $-2i\hbar^{-1}Y$
+(length $1$, coefficient of modulus $2\hbar^{-1}$), or one of the three terms of length at most $2$ with coefficient
+of modulus at most $1$.
+
+Suppose $n_0,n_1,n_2$ of the $N$ $\Delta_\varphi$-factors choose these three kinds. The coefficient is $\le2^{n_0+n_1}\hbar^{-2n_0-n_1}$, and the word length is $\le L:=n+\ell+2K+2$, with $\ell:=n_1+2n_2\le2N$.
+
+Since $2n_0+n_1=2N-\ell$, the coefficient is $\le2^N\hbar^{-2N+\ell}$.
+
+By Lemma~\ref{lem:sc}, and since $m\mapsto(m+1)m!(C_3/\alpha)^m$ is increasing, each term is $\le B_\beta(L+1)L!(C_3/\alpha)^L\pwNorm a$.
+
+Use $L!\le2^L\ell!(n+2K+2)!$, and then
 \[
 \begin{aligned}
 \hbar^{-2N+\ell}\ell!(C_3/\alpha)^\ell&=\hbar^{-2N}\ell!(C_3\hbar/\alpha)^\ell\\
@@ -519,14 +528,16 @@ Assume $0<\hbar\le1$ and $0<\alpha\le\alpha_0\le\min(1,\tau_0)$. Let $J$ be a wo
 \end{aligned}
 \]
 using $\alpha,\hbar\le1\le C_3$.
-\item The per-factor weights for the $\Delta_\varphi$-factors are $2+2+1+1+1=7$ (weight $2$ for the length-$0$ and length-$1$ choices, weight $1$ for each of the three length-$\le2$ choices), so the weighted number of choices is $\le7^N3^{K+1}$, the factor $3^{K+1}$ coming from the $\Delta(s_j)$. Collecting the powers of $2$ and $7$ into $C_4$ gives (WB-w).
-\item (WB-u) is the same count with Lemma~\ref{lem:wc} (gap $\ge\alpha/4$) in place of Lemma~\ref{lem:sc}, and $n=0$. \qedhere
-\end{itemize}
+
+The per-factor weights for the $\Delta_\varphi$-factors are $2+2+1+1+1=7$ (weight $2$ for the length-$0$ and length-$1$ choices, weight $1$ for each of the three length-$\le2$ choices), so the weighted number of choices is $\le7^N3^{K+1}$, the factor $3^{K+1}$ coming from the $\Delta(s_j)$. Collecting the powers of $2$ and $7$ into $C_4$ gives (i).
+
+Part (ii) follows from the same count, using Lemma~\ref{lem:wc} (gap $\ge\alpha/4$) in place of Lemma~\ref{lem:sc}, and $n=0$. \qedhere
+
 \end{proof}
 
-\subsection{The mollifier defect on analytic vectors (Lemma UD)}\label{subsec:dd-unw}
+\subsection{The mollifier defect on analytic vectors}\label{subsec:dd-unw}
 
-\begin{lemma}[UD]\label{lem:unw}
+\begin{lemma}[analytic mollifier defect]\label{lem:unw}
 There is a constant $C_0$ such that for $0<\varepsilon\le1$, $0<a\le1$, $s\ge0$ and $z\in\operatorname{Dom}(\ue^{a\Lambda})$,
 \[
 \norm{(\Delta_\varepsilon(s)-\Delta(s))z}\le C_0\,a^{-4}\,\ue^{-a/(8\varepsilon)}\,\norm{\ue^{a\Lambda}z}.
@@ -534,23 +545,31 @@ There is a constant $C_0$ such that for $0<\varepsilon\le1$, $0<a\le1$, $s\ge0$ 
 \end{lemma}
 
 \begin{proof}
-\begin{itemize}
-\item \emph{The symbol.} For $\lambda\ge0$: $(1+\lambda^2)(1-j_\varepsilon(\lambda))\le5\,a^{-2}\ue^{-a/(4\varepsilon)}\ue^{a\lambda}$. Indeed
+
+\emph{The symbol.} For $\lambda\ge0$: $(1+\lambda^2)(1-j_\varepsilon(\lambda))\le5\,a^{-2}\ue^{-a/(4\varepsilon)}\ue^{a\lambda}$. Indeed
 $0\le1-j_\varepsilon(\lambda)=\int g(\lambda-\mu)(1-\chi(\varepsilon\mu))\,d\mu\le\int_{|\mu|\ge1/\varepsilon}g(\lambda-\mu)\,d\mu$.
-  \begin{itemize}
-  \item If $\lambda\le1/(2\varepsilon)$, then $|\lambda-\mu|\ge1/(2\varepsilon)$ on the range of integration, so
+
+If $\lambda\le1/(2\varepsilon)$, then $|\lambda-\mu|\ge1/(2\varepsilon)$ on the range of integration, so
   $1-j_\varepsilon(\lambda)\le2\ue^{-1/(8\varepsilon^2)}$. With $u=1/\varepsilon\ge1$ the left side is at most
   $2(1+u^2/4)\ue^{-u^2/8}\le5\ue^{-u/4}\le5\ue^{-a/(4\varepsilon)}$, because $2(1+u^2/4)\ue^{-(u^2-2u)/8}<5$ for $u\ge1$.
-  \item If $\lambda>1/(2\varepsilon)$, then $1-j_\varepsilon\le1$ and $(1+\lambda^2)\ue^{-a\lambda/2}\le1+16/(\ue^2a^2)\le4a^{-2}$, so
+
+If $\lambda>1/(2\varepsilon)$, then $1-j_\varepsilon\le1$ and $(1+\lambda^2)\ue^{-a\lambda/2}\le1+16/(\ue^2a^2)\le4a^{-2}$, so
   $1+\lambda^2\le4a^{-2}\ue^{a\lambda}\ue^{-a\lambda/2}\le4a^{-2}\ue^{a\lambda}\ue^{-a/(4\varepsilon)}$.
-  \end{itemize}
-\item \emph{The splitting.} $\Delta_\varepsilon(s)-\Delta(s)=-J_\varepsilon\Delta(s)(1-J_\varepsilon)-(1-J_\varepsilon)\Delta(s)$.
-\item \emph{First term.} With $z_1:=(1-J_\varepsilon)z$, Lemma~\ref{lem:ell} and $\norm{J_\varepsilon}\le1$ give
-$\norm{J_\varepsilon\Delta(s)z_1}\le2(\norm{\Delta z_1}+\norm{z_1})\le4\norm{(1+\Lambda^2)(1-j_\varepsilon(\Lambda))z}\le20\,a^{-2}\ue^{-a/(4\varepsilon)}\norm{\ue^{a\Lambda}z}$,
-by the symbol bound.
-\item \emph{Second term.} By Lemma~\ref{lem:wc} with $\tau_0=1$ (words of length $1$ and $2$, radii $a/2<a$),
+
+\emph{The splitting.} $\Delta_\varepsilon(s)-\Delta(s)=-J_\varepsilon\Delta(s)(1-J_\varepsilon)-(1-J_\varepsilon)\Delta(s)$.
+
+\emph{First term.} With $z_1:=(1-J_\varepsilon)z$, Lemma~\ref{lem:ell}, $\norm{J_\varepsilon}\le1$ and the symbol bound give
+\[
+\begin{aligned}
+\norm{J_\varepsilon\Delta(s)z_1}&\le2(\norm{\Delta z_1}+\norm{z_1})
+\le4\norm{(1+\Lambda^2)(1-j_\varepsilon(\Lambda))z}\\
+&\le20\,a^{-2}\ue^{-a/(4\varepsilon)}\norm{\ue^{a\Lambda}z}.
+\end{aligned}
+\]
+
+\emph{Second term.} By Lemma~\ref{lem:wc} with $\tau_0=1$ (words of length $1$ and $2$, radii $a/2<a$),
 $\norm{\ue^{(a/2)\Lambda}\Delta(s)z}\le3(1+4C_1/a)^2\norm{\ue^{a\Lambda}z}$. By the symbol bound with $a/2$ in place of $a$,
 $\norm{(1-J_\varepsilon)w}\le20\,a^{-2}\ue^{-a/(8\varepsilon)}\norm{\ue^{(a/2)\Lambda}w}$. Take $w=\Delta(s)z$.
-\end{itemize}
+
 Adding the two terms gives the claim with $C_0=20+60(1+4C_1)^2$. \qedhere
 \end{proof}

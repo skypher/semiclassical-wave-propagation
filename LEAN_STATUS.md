@@ -24,20 +24,21 @@ All Lean names are in the namespace `Qschubert`.
 | Corollary 1.4 (`pc:cor16bg`) | L | `pccor16bg_half` |
 | Corollary 1.5 (`pc:cor16`) | L | `pccor16_half` |
 | Corollary 1.6 (`pc:allalpha`) | L | `pcmain_all`, `pcthm13_all`, `pccor15_all`, `pccor16bg_all`, `pccor16_all`; `pcMainAt_all`, `poisson_cw_all`, `lift1_pr_all` |
+| Remark 1.7 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
 
 ## Section 2 (`sec:remainder`): periodization and the exact remainder
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Lemma 2.10 (`pc:g43`) | L | `sobolev_M_mult` |
-| Proposition 2.6 (`prop:dd-id`) | L | `dd_D12_simplex`, `dd_D3`, `SurfW.surf_D4`, `SurfW.surf_D4_bound` |
-| Lemma 2.7 (`lem:surf-lap`) | L | `SurfW.surf_lap` |
-| Lemma 2.8 (`lem:surf-duh`) | L | `SurfW.surf_duhamel` |
-| Corollary 2.9 (`cor:surf-dyson`) | L | `SurfW.surf_dyson` |
-| Lemma 2.3 (`lem:lift`) | L | `allWords_of_exp`, `patch_smooth`, `glue_smooth`, `lift1` |
-| Lemma 2.4 (`lem:base`) | L | `exists_stab_smul_infty`, `initState_mul`, `approxSolB_mul`, `expLambda_iso`, `poincareSup_conj_move` |
 | Lemma 2.1 (`lem:p1`) | L | `poincareSup_lt_top` |
 | Lemma 2.2 (`lem:t2`) | L | `lem_t2` |
+| Lemma 2.3 (`lem:lift`) | L | `allWords_of_exp`, `patch_smooth`, `glue_smooth`, `lift1` |
+| Lemma 2.4 (`lem:base`) | L | `exists_stab_smul_infty`, `initState_mul`, `approxSolB_mul`, `expLambda_iso`, `poincareSup_conj_move` |
+| Lemma 2.6 (`lem:surf-lap`) | L | `SurfW.surf_lap` |
+| Lemma 2.7 (`lem:surf-duh`) | L | `SurfW.surf_duhamel` |
+| Corollary 2.8 (`cor:surf-dyson`) | L | `SurfW.surf_dyson` |
+| Proposition 2.9 (`prop:dd-id`) | L | `dd_D12_simplex`, `dd_D3`, `SurfW.surf_D4`, `SurfW.surf_D4_bound` |
+| Lemma 2.10 (`pc:g43`) | L | `sobolev_M_mult` |
 
 ## Section 3 (`sec:analytic`): analytic and weighted propagation estimates
 
