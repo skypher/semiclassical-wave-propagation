@@ -38,7 +38,8 @@ Cauchy--Schwarz inequality and unfolding
   \norm{[S(t)|a|]_\Gamma}_{L^2(M)}\ge\operatorname{area}(M)^{-1/2}\int_\Hb S(t)|a|\,d\nu=\operatorname{area}(M)^{-1/2}\,\ue^{t/2}\norm a_{L^1(\Hb)} .
 \]
 So the norm of the periodization with the phase is smaller than the norm of the periodization of the moduli by a factor of order
-at most $\ue^{-t/2}$: the terms cancel. The following picture is geometric intuition and is not proved here. The terms that
+at most $\ue^{-t/2}$: the terms cancel. The role of the phase factors for the boundedness of the sum is pointed out in
+\cite[Remark~1.9]{S}. The following picture is geometric intuition and is not proved here. The terms that
 contribute at a point come from about $\ue^{t}$ sheets of the cover. Up to the Ehrenfest time $\log(1/\hbar)$ their phase
 gradients differ by more than $\hbar$, so that they are almost orthogonal one by one; beyond it the phase gradients of many pairs
 differ by less than $\hbar$, and the cancellation is a property of the sum.
@@ -114,8 +115,13 @@ compact set tends to $0$; the state has moved into the cusp. So on this window t
 $q\ge0$, $q\not\equiv0$, is not given by the classical transport, whose limit $\tfrac3\pi\mu_0\int_Mq\,d\nu$ is positive, although by (i) and
 (ii) the periodized approximation remains accurate and has the same behaviour. The time $T(\hbar)$ is a sufficient time; it is not
 claimed to be the time at which the departure begins. For the wave
-group and Lagrangian states on unstable horocycles of the modular surface, the departure from classical transport at logarithmic
-times is due to Brooks \cite{Bro17}.
+group and Lagrangian states on unstable horocycles of the modular surface, the departure from classical transport at sufficiently
+large logarithmic times is due to Brooks \cite{Bro22}; the sufficient time $T(\hbar)$ obtained here is longer by the factor
+$\log\log(1/\hbar)$. As in \cite{Bro22}, the computation rests on Eisenstein series: by Lemma~\ref{ev:meanlem} the periodization of
+$a$ along the translations is the function $a_0$ of $y$ alone, so the periodized leading approximation $u^{(0)}(t)_\Gamma$ is a sum over
+$\Gamma_\infty\backslash\Gamma$ of a function of $\operatorname{Im}\gamma z$, and the proof below evaluates its zero Fourier mode by
+means of the scattering coefficient \eqref{ev:Phi}. The example therefore tests the approximation only on amplitudes whose periodization
+along the cusp has no nonzero Fourier modes.
 
 \begin{remark}[the time scale]\label{ev:time}
 The proof uses the classical zero-free region of the Riemann zeta function \cite[Theorem~6.6]{MV07}, which gives the sufficient time $T(\hbar)$. For $r>0$

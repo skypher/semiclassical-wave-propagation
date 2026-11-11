@@ -7,15 +7,16 @@ $b=\infty$ and $\varphi=-\log y$. For a function $F$ on $\Hb$ we write $[F]_\Gam
 $E_K(t):=\cU(t)(a\,\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma$. Words $Z_S$ are products of $X$ and $Y$.
 
 \begin{theorem}[the cusp factor is necessary]\label{cl:main}
-Let $\beta>\tfrac12$, let $\alpha_0<\tfrac12$ be small enough for Theorems~\ref{thm:dd-appx} and~\ref{pc:main} and for Lemma~\ref{cl:amp}(i), and fix
-$\alpha\in(0,\alpha_0]$; the constants below depend on the fixed $\alpha$, $\beta$ and $\kappa$.
+Let $\beta>\tfrac12$ and $\alpha_0:=\tfrac12$, and let $\alpha_1=\alpha_1(\beta)\in(0,\alpha_0]$ be the radius of Lemma~\ref{cl:amp}(i). The constants
+below depend on the fixed radius $\alpha$ and on $\beta$, and in (ii) also on the decay rate $\kappa$ of the amplitude. Theorems~\ref{thm:dd14}
+and~\ref{pc:main} are applied with their constant $\kappa$ equal to $\alpha^3$, so that their condition $\alpha^3\ge\kappa\hbar$ holds for all $\hbar\le1$.
 \begin{enumerate}
-\item[(i)] (Swapped class.) For $a=\ue^{-20X_0}$ there are $\hbar_0,c_*,t_*>0$ such that for $0<\hbar\le\hbar_0$, every
+\item[(i)] (Swapped class.) Let $\alpha\in(0,\alpha_1]$. For $a=\ue^{-20X_0}$ there are $\hbar_0,c_*,t_*>0$ such that for $0<\hbar\le\hbar_0$, every
 $t$ with $\max(2\log(1/\hbar),t_*)\le t\le\min(\hbar^{-1/5},\delta(\alpha/\hbar)^{1/2})$, and every $z=x+i\ue^t$,
 \[
 |E_0(t)(z)|\ge c_*\,\ue^{t/2}\hbar^{3/2}t,\qquad m(z)\le5\ue^t .
 \]
-\item[(ii)] (Printed class.) The same holds for $a=\ue^{-\alpha\Lambda}\ue^{-\kappa X_0}$, with $\kappa\ge\kappa_*$ and $\alpha\le\alpha_*(\kappa):=\min(\alpha_0,c\kappa^{-6})$; here the
+\item[(ii)] (Printed class.) The same holds for $a=\ue^{-\alpha\Lambda}\ue^{-\kappa X_0}$, with $\kappa\ge\kappa_*$ and $0<\alpha\le\alpha_*(\kappa):=\min(\alpha_0,c\kappa^{-6})$; here the
 proof uses Theorem~\ref{pc:main}.
 \end{enumerate}
 Consequently, on $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$ and for this $b$, the factor $m(z)^{1/2}$ in Corollary~\ref{pc:cor16} (and in its swapped-class
@@ -62,8 +63,8 @@ Theorem~\ref{cl:main} extends to every $b\in\mathbb Q$, the other cusps of $\mat
 $\varphi_b=\varphi_\infty\circ\gamma^{-1}$ up to a constant, the approximation for $b$ is the $\gamma$-transport of the one for $\infty$, and the error for
 $(b,a)$ is a constant phase times the error for $(\infty,a\circ\gamma)$. So take $a_b:=a\circ\gamma^{-1}$, that is $\ue^{-\kappa\cosh d(\gamma i,\cdot)}$ in case
 (i) and $\ue^{-\alpha\Lambda}\ue^{-\kappa\cosh d(\gamma i,\cdot)}$ in case (ii) ($\Lambda$ commutes with isometries); these have finite norms about the base
-point $i$, since $\langle d(i,\cdot)\rangle\le\langle d(\gamma i,\cdot)\rangle+d(i,\gamma i)$ and the tube argument of Lemma~\ref{cl:amp}(i) is isometry
-invariant. Like the printed Corollary~1.6, Corollary~\ref{pc:cor16} is stated for every Fuchsian $\Gamma$ and every $b$, with constants that do not depend on $b$
+point $i$: in case (ii) because $\langle d(i,\cdot)\rangle\le\langle d(\gamma i,\cdot)\rangle+d(i,\gamma i)$, and in case (i) because the swapped norm of
+$a\circ\gamma^{-1}$ about $i$ is that of $a$ with the weight $\ue^{\beta\langle d(p,\cdot)\rangle}$, $p=\gamma^{-1}i$, which Lemma~\ref{cl:amp}(i) covers. Like the printed Corollary~1.6, Corollary~\ref{pc:cor16} is stated for every Fuchsian $\Gamma$ and every $b$, with constants that do not depend on $b$
 (in Corollary~\ref{pc:cor16} they may depend on $\Gamma$); by Theorem~\ref{cl:main} no
 statement of that form can have $m(z)^\gamma$ with $\gamma<\tfrac12$, so the exponent $\tfrac12$ is optimal among them (the power of $\hbar$ is not
 claimed optimal). For irrational $b$, and for cusped quotients other than $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$, the necessity of the factor is not decided
@@ -118,10 +119,10 @@ $\vartheta\le X_0^{-1}$ for the second). So the translation part is at most $C\u
 Q(\tau)=\frac ac-\frac{\tau}{cY(\tau^2+c^2)}+\frac{i}{\tau^2+c^2},\qquad \varphi(\gamma_{a,c}(z+u))=t+\log(\tau^2+c^2),
 \]
 so $G_{a,c}(u)=g(\tau):=\ue^{-t/2}A(Q(\tau))\,\ue^{i(t+\log(\tau^2+c^2))/\hbar}$ and $du=(Y/c)\,d\tau$. Put $a_1(\sigma)=2\sigma/(1+\sigma^2)$ and
-$a_2(\sigma)=(1-\sigma^2)/(1+\sigma^2)$; these functions and all their derivatives are bounded on $\mathbb R$. Since $X=y\partial_x$ and $Y=y\partial_y$
-(here $Y$ also denotes the vector field), for every $C^1$ function $H$ on $\Hb$
+$a_2(\sigma)=(1-\sigma^2)/(1+\sigma^2)$; these functions and all their derivatives are bounded on $\mathbb R$. In this proof $Y$ is the height, and
+the two vector fields are written $\mathsf X=y\partial_x$ and $\mathsf Y=y\partial_y$. For every $C^1$ function $H$ on $\Hb$
 \begin{equation}\label{cl:chain}
-\partial_\tau\bigl[H(Q(\tau))\bigr]=-\frac1c\,a_1\Bigl(\frac\tau c\Bigr)(YH)(Q(\tau))-\frac1{cY}\,a_2\Bigl(\frac\tau c\Bigr)(XH)(Q(\tau)) .
+\partial_\tau\bigl[H(Q(\tau))\bigr]=-\frac1c\,a_1\Bigl(\frac\tau c\Bigr)(\mathsf YH)(Q(\tau))-\frac1{cY}\,a_2\Bigl(\frac\tau c\Bigr)(\mathsf XH)(Q(\tau)) .
 \end{equation}
 Applying \eqref{cl:chain} $j$ times, $\partial_\tau^j[A(Q(\tau))]$ is a sum of at most $C_j$ terms, each of which is $c^{-j}$ times a product of
 derivatives of $a_1$ and $a_2$ at $\tau/c$, times a power $Y^{-k}$ with $k\ge0$, times $(Z_SA)(Q(\tau))$ for a word with $|S|\le j$. So
@@ -167,9 +168,9 @@ $f(\sigma)=\ue^{-t/2}A(Q(c\sigma))$ and $\theta(\sigma)=\log(1+\sigma^2)$, so th
 \end{equation}
 and the same bound holds for $j\le2$ when $A$ is replaced by $Z_SA$ with $|S|\le2$. By \eqref{cl:chain},
 \begin{equation}\label{cl:fprime}
-f'=-\theta'f_1-Y^{-1}a_2f_2,\qquad f_1:=\ue^{-t/2}(YA)(Q(c\sigma)),\quad f_2:=\ue^{-t/2}(XA)(Q(c\sigma)),
+f'=-\theta'f_1-Y^{-1}a_2f_2,\qquad f_1:=\ue^{-t/2}(\mathsf YA)(Q(c\sigma)),\quad f_2:=\ue^{-t/2}(\mathsf XA)(Q(c\sigma)),
 \end{equation}
-and likewise $f_1'=-\theta'f_{11}-Y^{-1}a_2f_{21}$ with $f_{11}$, $f_{21}$ defined by $Y^2A$ and $XYA$. Let $\chi$ be a fixed cutoff, $\chi=1$ on
+and likewise $f_1'=-\theta'f_{11}-Y^{-1}a_2f_{21}$ with $f_{11}$, $f_{21}$ defined by $\mathsf Y^2A$ and $\mathsf X\mathsf YA$. Let $\chi$ be a fixed cutoff, $\chi=1$ on
 $[-\tfrac12,\tfrac12]$, $\operatorname{supp}\chi\subset[-1,1]$, and split $f=\chi f+(1-\chi)f$.
 
 \emph{Near part.} On $[-1,1]$, $\theta=s(\sigma)^2$ with $s(\sigma)=\operatorname{sign}(\sigma)(\log(1+\sigma^2))^{1/2}$, a fixed smooth function with $s'>0$ and
@@ -241,11 +242,15 @@ The computation in the proof of Lemma~\ref{os:poisson}, with $\alpha^2-\theta^2$
 \[
 C\alpha\int_a^\infty\frac{\rho\,K_2\bigl(\sqrt{\rho^2+\alpha^2-\theta^2}/2\bigr)}{\rho^2+\alpha^2-\theta^2}\,\frac{d\rho}{(\cosh\rho-\cosh a)^{1/2}},
 \]
-which converges because $\rho^2+\alpha^2-\theta^2\ge r_0^2/2$, and is bounded as in \textup{(\ref{os:ub})}. Cauchy estimates on discs of radius $r_0/8$ give the derivative bounds.
+which converges because $\rho^2+\alpha^2-\theta^2\ge r_0^2/2$. For $a\ge1$ it is bounded as in \textup{(\ref{os:ub})}. For $3r_0/4<a<1$ the factor
+$\rho\,K_2(\cdot)/(\rho^2+\alpha^2-\theta^2)$ is bounded by a constant times $\ue^{-\rho/2}$ on $\rho\ge a$, with a constant depending on $r_0$, and
+$\int_a^\infty\ue^{-\rho/2}(\cosh\rho-\cosh a)^{-1/2}d\rho$ is bounded for these $a$; so the integral is at most $C\alpha$ there, which is the claim. Cauchy estimates on discs of radius $r_0/8$ give the derivative bounds.
 \end{proof}
 
 \begin{lemma}[the amplitudes]\label{cl:amp}
-(i) $a=\ue^{-\kappa X_0}$ has finite swapped norm for every $\alpha\le r_1<\tfrac12$ and $\beta$, and $|Z_Sa|\le C_{S,\kappa}X_0^{|S|}\ue^{-\kappa X_0}$.
+(i) For every $\beta\ge0$ there is $\alpha_1=\alpha_1(\beta)\in(0,\tfrac12]$ such that for all $\kappa>0$ and $p\in\Hb$ the function
+$\ue^{\beta\langle d(p,\cdot)\rangle}\ue^{-\kappa X_0}$ lies in $\operatorname{Dom}(\ue^{\alpha_1\Lambda})$; in particular $a=\ue^{-\kappa X_0}$ has finite swapped norm
+$\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}$ for every $\alpha\le\alpha_1$. Moreover $|Z_Sa|\le C_{S,\kappa}X_0^{|S|}\ue^{-\kappa X_0}$.
 (ii) $a=\ue^{-\alpha\Lambda}\ue^{-\kappa X_0}$ has $\norm a_{\alpha,\beta}=\norm{\ue^{\beta\langle d\rangle}\ue^{-\kappa X_0}}<\infty$, and
 $|Z_Sa(w)|\le C_{S,\kappa}\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$ uniformly in $\alpha\le\alpha_0$.
 (iii) Put $A_0=(Y^2-Y)a$ and $S_0(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(a,c)=1}A_0(a/c+i/c^2)$. In case (i) with $\kappa=20$, $|S_0(\hbar)|\ge0.98\,\kappa\ue^{-\kappa}$
@@ -272,13 +277,42 @@ $|K_\alpha^{(j)}(\cosh r)|\le C_{j,r_0}\alpha\,\ue^{-r}(1+r)^{-3/2}(\cosh r)^{-j
 of terms $K_\alpha^{(j)}(\cosh d)\prod_{l\le j}Z_{S_l}^w\cosh d$, which proves the claim.
 \end{itemize}
 
-(i) Fix $R\in(r_1,\tfrac12)$. As in the proof of Lemma~\ref{lem:ex}, $f=\ue^{\beta\langle d\rangle}a=\ue^{\beta H(X_0)-\kappa X_0}$ extends holomorphically to the
-sub-crown $\Xi_R$ (not to the whole crown: $H$ has a branch point where $1+G=0$), and on the orbit at radius $r\le r_1$, in the notation of that proof,
-$\tilde X_0=cA+isB$, so $\operatorname{Re}\tilde X_0=\cos(2r)X_0$. The two estimates of that proof also give an upper bound: since $H'(cA)$ is real,
-$\operatorname{Re}H(\tilde X_0)\le H(cA)+\tfrac12\sup|H''|\,s^2B^2\le H(cA)+Cs^2$, and $H(cA)\le H(A)$ because $H$ is nondecreasing on
-$(\cos1,\infty)\ni cA$. So $\operatorname{Re}\widetilde{\langle d\rangle}\le\langle d\rangle+C_Hr^2$ and
-$|\tilde f|\le\ue^{\beta C_Hr^2}\ue^{\beta\langle d\rangle}\ue^{-\kappa\cos(2r)X_0}$ on that orbit; as $\cos(2r_1)>0$, the tube norm of $f$ is finite, and
-$\norm{\ue^{\alpha\Lambda}f}\le C_0N_\alpha(f)$ as there. By the relations in (d), every word applied to
+(i) Let $d_p:=d(p,\cdot)$, $X_p:=\cosh d_p$ and $m_p:=X_p^\beta\ue^{-\beta\langle d_p\rangle}$, so that
+\[
+\ue^{\beta\langle d_p\rangle}\ue^{-\kappa X_0}=\frac1{m_p}\cdot X_p^\beta\cdot\ue^{-\kappa X_0}.
+\]
+We bound the words of the three factors; $j$ denotes the length of the word $Z_S$.
+
+\emph{The first factor.} For $p=i$, $m_i=\Phi(\tilde\psi)$ is the function of the proof of Lemma~\ref{lem:m2w}. Steps~1 and~2 of that proof apply
+to $1/\Phi$ in place of $\Phi$: $1/\Phi$ is holomorphic near every point of $[0,\infty)$, and on the strip of Step~1,
+$|1/\Phi|=\exp\beta\operatorname{Re}(\ell+(D+R)^{-1}-1)\le\ue^{\beta}$, because $|1+(1-\ue^{-2\psi})^{1/2}|\le3$ and $|D+R|^{-1}\le\tfrac{10}{17}$ there. So there
+are $A_\beta,c_\beta\ge1$, depending only on $\beta$, with $|Z_S(1/m_i)|\le A_\beta c_\beta^{\,j}j!$. If $q$ is the affine isometry with $q(i)=p$, then
+$m_p=m_i\circ q^{-1}$, and $q$ commutes with $X$ and $Y$; so the same bound holds for $1/m_p$.
+
+\emph{The other two factors.} Let $\phi$ be holomorphic in $\operatorname{Re}u>0$. By the expansion in the proof of Lemma~\ref{lem:fdb} and
+$|Z_BX_0|\le2\cdot2^{|B|}X_0$,
+\[
+|Z_S\phi(X_0)|\le2^j\sum_kS(j,k)\,2^kX_0^k\,|\phi^{(k)}(X_0)| ,
+\]
+with the Stirling numbers $S(j,k)$, and Cauchy's estimate on the disc of radius $u/2$ about $u\ge1$ gives
+$u^k|\phi^{(k)}(u)|\le k!\,2^k\sup_{|z-u|\le u/2}|\phi|$. For $\phi(u)=u^\beta$ the supremum is at most $(3u/2)^\beta$, and for
+$\phi(u)=\ue^{-\kappa u}$ it is at most $\ue^{-\kappa u/2}$. The exponential generating function of $\sum_kS(j,k)4^kk!$ is $(5-4\ue^z)^{-1}$, which is
+holomorphic in $|z|<\log\tfrac54$ and at most $9$ in modulus on $|z|=\tfrac15$ (there $|5-4\ue^z|\ge5-4\ue^{1/5}>\tfrac19$); so
+$\sum_kS(j,k)4^kk!\le9\cdot5^jj!$. Hence
+\[
+|Z_S\,\ue^{-\kappa X_0}|\le9\cdot10^jj!\,\ue^{-\kappa X_0/2},\qquad|Z_SX_p^\beta|\le9\cdot10^jj!\,(3X_p/2)^\beta ,
+\]
+the second by the first argument applied to $X_0^\beta$ and composition with $q^{-1}$.
+
+\emph{Conclusion.} By the Leibniz rule for three factors, with $M:=\max(c_\beta,10)$,
+\begin{multline*}
+\bigl|Z_S\bigl(\ue^{\beta\langle d_p\rangle}\ue^{-\kappa X_0}\bigr)\bigr|\le81A_\beta\,j!\sum_{j_1+j_2+j_3=j}c_\beta^{\,j_1}10^{\,j_2+j_3}\,(3X_p/2)^\beta\ue^{-\kappa X_0/2}\\
+\le81A_\beta\,(j+1)\,j!\,(2M)^j\,(3X_p/2)^\beta\ue^{-\kappa X_0/2},
+\end{multline*}
+because the sum has $\binom{j+2}2\le(j+1)2^j$ terms. Since $X_p\le2\cosh d(p,i)\,X_0$, the function $(3X_p/2)^\beta\ue^{-\kappa X_0/2}$ lies in
+$L^2(\Hb)$. Lemma~\ref{lem:expw} (with $\alpha=1$ and $2M$ in the role of $M$) gives the claim with $\alpha_1:=1/(8M)$, which depends only on $\beta$.
+
+\emph{The word bound.} By the relations in (d), every word applied to
 $X_0$ is bounded by $C_SX_0$, and $Z_S\ue^{-\kappa X_0}$ is $\ue^{-\kappa X_0}$ times a sum of products of at most $|S|$ factors $-\kappa Z_{S_l}X_0$. So
 \begin{equation}\label{cl:hwords}
 |Z_S\ue^{-\kappa X_0}|\le C_S(1+\kappa)^{|S|}X_0^{|S|}\ue^{-\kappa X_0},
@@ -360,7 +394,7 @@ $P_1(t)a=\int_0^t\Delta(s)a\,ds=\tfrac{1-\ue^{-2t}}2X^2a+t(Y^2-Y)a$, Lemma~\ref{
 |M_1(z)|\ge\ue^{t/2}\sqrt{\pi\hbar}\,\tfrac\hbar2\bigl(t|S_0(\hbar)|-S_X\bigr)-C\ue^{t/2}\hbar^{3/2}\hbar t,
 \]
 with $S_X=\sum_{(a,c)}|X^2a(a/c+i/c^2)|<\infty$. $P_2(t)a$ is a combination of
-words of length at most $4$ with coefficients bounded by $t^2/2$, so $|M_2(z)|\le C\ue^{t/2}\hbar^{1/2}\hbar^2t^2$. For $E_2$, Theorem~\ref{thm:dd-appx} in case (i)
+words of length at most $4$ with coefficients bounded by $t^2/2$, so $|M_2(z)|\le C\ue^{t/2}\hbar^{1/2}\hbar^2t^2$. For $E_2$, Theorem~\ref{thm:dd14} in case (i)
 and Theorem~\ref{pc:main} in case (ii), at $K=2$ and $N=0,2$, give $\norm{E_2}\le C(\hbar t/\alpha^2)^3\norm a$ and
 $\norm{\Delta^2E_2}\le C(\alpha\hbar)^{-4}(\hbar t/\alpha^2)^3\norm a$; Lemma~\ref{cl:ssob} with $r=\hbar$ gives $|E_2(z)|\le C\ue^{t/2}\hbar^{-1}\alpha^{-10}(\hbar t)^3\norm a$.
 Hence

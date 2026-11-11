@@ -1,6 +1,6 @@
 % Appendix: Theorem 1.4 with explicit constants, the periodization lemmas (T2, G4.2) and Lemma EX.
 
-\section{Theorem 1.4 with explicit constants}\label{sec:dd}
+\section{Proof of Theorem 1.4R}\label{sec:dd}
 
 \medskip\noindent\textbf{Notation.}
 Let $X=y\partial_x$, $Y=y\partial_y$, $\Delta=X^2+Y^2-Y$, $\Delta(s)=\ue^{-2s}X^2+Y^2-Y$,
@@ -16,8 +16,8 @@ Appendix~\ref{app:kl}.
 
 \subsection{Exact identities}\label{subsec:dd-id}
 
-Let $V(t,s)$ be the unitary propagator of $i\partial_tV=-\tfrac{\hbar}{2}\Delta(t)V$ (\cite[(1.22)]{S}), let
-$V(t)=V(t,0)$, and let $c:=i\hbar/2$. By \cite[(1.23)]{S},
+Let $V(t)$ be the unitary operator of \eqref{eq:factor}, let $V(t,s):=V(t)V(s)^{-1}$, the propagator of
+$i\partial_tV=-\tfrac{\hbar}{2}\Delta(t)V$ (\cite[(1.22)]{S}), and let $c:=i\hbar/2$. By \eqref{eq:factor} (which is \cite[(1.23)]{S}),
 \[
 \cU(t)(a\,\ue^{i\varphi/\hbar})=\ue^{-it/(2\hbar)}\bigl(S(t)V(t)a\bigr)\ue^{i\varphi/\hbar},
 \qquad (S(t)w)(x,y)=\ue^{-t/2}w(x,\ue^{t}y),
@@ -62,7 +62,9 @@ Everything of high order is now inside $b'(s)$, which is a fixed word-polynomial
 \medskip\noindent\textbf{(D1).}
 \begin{itemize}
 \item $V(s)^*=V(0,s)$ and $\partial_sV(t,s)=-c\,V(t,s)\Delta(s)$ on $H^\infty$. So for $b$ with all words in $L^2$, $s\mapsto V(s)^*b$ is
-differentiable in $L^2$ with derivative $-c\,V(s)^*\Delta(s)b$.
+differentiable in $L^2$ with derivative $-c\,V(s)^*\Delta(s)b$. (In integrated form this is Lemma~\ref{lem:surf-duh} for the trivial
+group, the weight $\omega=1$ and the constant path $g(s)=b$: then $\mathcal V_sg=\ue^{i\varphi/\hbar}V(s)^*g$ by \eqref{eq:factor}; the proof
+of that lemma does not use (D1).)
 \item $P_k(s)a$ is a finite sum of continuous scalar functions of $s$ times fixed words applied to $a$; $\partial_sP_k(s)=\Delta(s)P_{k-1}(s)$
 and $P_k(0)=0$ for $k\ge1$.
 \item With $J_k(t):=\int_0^tV(s)^*\Delta(s)P_k(s)a\,ds$ this gives $V(t)^*P_k(t)a=J_{k-1}(t)-cJ_k(t)$ for $k\ge1$, and $V(t)^*a-a=-cJ_0(t)$.
@@ -155,7 +157,7 @@ For $\tau_0<\pi/2$ there is $C_1=C_1(\tau_0)$ such that for $Z\in\{X,Y\}$ and $0
 \begin{proof}
 \medskip\noindent\textbf{Reduction.}
 \begin{itemize}
-\item Fourier-transform in $x$. On the mode $\ue^{ikx}$, $k\ne0$, put $z=|k|y$ and $w(y)=z^{1/2}f(z)$, $f\in L^2(dz/z)$.
+\item Fourier-transform in $x$. On the mode $\ue^{ikx}$, $k\ne0$, put $z=|k|y$ and write the function of $y$ as $z^{1/2}f(z)$, $f\in L^2(dz/z)$.
 \item Then $-\Delta-\tfrac14=-(z\partial_z)^2+z^2$, and
   \begin{itemize}
   \item $X=i\,\operatorname{sgn}(k)\,z$ (multiplication);
@@ -488,7 +490,7 @@ with $N^{2N}:=1$ at $N=0$.
 \end{theorem}
 
 \begin{remark}
-The swapped class here uses $\tilde\psi$, and $\langle d\rangle$ via Lemma~\ref{lem:m2w}. This theorem concerns the swapped class; the printed (original-order) class is treated in Section~\ref{sec:printed}. Compared with \cite[(1.30)]{S}, which has the bound $C^{N+K+1}N^{2N}K!(\alpha\hbar)^{-2N-4}(\hbar t/\alpha^2)^K\norm a$, the present bound is smaller by the factor $(\alpha\hbar)^4\cdot\hbar t/\alpha^2\le1$, and the window is $t\le\delta(\alpha/\hbar)^{1/2}$. The proof below is the one that is formalized (Appendix~\ref{app:lean}).
+The swapped class here uses $\tilde\psi$, and $\langle d\rangle$ via Lemma~\ref{lem:m2w}. This theorem concerns the swapped class; the printed (original-order) class is treated in Section~\ref{sec:printed}. Compared with \cite[(1.30)]{S}, which has the bound $C^{N+K+1}N^{2N}K!(\alpha\hbar)^{-2N-4}(\hbar t/\alpha^2)^K\norm a$, the present bound is smaller by the factor $(\alpha\hbar)^4\cdot\hbar t/\alpha^2$ (at most $1$ on the window of \cite{S}), and the window is $t\le\delta(\alpha/\hbar)^{1/2}$. The proof below is the one that is formalized (Appendix~\ref{app:lean}).
 \end{remark}
 
 \begin{proof}
@@ -502,7 +504,7 @@ a_0:=c_M\alpha,\qquad a_1:=\tfrac34a_0,\qquad a_2:=\tfrac12a_0,\qquad\varepsilon
 \]
 so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=x/2$ and $\alpha/\varepsilon=2x$. Fix $\gamma:=(2\beta+1)/4\in(1/2,\beta)$ and put $\theta:=\gamma/\beta\in(0,1)$.
 
-Use (D4) with $\omega=W_\gamma$; every word applied to $a$ lies in $L^2_\omega$ by (WB-w). For each $\mathbf s=(s_1,\dots,s_{K+1})\in\Sigma_{K+1}(t)$ let
+Use (D4) with $\omega=W_\gamma$; every word applied to $a$ lies in $L^2_\omega$ by Lemma~\ref{lem:sc}, since $W_\gamma\le X_0^\beta$. For each $\mathbf s=(s_1,\dots,s_{K+1})\in\Sigma_{K+1}(t)$ let
 \[
 g(t'):=V_\varepsilon(t',s_1)\,b',\quad0\le t'\le s_1,\qquad w:=g(0)=V_\varepsilon(s_1)^*b',
 \]
@@ -612,15 +614,20 @@ with $C'$ an absolute constant.
 
 \begin{proof}[Proof of Corollary~\ref{cor:dd15-appx} (Schubert's computation for his Corollary 1.5 \cite{S})]
 \begin{itemize}
-\item \[(C\hbar t/\alpha^2)^{K+1}K!\le\delta_K\cdot e\,K^{1/2}\ue^{-K}(K\delta_K)^K\] (Stirling).
+\item The bound of Theorem~\ref{thm:dd-appx} is $C^NN^{2N}(\alpha\hbar)^{-2N}\,\delta_K^{K+1}K!\,\norm a$, because $C^{K+1}(\hbar t/\alpha^2)^{K+1}=\delta_K^{K+1}$.
+On the window, $K\ge(1-\varepsilon)/\delta_K>0$, so $K\ge1$.
+\item \[\delta_K^{K+1}K!\le\delta_K\cdot e\,K^{1/2}\ue^{-K}(K\delta_K)^K\] (Stirling).
 \item $K\delta_K\le1-\varepsilon/2$ gives $(K\delta_K)^K\le\ue^{-K\varepsilon/2}$, and $\sup_KK^{1/2}\ue^{-K\varepsilon/2}\le(e\varepsilon)^{-1/2}$.
 \item $K\ge(1-\varepsilon)/\delta_K$ gives $\ue^{-K}\le\ue^{-(1-\varepsilon)\alpha^2/(C\hbar t)}$.
-\item $\delta_K\le1$: indeed $\delta_K=C\hbar t/\alpha^2\le C\delta\,\hbar^{1/2}\alpha^{-3/2}\le C\delta\kappa^{-1/2}\le1$, by $t\le\delta(\alpha/\hbar)^{1/2}$, $\alpha^3\ge\kappa\hbar$ and $\delta\le\kappa^{1/2}/\max(1,C)$. \qed
+\item $\hbar t/\alpha^2\le\delta\,\hbar^{1/2}\alpha^{-3/2}\le\delta\kappa^{-1/2}\le1/\max(1,C)$, by $t\le\delta(\alpha/\hbar)^{1/2}$, $\alpha^3\ge\kappa\hbar$ and
+$\delta\le\kappa^{1/2}/\max(1,C)$. Hence $\delta_K\le1$ and $C^N\delta_K=C^{N+1}\hbar t/\alpha^2\le C^{N+1}$, and the bound holds with $C'=\ue^{1/2}$. \qed
 \end{itemize}
 \end{proof}
 
 \begin{remark}
-The printed window ``$K\in[C\alpha^2/\hbar t-\varepsilon,\;C\alpha^2/\hbar t-\varepsilon/2]$'' says it uses the same $C$ as \cite[(1.30)]{S}. Schubert's own proof of Corollary 1.5 uses the multiplicative window $K\delta_K\in[1-\varepsilon,1-\varepsilon/2]$; we follow the proof and record the mismatch. Growth of $K!\delta_K^K$ needs $K\delta_K>e$ at leading Stirling order. If the window contains no integer the statement is vacuous; at $t=0$ the error is $0$.
+In \cite[Corollary~1.5]{S} the window is printed as $K\in[C\alpha^2/\hbar t-\varepsilon,\;C\alpha^2/\hbar t-\varepsilon/2]$, with the constant $C$ of
+\cite[(1.30)]{S}. The proof there uses $K\delta_K\in[1-\varepsilon,1-\varepsilon/2]$, which is the window used here. If the window contains no integer
+the statement is empty; at $t=0$ the error is $0$.
 \end{remark}
 
 \begin{corollary}[Corollary 1.6R, weight $X_0^\beta$]\label{cor:dd16-appx}
@@ -658,29 +665,50 @@ The Sobolev inequality \cite[(5.91)]{S} fails on $M$ with cusps (Remark~\ref{rem
 \subsection{Lemma EX: the example amplitudes of \texorpdfstring{\cite{S}}{[S]} are covered}\label{subsec:dd-ex}
 
 \begin{lemma}[EX]\label{lem:ex}
-Let $H(z):=(1+G(z))^{1/2}-1$, with $G(z)=-\arccos(z)^2$ as in Lemma~\ref{lem:m2}, so $\langle d\rangle=H(X_0)$ on $\Hb$. Fix $r_1<1/2$. There are constants $C_H,C_0$, depending only on $r_1$, such that for $\mu\ge1$ and $0<\alpha\le\min(r_1,\mu^{-1/2})$,
+Fix $r_1<\tfrac12$. There are constants $C_H$ and $C_{\mathrm E}$, depending only on $r_1$, such that for $\mu\ge1$ and
+$0<\alpha\le\min(r_1,\mu^{-1/2})$,
 \[
-\norm{\ue^{\alpha\Lambda}\ue^{-\mu\langle d\rangle}}_{L^2(\Hb)}\le C_0\ue^{C_H\mu\alpha^2}\norm{\ue^{-\mu\langle d\rangle}}_{L^2(\Hb)}\le C_0\ue^{C_H}(\pi/\mu)^{1/2}(1+o(1)).
+\norm{\ue^{\alpha\Lambda}\ue^{-\mu\langle d\rangle}}_{L^2(\Hb)}\le(\pi\ue)^{1/2}\,\ue^{C_H\mu\alpha^2}\norm{\ue^{-\mu\langle d\rangle}}_{L^2(\Hb)}\le C_{\mathrm E}\,\mu^{-1/2}.
 \]
 \end{lemma}
 
 \begin{proof}
-\medskip\noindent\textbf{The function is holomorphic and controlled on the tube.}
-\begin{itemize}
-\item $\ue^{-\mu\langle d\rangle}=\ue^{-\mu H(X_0)}$ extends holomorphically to $\Xi_R$ for $R<1/2$ (the domain argument of Lemma~\ref{lem:m2}).
-\item On the orbit at radius $r\le r_1$, write $\tilde X_0=cA+isB$ with $c=\cos2r$, $s=\sin2r$, $A=X_0(gx_0)$ and $|B|\le(A^2-1)^{1/2}$.
-\item $H$ is real on $[1,\infty)$ and holomorphic near $S_{r_2}$, for a fixed $r_2\in(r_1,1/2)$. Bounds: $|H'(z)|\le C/|z|$ and $|H''(z)|\le C/|z|^2$ on $S_{r_1}$. These follow from Cauchy estimates on discs of radius $\asymp|z|$ inside $S_{r_2}$, together with $\sup_{S_{r_2}}|H(z)-\log z|<\infty$, which holds by $H=L-1+O(1/L)$ with $L=\log(z+(z^2-1)^{1/2})$.
-\item Expand along the vertical segment from $cA$ to $\tilde X_0$. Since $H'(cA)$ is real, $\operatorname{Re}H(\tilde X_0)\ge H(cA)-\tfrac12\sup|H''|\,s^2B^2\ge H(cA)-Cs^2$.
-\item Also $H(cA)\ge H(A)-(1-c)A\sup_{[cA,A]}|H'|\ge H(A)-2r^2C/c$.
-\item So $\operatorname{Re}\langle d\rangle^{\sim}(gp_r)\ge\langle d\rangle(gx_0)-C_Hr^2$, uniformly for $r\le r_1$.
-\end{itemize}
-\medskip\noindent\textbf{Tube norm.} Hence $|\ue^{-\mu\langle d\rangle^\sim}|\le\ue^{C_H\mu r^2}\ue^{-\mu\langle d\rangle}$ on the orbit, and the tube norm of the Gutzmer identity (see the proof of Lemma~\ref{lem:m-gen}) satisfies $N_r\le\ue^{C_H\mu r^2}\norm{\ue^{-\mu\langle d\rangle}}$.
-\medskip\noindent\textbf{Back to $\ue^{\alpha\Lambda}$.} Take $r:=\alpha$, so $2r=2\alpha>\alpha$. The comparison $\norm{\ue^{\alpha\Lambda}f}\le C_0N_r(f)$ has constant $\sup_x(1+4x)^{1/4}\ue^{-x}$, which is absolute and uniform in $\alpha$ by the following comparison. The Mehler integral \cite[14.20.9]{DLMF} with $u=\theta v$ gives $P_{-1/2+i\lambda}(\cos\theta)\asymp I_0(\lambda\theta)$ uniformly for $0<\theta\le\theta_0<\pi$, and $I_0(x)\asymp\ue^{x}(1+x)^{-1/2}$ for $x\ge0$ (from \cite[10.32.1]{DLMF}, with large-$x$ asymptotics \cite[10.40.1]{DLMF}).
-\medskip\noindent\textbf{The $L^2$ norm.} $\norm{\ue^{-\mu\langle d\rangle}}^2=2\pi\int_0^\infty\ue^{-2\mu\langle\rho\rangle}\sinh\rho\,d\rho=(\pi/\mu)(1+o(1))$ as $\mu\to\infty$, since $\langle\rho\rangle=\rho^2/2+O(\rho^4)$. \qed
+We use the notation of Section~\ref{subsec:gutzmer}, with $x_0=i$.
+
+\emph{The function $H$.} Let $G(z):=-\arccos(z)^2$ and $H(z):=(1+G(z))^{1/2}-1$. The function $G$ is holomorphic on
+$\mathbb C\setminus(-\infty,-1]$ and equals $d^2$ at $z=\cosh d$, so $\langle d\rangle=H(X_0)$ on $\Hb$. The number $1+G(z)$ is real and at most $0$ only for
+real $z\le\cos1$, so $H$ is holomorphic on the complement of $(-\infty,\cos1]$, real on $(\cos1,\infty)$ and nondecreasing there.
+For $0<\rho<\tfrac12$ let $S_\rho:=\{\operatorname{Re}z\ge\cos2\rho,\ |\arg z|\le2\rho\}$, and fix $r_1<r_1'<r_2<\tfrac12$ depending only on $r_1$.
+Since $\cos2r_2>\cos1$, $H$ is holomorphic near $S_{r_2}$. As $|z|\to\infty$ in $S_{r_2}$ we have $G=L^2$ with
+$L=\log(z+(z^2-1)^{1/2})=\log(2z)+O(|z|^{-2})$, hence $H=L-1+O(1/|L|)$; so $M_H:=\sup_{S_{r_2}}|H(z)-\log z|<\infty$. There is $c>0$,
+depending only on $r_1',r_2$, such that the disc of radius $c|z|$ about any $z\in S_{r_1'}$ lies in $S_{r_2}$, and Cauchy's estimates for
+$H-\log$ on these discs give
+\[
+|H'(z)|\le C_1/|z|,\qquad|H''(z)|\le C_1/|z|^2\qquad(z\in S_{r_1'}).
+\]
+
+\emph{The orbit norms.} By Lemma~\ref{lem:gutzmer}(b), on the orbit $G\exp(i\rho h_0)x_0$, $\rho\le r_1'$, the extension of $X_0$ takes the
+values $\tilde X_0=cA+isB$ with $c=\cos2\rho$, $s=\sin2\rho$, $A=X_0(gx_0)\ge1$ and $|B|\le A$; these lie in $S_\rho\subset S_{r_1'}$, and so does
+the vertical segment from $cA$ to $\tilde X_0$. So $f:=\ue^{-\mu\langle d\rangle}=\ue^{-\mu H(X_0)}$ extends holomorphically to $\Xi_{r_1'}$. Since $H'(cA)$ is
+real, Taylor's formula on that segment gives $\operatorname{Re}H(\tilde X_0)\ge H(cA)-\tfrac12\sup|H''|\,s^2B^2\ge H(cA)-C_1s^2/(2c^2)$, and
+$H(A)-H(cA)\le(1-c)A\sup_{[cA,A]}|H'|\le C_1(1-c)/c$. With $1-c\le2\rho^2$, $s^2\le4\rho^2$ and $c\ge\cos1>\tfrac12$,
+\[
+\operatorname{Re}H(\tilde X_0)\ge\langle d\rangle(gx_0)-C_H\rho^2,\qquad C_H:=12\,C_1 .
+\]
+Hence $|f(g\exp(i\rho h_0)x_0)|\le\ue^{C_H\mu\rho^2}f(gx_0)$ and $N_\rho(f)\le\ue^{C_H\mu\rho^2}\norm f$ for $\rho\le r_1'$. In particular
+$\sup_{\rho<r_1'}N_\rho(f)<\infty$, and Lemma~\ref{lem:gutzmer}(a), with $R=r_1'$ and $r=\alpha\le r_1$, gives the first inequality.
+
+\emph{The $L^2$ norm.} In geodesic polar coordinates $\norm f^2=2\pi\int_0^\infty\ue^{-2\mu\langle\rho\rangle}\sinh\rho\,d\rho$, with
+$\langle\rho\rangle=(1+\rho^2)^{1/2}-1$. For $\rho\le1$, $\langle\rho\rangle\ge\rho^2/(1+\sqrt2)$ and $\sinh\rho\le2\rho$; for $\rho\ge1$,
+$\langle\rho\rangle\ge\rho-1$ and $\sinh\rho\le\ue^\rho$. So for $\mu\ge1$
+\[
+\norm f^2\le2\pi\Bigl(\int_0^\infty2\rho\,\ue^{-2\mu\rho^2/(1+\sqrt2)}d\rho+\ue\int_0^\infty\ue^{-(2\mu-1)u}du\Bigr)\le\frac{2\pi(2+\ue)}{\mu},
+\]
+and the second inequality holds with $C_{\mathrm E}:=(\pi\ue)^{1/2}\ue^{C_H}(2\pi(2+\ue))^{1/2}$, because $\mu\alpha^2\le1$.
 \end{proof}
 
 \begin{remark}[Consequence for the example of \texorpdfstring{\cite{S}}{[S]}]
-\cite[Remark~1.7, (1.38)]{S} offers $a_\hbar:=\hbar^{-\delta/2}\ue^{-\hbar^{-\delta}\langle d\rangle}$, claimed to lie in $H_{\alpha,\beta}$ with $\beta=1$ and $\alpha=\hbar^\delta$, and to give long times for $\delta<1/3$. In the swapped $\langle d\rangle$-class, $\norm{a_\hbar}^{\rm sw}_{\alpha,\beta}=\hbar^{-\delta/2}\norm{\ue^{\alpha\Lambda}\ue^{-(\hbar^{-\delta}-\beta)\langle d\rangle}}$. Apply Lemma~\ref{lem:ex} with $\mu=\hbar^{-\delta}-\beta$ and $\alpha_\hbar:=(\hbar^{-\delta}-\beta)^{-1/2}\asymp\hbar^{\delta/2}$:
+\cite[Remark~1.7, (1.38)]{S} gives the example $a_\hbar:=\hbar^{-\delta/2}\ue^{-\hbar^{-\delta}\langle d\rangle}$, said there to lie in $H_{\alpha,\beta}$ with $\beta=1$ and $\alpha=\hbar^\delta$, and to give long times for $\delta<1/3$. In the swapped $\langle d\rangle$-class, $\norm{a_\hbar}^{\rm sw}_{\alpha,\beta}=\hbar^{-\delta/2}\norm{\ue^{\alpha\Lambda}\ue^{-(\hbar^{-\delta}-\beta)\langle d\rangle}}$. Apply Lemma~\ref{lem:ex} with $\mu=\hbar^{-\delta}-\beta$ and $\alpha_\hbar:=(\hbar^{-\delta}-\beta)^{-1/2}\asymp\hbar^{\delta/2}$:
 \begin{itemize}
 \item $\norm{a_\hbar}^{\rm sw}_{\alpha_\hbar,\beta}\le C$ uniformly in $\hbar$, for every fixed $\beta$ (not only $\beta=1$);
 \item the swapped $\langle d\rangle$-class transfers to the $\tilde\psi$-class by Lemma~\ref{lem:m2w}, at the radius $c_0\alpha_\hbar$ with the fixed ratio $c_0$;

@@ -31,12 +31,13 @@ All Lean names are in the namespace `Qschubert`.
 |---|---|---|
 | Theorem 3.1 (`pc:main`) | L | `pcmain_half` |
 | Remark 3.3 (`pc:classes`) | P |  |
+| Corollary 3.10 (`pc:allalpha`) | L | `pcmain_all`, `pcthm13_all`, `pccor15_all`, `pccor16bg_all`, `pccor16_all`; `pcMainAt_all`, `poisson_cw_all`, `lift1_pr_all` |
 | Corollary 3.4 (`pc:thm13`) | L | `pcthm13_half` |
 | Corollary 3.5 (`pc:cor15`) | L | `pccor15_half` |
 | Lemma 3.6 (`pc:g43`) | L | `sobolev_M_mult` |
 | Corollary 3.7 (`pc:cor16bg`) | L | `pccor16bg_half` |
 | Corollary 3.8 (`pc:cor16`) | L | `pccor16_half` |
-| Theorem 3.10 (`cl:main`), Lemmas 3.14 (`cl:ssob`), 3.15 (`cl:asym`), 3.16 (`cl:kernel`), 3.17 (`cl:amp`) | P |  |
+| Theorem 3.11 (`cl:main`), Lemmas 3.15 (`cl:ssob`), 3.16 (`cl:asym`), 3.17 (`cl:kernel`), 3.18 (`cl:amp`) | P |  |
 
 ## Section 4 (`sec:expect`): expectation values
 
@@ -56,7 +57,7 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma B.1 (`lem:expw`) | L | `exp_of_words` |
 | Lemma B.2 (`lem:mw`) | L | `lem_m_weak` |
 | Lemma B.3 (`lem:m2w`) | L | `swX_le_swD` |
-| Lemmas B.4 (`lem:m-gen`), B.5 (`lem:m2`) | P | used only for Lemma D.22 (`lem:ex`) |
+| Lemma B.4 (`lem:gutzmer`) | P | used only for Lemma D.22 (`lem:ex`) |
 | Lemma C.1 (`lem:wave`) | L | `wave_weight`, `wave_Bx'`, `wave_By'`; `wave_weightD` |
 | Lemma C.2 (`lem:wcomm`) | L | `comm_wave` |
 | Lemma C.3 (`lem:wmoll`) | L | `w_J`, `w_Bx`, `w_By`, `w_JS`, `w_XX`, `w_YY`, `w_comm` |
@@ -105,5 +106,5 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma F.8 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
 | Proposition F.9 (`os:p1`) | L | `poincare_omP`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
 | Remark F.10 (`os:indep`) | L | `surfV_indep` |
-| Lemma F.11 (`os:poisson`) | P | used only in Remark 3.3 (`pc:classes`) and Section 3.5 (`subsec:cl`) |
-| Lemma F.12 (`os:hk`) | P | used only in Section 3.5 (`subsec:cl`) |
+| Lemma F.11 (`os:poisson`) | P | used only in Remark 3.3 (`pc:classes`) and Section 3.6 (`subsec:cl`) |
+| Lemma F.12 (`os:hk`) | P | used only in Section 3.6 (`subsec:cl`) |
