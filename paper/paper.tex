@@ -144,8 +144,7 @@ $\alpha^3\ge\kappa\hbar$. For fixed $\alpha$, these times have order $\hbar^{-1/
 The estimates control every power of the Laplacian and, for fixed analytic radius, yield exponentially small errors under optimal truncation.
 They apply to both orders of the analytic and spatial weights considered in the preprint. Two printed bounds require
 correction: the leading error has order $\hbar t$, attained on the hyperbolic plane, and pointwise estimates require a
-local multiplicity factor whose square-root growth is necessary on the modular surface. For a family of states on that
-surface, the approximation remains accurate while mass escapes every compact set after a sufficient time of order
+local multiplicity factor whose square-root growth is necessary on the modular surface. For states on the modular surface whose periodization along the cusp is independent of the horizontal coordinate, the approximation remains accurate while mass escapes every compact set after a sufficient time of order
 $\log(1/\hbar)\log\log(1/\hbar)$, although classical transport equidistributes.
 The main approximation results and the quantum escape estimates are formalized in Lean~4, with scope specified in Appendix~\ref{app:lean}.
 
@@ -268,7 +267,7 @@ The \emph{Poisson-smoothed data class}, measured by $\|a\|_{\mathrm P}$, consist
 $a=\ue^{-\alpha\Lambda}f$ with $\ue^{\beta\langle d\rangle}f\in L^2(\Hb)$. The \emph{reversed-weight class},
 measured by $\|a\|_{\mathrm S}$, instead imposes spatial decay on $a$ itself. These classes are not equivalent
 for $\beta>\tfrac12$: an amplitude of finite original norm can have infinite reversed-weight norm at every positive radius.
-The original norms need not be monotone in the radius either (Proposition~\ref{pc:classes}, proved in
+For example, Poisson smoothing of nonzero nonnegative compactly supported data produces a tail that need not lie in the spatially weighted space required by the reversed-weight norm. This is why the original-norm theorem requires the critical-weight argument below. The original norms need not be monotone in the radius either (Proposition~\ref{pc:classes}, proved in
 Section~\ref{subsec:pc-weights}). Remark~\ref{rem:amplitude-examples} gives explicit constructions in both classes.
 An unadorned norm denotes an $L^2$ norm, or the corresponding operator norm when applied to an operator.
 Amplitudes of finite norm are taken in their unique smooth representatives (Lemma~\ref{lem:lift}); periodizations are
@@ -333,7 +332,7 @@ depending also on $r_0$.
 \end{corollary}
 
 The exponent $1/2$ of $m(z)$ is necessary on the modular surface for a phase attached to the cusp
-(Theorem~\ref{cl:main}). The pointwise estimates are proved in Section~\ref{subsec:pc-cor}.
+(Theorem~\ref{cl:main}). The proof in Section~\ref{subsec:pc-cor} gives the sharper prefactor $(\alpha\hbar)^{-2N-2}$; the displayed weaker prefactor is retained for comparison with Schubert's bound in Appendix~\ref{sec:changes}.
 
 \begin{remark}[constructing amplitudes]\label{rem:amplitude-examples}
 For $f\in L^2(\Hb)$ with
@@ -378,9 +377,9 @@ Theorem~\ref{thm:dd14} and Corollaries~\ref{thm:main}, \ref{cor:dd15} and~\ref{c
 give the reversed-weight approximation estimates in Sections~\ref{sec:swapped} and~\ref{subsec:pc-cor}, using the analytic estimates of Section~\ref{sec:analytic}.
 Schubert's example $\hbar^{-\eta/2}\ue^{-\hbar^{-\eta}\langle d\rangle}$ belongs to this class for $0<\eta<2/3$
 (Lemma~\ref{lem:ex} and the remark following it).
-Section~\ref{sec:g5} establishes the sharpness of the leading error and the cusp factor. It also computes the mean of the approximation:
+Section~\ref{sec:g5} establishes the sharpness of the leading error and computes the mean of the approximation:
 on a quotient of finite area, a nonzero initial mean gives a lower bound on the error of every fixed-order approximation at large times
-(Proposition~\ref{prop:mean}). Section~\ref{sec:expect} distinguishes approximation accuracy from classical transport of expectation values.
+(Proposition~\ref{prop:mean}). Section~\ref{sec:cusp} establishes the sharpness of the cusp factor. Section~\ref{sec:expect} distinguishes approximation accuracy from classical transport of expectation values.
 
 \subsection{Context and related work}\label{subsec:context}
 Estimates up to the Ehrenfest time for coherent states were obtained by Combescure and Robert \cite{CR97} and
@@ -443,7 +442,7 @@ expansion of $V(t)$ to order $K$.
 The error is then bounded by $(\hbar/2)^{K+1}$ times an integral over the simplex
 $t>s_1>\dots>s_{K+1}>0$ of a periodized propagator applied to
 $b'(s)=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a$, a fixed polynomial in the vector fields $X,Y$ applied
-to the amplitude. The quotient operator is defined in Section~\ref{subsec:dd-surf}; the remainder estimate is recalled at the beginning of Section~\ref{sec:printed}.
+to the amplitude. The quotient operator is defined in Section~\ref{subsec:dd-surf}; the remainder estimate is recalled at the beginning of Section~\ref{sec:companion}.
 No resummation of the series is needed, and all derivatives fall on $a$. Analytic regularity of $a$ at radius
 $\alpha$ bounds a word of length $k$ in $X,Y$ applied to $a$ by $C^kk!\,\alpha^{-k}$ (Cauchy estimates,
 Lemmas~\ref{lem:fc}--\ref{lem:wb}), and the integration over the simplex then gives the factor
@@ -472,28 +471,20 @@ and a power-weighted space (Lemma~\ref{os:transfer}). The smoothing operators ar
 multiplier theorem proved using finite propagation speed (Theorem~\ref{os:cw}); periodization is controlled at the same weight
 by Proposition~\ref{os:p1}. These estimates yield Theorem~\ref{pc:main}.
 
-\subsection{Relation to Schubert's preprint}
-The factorization, approximation and mollification strategy are Schubert's. The present proofs replace the invalid
-comparison of exponentials of noncommuting operators in the dispersive estimates and treat separately the two orders
-of the amplitude weights. The original norm is used in Theorem~\ref{pc:main}; the reversed order used in parts of
-Schubert's proofs is covered by Theorem~\ref{thm:dd14}.
-Two printed conclusions require correction: the leading error is of order $\hbar t$ for fixed radius, and the pointwise
-estimate on a general quotient requires the local factor $m(z)^{1/2}$. Both corrections are supported by sharpness
-results in Section~\ref{sec:g5}. Appendix~\ref{sec:changes} gives the detailed comparison, including the improved
-remainder estimate, the time window and the truncation interval.
-
 \subsection{Organization}
 Section~\ref{sec:remainder} establishes periodization and the exact quotient remainder.
-Sections~\ref{sec:analytic} and~\ref{app:o1st} develop the analytic, weighted and critical-weight estimates. Section~\ref{sec:printed} proves the power-weight estimate first, transfers it to the reversed-weight norm, and then proves the original-norm theorem for all bounded ranges of radii; shared corollaries and example amplitudes follow.
-Sections~\ref{sec:g5} and~\ref{sec:expect} treat sharpness, limitations and escape of mass, followed by the open problems in
-Section~\ref{sec:outlook}. Appendix~\ref{app:special} contains the auxiliary special-function and kernel calculations;
-Appendix~\ref{app:lean} documents the formalization, and Appendix~\ref{sec:changes} records the detailed comparison with Schubert's preprint.
-
+Section~\ref{sec:analytic} develops the common analytic and weighted propagation estimates, which Section~\ref{sec:companion} uses to prove the power-weight and reversed-weight approximation theorems.
+Section~\ref{sec:printed} explains the distinction between the amplitude classes, develops the additional critical-weight estimates, and proves the original-norm theorem on every bounded range of analytic radii.
+Section~\ref{sec:consequences} derives truncation and pointwise consequences and treats the localized examples.
+Section~\ref{sec:g5} gives leading-error sharpness and a limitation from the mean; Section~\ref{sec:cusp} proves sharpness of the cusp factor.
+Section~\ref{sec:expect} treats expectation values and escape of mass, and Section~\ref{sec:outlook} states the resulting open questions.
+Appendix~\ref{app:special} contains the auxiliary special-function and kernel calculations; Appendix~\ref{app:lean} documents the formalization, and Appendix~\ref{sec:changes} gives the detailed comparison with Schubert's preprint.
 
 \input{sec_remainder}
 \input{sec_analytic}
-\input{sec_critical}
+\input{sec_companion}
 \input{sec_printed}
+\input{sec_consequences}
 
 \section{Sharpness and limitations}\label{sec:g5}
 \subsection{The order \texorpdfstring{$\hbar t$}{ht} of the leading error is attained}
@@ -665,7 +656,7 @@ the Mellin product computation in Appendix~\ref{app:special}, the Mehler compari
 the tail bounds and truncation in Section~\ref{subsec:cl}; Fable completed the cusp proofs and the treatment of the example amplitudes. Sol, Google Gemini~4 Argon (\texttt{gemini-4-argon}),
 OpenAI GPT-6~Pro (\texttt{gpt-6-pro}), and Claude Fable~5.2 performed AI reviews of working notes or manuscript versions.
 OpenAI Codex and ChatGPT sessions checked revisions and compared manuscript statements with their formal counterparts;
-Codex also reviewed the presentation and bibliography, reorganized the approximation proofs, extracted the intermediate lemmas in Section~\ref{sec:expect}, consolidated the main theorem and its corollaries, and revised the introduction, section structure and outlook.
+Codex reviewed the presentation and bibliography, organized the approximation proofs around their amplitude classes, extracted the intermediate lemmas in Section~\ref{sec:expect}, and revised the introduction and the presentation of sharpness, applications and outlook.
 These were AI checks and do not constitute external peer review. The detailed contribution history is retained in the
 repository revisions.
 

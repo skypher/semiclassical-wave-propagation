@@ -61,56 +61,66 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 3.16 (`lem:wb`) | L | `lem_wb_w`, `lem_wb_u` |
 | Lemma 3.17 (`lem:unw`) | L | `unw_err` |
 
-## Section 4 (`app:o1st`): critical-weight estimates
+## Section 4 (`sec:companion`): power-weight and reversed-weight approximation
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Lemma 4.1 (`os:int`) | L | `wI0`, `wI2` |
-| Lemma 4.2 (`os:prof`) | L | `gTauM_symbol`, `gTauM_expmass`, `hSM_symbol`, `hSM_expmass`, `gTau_TailB`, `bProf_symbol`, `bProf_TailB` |
-| Lemma 4.3 (`os:speed`) | L | `finite_speed`, `finite_speed_inner` |
-| Theorem 4.4 (`os:cw`) | L | `cw_abstract` |
-| Corollary 4.5 (`os:cwp`) | L | `poisson_cw`, `B_cw` |
-| Proposition 4.6 (`os:data`) | L | `data_factor`, `omP_le_exp_angle` |
-| Lemma 4.7 (`os:words`) | L | `poissonM_w`, `lamM_w`, `lamM_pow_w`, `words_rec`, `words_w` |
-| Lemma 4.8 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
-| Proposition 4.9 (`os:p1`) | L | `poincare_omP`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
-| Remark 4.10 (`os:indep`) | L | `surfV_indep` |
+| Theorem 4.1 (`thm:dd-appx`) | L | `thm14R_rep` |
+| Theorem 4.3 (`thm:dd14`) | L | `thm14Rmain_exp` |
+| Corollary 4.4 (`thm:main`) | L′ | `thm14Rmain_exp` at K=N=0 and fixed radius, with radius monotonicity; `thm13R_rep` separately has the narrower range beta>1 and alpha<pi/4 |
 
-## Section 5 (`sec:printed`): proofs and companion results
+## Section 5 (`sec:printed`): original-norm approximation and critical weights
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Theorem 5.1 (`thm:dd-appx`) | L | `thm14R_rep` |
-| Theorem 5.3 (`thm:dd14`) | L | `thm14Rmain_exp` |
-| Corollary 5.4 (`thm:main`) | L′ | `thm14Rmain_exp` at K=N=0 and fixed radius, with radius monotonicity; `thm13R_rep` separately has the narrower range beta>1 and alpha<pi/4 |
-| Proposition 5.5 (`pc:classes`) | P |  |
-| Corollary 5.7 (`cor:dd15`) | L | `cor15Rmain_rep`, `cor15R_rep` (two companion norms) |
-| Corollary 5.8 (`cor:dd16`) | L | `cor16Rmain_rep`, `cor16R_rep` (two companion norms) |
-| Lemma 5.9 (`lem:ex`) | P | not used by the theorems |
+| Proposition 5.1 (`pc:classes`) | P |  |
+| Lemma 5.2 (`os:int`) | L | `wI0`, `wI2` |
+| Lemma 5.3 (`os:prof`) | L | `gTauM_symbol`, `gTauM_expmass`, `hSM_symbol`, `hSM_expmass`, `gTau_TailB`, `bProf_symbol`, `bProf_TailB` |
+| Lemma 5.4 (`os:speed`) | L | `finite_speed`, `finite_speed_inner` |
+| Theorem 5.5 (`os:cw`) | L | `cw_abstract` |
+| Corollary 5.6 (`os:cwp`) | L | `poisson_cw`, `B_cw` |
+| Proposition 5.7 (`os:data`) | L | `data_factor`, `omP_le_exp_angle` |
+| Lemma 5.8 (`os:words`) | L | `poissonM_w`, `lamM_w`, `lamM_pow_w`, `words_rec`, `words_w` |
+| Lemma 5.9 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
+| Proposition 5.10 (`os:p1`) | L | `poincare_omP`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
+| Remark 5.11 (`os:indep`) | L | `surfV_indep` |
 
-## Section 6 (`sec:g5`): sharpness and limitations
-
-| Statement | Status | Lean theorem; difference |
-|---|---|---|
-| Proposition 6.1 (`prop:g5`) | L′ | `printedThm13_false`: the negation of the printed theorem; the asymptotic formula is not formalized (Appendix B (`app:lean`)) |
-| Proposition 6.2 (`prop:mean`) | L | `meanGrowth`; `integral_approxSolB`, `J_vecX`, `J_vecY`, `chP_dysT`, `swapped_setup`, `enorm_integral_le_perio` |
-| Remark 6.4 (`rem:g4`) | P |  |
-| Proposition 6.11 (`cl:relative`) | P | extracted from the relative-error remark; self-checked |
-| Theorem 6.5 (`cl:main`), Lemmas 6.7 (`cl:ssob`), 6.8 (`cl:asym`), 6.9 (`cl:kernel`), 6.10 (`cl:amp`) | P |  |
-
-## Section 7 (`sec:expect`): expectation values
+## Section 6 (`sec:consequences`): consequences and localized amplitudes
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Corollary 7.1 (`ev:transfer`) | L′ | `evTransfer_main`; original norm: `evTransfer_pc` has alpha<=1/2, while the all-radius consequence uses `pcmain_all` at N=0 and `ev_transfer_core` |
-| Proposition 7.3 (`ev:mod`) | L′ | parts (i), (ii): `evmod`, with the statement `Stmt_evmod`; part (iii) is a cited theorem and is not formalized |
-| Lemma 7.6 (`ev:meanlem`) | L | `integral_amp_mul_slice_L1`, `integrableOn_amp_mul_slice_L1`, `slice_lintegral_le` |
-| Lemmas 7.5 (`ev:mellinlemma`), 7.7 (`ev:scattering`), 7.8 (`ev:approxmode`), 7.9 (`ev:initialnorm`), 7.10 (`ev:outgoing`) | P | editorial extractions from the proof of Proposition 7.3 (`ev:mod`); the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked |
+| Corollary 6.2 (`cor:dd15`) | L | `cor15Rmain_rep`, `cor15R_rep` (two companion norms) |
+| Corollary 6.3 (`cor:dd16`) | L | `cor16Rmain_rep`, `cor16R_rep` (two companion norms) |
+| Lemma 6.4 (`lem:ex`) | P | not used by the theorems |
+
+## Section 7 (`sec:g5`): sharpness and limitations
+
+| Statement | Status | Lean theorem; difference |
+|---|---|---|
+| Proposition 7.1 (`prop:g5`) | L′ | `printedThm13_false`: the negation of the printed theorem; the asymptotic formula is not formalized (Appendix B (`app:lean`)) |
+| Proposition 7.2 (`prop:mean`) | L | `meanGrowth`; `integral_approxSolB`, `J_vecX`, `J_vecY`, `chP_dysT`, `swapped_setup`, `enorm_integral_le_perio` |
+
+## Section 8 (`sec:cusp`): sharpness of the cusp factor
+
+| Statement | Status | Lean theorem; difference |
+|---|---|---|
+| Remark 8.1 (`rem:g4`) | P |  |
+| Proposition 8.8 (`cl:relative`) | P | extracted from the relative-error remark; self-checked |
+| Theorem 8.2 (`cl:main`), Lemmas 8.4 (`cl:ssob`), 8.5 (`cl:asym`), 8.6 (`cl:kernel`), 8.7 (`cl:amp`) | P |  |
+
+## Section 9 (`sec:expect`): expectation values and escape of mass
+
+| Statement | Status | Lean theorem; difference |
+|---|---|---|
+| Corollary 9.1 (`ev:transfer`) | L′ | `evTransfer_main`; original norm: `evTransfer_pc` has alpha<=1/2, while the all-radius consequence uses `pcmain_all` at N=0 and `ev_transfer_core` |
+| Proposition 9.3 (`ev:mod`) | L′ | parts (i), (ii): `evmod`, with the statement `Stmt_evmod`; part (iii) is a cited theorem and is not formalized |
+| Lemma 9.6 (`ev:meanlem`) | L | `integral_amp_mul_slice_L1`, `integrableOn_amp_mul_slice_L1`, `slice_lintegral_le` |
+| Lemmas 9.5 (`ev:mellinlemma`), 9.7 (`ev:scattering`), 9.8 (`ev:approxmode`), 9.9 (`ev:initialnorm`), 9.10 (`ev:outgoing`) | P | editorial extractions from the proof of Proposition 9.3 (`ev:mod`); the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked |
 
 ## Appendix A (`app:special`): special-function and kernel calculations
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Lemma A.2 (`lem:gutzmer`) | P | used only for Lemma 5.9 (`lem:ex`) |
-| Lemma A.3 (`os:poisson`) | P | used only in Proposition 5.5 (`pc:classes`) and Section 6.3 (`subsec:cl`) |
-| Lemma A.4 (`os:hk`) | P | used only in Section 6.3 (`subsec:cl`) |
+| Lemma A.2 (`lem:gutzmer`) | P | used only for Lemma 6.4 (`lem:ex`) |
+| Lemma A.3 (`os:poisson`) | P | used only in Proposition 5.1 (`pc:classes`) and Section 8 (`subsec:cl`) |
+| Lemma A.4 (`os:hk`) | P | used only in Section 8 (`subsec:cl`) |

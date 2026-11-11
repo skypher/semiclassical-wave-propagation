@@ -15,10 +15,11 @@ the cusp height. Schubert's files are not part of this repository.
 
 ## Contents
 
-- `paper/`: LaTeX source of the manuscript (`paper.tex` with its input files). The eight main sections develop the
-  quotient remainder, analytic and critical-weight estimates, approximation proofs, sharpness and expectation values.
-  The approximation proofs proceed from the power weight to the reversed weight order and then the original norm;
-  the modular-surface application is stated in the introduction and proved through named intermediate lemmas.
+- `paper/`: LaTeX source of the manuscript (`paper.tex` with its input files). The ten main sections develop the
+  quotient remainder, analytic estimates, approximation proofs, consequences, sharpness and escape of mass.
+  The approximation proofs proceed from the power weight to the reversed weight order and then the original norm,
+  with the critical-weight estimates placed beside the original-norm argument. Cusp-factor sharpness has its own
+  section; the modular-surface application is stated in the introduction and proved through named intermediate lemmas.
   Three appendices contain auxiliary special-function/kernel calculations, formalization documentation, and a detailed comparison with Schubert's preprint.
   Build from `paper/` with `pdflatex paper.tex`
   (run it three times).

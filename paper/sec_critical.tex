@@ -8,7 +8,7 @@
 \newcommand{\osHK}{\widetilde p}     % continuation of the heat kernel to complex distance
 \newcommand{\osLam}{\Lambda}         % Lambda = (-Delta)^{1/2}
 
-\section{Critical-weight estimates}\label{app:o1st}
+\subsection{Critical-weight estimates}\label{app:o1st}
 
 Schubert's original norm controls the spatial decay of $f=\ue^{\alpha\Lambda}a$, before Poisson smoothing.
 It need not give the amplitude $a$ a power weight above exponent $1/2$ (Proposition~\ref{pc:classes}).
@@ -24,14 +24,14 @@ $\osLam=(-\Delta)^{1/2}$ and $D=(-\Delta-\tfrac14)^{1/2}$. For $0\le c\le1$ the 
 \[
 \osomc:=\osX^{1/2}\osL^{\,c};
 \]
-for a fixed $c'\in(\tfrac12,1)$ the periodization weight is $\osomp=\omega_{c'}$. Section~\ref{sec:printed} takes $c'=\tfrac34$. The shells are $A_n:=\{n\le\psi<n+1\}$, $n=0,1,2,\dots$, and
+for a fixed $c'\in(\tfrac12,1)$ the periodization weight is $\osomp=\omega_{c'}$. We take $c'=\tfrac34$ in the approximation proof. The shells are $A_n:=\{n\le\psi<n+1\}$, $n=0,1,2,\dots$, and
 $1_n$ denotes multiplication by the indicator of $A_n$. Since $1+n\le\osL\le3(1+n)$ on $A_n$,
 \begin{equation}\label{os:shell}
 \ue^{n/2}(1+n)^c\le\osomc\le3\,\ue^{1/2}\,\ue^{n/2}(1+n)^c\qquad\text{on }A_n .
 \end{equation}
 For $m\ge\tfrac12$ put $\Lambda_m:=(m^2-\tfrac14-\Delta)^{1/2}=(D^2+m^2)^{1/2}$; thus $\Lambda_{1/2}=\osLam$ and $\Lambda_m\ge\osLam$.
 
-\subsection{Cosine-transform representations and tail estimates}
+\subsubsection{Cosine-transform representations and tail estimates}
 
 \begin{lemma}[two integrals]\label{os:int}
 For $a,b>0$,
@@ -103,7 +103,7 @@ $G_m$ is at most $\frac{2}{\pi T}\int_0^\infty u^{-1}\exp(-u^2/4-T^2/(4u^2))\,du
 bound for $T<1$ this gives the tail bound.
 \end{proof}
 
-\subsection{Finite propagation speed and the multiplier theorem}
+\subsubsection{Finite propagation speed and the multiplier theorem}
 
 \begin{lemma}[finite propagation speed]\label{os:speed}
 Let $f,h\in L^2(\Hb)$ with $\operatorname{supp}f\subset\{\psi\le a\}$ and $\operatorname{supp}h\subset\{\psi\ge b\}$. Then
@@ -160,7 +160,7 @@ $\norm{\osomc(\Lambda_m-\osLam)f}\le K_{m,c}\norm{\osomc f}$.
 Theorem~\ref{os:cw} with $g=g^{1/2}_\tau$ and Lemma~\ref{os:prof}(i),(iv), respectively with $g=G_m$ and Lemma~\ref{os:prof}(v).
 \end{proof}
 
-\subsection{Factorization of the Poisson-smoothed amplitudes}
+\subsubsection{Factorization of the Poisson-smoothed amplitudes}
 
 \begin{proposition}[factorization of the data]\label{os:data}
 Let $\tfrac12<c<1$, $m\ge\tfrac12$ and $0<\sigma<\alpha\le1$ with $\sigma m\le\tfrac12$, and put
@@ -184,7 +184,7 @@ $\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=K_c\,\ue^{K_{m,c}}$ works. For
 $\beta>\tfrac12$, $\osomc\le\ue^{d/2}(1+d/\log2)\le C_\beta\,\ue^{\beta\langle d\rangle}$.
 \end{proof}
 
-\subsection{Words at a power weight}
+\subsubsection{Words at a power weight}
 
 \begin{lemma}[the even semigroup at a bounded weight]\label{os:words}
 Let $m\ge\tfrac12$ and $\rho\ge0$ with $2(\rho+\tfrac12)^2<m^2$, and let $W$ be a bounded weight (Section~\ref{app:ws}) with
@@ -241,7 +241,7 @@ which is the claim for $k+1$, because $C_0\ge1$ and so $(2+2\rho)/C_0+\sqrt2\le 
 statement from $\Lambda_m\ge\osLam$.
 \end{proof}
 
-\subsection{Transfer from a power weight to the critical weight}
+\subsubsection{Transfer from a power weight to the critical weight}
 
 \begin{lemma}[transfer over shells]\label{os:transfer}
 Let $0\le c\le1$. Let $T:L^2(\Hb)\to L^2(\Hb)$ be additive, and let $0<M_0\le M_1$ be such that
@@ -268,7 +268,7 @@ $\norm{\osomc Th}^2\le\sum_l\bigl(\sum_n\norm{\osomc1_lT1_nh}\bigr)^2\le M_0^{1/
 sequences.
 \end{proof}
 
-\subsection{Periodization at the critical weight}
+\subsubsection{Periodization at the critical weight}
 
 \begin{proposition}[periodization and transport at the critical weight]\label{os:p1}
 Let $\Gamma$ be any Fuchsian group (cusps allowed), $\tfrac12<c'\le1$, $\osomp=\omega_{c'}$, $t\ge0$, $\hbar>0$, $\varphi=\varphi_\infty=-\log y$, and

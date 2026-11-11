@@ -38,7 +38,12 @@ Lemma~\ref{lem:fdb} & L & \lean{fdb}\\
 Lemma~\ref{lem:sc} & L & \lean{lem_sc}\\
 Lemma~\ref{lem:wb} & L & \lean{lem_wb_w}, \lean{lem_wb_u}\\
 Lemma~\ref{lem:unw} & L & \lean{unw_err}\\
-\multicolumn{3}{@{}l}{\emph{Section~\ref{app:o1st}: critical-weight estimates}}\\
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:companion}: power-weight and reversed-weight approximation}}\\
+Theorem~\ref{thm:dd-appx} & L & \lean{thm14R_rep}\\
+Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_exp}\\
+Corollary~\ref{thm:main} & L$'$ & \lean{thm14Rmain_exp} at K=N=0 and fixed radius, with radius monotonicity; \lean{thm13R_rep} separately has the narrower range beta>1 and alpha<pi/4\\
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:printed}: original-norm approximation and critical weights}}\\
+Proposition~\ref{pc:classes} & P & \\
 Lemma~\ref{os:int} & L & \lean{wI0}, \lean{wI2}\\
 Lemma~\ref{os:prof} & L & \lean{gTauM_symbol}, \lean{gTauM_expmass}, \lean{hSM_symbol}, \lean{hSM_expmass}, \lean{gTau_TailB}, \lean{bProf_symbol}, \lean{bProf_TailB}\\
 Lemma~\ref{os:speed} & L & \lean{finite_speed}, \lean{finite_speed_inner}\\
@@ -49,21 +54,18 @@ Lemma~\ref{os:words} & L & \lean{poissonM_w}, \lean{lamM_w}, \lean{lamM_pow_w}, 
 Lemma~\ref{os:transfer} & L & \lean{transfer} (there for the weight $X_0^\beta$ with any $\beta>\tfrac12$; this is the case $\beta=1$)\\
 Proposition~\ref{os:p1} & L & \lean{poincare_omP}, \lean{mS_printed_sharp}, \lean{norm_surfV_printed_le}, \lean{mS_printed_le}\\
 Remark~\ref{os:indep} & L & \lean{surfV_indep}\\
-\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:printed}: proofs and companion results}}\\
-Theorem~\ref{thm:dd-appx} & L & \lean{thm14R_rep}\\
-Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_exp}\\
-Corollary~\ref{thm:main} & L$'$ & \lean{thm14Rmain_exp} at K=N=0 and fixed radius, with radius monotonicity; \lean{thm13R_rep} separately has the narrower range beta>1 and alpha<pi/4\\
-Proposition~\ref{pc:classes} & P & \\
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:consequences}: consequences and localized amplitudes}}\\
 Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_rep}, \lean{cor15R_rep} (two companion norms)\\
 Corollary~\ref{cor:dd16} & L & \lean{cor16Rmain_rep}, \lean{cor16R_rep} (two companion norms)\\
 Lemma~\ref{lem:ex} & P & not used by the theorems\\[2pt]
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:g5}: sharpness and limitations}}\\
 Proposition~\ref{prop:g5} & L$'$ & \lean{printedThm13_false}: the negation of the printed theorem; the asymptotic formula is not formalized (Appendix~\ref{app:lean})\\
 Proposition~\ref{prop:mean} & L & \lean{meanGrowth}; \lean{integral_approxSolB}, \lean{J_vecX}, \lean{J_vecY}, \lean{chP_dysT}, \lean{swapped_setup}, \lean{enorm_integral_le_perio}\\
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:cusp}: sharpness of the cusp factor}}\\
 Remark~\ref{rem:g4} & P & \\
 Proposition~\ref{cl:relative} & P & extracted from the relative-error remark; self-checked\\
 Theorem~\ref{cl:main}, Lemmas~\ref{cl:ssob}, \ref{cl:asym}, \ref{cl:kernel}, \ref{cl:amp} & P & \\[2pt]
-\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:expect}: expectation values}}\\
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:expect}: expectation values and escape of mass}}\\
 Corollary~\ref{ev:transfer} & L$'$ & \lean{evTransfer_main}; original norm: \lean{evTransfer_pc} has alpha<=1/2, while the all-radius consequence uses \lean{pcmain_all} at N=0 and \lean{ev_transfer_core}\\
 Proposition~\ref{ev:mod} & L$'$ & parts (i), (ii): \lean{evmod}, with the statement \lean{Stmt_evmod}; part (iii) is a cited theorem and is not formalized\\
 Lemma~\ref{ev:meanlem} & L & \lean{integral_amp_mul_slice_L1}, \lean{integrableOn_amp_mul_slice_L1}, \lean{slice_lintegral_le}\\
