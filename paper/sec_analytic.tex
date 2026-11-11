@@ -1,0 +1,556 @@
+\section{Analytic and weighted propagation estimates}\label{sec:analytic}
+We establish the estimates used to bound the exact remainder. After defining the mollifier and recording elliptic regularity,
+we prove Cauchy estimates for words in the vector fields and multiplication by spatial weights. These feed into analytic and
+weighted propagation for the mollified flow and the exponentially small unweighted mollifier defect.
+
+\medskip\noindent\textbf{Notation for the analytic estimates.}
+Let $X=y\partial_x$, $Y=y\partial_y$, $\Delta=X^2+Y^2-Y$, $\Delta(s)=\ue^{-2s}X^2+Y^2-Y$,
+$\Lambda=\sqrt{-\Delta}$, $X_0=\cosh d(x_0,\cdot)$, $\tilde\psi=\log X_0$, and $W_\beta=X_0^\beta$.
+For the analytic estimates we use the power-weight amplitude norm:
+\[
+\pwNorm a:=\norm{\ue^{\alpha\Lambda}X_0^\beta a}.
+\]
+By Lemma~\ref{lem:m2w} a finite norm with the weight $\ue^{\beta\langle d\rangle}$ at radius $\alpha$ gives a finite norm of this
+kind at the radius $c_0\alpha$; Theorem~\ref{thm:dd14} is deduced from Theorem~\ref{thm:dd-appx} in this way at the end of
+Section~\ref{subsec:dd-thm}. The two-time mollified propagator $V_\varepsilon(s_1,s_0)=V_\varepsilon(s_1)V_\varepsilon(s_0)^*$ is defined in
+Section~\ref{app:kl}.
+
+\subsection{The mollifier and elliptic regularity}
+Let $J_\varepsilon=\chi_\varepsilon(\varepsilon\Lambda)$, $\chi_\varepsilon=g_\varepsilon*\chi$, where, as in
+\cite[(4.20)--(4.21)]{S}, $\chi\in C_c^\infty(\mathbb R)$ has $\operatorname{supp}\chi\subset[-2,2]$ and $\chi=1$ on $[-1,1]$, and in
+addition $\chi$ is real, even and $0\le\chi\le1$; here $g_\varepsilon=\varepsilon^{-1}g(\cdot/\varepsilon)$ with $g$ the unit
+Gaussian, so $J_\varepsilon=j_\varepsilon(\Lambda)$ with $j_\varepsilon=g*\chi(\varepsilon\,\cdot)$ and $0\le j_\varepsilon\le1$. Put $\Delta_\varepsilon(t)=J_\varepsilon\Delta(t)J_\varepsilon$, with $\Delta(t)=\ue^{-2t}X^2+Y^2-Y$.
+
+\begin{lemma}[elliptic estimate]\label{lem:ell}
+For $f,g\in C_c^\infty(\Hb)$,
+$\langle Xf,g\rangle=-\langle f,Xg\rangle$ and $\langle Yf,g\rangle=-\langle f,Yg\rangle+\langle f,g\rangle$, and
+\[
+\norm{X^2f}^2+\norm{(Y^2-Y)f}^2+2\norm{XYf}^2=\norm{\Delta f}^2+2\norm{Xf}^2\le\norm{\Delta f}^2+2\norm f\norm{\Delta f},
+\]
+and $\norm{Xf}^2+\norm{Yf}^2=\langle f,-\Delta f\rangle$. By closure, these three relations hold for every
+$f\in\operatorname{Dom}(\Delta)$, and then $\norm{X^2f}$, $\norm{(Y^2-Y)f}\le\norm{\Delta f}+\norm f$,
+$\norm{Y^2f}\le2(\norm{\Delta f}+\norm f)$, and
+$\norm{\Delta(t)f}\le2(\norm{\Delta f}+\norm f)$ for $t\ge0$. Moreover
+$\Delta_\varepsilon(t)$ is a bounded self-adjoint operator on $L^2(\Hb)$, norm continuous in $t\ge0$.
+\end{lemma}
+\begin{proof}
+Let $f,g\in C_c^\infty(\Hb)$. Integration by parts with $d\nu=y^{-2}dx\,dy$ gives the two formulas for $X=y\partial_x$ and $Y=y\partial_y$;
+that is, $X^*=-X$ and $Y^*=1-Y$ on test functions. So $-\Delta=X^*X+Y^*Y$, which gives
+$\norm{Xf}^2+\norm{Yf}^2=\langle f,-\Delta f\rangle$, and
+$Y^2-Y=-Y^*Y$. Since $[Y,X]=X$, $YX^2=X^2Y+2X^2$, and therefore
+$\langle X^2f,Y^*Yf\rangle=\langle YX^2f,Yf\rangle=-\norm{XYf}^2-2\langle Xf,XYf\rangle$. Moreover $XY=YX-X$ and $Y+Y^*=1$ give
+$\mathrm{Re}\langle Xf,XYf\rangle=\mathrm{Re}\langle Xf,YXf\rangle-\norm{Xf}^2=-\tfrac12\norm{Xf}^2$. With $\Delta=X^2-Y^*Y$,
+\begin{align*}
+\norm{\Delta f}^2&=\norm{X^2f}^2+\norm{Y^*Yf}^2+2\norm{XYf}^2+4\,\mathrm{Re}\langle Xf,XYf\rangle\\
+&=\norm{X^2f}^2+\norm{(Y^2-Y)f}^2+2\norm{XYf}^2-2\norm{Xf}^2,
+\end{align*}
+which is the identity; the inequality holds because $\norm{Xf}^2\le\langle f,-\Delta f\rangle\le\norm f\norm{\Delta f}$. Now let
+$f\in\operatorname{Dom}(\Delta)$. Since $\Delta$ is essentially self-adjoint on $C_c^\infty(\Hb)$, there are test functions $f_n\to f$ with
+$\Delta f_n\to\Delta f$; by the inequality applied to $f_n-f_m$, the sequences $Xf_n$, $Yf_n$, $X^2f_n$, $(Y^2-Y)f_n$, $XYf_n$ converge in
+$L^2$, to the distributional derivatives of $f$, and the identities and the inequality pass to the limit. The right side is at most
+$(\norm{\Delta f}+\norm f)^2$, which gives the bounds for $X^2f$ and $(Y^2-Y)f$. Since $\norm{Yf}^2\le\norm f\norm{\Delta f}$,
+$\norm{Yf}\le\tfrac12(\norm{\Delta f}+\norm f)$, which gives the bound for $Y^2f=(Y^2-Y)f+Yf$; and $\Delta(t)=\ue^{-2t}X^2+(Y^2-Y)$.
+Finally $J_\varepsilon$ maps $L^2$ into $\operatorname{Dom}(\Delta)$ with
+$\norm{\Delta J_\varepsilon}\le\sup_\lambda\lambda^2j_\varepsilon(\lambda)<\infty$, the operators $X^2$ and $Y^2-Y=-Y^*Y$ are symmetric on
+$\operatorname{Dom}(\Delta)$, and $\Delta_\varepsilon(t)-\Delta_\varepsilon(t')=(\ue^{-2t}-\ue^{-2t'})J_\varepsilon X^2J_\varepsilon$.
+\end{proof}
+
+\subsection{First-order Cauchy estimates (Lemma FC)}\label{subsec:dd-fc}
+
+\begin{lemma}[FC]\label{lem:fc}
+For $\tau_0<\pi/2$ there is $C_1=C_1(\tau_0)$ such that for $Z\in\{X,Y\}$ and $0\le\alpha''<\alpha'\le\tau_0$,
+\[
+\norm{\ue^{\alpha''\Lambda}Z\,\ue^{-\alpha'\Lambda}}_{L^2(\Hb)}\le\frac{C_1}{\alpha'-\alpha''}.
+\]
+\end{lemma}
+
+\begin{proof}
+The Kontorovich--Lebedev kernel calculation is given in Appendix~\ref{app:special}, Section~\ref{app:fc-proof}.
+\end{proof}
+
+\subsection{Unweighted Cauchy estimate for words (Lemma WC)}\label{subsec:dd-wc}
+
+\begin{lemma}[WC]\label{lem:wc}
+For a word $Z_1\cdots Z_m$ with $Z_i\in\{X,Y\}$, and $0\le\alpha''<\alpha\le\tau_0<\pi/2$:
+\[
+\norm{\ue^{\alpha''\Lambda}Z_1\cdots Z_m\ue^{-\alpha\Lambda}}\le\Bigl(\frac{C_1m}{\alpha-\alpha''}\Bigr)^m\le\Bigl(\frac{eC_1}{\alpha-\alpha''}\Bigr)^m m!.
+\]
+\end{lemma}
+
+\begin{proof}
+Take equally spaced radii $\alpha''=r_0<r_1<\cdots<r_m=\alpha$, and insert $\ue^{-r_i\Lambda}\ue^{r_i\Lambda}$.
+Each factor $\ue^{r_{i-1}\Lambda}Z_i\ue^{-r_i\Lambda}$ is bounded by $C_1m/(\alpha-\alpha'')$ (Lemma~\ref{lem:fc}). The identity extends from $\mathcal C$ by closure, since each $\ue^{r_i\Lambda}$ is closed. Finally $m^m\le e^m m!$. \qedhere
+\end{proof}
+
+\subsection{Static weighted Cauchy estimates (Lemma SC)}\label{subsec:dd-sc}
+
+Let $\mathcal A:=\operatorname{span}\{y,\;x,\;(x^2+1)/y\}$.
+\begin{itemize}
+\item $\mathcal A$ contains $X_0=\tfrac12\bigl((x^2+1)/y+y\bigr)$.
+\item $\mathcal A$ is invariant under $X$ and $Y$: $Xy=0$, $Xx=y$, $X((x^2+1)/y)=2x$; $Yy=y$, $Yx=0$, $Y((x^2+1)/y)=-(x^2+1)/y$.
+\item In this basis the $\ell^1$-operator norms are $\norm{X}\le2$ and $\norm{Y}\le1$.
+\item Since $X_0\ge y/2$, $X_0\ge|x|$ (because $x^2+y^2+1-2y|x|=(|x|-y)^2+1$), and $X_0\ge(x^2+1)/(2y)$, every $v=c_1y+c_2x+c_3(x^2+1)/y$ satisfies $|v|\le2\norm{c}_1X_0$.
+\item Hence $|Z_BX_0|\le2\cdot2^{|B|}X_0$ for every word $Z_B$.
+\end{itemize}
+
+\begin{lemma}[Faà di Bruno bound]\label{lem:fdb}
+For $\beta\ge0$ and a word $Z_S$ of length $j$:
+\[
+|X_0^\beta Z_SX_0^{-\beta}|\le B_\beta\,j!\,\rho_\beta^{-j},\qquad \rho_\beta:=\tfrac14\log(3/2)
+\]
+(any fixed value below $\tfrac12\log(3/2)$ works), where $B_\beta$ depends only on $\beta$.
+\end{lemma}
+
+\begin{proof}
+\begin{itemize}
+\item Expand by induction on $j$: $Z_S\varphi(X_0)=\sum_{\pi}\varphi^{(|\pi|)}(X_0)\prod_{B\in\pi}Z_BX_0$, the sum over partitions $\pi$ of $S$, where each block $B$ inherits the order of $S$.
+\item With $\varphi(u)=u^{-\beta}$, $|\varphi^{(k)}(u)|=(\beta)_ku^{-\beta-k}$. So the bound is $2^j\sum_kS(j,k)(\beta)_k2^k$.
+\item The exponential generating function of $\sum_kS(j,k)(\beta)_k2^k$ is $(3-2\ue^z)^{-\beta}$, which is holomorphic on $|z|<\log(3/2)$.
+\item Cauchy's estimate on $|z|=\rho<\log(3/2)$ gives the bound $C_{\beta,\rho}\,j!\,\rho^{-j}$. Combined with the factor $2^j$, this gives $\rho_\beta=\rho/2$. \qedhere
+\end{itemize}
+\end{proof}
+
+\begin{lemma}[SC]\label{lem:sc}
+For $\beta\ge0$, a word $Z_1\cdots Z_m$ and $0<\alpha\le\tau_0$, with $F:=X_0^\beta a$ and $\norm{\ue^{\alpha\Lambda}F}<\infty$:
+\[
+\norm{X_0^\beta Z_1\cdots Z_m a}\le B_\beta(m+1)\,m!\,(C_3/\alpha)^m\,\norm{\ue^{\alpha\Lambda}X_0^\beta a},
+\qquad C_3:=\max(\ue C_1,\tau_0/\rho_\beta).
+\]
+\end{lemma}
+
+\begin{proof}
+\begin{itemize}
+\item Leibniz for words of derivations: \[X_0^\beta Z_1\cdots Z_m(X_0^{-\beta}F)=\sum_{S\subseteq[m]}(X_0^\beta Z_SX_0^{-\beta})\,(Z_{S^c}F)\]
+pointwise.
+\item Bound each term by $B_\beta|S|!\rho_\beta^{-|S|}\norm{Z_{S^c}F}$, and the second factor by Lemma~\ref{lem:wc} with $\alpha''=0$: $\norm{Z_{S^c}F}\le(\ue C_1/\alpha)^{m-|S|}(m-|S|)!\,\norm{\ue^{\alpha\Lambda}F}$.
+\item Since $\sum_{|S|=j}j!(m-j)!=m!$, the sum is $\le B_\beta\,m!\sum_j\rho_\beta^{-j}(\ue C_1/\alpha)^{m-j}\le B_\beta(m+1)m!(C_3/\alpha)^m$. \qedhere
+\end{itemize}
+\end{proof}
+
+\subsection{Multiplication by spatial weights}\label{app:m}
+\begin{lemma}[analytic vectors from word bounds]\label{lem:expw}
+Let $0<\alpha\le1$, $M\ge1$ and $B,N_0\ge0$. Let $G\in L^2(\Hb)$ be such that every word $Z_1\cdots Z_m$, $Z_i\in\{X,Y\}$, $m\ge0$,
+applied to $G$ in the sense of distributions lies in $L^2$, with
+\[
+\norm{Z_1\cdots Z_mG}\le B\,(m+1)\,m!\,(M/\alpha)^m\,N_0 .
+\]
+Then $G\in\operatorname{Dom}(\ue^{b\Lambda})$ and $\norm{\ue^{b\Lambda}G}\le C_*BN_0$ for $b=\alpha/(4M)$, with an absolute constant $C_*$.
+\end{lemma}
+\begin{proof}
+$\Delta$ is essentially self-adjoint on $C_c^\infty(\Hb)$, so $G\in\operatorname{Dom}(\Delta^n)$ for every $n$, and
+$(-\Delta)^n=(-X^2-Y^2+Y)^n$ is a sum of $3^n$ words of length at most $2n$ with coefficients $\pm1$. Since
+$m\mapsto(m+1)m!(M/\alpha)^m$ is increasing,
+$\norm{\Lambda^{2n}G}=\norm{(-\Delta)^nG}\le3^nB(2n+1)(2n)!(M/\alpha)^{2n}N_0$, and so
+\[
+\sum_{n\ge0}\frac{b^{2n}}{(2n)!}\norm{\Lambda^{2n}G}\le BN_0\sum_{n\ge0}(2n+1)\Bigl(\frac{3}{16}\Bigr)^n\le2BN_0 .
+\]
+The partial sums of $\sum_n(b\lambda)^{2n}/(2n)!$ increase to $\cosh(b\lambda)$, so monotone convergence in the spectral representation
+of $\Lambda$ gives $\norm{\cosh(b\Lambda)G}\le2BN_0$, and $\ue^{b\lambda}\le2\cosh(b\lambda)$. So $C_*=4$ works.
+\end{proof}
+
+\begin{lemma}[M, reduced radius]\label{lem:mw}
+Let $\beta\ge0$ and $\tau_0<\pi/2$, let $B_\beta$, $C_3$ be the constants of Lemma~\ref{lem:sc}, and put $c_M:=1/(4\max(C_3,1))$. For
+$0<\alpha\le\min(1,\tau_0)$ and every $a$ with $\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$,
+\[
+\norm{\ue^{c_M\alpha\Lambda}a}\le C_*B_\beta\,\norm{\ue^{\alpha\Lambda}X_0^\beta a},
+\]
+with $C_*$ the constant of Lemma~\ref{lem:expw}.
+\end{lemma}
+\begin{proof}
+By Lemma~\ref{lem:sc} and $X_0\ge1$, every word satisfies
+$\norm{Z_1\cdots Z_ma}\le\norm{X_0^\beta Z_1\cdots Z_ma}\le B_\beta(m+1)m!(C_3/\alpha)^m\norm{\ue^{\alpha\Lambda}X_0^\beta a}$.
+Apply Lemma~\ref{lem:expw} with $M=\max(C_3,1)$.
+\end{proof}
+
+\begin{lemma}[\texorpdfstring{M2, reduced radius: the weights $\langle d\rangle$ and $\tilde\psi$}{M2, reduced radius}]\label{lem:m2w}
+For $\beta\ge0$ there are $c_0\in(0,1]$ and $C$, depending only on $\beta$, such that for every base point $x_0$, every
+$0<\alpha\le1$ and every $a$ with $\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}<\infty$,
+\[
+\norm{\ue^{c_0\alpha\Lambda}X_0^\beta a}\le C\,\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}.
+\]
+\end{lemma}
+\begin{proof}
+The fields $X,Y$ and the operator $\Lambda$ commute with the affine isometries $z\mapsto pz+q$, $p>0$, which act transitively on
+$\Hb$; so we may take $x_0=i$. Put $F:=\ue^{\beta\langle d\rangle}a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$. Then $X_0^\beta a=mF$ with
+\[
+m:=X_0^\beta\ue^{-\beta\langle d\rangle}=\Phi(\tilde\psi),\qquad\Phi(\psi):=\exp\beta\bigl(\psi-(1+d^2)^{1/2}+1\bigr),
+\]
+where $d\ge0$ is the function of $\psi\ge0$ given by $\psi=\log\cosh d$.
+
+\emph{Step 1: $|\Phi^{(k)}|\le A\,k!\,\rho^{-k}$ on $[0,\infty)$, with $A,\rho>0$ depending only on $\beta$.} The function $\Phi$
+extends holomorphically to a neighbourhood of every point of $[0,\infty)$. Near $0$ this holds because $d^2$ is the analytic inverse at
+$0$ of $s\mapsto\log\cosh\sqrt s$, which has derivative $\tfrac12$ there. Near a point of $(0,\infty)$ it holds because
+$d=\operatorname{arcosh}(\ue^\psi)$ is analytic there. On the strip $\{\operatorname{Re}\psi>\tfrac{17}{10},\ |\operatorname{Im}\psi|<\tfrac14\}$,
+\begin{gather*}
+\Phi=\exp\beta\bigl(1-\ell-(D+R)^{-1}\bigr),\\
+\ell=\log\bigl(1+(1-\ue^{-2\psi})^{1/2}\bigr),\qquad D=\psi+\ell,\qquad R=(1+D^2)^{1/2},
+\end{gather*}
+with principal branches: on the real axis $D=d$ and $\psi-R+1=1-\ell-(D+R)^{-1}$, because $R^2-D^2=1$. On the strip
+$\operatorname{Re}(1-\ue^{-2\psi})>0$, $\operatorname{Re}\ell\ge0$, $\operatorname{Re}(1+D^2)>0$ and $\operatorname{Re}(D+R)>\tfrac{17}{10}$, so $\Phi$
+is holomorphic there with $|\Phi|\le\ue^{2\beta}$. Compactness of $[0,2]$, and Cauchy's estimate on discs of radius $\tfrac15$ around
+the points of $[2,\infty)$, give Step~1.
+
+\emph{Step 2: $|Z_Sm|\le A\,c^j\,j!$ for every word $Z_S$ of length $j$, with $c=4+3/\rho$.} Put $\xi:=x/X_0$ and $\upsilon:=y/X_0$, so
+$|\xi|\le1$, $0<\upsilon\le2$, $X\tilde\psi=\xi$ and $Y\tilde\psi=\upsilon-1$. The polynomials in $(\xi,\upsilon)$ are stable under $X$ and $Y$:
+$X\xi=\upsilon-\xi^2$, $X\upsilon=-\xi\upsilon$, $Y\xi=\xi-\xi\upsilon$, $Y\upsilon=2\upsilon-\upsilon^2$. For
+$Q=\sum c_{ab}\xi^a\upsilon^b$ let $\norm Q_*:=\sum|c_{ab}|2^b$, so $|Q|\le\norm Q_*$ pointwise. The four formulas give
+$\norm{ZQ}_*\le4(\deg Q)\norm Q_*$, and $\norm{(Z\tilde\psi)Q}_*\le3\norm Q_*$. By induction on $j$,
+$Z_S\Phi(\tilde\psi)=\sum_{k=0}^j\Phi^{(k)}(\tilde\psi)\,Q_{S,k}(\xi,\upsilon)$ with polynomials of degree at most $j$ satisfying
+$Q_{ZS,k}=(Z\tilde\psi)Q_{S,k-1}+ZQ_{S,k}$. With $q_{j,k}:=\max_{|S|=j}\norm{Q_{S,k}}_*$ this gives
+$q_{j+1,k}\le3q_{j,k-1}+4j\,q_{j,k}$, and then $T_j:=\sum_kk!\,\rho^{-k}q_{j,k}$ satisfies
+$T_{j+1}\le(3(j+1)/\rho+4j)T_j\le c\,(j+1)\,T_j$, so $T_j\le c^jj!$. By Step~1, $|Z_Sm|\le A\,T_j$.
+
+\emph{Step 3.} By the Leibniz rule for words, Step~2 and Lemma~\ref{lem:wc} at $\alpha''=0$ (with $\tau_0=1$), for a word of length $j$,
+\[
+\begin{aligned}
+\norm{Z_S(mF)}&\le\sum_{S'\subseteq S}A\,c^{|S'|}|S'|!\,\Bigl(\frac{\ue C_1}{\alpha}\Bigr)^{j-|S'|}(j-|S'|)!\,\norm{\ue^{\alpha\Lambda}F}
+\\ &\le A\,(j+1)\,j!\,(M/\alpha)^j\norm{\ue^{\alpha\Lambda}F},
+\end{aligned}
+\]
+with $M:=\max(c,\ue C_1,1)$. Lemma~\ref{lem:expw} gives the claim with $c_0=1/(4M)$ and $C=C_*A$.
+\end{proof}
+
+\subsection{Analyticity of the mollified flow}\label{app:kl}
+By Lemma~\ref{lem:ell} the equation $i\partial_sv=-\tfrac\hbar2\Delta_\varepsilon(s)v$ has a unitary propagator
+$V_\varepsilon(s_1,s_0)$ on $L^2(\Hb)$, $s_0,s_1\ge0$, norm differentiable in both variables. The mollified flow of
+\cite[(4.32)--(4.33)]{S} is $V_\varepsilon(s)=V_\varepsilon(s,0)$, and $V_\varepsilon(s_1,s_0)=V_\varepsilon(s_1)V_\varepsilon(s_0)^*$.
+All estimates below are stated for $V_\varepsilon(s_1,s_0)$; this contains $V_\varepsilon(t)$ and $V_\varepsilon(t)^*$.
+
+\medskip\noindent\textbf{The Kontorovich--Lebedev picture.}
+Fourier transform in $x$; on the mode $\ue^{ikx}$, $k\ne0$, put $z=|k|y$ and write the function of $y$ as $z^{1/2}f(z)$. Then
+$L^2(dx\,dy/y^2)$ becomes $L^2(dz/z)$ in $f$, $-\Delta$ becomes $-(z\partial_z)^2+z^2+\tfrac14$, and $X$ becomes multiplication by
+$i\operatorname{sgn}(k)\,z$; on the mode $k=0$, $X=0$. The Kontorovich--Lebedev transform $F(\nu)=\int_0^\infty K_{i\nu}(z)f(z)\,dz/z$, with Parseval
+$\int|f|^2dz/z=\int|F|^2w(\nu)\,d\nu$, $w(\nu)=\tfrac2{\pi^2}\nu\sinh(\pi\nu)$ (\cite[eqs.~(1.1)--(1.3)]{Y}, applied to $f(z)/z$), diagonalizes
+$-\Delta=\nu^2+\tfrac14$. So $\Lambda$ acts as multiplication by $\Lambda(\nu)=(\nu^2+\tfrac14)^{1/2}$, and
+$|\Lambda(\nu)-\Lambda(\nu')|\le|\nu-\nu'|$. In the unitary picture $G=w^{1/2}F$, multiplication by $z$ has the kernel
+$Zt_1(\nu,\nu')$ computed in step (X) of the proof of Lemma~\ref{lem:fc}, and
+\begin{equation}\label{eq:zt1}
+0\le Zt_1(\nu,\nu')\le\frac{(\nu\nu')^{1/2}}{2\cosh(\pi(\nu-\nu')/2)} .
+\end{equation}
+The operators are the same for every $k$, so all bounds are uniform in $k$.
+
+\begin{lemma}[clipped conjugation of $XJ_\varepsilon$]\label{lem:clip}
+Let $\tau_0<\pi/2$, $L\ge\tfrac12$ and $\ell:=\min(\Lambda,L)$. For real $a$ let $R_a:=\ue^{a\ell}XJ_\varepsilon\ue^{-a\ell}$, a bounded
+operator. Put
+\begin{gather*}
+g_K(x):=\frac{(1+|x|)\,\ue^{\tau_0|x|}}{2\cosh(\pi x/2)},\qquad g_Q(x):=\frac{(1+3|x|)\,|x|\,\ue^{\tau_0|x|}}{2\cosh(\pi x/2)},\\
+A_1:=\int_{\mathbb R}g_K(x)\,dx,\qquad A_2:=\int_{\mathbb R}g_Q(x)\,dx .
+\end{gather*}
+For $0\le\tau\le\tau_0$, $\varepsilon>0$ and $u\in L^2(\Hb)$,
+\[
+\bigl\|\tfrac12(R_\tau+R_{-\tau})u\bigr\|\le A_1\norm{\Lambda J_\varepsilon u},\qquad
+\bigl\|\tfrac12(R_\tau-R_{-\tau})u\bigr\|\le A_2\,\tau\,\norm{\ell J_\varepsilon u},
+\]
+and consequently
+\[
+\bigl|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle\bigr|\le2A_1A_2\,\tau\,\norm{\Lambda J_\varepsilon u}\,\norm{\ell J_\varepsilon u}.
+\]
+\end{lemma}
+\begin{proof}
+In the Kontorovich--Lebedev picture $\ell$ and $J_\varepsilon$ are multiplications by $\ell(\nu)=\min(\Lambda(\nu),L)$ and
+$j_\varepsilon(\Lambda(\nu))$. Put $x=\nu-\nu'$ and $\delta=\ell(\nu)-\ell(\nu')$, so $|\delta|\le|x|$. Up to the factor
+$i\operatorname{sgn}(k)$ of modulus one, the operators $\tfrac12(R_\tau+R_{-\tau})$ and $\tfrac12(R_\tau-R_{-\tau})$ have the kernels
+\[
+Zt_1(\nu,\nu')\cosh(\tau\delta)\,j_\varepsilon(\Lambda(\nu'))\qquad\text{and}\qquad Zt_1(\nu,\nu')\sinh(\tau\delta)\,j_\varepsilon(\Lambda(\nu')).
+\]
+
+\emph{Even part.} Since $(\nu\nu')^{1/2}\le\nu'+|x|/2$ and $\Lambda(\nu')\ge\max(\nu',\tfrac12)$, we have
+$(\nu\nu')^{1/2}\le(1+|x|)\Lambda(\nu')$. By \eqref{eq:zt1} and $\cosh(\tau\delta)\le\ue^{\tau_0|x|}$, the even part is
+$K_A\circ\Lambda J_\varepsilon$ with a kernel $|K_A(\nu,\nu')|\le g_K(\nu-\nu')$, and the Schur test gives $\norm{K_A}\le A_1$.
+
+\emph{Odd part.} Here $|\sinh(\tau\delta)|\le\tau|\delta|\,\ue^{\tau_0|x|}$, and $\delta=0$ when $\Lambda(\nu)\ge L$ and
+$\Lambda(\nu')\ge L$. In the remaining cases $(\nu\nu')^{1/2}\le(1+|x|)\,\ell(\nu')$: if $\Lambda(\nu')\le L$ this is the inequality
+of the even part; if $\Lambda(\nu')>L\ge\Lambda(\nu)$, then $\ell(\nu')=L$ and
+$(\nu\nu')^{1/2}\le\nu+|x|/2\le L+|x|L$, because $\nu\le\Lambda(\nu)\le L$ and $L\ge\tfrac12$. So the odd part is $K_B\circ\ell J_\varepsilon$ with
+$|K_B(\nu,\nu')|\le\tau\,|x|\,g_K(x)\le\tau\,g_Q(x)$, and the Schur test gives $\norm{K_B}\le A_2\tau$.
+
+\emph{The imaginary part.} With $P=\tfrac12(R_\tau+R_{-\tau})u$ and $Q=\tfrac12(R_\tau-R_{-\tau})u$,
+\[\langle R_{-\tau}u,R_\tau u\rangle=\langle P-Q,P+Q\rangle=\norm P^2-\norm Q^2+2i\,\mathrm{Im}\langle P,Q\rangle,\]
+so
+$|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle|\le2\norm P\norm Q$.
+\end{proof}
+
+\begin{proposition}[A0]\label{prop:a0}
+Let $\tau_0<\pi/2$ and $c_A:=(1+32A_1A_2)^{-1}$, with $A_1,A_2$ as in Lemma~\ref{lem:clip}. Let $0<\varepsilon\le1$, $\hbar>0$,
+$0\le\alpha'\le\alpha\le\tau_0$ with $\alpha>0$, and $s_0,s_1\ge0$ with
+\[
+|s_1-s_0|\le c_A\,\frac{\alpha-\alpha'}{\alpha}\,\frac{\varepsilon}{\hbar}.
+\]
+If $a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, then $V_\varepsilon(s_1,s_0)a\in\operatorname{Dom}(\ue^{\alpha'\Lambda})$ and
+\[
+\norm{\ue^{\alpha'\Lambda}V_\varepsilon(s_1,s_0)a}\le\norm{\ue^{\alpha\Lambda}a}.
+\]
+\end{proposition}
+\begin{proof}
+\emph{A frequency bound.} For $L\ge4/\varepsilon$ and $\lambda\ge0$, $\lambda^2j_\varepsilon(\lambda)^2\le(32/\varepsilon)\min(\lambda,L)$.
+Indeed $j_\varepsilon(\lambda)\le\int_{|\mu|\le2/\varepsilon}g(\lambda-\mu)\,d\mu\le1$. If $\lambda\le4/\varepsilon$ the left side is at most
+$(4/\varepsilon)\lambda$. If $\lambda>4/\varepsilon$, then $\lambda-\mu>\lambda/2$ on the range of integration, so
+$j_\varepsilon(\lambda)\le\ue^{-\lambda^2/8}$ and $\lambda^2j_\varepsilon(\lambda)^2\le4/\ue$, while $\min(\lambda,L)\ge4/\varepsilon\ge4$.
+
+\emph{The clipped energy.} Fix $L\ge4/\varepsilon$, put $\ell=\min(\Lambda,L)$ and $\rho:=32A_1A_2\hbar/\varepsilon$, and let
+$\tau(s):=\alpha\,\ue^{-\rho|s-s_0|}$, $v(s):=V_\varepsilon(s,s_0)a$, $u(s):=\ue^{\tau(s)\ell}v(s)$. All operators involved are bounded.
+Since $v'=\tfrac{i\hbar}2\Delta_\varepsilon(s)v$,
+\[
+\tfrac{d}{ds}\norm{u}^2=2\tau'\langle u,\ell u\rangle-\hbar\,\mathrm{Im}\bigl\langle u,\ue^{\tau\ell}\Delta_\varepsilon(s)\ue^{-\tau\ell}u\bigr\rangle .
+\]
+Now $\Delta_\varepsilon(s)=J_\varepsilon\Delta J_\varepsilon-(1-\ue^{-2s})J_\varepsilon X^2J_\varepsilon$. The first term commutes with $\ell$ and is
+self-adjoint, so it does not contribute. For the second, $\ue^{\tau\ell}J_\varepsilon X^2J_\varepsilon\ue^{-\tau\ell}=-R_{-\tau}^*R_\tau$,
+because $X^*=-X$. Hence, by Lemma~\ref{lem:clip}, $\norm{\ell J_\varepsilon u}\le\norm{\Lambda J_\varepsilon u}$ and the frequency bound,
+for $s\ge0$,
+\[
+\begin{aligned}
+\Bigl|\tfrac{d}{ds}\norm u^2-2\tau'\langle u,\ell u\rangle\Bigr|\\ &=\hbar(1-\ue^{-2s})\bigl|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle\bigr|\\ &\le2A_1A_2\hbar\,\tau\,\langle u,\Lambda^2J_\varepsilon^2u\rangle\le2\rho\,\tau\,\langle u,\ell u\rangle .
+\end{aligned}
+\]
+Since $\tau'=-\rho\tau$ for $s>s_0$ and $\tau'=\rho\tau$ for $s<s_0$, $\norm{u(s)}$ does not increase as $s$ moves away from $s_0$, in
+either direction; all times between $s_0$ and $s_1$ are nonnegative. Therefore
+$\norm{\ue^{\tau(s_1)\ell}v(s_1)}\le\norm{\ue^{\alpha\ell}a}\le\norm{\ue^{\alpha\Lambda}a}$.
+
+\emph{The radius.} By the hypothesis on $|s_1-s_0|$ and $32A_1A_2c_A\le1$,
+$\tau(s_1)\ge\alpha(1-\rho|s_1-s_0|)\ge\alpha'$. So $\norm{\ue^{\alpha'\min(\Lambda,L)}v(s_1)}\le\norm{\ue^{\alpha\Lambda}a}$ for every
+$L\ge4/\varepsilon$, and monotone convergence in the spectral representation of $\Lambda$, as $L\to\infty$, gives the claim.
+\end{proof}
+
+\subsection{Weighted bounds for the mollifier and the mollified flow}\label{app:ws}
+In this section the base point is $x_0=i$ (Lemma~\ref{lem:base} reduces the general case to it), $X_0=\cosh d(i,\cdot)$, and
+$D:=(-\Delta-\tfrac14)^{1/2}$, so that $\Lambda=(D^2+\tfrac14)^{1/2}$. Explicitly $X_0=(x^2+y^2+1)/(2y)$, $XX_0=x$, $YX_0=y-X_0$, and
+$(XX_0)^2+(YX_0)^2=X_0^2-1$.
+
+\medskip\noindent\textbf{Bounded weights.} A \emph{bounded weight} is a smooth function $W>0$ on $\Hb$ such that $Z_SW$ is bounded
+for every word $Z_S$ in $X,Y$, the empty word included. For $\rho,K\ge0$ let $\mathcal W(\rho,K)$ be the set of bounded weights
+with, for $Z\in\{X,Y\}$,
+\[
+|ZW|\le\rho\,W,\qquad|Z^2W|\le K\,W,\qquad|\Delta W|\le K\,W,\qquad|Z^2(W^2)|\le K\,W^2 .
+\]
+For $\gamma\ge0$ and an integer $n\ge1$ put $W_{\gamma,n}:=(X_0^{-\gamma}+1/n)^{-1}$. Then $W_{\gamma,n}\le n$,
+$W_{\gamma,n}\uparrow X_0^\gamma$ as $n\to\infty$,
+\[
+(X\log W_{\gamma,n})^2+(Y\log W_{\gamma,n})^2\le\gamma^2,
+\]
+and $W_{\gamma,n}\in\mathcal W(\gamma,K_\gamma)$ with a constant $K_\gamma$ depending only on $\gamma$ ($K_\gamma=8\gamma^2+7\gamma$ works).
+Indeed, with $\phi=X_0^{-\gamma}$ one has $(X\phi)^2+(Y\phi)^2\le\gamma^2\phi^2$ and, since $X^2X_0=y\le2X_0$ and $Y^2X_0=X_0$,
+$|Z^2\phi|\le(\gamma^2+3\gamma)\phi$; now differentiate $W_{\gamma,n}=(\phi+1/n)^{-1}$ and $W_{\gamma,n}^2$, and use $\phi\le\phi+1/n$.
+All words applied to $\phi$ are bounded (Lemma~\ref{lem:fdb}), hence so are all words applied to $W_{\gamma,n}$.
+A bound for all $W_{\gamma,n}$ with a constant independent of $n$ passes to the weight $X_0^\gamma$ by monotone convergence. The
+bounds below are used in this way.
+
+\begin{lemma}[wave energy at a bounded weight]\label{lem:wave}
+Let $W$ be a bounded weight, $u\in L^2(\Hb)$ and $s\in\mathbb R$.
+\begin{itemize}
+\item[(a)] If $|XW|\le\rho W$ and $|YW|\le\rho W$, then $\norm{W\cos(s\Lambda)u}\le\ue^{2\rho|s|}\norm{Wu}$. If moreover $u$ lies in the
+range of a spectral projection $1_{[0,R]}(\Lambda)$, $R<\infty$, then, with $q=\Lambda^{-1}\sin(s\Lambda)u$,
+\[
+\norm{WXq}\le\ue^{2\rho|s|}\norm{Wu},\qquad\norm{WYq}\le\ue^{2\rho|s|}\norm{Wu}.
+\]
+\item[(b)] If $l\ge0$ and $(X\log W)^2+(Y\log W)^2\le l^2$, then $\norm{W\cos(sD)u}\le\ue^{(l+1/2)|s|}\norm{Wu}$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+First let $u$ lie in the range of a spectral projection $1_{[0,L]}(\Lambda)$. Then all functions below are smooth, lie in the domain of
+every power of $\Delta$, and are differentiable in $s$. For $f\in\operatorname{Dom}(\Delta)$ and $g$ in the form domain,
+$\langle g,\Delta f\rangle=-\langle Xg,Xf\rangle-\langle Yg,Yf\rangle$ (Lemma~\ref{lem:ell}), and $W^2g$ is in the form domain when $g$ is,
+since $W$ and $XW$, $YW$ are bounded.
+
+(a) Let $p=\cos(s\Lambda)u$, so $q'=p$ and $p'=\Delta q$, and $E:=\norm{Wp}^2+\norm{WXq}^2+\norm{WYq}^2$. Then
+\begin{align*}
+E'&=2\,\mathrm{Re}\langle W^2p,\Delta q\rangle+2\,\mathrm{Re}\langle W^2Xq,Xp\rangle+2\,\mathrm{Re}\langle W^2Yq,Yp\rangle\\
+&=-2\,\mathrm{Re}\langle X(W^2)p,Xq\rangle-2\,\mathrm{Re}\langle Y(W^2)p,Yq\rangle .
+\end{align*}
+Since $|X(W^2)|\le2\rho W^2$ and $|Y(W^2)|\le2\rho W^2$, $|E'|\le4\rho\norm{Wp}(\norm{WXq}+\norm{WYq})\le4\rho E$, so
+$E(s)\le\ue^{4\rho|s|}E(0)=\ue^{4\rho|s|}\norm{Wu}^2$.
+
+(b) Let $p=\cos(sD)u$ and $q=\int_0^s\cos(rD)u\,dr$, so $q'=p$ and $p'=(\Delta+\tfrac14)q$, and
+$E:=\norm{Wp}^2+\norm{WXq}^2+\norm{WYq}^2+\tfrac14\norm{Wq}^2$. The same computation gives
+\[E'=-2\,\mathrm{Re}\langle X(W^2)p,Xq\rangle-2\,\mathrm{Re}\langle Y(W^2)p,Yq\rangle+\mathrm{Re}\langle W^2p,q\rangle.\]
+Pointwise
+$|X(W^2)\,Xq+Y(W^2)\,Yq|\le2l\,W^2(|Xq|^2+|Yq|^2)^{1/2}$, so the first two terms are at most
+$4l\norm{Wp}(\norm{WXq}^2+\norm{WYq}^2)^{1/2}\le2lE$ together, and $|\langle W^2p,q\rangle|\le\norm{Wp}\norm{Wq}\le E$. So $|E'|\le(2l+1)E$.
+
+For general $u$ the bounds for $\cos(s\Lambda)u$ and $\cos(sD)u$ follow by applying this to $u_L=1_{[0,L]}(\Lambda)u$ and letting
+$L\to\infty$, since $W$ is bounded.
+\end{proof}
+
+\begin{lemma}[commutator with the wave group]\label{lem:wcomm}
+Let $W\in\mathcal W(\rho,K)$. For $y,g$ in the range of a spectral projection $1_{[0,R]}(\Lambda)$, $R<\infty$, and $s\in\mathbb R$,
+\[
+\bigl|\langle y,[\cos(s\Lambda),W^2]g\rangle\bigr|\le\bigl(8\rho|s|+(2K+2\rho)s^2\bigr)\ue^{4\rho|s|}\norm{Wy}\norm{Wg}.
+\]
+\end{lemma}
+\begin{proof}
+Put $h=W^2$, $c(s)=\cos(s\Lambda)$ and $S(s)=\Lambda^{-1}\sin(s\Lambda)$. The function
+$v(s)=[c(s),h]g$ satisfies $v''=\Delta v+[\Delta,h]c(s)g$, $v(0)=v'(0)=0$, so
+\[
+v(s)=\int_0^sS(s-r)[\Delta,h]c(r)g\,dr.
+\]
+Here
+$[\Delta,h]f=(\Delta h)f+2(Xh)Xf+2(Yh)Yf$, and $[\Delta,h]^*=-[\Delta,h]$. With $q(r):=S(r)y$,
+\[
+\langle y,v(s)\rangle=-\int_0^s\Bigl(\bigl\langle(\Delta h)\,q(s-r),c(r)g\bigr\rangle+2\bigl\langle(Xh)Xq(s-r)+(Yh)Yq(s-r),c(r)g\bigr\rangle\Bigr)dr,
+\]
+in which no derivative falls on $c(r)g$. Now
+$|Xh|,|Yh|\le2\rho h$ and $|\Delta h|\le|X^2h|+|Y^2h|+|Yh|\le(2K+2\rho)h$. By Lemma~\ref{lem:wave}(a),
+$\norm{Wc(r)g}\le\ue^{2\rho|r|}\norm{Wg}$, $\norm{WXq(r)}+\norm{WYq(r)}\le2\ue^{2\rho|r|}\norm{Wy}$, and
+$\norm{Wq(r)}\le|r|\ue^{2\rho|r|}\norm{Wy}$ because $q(r)=\int_0^rc(r')y\,dr'$. So the integrand is at most
+$\bigl((2K+2\rho)|s-r|+8\rho\bigr)\ue^{2\rho|s|}\norm{Wy}\norm{Wg}$, and integrating gives the claim (with $\ue^{2\rho|s|}$ and
+$(K+\rho)s^2$).
+\end{proof}
+
+By Fourier inversion, since $j_\varepsilon$ is even,
+\[
+J_\varepsilon=\frac1\pi\int_0^\infty h_\varepsilon(s)\cos(s\Lambda)\,ds,\qquad h_\varepsilon(s)=\varepsilon^{-1}\hat\chi(s/\varepsilon)\,\ue^{-s^2/2},
+\]
+where $h_\varepsilon$ is real, even and Schwartz. For $0<\varepsilon\le1$, $k,r\ge0$ and $C\ge0$,
+\begin{equation}\label{eq:hmom}
+\int_0^\infty|h_\varepsilon^{(r)}(s)|\,\ue^{Cs}\,ds\le C_{r}\,\varepsilon^{-r},\qquad\int_0^\infty|h_\varepsilon(s)|\,s^k\,\ue^{Cs}\,ds\le C_{k}\,\varepsilon^{k},
+\end{equation}
+with constants depending on $C$ and $\chi$ (substitute $s=\varepsilon\sigma$ and use $\ue^{Cs-s^2/2}\le\ue^{C^2/2}$).
+
+\begin{lemma}[weighted mollifier]\label{lem:wmoll}
+Let $W\in\mathcal W(\rho,K)$ and $0<\varepsilon\le1$. There is $M=M(\rho,K,\chi)$ such that for all $u,y,g\in L^2(\Hb)$ and
+$Z\in\{X,Y\}$:
+\begin{itemize}
+\item[(i)] $\norm{WJ_\varepsilon u}\le M\norm{Wu}$;
+\item[(ii)] $\norm{WZJ_\varepsilon u}\le M\varepsilon^{-1}\norm{Wu}$;
+\item[(iii)] $\norm{W\Delta J_\varepsilon u}\le M\varepsilon^{-2}\norm{Wu}$ and $\norm{WZ^2J_\varepsilon u}\le M\varepsilon^{-2}\norm{Wu}$;
+\item[(iv)] $|\langle y,[J_\varepsilon,W^2]g\rangle|\le M\varepsilon\norm{Wy}\norm{Wg}$.
+\end{itemize}
+In particular $\norm{W\Delta(s)J_\varepsilon u}\le3M\varepsilon^{-2}\norm{Wu}$ for $s\ge0$.
+\end{lemma}
+\begin{proof}
+In (ii) and (iv) it suffices to take $u$, $y$, $g$ in the range of a spectral projection $1_{[0,R]}(\Lambda)$, with $M$ independent of
+$R$: the projection commutes with $J_\varepsilon$, the operators $ZJ_\varepsilon$ and $[J_\varepsilon,W^2]$ are bounded on $L^2$, and $W$ is bounded.
+(i) follows from Lemma~\ref{lem:wave}(a) and \eqref{eq:hmom}. (ii) With $q(s)=\Lambda^{-1}\sin(s\Lambda)u$, $q'=\cos(s\Lambda)u$ and
+$q(0)=0$, an integration by parts gives $ZJ_\varepsilon u=-\tfrac1\pi\int_0^\infty h_\varepsilon'(s)\,Zq(s)\,ds$; use
+Lemma~\ref{lem:wave}(a) and \eqref{eq:hmom} with $r=1$. (iii) Since $\Delta\cos(s\Lambda)u=\partial_s^2\cos(s\Lambda)u$ and
+$h_\varepsilon'(0)=0$, two integrations by parts give $\Delta J_\varepsilon u=\tfrac1\pi\int_0^\infty h_\varepsilon''(s)\cos(s\Lambda)u\,ds$, and
+\eqref{eq:hmom} with $r=2$ gives the first bound. For the second put $f=J_\varepsilon u$. The function $Wf$ lies in
+$\operatorname{Dom}(\Delta)$, and
+\begin{align*}
+Z^2(Wf)&=WZ^2f+2(ZW)Zf+(Z^2W)f,\\
+\Delta(Wf)&=W\Delta f+2(XW)Xf+2(YW)Yf+(\Delta W)f,
+\end{align*}
+with $|ZW|\le\rho W$, $|Z^2W|\le KW$ and $|\Delta W|\le KW$. So Lemma~\ref{lem:ell}, applied to $Wf$, bounds
+$\norm{WZ^2f}$ by a constant times $\norm{W\Delta f}+\max_Z\norm{WZf}+\norm{Wf}$, and (i), (ii) and the first bound of (iii) apply. (iv) follows from
+Lemma~\ref{lem:wcomm} and \eqref{eq:hmom} with $k=1,2$. The last claim holds because $\Delta(s)=\ue^{-2s}X^2+Y^2-Y$.
+\end{proof}
+
+\begin{proposition}[WS: the mollified flow at a weight]\label{prop:ws}
+Let $W\in\mathcal W(\rho,K)$. There is $G=G(\rho,K,\chi)$ such that for $0<\varepsilon\le1$, $\hbar>0$, $s_0,s_1\ge0$ and $a\in L^2(\Hb)$,
+\[
+\norm{W\,V_\varepsilon(s_1,s_0)a}\le\ue^{G\hbar|s_1-s_0|/(2\varepsilon)}\norm{Wa}.
+\]
+Consequently, for $\gamma\ge0$ and $X_0^\gamma a\in L^2$,
+$\norm{X_0^\gamma V_\varepsilon(s_1,s_0)a}\le\ue^{G_\gamma\hbar|s_1-s_0|/(2\varepsilon)}\norm{X_0^\gamma a}$ with $G_\gamma=G(\gamma,K_\gamma,\chi)$.
+\end{proposition}
+\begin{proof}
+Let $v(s)=V_\varepsilon(s,s_0)a$ and $h=W^2$. Since $v'=\tfrac{i\hbar}2\Delta_\varepsilon(s)v$ in $L^2$ and $W$ is bounded,
+$\tfrac d{ds}\norm{Wv}^2=-\hbar\,\mathrm{Im}\langle hv,\Delta_\varepsilon(s)v\rangle$. Write
+\[
+\langle hv,J_\varepsilon\Delta(s)J_\varepsilon v\rangle=\langle hJ_\varepsilon v,\Delta(s)J_\varepsilon v\rangle+\langle[J_\varepsilon,h]v,\Delta(s)J_\varepsilon v\rangle .
+\]
+For $f=J_\varepsilon v$, integrating by parts as in Lemma~\ref{lem:ell},
+\[\mathrm{Im}\langle hf,\Delta(s)f\rangle=-\ue^{-2s}\mathrm{Im}\langle(Xh)f,Xf\rangle-\mathrm{Im}\langle(Yh)f,Yf\rangle,\]
+which for $s\ge0$ is at
+most $4\rho\norm{Wf}\max_Z\norm{WZf}\le4\rho M^2\varepsilon^{-1}\norm{Wv}^2$ in absolute value, by Lemma~\ref{lem:wmoll}(i),(ii). By
+Lemma~\ref{lem:wmoll}(iv) and its last claim, the second term is at most
+$M\varepsilon\,\norm{W\Delta(s)J_\varepsilon v}\norm{Wv}\le3M^2\varepsilon^{-1}\norm{Wv}^2$. So
+$|\tfrac d{ds}\norm{Wv}^2|\le G\hbar\varepsilon^{-1}\norm{Wv}^2$ with $G:=(4\rho+3)M^2$, at all times $s\ge0$, and Gr\"onwall's inequality gives
+the first claim. The second follows with $W=W_{\gamma,n}$ and $n\to\infty$.
+\end{proof}
+
+\begin{lemma}[the path of the mollified flow]\label{lem:path}
+Let $\gamma\ge0$, $0<\varepsilon\le1$, $\hbar>0$ and $s_1\ge0$ with $\hbar s_1\le\varepsilon$. Let $\mathcal S:=\{1,X,Y,X^2,Y^2\}$, let $b'$ be such that
+$X_0^\gamma Zb'\in L^2(\Hb)$ for every $Z\in\mathcal S$, and put
+$g(s):=V_\varepsilon(s,s_1)b'$ for $0\le s\le s_1$. There is $C=C(\gamma,\chi)$ such that:
+\begin{itemize}
+\item[(a)] $g(s)=b'+J_\varepsilon h(s)$ with $h(s):=\tfrac{i\hbar}2\int_{s_1}^s\Delta(r)J_\varepsilon g(r)\,dr$, where $h$ is Lipschitz from
+$[0,s_1]$ to $L^2(X_0^{2\gamma}d\nu)$ and $\norm{X_0^\gamma h(s)}\le C\varepsilon^{-1}\norm{X_0^\gamma b'}$;
+\item[(b)] the defect $d(s):=(\Delta(s)-\Delta_\varepsilon(s))g(s)$ satisfies
+$\norm{X_0^\gamma d(s)}\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\gamma Zb'}$;
+\item[(c)] $g$ is $C^1$ from $[0,s_1]$ to $L^2(X_0^{2\gamma}d\nu)$ with $g'=\tfrac{i\hbar}2\Delta_\varepsilon(s)g$, and $Zg$ is
+continuous from $[0,s_1]$ to $L^2(X_0^{2\gamma}d\nu)$ for every $Z\in\mathcal S$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+The bounds of Lemma~\ref{lem:wmoll}(i)--(iii) and of Proposition~\ref{prop:ws} hold at the weight $X_0^\gamma$, with $M=M(\gamma,K_\gamma,\chi)$
+and $G_\gamma$.
+(a) Since $\partial_sg=\tfrac{i\hbar}2J_\varepsilon\Delta(s)J_\varepsilon g$ and $g(s_1)=b'$, the formula for $g$ holds. For $0\le r\le s_1$,
+$\hbar|r-s_1|\le\varepsilon$, so $\norm{X_0^\gamma g(r)}\le\ue^{G_\gamma/2}\norm{X_0^\gamma b'}$ and
+$\norm{X_0^\gamma\Delta(r)J_\varepsilon g(r)}\le3M\varepsilon^{-2}\ue^{G_\gamma/2}\norm{X_0^\gamma b'}$. Hence $h$ is Lipschitz, and
+$\norm{X_0^\gamma h(s)}\le\tfrac12\hbar|s-s_1|\cdot3M\varepsilon^{-2}\ue^{G_\gamma/2}\norm{X_0^\gamma b'}\le\tfrac32M\ue^{G_\gamma/2}\varepsilon^{-1}\norm{X_0^\gamma b'}$.
+(b) By (a),
+$d(s)=\Delta(s)b'-J_\varepsilon\Delta(s)J_\varepsilon b'+\Delta(s)J_\varepsilon h(s)-J_\varepsilon\Delta(s)J_\varepsilon J_\varepsilon h(s)$. The first term is
+bounded by the words $X^2b'$, $Y^2b'$, $Yb'$; the others by $3M^2\varepsilon^{-2}\norm{X_0^\gamma b'}$ and
+$(3M+3M^3)\varepsilon^{-2}\norm{X_0^\gamma h(s)}$. (c) follows from (a) and Lemma~\ref{lem:wmoll}: $ZJ_\varepsilon$ is bounded on
+$L^2(X_0^{2\gamma}d\nu)$ for $Z\in\mathcal S$, and so is $J_\varepsilon\Delta(s)J_\varepsilon$, continuously in $s$.
+\end{proof}
+
+\subsection{\texorpdfstring{Bounds for $b'(s)$ (Lemma WB)}{Bounds for b'(s) (Lemma WB)}}\label{subsec:dd-wb}
+
+\begin{lemma}[WB]\label{lem:wb}
+Assume $0<\hbar\le1$ and $0<\alpha\le\alpha_0\le\min(1,\tau_0)$. Let $J$ be a word of length $\le n$, and let $\mathfrak D^J:=Z_1\cdots Z_m$ with $Z_i\in\{X,Y\}$ and $m=|J|$ be the ordered word it determines (the empty word is the identity). Uniformly in $s\in\Sigma_{K+1}(t)$:
+\begin{itemize}
+\item \textup{(WB-w)}
+\[
+\norm{X_0^\beta\mathfrak D^Jb'(s)}\le B_\beta C_4^{N+K+n+1}(2N)!\,(n+2K+2)!\,\alpha^{-(n+2K+2)}(\alpha\hbar)^{-2N}\pwNorm a
+\]
+\item \textup{(WB-u)} for $0\le\alpha_1<\alpha_0'\le\alpha_0$ with $\alpha_0'-\alpha_1\ge\alpha/4$:
+\[
+\norm{\ue^{\alpha_1\Lambda}b'(s)}\le C_4^{N+K+1}(2N)!\,(2K+2)!\,\alpha^{-(2K+2)}(\alpha\hbar)^{-2N}\norm{\ue^{\alpha_0'\Lambda}a}.
+\]
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+\begin{itemize}
+\item Expand $b'$ as a sum over choices of one term from each factor:
+  \begin{itemize}
+  \item from each $\Delta(s_j)$: $\ue^{-2s_j}X^2$, $Y^2$ or $-Y$ (coefficients of modulus $\le1$, length $\le2$);
+  \item from each $\Delta_\varphi(s_1)$: $\hbar^{-2}(-1+i\hbar)$ (length $0$, $|\text{coeff}|\le2\hbar^{-2}$), $-2i\hbar^{-1}Y$ (length $1$, $|\text{coeff}|=2\hbar^{-1}$), or one of the three length-$\le2$ terms (coefficient $\le1$).
+  \end{itemize}
+\item Suppose $n_0,n_1,n_2$ of the $N$ $\Delta_\varphi$-factors choose these three kinds. The coefficient is $\le2^{n_0+n_1}\hbar^{-2n_0-n_1}$, and the word length is $\le L:=n+\ell+2K+2$, with $\ell:=n_1+2n_2\le2N$.
+\item Since $2n_0+n_1=2N-\ell$, the coefficient is $\le2^N\hbar^{-2N+\ell}$.
+\item By Lemma~\ref{lem:sc}, and since $m\mapsto(m+1)m!(C_3/\alpha)^m$ is increasing, each term is $\le B_\beta(L+1)L!(C_3/\alpha)^L\pwNorm a$.
+\item Use $L!\le2^L\ell!(n+2K+2)!$, and then
+\[
+\begin{aligned}
+\hbar^{-2N+\ell}\ell!(C_3/\alpha)^\ell&=\hbar^{-2N}\ell!(C_3\hbar/\alpha)^\ell\\
+&\le\hbar^{-2N}(2N)!\max(1,C_3\hbar/\alpha)^{2N}\le(2N)!\,C_3^{2N}(\alpha\hbar)^{-2N},
+\end{aligned}
+\]
+using $\alpha,\hbar\le1\le C_3$.
+\item The per-factor weights for the $\Delta_\varphi$-factors are $2+2+1+1+1=7$ (weight $2$ for the length-$0$ and length-$1$ choices, weight $1$ for each of the three length-$\le2$ choices), so the weighted number of choices is $\le7^N3^{K+1}$, the factor $3^{K+1}$ coming from the $\Delta(s_j)$. Collecting the powers of $2$ and $7$ into $C_4$ gives (WB-w).
+\item (WB-u) is the same count with Lemma~\ref{lem:wc} (gap $\ge\alpha/4$) in place of Lemma~\ref{lem:sc}, and $n=0$. \qedhere
+\end{itemize}
+\end{proof}
+
+\subsection{The mollifier defect on analytic vectors (Lemma UD)}\label{subsec:dd-unw}
+
+\begin{lemma}[UD]\label{lem:unw}
+There is a constant $C_0$ such that for $0<\varepsilon\le1$, $0<a\le1$, $s\ge0$ and $z\in\operatorname{Dom}(\ue^{a\Lambda})$,
+\[
+\norm{(\Delta_\varepsilon(s)-\Delta(s))z}\le C_0\,a^{-4}\,\ue^{-a/(8\varepsilon)}\,\norm{\ue^{a\Lambda}z}.
+\]
+\end{lemma}
+
+\begin{proof}
+\begin{itemize}
+\item \emph{The symbol.} For $\lambda\ge0$: $(1+\lambda^2)(1-j_\varepsilon(\lambda))\le5\,a^{-2}\ue^{-a/(4\varepsilon)}\ue^{a\lambda}$. Indeed
+$0\le1-j_\varepsilon(\lambda)=\int g(\lambda-\mu)(1-\chi(\varepsilon\mu))\,d\mu\le\int_{|\mu|\ge1/\varepsilon}g(\lambda-\mu)\,d\mu$.
+  \begin{itemize}
+  \item If $\lambda\le1/(2\varepsilon)$, then $|\lambda-\mu|\ge1/(2\varepsilon)$ on the range of integration, so
+  $1-j_\varepsilon(\lambda)\le2\ue^{-1/(8\varepsilon^2)}$. With $u=1/\varepsilon\ge1$ the left side is at most
+  $2(1+u^2/4)\ue^{-u^2/8}\le5\ue^{-u/4}\le5\ue^{-a/(4\varepsilon)}$, because $2(1+u^2/4)\ue^{-(u^2-2u)/8}<5$ for $u\ge1$.
+  \item If $\lambda>1/(2\varepsilon)$, then $1-j_\varepsilon\le1$ and $(1+\lambda^2)\ue^{-a\lambda/2}\le1+16/(\ue^2a^2)\le4a^{-2}$, so
+  $1+\lambda^2\le4a^{-2}\ue^{a\lambda}\ue^{-a\lambda/2}\le4a^{-2}\ue^{a\lambda}\ue^{-a/(4\varepsilon)}$.
+  \end{itemize}
+\item \emph{The splitting.} $\Delta_\varepsilon(s)-\Delta(s)=-J_\varepsilon\Delta(s)(1-J_\varepsilon)-(1-J_\varepsilon)\Delta(s)$.
+\item \emph{First term.} With $z_1:=(1-J_\varepsilon)z$, Lemma~\ref{lem:ell} and $\norm{J_\varepsilon}\le1$ give
+$\norm{J_\varepsilon\Delta(s)z_1}\le2(\norm{\Delta z_1}+\norm{z_1})\le4\norm{(1+\Lambda^2)(1-j_\varepsilon(\Lambda))z}\le20\,a^{-2}\ue^{-a/(4\varepsilon)}\norm{\ue^{a\Lambda}z}$,
+by the symbol bound.
+\item \emph{Second term.} By Lemma~\ref{lem:wc} with $\tau_0=1$ (words of length $1$ and $2$, radii $a/2<a$),
+$\norm{\ue^{(a/2)\Lambda}\Delta(s)z}\le3(1+4C_1/a)^2\norm{\ue^{a\Lambda}z}$. By the symbol bound with $a/2$ in place of $a$,
+$\norm{(1-J_\varepsilon)w}\le20\,a^{-2}\ue^{-a/(8\varepsilon)}\norm{\ue^{(a/2)\Lambda}w}$. Take $w=\Delta(s)z$.
+\end{itemize}
+Adding the two terms gives the claim with $C_0=20+60(1+4C_1)^2$. \qedhere
+\end{proof}

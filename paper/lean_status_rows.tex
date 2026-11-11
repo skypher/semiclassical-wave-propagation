@@ -2,6 +2,7 @@
 % that state it. Not input by paper.tex. `python3 -u paper/lean_status.py --aux <paper.aux>` turns this file
 % into LEAN_STATUS.md at the top of the repository (printed numbers are read from the .aux file).
 % Format of a row:  <statement, with \ref{label}> & <L | L$'$ | P> & <\lean{name}, ...; remark>\\
+
 \multicolumn{3}{@{}l}{\emph{Main approximation results}}\\
 Theorem~\ref{pc:main} & L & \lean{pcmain_half}\\
 Corollary~\ref{pc:thm13} & L & \lean{pcthm13_half}\\
@@ -9,56 +10,35 @@ Corollary~\ref{pc:cor15} & L & \lean{pccor15_half}\\
 Corollary~\ref{pc:cor16bg} & L & \lean{pccor16bg_half}\\
 Corollary~\ref{pc:cor16} & L & \lean{pccor16_half}\\
 Corollary~\ref{pc:allalpha} & L & \lean{pcmain_all}, \lean{pcthm13_all}, \lean{pccor15_all}, \lean{pccor16bg_all}, \lean{pccor16_all}; \lean{pcMainAt_all}, \lean{poisson_cw_all}, \lean{lift1_pr_all}\\
-\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:printed}: proof of the approximation theorem}}\\
-Remark~\ref{pc:classes} & P & \\
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:remainder}: periodization and the exact remainder}}\\
 Lemma~\ref{pc:g43} & L & \lean{sobolev_M_mult}\\
-\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:g5}: sharpness and limitations}}\\
-Proposition~\ref{prop:g5} & L$'$ & \lean{printedThm13_false}: the negation of the printed theorem; the asymptotic formula is not formalized (Remark~\ref{rem:g5-lean})\\
-Proposition~\ref{prop:mean} & L & \lean{meanGrowth}; \lean{integral_approxSolB}, \lean{J_vecX}, \lean{J_vecY}, \lean{chP_dysT}, \lean{swapped_setup}, \lean{enorm_integral_le_perio}\\
-Remark~\ref{rem:g4} & P & \\
-Theorem~\ref{cl:main}, Lemmas~\ref{cl:ssob}, \ref{cl:asym}, \ref{cl:kernel}, \ref{cl:amp} & P & \\[2pt]
-\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:expect}: expectation values}}\\
-Corollary~\ref{ev:transfer} & L & \lean{evTransfer_main}, \lean{evTransfer_pc}; \lean{ev_transfer_core}\\
-Proposition~\ref{ev:mod} & L$'$ & parts (i), (ii): \lean{evmod}, with the statement \lean{Stmt_evmod}; part (iii) is a cited theorem and is not formalized\\
-Lemma~\ref{ev:meanlem} & L & \lean{integral_amp_mul_slice_L1}, \lean{integrableOn_amp_mul_slice_L1}, \lean{slice_lintegral_le}\\
-\multicolumn{3}{@{}l}{\emph{Appendices~\ref{app:kl}--\ref{app:ws}}}\\
+Proposition~\ref{prop:dd-id} & L & \lean{dd_D12_simplex}, \lean{dd_D3}, \lean{SurfW.surf_D4}, \lean{SurfW.surf_D4_bound}\\
+Lemma~\ref{lem:surf-lap} & L & \lean{SurfW.surf_lap}\\
+Lemma~\ref{lem:surf-duh} & L & \lean{SurfW.surf_duhamel}\\
+Corollary~\ref{cor:surf-dyson} & L & \lean{SurfW.surf_dyson}\\
+Lemma~\ref{lem:lift} & L & \lean{allWords_of_exp}, \lean{patch_smooth}, \lean{glue_smooth}, \lean{lift1}\\
+Lemma~\ref{lem:base} & L & \lean{exists_stab_smul_infty}, \lean{initState_mul}, \lean{approxSolB_mul}, \lean{expLambda_iso}, \lean{poincareSup_conj_move}\\
+Lemma~\ref{lem:p1} & L & \lean{poincareSup_lt_top}\\
+Lemma~\ref{lem:t2} & L & \lean{lem_t2}\\[2pt]
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:analytic}: analytic and weighted propagation estimates}}\\
 Lemma~\ref{lem:ell} & L & \lean{inner_X_left}, \lean{inner_Y_left}, \lean{elliptic_identity}, \lean{elliptic_estimate}\\
 Lemma~\ref{lem:clip} & L & \lean{norm_Rplus_le}, \lean{norm_Rminus_le}, \lean{im_bound}\\
 Proposition~\ref{prop:a0} & L & \lean{prop_a0_eps}\\
 Lemma~\ref{lem:expw} & L & \lean{exp_of_words}\\
 Lemma~\ref{lem:mw} & L & \lean{lem_m_weak}\\
 Lemma~\ref{lem:m2w} & L & \lean{swX_le_swD}\\
-Lemma~\ref{lem:gutzmer} & P & used only for Lemma~\ref{lem:ex}\\
 Lemma~\ref{lem:wave} & L & \lean{wave_weight}, \lean{wave_Bx'}, \lean{wave_By'}; \lean{wave_weightD}\\
 Lemma~\ref{lem:wcomm} & L & \lean{comm_wave}\\
 Lemma~\ref{lem:wmoll} & L & \lean{w_J}, \lean{w_Bx}, \lean{w_By}, \lean{w_JS}, \lean{w_XX}, \lean{w_YY}, \lean{w_comm}\\
 Proposition~\ref{prop:ws} & L & \lean{ws0_trunc}, \lean{ws0_cosh}\\
 Lemma~\ref{lem:path} & L & \lean{WOps.pathG_eq}, \lean{norm_pathH_le}, \lean{norm_xInt_le}, \lean{xInt_chart}, \lean{path_duhamel}\\[2pt]
-\multicolumn{3}{@{}l}{\emph{Appendix~\ref{sec:dd}}}\\
-Theorem~\ref{thm:main} & L & \lean{thm13R_rep}\\
-Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_exp}\\
-Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_rep}\\
-Corollary~\ref{cor:dd16} & L & \lean{cor16Rmain_rep}\\[2pt]
-Proposition~\ref{prop:dd-id} & L & \lean{dd_D12_simplex}, \lean{dd_D3}, \lean{SurfW.surf_D4}, \lean{SurfW.surf_D4_bound}\\
-Lemma~\ref{lem:surf-lap} & L & \lean{SurfW.surf_lap}\\
-Lemma~\ref{lem:surf-duh} & L & \lean{SurfW.surf_duhamel}\\
-Corollary~\ref{cor:surf-dyson} & L & \lean{SurfW.surf_dyson}\\
 Lemma~\ref{lem:fc} & L & \lean{lem_fc}\\
 Lemma~\ref{lem:wc} & L & \lean{lem_wc}\\
 Lemma~\ref{lem:fdb} & L & \lean{fdb}\\
 Lemma~\ref{lem:sc} & L & \lean{lem_sc}\\
 Lemma~\ref{lem:wb} & L & \lean{lem_wb_w}, \lean{lem_wb_u}\\
 Lemma~\ref{lem:unw} & L & \lean{unw_err}\\
-Lemma~\ref{lem:lift} & L & \lean{allWords_of_exp}, \lean{patch_smooth}, \lean{glue_smooth}, \lean{lift1}\\
-Lemma~\ref{lem:base} & L & \lean{exists_stab_smul_infty}, \lean{initState_mul}, \lean{approxSolB_mul}, \lean{expLambda_iso}, \lean{poincareSup_conj_move}\\
-Theorem~\ref{thm:dd-appx} & L & \lean{thm14R_rep}\\
-Corollary~\ref{cor:dd15-appx} & L & \lean{cor15R_rep}\\
-Corollary~\ref{cor:dd16-appx} & L & \lean{cor16R_rep}\\
-Lemma~\ref{lem:ex} & P & not used by the theorems\\[2pt]
-\multicolumn{3}{@{}l}{\emph{Appendix~\ref{sec:t2}}}\\
-Lemma~\ref{lem:p1} & L & \lean{poincareSup_lt_top}\\
-Lemma~\ref{lem:t2} & L & \lean{lem_t2}\\[2pt]
-\multicolumn{3}{@{}l}{\emph{Appendix~\ref{app:o1st}}}\\
+\multicolumn{3}{@{}l}{\emph{Section~\ref{app:o1st}: critical-weight estimates}}\\
 Lemma~\ref{os:int} & L & \lean{wI0}, \lean{wI2}\\
 Lemma~\ref{os:prof} & L & \lean{gTauM_symbol}, \lean{gTauM_expmass}, \lean{hSM_symbol}, \lean{hSM_expmass}, \lean{gTau_TailB}, \lean{bProf_symbol}, \lean{bProf_TailB}\\
 Lemma~\ref{os:speed} & L & \lean{finite_speed}, \lean{finite_speed_inner}\\
@@ -69,5 +49,26 @@ Lemma~\ref{os:words} & L & \lean{poissonM_w}, \lean{lamM_w}, \lean{lamM_pow_w}, 
 Lemma~\ref{os:transfer} & L & \lean{transfer} (there for the weight $X_0^\beta$ with any $\beta>\tfrac12$; this is the case $\beta=1$)\\
 Proposition~\ref{os:p1} & L & \lean{poincare_omP}, \lean{mS_printed_sharp}, \lean{norm_surfV_printed_le}, \lean{mS_printed_le}\\
 Remark~\ref{os:indep} & L & \lean{surfV_indep}\\
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:printed}: proofs and companion results}}\\
+Remark~\ref{pc:classes} & P & \\
+Theorem~\ref{thm:main} & L & \lean{thm13R_rep}\\
+Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_exp}\\
+Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_rep}\\
+Corollary~\ref{cor:dd16} & L & \lean{cor16Rmain_rep}\\[2pt]
+Theorem~\ref{thm:dd-appx} & L & \lean{thm14R_rep}\\
+Corollary~\ref{cor:dd15-appx} & L & \lean{cor15R_rep}\\
+Corollary~\ref{cor:dd16-appx} & L & \lean{cor16R_rep}\\
+Lemma~\ref{lem:ex} & P & not used by the theorems\\[2pt]
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:g5}: sharpness and limitations}}\\
+Proposition~\ref{prop:g5} & L$'$ & \lean{printedThm13_false}: the negation of the printed theorem; the asymptotic formula is not formalized (Remark~\ref{rem:g5-lean})\\
+Proposition~\ref{prop:mean} & L & \lean{meanGrowth}; \lean{integral_approxSolB}, \lean{J_vecX}, \lean{J_vecY}, \lean{chP_dysT}, \lean{swapped_setup}, \lean{enorm_integral_le_perio}\\
+Remark~\ref{rem:g4} & P & \\
+Theorem~\ref{cl:main}, Lemmas~\ref{cl:ssob}, \ref{cl:asym}, \ref{cl:kernel}, \ref{cl:amp} & P & \\[2pt]
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:expect}: expectation values}}\\
+Corollary~\ref{ev:transfer} & L & \lean{evTransfer_main}, \lean{evTransfer_pc}; \lean{ev_transfer_core}\\
+Proposition~\ref{ev:mod} & L$'$ & parts (i), (ii): \lean{evmod}, with the statement \lean{Stmt_evmod}; part (iii) is a cited theorem and is not formalized\\
+Lemma~\ref{ev:meanlem} & L & \lean{integral_amp_mul_slice_L1}, \lean{integrableOn_amp_mul_slice_L1}, \lean{slice_lintegral_le}\\
+\multicolumn{3}{@{}l}{\emph{Appendix~\ref{app:special}: special-function and kernel calculations}}\\
+Lemma~\ref{lem:gutzmer} & P & used only for Lemma~\ref{lem:ex}\\
 Lemma~\ref{os:poisson} & P & used only in Remark~\ref{pc:classes} and Section~\ref{subsec:cl}\\
 Lemma~\ref{os:hk} & P & used only in Section~\ref{subsec:cl}\\

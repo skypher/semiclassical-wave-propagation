@@ -7,13 +7,13 @@ different things: the approximation stays accurate up to times of order $\hbar^{
 initial density fails to describe the expectation values after a time of order $\log(1/\hbar)\log\log(1/\hbar)$.
 
 \subsection{Transfer and cancellation}\label{subsec:ev-transfer}
-In this subsection, $\norm a$ denotes the swapped norm $\norm{a}_{\mathrm S}$ of Section~\ref{sec:repair}; the printed-class version uses $\pcNorm a$ instead.
+We use the swapped norm $\swNorm a$ of Section~\ref{sec:setup}; the printed-class version uses $\pcNorm a$ instead.
 \begin{corollary}\label{ev:transfer}
-Assume the hypotheses of Theorem~\ref{thm:dd14}, or those of Theorem~\ref{pc:main} with $\pcNorm a$ in place of $\norm a$. Let
+Assume the hypotheses of Theorem~\ref{thm:dd14}, or those of Theorem~\ref{pc:main} with $\pcNorm a$ in place of $\swNorm a$. Let
 $K\in\mathbb N_0$ and $0\le t\le\delta(\alpha/\hbar)^{1/2}$, and put
 \[
   \psi(t):=\cU(t)\big[a\,\ue^{i\varphi_b/\hbar}\big]_\Gamma,\qquad
-  \epsilon_K:=C^{K+1}K!\,\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\norm a .
+  \epsilon_K:=C^{K+1}K!\,\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\swNorm a .
 \]
 \begin{itemize}
 \item[(i)] For every bounded operator $B$ on $L^2(M)$,
@@ -32,7 +32,7 @@ $\norm u\le\norm{\psi(0)}+\epsilon_K$.
 \end{proof}
 
 \begin{remark}[cancellation]\label{ev:cancel}
-At $K=0$, (ii) says that $\norm{[(S(t)a)\,\ue^{i\varphi_b/\hbar}]_\Gamma}_{L^2(M)}$ stays within $C\hbar t\alpha^{-2}\norm a$ of its value at $t=0$,
+At $K=0$, (ii) says that $\norm{[(S(t)a)\,\ue^{i\varphi_b/\hbar}]_\Gamma}_{L^2(M)}$ stays within $C\hbar t\alpha^{-2}\swNorm a$ of its value at $t=0$,
 for all $t\le\delta(\alpha/\hbar)^{1/2}$. Without the phase this fails: if $M$ has finite area and $a\in L^1(\Hb)$, then by the
 Cauchy--Schwarz inequality and unfolding
 \[

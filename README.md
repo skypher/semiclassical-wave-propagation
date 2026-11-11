@@ -15,7 +15,10 @@ the cusp height. Schubert's files are not part of this repository.
 
 ## Contents
 
-- `paper/`: LaTeX source of the manuscript (`paper.tex` with its input files). Build with `pdflatex paper.tex`
+- `paper/`: LaTeX source of the manuscript (`paper.tex` with its input files). The eight main sections develop the
+  quotient remainder, analytic and critical-weight estimates, approximation proofs, sharpness and expectation values.
+  Two appendices contain auxiliary special-function/kernel calculations and formalization documentation.
+  Build from `paper/` with `pdflatex paper.tex`
   (run it three times).
 - `lean/`: the Lean 4 development, namespace `Qschubert` (Lean `v4.35.0`, Mathlib `v4.35.0`, `physicslib4`, and
   `PrimeNumberTheoremAnd` for the zero-free region of the Riemann zeta function).

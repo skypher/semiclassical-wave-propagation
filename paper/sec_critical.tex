@@ -8,14 +8,14 @@
 \newcommand{\osHK}{\widetilde p}     % continuation of the heat kernel to complex distance
 \newcommand{\osLam}{\Lambda}         % Lambda = (-Delta)^{1/2}
 
-\section{The printed class at the critical weight}\label{app:o1st}
+\section{Critical-weight estimates}\label{app:o1st}
 
-Throughout this appendix $x_0=i$, $d=d(i,\cdot)$, $\osX=\cosh d$, $\psi:=\log\osX\ge0$, $\osL:=\log(2\osX)/\log2=1+\psi/\log2\ge1$,
+Throughout this section $x_0=i$, $d=d(i,\cdot)$, $\osX=\cosh d$, $\psi:=\log\osX\ge0$, $\osL:=\log(2\osX)/\log2=1+\psi/\log2\ge1$,
 $\osLam=(-\Delta)^{1/2}$ and $D=(-\Delta-\tfrac14)^{1/2}$. For $0\le c\le1$ the critical weight is
 \[
 \osomc:=\osX^{1/2}\osL^{\,c};
 \]
-the periodization weight of Section~\ref{sec:printed} is $\osomp=\omega_{c'}$. The shells are $A_n:=\{n\le\psi<n+1\}$, $n=0,1,2,\dots$, and
+for a fixed $c'\in(\tfrac12,1)$ the periodization weight is $\osomp=\omega_{c'}$. Section~\ref{sec:printed} takes $c'=\tfrac34$. The shells are $A_n:=\{n\le\psi<n+1\}$, $n=0,1,2,\dots$, and
 $1_n$ denotes multiplication by the indicator of $A_n$. Since $1+n\le\osL\le3(1+n)$ on $A_n$,
 \begin{equation}\label{os:shell}
 \ue^{n/2}(1+n)^c\le\osomc\le3\,\ue^{1/2}\,\ue^{n/2}(1+n)^c\qquad\text{on }A_n .
@@ -126,8 +126,11 @@ Put $f_n=1_nf$ and $a_n=\norm{\osomc f_n}$, and let $T(l,n):=\max(|l-n|-1,0)$. B
 $r\mapsto\langle h,\cos(rD)f_n\rangle$ vanishes on $|r|<T(l,n)$. Hence
 $\norm{1_l\mathsf Gf_n}\le\int_{|r|\ge T(l,n)}|g|\,\norm{f_n}\le B\,\ue^{-T/2}(1+T)^{-3/2}\norm{f_n}$, and by \eqref{os:shell}
 \[
-\norm{\osomc1_l\mathsf Gf_n}\le\mathsf B(l,n)\,a_n,\qquad\mathsf B(l,n):=C\,B\,\Bigl(\frac{1+l}{1+n}\Bigr)^c(1+|l-n|)^{-3/2}\times
+\begin{gathered}
+\norm{\osomc1_l\mathsf Gf_n}\le\mathsf B(l,n)\,a_n,\\
+\mathsf B(l,n):=C\,B\,\Bigl(\frac{1+l}{1+n}\Bigr)^c(1+|l-n|)^{-3/2}\times
 \begin{cases}1,&l\ge n,\\ \ue^{-(n-l)},&l<n.\end{cases}
+\end{gathered}
 \]
 Since $\mathsf Gf=\sum_n\mathsf Gf_n$ in $L^2$, $\norm{\osomc\mathsf Gf}^2\le\sum_l\bigl(\sum_n\mathsf B(l,n)a_n\bigr)^2$. We apply the Schur test on
 $\mathbb N_0$ with the weights $p_n=(1+n)^{-1/2}$.
@@ -176,7 +179,7 @@ $\beta>\tfrac12$, $\osomc\le\ue^{d/2}(1+d/\log2)\le C_\beta\,\ue^{\beta\langle d
 \subsection{Words at a power weight}
 
 \begin{lemma}[the even semigroup at a bounded weight]\label{os:words}
-Let $m\ge\tfrac12$ and $\rho\ge0$ with $2(\rho+\tfrac12)^2<m^2$, and let $W$ be a bounded weight (Appendix~\ref{app:ws}) with
+Let $m\ge\tfrac12$ and $\rho\ge0$ with $2(\rho+\tfrac12)^2<m^2$, and let $W$ be a bounded weight (Section~\ref{app:ws}) with
 $(X\log W)^2+(Y\log W)^2\le\rho^2$. Put $\mu:=m^2-\tfrac14$, $C_0:=2\ue\,c_H$ and $Q:=4+2\rho$.
 \begin{itemize}
 \item[(a)] For $\tau,s>0$ and $u\in L^2$:
@@ -295,80 +298,3 @@ $\mathcal V_sg=\ue^{-is/(2\hbar)}\cU(-s)[\ue^{i\varphi/\hbar}S(s)g]_\Gamma$ of $
 cases the same almost everywhere absolutely convergent sum. In particular this applies to $\omega_1=\osX^{\gamma}$ with $\gamma>\tfrac12$ and
 $\omega_2=\osomp$, and $L^2_{\osX^\gamma}\subset L^2_{\osomp}$.
 \end{remark}
-
-\subsection{Kernels of the Poisson and heat semigroups}
-
-The two lemmas of this subsection are used in Section~\ref{subsec:cl} (Lemma~\ref{cl:kernel}). They are not used in the proof of
-Theorem~\ref{pc:main}.
-Let $\mu_\tau(s)=\tau(4\pi)^{-1/2}s^{-3/2}e^{-\tau^2/(4s)}$ (so that $e^{-\tau\osLam}=\int_0^\infty\mu_\tau(s)e^{s\Delta}\,ds$, by
-the subordination identity $e^{-\tau\sqrt A}=\int_0^\infty\mu_\tau(s)e^{-sA}ds$, $A\ge0$), and let $p_s$ be the heat kernel of $\Hb$, which is
-given by McKean's formula
-\[
-p_s(d)=\frac{\sqrt2\,e^{-s/4}}{(4\pi s)^{3/2}}\int_d^\infty\frac{\rho\,e^{-\rho^2/(4s)}}{(\cosh\rho-\cosh d)^{1/2}}\,d\rho
-\]
-(\cite[(1.7)]{GN98}). Let
-$k_\tau(r)=\int_0^\infty\mu_\tau(s)p_s(r)\,ds$ be the radial kernel of $e^{-\tau\osLam}$.
-
-\begin{lemma}[Poisson kernel representation and bounds]\label{os:poisson}
-For $0<\tau\le\tau_0<\pi/2$ and $r\ge0$,
-\[
-k_\tau(r)=\frac{\sqrt2}{8\pi^2}\,\tau\int_r^\infty\frac{\rho\,K_2\bigl(\sqrt{\rho^2+\tau^2}/2\bigr)}{\rho^2+\tau^2}\,\frac{d\rho}{(\cosh\rho-\cosh r)^{1/2}}.
-\]
-Consequently there are $0<c_\tau,C_\tau<\infty$, depending only on $\tau_0$, with
-\begin{align}
-k_\tau(r)&\le C\,\tau\,e^{-r}\osbr{r}^{-3/2}\quad(r\ge1),\label{os:ub}\\
-k_\tau(r)&\ge c\,\tau\,e^{-r}\osbr{r}^{-3/2}\quad(r\ge1),\label{os:lb}\\
-c\,\tau(\tau^2+r^2)^{-3/2}\le k_\tau(r)&\le C\,\tau(\tau^2+r^2)^{-3/2}\quad(0\le r\le1).\label{os:small}
-\end{align}
-\end{lemma}
-\begin{proof}
-Insert the formula for $p_s$ into $k_\tau=\int\mu_\tau p_s\,ds$ and interchange the integrals (Tonelli). The $s$-integral is
-\[
-\int_0^\infty s^{-3}e^{-(\rho^2+\tau^2)/(4s)-s/4}\,ds=2\frac{1/4}{(\rho^2+\tau^2)/4}K_2\Bigl(\frac{\sqrt{\rho^2+\tau^2}}2\Bigr)
-=\frac{2K_2(\sqrt{\rho^2+\tau^2}/2)}{\rho^2+\tau^2},
-\]
-by $\int_0^\infty s^{\nu-1}e^{-\beta s-\gamma/s}ds=2(\gamma/\beta)^{\nu/2}K_\nu(2\sqrt{\beta\gamma})$ (\cite{DLMF}, 10.32.10, and the
-standard Bessel integral) with $\nu=-2$, $\beta=\tfrac14$, $\gamma=(\rho^2+\tau^2)/4$, and $K_{-2}=K_2$. The constant is
-$\tfrac{\tau}{2\sqrt\pi}\cdot\sqrt2\cdot(4\pi)^{-3/2}\cdot2=\tfrac{\sqrt2}{8\pi^2}\tau$. This gives the representation.
-
-For the bounds write $\rho=r+v$, so $\cosh\rho-\cosh r=2\sinh(r+v/2)\sinh(v/2)$. For $r\ge1$ the factor
-$K_2(\sqrt{\rho^2+\tau^2}/2)$ is comparable to $e^{-\rho/2}\rho^{-1/2}$ uniformly for $\tau\le\tau_0$, the factor $\rho/(\rho^2+\tau^2)$
-is at most $\rho^{-1}\le r^{-1}$, and for $0\le v\le1$ it is at least $((1+\tau_0^2)\,2r)^{-1}$; also $(\cosh\rho-\cosh r)^{-1/2}=(2\sinh(r+v/2)\sinh(v/2))^{-1/2}$ is at most $Ce^{-r/2}(\sinh(v/2))^{-1/2}$ for all $v>0$ and comparable to it for $0<v\le1$. The $v$-integral of
-$e^{-v/2}(\sinh(v/2))^{-1/2}$ over $(0,\infty)$ is finite, which gives \eqref{os:ub}; its integral over $(0,1]$ is positive, and restricting to $0\le v\le1$ gives \eqref{os:lb}. For $r\le1$ split the
-integral at $\rho=2$; there $\cosh\rho-\cosh r$ is comparable to $\rho^2-r^2$, and with $v=\sqrt{\rho^2-r^2}$ the main part is
-comparable to $\int_0^{C}(r^2+\tau^2+v^2)^{-2}\,dv\asymp(r^2+\tau^2)^{-3/2}$, while the tail $\rho\ge2$ is bounded by the
-exponential estimate. This gives \eqref{os:small}.
-\end{proof}
-
-Let $\osHK$ denote the continuation of $p_s$ to complex distance $\tilde d=a+i\theta$, $a\ge0$, $|\theta|\le\theta_0<\pi/2$.
-McKean's formula for $p_s$ is first put in $d^2$-form; in the rest of this subsection $\tau$ denotes an integration variable, not the
-parameter of Lemma~\ref{os:poisson}. With $g(w)=\sinh\sqrt w/(2\sqrt w)$ (an entire function of $w$) and
-$F(w,\tau^2)=\int_0^1g(w+\lambda\tau^2)\,d\lambda=(\cosh\sqrt{w+\tau^2}-\cosh\sqrt w)/\tau^2$, substituting $\rho=\sqrt{d^2+\tau^2}$ gives
-\[
-p_s(d)=c_s\,e^{-d^2/(4s)}\int_0^\infty e^{-\tau^2/(4s)}F(d^2,\tau^2)^{-1/2}\,d\tau,\qquad c_s=\frac{\sqrt2e^{-s/4}}{(4\pi s)^{3/2}}.
-\]
-
-\begin{lemma}[Continued heat kernel]\label{os:hk}
-Let $0<\theta_0<\pi/2$ and $c_{\theta_0}=\cos\theta_0\,e^{-\theta_0}$. For $a\ge0$, $|\theta|\le\theta_0$ and $s>0$,
-\[
-|\osHK_s(a+i\theta)|\le c_{\theta_0}^{-1/2}\,e^{\theta^2/(4s)}\,p_s(a).
-\]
-\end{lemma}
-\begin{proof}
-Put $d^2\mapsto\tilde d^2=a^2-\theta^2+2ia\theta$ in the $d^2$-representation. Let $x=a^2+\lambda\tau^2\ge a^2$ and $w=x-\theta^2+2ia\theta$,
-and write $\sqrt w=A+iB$ with $A\ge0$. Then $|w|\le x+\theta^2$, so $B^2=(|w|-(x-\theta^2))/2\le\theta^2$; also $A^2=x-\theta^2+B^2\le x$.
-Hence $0\le\sqrt x-A$, and if $x\ge\theta^2$ then $\sqrt x-A\le|\theta|$.
-
-Now $\operatorname{Re}\frac{\sinh\zeta}{\zeta}=\frac{A\sinh A\cos B+B\cosh A\sin B}{A^2+B^2}$ for $\zeta=A+iB$. Since $|B|<\pi/2$ we have
-$B\sin B\ge B^2\cos B$ (for either sign of $B$), and $\cosh A\ge\sinh A/A$, so $\operatorname{Re}(\sinh\zeta/\zeta)\ge\cos B\,\sinh A/A\ge\cos\theta_0\,\sinh A/A$. The
-logarithmic derivative of $\sinh u/u$ lies in $[0,1]$, so $\sinh A/A\ge e^{-|\theta|}\sinh\sqrt x/\sqrt x$. Therefore
-\[
-\operatorname{Re}g(w)\ge c_{\theta_0}\,g(x)>0.
-\]
-(The case $x<\theta^2$ is handled directly, since then $\sinh A/A\ge1\ge(\sinh\sqrt x/\sqrt x)e^{-\theta_0}$.)
-
-Hence $\operatorname{Re}F(\tilde d^2,\tau^2)\ge c_{\theta_0}F(a^2,\tau^2)>0$. For $\operatorname{Re}z>0$ one has $|z^{-1/2}|\le(\operatorname{Re}z)^{-1/2}$, so
-$|F(\tilde d^2,\tau^2)^{-1/2}|\le c_{\theta_0}^{-1/2}F(a^2,\tau^2)^{-1/2}$. Finally
-$|e^{-\tilde d^2/(4s)}|=e^{\theta^2/(4s)}e^{-a^2/(4s)}$, and the $\tau$-integral is dominated uniformly on compact sets of $\tilde d$, so the continuation is
-holomorphic. This gives the bound.
-\end{proof}

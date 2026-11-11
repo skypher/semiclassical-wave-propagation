@@ -15,7 +15,7 @@ while $\sup|u_S|$ does not depend on $S$. On surfaces with cusps the pointwise s
 
 Throughout this subsection $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $M=\Gamma\backslash\Hb$ (cusp at $\infty$ of width $1$), $x_0=i$, $X_0=\cosh d(i,\cdot)$,
 $b=\infty$ and $\varphi=-\log y$. For a function $F$ on $\Hb$ we write $[F]_\Gamma(z)=\sum_{\gamma\in\Gamma}F(\gamma z)$, and
-$E_K(t):=\cU(t)(a\,\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma$. Words $Z_S$ are products of $X$ and $Y$. In the estimates below, $\norm a$ denotes the swapped norm in case (i) and the printed norm in case (ii).
+$E_K(t):=\cU(t)(a\,\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma$. Words $Z_S$ are products of $X$ and $Y$. In this subsection only, $\ampNorm a:=\swNorm a$ in case (i) and $\ampNorm a:=\pcNorm a$ in case (ii), so that the common estimates cover both amplitude classes.
 
 \begin{theorem}[the cusp factor is necessary]\label{cl:main}
 Let $\beta>\tfrac12$ and $\alpha_0:=\tfrac12$, and let $\alpha_1=\alpha_1(\beta)\in(0,\alpha_0]$ be the radius of Lemma~\ref{cl:amp}(i). The constants
@@ -31,8 +31,8 @@ $t$ with $\max(2\log(1/\hbar),t_*)\le t\le\min(\hbar^{-1/5},\delta(\alpha/\hbar)
 proof uses Theorem~\ref{pc:main}.
 \end{enumerate}
 Consequently, on $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$ and for this $b$, the factor $m(z)^{1/2}$ in Corollary~\ref{pc:cor16} (and in its swapped-class
-version) cannot be removed. For every $p\ge0$ no bound $\sup_M|E_0(t)|\le C(\alpha\hbar)^{-p}\norm a$ with $C$ independent of $\hbar$ holds on the window (take
-$t=(2p+4)\log(1/\hbar)$), and for $\gamma<\tfrac12$ no bound $C\,m(z)^{\gamma}\hbar^{-p}\norm a$ with $C$ independent of $\hbar$ holds (take $t=\hbar^{-1/5}$). In particular the printed Corollary~1.6, \cite[(1.34)]{S} at
+version) cannot be removed. For every $p\ge0$ no bound $\sup_M|E_0(t)|\le C(\alpha\hbar)^{-p}\ampNorm a$ with $C$ independent of $\hbar$ holds on the window (take
+$t=(2p+4)\log(1/\hbar)$), and for $\gamma<\tfrac12$ no bound $C\,m(z)^{\gamma}\hbar^{-p}\ampNorm a$ with $C$ independent of $\hbar$ holds (take $t=\hbar^{-1/5}$). In particular the printed Corollary~1.6, \cite[(1.34)]{S} at
 $N=K=0$, which is claimed for every Fuchsian $\Gamma$ and every $b$, is false when its constants $C,\delta$ do not depend on $\hbar$
 (Remark~\ref{cl:reading}): at $t=20\log(1/\hbar)$ the lower bound (ii) exceeds $C(\alpha\hbar)^{-8}\norm a_{\alpha,\beta}$ for small $\hbar$.
 \end{theorem}
@@ -51,7 +51,7 @@ $\hbar\le\hbar_0$ and $t$ in the range of Theorem~\ref{cl:main},
 \[
 c\,\hbar t\le\frac{|E_0(t)(z)|}{|u^{(0)}(t)_\Gamma(z)|}\le C\,\hbar t,\qquad z=x+i\ue^t .
 \]
-So what fails is the form of the printed bound (a fixed multiple of $\norm a$, independent of $z$), not the accuracy of the approximation: the
+So what fails is the form of the printed bound (a fixed multiple of $\ampNorm a$, independent of $z$), not the accuracy of the approximation: the
 periodized approximation and the solution both grow like $m(z)^{1/2}\hbar^{1/2}$ at these points, and their difference is a factor $O(\hbar t)$
 smaller. (This is a statement about this amplitude on the window of Theorem~\ref{cl:main}; it is not a general relative-error theorem.)
 \end{remark}
@@ -406,8 +406,8 @@ $P_1(t)a=\int_0^t\Delta(s)a\,ds=\tfrac{1-\ue^{-2t}}2X^2a+t(Y^2-Y)a$, Lemma~\ref{
 \]
 with $S_X=\sum_{(a,c)}|X^2a(a/c+i/c^2)|<\infty$. $P_2(t)a$ is a combination of
 words of length at most $4$ with coefficients bounded by $t^2/2$, so $|M_2(z)|\le C\ue^{t/2}\hbar^{1/2}\hbar^2t^2$. For $E_2$, Theorem~\ref{thm:dd14} in case (i)
-and Theorem~\ref{pc:main} in case (ii), at $K=2$ and $N=0,2$, give $\norm{E_2}\le C(\hbar t/\alpha^2)^3\norm a$ and
-$\norm{\Delta^2E_2}\le C(\alpha\hbar)^{-4}(\hbar t/\alpha^2)^3\norm a$; Lemma~\ref{cl:ssob} with $r=\hbar$ gives $|E_2(z)|\le C\ue^{t/2}\hbar^{-1}\alpha^{-10}(\hbar t)^3\norm a$.
+and Theorem~\ref{pc:main} in case (ii), at $K=2$ and $N=0,2$, give $\norm{E_2}\le C(\hbar t/\alpha^2)^3\ampNorm a$ and
+$\norm{\Delta^2E_2}\le C(\alpha\hbar)^{-4}(\hbar t/\alpha^2)^3\ampNorm a$; Lemma~\ref{cl:ssob} with $r=\hbar$ gives $|E_2(z)|\le C\ue^{t/2}\hbar^{-1}\alpha^{-10}(\hbar t)^3\ampNorm a$.
 Hence
 \[
 |E_0(z)|\ge\ue^{t/2}\hbar^{3/2}t\Bigl[\tfrac{\sqrt\pi}2|S_0(\hbar)|-\tfrac{\sqrt\pi}2\frac{S_X}t-C\hbar-C\hbar t-C\hbar^{1/2}t^2\Bigr],
