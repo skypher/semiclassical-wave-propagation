@@ -1,18 +1,8 @@
-% Main-text section: Schubert's printed class.  Input file; no preamble.
-% Macros introduced here (prefix pc): \pcXzero = X_0, \pcLog = l, \pcw = omega, \pcNorm = the printed norm.
-\newcommand{\pcXzero}{X_0}
-\newcommand{\pcLog}{\ell}
-\newcommand{\pcw}{\omega}
-\newcommand{\pcNorm}[1]{\norm{#1}_{\mathrm P}}
+\section{Proof of the approximation theorem}\label{sec:printed}
 
-\section{Schubert's printed class}\label{sec:printed}
-
-Throughout, $\Gamma$ is a fixed Fuchsian group, $M=\Hb/\Gamma$, $x_0\in\Hb$ is the base point of the norms below, and
-$d=d(x_0,\cdot)$. Schubert's printed norm is \cite[(1.15)]{S}
-\[
-  \pcNorm{a}:=\norm{\ue^{\beta\langle d\rangle}\ue^{\alpha\sqrt{-\Delta}}a}_{L^2(\Hb)},\qquad
-  \langle d\rangle=(1+d^2)^{1/2}-1,\qquad \beta>\tfrac12 .
-\]
+We prove Theorem~\ref{pc:main} and its corollaries in the order stated in Section~\ref{sec:repair}.
+Throughout, $\Gamma$ and the base point $x_0$ are fixed, $M=\Hb/\Gamma$, and $d=d(x_0,\cdot)$.
+The notation $\pcNorm a$ is the printed norm defined in Section~\ref{sec:repair}.
 
 \subsection{The critical weight}\label{subsec:pc-weights}
 Let $\pcXzero:=\cosh d$, $\psi:=\log\pcXzero\ge0$, $\pcLog:=\log(2\pcXzero)/\log2\ge1$ and $\Lambda:=\sqrt{-\Delta}$. Fix $c':=\tfrac34$ (any exponent in
@@ -23,32 +13,14 @@ $(\tfrac12,1)$ would do) and put
 This is the periodization weight: $\sum_\gamma\pcw(\gamma z)^{-2}$ is bounded for every Fuchsian group (Proposition~\ref{os:p1}); for $\pcXzero^{1/2}$ alone
 the sum $\sum_\gamma\pcXzero(\gamma z)^{-1}$ is not bounded when $M$ has finite area, because its integral over a fundamental domain is
 $\int_\Hb\pcXzero^{-1}d\nu=\infty$. Since
-$\psi\le d\le\langle d\rangle+1$, $\pcw\le C_\beta\ue^{\beta\langle d\rangle}$ for every $\beta>\tfrac12$. So an amplitude of the printed class is
-$a=\ue^{-\alpha\Lambda}f$ with $\norm{\pcw f}\le C_\beta\pcNorm a$: its data $f$ lie in the weighted space of the critical weight, and no weight above the
-critical one is available. In the swapped class the mollifier part of the error is small because one vector is small without a weight and bounded with
+$\psi\le d\le\langle d\rangle+1$, $\pcw\le C_\beta\ue^{\beta\langle d\rangle}$ for every $\beta>\tfrac12$. For $f:=\ue^{\alpha\Lambda}a$ the printed norm gives
+$\norm{\ue^{\beta\langle d\rangle}f}=\pcNorm a$, and therefore $\norm{\pcw f}\le C_\beta\pcNorm a$.
+This stronger decay belongs to $f$, before smoothing: the amplitude $a=\ue^{-\alpha\Lambda}f$ need not lie in any
+$X_0^{\beta'}$-weighted $L^2$ space with $\beta'>\tfrac12$ (Remark~\ref{pc:classes}).
+In the swapped class the mollifier part of the error is small because one vector is small without a weight and bounded with
 the weight $\pcXzero^\beta$, $\beta>\tfrac12$. Here the same interpolation is carried out for the linear maps that produce these vectors from the data,
 between $L^2(\Hb)$ and $L^2(\pcXzero^{2}d\nu)$ (Lemma~\ref{os:transfer}), after the data have been written as $a=\ue^{-\sigma\Lambda_m}\tilde f$ with an even
 smoothing operator and $\norm{\pcw\tilde f}\le C\pcNorm a$ (Proposition~\ref{os:data}).
-
-\subsection{The theorem}\label{subsec:pc-thm}
-\begin{theorem}[printed class]\label{pc:main}
-Let $\Gamma$ be a Fuchsian group (cusps allowed), $\beta>\tfrac12$ and $\kappa>0$. There are constants $C,\delta>0$, depending on $\Gamma$, $\beta$,
-$\kappa$ and the base point $x_0$,
-such that for all $0<\hbar\le1$, all $\alpha\in(0,\tfrac12]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$ with
-$\pcNorm{a}<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
-\[
-  \norm{\Delta^N\big[\cU(t)\big(a\,\ue^{i\varphi_b/\hbar}\big)_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}
-  \le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\pcNorm{a},
-\]
-with $N^{2N}:=1$ at $N=0$.
-\end{theorem}
-
-\begin{remark}
-On the window of \cite[(1.31)]{S}, $t\le\delta\alpha^{3/2}\hbar^{-1/2}$, the bound of Theorem~\ref{pc:main} implies \cite[(1.30)]{S} with the printed
-norm, because $(\alpha\hbar)^{4}\hbar t/\alpha^2\le1$ there. The swapped-class version is Theorem~\ref{thm:dd-appx} of Appendix~\ref{sec:dd}; the proof
-below uses its frame and its lemmas. The proof gives $\delta=\min(\tfrac1{64},c_A/6)/\sqrt6$, with $c_A$ the constant of Proposition~\ref{prop:a0}
-for $\tau_0=1$; this $\delta$ does not depend on $\Gamma$, $\beta$ or $\kappa$.
-\end{remark}
 
 \begin{remark}[the two classes, and the range of $\alpha$]\label{pc:classes}
 Let $\beta>\tfrac12$ and $0\le\alpha'<\alpha<\pi/2$, and put $h:=\ue^{-\beta\langle d\rangle}\mathbf 1_{B(x_0,1)}$ and $a:=\ue^{-\alpha\Lambda}h$, so that
@@ -66,17 +38,9 @@ $\norm{\ue^{\beta\langle d\rangle}\ue^{\alpha\Lambda}a}$ and $\norm{\ue^{\alpha\
 \cite[Proposition~7.1, (7.2)]{S}.
 With $\tau=\alpha-\alpha'$ and $\beta'=\beta$: the printed norm of $a$ at $(\alpha',\beta)$ is infinite, since
 $\ue^{\alpha'\Lambda}a=\ue^{-(\alpha-\alpha')\Lambda}h$. So the printed norms are not monotone in $\alpha$, and Theorem~\ref{pc:main}, which is stated for
-$\alpha\le\tfrac12$, does not cover larger radii by a comparison of printed norms, as it does in the swapped class (Section~\ref{sec:repair}).
+$\alpha\le\tfrac12$, does not cover larger radii by a comparison of printed norms, as it does in the swapped class (Section~\ref{sec:swapped}).
 Larger radii are covered by Corollary~\ref{pc:allalpha}, which compares the data at the critical weight instead.
 \end{remark}
-
-\begin{corollary}[Theorem 1.3 for the printed class]\label{pc:thm13}
-Under the hypotheses of Theorem~\ref{pc:main}, with $K=N=0$,
-\[
-  \norm{\cU(t)\big(a\,\ue^{i\varphi_b/\hbar}\big)_\Gamma-u^{(0)}(t)_\Gamma}_{L^2(M)}\le C\,\frac{\hbar t}{\alpha^2}\,\pcNorm{a},
-  \qquad 0\le t\le\delta(\alpha/\hbar)^{1/2}.
-\]
-\end{corollary}
 
 \subsection{Proof of Theorem~\ref{pc:main}}\label{subsec:pc-proof}
 We use the notation and the statements of Appendices~\ref{app:kl}, \ref{app:ws}, \ref{sec:dd} and~\ref{app:o1st}; all lemmas are used with $\tau_0=1$.
@@ -189,17 +153,10 @@ $t\le\tfrac13c_A\varepsilon/\hbar=c_Ax/6$; the absorption uses $t\le x/64$. So t
 $\delta'x=(\delta'/\sqrt6)(\alpha/\hbar)^{1/2}$. The hypothesis $\alpha\le\tfrac12$ ensures $\sigma<\alpha\le1$ in Proposition~\ref{os:data} and keeps all
 radii below $\tau_0=1$. \qed
 
-\subsection{Corollaries}\label{subsec:pc-cor}
-\begin{corollary}[Corollary 1.5 for the printed class]\label{pc:cor15}
-Under the hypotheses of Theorem~\ref{pc:main}, put $\delta_K:=C\hbar t/\alpha^2$ and let $\epsilon\in(0,1)$, with $\delta\le\kappa^{1/2}/\max(1,C)$.
-For every integer $K$ with $(1-\epsilon)/\delta_K\le K\le(1-\epsilon/2)/\delta_K$,
-\[
-  \norm{\Delta^N\big[\cU(t)\big(a\,\ue^{i\varphi_b/\hbar}\big)_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}
-  \le C'\epsilon^{-1/2}C^{N+1}N^{2N}(\alpha\hbar)^{-2N}\ue^{-(1-\epsilon)\alpha^2/(C\hbar t)}\pcNorm{a},
-\]
-with $C'$ absolute. If the window contains no integer the statement is vacuous; at $t=0$ the error is $0$.
-\end{corollary}
-\begin{proof}
+\subsection{Proofs of the corollaries}\label{subsec:pc-cor}
+The leading bound in Corollary~\ref{pc:thm13} is Theorem~\ref{pc:main} with $K=N=0$.
+
+\begin{proof}[Proof of Corollary~\ref{pc:cor15}]
 The proof of Corollary~\ref{cor:dd15-appx} uses only the form of the bound of Theorem~\ref{thm:dd-appx}:
 $C^{N+K+1}N^{2N}K!(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$ times the norm of $a$, for every $K$. Theorem~\ref{pc:main} gives a bound of
 exactly this form with $\pcNorm{a}$ in place of the swapped norm, so that proof applies word for word.
@@ -231,25 +188,8 @@ Apply Step~3 to $v=\tilde u$ and use Step~2 for $\tilde h=\tilde u$ and $\tilde 
 and descends to $M$. \qed
 \end{proof}
 
-\begin{corollary}[Corollary 1.6 on bounded geometry, printed class]\label{pc:cor16bg}
-Under the hypotheses of Theorem~\ref{pc:main}, assume in addition that the injectivity radius of $M$ is at least $r_0>0$. Then for every $z\in M$,
-\[
-  \big|\Delta^N\big[\cU(t)\big(a\,\ue^{i\varphi_b/\hbar}\big)_\Gamma-u^{(K)}(t)_\Gamma\big](z)\big|
-  \le C^{N+K+1}(2N)!\,K!\,(\alpha\hbar)^{-2N-4}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\pcNorm{a},
-\]
-with $C$ depending also on $r_0$.
-\end{corollary}
-
-\begin{corollary}[Corollary 1.6 on every Fuchsian quotient, with the cusp factor]\label{pc:cor16}
-Under the hypotheses of Theorem~\ref{pc:main}, for every $z\in M$,
-\begin{multline*}
-  \big|\Delta^N\big[\cU(t)\big(a\,\ue^{i\varphi_b/\hbar}\big)_\Gamma-u^{(K)}(t)_\Gamma\big](z)\big|\\
-  \le C\,m(z)^{1/2}\,C^{N+K+1}(2N)!\,K!\,(\alpha\hbar)^{-2N-4}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\pcNorm{a}.
-\end{multline*}
-In both corollaries the error lies in $\operatorname{Dom}(\Delta_M^N)$, and the left side is the value of the continuous representative.
-\end{corollary}
-\begin{proof}
-Let $E$ be the bracket in the statement. By Theorem~\ref{pc:main} at $N$ and at $N+1$, $u:=\Delta^NE$ lies in $\operatorname{Dom}(\Delta_M)$. Apply
+\begin{proof}[Proof of Corollaries~\ref{pc:cor16bg} and~\ref{pc:cor16}]
+Let $E$ be the bracket in their statements. By Theorem~\ref{pc:main} at $N$ and at $N+1$, $u:=\Delta^NE$ lies in $\operatorname{Dom}(\Delta_M)$. Apply
 Lemma~\ref{pc:g43} to $u$, and use $N^{2N}\le(\ue/2)^{2N}(2N)!$, $(N+1)^{2N+2}\le54^{N+1}(2N)!$ and $\alpha\hbar\le1$. This proves
 Corollary~\ref{pc:cor16}. Under the hypothesis of Corollary~\ref{pc:cor16bg}, $m(z)\le C(r_0)$, as in the proof of Corollary~\ref{cor:dd16-appx}. \qed
 \end{proof}
@@ -271,18 +211,11 @@ $C\,m(z)^{-1/2}(\alpha\hbar)^{-p}$ times the global bounds at $N$ and $N+1$ (wit
 condition fails high in the cusp of the modular surface.
 \end{remark}
 
-\subsection{Larger radii}\label{subsec:pc-all}
+\subsection{Proof of the extension to arbitrary radii}\label{subsec:pc-all}
 Theorem~\ref{pc:main} is stated for $\alpha\le\tfrac12$. Its proof uses the amplitude only through the data of Step~1, so the estimate
 extends to every radius, although the printed norms at different radii are not comparable (Remark~\ref{pc:classes}).
 
-\begin{corollary}[printed class, every radius]\label{pc:allalpha}
-Let $\Gamma$ be a Fuchsian group, $\beta>\tfrac12$, $\kappa>0$ and $A>0$. There are constants $C,\delta>0$, depending on $\Gamma$, $\beta$,
-$\kappa$, the base point $x_0$ and $A$, such that the estimate of Theorem~\ref{pc:main} holds for all $0<\hbar\le1$, all $\alpha\in(0,A]$ with
-$\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$ with $\pcNorm a<\infty$ and all
-$0\le t\le\delta(\alpha/\hbar)^{1/2}$; here $\pcNorm a$ is the printed norm at the radius $\alpha$. Corollaries~\ref{pc:thm13},
-\ref{pc:cor15}, \ref{pc:cor16bg} and~\ref{pc:cor16} hold in the same way for $\alpha\in(0,A]$, with constants depending also on $A$.
-\end{corollary}
-\begin{proof}
+\begin{proof}[Proof of Corollary~\ref{pc:allalpha}]
 For $\alpha\le\tfrac12$ this is Theorem~\ref{pc:main}. Let $\tfrac12<\alpha\le A$. The reductions of Step~0 of the proof of
 Theorem~\ref{pc:main} apply as they stand, and $a$ is $C^\infty$ by Lemma~\ref{lem:lift}, because
 $\operatorname{Dom}(\ue^{\alpha\Lambda})\subset\operatorname{Dom}(\ue^{\min(\alpha,1)\Lambda})$. Steps~2 to~5 of that proof use
@@ -319,5 +252,3 @@ Corollaries~\ref{pc:cor16bg} and~\ref{pc:cor16} uses $\alpha\hbar\le1$ to replac
 $(\alpha\hbar)^{-2N-4}$. For $\alpha\le A$ one has $\alpha\hbar\le\max(1,A)$, so both powers are at most $\max(1,A)^4(\alpha\hbar)^{-2N-4}$, and
 the factor $\max(1,A)^4$ goes into the constant.
 \end{proof}
-
-\input{sec_cusp_lower}

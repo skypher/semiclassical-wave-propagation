@@ -101,8 +101,11 @@ Let $f,h\in L^2(\Hb)$ with $\operatorname{supp}f\subset\{\psi\le a\}$ and $\oper
 $\langle h,\cos(rD)f\rangle=0$ and $\langle f,\cos(rD)h\rangle=0$ for $|r|<b-a$.
 \end{lemma}
 \begin{proof}
-For $\lambda>0$ apply Lemma~\ref{lem:wave}(b) to $W_{\lambda,n}$, with $l=\lambda$, and let $n\to\infty$:
-$\norm{\osX^\lambda\cos(rD)f}\le\ue^{(\lambda+1/2)|r|}\norm{\osX^\lambda f}\le\ue^{(\lambda+1/2)|r|+\lambda a}\norm f$. Hence
+For $\lambda>0$ apply Lemma~\ref{lem:wave}(b) to $W_{\lambda,n}$, with $l=\lambda$, and let $n\to\infty$. This gives
+\[
+\norm{\osX^\lambda\cos(rD)f}\le\ue^{(\lambda+1/2)|r|}\norm{\osX^\lambda f}\le\ue^{(\lambda+1/2)|r|+\lambda a}\norm f.
+\]
+Hence
 $\norm{1_{\{\psi\ge b\}}\cos(rD)f}\le\ue^{|r|/2}\ue^{-\lambda(b-a-|r|)}\norm f$, which tends to $0$ as $\lambda\to\infty$. The second identity follows
 because $\cos(rD)$ is self-adjoint.
 \end{proof}
@@ -176,8 +179,11 @@ $\beta>\tfrac12$, $\osomc\le\ue^{d/2}(1+d/\log2)\le C_\beta\,\ue^{\beta\langle d
 Let $m\ge\tfrac12$ and $\rho\ge0$ with $2(\rho+\tfrac12)^2<m^2$, and let $W$ be a bounded weight (Appendix~\ref{app:ws}) with
 $(X\log W)^2+(Y\log W)^2\le\rho^2$. Put $\mu:=m^2-\tfrac14$, $C_0:=2\ue\,c_H$ and $Q:=4+2\rho$.
 \begin{itemize}
-\item[(a)] For $\tau,s>0$ and $u\in L^2$: $\norm{W\ue^{-\tau\Lambda_m}u}\le\sqrt2\norm{Wu}$ and
-$\norm{W\Lambda_m\ue^{-s\Lambda_m}u}\le(2c_H/s)\norm{Wu}$.
+\item[(a)] For $\tau,s>0$ and $u\in L^2$:
+\[
+\norm{W\ue^{-\tau\Lambda_m}u}\le\sqrt2\norm{Wu},\qquad
+\norm{W\Lambda_m\ue^{-s\Lambda_m}u}\le(2c_H/s)\norm{Wu}.
+\]
 Hence for $j\ge1$ and $\sigma>0$, $\norm{W(\mu-\Delta)^j\ue^{-\sigma\Lambda_m}u}\le(4jc_H/\sigma)^{2j}\norm{Wu}$.
 \item[(b)] For $0<\sigma\le1$, every word $Z_S$ of length $k$ in $X,Y$, and $h\in L^2$,
 \[

@@ -2,23 +2,20 @@
 % that state it. Not input by paper.tex. `python3 -u paper/lean_status.py --aux <paper.aux>` turns this file
 % into LEAN_STATUS.md at the top of the repository (printed numbers are read from the .aux file).
 % Format of a row:  <statement, with \ref{label}> & <L | L$'$ | P> & <\lean{name}, ...; remark>\\
-\multicolumn{3}{@{}l}{\emph{Main text}}\\
-Remark~\ref{rem:g4} & P & \\
-Proposition~\ref{prop:g5} & L$'$ & \lean{printedThm13_false}: the negation of the printed theorem; the asymptotic formula is not formalized (Remark~\ref{rem:g5-lean})\\
-Proposition~\ref{prop:mean} & L & \lean{meanGrowth}; \lean{integral_approxSolB}, \lean{J_vecX}, \lean{J_vecY}, \lean{chP_dysT}, \lean{swapped_setup}, \lean{enorm_integral_le_perio}\\
-Theorem~\ref{thm:main} & L & \lean{thm13R_rep}\\
-Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_exp}\\
-Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_rep}\\
-Corollary~\ref{cor:dd16} & L & \lean{cor16Rmain_rep}\\[2pt]
-\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:printed}: the printed class}}\\
+\multicolumn{3}{@{}l}{\emph{Main approximation results}}\\
 Theorem~\ref{pc:main} & L & \lean{pcmain_half}\\
-Remark~\ref{pc:classes} & P & \\
-Corollary~\ref{pc:allalpha} & L & \lean{pcmain_all}, \lean{pcthm13_all}, \lean{pccor15_all}, \lean{pccor16bg_all}, \lean{pccor16_all}; \lean{pcMainAt_all}, \lean{poisson_cw_all}, \lean{lift1_pr_all}\\
 Corollary~\ref{pc:thm13} & L & \lean{pcthm13_half}\\
 Corollary~\ref{pc:cor15} & L & \lean{pccor15_half}\\
-Lemma~\ref{pc:g43} & L & \lean{sobolev_M_mult}\\
 Corollary~\ref{pc:cor16bg} & L & \lean{pccor16bg_half}\\
 Corollary~\ref{pc:cor16} & L & \lean{pccor16_half}\\
+Corollary~\ref{pc:allalpha} & L & \lean{pcmain_all}, \lean{pcthm13_all}, \lean{pccor15_all}, \lean{pccor16bg_all}, \lean{pccor16_all}; \lean{pcMainAt_all}, \lean{poisson_cw_all}, \lean{lift1_pr_all}\\
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:printed}: proof of the approximation theorem}}\\
+Remark~\ref{pc:classes} & P & \\
+Lemma~\ref{pc:g43} & L & \lean{sobolev_M_mult}\\
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:g5}: sharpness and limitations}}\\
+Proposition~\ref{prop:g5} & L$'$ & \lean{printedThm13_false}: the negation of the printed theorem; the asymptotic formula is not formalized (Remark~\ref{rem:g5-lean})\\
+Proposition~\ref{prop:mean} & L & \lean{meanGrowth}; \lean{integral_approxSolB}, \lean{J_vecX}, \lean{J_vecY}, \lean{chP_dysT}, \lean{swapped_setup}, \lean{enorm_integral_le_perio}\\
+Remark~\ref{rem:g4} & P & \\
 Theorem~\ref{cl:main}, Lemmas~\ref{cl:ssob}, \ref{cl:asym}, \ref{cl:kernel}, \ref{cl:amp} & P & \\[2pt]
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:expect}: expectation values}}\\
 Corollary~\ref{ev:transfer} & L & \lean{evTransfer_main}, \lean{evTransfer_pc}; \lean{ev_transfer_core}\\
@@ -38,6 +35,10 @@ Lemma~\ref{lem:wmoll} & L & \lean{w_J}, \lean{w_Bx}, \lean{w_By}, \lean{w_JS}, \
 Proposition~\ref{prop:ws} & L & \lean{ws0_trunc}, \lean{ws0_cosh}\\
 Lemma~\ref{lem:path} & L & \lean{WOps.pathG_eq}, \lean{norm_pathH_le}, \lean{norm_xInt_le}, \lean{xInt_chart}, \lean{path_duhamel}\\[2pt]
 \multicolumn{3}{@{}l}{\emph{Appendix~\ref{sec:dd}}}\\
+Theorem~\ref{thm:main} & L & \lean{thm13R_rep}\\
+Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_exp}\\
+Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_rep}\\
+Corollary~\ref{cor:dd16} & L & \lean{cor16Rmain_rep}\\[2pt]
 Proposition~\ref{prop:dd-id} & L & \lean{dd_D12_simplex}, \lean{dd_D3}, \lean{SurfW.surf_D4}, \lean{SurfW.surf_D4_bound}\\
 Lemma~\ref{lem:surf-lap} & L & \lean{SurfW.surf_lap}\\
 Lemma~\ref{lem:surf-duh} & L & \lean{SurfW.surf_duhamel}\\

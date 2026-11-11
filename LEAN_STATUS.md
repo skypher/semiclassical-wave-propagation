@@ -14,31 +14,32 @@ which reading.
 All Lean names are in the namespace `Qschubert`.
 
 
-## Main text
+## Main approximation results
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Remark 1.2 (`rem:g4`) | P |  |
-| Proposition 2.1 (`prop:g5`) | L′ | `printedThm13_false`: the negation of the printed theorem; the asymptotic formula is not formalized (Remark 2.2 (`rem:g5-lean`)) |
-| Proposition 2.3 (`prop:mean`) | L | `meanGrowth`; `integral_approxSolB`, `J_vecX`, `J_vecY`, `chP_dysT`, `swapped_setup`, `enorm_integral_le_perio` |
-| Theorem 1.3R (`thm:main`) | L | `thm13R_rep` |
-| Theorem 1.4R (`thm:dd14`) | L | `thm14Rmain_exp` |
-| Corollary 1.5R (`cor:dd15`) | L | `cor15Rmain_rep` |
-| Corollary 1.6R (`cor:dd16`) | L | `cor16Rmain_rep` |
+| Theorem 1.1 (`pc:main`) | L | `pcmain_half` |
+| Corollary 1.2 (`pc:thm13`) | L | `pcthm13_half` |
+| Corollary 1.3 (`pc:cor15`) | L | `pccor15_half` |
+| Corollary 1.4 (`pc:cor16bg`) | L | `pccor16bg_half` |
+| Corollary 1.5 (`pc:cor16`) | L | `pccor16_half` |
+| Corollary 1.6 (`pc:allalpha`) | L | `pcmain_all`, `pcthm13_all`, `pccor15_all`, `pccor16bg_all`, `pccor16_all`; `pcMainAt_all`, `poisson_cw_all`, `lift1_pr_all` |
 
-## Section 3 (`sec:printed`): the printed class
+## Section 2 (`sec:printed`): proof of the approximation theorem
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Theorem 3.1 (`pc:main`) | L | `pcmain_half` |
-| Remark 3.3 (`pc:classes`) | P |  |
-| Corollary 3.10 (`pc:allalpha`) | L | `pcmain_all`, `pcthm13_all`, `pccor15_all`, `pccor16bg_all`, `pccor16_all`; `pcMainAt_all`, `poisson_cw_all`, `lift1_pr_all` |
-| Corollary 3.4 (`pc:thm13`) | L | `pcthm13_half` |
-| Corollary 3.5 (`pc:cor15`) | L | `pccor15_half` |
-| Lemma 3.6 (`pc:g43`) | L | `sobolev_M_mult` |
-| Corollary 3.7 (`pc:cor16bg`) | L | `pccor16bg_half` |
-| Corollary 3.8 (`pc:cor16`) | L | `pccor16_half` |
-| Theorem 3.11 (`cl:main`), Lemmas 3.15 (`cl:ssob`), 3.16 (`cl:asym`), 3.17 (`cl:kernel`), 3.18 (`cl:amp`) | P |  |
+| Remark 2.1 (`pc:classes`) | P |  |
+| Lemma 2.2 (`pc:g43`) | L | `sobolev_M_mult` |
+
+## Section 3 (`sec:g5`): sharpness and limitations
+
+| Statement | Status | Lean theorem; difference |
+|---|---|---|
+| Proposition 3.1 (`prop:g5`) | L′ | `printedThm13_false`: the negation of the printed theorem; the asymptotic formula is not formalized (Remark 3.2 (`rem:g5-lean`)) |
+| Proposition 3.3 (`prop:mean`) | L | `meanGrowth`; `integral_approxSolB`, `J_vecX`, `J_vecY`, `chP_dysT`, `swapped_setup`, `enorm_integral_le_perio` |
+| Remark 3.5 (`rem:g4`) | P |  |
+| Theorem 3.6 (`cl:main`), Lemmas 3.10 (`cl:ssob`), 3.11 (`cl:asym`), 3.12 (`cl:kernel`), 3.13 (`cl:amp`) | P |  |
 
 ## Section 4 (`sec:expect`): expectation values
 
@@ -58,7 +59,7 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma B.1 (`lem:expw`) | L | `exp_of_words` |
 | Lemma B.2 (`lem:mw`) | L | `lem_m_weak` |
 | Lemma B.3 (`lem:m2w`) | L | `swX_le_swD` |
-| Lemma B.4 (`lem:gutzmer`) | P | used only for Lemma D.22 (`lem:ex`) |
+| Lemma B.4 (`lem:gutzmer`) | P | used only for Lemma D.27 (`lem:ex`) |
 | Lemma C.1 (`lem:wave`) | L | `wave_weight`, `wave_Bx'`, `wave_By'`; `wave_weightD` |
 | Lemma C.2 (`lem:wcomm`) | L | `comm_wave` |
 | Lemma C.3 (`lem:wmoll`) | L | `w_J`, `w_Bx`, `w_By`, `w_JS`, `w_XX`, `w_YY`, `w_comm` |
@@ -69,22 +70,26 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Proposition D.1 (`prop:dd-id`) | L | `dd_D12_simplex`, `dd_D3`, `SurfW.surf_D4`, `SurfW.surf_D4_bound` |
-| Lemma D.2 (`lem:surf-lap`) | L | `SurfW.surf_lap` |
-| Lemma D.3 (`lem:surf-duh`) | L | `SurfW.surf_duhamel` |
-| Corollary D.4 (`cor:surf-dyson`) | L | `SurfW.surf_dyson` |
-| Lemma D.5 (`lem:fc`) | L | `lem_fc` |
-| Lemma D.7 (`lem:wc`) | L | `lem_wc` |
-| Lemma D.8 (`lem:fdb`) | L | `fdb` |
-| Lemma D.9 (`lem:sc`) | L | `lem_sc` |
-| Lemma D.10 (`lem:wb`) | L | `lem_wb_w`, `lem_wb_u` |
-| Lemma D.11 (`lem:unw`) | L | `unw_err` |
-| Lemma D.12 (`lem:lift`) | L | `allWords_of_exp`, `patch_smooth`, `glue_smooth`, `lift1` |
-| Lemma D.13 (`lem:base`) | L | `exists_stab_smul_infty`, `initState_mul`, `approxSolB_mul`, `expLambda_iso`, `poincareSup_conj_move` |
-| Theorem D.15 (`thm:dd-appx`) | L | `thm14R_rep` |
-| Corollary D.17 (`cor:dd15-appx`) | L | `cor15R_rep` |
-| Corollary D.19 (`cor:dd16-appx`) | L | `cor16R_rep` |
-| Lemma D.22 (`lem:ex`) | P | not used by the theorems |
+| Theorem D.1 (`thm:main`) | L | `thm13R_rep` |
+| Theorem D.3 (`thm:dd14`) | L | `thm14Rmain_exp` |
+| Corollary D.4 (`cor:dd15`) | L | `cor15Rmain_rep` |
+| Corollary D.5 (`cor:dd16`) | L | `cor16Rmain_rep` |
+| Proposition D.6 (`prop:dd-id`) | L | `dd_D12_simplex`, `dd_D3`, `SurfW.surf_D4`, `SurfW.surf_D4_bound` |
+| Lemma D.7 (`lem:surf-lap`) | L | `SurfW.surf_lap` |
+| Lemma D.8 (`lem:surf-duh`) | L | `SurfW.surf_duhamel` |
+| Corollary D.9 (`cor:surf-dyson`) | L | `SurfW.surf_dyson` |
+| Lemma D.10 (`lem:fc`) | L | `lem_fc` |
+| Lemma D.12 (`lem:wc`) | L | `lem_wc` |
+| Lemma D.13 (`lem:fdb`) | L | `fdb` |
+| Lemma D.14 (`lem:sc`) | L | `lem_sc` |
+| Lemma D.15 (`lem:wb`) | L | `lem_wb_w`, `lem_wb_u` |
+| Lemma D.16 (`lem:unw`) | L | `unw_err` |
+| Lemma D.17 (`lem:lift`) | L | `allWords_of_exp`, `patch_smooth`, `glue_smooth`, `lift1` |
+| Lemma D.18 (`lem:base`) | L | `exists_stab_smul_infty`, `initState_mul`, `approxSolB_mul`, `expLambda_iso`, `poincareSup_conj_move` |
+| Theorem D.20 (`thm:dd-appx`) | L | `thm14R_rep` |
+| Corollary D.22 (`cor:dd15-appx`) | L | `cor15R_rep` |
+| Corollary D.24 (`cor:dd16-appx`) | L | `cor16R_rep` |
+| Lemma D.27 (`lem:ex`) | P | not used by the theorems |
 
 ## Appendix E (`sec:t2`)
 
@@ -107,5 +112,5 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma F.8 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
 | Proposition F.9 (`os:p1`) | L | `poincare_omP`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
 | Remark F.10 (`os:indep`) | L | `surfV_indep` |
-| Lemma F.11 (`os:poisson`) | P | used only in Remark 3.3 (`pc:classes`) and Section 3.6 (`subsec:cl`) |
-| Lemma F.12 (`os:hk`) | P | used only in Section 3.6 (`subsec:cl`) |
+| Lemma F.11 (`os:poisson`) | P | used only in Remark 2.1 (`pc:classes`) and Section 3.3 (`subsec:cl`) |
+| Lemma F.12 (`os:hk`) | P | used only in Section 3.3 (`subsec:cl`) |

@@ -8,8 +8,8 @@ introduced in
 > R. Schubert, *Semiclassical wave propagation for large times*, arXiv:0705.0134v1 (2007),
 > withdrawn by its author in v2 (2011) for a gap in the proof of the dispersive estimates,
 
-are accurate up to times of order ħ^(-1/2), with the explicit constants stated there. The strategy is
-Schubert's. The statements differ from those of the preprint in two places: the error of the leading
+are accurate up to times of order ħ^(-1/2) for fixed analytic radius, with explicit factorial dependence on the expansion and derivative orders. The strategy is
+Schubert's. The principal theorem uses Schubert’s original amplitude norm; companion results treat the reversed order of weights. The two main corrections to the preprint are: the error of the leading
 approximation is of order ħt, and on surfaces with cusps the pointwise bound carries a factor that grows with
 the cusp height. Schubert's files are not part of this repository.
 

@@ -7,6 +7,7 @@ different things: the approximation stays accurate up to times of order $\hbar^{
 initial density fails to describe the expectation values after a time of order $\log(1/\hbar)\log\log(1/\hbar)$.
 
 \subsection{Transfer and cancellation}\label{subsec:ev-transfer}
+In this subsection, $\norm a$ denotes the swapped norm $\norm{a}_{\mathrm S}$ of Section~\ref{sec:repair}; the printed-class version uses $\pcNorm a$ instead.
 \begin{corollary}\label{ev:transfer}
 Assume the hypotheses of Theorem~\ref{thm:dd14}, or those of Theorem~\ref{pc:main} with $\pcNorm a$ in place of $\norm a$. Let
 $K\in\mathbb N_0$ and $0\le t\le\delta(\alpha/\hbar)^{1/2}$, and put
@@ -97,8 +98,10 @@ that, with $T(\hbar):=C_1\log(1/\hbar)\log\log(1/\hbar)$, the following hold.
 $\norm{\psi(t)-u^{(K)}(t)_\Gamma}_{L^2(M)}\le C^{K+1}K!\,(\hbar t/\alpha^2)^{K+1}\pcNorm a$.
 \item[(ii)] For every $Y\ge1$ and every $K$, as $\hbar\to0$,
 \[
+\begin{gathered}
   \int_{M_Y}|\psi(t)|^2\,d\nu+\int_{M_Y}|u^{(K)}(t)_\Gamma|^2\,d\nu\longrightarrow0
-  \qquad\text{uniformly for }T(\hbar)+\log Y\le t\le\delta(\alpha/\hbar)^{1/2}.
+  \\ \text{uniformly for }T(\hbar)+\log Y\le t\le\delta(\alpha/\hbar)^{1/2}.
+\end{gathered}
 \]
 \item[(iii)] For every continuous $q$ with compact support in $M$, lifted to a $\Gamma$-invariant function on $\Hb$,
 \[

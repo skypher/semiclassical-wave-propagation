@@ -1,11 +1,84 @@
 % Appendix: Theorem 1.4 with explicit constants, the periodization lemmas (T2, G4.2) and Lemma EX.
 
-\section{Proof of Theorem 1.4R}\label{sec:dd}
+\section{Companion results and analytic estimates}\label{sec:dd}
 
-\medskip\noindent\textbf{Notation.}
+\subsection{Companion results for the reversed weight order}\label{sec:swapped}
+The definition of the amplitude norm in \cite{S} and the proofs there take the two weights in different orders, and
+\cite[Proposition~7.1]{S} states that the two orders give equivalent norms. For
+$\beta>\tfrac12$ they do not: the two orders define different classes (Remark~\ref{pc:classes}). The principal result for the printed class is Theorem~\ref{pc:main}. In this subsection
+\[
+\norm a:=\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}_{L^2(\Hb)} ,
+\]
+the order used in the proofs of \cite{S}. We call the amplitudes with $\norm a<\infty$ the \emph{swapped class}, and those with
+$\norm a_{\alpha,\beta}<\infty$ the \emph{printed class}.
+By Lemma~\ref{lem:m2w} below, a finite norm $\norm a$ at radius $\alpha$ gives a finite norm with the weight
+$\ue^{\beta\tilde\psi}$ in place of $\ue^{\beta\langle d\rangle}$, at the radius $c_0\alpha$ for a fixed
+$c_0=c_0(\beta)\in(0,1]$; the proofs use $\tilde\psi$.
+\begin{theoremR}\label{thm:main}
+Let $\Gamma$ be any Fuchsian group, $\beta>1$ and $\alpha\in(0,\alpha_0]$ constants ($\alpha_0<\pi/4$ fixed).
+There are $C,\delta>0$ such that for all $0<\hbar\le1$, every $b\in\partial\Hb$ and every $a$ with $\norm a<\infty$,
+\[
+\norm{u^{(0)}(t)_\Gamma-\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma}_{L^2(\Hb/\Gamma)}\le C\hbar t\norm a,\qquad 0\le t\le\delta\hbar^{-1/2}.
+\]
+\end{theoremR}
+For $\alpha>\alpha_0$ the class with radius $\alpha$ is contained in the class with radius $\alpha_0$
+(in the swapped order this nesting is trivial), so the theorem holds for every constant $\alpha>0$,
+as in \cite{S}. By Proposition~\ref{prop:g5} the order $\hbar t$ cannot be improved.
+
+\begin{proof}
+This is the case $K=N=0$ of Theorem~\ref{thm:dd14} below, with $\kappa:=\alpha^3$ and with $\alpha_0$ as here: then
+$\alpha^3\ge\kappa\hbar$ for all $0<\hbar\le1$, $u^{(0)}$ is the approximation of order $0$, and the bound of Theorem~\ref{thm:dd14} reads
+$C\alpha^{-2}\hbar t\norm a$ for $0\le t\le\delta\alpha^{1/2}\hbar^{-1/2}$. The constants of the present theorem are
+$C\alpha^{-2}$ and $\delta\alpha^{1/2}$, with $C$ and $\delta$ the constants of Theorem~\ref{thm:dd14} for $\kappa=\alpha^3$; they depend on the fixed $\alpha$.
+\end{proof}
+
+\begin{remark}
+No Volterra resummation and no Sobolev inequality on $M$ is used, so the proof holds for every Fuchsian
+group; the cusp issue of Remark~\ref{rem:g4} does not arise. Since Theorem~\ref{thm:dd14} holds for every $\beta>1/2$, so does
+the present theorem; we state it with $\beta>1$ as in \cite{S}.
+\end{remark}
+
+\medskip\noindent\textbf{The estimate of order $K$ and its corollaries.}
+Let $u^{(K)}$ be the approximation of order $K$ of Section~\ref{sec:setup}.
+\begin{theoremR}\label{thm:dd14}
+Fix $\beta>1/2$, $\kappa>0$ and $\alpha_0\in(0,\min(1,\pi/4))$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$,
+such that for every Fuchsian group $\Gamma$ with $\sup_z\sum_{\gamma\in\Gamma}\ue^{-(\beta+1/2)\,d(x_0,\gamma z)}\le P$, all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$
+with $\norm a<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
+\[
+\norm{\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(\Hb/\Gamma)}
+\le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\norm a ,
+\]
+with $N^{2N}:=1$ at $N=0$.
+(The supremum is finite for every Fuchsian group, by Lemma~\ref{lem:p1} at the exponent $\beta+\tfrac12>1$. So $\delta$ does not
+depend on $\Gamma$, and $C$ depends on $\Gamma$ only through this Poincar\'e series bound; see the end of the proof of
+Theorem~\ref{thm:dd-appx}.)
+\end{theoremR}
+On Schubert's window $t\le\delta\alpha^{3/2}\hbar^{-1/2}$ this implies the bound \cite[(1.30)]{S} for the norm $\norm a$,
+with an extra factor $(\alpha\hbar)^4\hbar t/\alpha^2\le1$. The proof is in Section~\ref{subsec:dd-thm}.
+
+\begin{corollaryR}\label{cor:dd15}
+Under the hypotheses of Theorem~\ref{thm:dd14}, with $\delta\le\kappa^{1/2}/\max(1,C)$, put $\delta_K=C\hbar t/\alpha^2$ and let $\epsilon\in(0,1)$. For every integer $K$ with
+$(1-\epsilon)/\delta_K\le K\le(1-\epsilon/2)/\delta_K$,
+\[
+\norm{\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}\le C'\epsilon^{-1/2}C^{N+1}N^{2N}(\alpha\hbar)^{-2N}\ue^{-(1-\epsilon)\alpha^2/(C\hbar t)}\norm a ,
+\]
+with $C'$ an absolute constant.
+\end{corollaryR}
+The window for $K$ is the one used in Schubert's proof of his Corollary~1.5; the window printed in its statement
+does not match that proof.
+
+\begin{corollaryR}\label{cor:dd16}
+If moreover the injectivity radius of $\Hb/\Gamma$ is at least $r_0>0$, then pointwise
+\[
+\big|\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]\big|\le C^{N+K+1}(2N)!\,K!\,(\alpha\hbar)^{-2N-4}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\norm a ,
+\]
+with $C$ depending also on $r_0$, and correspondingly for the window of Corollary~\ref{cor:dd15}.
+\end{corollaryR}
+
+\medskip\noindent\textbf{Notation for the analytic estimates.}
 Let $X=y\partial_x$, $Y=y\partial_y$, $\Delta=X^2+Y^2-Y$, $\Delta(s)=\ue^{-2s}X^2+Y^2-Y$,
 $\Lambda=\sqrt{-\Delta}$, $X_0=\cosh d(x_0,\cdot)$, $\tilde\psi=\log X_0$, and $W_\beta=X_0^\beta$.
-The swapped norm is
+In the analytic estimates below, the unadorned amplitude norm uses the weight $X_0^\beta$:
 \[
 \norm{a}:=\norm{\ue^{\alpha\Lambda}X_0^\beta a}.
 \]
@@ -60,31 +133,36 @@ Everything of high order is now inside $b'(s)$, which is a fixed word-polynomial
 
 \begin{proof}
 \medskip\noindent\textbf{(D1).}
-\begin{itemize}
-\item $V(s)^*=V(0,s)$ and $\partial_sV(t,s)=-c\,V(t,s)\Delta(s)$ on $H^\infty$. So for $b$ with all words in $L^2$, $s\mapsto V(s)^*b$ is
+
+$V(s)^*=V(0,s)$ and $\partial_sV(t,s)=-c\,V(t,s)\Delta(s)$ on $H^\infty$. So for $b$ with all words in $L^2$, $s\mapsto V(s)^*b$ is
 differentiable in $L^2$ with derivative $-c\,V(s)^*\Delta(s)b$. (In integrated form this is Lemma~\ref{lem:surf-duh} for the trivial
 group, the weight $\omega=1$ and the constant path $g(s)=b$: then $\mathcal V_sg=\ue^{i\varphi/\hbar}V(s)^*g$ by \eqref{eq:factor}; the proof
 of that lemma does not use (D1).)
-\item $P_k(s)a$ is a finite sum of continuous scalar functions of $s$ times fixed words applied to $a$; $\partial_sP_k(s)=\Delta(s)P_{k-1}(s)$
+
+$P_k(s)a$ is a finite sum of continuous scalar functions of $s$ times fixed words applied to $a$; $\partial_sP_k(s)=\Delta(s)P_{k-1}(s)$
 and $P_k(0)=0$ for $k\ge1$.
-\item With $J_k(t):=\int_0^tV(s)^*\Delta(s)P_k(s)a\,ds$ this gives $V(t)^*P_k(t)a=J_{k-1}(t)-cJ_k(t)$ for $k\ge1$, and $V(t)^*a-a=-cJ_0(t)$.
-\item Multiplying by $c^k$ and summing telescopes to $a-V(t)^*a^{(K)}(t)=c^{K+1}J_K(t)$. Expanding $P_K$ gives the integral over $\Sigma_{K+1}(t)$.
-\end{itemize}
+
+With $J_k(t):=\int_0^tV(s)^*\Delta(s)P_k(s)a\,ds$ this gives $V(t)^*P_k(t)a=J_{k-1}(t)-cJ_k(t)$ for $k\ge1$, and $V(t)^*a-a=-cJ_0(t)$.
+
+Multiplying by $c^k$ and summing telescopes to $a-V(t)^*a^{(K)}(t)=c^{K+1}J_K(t)$. Expanding $P_K$ gives the integral over $\Sigma_{K+1}(t)$.
 
 \medskip\noindent\textbf{(D3).}
-\begin{itemize}
-\item Take $c'\in H^2$.
-\item $\cU(s)$ commutes with $\Delta$, so $\cU(s)(e^{i\varphi/\hbar}\Delta_\varphi c')=\Delta\,\cU(s)(e^{i\varphi/\hbar}c')$.
-\item By \cite[(1.23)]{S} this reads $S(s)V(s)\Delta_\varphi c'=\Delta_\varphi S(s)V(s)c'$, i.e. $V(s)\Delta_\varphi=\Delta_\varphi(s)V(s)$ on $H^2$.
-\item Multiply by $V(s)^*$ on both sides; $V(s)^*$ preserves $H^2$. Iterate $N$ times; $b$ lies in every $H^k$.
-\end{itemize}
+
+For $c'\in H^2$, the commutation of the propagator with the Laplacian gives the following identity.
+
+$\cU(s)$ commutes with $\Delta$, so $\cU(s)(e^{i\varphi/\hbar}\Delta_\varphi c')=\Delta\,\cU(s)(e^{i\varphi/\hbar}c')$.
+
+By \cite[(1.23)]{S} this reads $S(s)V(s)\Delta_\varphi c'=\Delta_\varphi S(s)V(s)c'$, i.e. $V(s)\Delta_\varphi=\Delta_\varphi(s)V(s)$ on $H^2$.
+
+Multiplying by $V(s)^*$ on both sides is legitimate because $V(s)^*$ preserves $H^2$. Iterating $N$ times gives the assertion, since $b$ lies in every $H^k$.
 
 \medskip\noindent\textbf{(D4).}
-\begin{itemize}
-\item By definition $u^{(K)}(t)=\ue^{-it/(2\hbar)}\ue^{i\varphi/\hbar}S(t)a^{(K)}(t)$, so $u^{(K)}(t)_\Gamma=\cU(t)\mathcal V_ta^{(K)}(t)$. Since $\cU(t)$ is unitary on $L^2(M)$ and commutes with $\Delta_M$, $\norm E=\norm{\Delta_M^N(\mathcal V_0a-\mathcal V_ta^{(K)}(t))}$. (No commutation of $\cU(t)$ with periodization is used.)
-\item By Corollary~\ref{cor:surf-dyson}, $\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}(\Delta(s_1)\cdots\Delta(s_{K+1})a)\,ds$.
-\item By Lemma~\ref{lem:surf-lap} $N$ times, $\Delta_M^N\mathcal V_{s_1}g=\mathcal V_{s_1}\Delta_\varphi(s_1)^Ng$. Closedness of $\Delta_M^N$ and Minkowski's inequality give the bound, with $|c|^{K+1}=(\hbar/2)^{K+1}$.
-\end{itemize}
+
+By definition $u^{(K)}(t)=\ue^{-it/(2\hbar)}\ue^{i\varphi/\hbar}S(t)a^{(K)}(t)$, so $u^{(K)}(t)_\Gamma=\cU(t)\mathcal V_ta^{(K)}(t)$. Since $\cU(t)$ is unitary on $L^2(M)$ and commutes with $\Delta_M$, $\norm E=\norm{\Delta_M^N(\mathcal V_0a-\mathcal V_ta^{(K)}(t))}$. (No commutation of $\cU(t)$ with periodization is used.)
+
+By Corollary~\ref{cor:surf-dyson}, $\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}(\Delta(s_1)\cdots\Delta(s_{K+1})a)\,ds$.
+
+By Lemma~\ref{lem:surf-lap} $N$ times, $\Delta_M^N\mathcal V_{s_1}g=\mathcal V_{s_1}\Delta_\varphi(s_1)^Ng$. Closedness of $\Delta_M^N$ and Minkowski's inequality give the bound, with $|c|^{K+1}=(\hbar/2)^{K+1}$.
 (D1) and (D3) are identities on $\Hb$; on $M$ the proof of (D4) uses their surface versions in Section~\ref{subsec:dd-surf}. \qedhere
 \end{proof}
 
@@ -156,28 +234,27 @@ For $\tau_0<\pi/2$ there is $C_1=C_1(\tau_0)$ such that for $Z\in\{X,Y\}$ and $0
 
 \begin{proof}
 \medskip\noindent\textbf{Reduction.}
-\begin{itemize}
-\item Fourier-transform in $x$. On the mode $\ue^{ikx}$, $k\ne0$, put $z=|k|y$ and write the function of $y$ as $z^{1/2}f(z)$, $f\in L^2(dz/z)$.
-\item Then $-\Delta-\tfrac14=-(z\partial_z)^2+z^2$, and
-  \begin{itemize}
-  \item $X=i\,\operatorname{sgn}(k)\,z$ (multiplication);
-  \item $Y=z\partial_z+\tfrac12$.
-  \end{itemize}
-  So $Y_0:=Y-\tfrac12=z\partial_z=:D_z$, which is skew-adjoint on $L^2(dz/z)$.
-\item In the unitary Kontorovich--Lebedev picture
+
+We first Fourier-transform in $x$. On the mode $\ue^{ikx}$, $k\ne0$, put $z=|k|y$ and write the function of $y$
+as $z^{1/2}f(z)$, with $f\in L^2(dz/z)$. Then $-\Delta-\tfrac14=-(z\partial_z)^2+z^2$,
+$X=i\,\operatorname{sgn}(k)\,z$ is multiplication, and $Y=z\partial_z+\tfrac12$.
+Thus $Y_0:=Y-\tfrac12=z\partial_z=:D_z$ is skew-adjoint on $L^2(dz/z)$.
+
+In the unitary Kontorovich--Lebedev picture
 \[G=w(\nu)^{1/2}F,\qquad F(\nu)=\int_0^\infty K_{i\nu}(z)f(z)\,dz/z,\qquad w(\nu)=\tfrac{2}{\pi^2}\nu\sinh\pi\nu\]
 (\cite{Y}), $\Lambda$ acts as multiplication by $\Lambda(\nu)=(\nu^2+\tfrac14)^{1/2}$.
-\item The operators are the same for every $k$, so bounds are uniform in $k$. On the $k=0$ mode, $X=0$, while $Y_0$ and $\Lambda$ commute: in $r=\log y$, $Y_0=\partial_r$ and $\Lambda=(-\partial_r^2+\tfrac14)^{1/2}$. So
+
+The operators are the same for every $k$, so bounds are uniform in $k$. On the $k=0$ mode, $X=0$, while $Y_0$ and $\Lambda$ commute: in $r=\log y$, $Y_0=\partial_r$ and $\Lambda=(-\partial_r^2+\tfrac14)^{1/2}$. So
 \[\norm{\ue^{\alpha''\Lambda}Y_0\ue^{-\alpha'\Lambda}}\le\norm{\Lambda\ue^{-(\alpha'-\alpha'')\Lambda}}\]
-there. ($k=0$ has measure zero in any case.)
-\item Put $\gamma:=\alpha'-\alpha''$ and write
+there. The mode $k=0$ has measure zero in the direct integral.
+
+Put $\gamma:=\alpha'-\alpha''$ and write
 \[
 \ue^{\alpha''\Lambda}Z\ue^{-\alpha'\Lambda}=\bigl(\ue^{\alpha''\Lambda}Z\ue^{-\alpha''\Lambda}\Lambda^{-1}\bigr)\bigl(\Lambda\ue^{-\gamma\Lambda}\bigr).
 \]
 The second factor has norm $\le\sup_{\lambda\ge1/2}\lambda\ue^{-\gamma\lambda}\le1/(e\gamma)$. It remains to bound the first factor uniformly for $\alpha''\le\tau_0$, and $Y=Y_0+\tfrac12$ adds at most $\tfrac12$.
-\end{itemize}
 
-\medskip\noindent\textbf{Notation.} Put $p:=\pi(\nu+\nu')/2$, $q:=\pi(\nu-\nu')/2$, $x:=\nu-\nu'$. Since $\sinh\pi\nu\,\sinh\pi\nu'=\sinh(p+q)\sinh(p-q)$,
+\medskip\noindent\textbf{Spectral notation.} Put $p:=\pi(\nu+\nu')/2$, $q:=\pi(\nu-\nu')/2$, $x:=\nu-\nu'$. Since $\sinh\pi\nu\,\sinh\pi\nu'=\sinh(p+q)\sinh(p-q)$,
 \[
 (w(\nu)w(\nu'))^{1/2}=\tfrac{2}{\pi^2}(\nu\nu')^{1/2}(\sinh^2p-\sinh^2q)^{1/2}=\tfrac{2}{\pi^2}(\nu\nu')^{1/2}(\cosh^2p-\cosh^2q)^{1/2}.
 \]
@@ -186,33 +263,45 @@ The second factor has norm $\le\sup_{\lambda\ge1/2}\lambda\ue^{-\gamma\lambda}\l
 \[
 M_s(a,b):=\int_0^\infty z^{s-1}K_a(z)K_b(z)\,dz=2^{s-3}\,\frac{\Gamma\bigl(\tfrac{s+a+b}{2}\bigr)\Gamma\bigl(\tfrac{s+a-b}{2}\bigr)\Gamma\bigl(\tfrac{s-a+b}{2}\bigr)\Gamma\bigl(\tfrac{s-a-b}{2}\bigr)}{\Gamma(s)}.
 \]
-\emph{Proof.} We give the computation; it is written for $s=2$, and the general case is identical:
-\begin{itemize}
-\item write $K_a$ and $K_b=K_{-b}$ (\cite[10.27.3]{DLMF}, $K_{-b}=K_b$), and use the integral representation \cite[10.32.10]{DLMF} for $K_a$ and $K_b$;
-\item integrate in $z$: $\int z^{m-1}\ue^{-z^2c/4}\,dz=\tfrac12(4/c)^{m/2}\Gamma(m/2)$, with $m=s+a-b$ and $c=1/u+1/v$;
-\item substitute $u=rt$, $v=r(1-t)$: the $r$-integral gives $\Gamma(\tfrac{s-a+b}{2})$, and the $t$-integral gives the beta function $\Gamma(\tfrac{s-a-b}{2})\Gamma(\tfrac{s+a+b}{2})/\Gamma(s)$.
-\end{itemize}
+\emph{Proof of the formula.} Write $K_b=K_{-b}$ (\cite[10.27.3]{DLMF}) and use the integral representation
+\cite[10.32.10]{DLMF} for both Bessel factors. The integration in $z$ is
+\[
+\int z^{m-1}\ue^{-z^2c/4}\,dz=\tfrac12(4/c)^{m/2}\Gamma(m/2),
+\qquad m=s+a-b,\quad c=1/u+1/v.
+\]
+Substitute $u=rt$ and $v=r(1-t)$ in the remaining double integral. The $r$-integral gives
+$\Gamma(\tfrac{s-a+b}{2})$, and the $t$-integral gives the beta function
+$\Gamma(\tfrac{s-a-b}{2})\Gamma(\tfrac{s+a+b}{2})/\Gamma(s)$, yielding the formula above.
 The absolute integrand is the same expression with $a,b$ replaced by $\operatorname{Re}a,\operatorname{Re}b$ (since $|(z/2)^a|=(z/2)^{\operatorname{Re}a}$). For $\operatorname{Re}s>|\operatorname{Re}a|+|\operatorname{Re}b|$ the same computation then gives a finite value with all Gamma arguments of positive real part, so Tonelli justifies every exchange. This covers $a=i\nu$, $b=i\nu'$ at $s=1$, and $b=i\nu'\pm1$ at $s=1+\eta$, $\eta>0$. \qed
 
 \medskip\noindent\textbf{(X) Kernel of $z$.}
-\begin{itemize}
-\item Since the measure is $dz/z$, the kernel of multiplication by $z$ is $(w w')^{1/2}M_1(i\nu,i\nu')$.
-\item With $|\Gamma(\tfrac12+iy)|^2=\pi/\cosh\pi y$:
+
+Since the measure is $dz/z$, the kernel of multiplication by $z$ is $(w w')^{1/2}M_1(i\nu,i\nu')$.
+
+The identity $|\Gamma(\tfrac12+iy)|^2=\pi/\cosh\pi y$ gives
 \[
 Zt_1(\nu,\nu')=(ww')^{1/2}\frac{\pi^2}{4\cosh p\cosh q}=\frac{(\nu\nu')^{1/2}(\cosh^2p-\cosh^2q)^{1/2}}{2\cosh p\cosh q},
 \]
 so $|Zt_1|\le(\nu\nu')^{1/2}/(2\cosh q)$.
-\item The kernel of $\ue^{\alpha''\Lambda}z\ue^{-\alpha''\Lambda}\Lambda^{-1}$ is bounded by $\ue^{\alpha''|x|}(\nu\nu')^{1/2}/(2\cosh(\pi x/2)\Lambda(\nu'))$.
-\item Since $(\nu\nu')^{1/2}\le(\nu+\nu')/2\le\nu'+|x|/2$ and $\Lambda(\nu')\ge\max(\nu',1/2)$, we have $(\nu\nu')^{1/2}/\Lambda(\nu')\le1+|x|$.
-\item So the kernel is at most $g(x):=(1+|x|)\ue^{\tau_0|x|}/(2\cosh(\pi x/2))$, which is integrable for $\tau_0<\pi/2$. The Schur test gives the bound $\int g$.
-\end{itemize}
+
+The kernel of $\ue^{\alpha''\Lambda}z\ue^{-\alpha''\Lambda}\Lambda^{-1}$ is bounded by $\ue^{\alpha''|x|}(\nu\nu')^{1/2}/(2\cosh(\pi x/2)\Lambda(\nu'))$.
+
+Since $(\nu\nu')^{1/2}\le(\nu+\nu')/2\le\nu'+|x|/2$ and $\Lambda(\nu')\ge\max(\nu',1/2)$, we have
+\[
+(\nu\nu')^{1/2}/\Lambda(\nu')\le1+|x|.
+\]
+
+So the kernel is at most $g(x):=(1+|x|)\ue^{\tau_0|x|}/(2\cosh(\pi x/2))$, which is integrable for $\tau_0<\pi/2$. The Schur test gives the bound $\int g$.
 
 \medskip\noindent\textbf{(Y) Kernel of $D_z$.} The integral $\int K_{i\nu}K'_{i\nu'}\,dz$ does not converge at $z=0$, so we regularize.
-\begin{itemize}
-\item Let $F,G\in C_c^\infty((0,\infty))$ be the KL transforms of $f,g$ (the core $\mathcal C$).
-\item On $\mathcal C$, $f(e^{-L})$ and $zg'(z)|_{z=e^{-L}}$ decay faster than any power of $L$ as $L\to\infty$: they are integrals of smooth compactly supported densities against $\ue^{\pm i\nu L}$-oscillations, plus $O(\ue^{-2L})$. This uses $K_{i\nu}=\tfrac12\pi(I_{-i\nu}-I_{i\nu})/\sin(i\nu\pi)$ (\cite[10.27.4]{DLMF}) with the series of $I_{\pm i\nu}$ (\cite[10.25.2]{DLMF}), and $1/\sin(i\nu\pi)$ is smooth on $\operatorname{supp}F\subset(0,\infty)$.
-\item Hence $\langle f,D_zg\rangle=\int_0^\infty\bar f g'\,dz=\lim_{\eta\to0^+}\int z^\eta\bar fg'\,dz$, by dominated convergence.
-\item For $\eta>0$ Fubini applies, and $K'_\nu=-(K_{\nu-1}+K_{\nu+1})/2$ (\cite[10.29.1]{DLMF}, with $\mathcal Z_\nu=\ue^{\nu\pi i}K_\nu$ in DLMF's convention, under which 10.29.1 reads $\mathcal Z_{\nu-1}+\mathcal Z_{\nu+1}=2\mathcal Z'_\nu$ and gives the minus sign for $K$) gives
+
+Let $F,G\in C_c^\infty((0,\infty))$ be the KL transforms of $f,g$ (the core $\mathcal C$).
+
+On $\mathcal C$, $f(e^{-L})$ and $zg'(z)|_{z=e^{-L}}$ decay faster than any power of $L$ as $L\to\infty$: they are integrals of smooth compactly supported densities against $\ue^{\pm i\nu L}$-oscillations, plus $O(\ue^{-2L})$. This uses $K_{i\nu}=\tfrac12\pi(I_{-i\nu}-I_{i\nu})/\sin(i\nu\pi)$ (\cite[10.27.4]{DLMF}) with the series of $I_{\pm i\nu}$ (\cite[10.25.2]{DLMF}), and $1/\sin(i\nu\pi)$ is smooth on $\operatorname{supp}F\subset(0,\infty)$.
+
+Hence $\langle f,D_zg\rangle=\int_0^\infty\bar f g'\,dz=\lim_{\eta\to0^+}\int z^\eta\bar fg'\,dz$, by dominated convergence.
+
+For $\eta>0$ Fubini applies, and $K'_\nu=-(K_{\nu-1}+K_{\nu+1})/2$ (\cite[10.29.1]{DLMF}, with $\mathcal Z_\nu=\ue^{\nu\pi i}K_\nu$ in DLMF's convention, under which 10.29.1 reads $\mathcal Z_{\nu-1}+\mathcal Z_{\nu+1}=2\mathcal Z'_\nu$ and gives the minus sign for $K$) gives
 \[
 \begin{gathered}
 \langle f,D_zg\rangle=\lim_{\eta\to0^+}\iint\bar F(\nu)G(\nu')\,w(\nu)w(\nu')\,I_\eta(\nu,\nu')\,d\nu\,d\nu',\\
@@ -220,16 +309,23 @@ I_\eta=-\tfrac12\bigl[M_{1+\eta}(i\nu,i\nu'+1)+M_{1+\eta}(i\nu,i\nu'-1)\bigr].
 \end{gathered}
 \]
 Both terms are admissible, since $\operatorname{Re}s=1+\eta>0+1$.
-\item In $M_{1+\eta}(i\nu,i\nu'+1)$ the factor $\Gamma((\eta+ix)/2)=(2/(\eta+ix))\Gamma(1+(\eta+ix)/2)$ is singular, and the other factors are smooth. In $M_{1+\eta}(i\nu,i\nu'-1)$ the singular factor is $\Gamma((\eta-ix)/2)$.
-\item So $I_\eta=\frac{2}{\eta+ix}A_\eta+\frac{2}{\eta-ix}B_\eta$, where $A_\eta,B_\eta$ are smooth in $(\nu,\nu',\eta)$ on the support.
-\item At $\eta=0$, $x=0$, using $\Gamma(1+w)\Gamma(-w)=-\pi/\sin\pi w$:
-  \begin{itemize}
-  \item $A_0=-\tfrac12\cdot\tfrac14\,\Gamma(1+ip/\pi)\Gamma(-ip/\pi)=-\tfrac18\cdot\tfrac{i\pi}{\sinh p}$;
-  \item $B_0=-\tfrac12\cdot\tfrac14\,\Gamma(ip/\pi)\Gamma(1-ip/\pi)=-\tfrac18\cdot\tfrac{-i\pi}{\sinh p}$.
-  \end{itemize}
-  So $A_0+B_0=0$ on the diagonal.
-\item Sokhotski--Plemelj: $\frac{2}{\eta\pm ix}\to\mp2i\,\mathrm{PV}\frac1x+2\pi\delta(x)$. The $\delta$-terms carry $A_0+B_0$ at $x=0$, so they cancel.
-\item For $x\neq0$ the pointwise limit is $I_0=-\pi^2/(4\sinh p\,\sinh q)$ (same Gamma reflections). Hence, on $\mathcal C\times\mathcal C$,
+
+In $M_{1+\eta}(i\nu,i\nu'+1)$ the factor $\Gamma((\eta+ix)/2)=(2/(\eta+ix))\Gamma(1+(\eta+ix)/2)$ is singular, and the other factors are smooth. In $M_{1+\eta}(i\nu,i\nu'-1)$ the singular factor is $\Gamma((\eta-ix)/2)$.
+
+So $I_\eta=\frac{2}{\eta+ix}A_\eta+\frac{2}{\eta-ix}B_\eta$, where $A_\eta,B_\eta$ are smooth in $(\nu,\nu',\eta)$ on the support.
+
+At $\eta=0$ and $x=0$, the reflection identity $\Gamma(1+w)\Gamma(-w)=-\pi/\sin\pi w$ gives
+\[
+\begin{aligned}
+A_0&=-\tfrac12\cdot\tfrac14\,\Gamma(1+ip/\pi)\Gamma(-ip/\pi)=-\tfrac18\cdot\tfrac{i\pi}{\sinh p},\\
+B_0&=-\tfrac12\cdot\tfrac14\,\Gamma(ip/\pi)\Gamma(1-ip/\pi)=-\tfrac18\cdot\tfrac{-i\pi}{\sinh p}.
+\end{aligned}
+\]
+So $A_0+B_0=0$ on the diagonal.
+
+The Sokhotski--Plemelj formula gives $\frac{2}{\eta\pm ix}\to\mp2i\,\mathrm{PV}\frac1x+2\pi\delta(x)$. The $\delta$-terms carry $A_0+B_0$ at $x=0$, so they cancel.
+
+For $x\neq0$ the pointwise limit is $I_0=-\pi^2/(4\sinh p\,\sinh q)$ (same Gamma reflections). Hence, on $\mathcal C\times\mathcal C$,
 \[
 \langle f,D_zg\rangle=\mathrm{PV}\iint\bar F G\,w\,w'\,I_0,
 \qquad\text{i.e.}\qquad
@@ -238,30 +334,43 @@ Both terms are admissible, since $\operatorname{Re}s=1+\eta>0+1$.
 \rho:=\Bigl(1-\frac{\sinh^2q}{\sinh^2p}\Bigr)^{1/2}\in[0,1].
 \end{gathered}
 \]
-\item This kernel is real and antisymmetric, as $D_z$ must be.
-\item Consistency check, not used in the proof: $(\nu^2-\nu'^2)\tilde D=-2Zt_2$, where $Zt_2=(w(\nu)w(\nu'))^{1/2}M_2(\nu,\nu')$ is the kernel of $z^2$, with $M_2$ as in Remark~\ref{rem:fc-y-alt}. This matches $[\Lambda^2,D_z]=[z^2,D_z]=-2z^2$.
-\end{itemize}
+
+This kernel is real and antisymmetric, as $D_z$ must be.
+
+As a consistency check, not used in the proof, $(\nu^2-\nu'^2)\tilde D=-2Zt_2$, where
+$Zt_2=(w(\nu)w(\nu'))^{1/2}M_2(\nu,\nu')$ is the kernel of $z^2$, with $M_2$ as in
+Remark~\ref{rem:fc-y-alt}. This agrees with $[\Lambda^2,D_z]=[z^2,D_z]=-2z^2$.
 
 \medskip\noindent\textbf{(Y) bound.} The kernel of $Q:=\ue^{\alpha''\Lambda}D_z\ue^{-\alpha''\Lambda}\Lambda^{-1}$ is $\ue^{\alpha''(\Lambda(\nu)-\Lambda(\nu'))}\tilde D(\nu,\nu')/\Lambda(\nu')$. It is valid on $\mathcal C$, because $\ue^{\pm\alpha''\Lambda}$ and $\Lambda^{-1}$ preserve $\mathcal C$. Split $Q=Q_{\rm far}+Q_{\rm near}$, with $Q_{\rm near}:=Q\cdot\mathbf 1_{|x|\le1}$.
-\begin{itemize}
-\item \textbf{$Q_{\rm far}$.} Here $|Q|\le(1+|x|)\ue^{\tau_0|x|}/(2\sinh(\pi|x|/2))$ on $|x|>1$. This is integrable, so the Schur test applies.
-\item \textbf{$Q_{\rm near}$.} Write $1/(2\sinh(\pi x/2))=1/(\pi x)+r(x)$, with $r$ bounded on $|x|\le1$.
-  \begin{itemize}
-  \item The $r$-part has a bounded kernel supported in $|x|\le1$, so the Schur test applies.
-  \item In the main part $-a(\nu,\nu')/(\pi(\nu-\nu'))$, put
+
+\textbf{$Q_{\rm far}$.} Here $|Q|\le(1+|x|)\ue^{\tau_0|x|}/(2\sinh(\pi|x|/2))$ on $|x|>1$. This is integrable, so the Schur test applies.
+
+\textbf{$Q_{\rm near}$.} Write $1/(2\sinh(\pi x/2))=1/(\pi x)+r(x)$, with $r$ bounded on $|x|\le1$.
+
+The $r$-part has a bounded kernel supported in $|x|\le1$, so the Schur test applies.
+
+In the main part $-a(\nu,\nu')/(\pi(\nu-\nu'))$, put
 \[a(\nu,\nu'):=\ue^{\alpha''(\Lambda(\nu)-\Lambda(\nu'))}(\nu\nu')^{1/2}\rho(\nu,\nu')/\Lambda(\nu')\]
 Then $a(\nu,\nu')=a(\nu',\nu')+[a(\nu,\nu')-a(\nu',\nu')]$, with $a(\nu',\nu')=\nu'/\Lambda(\nu')\in[0,1]$.
-  \item \textbf{Diagonal part.} It is the truncated Hilbert transform $\mathrm{PV}\,\frac{1}{\pi x}\mathbf 1_{|x|\le1}$ composed with multiplication by $\nu'/\Lambda(\nu')$. The truncated Hilbert transform is bounded on $L^2(\mathbb R)$, with Fourier multiplier $-\tfrac{2i}{\pi}\operatorname{Si}(|\xi|)\operatorname{sgn}\xi$ of modulus $\le(2/\pi)\operatorname{Si}(\pi)<1.2$; extend by zero from $(0,\infty)$. Bounded.
-  \item \textbf{Off-diagonal remainder,} for $|x|\le1$. Write $s(\nu):=(\nu\nu')^{1/2}/\Lambda(\nu')$ and $E:=\ue^{\alpha''(\Lambda(\nu)-\Lambda(\nu'))}$. Then $a(\nu,\nu')-a(\nu',\nu')=(E-1)s\rho+(\rho-1)s+(s(\nu)-s(\nu'))$, and:
-    \begin{itemize}
-    \item $|E-1|\le\tau_0\ue^{\tau_0}|x|$ and $s\rho\le s\le1+|x|\le2$;
-    \item $1-\rho\le\sinh^2q/\sinh^2p\le|q|/p=|x|/(\nu+\nu')$, using $\sinh|q|/\sinh p\le|q|/p$ for $|q|\le p$. So $(1-\rho)s\le|x|(\nu\nu')^{1/2}/((\nu+\nu')\Lambda(\nu'))\le|x|$;
-    \item $|s(\nu)-s(\nu')|=|\sqrt\nu-\sqrt{\nu'}|\sqrt{\nu'}/\Lambda(\nu')\le|x|^{1/2}$, since $\sqrt{\nu'}/\Lambda(\nu')\le1$.
-    \end{itemize}
-    So the remainder kernel is $\le C|x|^{-1/2}$ on $|x|\le1$, which is integrable: Schur.
-  \end{itemize}
-\end{itemize}
-Hence $\norm{Q}\le C(\tau_0)$ on $\mathcal C$, so $Q$ extends to a bounded operator. The bound for $\ue^{\alpha''\Lambda}D_z\ue^{-\alpha'\Lambda}$ follows on the dense set $\Lambda\ue^{-\gamma\Lambda}\mathcal C$, and then by closure. \qed
+
+The diagonal part is the truncated Hilbert transform $\mathrm{PV}\,\frac{1}{\pi x}\mathbf 1_{|x|\le1}$
+composed with multiplication by $\nu'/\Lambda(\nu')$. This transform is bounded on $L^2(\mathbb R)$:
+its Fourier multiplier $-\tfrac{2i}{\pi}\operatorname{Si}(|\xi|)\operatorname{sgn}\xi$ has modulus
+at most $(2/\pi)\operatorname{Si}(\pi)<1.2$. Extending functions by zero from $(0,\infty)$ therefore gives the required bound.
+
+For the off-diagonal remainder, write $s(\nu):=(\nu\nu')^{1/2}/\Lambda(\nu')$ and
+$E:=\ue^{\alpha''(\Lambda(\nu)-\Lambda(\nu'))}$. Then
+\[
+a(\nu,\nu')-a(\nu',\nu')=(E-1)s\rho+(\rho-1)s+(s(\nu)-s(\nu')).
+\]
+For $|x|\le1$, the first term is controlled by $|E-1|\le\tau_0\ue^{\tau_0}|x|$ and
+$s\rho\le s\le1+|x|\le2$. For the second, $\sinh|q|/\sinh p\le|q|/p$ when $|q|\le p$ gives
+$1-\rho\le\sinh^2q/\sinh^2p\le|q|/p=|x|/(\nu+\nu')$, and hence
+$(1-\rho)s\le|x|(\nu\nu')^{1/2}/((\nu+\nu')\Lambda(\nu'))\le|x|$.
+Finally, $|s(\nu)-s(\nu')|=|\sqrt\nu-\sqrt{\nu'}|\sqrt{\nu'}/\Lambda(\nu')\le|x|^{1/2}$,
+since $\sqrt{\nu'}/\Lambda(\nu')\le1$.
+So the remainder kernel is $\le C|x|^{-1/2}$ on $|x|\le1$, which is integrable. The Schur test therefore bounds the remainder.
+Combining the near and far bounds gives $\norm{Q}\le C(\tau_0)$ on $\mathcal C$, so $Q$ extends to a bounded operator. The bound for $\ue^{\alpha''\Lambda}D_z\ue^{-\alpha'\Lambda}$ follows on the dense set $\Lambda\ue^{-\gamma\Lambda}\mathcal C$, and then by closure. \qed
 \end{proof}
 
 \begin{remark}[Proof of (Y) without a principal value]\label{rem:fc-y-alt}
@@ -478,9 +587,9 @@ The hypothesis $g\,x_0=x_0$ is used in (iii): the Poincar\'e sum of $\Gamma$ is 
 has parabolic elements, so the base point of the weight must be the point at which the sum is taken.
 \end{remark}
 
-\subsection{Theorem 1.4R with the weight \texorpdfstring{$X_0^\beta$}{X0}}\label{subsec:dd-thm}
+\subsection{Approximation with the power weight \texorpdfstring{$X_0^\beta$}{X0}}\label{subsec:dd-thm}
 
-\begin{theorem}[Theorem 1.4R, weight $X_0^\beta$]\label{thm:dd-appx}
+\begin{theorem}[approximation with the power weight $X_0^\beta$]\label{thm:dd-appx}
 Let $\Gamma$ be any Fuchsian group, $\beta>1/2$ and $\kappa>0$, and $\alpha_0\in(0,\min(1,\pi/4))$. Let $\chi$ be the cutoff of \cite[(4.20)]{S} with the standing hypotheses of Appendix~\ref{app:kl} (real, even, $0\le\chi\le1$).
 There are $C,\delta>0$, depending only on $\beta,\kappa,\alpha_0,\chi,\Gamma$, such that the following holds for all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, every $b\in\partial\Hb$, every $a$ with $\norm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$:
 \[
@@ -490,7 +599,8 @@ with $N^{2N}:=1$ at $N=0$.
 \end{theorem}
 
 \begin{remark}
-The swapped class here uses $\tilde\psi$, and $\langle d\rangle$ via Lemma~\ref{lem:m2w}. This theorem concerns the swapped class; the printed (original-order) class is treated in Section~\ref{sec:printed}. Compared with \cite[(1.30)]{S}, which has the bound $C^{N+K+1}N^{2N}K!(\alpha\hbar)^{-2N-4}(\hbar t/\alpha^2)^K\norm a$, the present bound is smaller by the factor $(\alpha\hbar)^4\cdot\hbar t/\alpha^2$ (at most $1$ on the window of \cite{S}), and the window is $t\le\delta(\alpha/\hbar)^{1/2}$. The proof below is the one that is formalized (Appendix~\ref{app:lean}).
+This is the power-weight form of the swapped-class estimate. Lemma~\ref{lem:m2w} transfers it to the norm of
+Theorem~\ref{thm:dd14}; the deduction follows the proof below. Section~\ref{sec:changes} compares the resulting bounds with \cite{S}.
 \end{remark}
 
 \begin{proof}
@@ -593,7 +703,7 @@ Corollary~\ref{cor:dd15-appx} depends on $\Gamma$ through $C$.)
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:dd14}]
-Let $c_0$ and $C'$ be the constants of Lemma~\ref{lem:m2w}, and let $\norm a$ denote the norm of Section~\ref{sec:repair}, with the weight
+Let $c_0$ and $C'$ be the constants of Lemma~\ref{lem:m2w}, and let $\norm a$ denote the norm of Section~\ref{sec:swapped}, with the weight
 $\ue^{\beta\langle d\rangle}$. If $\alpha\le\alpha_0$ and $\alpha^3\ge\kappa\hbar$, then $\bar\alpha:=c_0\alpha\le c_0\alpha_0$,
 $\bar\alpha^3\ge c_0^3\kappa\hbar$ and $\norm{\ue^{\bar\alpha\Lambda}X_0^\beta a}\le C'\norm a$. Apply Theorem~\ref{thm:dd-appx} with
 $c_0\alpha_0$, $c_0^3\kappa$ and $\bar\alpha$ in place of $\alpha_0$, $\kappa$ and $\alpha$, and let $C_{\rm int},\delta_{\rm int}$ be its constants. Its
@@ -602,9 +712,9 @@ $(\bar\alpha\hbar)^{-2N}(\hbar t/\bar\alpha^2)^{K+1}=c_0^{-2N-2K-2}(\alpha\hbar)
 $C:=C_{\rm int}\,c_0^{-2}\max(1,C')$. The dependence on $\Gamma$ is that of Theorem~\ref{thm:dd-appx}.
 \end{proof}
 
-\subsection{Corollaries of Theorem 1.4R}\label{subsec:dd-cor}
+\subsection{Optimal truncation and pointwise estimates}\label{subsec:dd-cor}
 
-\begin{corollary}[Corollary 1.5R, weight $X_0^\beta$]\label{cor:dd15-appx}
+\begin{corollary}[optimal truncation with the power weight $X_0^\beta$]\label{cor:dd15-appx}
 Under the hypotheses of Theorem~\ref{thm:dd-appx}, with $\delta\le\kappa^{1/2}/\max(1,C)$, let $C$ be its constant, put $\delta_K:=C\hbar t/\alpha^2$, and let $\varepsilon\in(0,1)$. Then for every integer $K$ with $(1-\varepsilon)/\delta_K\le K\le(1-\varepsilon/2)/\delta_K$,
 \[
 \norm{\Delta^N\bigl[\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr]}_{L^2(M)}\le C'\varepsilon^{-1/2}C^{N+1}N^{2N}(\alpha\hbar)^{-2N}\ue^{-(1-\varepsilon)\alpha^2/(C\hbar t)}\norm a,
@@ -630,7 +740,7 @@ In \cite[Corollary~1.5]{S} the window is printed as $K\in[C\alpha^2/\hbar t-\var
 the statement is empty; at $t=0$ the error is $0$.
 \end{remark}
 
-\begin{corollary}[Corollary 1.6R, weight $X_0^\beta$]\label{cor:dd16-appx}
+\begin{corollary}[pointwise approximation with the power weight $X_0^\beta$]\label{cor:dd16-appx}
 Assume, in addition, that $M$ has injectivity radius $\ge r_0>0$. Then, under the hypotheses of Theorem~\ref{thm:dd-appx}, the error
 $\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma-u^{(K)}(t)_\Gamma$ lies in $\operatorname{Dom}(\Delta_M^N)$, its image under $\Delta^N$ has a continuous
 representative, and at every point of $M$
