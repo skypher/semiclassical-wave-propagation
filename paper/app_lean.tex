@@ -9,8 +9,7 @@
 \section{Formalization}\label{app:lean}
 
 The main approximation theorems, their optimal-truncation corollaries, and the supporting statements specified below
-are formalized in Lean~4 and checked by its kernel. For these results the manuscript follows the formal proofs,
-at the level of detail of a paper. The pointwise corollaries display a sharper prefactor derived in the text;
+are formalized in Lean~4 and checked by its kernel. The pointwise corollaries display a sharper prefactor derived in the text;
 the existing formal statements retain the weaker one. This appendix distinguishes direct counterparts,
 paper deductions and variants, and results without formal proofs.
 
@@ -53,7 +52,11 @@ Table~\ref{tab:lean} separates direct counterparts, paper deductions and variant
 The file \texttt{LEAN\_STATUS.md} in the repository gives the correspondence for every labelled statement.
 
 \paragraph{Direct counterparts.}
-The supporting statements used in the approximation proofs, the approximation estimates and their optimal-truncation corollaries, and parts (i) and (ii) of Proposition~\ref{ev:mod} are stated by Lean theorems, in the reading above, with the same hypotheses and the same form of the conclusion, subject to the exceptions listed next. Where this paper names a constant without giving its value, the Lean theorem gives a value or asserts existence. Consequences introduced by ``hence'', ``consequently'' or ``in particular'' are proved in the text.
+Table~\ref{tab:lean} identifies the principal statements with direct counterparts, under the
+interpretations above. These include the approximation estimates, optimal truncation and
+the quantum conclusions of Proposition~\ref{ev:mod}. Supporting statements are listed individually
+in \texttt{LEAN\_STATUS.md}. The variants below distinguish differences in bounds, parameter ranges
+and conclusions.
 
 \paragraph{Paper deductions and variants.}
 Corollaries~\ref{pc:cor16} and~\ref{cor:dd16} display the prefactor $(\alpha\hbar)^{-2N-2}$ obtained in
@@ -61,12 +64,15 @@ Section~\ref{subsec:pc-cor} from the approximation theorem at $N$ and $N+1$ and 
 The listed Lean pointwise declarations instead state the weaker prefactor $(\alpha\hbar)^{-2N-4}$;
 no separate declaration of the sharper estimate is asserted.
 
-For Corollary~\ref{ev:transfer}, the reversed-weight result is \lean{evTransfer_main}.
-The declaration \lean{evTransfer_pc} states the original-norm result for $\alpha\le\tfrac12$. At every bounded range of original-norm radii, the manuscript's
-conclusion follows from \lean{pcmain_all} at $N=0$ and the general estimate \lean{ev_transfer_core}; no separate
-all-radius declaration for this corollary is asserted.
+Corollary~\ref{ev:transfer} follows from the approximation bound at $N=0$ and the bounded-observable
+estimate \lean{ev_transfer_core}. Its reversed-weight version is \lean{evTransfer_main}.
+For the original norm, \lean{evTransfer_pc} covers $\alpha\le\tfrac12$; \lean{pcmain_all}
+supplies the approximation bound on every bounded radius range.
 
-The fixed-radius Corollary~\ref{thm:main} is presented here for $\beta>1/2$ and every fixed $\alpha>0$. It is deduced in the text from \lean{thm14Rmain_exp} at $K=N=0$, with a fixed radius and, for larger radii, monotonicity of the reversed-weight norm. The separately formalized \lean{thm13R_rep} has the narrower range $\beta>1$ and $\alpha\le\alpha_0<\pi/4$. Corollary~\ref{cor:escape-intro} summarizes Proposition~\ref{ev:mod}, including its unformalized classical comparison. Lemmas~\ref{ev:mellinlemma}, \ref{ev:scattering}, \ref{ev:approxmode}, \ref{ev:initialnorm} and~\ref{ev:outgoing} extract intermediate arguments from the proof of that proposition. The formal proof groups these arguments differently; no separate exact statement correspondence is asserted for these five editorial extractions.
+The fixed-radius Corollary~\ref{thm:main} is presented here for $\beta>1/2$ and every fixed $\alpha>0$. It is deduced in the text from \lean{thm14Rmain_exp} at $K=N=0$, with a fixed radius and, for larger radii, monotonicity of the reversed-weight norm. The separately formalized \lean{thm13R_rep} has the narrower range $\beta>1$ and $\alpha\le\alpha_0<\pi/4$. Corollary~\ref{cor:escape-intro} combines the quantum escape statement with the unformalized
+classical comparison. The Mellin, scattering, zero-mode, initial-norm and outgoing-mass lemmas of
+Section~\ref{sec:expect} are ingredients of the formal proof of Proposition~\ref{ev:mod};
+their individual statements do not have separate exact formal counterparts.
 
 \paragraph{Results without formal proofs.}
 Not formalized are: the asymptotic formula of Proposition~\ref{prop:g5}, for which the formal theorem is the negation of the printed bound (see the formalized counterexample above); the comparison of the two classes (Proposition~\ref{pc:classes}); Remark~\ref{rem:g4}; part (iii) of Proposition~\ref{ev:mod}, which is a cited theorem on the equidistribution of closed horocycles (parts (i) and (ii) are the Lean theorem \lean{evmod}, whose statement is \lean{Stmt_evmod}); the sharpness results on cusped surfaces (Section~\ref{subsec:cl}) with the kernel lemmas they use (Lemmas~\ref{os:poisson} and~\ref{os:hk}); and Lemmas~\ref{lem:gutzmer} and~\ref{lem:ex} and their localized-state consequence, Corollary~\ref{cor:localized}. These last results are not used by the approximation theorems. For the sharpness results the development contains only implications from a formal statement of Theorem~\ref{cl:main}(ii), which is itself not proved formally.

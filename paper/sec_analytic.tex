@@ -3,8 +3,10 @@ We establish the estimates used to bound the exact remainder. After defining the
 we prove Cauchy estimates for words in the vector fields and multiplication by spatial weights. These feed into analytic and
 weighted propagation for the mollified flow and the exponentially small unweighted mollifier defect.
 The principal outputs are Proposition~\ref{prop:a0} (analytic propagation with loss of radius), Proposition~\ref{prop:ws} (weighted propagation), and Lemma~\ref{lem:unw} (the unweighted defect). In the approximation proof, the first and third give an exponentially small unweighted error, while the second controls its spatially weighted norm. Interpolation then compensates for the growth caused by periodization and transport. The word estimates control the derivatives of the remainder amplitude.
-Sections~\ref{subsec:dd-fc}--\ref{app:m} develop the Cauchy and weight estimates;
-Sections~\ref{app:kl}--\ref{subsec:dd-unw} use them to control propagation and the remainder.
+The proof has three tasks. Sections~\ref{subsec:dd-fc} and~\ref{app:m} control derivatives and
+changes of spatial weight. Sections~\ref{app:kl} and~\ref{app:ws} propagate analytic regularity
+and spatial decay separately. Section~\ref{subsec:dd-wb} combines the derivative estimates for
+the remainder and supplies the small unweighted defect used in interpolation.
 
 \medskip\noindent\textbf{Notation for the analytic estimates.}
 Let $X=y\partial_x$, $Y=y\partial_y$, $\Delta=X^2+Y^2-Y$, $\Delta(s)=\ue^{-2s}X^2+Y^2-Y$,
@@ -58,7 +60,12 @@ $\norm{\Delta J_\varepsilon}\le\sup_\lambda\lambda^2j_\varepsilon(\lambda)<\inft
 $\operatorname{Dom}(\Delta)$, and $\Delta_\varepsilon(t)-\Delta_\varepsilon(t')=(\ue^{-2t}-\ue^{-2t'})J_\varepsilon X^2J_\varepsilon$.
 \end{proof}
 
-\subsection{First-order Cauchy estimates}\label{subsec:dd-fc}
+\subsection{Cauchy estimates for derivatives}\label{subsec:dd-fc}
+
+We first control a single vector field with a loss of analytic radius, iterate the estimate for words,
+and then include the power weight by the Leibniz rule.
+
+\subsubsection{First-order estimate}
 
 \begin{lemma}[first-order Cauchy estimate]\label{lem:fc}
 For $\tau_0<\pi/2$ there is $C_1=C_1(\tau_0)$ such that for $Z\in\{X,Y\}$ and $0\le\alpha''<\alpha'\le\tau_0$,
@@ -71,7 +78,7 @@ For $\tau_0<\pi/2$ there is $C_1=C_1(\tau_0)$ such that for $Z\in\{X,Y\}$ and $0
 The Kontorovich--Lebedev kernel calculation is given in Appendix~\ref{app:special}, Section~\ref{app:fc-proof}.
 \end{proof}
 
-\subsection{Cauchy estimates for words}\label{subsec:dd-wc}
+\subsubsection{Words in the vector fields}\label{subsec:dd-wc}
 
 \begin{lemma}[Cauchy estimate for words]\label{lem:wc}
 For a word $Z_1\cdots Z_m$ with $Z_i\in\{X,Y\}$, and $0\le\alpha''<\alpha\le\tau_0<\pi/2$:
@@ -85,7 +92,7 @@ Take equally spaced radii $\alpha''=r_0<r_1<\cdots<r_m=\alpha$, and insert $\ue^
 Each factor $\ue^{r_{i-1}\Lambda}Z_i\ue^{-r_i\Lambda}$ is bounded by $C_1m/(\alpha-\alpha'')$ (Lemma~\ref{lem:fc}). The identity extends from the spectral core of Appendix~\ref{app:fc-proof} by closure, since each $\ue^{r_i\Lambda}$ is closed. Finally $m^m\le e^m m!$. \qedhere
 \end{proof}
 
-\subsection{Weighted Cauchy estimates}\label{subsec:dd-sc}
+\subsubsection{Weighted words}\label{subsec:dd-sc}
 
 Let $\mathcal A:=\operatorname{span}\{y,\;x,\;(x^2+1)/y\}$.
 \begin{itemize}
@@ -493,7 +500,11 @@ $(3M+3M^3)\varepsilon^{-2}\norm{X_0^\gamma h(s)}$. (c) follows from (a) and Lemm
 $L^2(X_0^{2\gamma}d\nu)$ for $Z\in\mathcal S$, and so is $J_\varepsilon\Delta(s)J_\varepsilon$, continuously in $s$.
 \end{proof}
 
-\subsection{Derivative bounds for the remainder amplitude}\label{subsec:dd-wb}
+\subsection{Remainder bounds}\label{subsec:dd-wb}
+The remainder proof needs two estimates with different roles: factorial derivative bounds for its
+amplitude, and exponential smallness of the mollifier defect without a spatial weight.
+
+\subsubsection{Derivatives of the remainder amplitude}
 
 \begin{lemma}[derivative bounds for the remainder amplitude]\label{lem:wb}
 Assume $0<\hbar\le1$ and $0<\alpha\le\alpha_0\le\min(1,\tau_0)$. Let $J$ be a word of length $\le n$, and let $\mathfrak D^J:=Z_1\cdots Z_m$ with $Z_i\in\{X,Y\}$ and $m=|J|$ be the ordered word it determines (the empty word is the identity). Uniformly in $s\in\Sigma_{K+1}(t)$:
@@ -538,7 +549,7 @@ Part (ii) follows from the same count, using Lemma~\ref{lem:wc} (gap $\ge\alpha/
 
 \end{proof}
 
-\subsection{The mollifier defect on analytic vectors}\label{subsec:dd-unw}
+\subsubsection{The mollifier defect on analytic vectors}\label{subsec:dd-unw}
 
 \begin{lemma}[analytic mollifier defect]\label{lem:unw}
 There is a constant $C_0$ such that for $0<\varepsilon\le1$, $0<a\le1$, $s\ge0$ and $z\in\operatorname{Dom}(\ue^{a\Lambda})$,

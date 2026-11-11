@@ -106,8 +106,9 @@ All Lean names are in the namespace `Qschubert`.
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Remark 8.1 (`rem:g4`) | P |  |
-| Proposition 8.8 (`cl:relative`) | P | extracted from the relative-error remark; self-checked |
-| Theorem 8.2 (`cl:main`), Lemmas 8.4 (`cl:ssob`), 8.5 (`cl:asym`), 8.6 (`cl:kernel`), 8.7 (`cl:amp`) | P |  |
+| Proposition 8.3 (`cl:relative`) | P | extracted from the relative-error remark; self-checked |
+| Theorem 8.2 (`cl:main`), Lemmas 8.5 (`cl:ssob`), 8.6 (`cl:asym`), 8.7 (`cl:kernel`), 8.9 (`cl:amp`) | P |  |
+| Lemmas 8.8 (`cl:aux`), 8.10 (`cl:noncancel`) | P | auxiliary estimates and noncancellation separated from the amplitude proof; self-checked, not separately formalized |
 
 ## Section 9 (`sec:expect`): expectation values and escape of mass
 

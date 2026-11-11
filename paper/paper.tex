@@ -137,16 +137,18 @@ on hyperbolic surfaces}
 
 \begin{abstract}
 We study the Schr\"odinger evolution of analytic Lagrangian states attached to unstable manifolds on hyperbolic
-quotients $M=\Hb/\Gamma$, for arbitrary Fuchsian groups. Following R.~Schubert's strategy in his 2007 preprint
-\emph{Semiclassical wave propagation for large times}, withdrawn in 2011, we establish its explicit semiclassical
-approximations in $L^2(M)$ up to times $\delta(\alpha/\hbar)^{1/2}$, where $\alpha$ is the analytic radius and
-$\alpha^3\ge\kappa\hbar$. For fixed $\alpha$, these times have order $\hbar^{-1/2}$, beyond the Ehrenfest scale.
-The estimates control every power of the Laplacian and, for fixed analytic radius, yield exponentially small errors under optimal truncation.
-They apply to both orders of the analytic and spatial weights considered in the preprint. Two printed bounds require
-correction: the leading error has order $\hbar t$, attained on the hyperbolic plane, and pointwise estimates require a
-local multiplicity factor whose square-root growth is necessary on the modular surface. For states on the modular surface whose periodization along the cusp is independent of the horizontal coordinate, the approximation remains accurate while mass escapes every compact set after a sufficient time of order
-$\log(1/\hbar)\log\log(1/\hbar)$, although classical transport equidistributes.
-The main approximation results and the quantum escape estimates are formalized in Lean~4, with scope specified in Appendix~\ref{app:lean}.
+quotients, for arbitrary Fuchsian groups. Following R.~Schubert's strategy in his 2007 preprint
+\emph{Semiclassical wave propagation for large times}, withdrawn in 2011, we establish explicit $L^2$
+approximations up to times of order $\hbar^{-1/2}$ for fixed analytic radius, beyond the Ehrenfest scale.
+The estimates control all powers of the Laplacian and yield exponentially small errors under optimal truncation.
+We treat both the original amplitude norm and the reversed order of its analytic and spatial weights;
+the latter also covers Schubert's localized states. Two printed bounds require correction: the leading error
+has order $\hbar t$, attained on the hyperbolic plane, and pointwise estimates require a local multiplicity
+factor whose square-root growth is necessary on the modular surface.
+For a family with only the zero Fourier mode along the cusp, mass escapes every compact set after a
+sufficient time of order $\log(1/\hbar)\log\log(1/\hbar)$ while the approximation remains accurate
+and classical transport equidistributes. The main approximation theorems and the quantum escape estimates
+are formalized in Lean~4; the cusp sharpness and classical comparison are proved in the manuscript.
 
 \vskip5pt
 \noindent\textbf{Keywords.}\enspace Semiclassical analysis; time-dependent
@@ -251,29 +253,42 @@ We use the following amplitude-norm notation throughout:
 \pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}_{L^2(\Hb)}.
 \]
 The subscripts $\mathrm P$, $\mathrm S$ and $\mathrm W$ distinguish the following classes; parameters are those of the statement in which the norm occurs.
+The \emph{Poisson-smoothed data class} imposes spatial decay before smoothing; the
+\emph{reversed-weight class} imposes it on the amplitude itself. The power-weight class supplies the
+model proof. The following map records the constructions, theorem ranges and applications.
+In each row $\beta>\tfrac12$; the approximation window is
+$t\le\delta(\alpha/\hbar)^{1/2}$ with $\alpha^3\ge\kappa\hbar$.
 \begin{center}
 \small
-\begin{tabular}{@{}lll@{}}
+\begin{tabular}{@{}p{0.17\linewidth}p{0.43\linewidth}p{0.33\linewidth}@{}}
 \hline
-Norm & Spatial decay & Approximation estimate\\
+Class & Construction and radius range & Result and use\\
 \hline
-$\|a\|_{\mathrm P}$ & Before Poisson smoothing & Theorem~\ref{pc:main}\\
-$\|a\|_{\mathrm S}$ & On the amplitude & Theorem~\ref{thm:dd14}\\
-$\|a\|_{\mathrm W}$ & On the amplitude, power weight & Theorem~\ref{thm:dd-appx}\\
+Original, $\mathrm P$ &
+$a=\ue^{-\alpha\Lambda}f$, $\ue^{\beta\langle d\rangle}f\in L^2$;
+$0<\alpha\le A$ for every fixed $A$ &
+Theorem~\ref{pc:main}; the modular escape family in Corollary~\ref{cor:escape-intro}\\[4pt]
+Reversed, $\mathrm S$ &
+$a=\ue^{-\beta\langle d\rangle}F$, $F\in\operatorname{Dom}(\ue^{\alpha\Lambda})$;
+$0<\alpha\le\alpha_0<\pi/4$ &
+Theorem~\ref{thm:dd14}; the localized states in Corollary~\ref{cor:localized}\\[4pt]
+Power, $\mathrm W$ &
+$a=X_0^{-\beta}F$, $F\in\operatorname{Dom}(\ue^{\alpha\Lambda})$;
+$0<\alpha\le\alpha_0<\pi/4$ &
+Theorem~\ref{thm:dd-appx}; model argument and input to the reversed-weight estimate\\
 \hline
 \end{tabular}
 \end{center}
-The \emph{Poisson-smoothed data class}, measured by $\|a\|_{\mathrm P}$, consists of
-$a=\ue^{-\alpha\Lambda}f$ with $\ue^{\beta\langle d\rangle}f\in L^2(\Hb)$. The \emph{reversed-weight class},
-measured by $\|a\|_{\mathrm S}$, instead imposes spatial decay on $a$ itself. These classes are not equivalent
-for $\beta>\tfrac12$: an amplitude of finite original norm can have infinite reversed-weight norm at every positive radius.
-For example, Poisson smoothing of nonzero nonnegative compactly supported data produces a tail that need not lie in the spatially weighted space required by the reversed-weight norm. This is why the original-norm theorem requires the critical-weight argument below. The original norms need not be monotone in the radius either (Proposition~\ref{pc:classes}, proved in
-Section~\ref{subsec:pc-weights}). Remark~\ref{rem:amplitude-examples} gives explicit constructions in both classes.
+The original and reversed-weight classes are not equivalent. Thus Theorem~\ref{pc:main}
+and its companion treat distinct amplitude hypotheses; the localized-state application uses the companion.
+Proposition~\ref{pc:classes} explains the failure of equivalence and of radius monotonicity for the original norm.
+Remark~\ref{rem:amplitude-examples} gives explicit constructions in both classes.
 An unadorned norm denotes an $L^2$ norm, or the corresponding operator norm when applied to an operator.
 Amplitudes of finite norm are taken in their unique smooth representatives (Lemma~\ref{lem:lift}); periodizations are
 absolutely convergent almost everywhere under the hypotheses used below (Section~\ref{sec:remainder}).
 
 
+\clearpage
 \subsection{Main results}\label{sec:repair}\label{subsec:pc-thm}
 Our principal theorem uses Schubert's amplitude norm exactly as defined in \cite[Def.~1.1]{S} and controls the expansion
 order $K$ and the number $N$ of Laplacians simultaneously.
@@ -302,6 +317,8 @@ Under the hypotheses of Theorem~\ref{pc:main}, with $K=N=0$,
 \end{corollary}
 
 For fixed $\alpha$, this is an error of order $\hbar t$. Proposition~\ref{prop:g5} shows that this order is attained on $\Hb$.
+The factorial control in Theorem~\ref{pc:main} also allows the expansion order to grow as $\hbar$ decreases:
+choosing $K$ of order $\alpha^2/(\hbar t)$ gives an exponentially small error. The next corollary specifies the admissible integer orders.
 
 \begin{corollary}[optimal truncation]\label{pc:cor15}
 Under the hypotheses of Theorem~\ref{pc:main}, put $\delta_K:=C\hbar t/\alpha^2$ and let $\epsilon\in(0,1)$, with $\delta\le\kappa^{1/2}/\max(1,C)$.
@@ -351,8 +368,16 @@ Section~\ref{subsec:dd-ex}.
 \end{remark}
 
 
+\medskip\noindent\emph{Localized states.}
+For Schubert's family
+$a_\hbar=\hbar^{-\eta/2}\ue^{-\hbar^{-\eta}\langle d\rangle}$, $0<\eta<2/3$,
+Corollary~\ref{cor:localized} applies the reversed-weight theorem with
+$\alpha_\hbar\asymp\hbar^{\eta/2}$ and uniformly bounded amplitude norm.
+The resulting window has order $\hbar^{\eta/4-1/2}$, and the leading error tends to zero
+throughout it. This application uses Theorem~\ref{thm:dd14}; membership of the family in the original-norm class is not required.
+
 \medskip\noindent\emph{Escape of mass despite an accurate approximation.}
-The approximation theorem also permits a comparison with classical transport on the modular surface. The following result is proved in Proposition~\ref{ev:mod}; its amplitude restriction ensures that the periodization along the cusp has only the zero Fourier mode.
+The approximation theorem also permits a comparison with classical transport on the modular surface. The following result is proved in Proposition~\ref{ev:mod}.
 
 \begin{corollary}[escape on the modular surface]\label{cor:escape-intro}
 Let $\Gamma=\mathrm{PSL}(2,\mathbb Z)$ and $M=\Gamma\backslash\Hb$. Fix $b=\infty$ and $0<\alpha\le\tfrac12$. Take $0\ne h\in C_c^\infty(\Hb)$, $h\ge0$, such that $\sum_{n\in\mathbb Z}h(x+n,y)$ is independent of $x$, and put $a=\ue^{-\alpha\Lambda}h$. Such $h$ exist, for example by averaging a nonzero nonnegative test function over one unit of horizontal translation. Set
@@ -370,13 +395,11 @@ uniformly for $C_1\log(1/\hbar)\log\log(1/\hbar)+\log Y\le t\le\delta(\alpha/\hb
 \begin{proof}
 This is Proposition~\ref{ev:mod}(i)--(iii), since every compact set is contained in some $M_Y$.
 \end{proof}
-The lower endpoint is a sufficient escape time; no onset time is asserted. Section~\ref{subsec:context} explains the relation to Brooks's result for the wave group.
+The lower endpoint is a sufficient escape time; no onset time is asserted.
 
 \medskip\noindent\emph{Companion results and sharpness.}
 Theorem~\ref{thm:dd14} and Corollaries~\ref{thm:main}, \ref{cor:dd15} and~\ref{cor:dd16}
 give the reversed-weight approximation estimates in Sections~\ref{sec:swapped} and~\ref{subsec:pc-cor}, using the analytic estimates of Section~\ref{sec:analytic}.
-Schubert's example $\hbar^{-\eta/2}\ue^{-\hbar^{-\eta}\langle d\rangle}$ belongs to this class for $0<\eta<2/3$
-(Corollary~\ref{cor:localized}).
 Section~\ref{sec:g5} establishes the sharpness of the leading error and computes the mean of the approximation:
 on a quotient of finite area, a nonzero initial mean gives a lower bound on the error of every fixed-order approximation at large times
 (Proposition~\ref{prop:mean}). Section~\ref{sec:cusp} establishes the sharpness of the cusp factor. Section~\ref{sec:expect} distinguishes approximation accuracy from classical transport of expectation values.
@@ -654,29 +677,26 @@ is lost there is the explicit operator $\Delta(t)=\ue^{-2t}X^2+Y^2-Y$, on which 
 
 \section*{AI-use disclosure}
 
-AI systems were used to develop arguments, write the manuscript, formalize proofs and check the work.
-Anthropic's Claude Opus~5.5 (\texttt{claude-opus-5-5}), running in Claude Code, developed the analytic estimates in
-Section~\ref{sec:analytic}, the critical-weight multiplier theorem (Theorem~\ref{os:cw}), and their Lean formalizations.
-Claude Fable~5.2 (\texttt{claude-fable-5-2}) developed the transfer proof of Theorem~\ref{pc:main}, the extension to arbitrary
-radii (Section~\ref{subsec:pc-all}), the mean formula (Proposition~\ref{prop:mean}), and Section~\ref{sec:expect}; it wrote the
-corresponding formalizations and revised the manuscript to follow the formal proofs. Claude Haiku~5.5
-(\texttt{claude-haiku-5-5}) checked citations, transcriptions and numerical consistency; Fable checked and applied its corrections.
+AI systems developed arguments, wrote the manuscript, formalized proofs and checked the work.
+Anthropic's Claude Opus~5.5 (\texttt{claude-opus-5-5}) developed the analytic and critical-weight
+estimates and their Lean formalizations. Claude Fable~5.2 (\texttt{claude-fable-5-2}) developed
+the original-norm transfer and radius extension, the mean and escape arguments, and their
+formalizations; it completed the cusp and example-amplitude proofs.
+OpenAI GPT-6.1 Sol (\texttt{gpt-6.1-sol}) supplied the hyperbolic-plane counterexample,
+special-function calculations and contributions to the cusp estimates.
+Claude Haiku~5.5 (\texttt{claude-haiku-5-5}) checked citations, transcriptions and numerical consistency.
+Sol, Fable, Google Gemini~4 Argon (\texttt{gemini-4-argon}) and OpenAI GPT-6~Pro
+(\texttt{gpt-6-pro}) reviewed working notes or manuscript versions.
+OpenAI Codex and ChatGPT sessions checked revisions and formal-statement correspondence;
+Codex revised the exposition and organization, separated intermediate proof statements, and
+presented the localized-state consequence and sharper pointwise prefactor.
+These AI checks do not constitute external peer review. The detailed contribution history
+is retained in the repository revisions.
 
-OpenAI GPT-6.1 Sol (\texttt{gpt-6.1-sol}) supplied the counterexample on $\Hb$ (Proposition~\ref{prop:g5}),
-the Mellin product computation in Appendix~\ref{app:special}, the Mehler comparison in Lemma~\ref{lem:gutzmer}, and contributions to
-the tail bounds and truncation in Section~\ref{subsec:cl}; Fable completed the cusp proofs and the treatment of the example amplitudes. Sol, Google Gemini~4 Argon (\texttt{gemini-4-argon}),
-OpenAI GPT-6~Pro (\texttt{gpt-6-pro}), and Claude Fable~5.2 performed AI reviews of working notes or manuscript versions.
-OpenAI Codex and ChatGPT sessions checked revisions and compared manuscript statements with their formal counterparts;
-Codex reviewed the presentation and bibliography, organized the approximation proofs around their amplitude classes, extracted the intermediate lemmas in Section~\ref{sec:expect}, and revised the introduction and the presentation of sharpness, applications and outlook.
-It also extracted Corollary~\ref{cor:localized} from the localized-state argument, brought the sharper pointwise prefactor
-into Corollary~\ref{pc:cor16}, and clarified the proof dependencies and formalization correspondence.
-These were AI checks and do not constitute external peer review. The detailed contribution history is retained in the
-repository revisions.
-
-The main approximation results and the supporting results specified in Appendix~\ref{app:lean} have been formalized in Lean~4;
-that appendix states the precise scope and the exclusions. Numerical computations served only as consistency checks, never as
-proof inputs. The author directed the research, selected and checked the final arguments, and takes responsibility for all
-mathematical claims, citations, computations and wording.
+Appendix~\ref{app:lean} specifies the scope and exclusions of the Lean~4 formalization.
+Numerical computations served only as consistency checks, never as proof inputs.
+The author directed the research, selected and checked the final arguments, and takes
+responsibility for all mathematical claims, citations, computations and wording.
 
 \appendix
 \makeatletter
