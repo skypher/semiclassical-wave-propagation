@@ -21,7 +21,7 @@ All Lean names are in the namespace `Qschubert`.
 | Theorem 1.1 (`pc:main`) | L | `pcmain_all`; small-radius stage: `pcmain_half` |
 | Corollary 1.2 (`pc:thm13`) | L | `pcthm13_all` |
 | Corollary 1.3 (`pc:cor15`) | L | `pccor15_all` |
-| Corollary 1.4 (`pc:cor16`) | L | `pccor16_all`, `pccor16bg_all` (bounded-geometry specialization) |
+| Corollary 1.4 (`pc:cor16`) | L′ | `pccor16_all`, `pccor16bg_all` state the weaker prefactor exponent -2N-4; the paper derives -2N-2 from the approximation bound and local Sobolev inequality |
 | Remark 1.5 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
 | Corollary 1.6 (`cor:escape-intro`) | L′ | quantum conclusions from `evmod`; the classical comparison is cited and not formalized |
 
@@ -90,8 +90,9 @@ All Lean names are in the namespace `Qschubert`.
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Corollary 6.2 (`cor:dd15`) | L | `cor15Rmain_rep`, `cor15R_rep` (two companion norms) |
-| Corollary 6.3 (`cor:dd16`) | L | `cor16Rmain_rep`, `cor16R_rep` (two companion norms) |
+| Corollary 6.3 (`cor:dd16`) | L′ | `cor16Rmain_rep`, `cor16R_rep` state the weaker prefactor exponent -2N-4; the paper derives -2N-2 for both companion norms |
 | Lemma 6.4 (`lem:ex`) | P | not used by the theorems |
+| Corollary 6.5 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.4 (`lem:ex`) and Theorem 4.3 (`thm:dd14`); self-checked, not separately formalized |
 
 ## Section 7 (`sec:g5`): sharpness and limitations
 

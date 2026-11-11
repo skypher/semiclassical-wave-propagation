@@ -324,7 +324,7 @@ It is bounded on quotients of positive injectivity radius and grows like the hei
 Under the hypotheses of Theorem~\ref{pc:main}, for every $z\in M$,
 \begin{multline*}
   \big|\Delta^N\big[\cU(t)\big(a\,\ue^{i\varphi_b/\hbar}\big)_\Gamma-u^{(K)}(t)_\Gamma\big](z)\big|\\
-  \le C\,m(z)^{1/2}\,C^{N+K+1}(2N)!\,K!\,(\alpha\hbar)^{-2N-4}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\pcNorm{a}.
+  \le C\,m(z)^{1/2}\,C^{N+K+1}(2N)!\,K!\,(\alpha\hbar)^{-2N-2}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\pcNorm{a}.
 \end{multline*}
 The error lies in $\operatorname{Dom}(\Delta_M^N)$, and the left side is the value of the continuous representative.
 If the injectivity radius of $M$ is at least $r_0>0$, the factor $m(z)^{1/2}$ may be replaced by $1$, with a constant
@@ -332,7 +332,7 @@ depending also on $r_0$.
 \end{corollary}
 
 The exponent $1/2$ of $m(z)$ is necessary on the modular surface for a phase attached to the cusp
-(Theorem~\ref{cl:main}). The proof in Section~\ref{subsec:pc-cor} gives the sharper prefactor $(\alpha\hbar)^{-2N-2}$; the displayed weaker prefactor is retained for comparison with Schubert's bound in Appendix~\ref{sec:changes}.
+(Theorem~\ref{cl:main}). Appendix~\ref{sec:changes} compares this estimate with Schubert's pointwise bound.
 
 \begin{remark}[constructing amplitudes]\label{rem:amplitude-examples}
 For $f\in L^2(\Hb)$ with
@@ -376,7 +376,7 @@ The lower endpoint is a sufficient escape time; no onset time is asserted. Secti
 Theorem~\ref{thm:dd14} and Corollaries~\ref{thm:main}, \ref{cor:dd15} and~\ref{cor:dd16}
 give the reversed-weight approximation estimates in Sections~\ref{sec:swapped} and~\ref{subsec:pc-cor}, using the analytic estimates of Section~\ref{sec:analytic}.
 Schubert's example $\hbar^{-\eta/2}\ue^{-\hbar^{-\eta}\langle d\rangle}$ belongs to this class for $0<\eta<2/3$
-(Lemma~\ref{lem:ex} and the remark following it).
+(Corollary~\ref{cor:localized}).
 Section~\ref{sec:g5} establishes the sharpness of the leading error and computes the mean of the approximation:
 on a quotient of finite area, a nonzero initial mean gives a lower bound on the error of every fixed-order approximation at large times
 (Proposition~\ref{prop:mean}). Section~\ref{sec:cusp} establishes the sharpness of the cusp factor. Section~\ref{sec:expect} distinguishes approximation accuracy from classical transport of expectation values.
@@ -472,13 +472,21 @@ multiplier theorem proved using finite propagation speed (Theorem~\ref{os:cw}); 
 by Proposition~\ref{os:p1}. These estimates yield Theorem~\ref{pc:main}.
 
 \subsection{Organization}
-Section~\ref{sec:remainder} establishes periodization and the exact quotient remainder.
-Section~\ref{sec:analytic} develops the common analytic and weighted propagation estimates, which Section~\ref{sec:companion} uses to prove the power-weight and reversed-weight approximation theorems.
-Section~\ref{sec:printed} explains the distinction between the amplitude classes, develops the additional critical-weight estimates, and proves the original-norm theorem on every bounded range of analytic radii.
-Section~\ref{sec:consequences} derives truncation and pointwise consequences and treats the localized examples.
-Section~\ref{sec:g5} gives leading-error sharpness and a limitation from the mean; Section~\ref{sec:cusp} proves sharpness of the cusp factor.
-Section~\ref{sec:expect} treats expectation values and escape of mass, and Section~\ref{sec:outlook} states the resulting open questions.
-Appendix~\ref{app:special} contains the auxiliary special-function and kernel calculations; Appendix~\ref{app:lean} documents the formalization, and Appendix~\ref{sec:changes} gives the detailed comparison with Schubert's preprint.
+The paper has three blocks. Sections~\ref{sec:remainder}--\ref{sec:consequences} prove the approximation results.
+The quotient remainder of Section~\ref{sec:remainder} and the analytic estimates of Section~\ref{sec:analytic}
+are their common inputs. Section~\ref{sec:companion} gives the model argument for the power-weight class and its
+reversed-weight consequence. Section~\ref{sec:printed} adds the critical-weight estimates needed for the original norm
+and proves Theorem~\ref{pc:main}. Section~\ref{sec:consequences} derives the corollaries and treats localized amplitudes.
+
+Sections~\ref{sec:g5}--\ref{sec:cusp} address sharpness and limitations: the leading error and the mean of the
+approximation in Section~\ref{sec:g5}, and the cusp factor in Section~\ref{sec:cusp}.
+Section~\ref{sec:expect} is the third block, applying the approximation theorem to expectation values and escape of mass.
+It does not use the sharpness arguments, so readers interested in that application may proceed directly from
+Section~\ref{sec:consequences} to Section~\ref{sec:expect}. Section~\ref{sec:outlook} collects the open questions.
+
+Appendix~\ref{app:special} supplies the auxiliary special-function and kernel calculations.
+Appendix~\ref{app:lean} documents the scope of the formalization; Appendix~\ref{sec:changes} compares the results
+with Schubert's preprint.
 
 \input{sec_remainder}
 \input{sec_analytic}
@@ -488,14 +496,17 @@ Appendix~\ref{app:special} contains the auxiliary special-function and kernel ca
 
 \section{Sharpness and limitations}\label{sec:g5}
 \subsection{The order \texorpdfstring{$\hbar t$}{ht} of the leading error is attained}
+Every amplitude of finite reversed-weight norm has all its words in $X,Y$ in $L^2(\Hb)$
+(Lemmas~\ref{lem:m2w} and~\ref{lem:sc}); the same holds for the original norm
+(Lemma~\ref{lem:lift}), using a smaller radius in these lemmas if necessary.
+Thus the following proposition applies to both classes. Nonzero examples are
+$\ue^{-\beta\langle d\rangle}\ue^{-\alpha\Lambda}g$ and
+$\ue^{-\alpha\Lambda}\ue^{-\beta\langle d\rangle}g$, respectively, with $0\ne g\in L^2(\Hb)$;
+the corresponding norm is $\norm g$.
+
 \begin{proposition}\label{prop:g5}
-Let $\Gamma=\{\mathrm{id}\}$, allowed in \cite{S} since a Fuchsian group there is any discrete subgroup.
-Let $a\ne0$ be such that every word in $X,Y$ applied to $a$ lies in $L^2(\Hb)$. This holds for every $a$ of finite reversed-weight
-norm (Lemmas~\ref{lem:m2w} and~\ref{lem:sc}) and for every $a$ of finite original norm
-(Lemma~\ref{lem:lift}, since then $a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$), in both cases with a smaller radius in the
-cited lemmas if necessary; nonzero amplitudes of the two kinds are
-$\ue^{-\beta\langle d\rangle}\ue^{-\alpha\Lambda}g$ and $\ue^{-\alpha\Lambda}\ue^{-\beta\langle d\rangle}g$ with $0\ne g\in L^2(\Hb)$, whose reversed-weight and original
-norm, respectively, is $\norm g$. Then for $t=d\,\hbar^{-1/2}$, $d>0$ fixed,
+Let $\Gamma=\{\mathrm{id}\}$ and let $a\ne0$ be such that every word in $X,Y$ applied to $a$ lies in $L^2(\Hb)$.
+Then for $t=d\,\hbar^{-1/2}$, $d>0$ fixed,
 \[
 \norm{u^{(0)}(t)-\cU(t)(a\ue^{i\varphi/\hbar})}_{L^2(\Hb)}=\tfrac d2\sqrt\hbar\,\norm{Aa}+O_{a,d}(\hbar),\qquad A=Y^2-Y,
 \]
@@ -657,6 +668,8 @@ the tail bounds and truncation in Section~\ref{subsec:cl}; Fable completed the c
 OpenAI GPT-6~Pro (\texttt{gpt-6-pro}), and Claude Fable~5.2 performed AI reviews of working notes or manuscript versions.
 OpenAI Codex and ChatGPT sessions checked revisions and compared manuscript statements with their formal counterparts;
 Codex reviewed the presentation and bibliography, organized the approximation proofs around their amplitude classes, extracted the intermediate lemmas in Section~\ref{sec:expect}, and revised the introduction and the presentation of sharpness, applications and outlook.
+It also extracted Corollary~\ref{cor:localized} from the localized-state argument, brought the sharper pointwise prefactor
+into Corollary~\ref{pc:cor16}, and clarified the proof dependencies and formalization correspondence.
 These were AI checks and do not constitute external peer review. The detailed contribution history is retained in the
 repository revisions.
 

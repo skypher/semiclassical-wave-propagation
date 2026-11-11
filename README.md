@@ -21,6 +21,10 @@ the cusp height. Schubert's files are not part of this repository.
   with the critical-weight estimates placed beside the original-norm argument. Cusp-factor sharpness has its own
   section; the modular-surface application is stated in the introduction and proved through named intermediate lemmas.
   Three appendices contain auxiliary special-function/kernel calculations, formalization documentation, and a detailed comparison with Schubert's preprint.
+  The introduction explains the dependencies between the approximation, sharpness, and escape blocks; the escape application
+  can be read without the sharpness sections. A named corollary gives the localized-state application. The pointwise
+  corollaries display the sharper prefactor derived in the paper; the formalization appendix identifies the weaker
+  prefactor in the existing Lean statements.
   Build from `paper/` with `pdflatex paper.tex`
   (run it three times).
 - `lean/`: the Lean 4 development, namespace `Qschubert` (Lean `v4.35.0`, Mathlib `v4.35.0`, `physicslib4`, and

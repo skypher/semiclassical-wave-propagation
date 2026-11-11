@@ -35,14 +35,17 @@ $C'=\ue^{1/2}$.
 
 \begin{proof}[Proof of Corollary~\ref{pc:cor16}]
 Let $E$ be the bracket in the statement. By Theorem~\ref{pc:main} at $N$ and at $N+1$, $u:=\Delta^NE$ lies in $\operatorname{Dom}(\Delta_M)$. Apply
-Lemma~\ref{pc:g43} to $u$, and use $N^{2N}\le(\ue/2)^{2N}(2N)!$, $(N+1)^{2N+2}\le54^{N+1}(2N)!$ and $\alpha\hbar\le1$. This proves the estimate for $\alpha\hbar\le1$; the completion argument in Section~\ref{subsec:pc-all} supplies the factor depending on $A$ for the remaining range.
+Lemma~\ref{pc:g43} to $u$, and use $N^{2N}\le(\ue/2)^{2N}(2N)!$ and $(N+1)^{2N+2}\le54^{N+1}(2N)!$.
+The estimates at $N$ and $N+1$ carry the factors $(\alpha\hbar)^{-2N}$ and
+$(\alpha\hbar)^{-2N-2}$, respectively. Since $\alpha\hbar\le A$, their sum is at most
+$(1+A^2)(\alpha\hbar)^{-2N-2}$; absorb $1+A^2$ into the constant.
 For the bounded-geometry specialization, the balls $B(\gamma\tilde z,r_0)$ are disjoint.
 Those with $d(\tilde z,\gamma\tilde z)<2$ lie in $B(\tilde z,2+r_0)$, so comparison of hyperbolic areas gives
 $m(z)\le C(r_0)$. This proves the bounded-geometry assertion. \qedhere
 \end{proof}
 
 \begin{remark}[pointwise bounds and cusp height]\label{pc:remcusp}
-In an embedded cusp of height $H$, deep enough, $m(z)\asymp H$, so the pointwise loss grows like $H^{1/2}$. Theorem~\ref{cl:main} shows that this exponent is necessary on the modular surface for a phase attached to the cusp. The proof above uses one Laplacian and gives the exponent $-2N-2$ of $\alpha\hbar$; we state $-2N-4$ to facilitate the comparison in Appendix~\ref{sec:changes}.
+In an embedded cusp of height $H$, deep enough, $m(z)\asymp H$, so the pointwise loss grows like $H^{1/2}$. Theorem~\ref{cl:main} shows that this exponent is necessary on the modular surface for a phase attached to the cusp.
 \end{remark}
 
 \begin{corollary}[optimal truncation for the companion norms]\label{cor:dd15}\label{cor:dd15-appx}
@@ -126,12 +129,46 @@ $\langle\rho\rangle\ge\rho-1$ and $\sinh\rho\le\ue^\rho$. So for $\mu\ge1$
 and the second inequality holds with $C_{\mathrm E}:=(\pi\ue)^{1/2}\ue^{C_H}(2\pi(2+\ue))^{1/2}$, because $\mu\alpha^2\le1$.
 \end{proof}
 
-\begin{remark}[Consequence for the example of \texorpdfstring{\cite{S}}{[S]}]
-\cite[Remark~1.7, (1.38)]{S} gives the example $a_\hbar:=\hbar^{-\delta/2}\ue^{-\hbar^{-\delta}\langle d\rangle}$, said there to lie in $H_{\alpha,\beta}$ with $\beta=1$ and $\alpha=\hbar^\delta$, and to give long times for $\delta<1/3$. In the reversed-weight $\langle d\rangle$-class, $\norm{a_\hbar}^{\rm sw}_{\alpha,\beta}=\hbar^{-\delta/2}\norm{\ue^{\alpha\Lambda}\ue^{-(\hbar^{-\delta}-\beta)\langle d\rangle}}$. Apply Lemma~\ref{lem:ex} with $\mu=\hbar^{-\delta}-\beta$ and $\alpha_\hbar:=(\hbar^{-\delta}-\beta)^{-1/2}\asymp\hbar^{\delta/2}$:
-\begin{itemize}
-\item $\norm{a_\hbar}^{\rm sw}_{\alpha_\hbar,\beta}\le C$ uniformly in $\hbar$, for every fixed $\beta$ (not only $\beta=1$);
-\item the reversed-weight $\langle d\rangle$-class transfers to the $\tilde\psi$-class by Lemma~\ref{lem:m2w}, at the radius $c_0\alpha_\hbar$ with the fixed ratio $c_0$;
-\item so Theorem~\ref{thm:dd-appx} (any $\beta>1/2$, every Fuchsian $\Gamma$) applies when $(c_0\alpha_\hbar)^3\ge\kappa\hbar$, i.e. for $0<\delta<2/3$, and for $\hbar$ small enough that $\mu=\hbar^{-\delta}-\beta\ge1$ and $\alpha_\hbar\le r_1$. The case $\delta=0$ is not covered: $\ue^{-\langle d\rangle}$ has infinite $\ue^{\beta\langle d\rangle}$-weighted $L^2$ norm for every $\beta>1/2$. The time window is $t\le\delta'(\alpha_\hbar/\hbar)^{1/2}\asymp\hbar^{\delta/4-1/2}$.
-\end{itemize}
-The radius $\alpha=\hbar^\delta$ of \cite{S} gave $\delta<1/3$ and $t\ll\hbar^{-(1-3\delta)/2}$; the holomorphic tube bound gives the larger radius $\hbar^{\delta/2}$. Thus Schubert's localized family is covered by the reversed-weight theorem (Theorem~\ref{thm:dd14}), through its power-weight version (Theorem~\ref{thm:dd-appx}), for $0<\delta<2/3$. This application does not require membership in the original-order class of Theorem~\ref{pc:main}.
+\begin{corollary}[approximation of localized states]\label{cor:localized}
+Fix a Fuchsian group $\Gamma$, a base point $x_0$, $\beta>\tfrac12$ and $0<\eta<\tfrac23$. Put
+\[
+ a_\hbar:=\hbar^{-\eta/2}\ue^{-\hbar^{-\eta}\langle d\rangle},\qquad
+ \alpha_\hbar:=(\hbar^{-\eta}-\beta)^{-1/2}.
+\]
+There are $\hbar_0,C,\delta>0$ such that, for $0<\hbar\le\hbar_0$, the reversed-weight norm of
+$a_\hbar$ at radius $\alpha_\hbar$ is at most $C$. For every $b\in\partial\Hb$, $K,N\in\mathbb N_0$ and
+$0\le t\le\delta(\alpha_\hbar/\hbar)^{1/2}$,
+\[
+ \norm{\Delta^N\big[\cU(t)(a_\hbar\ue^{i\varphi_b/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}
+ \le C^{N+K+1}N^{2N}K!\,(\alpha_\hbar\hbar)^{-2N}
+ \Big(\frac{\hbar t}{\alpha_\hbar^2}\Big)^{K+1},
+\]
+where $u^{(K)}$ is built from $a_\hbar$ and $N^{2N}=1$ at $N=0$.
+Here $\alpha_\hbar\asymp\hbar^{\eta/2}$, so the upper endpoint of the time window has order
+$\hbar^{\eta/4-1/2}$.
+\end{corollary}
+\begin{proof}
+Put $\mu=\hbar^{-\eta}-\beta$. For sufficiently small $\hbar$, $\mu\ge1$ and
+$\alpha_\hbar=\mu^{-1/2}\le r_1$ for a fixed $r_1\in(0,\tfrac12)$. Lemma~\ref{lem:ex} gives
+\[
+ \norm{\ue^{\alpha_\hbar\Lambda}\ue^{\beta\langle d\rangle}a_\hbar}
+ =\hbar^{-\eta/2}\norm{\ue^{\alpha_\hbar\Lambda}\ue^{-\mu\langle d\rangle}}
+ \le C_{\mathrm E}\hbar^{-\eta/2}\mu^{-1/2}
+ =C_{\mathrm E}(1-\beta\hbar^\eta)^{-1/2}.
+\]
+This is uniformly bounded after decreasing $\hbar_0$. Since
+$\alpha_\hbar^3/\hbar\asymp\hbar^{3\eta/2-1}\to\infty$, we may also ensure
+$\alpha_\hbar^3\ge\hbar$ and $\alpha_\hbar\le\alpha_0$ for a fixed
+$\alpha_0\in(0,\min(1,\pi/4))$. Theorem~\ref{thm:dd14} with $\kappa=1$ now gives the estimate;
+the uniform amplitude-norm bound is absorbed into $C^{N+K+1}$.
+\end{proof}
+
+\begin{remark}[comparison with Schubert's localized example]
+In \cite[Remark~1.7, (1.38)]{S}, the localization exponent is denoted by $\delta$.
+With our notation $\eta$, the radius $\alpha=\hbar^\eta$ there gives $\eta<1/3$ and
+$t\ll\hbar^{-(1-3\eta)/2}$. Lemma~\ref{lem:ex} supplies the larger radius of order
+$\hbar^{\eta/2}$ used in Corollary~\ref{cor:localized}.
+The corollary uses the reversed-weight class; it does not require membership in the original-order class.
+The case $\eta=0$ is excluded: $\ue^{-\langle d\rangle}$ has infinite
+$\ue^{\beta\langle d\rangle}$-weighted $L^2$ norm for every $\beta>1/2$.
 \end{remark}

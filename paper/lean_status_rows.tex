@@ -7,7 +7,7 @@
 Theorem~\ref{pc:main} & L & \lean{pcmain_all}; small-radius stage: \lean{pcmain_half}\\
 Corollary~\ref{pc:thm13} & L & \lean{pcthm13_all}\\
 Corollary~\ref{pc:cor15} & L & \lean{pccor15_all}\\
-Corollary~\ref{pc:cor16} & L & \lean{pccor16_all}, \lean{pccor16bg_all} (bounded-geometry specialization)\\
+Corollary~\ref{pc:cor16} & L$'$ & \lean{pccor16_all}, \lean{pccor16bg_all} state the weaker prefactor exponent -2N-4; the paper derives -2N-2 from the approximation bound and local Sobolev inequality\\
 Remark~\ref{rem:amplitude-examples} & P & elementary norm identities and an example; self-checked, not separately formalized\\
 Corollary~\ref{cor:escape-intro} & L$'$ & quantum conclusions from \lean{evmod}; the classical comparison is cited and not formalized\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:remainder}: periodization and the exact remainder}}\\
@@ -56,8 +56,9 @@ Proposition~\ref{os:p1} & L & \lean{poincare_omP}, \lean{mS_printed_sharp}, \lea
 Remark~\ref{os:indep} & L & \lean{surfV_indep}\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:consequences}: consequences and localized amplitudes}}\\
 Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_rep}, \lean{cor15R_rep} (two companion norms)\\
-Corollary~\ref{cor:dd16} & L & \lean{cor16Rmain_rep}, \lean{cor16R_rep} (two companion norms)\\
+Corollary~\ref{cor:dd16} & L$'$ & \lean{cor16Rmain_rep}, \lean{cor16R_rep} state the weaker prefactor exponent -2N-4; the paper derives -2N-2 for both companion norms\\
 Lemma~\ref{lem:ex} & P & not used by the theorems\\[2pt]
+Corollary~\ref{cor:localized} & P & extracted from the localized-state application of Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}; self-checked, not separately formalized\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:g5}: sharpness and limitations}}\\
 Proposition~\ref{prop:g5} & L$'$ & \lean{printedThm13_false}: the negation of the printed theorem; the asymptotic formula is not formalized (Appendix~\ref{app:lean})\\
 Proposition~\ref{prop:mean} & L & \lean{meanGrowth}; \lean{integral_approxSolB}, \lean{J_vecX}, \lean{J_vecY}, \lean{chP_dysT}, \lean{swapped_setup}, \lean{enorm_integral_le_perio}\\

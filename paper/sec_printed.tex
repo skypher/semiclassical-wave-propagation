@@ -35,6 +35,15 @@ $\ue^{\alpha'\Lambda}a=\ue^{-(\alpha-\alpha')\Lambda}h$. So the original norms a
 
 \input{sec_critical}
 
+\medskip\noindent\emph{Inputs to the original-norm proof.}
+Proposition~\ref{os:data} factors the amplitude as $a=\ue^{-\sigma\Lambda_m}\tilde f$ with
+$\omega\tilde f\in L^2$. Lemma~\ref{os:words} controls derivatives of these smoothed data at a power weight;
+Lemma~\ref{os:transfer} transfers those bounds, the flow bound of Proposition~\ref{prop:ws}, and the
+defect bounds of Lemmas~\ref{lem:path} and~\ref{lem:unw} to the critical weight $\omega$.
+Proposition~\ref{os:p1} then converts them into quotient estimates for the integrand of the exact remainder
+\eqref{pc:remainder}. The proof below follows this order: data, three maps, quotient Duhamel formula,
+density, and simplex integration. Section~\ref{subsec:pc-all} extends the radius range using the same estimates.
+
 \subsection{The original norm: radii at most \texorpdfstring{$1/2$}{1/2}}\label{subsec:pc-proof}
 \begin{proof}[Proof of Theorem~\ref{pc:main} for $0<\alpha\le\tfrac12$]
 We first prove the estimate with constants independent of $A$ on the range $0<\alpha\le\tfrac12$.
@@ -186,7 +195,7 @@ two $\delta$.
 
 \emph{The corollaries.} The proofs of Corollaries~\ref{pc:thm13} and~\ref{pc:cor15} use only the form of the bound; for
 Corollary~\ref{pc:cor15}, once $C$ is fixed, decrease $\delta$ so that $\delta\le\kappa^{1/2}/\max(1,C)$. The proof of
-Corollary~\ref{pc:cor16} uses $\alpha\hbar\le1$ to replace the powers $(\alpha\hbar)^{-2N}$ and $(\alpha\hbar)^{-2N-2}$ by
-$(\alpha\hbar)^{-2N-4}$. For $\alpha\le A$ one has $\alpha\hbar\le\max(1,A)$, so both powers are at most $\max(1,A)^4(\alpha\hbar)^{-2N-4}$, and
-the factor $\max(1,A)^4$ goes into the constant.
+Corollary~\ref{pc:cor16} combines the powers $(\alpha\hbar)^{-2N}$ and $(\alpha\hbar)^{-2N-2}$.
+For $\alpha\le A$ their sum is at most $(1+A^2)(\alpha\hbar)^{-2N-2}$, and
+the factor $1+A^2$ goes into the constant.
 \end{proof}
