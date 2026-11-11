@@ -151,7 +151,7 @@ approximation is not classical behaviour of expectation values: on the modular s
 cusp, the approximation remains accurate up to times of order $\hbar^{-1/2}$, while from a time of order
 $\log(1/\hbar)\log\log(1/\hbar)$ on, within this window, the mass of the state in every compact set tends to zero, contrary to the classical
 transport of its density. The proofs of the
-approximation theorems and of their corollaries, in both classes, are formalized in Lean~4; the lower bound on
+approximation theorems and of their corollaries, in both classes, and of this escape of mass, are formalized in Lean~4; the lower bound on
 the modular surface is not.
 
 \vskip5pt
@@ -195,7 +195,7 @@ classically from a time of order $\log(1/\hbar)\log\log(1/\hbar)$ on, within thi
 Schubert's: the factorization, the approximations $u^{(K)}$, the analytic norms and the mollified flow are
 taken from \cite{S}, and all credit for them belongs to him. What is new is the organization of the error
 term and the treatment of the weights (Section~\ref{subsec:method}). The proofs of Theorems~1.3R and~1.4R and of
-Theorem~\ref{pc:main}, with their corollaries, are formalized in Lean~4 (Appendix~\ref{app:lean}); Theorem~\ref{cl:main} is not.
+Theorem~\ref{pc:main}, with their corollaries, and of parts (i) and (ii) of Proposition~\ref{ev:mod} are formalized in Lean~4 (Appendix~\ref{app:lean}); Theorem~\ref{cl:main} and part (iii) of Proposition~\ref{ev:mod}, which is a cited theorem, are not.
 
 \subsection{Setting and notation}\label{sec:setup}
 We use the notation of \cite{S}. Let $\Hb=\{x+iy:y>0\}$ with the metric
@@ -566,8 +566,10 @@ was reviewed by an OpenAI Codex session before it was formalized,
 rewrote the manuscript on these proofs, wrote the introduction and
 the outlook in their present form, and developed and wrote
 Section~\ref{sec:expect}; this text and that section were reviewed by an OpenAI
-Codex session, whose corrections were applied, and the bibliographic data of the references added there
-were checked against publishers' and authors' records. They replace proofs of an earlier
+Codex session, whose corrections were applied; the same session compared the statements of
+Proposition~\ref{ev:mod}(i),(ii) and Lemma~\ref{ev:meanlem} and the steps of their proofs with the formal ones.
+The bibliography and the citations were checked against publishers' records and the cited sources by
+Claude Haiku~5.5; its corrections were verified and applied by Claude Fable~5.2. The proofs named above replace proofs of an earlier
 version that are no longer part of the paper: a weighted Sobolev
 propagation of the mollified flow and a periodization lemma, to which
 GPT-6.1 Sol had contributed, and a proof of Theorem~\ref{pc:main} by
