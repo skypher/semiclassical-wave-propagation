@@ -141,7 +141,7 @@ For fixed $\alpha$, this gives times of order $\hbar^{-1/2}$, beyond the logarit
 The estimates control every power of the Laplacian and give exponentially small errors under suitable truncation.
 They hold both for Schubert's original amplitude norm and for the reversed order of weights used in his proofs.
 The source is his preprint \emph{Semiclassical wave propagation for large times} (arXiv:0705.0134v1, 2007),
-withdrawn by its author in 2011 for a gap in the dispersive estimates. Two corrections are necessary:
+withdrawn by its author in 2011 for a gap in the dispersive estimates. The leading-order error estimate and the pointwise bounds require modification:
 the leading error is of order $\hbar t$, attained on the hyperbolic plane, and pointwise estimates on arbitrary
 quotients require a local multiplicity factor whose square-root growth in the cusp is necessary on the modular surface.
 For a family of states on the modular surface, the approximation remains accurate while mass escapes every compact
@@ -340,10 +340,12 @@ By \eqref{eq:factor} the error of $u^{(K)}$ is governed by the dispersive part $
 expansion of $V(t)$ to order $K$.
 
 \emph{An exact remainder.} We write the remainder of the Dyson expansion with the unitary propagator on the outside
-(Proposition~\ref{prop:dd-id}). The error is then $(\hbar/2)^{K+1}$ times an integral over the simplex
+(Proposition~\ref{prop:dd-id}). Put $\Delta_\varphi(s):=S(s)^*\ue^{-i\varphi/\hbar}\Delta\ue^{i\varphi/\hbar}S(s)$, the Laplacian conjugated by the phase and transport.
+The error is then bounded by $(\hbar/2)^{K+1}$ times an integral over the simplex
 $t>s_1>\dots>s_{K+1}>0$ of a periodized propagator applied to
 $b'(s)=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a$, a fixed polynomial in the vector fields $X,Y$ applied
-to the amplitude. No resummation of the series is needed, and all derivatives fall on $a$. Analyticity of $a$ in a strip of
+to the amplitude. The quotient operator and the remainder estimate are displayed at the beginning of Section~\ref{sec:printed}.
+No resummation of the series is needed, and all derivatives fall on $a$. Analyticity of $a$ in a strip of
 width $\alpha$ bounds a word of length $k$ in $X,Y$ applied to $a$ by $C^kk!\,\alpha^{-k}$ (Cauchy estimates,
 Lemmas~\ref{lem:fc}--\ref{lem:wb}), and the integration over the simplex then gives the factor
 $C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$.
@@ -394,12 +396,9 @@ time, for every constant $C$. On compact hyperbolic surfaces, Han \cite{Han26} r
 Egorov estimates for Laplace eigenfunctions at all forward logarithmic times; for backward times
 he introduced a Schr\"odinger group along the stable horocycles.
 
-For the accuracy of semiclassical approximations of a propagated state beyond the Ehrenfest
-time, \cite{S} points to numerical evidence. In the account given there, Tomsovic and Heller
-\cite{TH91,TH93} studied the accuracy of semiclassical propagation for the stadium
-billiard, found no breakdown at the Ehrenfest time, and argued that the approximation
-should remain accurate up to times of order $1/\hbar$ when the classical system has no
-singularities. The obstacle to a proof named in \cite{S} is that the approximation is a sum of
+Tomsovic and Heller \cite{TH91,TH93} studied semiclassical propagation for the stadium billiard and found
+accurate approximations well beyond the Ehrenfest time. Schubert \cite{S} cites these results as numerical motivation
+for controlling the error on longer time scales. The obstacle to a proof named in \cite{S} is that the approximation is a sum of
 oscillating terms whose number grows exponentially with time, and the error terms
 are of the same nature. The preprint \cite{S} aimed to control the error far
 beyond the Ehrenfest time on
@@ -410,12 +409,14 @@ the estimates stated in \cite{S}.
 
 The theorems control the error of the approximation; they do not describe the
 approximation itself, which is again a sum over exponentially many sheets of the
-cover. In the picture that goes back to Berry \cite{Ber77} (for propagated waves see \cite{BB79}, as cited in \cite{S}), waves
-propagated in a classically chaotic system behave at large times like random
-superpositions of plane waves. Ingremeau and Rivera \cite{IR22} proved that on compact
-manifolds of negative curvature, for a wide family of phases, a Lagrangian state evolved
-for a long time behaves like a random Gaussian field; we refer to \cite{IR22} for the
-precise statement and its time scales. For the equation $i\partial_tu=-\tfrac12\Delta u$ on compact
+cover. Berry's random-wave picture \cite{Ber77} describes high-energy wavefunctions in classically chaotic systems
+as random superpositions of plane waves. For the evolution of semiclassical states in phase space, see Berry and Balazs \cite{BB79}.
+The corresponding question for propagated Lagrangian states concerns their local statistics.
+Ingremeau and Rivera \cite{IR22} proved that on compact
+manifolds of negative curvature, for a wide family of phases, the local statistical limits of evolved Lagrangian states
+converge to Gaussian fields. Their limits are taken first as $\hbar\to0$ at fixed time and then as $t\to\infty$
+\cite[Introduction, ``Informal presentation of our results'']{IR22}; this is a different conclusion from an approximation estimate
+uniform on a growing time window. For the equation $i\partial_tu=-\tfrac12\Delta u$ on compact
 manifolds with Anosov geodesic flow, Anantharaman and Rivi\`ere \cite{AR12} proved dispersion
 and controllability results by means of semiclassical measures; a time of order one for
 that equation corresponds to a time of order $1/\hbar$ in the scaling used here. These results
@@ -528,8 +529,9 @@ gauge $a=\ue^{r/2}g$, $A$ becomes $\partial_r^2-1/4$, so $-A\ge1/4$.
 \end{proof}
 
 \begin{remark}[The formalized statement]\label{rem:g5-lean}
-In the formalization (Appendix~\ref{app:lean}) the statement of this section is the negation of the printed theorem \cite[Theorem~1.3]{S}; the formal theorem does not prove the asymptotic formula. The printed statement is formalized as: for every Fuchsian $\Gamma$ and all $\alpha>0$, $\beta>1$ there are $C,\delta,\hbar_0>0$ such that
-$\norm{u^{(0)}(t)_\Gamma-\cU(t)(a\ue^{i\varphi_b/\hbar})_\Gamma}_{L^2(M)}\le C\hbar\norm a_{\alpha,\beta}$ for all $0<\hbar\le\hbar_0$, all $0\le t\le\delta\hbar^{-1/2}$, all $b$ and all $C^\infty$ amplitudes of finite printed norm. The restrictions to $\hbar\le\hbar_0$ and to $C^\infty$ amplitudes weaken the printed claim, and the formal theorem states that this weaker claim is false. Its proof uses $\Gamma=\{\mathrm{id}\}$, $\alpha=\tfrac12$, $\beta=2$, $b=\infty$ and the amplitude $a=\ue^{-\alpha\Lambda}\ue^{-3X_0}$, $X_0=\cosh d(i,\cdot)$. It takes the Dyson identity (D4) of Proposition~\ref{prop:dd-id} at $K=0$ and $K=1$, which gives the expansion above with $R$ the second-order term, and uses that periodization over the trivial group is an isometry. The bound $\norm R\le\tfrac{\hbar^2t^2}8\sup_{r,s}\norm{\Delta(r)\Delta(s)a}$ comes from Lemma~\ref{lem:wb} at $N=0$, and $\norm{Aa}\ge\norm a/4$ from $Y^*=1-Y$ on $\operatorname{Dom}(\Delta)$: $\langle a,Aa\rangle=-\norm{Ya}^2$ and $2\operatorname{Re}\langle a,Ya\rangle=\norm a^2$.
+The Lean theorem corresponding to Proposition~\ref{prop:g5} proves the negation of the printed bound of
+\cite[Theorem~1.3]{S}; the asymptotic formula above is not formalized. Appendix~\ref{app:lean} gives the precise formal
+statement and the witnesses used in its proof.
 \end{remark}
 
 \subsection{The mean of the approximation}\label{subsec:mean}
@@ -666,7 +668,8 @@ the tail bounds and truncation in Section~\ref{subsec:cl}; Fable completed the c
 OpenAI GPT-6~Pro (\texttt{gpt-6-pro}), and Claude Fable~5.2 performed AI reviews of working notes or manuscript versions.
 Gemini also contributed to an earlier proof route that was subsequently replaced.
 OpenAI Codex and ChatGPT sessions checked revisions and compared manuscript statements with their formal counterparts;
-Codex also carried out the final presentation review and editorial reorganization.
+Codex also carried out presentation reviews and editorial revisions, including the exposition of the exact remainder,
+the distinction between the transfer constant and the truncation order, and the literature comparisons.
 These were AI checks and do not constitute external peer review. The chronological contribution record is retained in earlier
 repository revisions; the account preceding this editorial revision is at commit \texttt{a223ee5}.
 

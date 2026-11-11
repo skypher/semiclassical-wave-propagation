@@ -4,6 +4,36 @@ We prove Theorem~\ref{pc:main} and its corollaries in the order stated in Sectio
 Throughout, $\Gamma$ and the base point $x_0$ are fixed, $M=\Hb/\Gamma$, and $d=d(x_0,\cdot)$.
 The notation $\pcNorm a$ is the printed norm defined in Section~\ref{sec:repair}.
 
+\medskip\noindent\emph{The remainder to be estimated.}
+We describe the framework in the normalization $x_0=i$ and $b=\infty$; Lemma~\ref{lem:base} justifies this reduction.
+Put $\varphi=-\log y$ and
+\[
+\begin{gathered}
+  \Delta_\varphi(s):=S(s)^*\ue^{-i\varphi/\hbar}\Delta\ue^{i\varphi/\hbar}S(s)
+  =\Delta(s)-\frac{2i}{\hbar}Y-\frac1{\hbar^2}+\frac i\hbar,\\
+  \Sigma_{K+1}(t):=\{t>s_1>\cdots>s_{K+1}>0\}.
+\end{gathered}
+\]
+Let $\omega\ge1$ be a locally bounded measurable weight for which periodization maps $L^2_\omega:=\{g:\omega g\in L^2(\Hb)\}$ boundedly into $L^2(M)$,
+with absolutely convergent sums almost everywhere. Assume also that, with $\delta_s(x+iy):=x+i\ue^sy$,
+$\sup_{|s|\le T,z\in\Hb}\omega(z)/\omega(\delta_sz)<\infty$ for every $T$; in particular $S(s)$ is locally uniformly bounded on $L^2_\omega$. Define
+\[
+  \mathcal V_sg:=\ue^{-is/(2\hbar)}\cU(-s)\bigl[\ue^{i\varphi/\hbar}S(s)g\bigr]_\Gamma\in L^2(M).
+\]
+Here $\cU$ is the propagator on $M$. These are conditions (W1), (W2) of Section~\ref{subsec:dd-surf}; the critical weight below
+satisfies them by Proposition~\ref{os:p1}. The definition uses a convergent periodization before applying the quotient propagator.
+It therefore does not require periodizing $V(s)^*g$, whose spatial decay is not controlled.
+If every word in $X,Y$ applied to $a$ lies in $L^2_\omega$, the exact remainder estimate (D4) of Proposition~\ref{prop:dd-id} is
+\begin{equation}\label{pc:remainder}
+\begin{aligned}
+  &\norm{\Delta^N\bigl[\cU(t)(a\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr]}_{L^2(M)}\\
+  &\qquad\le\Bigl(\frac\hbar2\Bigr)^{K+1}\int_{\Sigma_{K+1}(t)}\norm{\mathcal V_{s_1}b'(\mathbf s)}_{L^2(M)}\,d\mathbf s,\\
+  &\qquad b'(\mathbf s):=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a .
+\end{aligned}
+\end{equation}
+The proof below bounds the integrand uniformly in $\mathbf s$ and then integrates over the simplex. The identity and the
+quotient Duhamel formula used to obtain it are proved in Section~\ref{subsec:dd-id} and Section~\ref{subsec:dd-surf}.
+
 \subsection{The critical weight}\label{subsec:pc-weights}
 Let $\pcXzero:=\cosh d$, $\psi:=\log\pcXzero\ge0$, $\pcLog:=\log(2\pcXzero)/\log2\ge1$ and $\Lambda:=\sqrt{-\Delta}$. Fix $c':=\tfrac34$ (any exponent in
 $(\tfrac12,1)$ would do) and put
@@ -66,6 +96,7 @@ with a constant $C_5\ge1$ fixed in Step~2(a).
 
 \medskip\noindent\emph{Step 2 (three maps, from the data to the vectors of the proof).} Each of the following maps is linear on $L^2(\Hb)$, and is bounded
 there and at the weight $\pcXzero$ on functions supported in one shell. Lemma~\ref{os:transfer} then bounds it at the weight $\pcw$.
+Write $C_{\mathrm{tr}}$ for its constant at $c=c'$; it is independent of $K,N,\hbar$ and the integration variables.
 
 \smallskip\noindent(a) \emph{Words.} For a word $Z_J$ of length $n$ let $T_ah:=Z_JB'_{\mathbf s}Eh$. Expand $B'_{\mathbf s}$ as in the proof of
 Lemma~\ref{lem:wb}. Each term is a coefficient times a word of length at most $L$ applied to $Eh$, and by Lemma~\ref{os:words}(b), with $\gamma=1$ and
@@ -76,14 +107,14 @@ with $(2,QC_0,\sigma)$ in place of $(B_\beta,C_3,\alpha)$, so the count in the p
 \]
 the second bound is the same argument without a weight. Lemma~\ref{os:transfer} with $M_0=M_1=F_n$ gives
 \begin{equation}\label{pc:wbw}
-  \norm{\pcw Z_JB'_{\mathbf s}Eh}\le K\,F_n\,\norm{\pcw h}.
+  \norm{\pcw Z_JB'_{\mathbf s}Eh}\le C_{\mathrm{tr}}\,F_n\,\norm{\pcw h}.
 \end{equation}
 In particular every word applied to $a=E\tilde f$ lies in $L^2_{\pcw}$.
 
 \smallskip\noindent(b) \emph{Flow.} For $s',s''\ge0$ with $\hbar|s'-s''|\le\varepsilon$, the map $V_\varepsilon(s',s'')$ has norm $1$ on $L^2$ and, by
 Proposition~\ref{prop:ws}, norm at most $\ue^{G_1/2}$ at the weight $\pcXzero$. So
 \begin{equation}\label{pc:flow}
-  \norm{\pcw V_\varepsilon(s',s'')h}\le K\ue^{G_1/2}\norm{\pcw h}.
+  \norm{\pcw V_\varepsilon(s',s'')h}\le C_{\mathrm{tr}}\ue^{G_1/2}\norm{\pcw h}.
 \end{equation}
 
 \smallskip\noindent(c) \emph{Defect.} For $0\le t'\le s_1\le t$ let
@@ -103,7 +134,7 @@ Lemma~\ref{lem:path}(b) with $\gamma=1$ and $b'=B'_{\mathbf s}Eu$ gives
 \]
 Lemma~\ref{os:transfer} requires $M_0\le M_1$; we apply it with $M_0+M_1$ in place of $M_1$. Since $M_0\le C\sigma^{-4}\ue^{-x/8}F_2$,
 \begin{equation}\label{pc:defect}
-  \norm{\pcw T_ch}\le K\bigl(M_0+M_0^{1/4}M_1^{3/4}\bigr)\norm{\pcw h}\le C\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-x/32}\,F_2\,\norm{\pcw h}.
+  \norm{\pcw T_ch}\le C_{\mathrm{tr}}\bigl(M_0+M_0^{1/4}M_1^{3/4}\bigr)\norm{\pcw h}\le C\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-x/32}\,F_2\,\norm{\pcw h}.
 \end{equation}
 
 \medskip\noindent\emph{Step 3 (Duhamel on $M$ for data of bounded support).} Let $h\in L^2$ be supported in $\{\psi\le R_0\}$ for some $R_0$, and let
