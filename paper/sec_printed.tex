@@ -1,14 +1,13 @@
 \section{Proofs of the approximation theorems}\label{sec:dd}\label{sec:printed}
 
-We first assemble Theorem~\ref{pc:main} and its corollaries from the estimates of
-Sections~\ref{sec:remainder}--\ref{app:o1st}, then give the companion results for the reversed weight order and their application to Schubert's examples.
+We first prove the approximation with the power-weight norm $\|a\|_{\mathrm W}$ and transfer it to the reversed-weight norm $\|a\|_{\mathrm S}$. We then prove Theorem~\ref{pc:main} for the original norm $\|a\|_{\mathrm P}$: its critical-weight transfer replaces the interpolation of individual vectors used in the power-weight proof. The remaining subsections give the arbitrary-radius extension, the shared corollaries and Schubert's example amplitudes. This order follows the proofs' dependencies; the principal statements are collected in Section~\ref{sec:repair}.
 Throughout, $\Gamma$ and the base point $x_0$ are fixed, $M=\Hb/\Gamma$, and $d=d(x_0,\cdot)$.
 The notation $\pcNorm a$ is the printed norm defined in Section~\ref{sec:repair}.
 
 \medskip\noindent\emph{The remainder to be estimated.}
 Work in the normalization $x_0=i$, $b=\infty$ justified by Lemma~\ref{lem:base}, and use
 $\Delta_\varphi(s)$, $\Sigma_{K+1}(t)$ and $\mathcal V_s$ from Section~\ref{subsec:dd-id} and Section~\ref{subsec:dd-surf}.
-The critical weight of Section~\ref{app:o1st} satisfies the periodization and transport conditions (W1), (W2).
+Both the power weights above exponent $1/2$ and the critical weight of Section~\ref{app:o1st} satisfy the periodization and transport conditions (W1), (W2).
 Once every word in $X,Y$ applied to $a$ lies in $L^2_\omega$, Proposition~\ref{prop:dd-id}(iii) gives
 \begin{equation}\label{pc:remainder}
 \begin{aligned}
@@ -17,350 +16,8 @@ Once every word in $X,Y$ applied to $a$ lies in $L^2_\omega$, Proposition~\ref{p
   &\qquad b'(\mathbf s):=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a .
 \end{aligned}
 \end{equation}
-The proof below bounds the integrand uniformly in $\mathbf s$ and then integrates over the simplex. The identity and the
+Each proof below bounds the integrand uniformly in $\mathbf s$ and then integrates over the simplex. The identity and the
 quotient Duhamel formula used to obtain it are proved in Section~\ref{subsec:dd-id} and Section~\ref{subsec:dd-surf}.
-
-\subsection{The critical weight}\label{subsec:pc-weights}
-Let $\pcXzero:=\cosh d$, $\psi:=\log\pcXzero\ge0$, $\pcLog:=\log(2\pcXzero)/\log2\ge1$ and $\Lambda:=\sqrt{-\Delta}$. Fix $c':=\tfrac34$ (any exponent in
-$(\tfrac12,1)$ would do) and put
-\[
-  \pcw:=\pcXzero^{1/2}\pcLog^{\,c'} .
-\]
-This is the periodization weight: $\sum_\gamma\pcw(\gamma z)^{-2}$ is bounded for every Fuchsian group (Proposition~\ref{os:p1}); for $\pcXzero^{1/2}$ alone
-the sum $\sum_\gamma\pcXzero(\gamma z)^{-1}$ is not bounded when $M$ has finite area, because its integral over a fundamental domain is
-$\int_\Hb\pcXzero^{-1}d\nu=\infty$. Since
-$\psi\le d\le\langle d\rangle+1$, $\pcw\le C_\beta\ue^{\beta\langle d\rangle}$ for every $\beta>\tfrac12$. For $f:=\ue^{\alpha\Lambda}a$ the printed norm gives
-$\norm{\ue^{\beta\langle d\rangle}f}=\pcNorm a$, and therefore $\norm{\pcw f}\le C_\beta\pcNorm a$.
-This stronger decay belongs to $f$, before smoothing: the amplitude $a=\ue^{-\alpha\Lambda}f$ need not lie in any
-$X_0^{\beta'}$-weighted $L^2$ space with $\beta'>\tfrac12$ (Remark~\ref{pc:classes}).
-In the swapped class the mollifier part of the error is small because one vector is small without a weight and bounded with
-the weight $\pcXzero^\beta$, $\beta>\tfrac12$. Here the same interpolation is carried out for the linear maps that produce these vectors from the data,
-between $L^2(\Hb)$ and $L^2(\pcXzero^{2}d\nu)$ (Lemma~\ref{os:transfer}), after the data have been written as $a=\ue^{-\sigma\Lambda_m}\tilde f$ with an even
-smoothing operator and $\norm{\pcw\tilde f}\le C\pcNorm a$ (Proposition~\ref{os:data}).
-
-\begin{remark}[the two classes, and the range of $\alpha$]\label{pc:classes}
-Let $\beta>\tfrac12$ and $0\le\alpha'<\alpha<\pi/2$, and put $h:=\ue^{-\beta\langle d\rangle}\mathbf 1_{B(x_0,1)}$ and $a:=\ue^{-\alpha\Lambda}h$, so that
-$\pcNorm a=\norm{\mathbf 1_{B(x_0,1)}}<\infty$ at $(\alpha,\beta)$. For $0<\tau<\pi/2$ the function $\ue^{-\tau\Lambda}h$ is the convolution of $h$ with the
-radial kernel $k_\tau$ of Lemma~\ref{os:poisson}, and $d(z,w)\in[d(z)-1,d(z)+1]$ for $w\in B(x_0,1)$. So by \textup{(\ref{os:lb})}, for $d(z)\ge2$,
-\[
-  (\ue^{-\tau\Lambda}h)(z)\ge c\,(d(z)+1)^{-3/2}\ue^{-d(z)},
-\]
-with $c>0$ depending on $\tau$ and $\beta$. Since $\langle d\rangle\ge d-1$, for every $\beta'>\tfrac12$ the square of
-$\ue^{\beta'\langle d\rangle}\ue^{-\tau\Lambda}h$ is at least $c'\ue^{(2\beta'-2)d}(d+1)^{-3}$ where $d\ge2$, which is not integrable against the area
-element $\sinh\rho\,d\rho\,d\theta$; so this function is not in $L^2(\Hb)$. Two consequences follow.
-With $\tau=\alpha$: the amplitude $a$ of the printed class lies in no swapped class with an exponent $\beta'>\tfrac12$, because
-$\norm{\ue^{\alpha''\Lambda}\ue^{\beta'\langle d\rangle}a}\ge\norm{\ue^{\beta'\langle d\rangle}a}$ for $\alpha''\ge0$; in particular the norms
-$\norm{\ue^{\beta\langle d\rangle}\ue^{\alpha\Lambda}a}$ and $\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}$ are not equivalent for $\beta>\tfrac12$, contrary to
-\cite[Proposition~7.1, (7.2)]{S}.
-With $\tau=\alpha-\alpha'$ and $\beta'=\beta$: the printed norm of $a$ at $(\alpha',\beta)$ is infinite, since
-$\ue^{\alpha'\Lambda}a=\ue^{-(\alpha-\alpha')\Lambda}h$. So the printed norms are not monotone in $\alpha$, and Theorem~\ref{pc:main}, which is stated for
-$\alpha\le\tfrac12$, does not cover larger radii by a comparison of printed norms, as it does in the swapped class (Section~\ref{sec:swapped}).
-Larger radii are covered by Corollary~\ref{pc:allalpha}, which compares the data at the critical weight instead.
-\end{remark}
-
-\subsection{Proof of Theorem~\ref{pc:main}}\label{subsec:pc-proof}
-We use the estimates of Sections~\ref{sec:analytic} and~\ref{app:o1st} and the remainder of Section~\ref{subsec:dd-id}; all lemmas are used with $\tau_0=1$.
-
-\medskip\noindent\emph{Step 0 (reductions and parameters).} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters below only through
-the constant $C(\Gamma,c')$ of Proposition~\ref{os:p1}, which is invariant under the conjugation of Lemma~\ref{lem:base}. Since
-$a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, $a$ is $C^\infty$ by Lemma~\ref{lem:lift}. Put
-\[
-  m:=3,\qquad\sigma:=\alpha/6,\qquad E:=\ue^{-\sigma\Lambda_m},\qquad\varepsilon:=(\sigma\hbar)^{1/2}/2,\qquad x:=(\sigma/\hbar)^{1/2},
-\]
-so that $\sigma\le\tfrac1{12}$, $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=x/2$, $\sigma/\varepsilon=2x$ and $\sigma^3\ge\kappa'\hbar$ with $\kappa':=\kappa/216$. For
-$\mathbf s\in\Sigma_{K+1}(t)$ let $B'_{\mathbf s}:=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})$, so that $b'(\mathbf s)=B'_{\mathbf s}a$ in (iii) of
-Proposition~\ref{prop:dd-id}. For $n\ge0$ put
-\[
-  F_n:=C_5^{N+K+n+1}(2N)!\,(n+2K+2)!\,\sigma^{-(n+2K+2)}(\sigma\hbar)^{-2N},
-\]
-with a constant $C_5\ge1$ fixed in Step~2(a).
-
-\medskip\noindent\emph{Step 1 (the data).} By Proposition~\ref{os:data} with $c=c'$ (here $\sigma m=\alpha/2\le\tfrac12$), there is $\tilde f$ with
-\[
-  a=E\tilde f,\qquad\norm{\pcw\tilde f}\le C\,\pcNorm a .
-\]
-
-\medskip\noindent\emph{Step 2 (three maps, from the data to the vectors of the proof).} Each of the following maps is linear on $L^2(\Hb)$, and is bounded
-there and at the weight $\pcXzero$ on functions supported in one shell. Lemma~\ref{os:transfer} then bounds it at the weight $\pcw$.
-Write $C_{\mathrm{tr}}$ for its constant at $c=c'$; it is independent of $K,N,\hbar$ and the integration variables.
-
-\smallskip\noindent(a) \emph{Words.} For a word $Z_J$ of length $n$ let $T_ah:=Z_JB'_{\mathbf s}Eh$. Expand $B'_{\mathbf s}$ as in the proof of
-Lemma~\ref{lem:wb}. Each term is a coefficient times a word of length at most $L$ applied to $Eh$, and by Lemma~\ref{os:words}(b), with $\gamma=1$ and
-$m=3$ (so $2(\gamma+\tfrac12)^2<m^2$), it is bounded at the weight $\pcXzero$ by $2(L+1)L!\,(QC_0/\sigma)^L\norm{\pcXzero h}$. This is the bound of Lemma~\ref{lem:sc}
-with $(2,QC_0,\sigma)$ in place of $(B_\beta,C_3,\alpha)$, so the count in the proof of Lemma~\ref{lem:wb} gives, for a suitable $C_5\ge C_4$,
-\[
-  \norm{\pcXzero Z_JB'_{\mathbf s}Eu}\le F_n\norm{\pcXzero u},\qquad\norm{Z_JB'_{\mathbf s}Eu}\le F_n\norm u ;
-\]
-the second bound is the same argument without a weight. Lemma~\ref{os:transfer} with $M_0=M_1=F_n$ gives
-\begin{equation}\label{pc:wbw}
-  \norm{\pcw Z_JB'_{\mathbf s}Eh}\le C_{\mathrm{tr}}\,F_n\,\norm{\pcw h}.
-\end{equation}
-In particular every word applied to $a=E\tilde f$ lies in $L^2_{\pcw}$.
-
-\smallskip\noindent(b) \emph{Flow.} For $s',s''\ge0$ with $\hbar|s'-s''|\le\varepsilon$, the map $V_\varepsilon(s',s'')$ has norm $1$ on $L^2$ and, by
-Proposition~\ref{prop:ws}, norm at most $\ue^{G_1/2}$ at the weight $\pcXzero$. So
-\begin{equation}\label{pc:flow}
-  \norm{\pcw V_\varepsilon(s',s'')h}\le C_{\mathrm{tr}}\ue^{G_1/2}\norm{\pcw h}.
-\end{equation}
-
-\smallskip\noindent(c) \emph{Defect.} For $0\le t'\le s_1\le t$ let
-\[
-  T_ch:=\bigl(\Delta(t')-\Delta_\varepsilon(t')\bigr)V_\varepsilon(t',s_1)B'_{\mathbf s}Eh .
-\]
-\emph{Unweighted bound.} By Lemma~\ref{os:words}, $\norm{\ue^{\sigma\Lambda}Eh}\le\norm h$. By Lemma~\ref{lem:wb}(ii), with $\sigma$ in the role of
-$\alpha$ and the radii $a_1:=\tfrac34\sigma<\sigma$, by Proposition~\ref{prop:a0} from $a_1$ to $a_2:=\tfrac12\sigma$ (valid for
-$t\le\tfrac13c_A\varepsilon/\hbar$), and by Lemma~\ref{lem:unw} with $a=a_2$, where $a_2/(8\varepsilon)=x/8$,
-\[
-  \norm{T_ch}\le M_0\norm h,\qquad M_0:=C\sigma^{-4}\ue^{-x/8}\,C_4^{N+K+1}(2N)!\,(2K+2)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}.
-\]
-\emph{Weighted bound.} Let $u$ be supported in one shell and assume $\hbar s_1\le\varepsilon$. By (a), $\pcXzero ZB'_{\mathbf s}Eu\in L^2$ for $Z\in\{1,X,Y,X^2,Y^2\}$, and
-Lemma~\ref{lem:path}(b) with $\gamma=1$ and $b'=B'_{\mathbf s}Eu$ gives
-\[
-  \norm{\pcXzero T_cu}\le M_1\norm{\pcXzero u},\qquad M_1:=C\varepsilon^{-3}F_2 .
-\]
-Lemma~\ref{os:transfer} requires $M_0\le M_1$; we apply it with $M_0+M_1$ in place of $M_1$. Since $M_0\le C\sigma^{-4}\ue^{-x/8}F_2$,
-\begin{equation}\label{pc:defect}
-  \norm{\pcw T_ch}\le C_{\mathrm{tr}}\bigl(M_0+M_0^{1/4}M_1^{3/4}\bigr)\norm{\pcw h}\le C\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-x/32}\,F_2\,\norm{\pcw h}.
-\end{equation}
-
-\medskip\noindent\emph{Step 3 (Duhamel on $M$ for data of bounded support).} Let $h\in L^2$ be supported in $\{\psi\le R_0\}$ for some $R_0$, and let
-$b'_h:=B'_{\mathbf s}Eh$, $g(t'):=V_\varepsilon(t',s_1)b'_h$ for $0\le t'\le s_1$, $w_h:=g(0)$ and $d_h(t'):=T_ch$. Then $\pcXzero h\in L^2$ and, by (a), all
-words applied to $b'_h$ lie in $L^2(\pcXzero^2d\nu)$. The weight $\pcXzero^{3/4}$ satisfies (W1) and (W2) (Lemma~\ref{lem:t2}), and by
-Lemma~\ref{lem:path}(c) with $\gamma=\tfrac34$ the path $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for it. As in the proof of
-Theorem~\ref{thm:dd-appx},
-\[
-  \mathcal V_{s_1}b'_h=\mathcal V_0w_h-\tfrac{i\hbar}2\int_0^{s_1}\mathcal V_{t'}d_h(t')\,dt' .
-\]
-By Remark~\ref{os:indep} each term may be estimated through the weight $\pcw$. By Proposition~\ref{os:p1}, \eqref{pc:flow} and \eqref{pc:wbw} with $n=0$,
-\[
-  \norm{\mathcal V_0w_h}\le C\norm{\pcw V_\varepsilon(0,s_1)b'_h}\le C\norm{\pcw b'_h}\le C\,F_0\,\norm{\pcw h},
-\]
-and by Proposition~\ref{os:p1} and \eqref{pc:defect},
-\[
-  \norm{\mathcal V_{t'}d_h(t')}\le C\ue^{t'/2}(1+t'/\log2)^{c'}\norm{\pcw d_h(t')}\le C\,\ue^{t'}\varepsilon^{-3}\sigma^{-4}\ue^{-x/32}F_2\norm{\pcw h}.
-\]
-Hence $\norm{\mathcal V_{s_1}b'_h}\le C(F_0+R\,F_2)\norm{\pcw h}$ with
-\[
-  R:=\hbar t\,\ue^{t}\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-x/32}.
-\]
-\emph{Absorption.} Let $t\le\delta'x$ with $\delta'\le\tfrac1{64}$, so $\ue^t\le\ue^{x/64}$. Since $\sigma^3\ge\kappa'\hbar$ and $\sigma\le1$,
-\[
-  \sigma^{-1}\le x/\sqrt{\kappa'},\qquad\varepsilon^{-1}=2x/\sigma\le2x^2/\sqrt{\kappa'},\qquad\hbar t\le\delta'\sigma/x\le\delta'/x .
-\]
-So $R\le C(\kappa)\,x^{9}\ue^{-x/64}\le C(\kappa)\,x^{-2}$, and $x^{-2}=\hbar/\sigma\le\sigma^2/\kappa'$. Since $F_0\le\sigma^2F_2$,
-\begin{equation}\label{pc:star}
-  \norm{\mathcal V_{s_1}B'_{\mathbf s}Eh}\le C\,\sigma^2F_2\,\norm{\pcw h}.
-\end{equation}
-
-\medskip\noindent\emph{Step 4 (density).} The map $h\mapsto\mathcal V_{s_1}B'_{\mathbf s}Eh$ is linear and bounded from $L^2(\pcw^2d\nu)$ to $L^2(M)$, by
-Proposition~\ref{os:p1} and \eqref{pc:wbw} with $n=0$. The functions of bounded $\psi$-support are dense in $L^2(\pcw^2d\nu)$. So \eqref{pc:star} holds for
-every $h\in L^2(\pcw^2d\nu)$, in particular for $\tilde f$:
-\[
-  \norm{\mathcal V_{s_1}b'(\mathbf s)}\le C\,C_5^{N+K+3}(2N)!\,(2K+4)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}\norm{\pcw\tilde f}.
-\]
-
-\medskip\noindent\emph{Step 5 (collecting).} By \eqref{pc:wbw}, every word applied to $a$ lies in $L^2_{\pcw}$, and $\pcw$ satisfies (W1), (W2). So
-Proposition~\ref{prop:dd-id}(iii) bounds the error by $(\hbar/2)^{K+1}$ times the integral of $\norm{\mathcal V_{s_1}b'(\mathbf s)}$ over
-$\Sigma_{K+1}(t)$. This simplex has volume $t^{K+1}/(K+1)!$. The factorial bounds are
-\[
-  \frac{(2K+4)!}{(K+1)!}
-  \le4^{K+2}(K+2)^2(K+1)K!\le64^{K+1}K!,\qquad
-  (2N)!\le4^NN^{2N},
-\]
-where the first inequality uses $\binom{2K+4}{K+2}\le4^{K+2}$; at $N=0$ the second uses the standing convention.
-Together with $\hbar^{K+1}t^{K+1}\sigma^{-(2K+2)}=(\hbar t/\sigma^2)^{K+1}$, Steps~4 and~1 give the bound of the theorem with $\sigma$ in place of $\alpha$. Since
-$\sigma=\alpha/6$, $(\sigma\hbar)^{-2N}(\hbar t/\sigma^2)^{K+1}=6^{2N+2K+2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$, and the factor is absorbed in $C^{N+K+1}$.
-
-\medskip\noindent\emph{Time windows.} Steps~2(b), 2(c) and~3 use $\hbar s_1\le\varepsilon$, that is $t\le x/2$; Proposition~\ref{prop:a0} uses
-$t\le\tfrac13c_A\varepsilon/\hbar=c_Ax/6$; the absorption uses $t\le x/64$. So the proof holds for $t\le\delta'x$ with $\delta':=\min(\tfrac1{64},c_A/6)$, and
-$\delta'x=(\delta'/\sqrt6)(\alpha/\hbar)^{1/2}$. The hypothesis $\alpha\le\tfrac12$ ensures $\sigma<\alpha\le1$ in Proposition~\ref{os:data} and keeps all
-radii below $\tau_0=1$. \qed
-
-\subsection{Proofs of the corollaries}\label{subsec:pc-cor}
-The leading bound in Corollary~\ref{pc:thm13} is Theorem~\ref{pc:main} with $K=N=0$.
-
-\begin{proof}[Proof of Corollary~\ref{pc:cor15}]
-We give the truncation calculation once; it will also prove Corollaries~\ref{cor:dd15} and~\ref{cor:dd15-appx} for their
-respective amplitude norms. This is Schubert's calculation in the proof of \cite[Corollary~1.5]{S}, with the multiplicative
-window for $K$ used there.
-
-At $t=0$ the error vanishes. Let $t>0$. Theorem~\ref{pc:main} bounds the error by
-\[
-  C^NN^{2N}(\alpha\hbar)^{-2N}\delta_K^{K+1}K!\,\pcNorm a,
-  \qquad \delta_K=\frac{C\hbar t}{\alpha^2}.
-\]
-On the stated window $K\ge1$. Stirling's inequality and $K\delta_K\le1-\epsilon/2$ give
-\[
-  \delta_K^{K+1}K!
-  \le\ue\,\delta_K K^{1/2}\ue^{-K}(K\delta_K)^K
-  \le\ue\,\delta_K K^{1/2}\ue^{-K\epsilon/2}\ue^{-K}.
-\]
-Since $K^{1/2}\ue^{-K\epsilon/2}\le(\ue\epsilon)^{-1/2}$ and
-$K\ge(1-\epsilon)/\delta_K$, this is at most
-\[
-  \ue^{1/2}\epsilon^{-1/2}\delta_K
-  \exp\Bigl(-\frac{(1-\epsilon)\alpha^2}{C\hbar t}\Bigr).
-\]
-Finally, the time window, $\alpha^3\ge\kappa\hbar$ and the cap on $\delta$ give
-\[
-  \frac{\hbar t}{\alpha^2}\le\delta\hbar^{1/2}\alpha^{-3/2}
-  \le\delta\kappa^{-1/2}\le\frac1{\max(1,C)}.
-\]
-Thus $\delta_K\le1$ and $C^N\delta_K=C^{N+1}\hbar t/\alpha^2\le C^{N+1}$. Combining the bounds proves the corollary with
-$C'=\ue^{1/2}$.
-\end{proof}
-
-\begin{proof}[Proof of Corollaries~\ref{pc:cor16bg} and~\ref{pc:cor16}]
-Let $E$ be the bracket in their statements. By Theorem~\ref{pc:main} at $N$ and at $N+1$, $u:=\Delta^NE$ lies in $\operatorname{Dom}(\Delta_M)$. Apply
-Lemma~\ref{pc:g43} to $u$, and use $N^{2N}\le(\ue/2)^{2N}(2N)!$, $(N+1)^{2N+2}\le54^{N+1}(2N)!$ and $\alpha\hbar\le1$. This proves
-Corollary~\ref{pc:cor16}. Under the hypothesis of Corollary~\ref{pc:cor16bg}, the balls $B(\gamma\tilde z,r_0)$ are disjoint.
-Those with $d(\tilde z,\gamma\tilde z)<2$ lie in $B(\tilde z,2+r_0)$, so comparison of hyperbolic areas gives
-$m(z)\le C(r_0)$. This proves Corollary~\ref{pc:cor16bg}. \qedhere
-\end{proof}
-
-\begin{remark}[cusps]\label{pc:remcusp}
-On a bounded-geometry quotient $m(z)\le C(r_0)$, so Corollary~\ref{pc:cor16bg} is the case of Corollary~\ref{pc:cor16}. In an embedded cusp of
-height $H$, deep enough, $m(z)\asymp H$, so the factor $m(z)^{1/2}$ grows like the square root of the cusp height. Lemma~\ref{pc:g43} is sharp in this sense:
-the cusp bump $u_S$ of Remark~\ref{rem:g4} at height $H=\ue^{S}$ has $\sup|u|/(\norm{\Delta u}+\norm{u})\asymp H^{1/2}$.
-
-The proofs of the two corollaries use one Laplacian and give the exponent $-2N-2$ of $\alpha\hbar$; we state them with $-2N-4$ for the comparison with
-\cite[(1.34)]{S}. Since $m(z)^{1/2}(\alpha\hbar)^{-2N-4}\le(\alpha\hbar)^{-2N-8}$ when $m(z)\le(\alpha\hbar)^{-8}$, Corollary~\ref{pc:cor16} gives the printed
-prefactor $(\alpha\hbar)^{-2N-8}$ of \cite[(1.34)]{S} at every such $z$, with $(\hbar t/\alpha^2)^{K+1}$ in place of $(\hbar t)^K$ as in
-Corollary~\ref{pc:cor16bg}; for fixed $\alpha$ the factor $\alpha^{-2K-2}$ can be put into the constant. In a cusp this is the part below height $\asymp(\alpha\hbar)^{-8}$.
-Above that height the factor cannot be removed in general: on $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$, for $b$ a cusp, Theorem~\ref{cl:main} gives a lower
-bound of the same order $m(z)^{1/2}$ up to powers of $\hbar$. The proof of Lemma~\ref{pc:g43} also gives the local
-form $|u(z)|\le C\,m(z)^{1/2}\bigl(\norm{\Delta u}_{L^2(B_M(z,1))}+\norm{u}_{L^2(B_M(z,1))}\bigr)$, with $B_M(z,1)$ the image of $B(\tilde z,1)$. So the
-factor-free bound would follow if, for $u=\Delta^NE$, both $\norm{u}_{L^2(B_M(z,1))}$ and $\norm{\Delta u}_{L^2(B_M(z,1))}$ were at most
-$C\,m(z)^{-1/2}(\alpha\hbar)^{-p}$ times the global bounds at $N$ and $N+1$ (with $p\le6$ for the printed prefactor). Theorem~\ref{cl:main} shows that this
-condition fails high in the cusp of the modular surface.
-\end{remark}
-
-\subsection{Proof of the extension to arbitrary radii}\label{subsec:pc-all}
-Theorem~\ref{pc:main} is stated for $\alpha\le\tfrac12$. Its proof uses the amplitude only through the data of Step~1, so the estimate
-extends to every radius, although the printed norms at different radii are not comparable (Remark~\ref{pc:classes}).
-
-\begin{proof}[Proof of Corollary~\ref{pc:allalpha}]
-For $\alpha\le\tfrac12$ this is Theorem~\ref{pc:main}. Let $\tfrac12<\alpha\le A$. The reductions of Step~0 of the proof of
-Theorem~\ref{pc:main} apply as they stand, and $a$ is $C^\infty$ by Lemma~\ref{lem:lift}, because
-$\operatorname{Dom}(\ue^{\alpha\Lambda})\subset\operatorname{Dom}(\ue^{\min(\alpha,1)\Lambda})$. Steps~2 to~5 of that proof use
-the amplitude only through a representation $a=\ue^{-\sigma\Lambda_3}\tilde f$ and the number $\norm{\pcw\tilde f}$. For $\sigma\in(0,\tfrac1{12}]$,
-$\sigma^3\ge\kappa'\hbar$ and $\pcw\tilde f\in L^2(\Hb)$ they give, for $0\le t\le\delta'(\sigma/\hbar)^{1/2}$ with $\delta'=\min(\tfrac1{64},c_A/6)$,
-\[
-  \norm{\Delta^N\big[\cU(t)\big(a\,\ue^{i\varphi_b/\hbar}\big)_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}
-  \le C_1^{N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Big(\frac{\hbar t}{\sigma^2}\Big)^{K+1}\norm{\pcw\tilde f},
-\]
-with $C_1$ depending on $\Gamma$, $x_0$ and $\kappa'$. We use this with $\sigma=\tfrac1{12}$ and $\kappa':=\kappa/(1728A^3)$; then
-$\sigma^3\ge\kappa'\hbar$, because $\kappa\hbar\le\alpha^3\le A^3$.
-
-\emph{The data.} Put $f:=\ue^{\alpha\Lambda}a$, so that $\norm{\pcw f}\le C_\beta\pcNorm a$ (Section~\ref{subsec:pc-weights}), and
-$f_1:=\ue^{-(\alpha-1/2)\Lambda}f$. Let $n$ be an integer with $n\ge A$. Since $\ue^{-\tau\Lambda}$ is a semigroup, Corollary~\ref{os:cwp},
-applied at most $n$ times with exponents in $(0,1]$, gives $\norm{\pcw f_1}\le K_{c'}^{\,n}\norm{\pcw f}$, where we may take $K_{c'}\ge1$. Now
-$a=\ue^{-\Lambda/2}f_1$, and Proposition~\ref{os:data}, with $\tfrac12$, $\tfrac1{12}$ and $3$ in the roles of $\alpha$, $\sigma$ and $m$, gives
-$\tilde f:=\mathsf Rf_1$ with
-\[
-  a=\ue^{-\sigma\Lambda_3}\tilde f,\qquad\norm{\pcw\tilde f}\le C_{\mathrm d}K_{c'}^{\,n}C_\beta\,\pcNorm a .
-\]
-
-\emph{The radius.} For $\tfrac12<\alpha\le A$ and $\sigma=\tfrac1{12}$,
-\begin{align*}
-  (\sigma\hbar)^{-2N}\Big(\frac{\hbar t}{\sigma^2}\Big)^{K+1}&\le(12A)^{2N+2K+2}(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1},\\
-  \delta'\Big(\frac{\sigma}{\hbar}\Big)^{1/2}&\ge\delta'(12A)^{-1/2}\Big(\frac{\alpha}{\hbar}\Big)^{1/2}.
-\end{align*}
-So the estimate holds on $(\tfrac12,A]$ with the constants
-$(12A)^2C_1\max(1,C_{\mathrm d}K_{c'}^{\,n}C_\beta)$ and $\delta'(12A)^{-1/2}$; take the larger of the two constants $C$ and the smaller of the
-two $\delta$.
-
-\emph{The corollaries.} The proofs of Corollaries~\ref{pc:thm13} and~\ref{pc:cor15} use only the form of the bound; for
-Corollary~\ref{pc:cor15}, once $C$ is fixed, decrease $\delta$ so that $\delta\le\kappa^{1/2}/\max(1,C)$. The proof of
-Corollaries~\ref{pc:cor16bg} and~\ref{pc:cor16} uses $\alpha\hbar\le1$ to replace the powers $(\alpha\hbar)^{-2N}$ and $(\alpha\hbar)^{-2N-2}$ by
-$(\alpha\hbar)^{-2N-4}$. For $\alpha\le A$ one has $\alpha\hbar\le\max(1,A)$, so both powers are at most $\max(1,A)^4(\alpha\hbar)^{-2N-4}$, and
-the factor $\max(1,A)^4$ goes into the constant.
-\end{proof}
-
-\subsection{Companion results for the reversed weight order}\label{sec:swapped}
-The definition of the amplitude norm in \cite{S} and the proofs there take the two weights in different orders, and
-\cite[Proposition~7.1]{S} states that the two orders give equivalent norms. For
-$\beta>\tfrac12$ they do not: the two orders define different classes (Remark~\ref{pc:classes}). The principal result for the printed class is Theorem~\ref{pc:main}. Recall that
-\[
-\swNorm a=\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}_{L^2(\Hb)} ,
-\]
-the order used in the proofs of \cite{S}. We call the amplitudes with $\swNorm a<\infty$ the \emph{swapped class}, and those with
-$\norm a_{\alpha,\beta}<\infty$ the \emph{printed class}.
-By Lemma~\ref{lem:m2w}, a finite norm $\swNorm a$ at radius $\alpha$ gives a finite norm with the weight
-$\ue^{\beta\tilde\psi}$ in place of $\ue^{\beta\langle d\rangle}$, at the radius $c_0\alpha$ for a fixed
-$c_0=c_0(\beta)\in(0,1]$; the proofs use $\tilde\psi$.
-\begin{theoremR}\label{thm:main}
-Let $\Gamma$ be any Fuchsian group, $\beta>1$ and $\alpha\in(0,\alpha_0]$ constants ($\alpha_0<\pi/4$ fixed).
-There are $C,\delta>0$ such that for all $0<\hbar\le1$, every $b\in\partial\Hb$ and every $a$ with $\swNorm a<\infty$,
-\[
-\norm{u^{(0)}(t)_\Gamma-\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma}_{L^2(\Hb/\Gamma)}\le C\hbar t\swNorm a,\qquad 0\le t\le\delta\hbar^{-1/2}.
-\]
-\end{theoremR}
-For $\alpha>\alpha_0$ the class with radius $\alpha$ is contained in the class with radius $\alpha_0$
-(in the swapped order this nesting is trivial), so the theorem holds for every constant $\alpha>0$,
-as in \cite{S}. By Proposition~\ref{prop:g5} the order $\hbar t$ cannot be improved.
-
-\begin{proof}
-This is the case $K=N=0$ of Theorem~\ref{thm:dd14} below, with $\kappa:=\alpha^3$ and with $\alpha_0$ as here: then
-$\alpha^3\ge\kappa\hbar$ for all $0<\hbar\le1$, $u^{(0)}$ is the approximation of order $0$, and the bound of Theorem~\ref{thm:dd14} reads
-$C\alpha^{-2}\hbar t\swNorm a$ for $0\le t\le\delta\alpha^{1/2}\hbar^{-1/2}$. The constants of the present theorem are
-$C\alpha^{-2}$ and $\delta\alpha^{1/2}$, with $C$ and $\delta$ the constants of Theorem~\ref{thm:dd14} for $\kappa=\alpha^3$; they depend on the fixed $\alpha$.
-\end{proof}
-
-\begin{remark}
-No Volterra resummation and no Sobolev inequality on $M$ is used, so the proof holds for every Fuchsian
-group; the cusp issue of Remark~\ref{rem:g4} does not arise. Since Theorem~\ref{thm:dd14} holds for every $\beta>1/2$, so does
-the present theorem; we state it with $\beta>1$ as in \cite{S}.
-\end{remark}
-
-\medskip\noindent\textbf{The estimate of order $K$ and its corollaries.}
-Let $u^{(K)}$ be the approximation of order $K$ of Section~\ref{sec:setup}.
-\begin{theoremR}\label{thm:dd14}
-Fix $\beta>1/2$, $\kappa>0$ and $\alpha_0\in(0,\min(1,\pi/4))$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$,
-such that for every Fuchsian group $\Gamma$ with $\sup_z\sum_{\gamma\in\Gamma}\ue^{-(\beta+1/2)\,d(x_0,\gamma z)}\le P$, all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$
-with $\swNorm a<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
-\[
-\norm{\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(\Hb/\Gamma)}
-\le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\swNorm a ,
-\]
-with $N^{2N}:=1$ at $N=0$.
-(The supremum is finite for every Fuchsian group, by Lemma~\ref{lem:p1} at the exponent $\beta+\tfrac12>1$. So $\delta$ does not
-depend on $\Gamma$, and $C$ depends on $\Gamma$ only through this Poincar\'e series bound; see the end of the proof of
-Theorem~\ref{thm:dd-appx}.)
-\end{theoremR}
-On Schubert's window $t\le\delta\alpha^{3/2}\hbar^{-1/2}$ this implies the bound \cite[(1.30)]{S} for the norm $\swNorm a$,
-with an extra factor $(\alpha\hbar)^4\hbar t/\alpha^2\le1$. The proof is in Section~\ref{subsec:dd-thm}.
-
-\begin{corollaryR}\label{cor:dd15}
-Under the hypotheses of Theorem~\ref{thm:dd14}, with $\delta\le\kappa^{1/2}/\max(1,C)$, put $\delta_K=C\hbar t/\alpha^2$ and let $\epsilon\in(0,1)$. For every integer $K$ with
-$(1-\epsilon)/\delta_K\le K\le(1-\epsilon/2)/\delta_K$,
-\[
-\norm{\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}\le C'\epsilon^{-1/2}C^{N+1}N^{2N}(\alpha\hbar)^{-2N}\ue^{-(1-\epsilon)\alpha^2/(C\hbar t)}\swNorm a ,
-\]
-with $C'$ an absolute constant.
-\end{corollaryR}
-\begin{proof}
-Apply the calculation in the proof of Corollary~\ref{pc:cor15} to Theorem~\ref{thm:dd14}, with
-$\swNorm a$ in place of $\pcNorm a$.
-\end{proof}
-
-The window for $K$ is the one used in Schubert's proof of his Corollary~1.5; the window printed in its statement
-does not match that proof.
-
-\begin{corollaryR}\label{cor:dd16}
-If moreover the injectivity radius of $\Hb/\Gamma$ is at least $r_0>0$, then pointwise
-\[
-\big|\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]\big|\le C^{N+K+1}(2N)!\,K!\,(\alpha\hbar)^{-2N-4}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\swNorm a ,
-\]
-with $C$ depending also on $r_0$, and correspondingly for the window of Corollary~\ref{cor:dd15}.
-\end{corollaryR}
-\begin{proof}
-Use Theorem~\ref{thm:dd14} at $N$ and $N+1$ in the proof of Corollaries~\ref{pc:cor16bg} and~\ref{pc:cor16},
-with $\swNorm a$ in place of $\pcNorm a$. The exponential bound follows by the same argument from
-Corollary~\ref{cor:dd15}.
-\end{proof}
-
-
 
 \subsection{Approximation with the power weight \texorpdfstring{$X_0^\beta$}{X0}}\label{subsec:dd-thm}
 
@@ -374,13 +31,16 @@ with $N^{2N}:=1$ at $N=0$.
 \end{theorem}
 
 \begin{remark}
-This is the power-weight form of the swapped-class estimate. Lemma~\ref{lem:m2w} transfers it to the norm of
+This is the power-weight form of the reversed-weight estimate. Lemma~\ref{lem:m2w} transfers it to the norm of
 Theorem~\ref{thm:dd14}; the deduction follows the proof below. Section~\ref{sec:changes} compares the resulting bounds with \cite{S}.
 \end{remark}
 
 \begin{proof}
 \medskip\noindent\textbf{Reductions.} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters the estimates below only
-through the Poincar\'e series bound at the base point. By Lemma~\ref{lem:lift}, $a$ is $C^\infty$. We write $\varphi=\varphi_\infty$.
+through the Poincar\'e series bound at the base point. By Lemma~\ref{lem:lift}, $a$ is $C^\infty$. We write $\varphi=\varphi_\infty$, $c=i\hbar/2$, and
+\[
+ E:=\Delta^N\bigl[\cU(t)(a\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr].
+\]
 
 \medskip\noindent\textbf{Parameters.} All lemmas are used with $\tau_0=1$. Let $c_M$ be the constant of Lemma~\ref{lem:mw} and $c_A$ that of
 Proposition~\ref{prop:a0}. Put
@@ -455,9 +115,12 @@ Hence $R\le C(\kappa)\,x^{9}\,\ue^{-(1-\theta)c_Mx/16}\le C(\kappa)\,x^{-2}$, an
 
 \medskip\noindent\textbf{Collecting.}
 
-Integration over $\Sigma_{K+1}(t)$ gives $t^{K+1}/(K+1)!$. The factorial estimates in Step~5 of the proof of
-Theorem~\ref{pc:main} bound both $(2K+4)!/(K+1)!$ and $(2K+2)!/(K+1)!$ by $C^{K+1}K!$, and
-$(2N)!$ by $4^NN^{2N}$. Finally,
+Integration over $\Sigma_{K+1}(t)$ gives $t^{K+1}/(K+1)!$. We use
+\begin{equation}\label{eq:factorial-assembly}
+ \frac{(2K+4)!}{(K+1)!}\le4^{K+2}(K+2)^2(K+1)K!\le64^{K+1}K!,\qquad
+ (2N)!\le4^NN^{2N},
+\end{equation}
+with $N^{2N}=1$ at $N=0$. The first bound follows from $\binom{2K+4}{K+2}\le4^{K+2}$; for the second, bound each of the $2N$ factors by $2N$. The smaller factorial $(2K+2)!$ obeys the same bound. Finally,
 $\hbar^{K+1}t^{K+1}\alpha^{-(2K+2)}=(\hbar t/\alpha^2)^{K+1}$, and $\alpha^2F$ carries $\alpha^{-(2K+2)}$.
 
 Hence
@@ -479,6 +142,32 @@ this is the uniformity claimed in Theorem~\ref{thm:dd14}. (It concerns this theo
 Corollary~\ref{cor:dd15-appx} depends on $\Gamma$ through $C$.)
 \end{proof}
 
+
+\subsection{Companion results for the reversed weight order}\label{sec:swapped}
+We now transfer the power-weight estimate to the norm with spatial decay imposed on the amplitude. Recall that
+\[
+\swNorm a=\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}_{L^2(\Hb)} ,
+\]
+defines the reversed-weight class.
+By Lemma~\ref{lem:m2w}, a finite norm $\swNorm a$ at radius $\alpha$ gives a finite norm with the weight
+$\ue^{\beta\tilde\psi}$ in place of $\ue^{\beta\langle d\rangle}$, at the radius $c_0\alpha$ for a fixed
+$c_0=c_0(\beta)\in(0,1]$; the proofs use $\tilde\psi$.
+
+Let $u^{(K)}$ be the approximation of order $K$ of Section~\ref{sec:setup}.
+\begin{theoremR}\label{thm:dd14}
+Fix $\beta>1/2$, $\kappa>0$ and $\alpha_0\in(0,\min(1,\pi/4))$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$,
+such that for every Fuchsian group $\Gamma$ with $\sup_z\sum_{\gamma\in\Gamma}\ue^{-(\beta+1/2)\,d(x_0,\gamma z)}\le P$, all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$
+with $\swNorm a<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
+\[
+\norm{\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(\Hb/\Gamma)}
+\le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\swNorm a ,
+\]
+with $N^{2N}:=1$ at $N=0$.
+(The supremum is finite for every Fuchsian group, by Lemma~\ref{lem:p1} at the exponent $\beta+\tfrac12>1$. So $\delta$ does not
+depend on $\Gamma$, and $C$ depends on $\Gamma$ only through this Poincar\'e series bound; see the end of the proof of
+Theorem~\ref{thm:dd-appx}.)
+\end{theoremR}
+
 \begin{proof}[Proof of Theorem~\ref{thm:dd14}]
 Let $c_0$ and $C'$ be the constants of Lemma~\ref{lem:m2w}, and use the norm $\swNorm a$ of Section~\ref{sec:swapped}. If $\alpha\le\alpha_0$ and $\alpha^3\ge\kappa\hbar$, then $\bar\alpha:=c_0\alpha\le c_0\alpha_0$,
 $\bar\alpha^3\ge c_0^3\kappa\hbar$ and $\norm{\ue^{\bar\alpha\Lambda}X_0^\beta a}\le C'\swNorm a$. Apply Theorem~\ref{thm:dd-appx} with
@@ -488,62 +177,295 @@ $(\bar\alpha\hbar)^{-2N}(\hbar t/\bar\alpha^2)^{K+1}=c_0^{-2N-2K-2}(\alpha\hbar)
 $C:=C_{\rm int}\,c_0^{-2}\max(1,C')$. The dependence on $\Gamma$ is that of Theorem~\ref{thm:dd-appx}.
 \end{proof}
 
-\subsection{Optimal truncation and pointwise estimates}\label{subsec:dd-cor}
 
-\begin{corollary}[optimal truncation with the power weight $X_0^\beta$]\label{cor:dd15-appx}
-Under the hypotheses of Theorem~\ref{thm:dd-appx}, with $\delta\le\kappa^{1/2}/\max(1,C)$, let $C$ be its constant, put $\delta_K:=C\hbar t/\alpha^2$, and let $\varepsilon\in(0,1)$. Then for every integer $K$ with $(1-\varepsilon)/\delta_K\le K\le(1-\varepsilon/2)/\delta_K$,
+\begin{corollaryR}[fixed-radius leading approximation]\label{thm:main}
+Let $\Gamma$ be a Fuchsian group, $\beta>1/2$ and $\alpha>0$ be fixed. There are $C,\delta>0$ such that for $0<\hbar\le1$, every $b\in\partial\Hb$ and every $a$ of finite reversed-weight norm,
 \[
-\norm{\Delta^N\bigl[\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr]}_{L^2(M)}\le C'\varepsilon^{-1/2}C^{N+1}N^{2N}(\alpha\hbar)^{-2N}\ue^{-(1-\varepsilon)\alpha^2/(C\hbar t)}\pwNorm a,
+\norm{\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(0)}(t)_\Gamma}_{L^2(M)}\le C\hbar t\swNorm a,\qquad 0\le t\le\delta\hbar^{-1/2}.
 \]
-with $C'$ an absolute constant.
-\end{corollary}
-
+\end{corollaryR}
 \begin{proof}
-Apply the truncation calculation in the proof of Corollary~\ref{pc:cor15} to the estimate of
-Theorem~\ref{thm:dd-appx}, with $\pwNorm a$ in place of $\pcNorm a$ and $\varepsilon$ in place of $\epsilon$.
-The hypotheses on $\delta$, $\alpha$ and $\hbar$ are the same, so the same absolute constant $C'=\ue^{1/2}$ works.
+Fix $\alpha_0\in(0,\min(1,\pi/4))$. For $0<\alpha\le\alpha_0$, take $K=N=0$ and $\kappa=\alpha^3$ in Theorem~\ref{thm:dd14}, absorbing the fixed factors $\alpha^{-2}$ and $\alpha^{1/2}$ into $C$ and $\delta$. For $\alpha>\alpha_0$, the reversed-weight norm at radius $\alpha_0$ is bounded by that at radius $\alpha$.
 \end{proof}
 
-\begin{remark}
-In \cite[Corollary~1.5]{S} the window is printed as $K\in[C\alpha^2/\hbar t-\varepsilon,\;C\alpha^2/\hbar t-\varepsilon/2]$, with the constant $C$ of
-\cite[(1.30)]{S}. The proof there uses $K\delta_K\in[1-\varepsilon,1-\varepsilon/2]$, which is the window used here. If the window contains no integer
-the statement is empty; at $t=0$ the error is $0$.
-\end{remark}
 
-\begin{corollary}[pointwise approximation with the power weight $X_0^\beta$]\label{cor:dd16-appx}
-Assume, in addition, that $M$ has injectivity radius $\ge r_0>0$. Then, under the hypotheses of Theorem~\ref{thm:dd-appx}, the error
-$\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma-u^{(K)}(t)_\Gamma$ lies in $\operatorname{Dom}(\Delta_M^N)$, its image under $\Delta^N$ has a continuous
-representative, and at every point of $M$
+\subsection{The critical weight}\label{subsec:pc-weights}
+Let $\pcXzero:=\cosh d$, $\psi:=\log\pcXzero\ge0$, $\pcLog:=\log(2\pcXzero)/\log2\ge1$ and $\Lambda:=\sqrt{-\Delta}$. Fix $c':=\tfrac34$ (any exponent in
+$(\tfrac12,1)$ would do) and put
 \[
-\Bigl|\Delta^N\bigl[\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr]\Bigr|\le C^{N+K+1}(2N)!\,K!\,(\alpha\hbar)^{-2N-4}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}\pwNorm a,
+  \pcw:=\pcXzero^{1/2}\pcLog^{\,c'} .
 \]
-with $C$ depending also on $r_0$. In the same way Corollary~\ref{cor:dd15-appx} gives the pointwise exponential bound with $(\alpha\hbar)^{-2N-4}$.
-\end{corollary}
+This is the periodization weight: $\sum_\gamma\pcw(\gamma z)^{-2}$ is bounded for every Fuchsian group (Proposition~\ref{os:p1}); for $\pcXzero^{1/2}$ alone
+the sum $\sum_\gamma\pcXzero(\gamma z)^{-1}$ is not bounded when $M$ has finite area, because its integral over a fundamental domain is
+$\int_\Hb\pcXzero^{-1}d\nu=\infty$. Since
+$\psi\le d\le\langle d\rangle+1$, $\pcw\le C_\beta\ue^{\beta\langle d\rangle}$ for every $\beta>\tfrac12$. For $f:=\ue^{\alpha\Lambda}a$ the printed norm gives
+$\norm{\ue^{\beta\langle d\rangle}f}=\pcNorm a$, and therefore $\norm{\pcw f}\le C_\beta\pcNorm a$.
+This stronger decay belongs to $f$, before smoothing: the amplitude $a=\ue^{-\alpha\Lambda}f$ need not lie in any
+$X_0^{\beta'}$-weighted $L^2$ space with $\beta'>\tfrac12$ (Proposition~\ref{pc:classes}).
+In the reversed-weight class the mollifier part of the error is small because one vector is small without a weight and bounded with
+the weight $\pcXzero^\beta$, $\beta>\tfrac12$. Here the same interpolation is carried out for the linear maps that produce these vectors from the data,
+between $L^2(\Hb)$ and $L^2(\pcXzero^{2}d\nu)$ (Lemma~\ref{os:transfer}), after the data have been written as $a=\ue^{-\sigma\Lambda_m}\tilde f$ with an even
+smoothing operator and $\norm{\pcw\tilde f}\le C\pcNorm a$ (Proposition~\ref{os:data}).
 
+\begin{proposition}[the two amplitude classes and dependence on the radius]\label{pc:classes}
+For $\beta>\tfrac12$, the printed and reversed-weight norms are not equivalent. There are amplitudes of finite printed norm at a radius $0<\alpha<\pi/2$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and infinite printed norm at every smaller radius.
+\end{proposition}
 \begin{proof}
-\begin{itemize}
-\item If $d(\tilde z,\gamma\tilde z)\ge2r_0$ for all $\gamma\ne1$, the balls $B(\gamma\tilde z,r_0)$ are disjoint, and those with
-$d(\tilde z,\gamma\tilde z)<2$ lie in $B(\tilde z,2+r_0)$. So the multiplicity of Lemma~\ref{pc:g43} satisfies $m(z)\le C(r_0)$, and that lemma gives, for
-$u\in\operatorname{Dom}(\Delta_M)$, a continuous representative with
-$\sup_M|u|\le C(r_0)\bigl(\norm{\Delta u}_{L^2(M)}+\norm u_{L^2(M)}\bigr)$.
-\item Apply this to $u=\Delta^NE$, with Theorem~\ref{thm:dd-appx} at $N$ and at $N+1$. Use $N^{2N}\le(\ue/2)^{2N}(2N)!$,
-$(N+1)^{2N+2}\le54^{N+1}(2N)!$ and $\alpha\hbar\le1$. \qedhere
-\end{itemize}
+Let $\beta>\tfrac12$ and $0\le\alpha'<\alpha<\pi/2$, and put $h:=\ue^{-\beta\langle d\rangle}\mathbf 1_{B(x_0,1)}$ and $a:=\ue^{-\alpha\Lambda}h$, so that
+$\pcNorm a=\norm{\mathbf 1_{B(x_0,1)}}<\infty$ at $(\alpha,\beta)$. For $0<\tau<\pi/2$ the function $\ue^{-\tau\Lambda}h$ is the convolution of $h$ with the
+radial kernel $k_\tau$ of Lemma~\ref{os:poisson}, and $d(z,w)\in[d(z)-1,d(z)+1]$ for $w\in B(x_0,1)$. So by \textup{(\ref{os:lb})}, for $d(z)\ge2$,
+\[
+  (\ue^{-\tau\Lambda}h)(z)\ge c\,(d(z)+1)^{-3/2}\ue^{-d(z)},
+\]
+with $c>0$ depending on $\tau$ and $\beta$. Since $\langle d\rangle\ge d-1$, for every $\beta'>\tfrac12$ the square of
+$\ue^{\beta'\langle d\rangle}\ue^{-\tau\Lambda}h$ is at least $c'\ue^{(2\beta'-2)d}(d+1)^{-3}$ where $d\ge2$, which is not integrable against the area
+element $\sinh\rho\,d\rho\,d\theta$; so this function is not in $L^2(\Hb)$. Two consequences follow.
+With $\tau=\alpha$: the amplitude $a$ of the printed class lies in no reversed-weight class with an exponent $\beta'>\tfrac12$, because
+$\norm{\ue^{\alpha''\Lambda}\ue^{\beta'\langle d\rangle}a}\ge\norm{\ue^{\beta'\langle d\rangle}a}$ for $\alpha''\ge0$; in particular the norms
+$\norm{\ue^{\beta\langle d\rangle}\ue^{\alpha\Lambda}a}$ and $\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}$ are not equivalent for $\beta>\tfrac12$, contrary to
+\cite[Proposition~7.1, (7.2)]{S}.
+With $\tau=\alpha-\alpha'$ and $\beta'=\beta$: the printed norm of $a$ at $(\alpha',\beta)$ is infinite, since
+$\ue^{\alpha'\Lambda}a=\ue^{-(\alpha-\alpha')\Lambda}h$. So the printed norms are not monotone in $\alpha$, and Theorem~\ref{pc:main}, which is stated for
+$\alpha\le\tfrac12$, does not cover larger radii by a comparison of printed norms, as it does in the reversed-weight class (Section~\ref{sec:swapped}).
+Larger radii are covered by Corollary~\ref{pc:allalpha}, which compares the data at the critical weight instead.
 \end{proof}
 
-\begin{remark}
-The proof uses one Laplacian and gives the exponent $-2N-2$ of $\alpha\hbar$. We state the corollary with $-2N-4$, the exponent that
-enters the comparison with \cite[(1.34)]{S} in Section~\ref{sec:changes}.
+\subsection{Proof of Theorem~\ref{pc:main}}\label{subsec:pc-proof}
+\begin{proof}
+We use the estimates of Sections~\ref{sec:analytic} and~\ref{app:o1st} and the remainder of Section~\ref{subsec:dd-id}; all lemmas are used with $\tau_0=1$.
+
+\medskip\noindent\emph{Step 0 (reductions and parameters).} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters below only through
+the constant $C(\Gamma,c')$ of Proposition~\ref{os:p1}, which is invariant under the conjugation of Lemma~\ref{lem:base}. Since
+$a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, $a$ is $C^\infty$ by Lemma~\ref{lem:lift}. Put
+\[
+  m:=3,\qquad\sigma:=\alpha/6,\qquad E:=\ue^{-\sigma\Lambda_m},\qquad\varepsilon:=(\sigma\hbar)^{1/2}/2,\qquad x:=(\sigma/\hbar)^{1/2},
+\]
+so that $\sigma\le\tfrac1{12}$, $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=x/2$, $\sigma/\varepsilon=2x$ and $\sigma^3\ge\kappa'\hbar$ with $\kappa':=\kappa/216$. For
+$\mathbf s\in\Sigma_{K+1}(t)$ let $B'_{\mathbf s}:=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})$, so that $b'(\mathbf s)=B'_{\mathbf s}a$ in (iii) of
+Proposition~\ref{prop:dd-id}. For $n\ge0$ put
+\[
+  F_n:=C_5^{N+K+n+1}(2N)!\,(n+2K+2)!\,\sigma^{-(n+2K+2)}(\sigma\hbar)^{-2N},
+\]
+with a constant $C_5\ge1$ fixed in Step~2(a).
+
+\medskip\noindent\emph{Step 1 (the data).} By Proposition~\ref{os:data} with $c=c'$ (here $\sigma m=\alpha/2\le\tfrac12$), there is $\tilde f$ with
+\[
+  a=E\tilde f,\qquad\norm{\pcw\tilde f}\le C\,\pcNorm a .
+\]
+
+\medskip\noindent\emph{Step 2 (three maps, from the data to the vectors of the proof).} Each of the following maps is linear on $L^2(\Hb)$, and is bounded
+there and at the weight $\pcXzero$ on functions supported in one shell. Lemma~\ref{os:transfer} then bounds it at the weight $\pcw$.
+Write $C_{\mathrm{tr}}$ for its constant at $c=c'$; it is independent of $K,N,\hbar$ and the integration variables.
+
+\smallskip\noindent(a) \emph{Words.} For a word $Z_J$ of length $n$ let $T_ah:=Z_JB'_{\mathbf s}Eh$. Expand $B'_{\mathbf s}$ as in the proof of
+Lemma~\ref{lem:wb}. Each term is a coefficient times a word of length at most $L$ applied to $Eh$, and by Lemma~\ref{os:words}(b), with $\gamma=1$ and
+$m=3$ (so $2(\gamma+\tfrac12)^2<m^2$), it is bounded at the weight $\pcXzero$ by $2(L+1)L!\,(QC_0/\sigma)^L\norm{\pcXzero h}$. This is the bound of Lemma~\ref{lem:sc}
+with $(2,QC_0,\sigma)$ in place of $(B_\beta,C_3,\alpha)$, so the count in the proof of Lemma~\ref{lem:wb} gives, for a suitable $C_5\ge C_4$,
+\[
+  \norm{\pcXzero Z_JB'_{\mathbf s}Eu}\le F_n\norm{\pcXzero u},\qquad\norm{Z_JB'_{\mathbf s}Eu}\le F_n\norm u ;
+\]
+the second bound is the same argument without a weight. Lemma~\ref{os:transfer} with $M_0=M_1=F_n$ gives
+\begin{equation}\label{pc:wbw}
+  \norm{\pcw Z_JB'_{\mathbf s}Eh}\le C_{\mathrm{tr}}\,F_n\,\norm{\pcw h}.
+\end{equation}
+In particular every word applied to $a=E\tilde f$ lies in $L^2_{\pcw}$.
+
+\smallskip\noindent(b) \emph{Flow.} For $s',s''\ge0$ with $\hbar|s'-s''|\le\varepsilon$, the map $V_\varepsilon(s',s'')$ has norm $1$ on $L^2$ and, by
+Proposition~\ref{prop:ws}, norm at most $\ue^{G_1/2}$ at the weight $\pcXzero$. So
+\begin{equation}\label{pc:flow}
+  \norm{\pcw V_\varepsilon(s',s'')h}\le C_{\mathrm{tr}}\ue^{G_1/2}\norm{\pcw h}.
+\end{equation}
+
+\smallskip\noindent(c) \emph{Defect.} For $0\le t'\le s_1\le t$ let
+\[
+  T_ch:=\bigl(\Delta(t')-\Delta_\varepsilon(t')\bigr)V_\varepsilon(t',s_1)B'_{\mathbf s}Eh .
+\]
+\emph{Unweighted bound.} By Lemma~\ref{os:words}, $\norm{\ue^{\sigma\Lambda}Eh}\le\norm h$. By Lemma~\ref{lem:wb}(ii), with $\sigma$ in the role of
+$\alpha$ and the radii $a_1:=\tfrac34\sigma<\sigma$, by Proposition~\ref{prop:a0} from $a_1$ to $a_2:=\tfrac12\sigma$ (valid for
+$t\le\tfrac13c_A\varepsilon/\hbar$), and by Lemma~\ref{lem:unw} with $a=a_2$, where $a_2/(8\varepsilon)=x/8$,
+\[
+  \norm{T_ch}\le M_0\norm h,\qquad M_0:=C\sigma^{-4}\ue^{-x/8}\,C_4^{N+K+1}(2N)!\,(2K+2)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}.
+\]
+\emph{Weighted bound.} Let $u$ be supported in one shell and assume $\hbar s_1\le\varepsilon$. By (a), $\pcXzero ZB'_{\mathbf s}Eu\in L^2$ for $Z\in\{1,X,Y,X^2,Y^2\}$, and
+Lemma~\ref{lem:path}(b) with $\gamma=1$ and $b'=B'_{\mathbf s}Eu$ gives
+\[
+  \norm{\pcXzero T_cu}\le M_1\norm{\pcXzero u},\qquad M_1:=C\varepsilon^{-3}F_2 .
+\]
+Lemma~\ref{os:transfer} requires $M_0\le M_1$; we apply it with $M_0+M_1$ in place of $M_1$. Since $M_0\le C\sigma^{-4}\ue^{-x/8}F_2$,
+\begin{equation}\label{pc:defect}
+  \norm{\pcw T_ch}\le C_{\mathrm{tr}}\bigl(M_0+M_0^{1/4}M_1^{3/4}\bigr)\norm{\pcw h}\le C\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-x/32}\,F_2\,\norm{\pcw h}.
+\end{equation}
+
+\medskip\noindent\emph{Step 3 (Duhamel on $M$ for data of bounded support).} Let $h\in L^2$ be supported in $\{\psi\le R_0\}$ for some $R_0$, and let
+$b'_h:=B'_{\mathbf s}Eh$, $g(t'):=V_\varepsilon(t',s_1)b'_h$ for $0\le t'\le s_1$, $w_h:=g(0)$ and $d_h(t'):=T_ch$. Then $\pcXzero h\in L^2$ and, by (a), all
+words applied to $b'_h$ lie in $L^2(\pcXzero^2d\nu)$. The weight $\pcXzero^{3/4}$ satisfies (W1) and (W2) (Lemma~\ref{lem:t2}), and by
+Lemma~\ref{lem:path}(c) with $\gamma=\tfrac34$ the path $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for it. As in the power-weight proof of Theorem~\ref{thm:dd-appx},
+\[
+  \mathcal V_{s_1}b'_h=\mathcal V_0w_h-\tfrac{i\hbar}2\int_0^{s_1}\mathcal V_{t'}d_h(t')\,dt' .
+\]
+By Remark~\ref{os:indep} each term may be estimated through the weight $\pcw$. By Proposition~\ref{os:p1}, \eqref{pc:flow} and \eqref{pc:wbw} with $n=0$,
+\[
+  \norm{\mathcal V_0w_h}\le C\norm{\pcw V_\varepsilon(0,s_1)b'_h}\le C\norm{\pcw b'_h}\le C\,F_0\,\norm{\pcw h},
+\]
+and by Proposition~\ref{os:p1} and \eqref{pc:defect},
+\[
+  \norm{\mathcal V_{t'}d_h(t')}\le C\ue^{t'/2}(1+t'/\log2)^{c'}\norm{\pcw d_h(t')}\le C\,\ue^{t'}\varepsilon^{-3}\sigma^{-4}\ue^{-x/32}F_2\norm{\pcw h}.
+\]
+Hence $\norm{\mathcal V_{s_1}b'_h}\le C(F_0+R\,F_2)\norm{\pcw h}$ with
+\[
+  R:=\hbar t\,\ue^{t}\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-x/32}.
+\]
+\emph{Absorption.} Let $t\le\delta'x$ with $\delta'\le\tfrac1{64}$, so $\ue^t\le\ue^{x/64}$. Since $\sigma^3\ge\kappa'\hbar$ and $\sigma\le1$,
+\[
+  \sigma^{-1}\le x/\sqrt{\kappa'},\qquad\varepsilon^{-1}=2x/\sigma\le2x^2/\sqrt{\kappa'},\qquad\hbar t\le\delta'\sigma/x\le\delta'/x .
+\]
+So $R\le C(\kappa)\,x^{9}\ue^{-x/64}\le C(\kappa)\,x^{-2}$, and $x^{-2}=\hbar/\sigma\le\sigma^2/\kappa'$. Since $F_0\le\sigma^2F_2$,
+\begin{equation}\label{pc:star}
+  \norm{\mathcal V_{s_1}B'_{\mathbf s}Eh}\le C\,\sigma^2F_2\,\norm{\pcw h}.
+\end{equation}
+
+\medskip\noindent\emph{Step 4 (density).} The map $h\mapsto\mathcal V_{s_1}B'_{\mathbf s}Eh$ is linear and bounded from $L^2(\pcw^2d\nu)$ to $L^2(M)$, by
+Proposition~\ref{os:p1} and \eqref{pc:wbw} with $n=0$. The functions of bounded $\psi$-support are dense in $L^2(\pcw^2d\nu)$. So \eqref{pc:star} holds for
+every $h\in L^2(\pcw^2d\nu)$, in particular for $\tilde f$:
+\[
+  \norm{\mathcal V_{s_1}b'(\mathbf s)}\le C\,C_5^{N+K+3}(2N)!\,(2K+4)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}\norm{\pcw\tilde f}.
+\]
+
+\medskip\noindent\emph{Step 5 (collecting).} By \eqref{pc:wbw}, every word applied to $a$ lies in $L^2_{\pcw}$, and $\pcw$ satisfies (W1), (W2). So
+Proposition~\ref{prop:dd-id}(iii) bounds the error by $(\hbar/2)^{K+1}$ times the integral of $\norm{\mathcal V_{s_1}b'(\mathbf s)}$ over
+$\Sigma_{K+1}(t)$. This simplex has volume $t^{K+1}/(K+1)!$. The factorial estimates \eqref{eq:factorial-assembly} apply here as well. Together with $\hbar^{K+1}t^{K+1}\sigma^{-(2K+2)}=(\hbar t/\sigma^2)^{K+1}$, Steps~4 and~1 give the bound of the theorem with $\sigma$ in place of $\alpha$. Since
+$\sigma=\alpha/6$, $(\sigma\hbar)^{-2N}(\hbar t/\sigma^2)^{K+1}=6^{2N+2K+2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$, and the factor is absorbed in $C^{N+K+1}$.
+
+\medskip\noindent\emph{Time windows.} Steps~2(b), 2(c) and~3 use $\hbar s_1\le\varepsilon$, that is $t\le x/2$; Proposition~\ref{prop:a0} uses
+$t\le\tfrac13c_A\varepsilon/\hbar=c_Ax/6$; the absorption uses $t\le x/64$. So the proof holds for $t\le\delta'x$ with $\delta':=\min(\tfrac1{64},c_A/6)$, and
+$\delta'x=(\delta'/\sqrt6)(\alpha/\hbar)^{1/2}$. The hypothesis $\alpha\le\tfrac12$ ensures $\sigma<\alpha\le1$ in Proposition~\ref{os:data} and keeps all
+radii below $\tau_0=1$.
+\end{proof}
+
+
+\subsection{Proof of the extension to arbitrary radii}\label{subsec:pc-all}
+Theorem~\ref{pc:main} is stated for $\alpha\le\tfrac12$. Its proof uses the amplitude only through the data of Step~1, so the estimate
+extends to every radius, although the printed norms at different radii are not comparable (Proposition~\ref{pc:classes}).
+
+\begin{proof}[Proof of Corollary~\ref{pc:allalpha}]
+For $\alpha\le\tfrac12$ this is Theorem~\ref{pc:main}. Let $\tfrac12<\alpha\le A$. The reductions of Step~0 of the proof of
+Theorem~\ref{pc:main} apply as they stand, and $a$ is $C^\infty$ by Lemma~\ref{lem:lift}, because
+$\operatorname{Dom}(\ue^{\alpha\Lambda})\subset\operatorname{Dom}(\ue^{\min(\alpha,1)\Lambda})$. Steps~2 to~5 of that proof use
+the amplitude only through a representation $a=\ue^{-\sigma\Lambda_3}\tilde f$ and the number $\norm{\pcw\tilde f}$. For $\sigma\in(0,\tfrac1{12}]$,
+$\sigma^3\ge\kappa'\hbar$ and $\pcw\tilde f\in L^2(\Hb)$ they give, for $0\le t\le\delta'(\sigma/\hbar)^{1/2}$ with $\delta'=\min(\tfrac1{64},c_A/6)$,
+\[
+  \norm{\Delta^N\big[\cU(t)\big(a\,\ue^{i\varphi_b/\hbar}\big)_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}
+  \le C_1^{N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Big(\frac{\hbar t}{\sigma^2}\Big)^{K+1}\norm{\pcw\tilde f},
+\]
+with $C_1$ depending on $\Gamma$, $x_0$ and $\kappa'$. We use this with $\sigma=\tfrac1{12}$ and $\kappa':=\kappa/(1728A^3)$; then
+$\sigma^3\ge\kappa'\hbar$, because $\kappa\hbar\le\alpha^3\le A^3$.
+
+\emph{The data.} Put $f:=\ue^{\alpha\Lambda}a$, so that $\norm{\pcw f}\le C_\beta\pcNorm a$ (Section~\ref{subsec:pc-weights}), and
+$f_1:=\ue^{-(\alpha-1/2)\Lambda}f$. Let $n$ be an integer with $n\ge A$. Since $\ue^{-\tau\Lambda}$ is a semigroup, Corollary~\ref{os:cwp},
+applied at most $n$ times with exponents in $(0,1]$, gives $\norm{\pcw f_1}\le K_{c'}^{\,n}\norm{\pcw f}$, where we may take $K_{c'}\ge1$. Now
+$a=\ue^{-\Lambda/2}f_1$, and Proposition~\ref{os:data}, with $\tfrac12$, $\tfrac1{12}$ and $3$ in the roles of $\alpha$, $\sigma$ and $m$, gives
+$\tilde f:=\mathsf Rf_1$ with
+\[
+  a=\ue^{-\sigma\Lambda_3}\tilde f,\qquad\norm{\pcw\tilde f}\le C_{\mathrm d}K_{c'}^{\,n}C_\beta\,\pcNorm a .
+\]
+
+\emph{The radius.} For $\tfrac12<\alpha\le A$ and $\sigma=\tfrac1{12}$,
+\begin{align*}
+  (\sigma\hbar)^{-2N}\Big(\frac{\hbar t}{\sigma^2}\Big)^{K+1}&\le(12A)^{2N+2K+2}(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1},\\
+  \delta'\Big(\frac{\sigma}{\hbar}\Big)^{1/2}&\ge\delta'(12A)^{-1/2}\Big(\frac{\alpha}{\hbar}\Big)^{1/2}.
+\end{align*}
+So the estimate holds on $(\tfrac12,A]$ with the constants
+$(12A)^2C_1\max(1,C_{\mathrm d}K_{c'}^{\,n}C_\beta)$ and $\delta'(12A)^{-1/2}$; take the larger of the two constants $C$ and the smaller of the
+two $\delta$.
+
+\emph{The corollaries.} The proofs of Corollaries~\ref{pc:thm13} and~\ref{pc:cor15} use only the form of the bound; for
+Corollary~\ref{pc:cor15}, once $C$ is fixed, decrease $\delta$ so that $\delta\le\kappa^{1/2}/\max(1,C)$. The proof of
+Corollaries~\ref{pc:cor16} and~\ref{pc:cor16bg} uses $\alpha\hbar\le1$ to replace the powers $(\alpha\hbar)^{-2N}$ and $(\alpha\hbar)^{-2N-2}$ by
+$(\alpha\hbar)^{-2N-4}$. For $\alpha\le A$ one has $\alpha\hbar\le\max(1,A)$, so both powers are at most $\max(1,A)^4(\alpha\hbar)^{-2N-4}$, and
+the factor $\max(1,A)^4$ goes into the constant.
+\end{proof}
+
+
+\subsection{Truncation and pointwise consequences}\label{subsec:pc-cor}\label{subsec:dd-cor}
+The leading bound in Corollary~\ref{pc:thm13} is Theorem~\ref{pc:main} with $K=N=0$.
+
+\begin{proof}[Proof of Corollary~\ref{pc:cor15}]
+The same calculation applies to each of the three amplitude norms. The comparison with the truncation window in \cite{S} is given in Section~\ref{sec:changes}.
+
+At $t=0$ the error vanishes. Let $t>0$. Theorem~\ref{pc:main} bounds the error by
+\[
+  C^NN^{2N}(\alpha\hbar)^{-2N}\delta_K^{K+1}K!\,\pcNorm a,
+  \qquad \delta_K=\frac{C\hbar t}{\alpha^2}.
+\]
+On the stated window $K\ge1$. Stirling's inequality and $K\delta_K\le1-\epsilon/2$ give
+\[
+  \delta_K^{K+1}K!
+  \le\ue\,\delta_K K^{1/2}\ue^{-K}(K\delta_K)^K
+  \le\ue\,\delta_K K^{1/2}\ue^{-K\epsilon/2}\ue^{-K}.
+\]
+Since $K^{1/2}\ue^{-K\epsilon/2}\le(\ue\epsilon)^{-1/2}$ and
+$K\ge(1-\epsilon)/\delta_K$, this is at most
+\[
+  \ue^{1/2}\epsilon^{-1/2}\delta_K
+  \exp\Bigl(-\frac{(1-\epsilon)\alpha^2}{C\hbar t}\Bigr).
+\]
+Finally, the time window, $\alpha^3\ge\kappa\hbar$ and the cap on $\delta$ give
+\[
+  \frac{\hbar t}{\alpha^2}\le\delta\hbar^{1/2}\alpha^{-3/2}
+  \le\delta\kappa^{-1/2}\le\frac1{\max(1,C)}.
+\]
+Thus $\delta_K\le1$ and $C^N\delta_K=C^{N+1}\hbar t/\alpha^2\le C^{N+1}$. Combining the bounds proves the corollary with
+$C'=\ue^{1/2}$.
+\end{proof}
+
+\begin{proof}[Proof of Corollaries~\ref{pc:cor16} and~\ref{pc:cor16bg}]
+Let $E$ be the bracket in their statements. By Theorem~\ref{pc:main} at $N$ and at $N+1$, $u:=\Delta^NE$ lies in $\operatorname{Dom}(\Delta_M)$. Apply
+Lemma~\ref{pc:g43} to $u$, and use $N^{2N}\le(\ue/2)^{2N}(2N)!$, $(N+1)^{2N+2}\le54^{N+1}(2N)!$ and $\alpha\hbar\le1$. This proves
+Corollary~\ref{pc:cor16}. Under the hypothesis of Corollary~\ref{pc:cor16bg}, the balls $B(\gamma\tilde z,r_0)$ are disjoint.
+Those with $d(\tilde z,\gamma\tilde z)<2$ lie in $B(\tilde z,2+r_0)$, so comparison of hyperbolic areas gives
+$m(z)\le C(r_0)$. This proves Corollary~\ref{pc:cor16bg}. \qedhere
+\end{proof}
+
+\begin{remark}[pointwise bounds and cusp height]\label{pc:remcusp}
+In an embedded cusp of height $H$, deep enough, $m(z)\asymp H$, so the pointwise loss grows like $H^{1/2}$. Theorem~\ref{cl:main} shows that this exponent is necessary on the modular surface for a phase attached to the cusp. The proof above uses one Laplacian and gives the exponent $-2N-2$ of $\alpha\hbar$; we state $-2N-4$ to facilitate the comparison in Section~\ref{sec:changes}.
 \end{remark}
 
-\begin{remark}[Cusped $M$]
-The Sobolev inequality \cite[(5.91)]{S} fails on $M$ with cusps (Remark~\ref{rem:g4}). On such $M$ the same proof, with Lemma~\ref{pc:g43} as it stands, gives the pointwise bound with the additional factor $C\,m(z)^{1/2}$, as in Corollary~\ref{pc:cor16}.
-\end{remark}
+\begin{corollaryR}[optimal truncation in the reversed-weight class]\label{cor:dd15}
+Under the hypotheses of Theorem~\ref{thm:dd14}, the estimate and truncation window of Corollary~\ref{pc:cor15} hold with $\swNorm a$ in place of $\pcNorm a$, with the constants of Theorem~\ref{thm:dd14} and $\delta\le\kappa^{1/2}/\max(1,C)$.
+\end{corollaryR}
+\begin{corollary}[optimal truncation with the power weight]\label{cor:dd15-appx}
+Under the hypotheses of Theorem~\ref{thm:dd-appx}, the estimate and truncation window of Corollary~\ref{pc:cor15} hold with $\pwNorm a$ in place of $\pcNorm a$, with the constants of Theorem~\ref{thm:dd-appx} and $\delta\le\kappa^{1/2}/\max(1,C)$.
+\end{corollary}
+\begin{proof}[Proof of Corollaries~\ref{cor:dd15} and~\ref{cor:dd15-appx}]
+Apply the calculation above to Theorems~\ref{thm:dd14} and~\ref{thm:dd-appx}, respectively. The same absolute constant $C'=\ue^{1/2}$ works.
+\end{proof}
 
-% The corollary body ends before the remarks.
+\begin{corollaryR}[pointwise approximation in the reversed-weight class]\label{cor:dd16}
+Under the hypotheses of Theorem~\ref{thm:dd14}, assume that $M$ has injectivity radius at least $r_0>0$. Then Corollary~\ref{pc:cor16bg} holds with $\swNorm a$ in place of $\pcNorm a$ and a constant depending also on $r_0$. Optimal truncation gives the corresponding pointwise exponential estimate from Corollary~\ref{cor:dd15}.
+\end{corollaryR}
+\begin{corollary}[pointwise approximation with the power weight]\label{cor:dd16-appx}
+Under the hypotheses of Theorem~\ref{thm:dd-appx}, assume that $M$ has injectivity radius at least $r_0>0$. Then Corollary~\ref{pc:cor16bg} holds with $\pwNorm a$ in place of $\pcNorm a$ and a constant depending also on $r_0$. Optimal truncation gives the corresponding pointwise exponential estimate from Corollary~\ref{cor:dd15-appx}.
+\end{corollary}
+\begin{proof}[Proof of Corollaries~\ref{cor:dd16} and~\ref{cor:dd16-appx}]
+Apply Lemma~\ref{pc:g43} to $\Delta^NE$ and use the respective approximation theorem at $N$ and $N+1$, as in the proof of Corollary~\ref{pc:cor16bg}. Apply the same argument to the optimal-truncation bounds for the exponential estimates. On an arbitrary quotient the proof gives the additional factor $m(z)^{1/2}$, as in Corollary~\ref{pc:cor16}.
+\end{proof}
+
 
 
 \subsection{Schubert's example amplitudes}\label{subsec:dd-ex}
+
+\begin{proof}[Proof of Remark~\ref{rem:amplitude-examples}]
+The spectral calculus gives $\ue^{\alpha\Lambda}\ue^{-\alpha\Lambda}f=f$ for $f\in L^2$ and
+$a=\ue^{-\alpha\Lambda}\ue^{\alpha\Lambda}a$ for $a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$.
+These identities give the printed-norm assertions, and multiplication by $\ue^{\beta\langle d\rangle}$ gives the
+reversed-weight norm identity. For the example, $\langle d\rangle\le d$ and polar coordinates give
+\[
+  \norm{\ue^{\beta\langle d\rangle}\ue^{-qX_0}}^2
+  \le2\pi\int_0^\infty\ue^{2\beta r-2q\cosh r}\sinh r\,dr<\infty.
+\]
+The integral is finite since $\cosh r\ge\ue^r/2$ and $\sinh r\le\ue^r$.
+The smoothed amplitude is nonzero because the multiplier $\ue^{-\alpha\lambda}$ is strictly positive.
+\end{proof}
 
 \begin{lemma}[analytic norm of the localized example]\label{lem:ex}
 Fix $r_1<\tfrac12$. There are constants $C_H$ and $C_{\mathrm E}$, depending only on $r_1$, such that for $\mu\ge1$ and
@@ -589,11 +511,11 @@ and the second inequality holds with $C_{\mathrm E}:=(\pi\ue)^{1/2}\ue^{C_H}(2\p
 \end{proof}
 
 \begin{remark}[Consequence for the example of \texorpdfstring{\cite{S}}{[S]}]
-\cite[Remark~1.7, (1.38)]{S} gives the example $a_\hbar:=\hbar^{-\delta/2}\ue^{-\hbar^{-\delta}\langle d\rangle}$, said there to lie in $H_{\alpha,\beta}$ with $\beta=1$ and $\alpha=\hbar^\delta$, and to give long times for $\delta<1/3$. In the swapped $\langle d\rangle$-class, $\norm{a_\hbar}^{\rm sw}_{\alpha,\beta}=\hbar^{-\delta/2}\norm{\ue^{\alpha\Lambda}\ue^{-(\hbar^{-\delta}-\beta)\langle d\rangle}}$. Apply Lemma~\ref{lem:ex} with $\mu=\hbar^{-\delta}-\beta$ and $\alpha_\hbar:=(\hbar^{-\delta}-\beta)^{-1/2}\asymp\hbar^{\delta/2}$:
+\cite[Remark~1.7, (1.38)]{S} gives the example $a_\hbar:=\hbar^{-\delta/2}\ue^{-\hbar^{-\delta}\langle d\rangle}$, said there to lie in $H_{\alpha,\beta}$ with $\beta=1$ and $\alpha=\hbar^\delta$, and to give long times for $\delta<1/3$. In the reversed-weight $\langle d\rangle$-class, $\norm{a_\hbar}^{\rm sw}_{\alpha,\beta}=\hbar^{-\delta/2}\norm{\ue^{\alpha\Lambda}\ue^{-(\hbar^{-\delta}-\beta)\langle d\rangle}}$. Apply Lemma~\ref{lem:ex} with $\mu=\hbar^{-\delta}-\beta$ and $\alpha_\hbar:=(\hbar^{-\delta}-\beta)^{-1/2}\asymp\hbar^{\delta/2}$:
 \begin{itemize}
 \item $\norm{a_\hbar}^{\rm sw}_{\alpha_\hbar,\beta}\le C$ uniformly in $\hbar$, for every fixed $\beta$ (not only $\beta=1$);
-\item the swapped $\langle d\rangle$-class transfers to the $\tilde\psi$-class by Lemma~\ref{lem:m2w}, at the radius $c_0\alpha_\hbar$ with the fixed ratio $c_0$;
+\item the reversed-weight $\langle d\rangle$-class transfers to the $\tilde\psi$-class by Lemma~\ref{lem:m2w}, at the radius $c_0\alpha_\hbar$ with the fixed ratio $c_0$;
 \item so Theorem~\ref{thm:dd-appx} (any $\beta>1/2$, every Fuchsian $\Gamma$) applies when $(c_0\alpha_\hbar)^3\ge\kappa\hbar$, i.e. for $0<\delta<2/3$, and for $\hbar$ small enough that $\mu=\hbar^{-\delta}-\beta\ge1$ and $\alpha_\hbar\le r_1$. The case $\delta=0$ is not covered: $\ue^{-\langle d\rangle}$ has infinite $\ue^{\beta\langle d\rangle}$-weighted $L^2$ norm for every $\beta>1/2$. The time window is $t\le\delta'(\alpha_\hbar/\hbar)^{1/2}\asymp\hbar^{\delta/4-1/2}$.
 \end{itemize}
-The radius $\alpha=\hbar^\delta$ of \cite{S} gave $\delta<1/3$ and $t\ll\hbar^{-(1-3\delta)/2}$; the holomorphic tube bound gives the larger radius $\hbar^{\delta/2}$. The example is therefore covered. The printed (original-order) class is treated in Section~\ref{sec:printed}; the amplitudes named in \cite{S} are covered already by the swapped class.
+The radius $\alpha=\hbar^\delta$ of \cite{S} gave $\delta<1/3$ and $t\ll\hbar^{-(1-3\delta)/2}$; the holomorphic tube bound gives the larger radius $\hbar^{\delta/2}$. The example is therefore covered. The printed (original-order) class is treated in Section~\ref{sec:printed}; the amplitudes named in \cite{S} are covered already by the reversed-weight class.
 \end{remark}

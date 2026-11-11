@@ -17,6 +17,8 @@ the cusp height. Schubert's files are not part of this repository.
 
 - `paper/`: LaTeX source of the manuscript (`paper.tex` with its input files). The eight main sections develop the
   quotient remainder, analytic and critical-weight estimates, approximation proofs, sharpness and expectation values.
+  The approximation proofs proceed from the power weight to the reversed weight order and then the original norm;
+  the modular-surface application is stated in the introduction and proved through named intermediate lemmas.
   Two appendices contain auxiliary special-function/kernel calculations and formalization documentation.
   Build from `paper/` with `pdflatex paper.tex`
   (run it three times).

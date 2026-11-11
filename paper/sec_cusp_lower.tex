@@ -2,20 +2,24 @@
 % Notes source: notes/Cor16_cusps.md, Propositions G4.4 and G4.4P (reviews R22, R22c, R23, R23b). Labels prefix cl.
 \subsection{The cusp factor is necessary}\label{subsec:cl}
 
-\begin{remark}[cusps]\label{rem:g4}
-The hypothesis on the injectivity radius cannot simply be dropped. The pointwise bound in \cite{S} rests on the Sobolev
-inequality \cite[(5.91)]{S}, which bounds $\sup_M|u|$ by $\norm{\Delta^2u}_{L^2(M)}+\norm u_{L^2(M)}$, and the periodization
-estimate \cite[Proposition~3.2]{S} rests on the inequality \cite[(3.3)]{S}, which bounds $\norm u_{L^2(M)}$ by
-$\norm{\Delta^su}_{L^1(M)}+\norm u_{L^1(M)}$. Both fail, with any integer power $s\ge1$ of $\Delta$, when $M=\Hb/\Gamma$ has a cusp: in a
-cusp neighbourhood $\{y>Y\}/(x\sim x+1)$, the functions $u_S=\chi(\log y-S)$, $0\ne\chi\in C_c^\infty(\mathbb R)$, satisfy
-$\norm{u_S}_{L^1}\asymp\norm{\Delta^su_S}_{L^1}\asymp\ue^{-S}$ and $\norm{u_S}_{L^2}\asymp\norm{\Delta^su_S}_{L^2}\asymp\ue^{-S/2}$ as $S\to\infty$,
-while $\sup|u_S|$ does not depend on $S$. On surfaces with cusps the pointwise statement holds with the factor $m(z)^{1/2}$
-(Corollary~\ref{pc:cor16}), and on the modular surface that factor is necessary (Theorem~\ref{cl:main}).
+\begin{remark}[the local Sobolev loss]\label{rem:g4}
+The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient with a cusp. In a cusp neighbourhood $\{y>Y\}/(x\sim x+1)$, take $u_S=\chi(\log y-S)$ with $0\ne\chi\in C_c^\infty(\mathbb R)$. For every integer $s\ge1$,
+\[
+\norm{u_S}_{L^1}\asymp\norm{\Delta^su_S}_{L^1}\asymp\ue^{-S},\qquad
+\norm{u_S}_{L^2}\asymp\norm{\Delta^su_S}_{L^2}\asymp\ue^{-S/2},
+\]
+whereas $\sup|u_S|$ is independent of $S$. Thus both the global $L^2$-to-pointwise Sobolev bound and the $L^1$-to-$L^2$ bound used in \cite{S} fail on cusps. Theorem~\ref{cl:main} shows that the same loss occurs for the approximation error itself.
 \end{remark}
 
 Throughout this subsection $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $M=\Gamma\backslash\Hb$ (cusp at $\infty$ of width $1$), $x_0=i$, $X_0=\cosh d(i,\cdot)$,
 $b=\infty$ and $\varphi=-\log y$. For a function $F$ on $\Hb$ we write $[F]_\Gamma(z)=\sum_{\gamma\in\Gamma}F(\gamma z)$, and
 $E_K(t):=\cU(t)(a\,\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma$. Words $Z_S$ are products of $X$ and $Y$. In this subsection only, $\ampNorm a:=\swNorm a$ in case (i) and $\ampNorm a:=\pcNorm a$ in case (ii), so that the common estimates cover both amplitude classes.
+
+The mechanism is the following. The error contains the explicit first Dyson term $\ue^{-it/(2\hbar)}(S(t)\,\tfrac{i\hbar}2P_1(t)a)\ue^{i\varphi/\hbar}$,
+periodized. High in the cusp the sum over $\Gamma$ concentrates, by stationary phase, at the tops $a/c+i/(c^2Y)$ of the horocycles $\gamma(\mathbb R+iY)$,
+whose images under $D_t:(x,y)\mapsto(x,\ue^ty)$ are the points $a/c+i/c^2$,
+and its size is $\ue^{t/2}\sqrt{\pi\hbar}\cdot\hbar t$; the remainder is controlled by the $L^2$ theorem.
+
 
 \begin{theorem}[the cusp factor is necessary]\label{cl:main}
 Let $\beta>\tfrac12$ and $\alpha_0:=\tfrac12$, and let $\alpha_1=\alpha_1(\beta)\in(0,\alpha_0]$ be the radius of Lemma~\ref{cl:amp}(i). The constants
@@ -30,63 +34,16 @@ $t$ with $\max(2\log(1/\hbar),t_*)\le t\le\min(\hbar^{-1/5},\delta(\alpha/\hbar)
 \item[(ii)] (Printed class.) The same holds for $a=\ue^{-\alpha\Lambda}\ue^{-\kappa X_0}$, with $\kappa\ge\kappa_*$ and $0<\alpha\le\alpha_*(\kappa):=\min(\alpha_0,c\kappa^{-6})$; here the
 proof uses Theorem~\ref{pc:main}.
 \end{enumerate}
-Consequently, on $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$ and for this $b$, the factor $m(z)^{1/2}$ in Corollary~\ref{pc:cor16} (and in its swapped-class
+Consequently, on $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$ and for this $b$, the factor $m(z)^{1/2}$ in Corollary~\ref{pc:cor16} (and in its reversed-weight
 version) cannot be removed. For every $p\ge0$ no bound $\sup_M|E_0(t)|\le C(\alpha\hbar)^{-p}\ampNorm a$ with $C$ independent of $\hbar$ holds on the window (take
 $t=(2p+4)\log(1/\hbar)$), and for $\gamma<\tfrac12$ no bound $C\,m(z)^{\gamma}\hbar^{-p}\ampNorm a$ with $C$ independent of $\hbar$ holds (take $t=\hbar^{-1/5}$). In particular the printed Corollary~1.6, \cite[(1.34)]{S} at
 $N=K=0$, which is claimed for every Fuchsian $\Gamma$ and every $b$, is false when its constants $C,\delta$ do not depend on $\hbar$
 (Remark~\ref{cl:reading}): at $t=20\log(1/\hbar)$ the lower bound (ii) exceeds $C(\alpha\hbar)^{-8}\norm a_{\alpha,\beta}$ for small $\hbar$.
 \end{theorem}
 
-\begin{remark}[the reading of the printed constants]\label{cl:reading}
-\cite[Theorem~1.4 and Corollary~1.6]{S} choose $C,\delta$ after ``for all $\alpha,\beta$ with $\beta>1/2$ and $\alpha^3\ge\beta^2\hbar$''
-and do not say whether they may depend on $\hbar$. We read them as independent of $\hbar$, as in a semiclassical estimate and as in all
-our theorems. Under that reading the printed Corollary~1.6 is false. The contradiction is asymptotic: it needs one $C$ valid as $\hbar$ tends
-to $0$. It does not rule out a bound with $\hbar$-dependent constants, and we do not claim that such a bound holds.
+\begin{remark}[semiclassical constants]\label{cl:reading}
+As throughout this paper, constants in the comparison with \cite[Theorem~1.4 and Corollary~1.6]{S} are independent of $\hbar$.
 \end{remark}
-
-\begin{remark}[the approximation is still accurate there]\label{cl:relative}
-At the points of Theorem~\ref{cl:main}, in case (i) (the swapped-class amplitude $a=\ue^{-20X_0}$), the solution itself is large and the error remains
-small relative to it: for
-$\hbar\le\hbar_0$ and $t$ in the range of Theorem~\ref{cl:main},
-\[
-c\,\hbar t\le\frac{|E_0(t)(z)|}{|u^{(0)}(t)_\Gamma(z)|}\le C\,\hbar t,\qquad z=x+i\ue^t .
-\]
-So what fails is the form of the printed bound (a fixed multiple of $\ampNorm a$, independent of $z$), not the accuracy of the approximation: the
-periodized approximation and the solution both grow like $m(z)^{1/2}\hbar^{1/2}$ at these points, and their difference is a factor $O(\hbar t)$
-smaller. (This is a statement about this amplitude on the window of Theorem~\ref{cl:main}; it is not a general relative-error theorem.)
-\end{remark}
-\begin{proof}
-Lemma~\ref{cl:asym} with $A=a$ gives
-\[
-u^{(0)}(t)_\Gamma(z)=\ue^{-it/(2\hbar)}\bigl(\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}S_a(\hbar)+O(\ue^{t/2}\hbar^{3/2})\bigr),
-\]
-where $S_a(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(a',c)=1}a(a'/c+i/c^2)$.
-With $a=\ue^{-\kappa X_0}$ and $\kappa=20$, $a(i)=\ue^{-\kappa}$ and the other terms are at most $\ue^{-\kappa}\ue^{-\kappa(X_0-1)}$; the count in the proof of
-Lemma~\ref{cl:amp}(iii) gives $0.99\,\ue^{-\kappa}\le|S_a(\hbar)|\le1.01\,\ue^{-\kappa}$. The proof of Theorem~\ref{cl:main} gives
-\[
-|E_0(z)|=\ue^{t/2}\sqrt{\pi\hbar}\,\tfrac{\hbar t}2\,|S_0(\hbar)|\,\bigl(1+O(1/t)+O(\hbar t)+O(\hbar^{1/2}t^2)\bigr),
-\]
-and $0.98\,\kappa\ue^{-\kappa}\le|S_0(\hbar)|\le1.02\,\kappa\ue^{-\kappa}$. Divide.
-\end{proof}
-
-\begin{remark}[scope]\label{cl:scope}
-Theorem~\ref{cl:main} extends to every $b\in\mathbb Q$, the other cusps of $\mathrm{PSL}(2,\mathbb Z)$: if $b=\gamma\infty$ with $\gamma\in\Gamma$, then
-$\varphi_b=\varphi_\infty\circ\gamma^{-1}$ up to a constant, the approximation for $b$ is the $\gamma$-transport of the one for $\infty$, and the error for
-$(b,a)$ is a constant phase times the error for $(\infty,a\circ\gamma)$. So take $a_b:=a\circ\gamma^{-1}$, that is $\ue^{-\kappa\cosh d(\gamma i,\cdot)}$ in case
-(i) and $\ue^{-\alpha\Lambda}\ue^{-\kappa\cosh d(\gamma i,\cdot)}$ in case (ii) ($\Lambda$ commutes with isometries); these have finite norms about the base
-point $i$: in case (ii) because $\langle d(i,\cdot)\rangle\le\langle d(\gamma i,\cdot)\rangle+d(i,\gamma i)$, and in case (i) because the swapped norm of
-$a\circ\gamma^{-1}$ about $i$ is that of $a$ with the weight $\ue^{\beta\langle d(p,\cdot)\rangle}$, $p=\gamma^{-1}i$, which Lemma~\ref{cl:amp}(i) covers. Like the printed Corollary~1.6, Corollary~\ref{pc:cor16} is stated for every Fuchsian $\Gamma$ and every $b$, with constants that do not depend on $b$
-(in Corollary~\ref{pc:cor16} they may depend on $\Gamma$); by Theorem~\ref{cl:main} no
-statement of that form can have $m(z)^\gamma$ with $\gamma<\tfrac12$, so the exponent $\tfrac12$ is optimal among them (the power of $\hbar$ is not
-claimed optimal). For irrational $b$, and for cusped quotients other than $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$, the necessity of the factor is not decided
-here; a bound depending on $b$ without that factor is not excluded. The mechanism below is not special to $b=\infty$: in the frame where
-$b=\infty$, the top of every $\Gamma$-image of a cusp horocycle is a stationary point of $-\log y$.
-\end{remark}
-
-The mechanism is the following. The error contains the explicit first Dyson term $\ue^{-it/(2\hbar)}(S(t)\,\tfrac{i\hbar}2P_1(t)a)\ue^{i\varphi/\hbar}$,
-periodized. High in the cusp the sum over $\Gamma$ concentrates, by stationary phase, at the tops $a/c+i/(c^2Y)$ of the horocycles $\gamma(\mathbb R+iY)$,
-whose images under $D_t:(x,y)\mapsto(x,\ue^ty)$ are the points $a/c+i/c^2$,
-and its size is $\ue^{t/2}\sqrt{\pi\hbar}\cdot\hbar t$; the remainder is controlled by the $L^2$ theorem.
 
 \begin{lemma}[semiclassical local Sobolev inequality]\label{cl:ssob}
 For every Fuchsian $\Gamma$ there is an absolute $C$ with $|u(z)|\le C\,m(z)^{1/2}\bigl(r^{-1}\norm u_{L^2(M)}+r^3\norm{\Delta^2u}_{L^2(M)}\bigr)$ for
@@ -260,7 +217,7 @@ $\int_a^\infty\ue^{-\rho/2}(\cosh\rho-\cosh a)^{-1/2}d\rho$ is bounded for these
 
 \begin{lemma}[the amplitudes]\label{cl:amp}
 (i) For every $\beta\ge0$ there is $\alpha_1=\alpha_1(\beta)\in(0,\tfrac12]$ such that for all $\kappa>0$ and $p\in\Hb$ the function
-$\ue^{\beta\langle d(p,\cdot)\rangle}\ue^{-\kappa X_0}$ lies in $\operatorname{Dom}(\ue^{\alpha_1\Lambda})$; in particular $a=\ue^{-\kappa X_0}$ has finite swapped norm
+$\ue^{\beta\langle d(p,\cdot)\rangle}\ue^{-\kappa X_0}$ lies in $\operatorname{Dom}(\ue^{\alpha_1\Lambda})$; in particular $a=\ue^{-\kappa X_0}$ has finite reversed-weight norm
 $\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}$ for every $\alpha\le\alpha_1$. Moreover $|Z_Sa|\le C_{S,\kappa}X_0^{|S|}\ue^{-\kappa X_0}$.
 (ii) $a=\ue^{-\alpha\Lambda}\ue^{-\kappa X_0}$ has $\norm a_{\alpha,\beta}=\norm{\ue^{\beta\langle d\rangle}\ue^{-\kappa X_0}}<\infty$, and
 $|Z_Sa(w)|\le C_{S,\kappa}\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$ uniformly in $\alpha\le\alpha_0$.
@@ -414,3 +371,43 @@ Hence
 \]
 and the bracket is at least $\tfrac{\sqrt\pi}4|S_0(\hbar)|$ for $t\ge t_*$, $t\le\hbar^{-1/5}$ and $\hbar\le\hbar_0$. Lemma~\ref{cl:amp}(iii) bounds $|S_0|$ below.
 \end{proof}
+
+\subsubsection*{Relative accuracy and scope}
+\begin{proposition}[relative accuracy in the cusp]\label{cl:relative}
+At the points of Theorem~\ref{cl:main}, in case (i) (the reversed-weight amplitude $a=\ue^{-20X_0}$), the solution itself is large and the error remains
+small relative to it: for
+$\hbar\le\hbar_0$ and $t$ in the range of Theorem~\ref{cl:main},
+\[
+c\,\hbar t\le\frac{|E_0(t)(z)|}{|u^{(0)}(t)_\Gamma(z)|}\le C\,\hbar t,\qquad z=x+i\ue^t .
+\]
+So what fails is the form of the printed bound (a fixed multiple of $\ampNorm a$, independent of $z$), not the accuracy of the approximation: the
+periodized approximation and the solution both grow like $m(z)^{1/2}\hbar^{1/2}$ at these points, and their difference is a factor $O(\hbar t)$
+smaller. (This is a statement about this amplitude on the window of Theorem~\ref{cl:main}; it is not a general relative-error theorem.)
+\end{proposition}
+\begin{proof}
+Lemma~\ref{cl:asym} with $A=a$ gives
+\[
+u^{(0)}(t)_\Gamma(z)=\ue^{-it/(2\hbar)}\bigl(\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}S_a(\hbar)+O(\ue^{t/2}\hbar^{3/2})\bigr),
+\]
+where $S_a(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(a',c)=1}a(a'/c+i/c^2)$.
+With $a=\ue^{-\kappa X_0}$ and $\kappa=20$, $a(i)=\ue^{-\kappa}$ and the other terms are at most $\ue^{-\kappa}\ue^{-\kappa(X_0-1)}$; the count in the proof of
+Lemma~\ref{cl:amp}(iii) gives $0.99\,\ue^{-\kappa}\le|S_a(\hbar)|\le1.01\,\ue^{-\kappa}$. The proof of Theorem~\ref{cl:main} gives
+\[
+|E_0(z)|=\ue^{t/2}\sqrt{\pi\hbar}\,\tfrac{\hbar t}2\,|S_0(\hbar)|\,\bigl(1+O(1/t)+O(\hbar t)+O(\hbar^{1/2}t^2)\bigr),
+\]
+and $0.98\,\kappa\ue^{-\kappa}\le|S_0(\hbar)|\le1.02\,\kappa\ue^{-\kappa}$. Divide.
+\end{proof}
+
+\begin{remark}[scope]\label{cl:scope}
+Theorem~\ref{cl:main} extends to every $b\in\mathbb Q$, the other cusps of $\mathrm{PSL}(2,\mathbb Z)$: if $b=\gamma\infty$ with $\gamma\in\Gamma$, then
+$\varphi_b=\varphi_\infty\circ\gamma^{-1}$ up to a constant, the approximation for $b$ is the $\gamma$-transport of the one for $\infty$, and the error for
+$(b,a)$ is a constant phase times the error for $(\infty,a\circ\gamma)$. So take $a_b:=a\circ\gamma^{-1}$, that is $\ue^{-\kappa\cosh d(\gamma i,\cdot)}$ in case
+(i) and $\ue^{-\alpha\Lambda}\ue^{-\kappa\cosh d(\gamma i,\cdot)}$ in case (ii) ($\Lambda$ commutes with isometries); these have finite norms about the base
+point $i$: in case (ii) because $\langle d(i,\cdot)\rangle\le\langle d(\gamma i,\cdot)\rangle+d(i,\gamma i)$, and in case (i) because the reversed-weight norm of
+$a\circ\gamma^{-1}$ about $i$ is that of $a$ with the weight $\ue^{\beta\langle d(p,\cdot)\rangle}$, $p=\gamma^{-1}i$, which Lemma~\ref{cl:amp}(i) covers. Like the printed Corollary~1.6, Corollary~\ref{pc:cor16} is stated for every Fuchsian $\Gamma$ and every $b$, with constants that do not depend on $b$
+(in Corollary~\ref{pc:cor16} they may depend on $\Gamma$); by Theorem~\ref{cl:main} no
+statement of that form can have $m(z)^\gamma$ with $\gamma<\tfrac12$, so the exponent $\tfrac12$ is optimal among them (the power of $\hbar$ is not
+claimed optimal). For irrational $b$, and for cusped quotients other than $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$, the necessity of the factor is not decided
+here; a bound depending on $b$ without that factor is not excluded. The stationary-phase mechanism is not special to $b=\infty$: in the frame where
+$b=\infty$, the top of every $\Gamma$-image of a cusp horocycle is a stationary point of $-\log y$.
+\end{remark}

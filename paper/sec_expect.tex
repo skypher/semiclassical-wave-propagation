@@ -7,7 +7,7 @@ different things: the approximation stays accurate up to times of order $\hbar^{
 initial density fails to describe the expectation values after a time of order $\log(1/\hbar)\log\log(1/\hbar)$.
 
 \subsection{Transfer and cancellation}\label{subsec:ev-transfer}
-We use the swapped norm $\swNorm a$ of Section~\ref{sec:setup}; the printed-class version uses $\pcNorm a$ instead.
+We use the reversed-weight norm $\swNorm a$ of Section~\ref{sec:setup}; the printed-class version uses $\pcNorm a$ instead.
 \begin{corollary}\label{ev:transfer}
 Assume the hypotheses of Theorem~\ref{thm:dd14}, or those of Theorem~\ref{pc:main} with $\pcNorm a$ in place of $\swNorm a$. Let
 $K\in\mathbb N_0$ and $0\le t\le\delta(\alpha/\hbar)^{1/2}$, and put
@@ -46,14 +46,25 @@ gradients differ by more than $\hbar$, so that they are almost orthogonal one by
 differ by less than $\hbar$, and the cancellation is a property of the sum.
 \end{remark}
 
-By (i), for bounded observables the expectation values of $\psi(t)$ up to times $\delta(\alpha/\hbar)^{1/2}$ are those of the
-explicit sum $u^{(K)}(t)_\Gamma$, up to an error that tends to $0$ with $\hbar$ for fixed $\alpha$ and $K$. The next subsection answers one such question in a case where the sum can be evaluated.
+By (i), for bounded observables the expectation values of $\psi(t)$ up to times $\delta(\alpha/\hbar)^{1/2}$ are approximated by those of the explicit sum $u^{(K)}(t)_\Gamma$. For bounded $\|a\|_{\mathrm S}$ (respectively $\|a\|_{\mathrm P}$) and bounded initial $L^2$ norm, the error tends uniformly to zero with $\hbar$ for fixed $\alpha$ and $K$. The next subsection answers one such question in a case where the sum can be evaluated.
 
 \subsection{The modular surface}\label{subsec:ev-mod}
-In this subsection $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $M=\Gamma\backslash\Hb$, $x_0=i$, $b=\infty$ and $\varphi=-\log y$. Let
+For the remainder of this section $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $M=\Gamma\backslash\Hb$, $x_0=i$, $b=\infty$ and $\varphi=-\log y$. Let
 $F=\{|x|\le\tfrac12,\ |z|\ge1\}$ be the standard fundamental domain; for $Y\ge1$ let $M_Y\subset M$ be the image of $\{z\in F:y\le Y\}$,
 a compact set, and $C_Y$ the image of $\{z\in F:y>Y\}=\{|x|\le\tfrac12,\ y>Y\}$, the part of the cusp above height $Y$. Recall
 $\operatorname{area}(M)=\pi/3$.
+
+The geometry of cusp escape is visible in the periodization. In the normalization
+$b=\infty$ the classically transported state lies near height $y\asymp\ue^{-t}$.
+For a modular element $\gamma$ with lower-left entry $c\ne0$ and lower-right
+entry $d$, $\operatorname{Im}\gamma z=y/((cx+d)^2+c^2y^2)$, so the part of the
+state within $O(y)$ of the rational $-d/c$ is mapped to height $\asymp\ue^t/c^2$,
+which is at least $Y\ge1$ when $c\lesssim Y^{-1/2}\ue^{t/2}$. The periodization
+$u^{(K)}(t)_\Gamma$ sums over all these sheets, and beyond the Ehrenfest time the
+interference between them, which the classical prediction ignores, governs the
+fine behaviour. This geometry is compatible with Brooks's result; it is not a
+proof of escape, since it does not compare the mass or phase of the
+contributing sheets.
 
 Fix $\alpha\in(0,\tfrac12]$ and $h\in C_c^\infty(\Hb)$, $h\ge0$, such that
 \[
@@ -135,8 +146,9 @@ of the same order $\log r$ as that term, so this is an indication only: we do no
 do not prove that the classical prediction holds before that time.
 \end{remark}
 
-\subsubsection*{Proof of Proposition~\ref{ev:mod}}
-Throughout, $n$ denotes an arbitrary positive integer and constants may depend on $n$, $\alpha$ and $h$. Norms and inner products of
+\subsection{The zero mode and its Mellin transform}\label{subsec:ev-mellin}
+We prove Proposition~\ref{ev:mod} through five intermediate estimates: the Mellin transform of the amplitude, the scattering formula, the zero mode of the approximation, its initial norm, and the outgoing-mass bound. The final proof then combines these estimates with the approximation theorem.
+Throughout the proof, $0<\hbar\le1$ and $t\ge0$; $n$ denotes an arbitrary positive integer and constants may depend on $n$, $\alpha$ and $h$. Norms and inner products of
 functions on $(0,\infty)$ are those of $L^2((0,\infty),dy/y^2)$. For a function $f$ on $(0,\infty)$,
 $\hat f(s):=\int_0^\infty f(y)y^{-s}\,dy/y$ is its Mellin transform. For a function $w$ on $\Hb$ with $w(z+1)=w(z)$ we write
 $c_0[w](y):=\int_0^1w(x+iy)\,dx$ for its zero Fourier mode. We use Plancherel's theorem in the variable $u=\log y$ in two forms: if
@@ -150,7 +162,15 @@ and if $\Psi\in L^1(\mathbb R)\cap L^2(\mathbb R)$, then
   \int_0^\infty|I_\Psi|^2\,\frac{dy}{y^2}=\frac1{2\pi}\int_{\mathbb R}|\Psi|^2\,dr .
 \end{equation}
 
-\emph{Step 1: the zero mode $a_0$.} Let $g_\alpha:=g^{1/2}_\alpha\ge0$ be the profile of Lemma~\ref{os:prof}. By Lemma~\ref{os:prof}(iv), summed over the
+\begin{lemma}[Mellin transform of the amplitude]\label{ev:mellinlemma}
+Let $g_\alpha=g^{1/2}_\alpha$ be the profile of Lemma~\ref{os:prof} and, for $|\operatorname{Re}k|\le\tfrac12$, set $m(k)=\int_{\mathbb R}g_\alpha(r)\cosh(kr)\,dr$. For $\tfrac14\le\operatorname{Re}s\le1$, put $A(s)=m(\tfrac12-s)\hat h_0(s)$. This agrees with $\hat a_0(s)$ for $\tfrac12\le\operatorname{Re}s\le1$, has the holomorphic extension and decay specified in \eqref{ev:mellin}, and satisfies
+\[
+ A(\tfrac12+i\rho)=\ue^{-\alpha(\rho^2+1/4)^{1/2}}\hat h_0(\tfrac12+i\rho).
+\]
+Moreover $0<\mu_0<\infty$, with the Plancherel formula \eqref{ev:mu0}.
+\end{lemma}
+\begin{proof}
+By Lemma~\ref{os:prof}(iv), summed over the
 shells $n\le|r|<n+1$,
 \[
   M_\alpha:=\int_{\mathbb R}g_\alpha(r)\,\ue^{|r|/2}\,dr<\infty .
@@ -208,9 +228,13 @@ $\hat a_0(\tfrac12)=0$; but $\hat a_0(\tfrac12)=m(0)\hat h_0(\tfrac12)=\ue^{-\al
 with $\sigma=\tfrac12$, $y^{-3/2}a_0\in L^1(dy)$, so \eqref{ev:MP} gives
 \begin{equation}\label{ev:mu0}
   \mu_0=\frac1{2\pi}\int_{\mathbb R}|\hat a_0(\tfrac12+i\rho)|^2\,d\rho .
+\qedhere
 \end{equation}
 
-\emph{(d) The mean lemma.}
+
+\end{proof}
+
+
 \begin{lemma}\label{ev:meanlem}
 Let $E$ be a measurable function on $\Hb$ with $E(z+1)=E(z)$ and $aE\in L^1(\Hb)$. Then $a_0(y)\,c_0[E](y)$, read as $0$ where $a_0(y)=0$, is
 defined for almost every $y>0$ and integrable for $dy/y^2$, and
@@ -257,7 +281,12 @@ For bounded measurable $E$ with $E(z+1)=E(z)$ we have $\int_\Hb aE\,d\nu=\int_0^
 absolutely almost everywhere because $a\in L^1(\Hb)$. So the lemma shows that
 $\int_0^\infty\!\int_0^1\bigl(\sum_na(x+n,y)-a_0(y)\bigr)E\,dx\,dy/y^2=0$ for all such $E$, and hence $\sum_na(x+n,y)=a_0(y)$ almost everywhere.
 
-\emph{Step 2: incomplete Eisenstein series of test functions.} Let $g\in C_c^\infty((0,\infty))$ and
+
+\subsection{Scattering and the zero mode of the approximation}\label{subsec:ev-scattering}
+\begin{lemma}[scattering formula for test functions]\label{ev:scattering}
+For $g\in C_c^\infty((0,\infty))$, let $E(z|g)=\sum_{\gamma\in\Gamma_\infty\backslash\Gamma}g(\operatorname{Im}\gamma z)$, with $\Gamma_\infty$ the translations by integers. This is a bounded function on $M$, its zero mode is $g+R_g$ as in \eqref{ev:zero}, and $R_g$ has the representation \eqref{ev:R} with scattering coefficient $\Phi$ given in \eqref{ev:Phi}. On the line $\operatorname{Re}s=\tfrac12$, $|\Phi(s)|=1$.
+\end{lemma}
+\begin{proof} Let $g\in C_c^\infty((0,\infty))$ and
 $E(z|g):=\sum_{\gamma\in\Gamma_\infty\backslash\Gamma}g(\operatorname{Im}\gamma z)$, where $\Gamma_\infty$ is the group of the translations $z\mapsto z+n$. The
 cosets are the identity and the classes of the matrices with bottom row $(c,d)$, $c\ge1$, $\gcd(c,d)=1$, and
 $\operatorname{Im}\gamma z=y/|cz+d|^2$. If $g$ vanishes outside $[y_1,y_2]$, a term with bottom row $(c,d)$ is nonzero at $z\in F$ only if
@@ -290,7 +319,22 @@ Indeed $\hat g$ is entire and rapidly decreasing on vertical lines, and Mellin i
 because $\sum_cN_cc^{-2s}=\zeta(2s-1)/\zeta(2s)$ and $\int_{\mathbb R}(1+v^2)^{-s}dv=\sqrt\pi\,\Gamma(s-\tfrac12)/\Gamma(s)$. Moving the line to
 $\operatorname{Re}s=\tfrac12$ over the pole at $s=1$ gives \eqref{ev:R}.
 
-\emph{Step 3: the zero mode of the approximation.} Let
+
+\end{proof}
+
+\begin{lemma}[zero mode of the approximation]\label{ev:approxmode}
+For $t\ge0$ and $0<\hbar\le1$, put $v_t=u^{(0)}(t)_\Gamma$ and
+\[
+ f_t(y)=\ue^{-it/(2\hbar)}\ue^{-t/2}a_0(\ue^ty)y^{-i/\hbar},\qquad
+ \mathcal O_{f_t}(y)=\frac1{2\pi}\int_{\mathbb R}\Phi(\tfrac12+ir)\hat f_t(\tfrac12+ir)y^{1/2-ir}\,dr.
+\]
+Then $v_t\in L^2(M)$ and
+\[
+ c_0[v_t](y)=f_t(y)+\frac3\pi\hat f_t(1)+\mathcal O_{f_t}(y)
+\]
+for almost every $y>0$, with $\|f_t\|^2=\|\mathcal O_{f_t}\|^2=\mu_0$ in $L^2(dy/y^2)$. The Mellin transform of $f_t$ is given by \eqref{ev:ft}.
+\end{lemma}
+\begin{proof} Let
 \[
   f_t(y):=\ue^{-it/(2\hbar)}\,(S(t)a_0)(y)\,y^{-i/\hbar}=\ue^{-it/(2\hbar)}\,\ue^{-t/2}a_0(\ue^ty)\,y^{-i/\hbar},
 \]
@@ -303,9 +347,7 @@ and the substitution $\eta=\ue^ty$ with \eqref{ev:a0hat} gives
   \hat f_t(s)=\ue^{-it/(2\hbar)}\,\ue^{t(s-1/2)}\,\ue^{it/\hbar}\,\hat a_0(s+i/\hbar)\qquad(\tfrac12\le\operatorname{Re}s\le1).
 \end{equation}
 Since $\omega a\in L^2(\Hb)$, by Proposition~\ref{os:p1} and (W1), (W2) of Section~\ref{subsec:dd-surf} the orbit sums of
-$u^{(0)}(t)$ converge absolutely almost everywhere and $v_t:=u^{(0)}(t)_\Gamma\in L^2(M)$; and $\psi(0)=v_0$. Theorem~\ref{pc:main} with
-$\beta=\kappa=1$ applies for $\hbar\le\alpha^3$; write $\epsilon_K:=C^{K+1}K!(\hbar t/\alpha^2)^{K+1}\pcNorm a$. For
-$t\le\delta(\alpha/\hbar)^{1/2}$ we have $\hbar t/\alpha^2\le\delta\alpha^{-3/2}\hbar^{1/2}\to0$, and the second statement of (i) is the theorem.
+$u^{(0)}(t)$ converge absolutely almost everywhere and $v_t:=u^{(0)}(t)_\Gamma\in L^2(M)$; also $\psi(0)=v_0$.
 
 Let $g\in C_c^\infty((0,\infty))$. Unfolding $v_t$ (the function $u^{(0)}(t)$ is integrable on $\Hb$ and $E(\cdot|g)$ is bounded), then substituting
 $y=\ue^{-t}\eta$, gives
@@ -338,9 +380,17 @@ $v_t\in L^1(M)$). Hence
 By \eqref{ev:IMP}, $|\Phi(\tfrac12+ir)|=1$, \eqref{ev:ft} and \eqref{ev:mu0},
 \begin{equation}\label{ev:Onorm}
   \int_0^\infty|\mathcal O_{f_t}|^2\,\frac{dy}{y^2}=\frac1{2\pi}\int_{\mathbb R}|\hat f_t(\tfrac12+ir)|^2\,dr=\mu_0 .
+\qedhere
 \end{equation}
 
-\emph{Step 4: the norm.} The Cauchy--Schwarz step in the proof of Proposition~\ref{os:p1} bounds the sum of the moduli:
+
+\end{proof}
+
+\subsection{The initial norm and the outgoing mass}\label{subsec:ev-outgoing}
+\begin{lemma}[initial norm]\label{ev:initialnorm}
+With the notation of Lemma~\ref{ev:approxmode}, for every positive integer $n$, $\|\psi(0)\|^2=\mu_0+O(\hbar^n)$.
+\end{lemma}
+\begin{proof} The Cauchy--Schwarz step in the proof of Proposition~\ref{os:p1} bounds the sum of the moduli:
 $\mathsf A:=\sum_{\gamma\in\Gamma}|a|\circ\gamma$ satisfies $\norm{\mathsf A}_{L^2(M)}\le C\norm{\omega a}$. So
 $\int_\Hb|a|\,|v_0|\,d\nu=\int_M\mathsf A\,|v_0|\,d\nu<\infty$, where $v_0$ is lifted to $\Hb$; unfolding one factor of $|v_0|^2$ is justified, and
 \[
@@ -355,9 +405,19 @@ By \eqref{ev:ft}, \eqref{ev:a0hat} and \eqref{ev:mellin}, $|\hat f_0(1)|=|\hat a
 $\tfrac1{2\pi}\int\overline{\Phi(\tfrac12+ir)\hat f_0(\tfrac12+ir)}\,\hat f_0(\tfrac12-ir)\,dr$, which is at most
 $\tfrac1{2\pi}\int|\hat a_0(\tfrac12+i(r+\tfrac1\hbar))|\,|\hat a_0(\tfrac12+i(-r+\tfrac1\hbar))|\,dr\le C_n\hbar^n$: at every $r$ one of the two arguments has
 imaginary part at least $1/\hbar$ in modulus, and \eqref{ev:mellin} is used with the power $n$ for that factor and with the power $2$ for the
-other, which is integrable in $r$. Hence $\norm{\psi(t)}^2=\norm{\psi(0)}^2=\mu_0+O(\hbar^n)$, which is the first statement of (i).
+other, which is integrable in $r$. Hence $\norm{\psi(0)}^2=\mu_0+O(\hbar^n)$.
 
-\emph{Step 5: the outgoing term below height $Y$.} There are absolute constants $A\in(0,\tfrac12]$ and $K$ such that for $|2r|>3$ and
+
+\end{proof}
+
+\begin{lemma}[outgoing mass below a fixed height]\label{ev:outgoing}
+There is an absolute $C_1>0$ such that, with $T(\hbar)=C_1\log(1/\hbar)\log\log(1/\hbar)$, the outgoing term of Lemma~\ref{ev:approxmode} satisfies
+\[
+ \int_0^Y|\mathcal O_{f_t}|^2\,\frac{dy}{y^2}\le\frac{C}{\log(1/\hbar)}
+\]
+for $0<\hbar\le\ue^{-\ue}$, $Y>0$ and $t\ge T(\hbar)+\log Y$. The constant $C$ may depend on $\alpha$ and $h$.
+\end{lemma}
+\begin{proof} There are absolute constants $A\in(0,\tfrac12]$ and $K$ such that for $|2r|>3$ and
 $\tfrac12-A/(2\log|2r|)\le\sigma\le\tfrac12$, $\Phi$ is holomorphic in a neighbourhood of $\sigma+ir$ and
 \begin{equation}\label{ev:PhiD}
   |\Phi(\sigma+ir)|\le K\log^2|2r| .
@@ -409,9 +469,17 @@ $2\vartheta(t-\log Y)\ge10\,\mathsf L\log\mathsf L/\log(3/\hbar)\ge5\log\mathsf 
 $\mathsf L\hbar\le1$, the three parts give
 \begin{equation}\label{ev:out}
   \int_0^Y|\mathcal O_{f_t}|^2\frac{dy}{y^2}\le\frac{C}{\log(1/\hbar)}\qquad\bigl(0<\hbar\le\ue^{-\ue},\ t\ge T(\hbar)+\log Y,\ Y>0\bigr).
+\qedhere
 \end{equation}
 
-\emph{Step 6: the mass in the cusp.} We use three elementary facts. First, for $Y\ge1$ and a $\Gamma$-invariant $w\in L^2(M)$,
+
+\end{proof}
+
+\subsection{Proof of the escape and classical comparison}
+\begin{proof}[Proof of Proposition~\ref{ev:mod}]
+Lemma~\ref{ev:mellinlemma} gives $0<\mu_0<\infty$. Lemma~\ref{ev:initialnorm} and unitarity give the norm assertion in (i), and Theorem~\ref{pc:main} gives its approximation estimate. It remains to prove (ii) and (iii).
+
+\emph{Escape of mass.} We use three elementary facts. First, for $Y\ge1$ and a $\Gamma$-invariant $w\in L^2(M)$,
 \begin{equation}\label{ev:cusp}
   \int_{M_Y}|w|^2\,d\nu+\int_Y^\infty|c_0[w](y)|^2\,\frac{dy}{y^2}\le\norm w^2_{L^2(M)} :
 \end{equation}
@@ -426,7 +494,7 @@ Second, for $G\in L^2((Y,\infty),dy/y^2)$ and a constant $c$,
 expand the square, use $\int_Y^\infty dy/y^2=1/Y$, and complete the square in $c$. Third, $|p+q|^2\ge(1-\varepsilon)|p|^2-\varepsilon^{-1}|q|^2$ for complex $p,q$ and
 $0<\varepsilon<1$.
 
-Let $Y\ge1$, $0<\varepsilon<1$ and $T(\hbar)+\log Y\le t\le\delta(\alpha/\hbar)^{1/2}$. By \eqref{ev:c0}, the third fact with $q=f_t$, and \eqref{ev:proj} with $G=\mathcal O_{f_t}$ and
+Write $\epsilon_K=C^{K+1}K!(\hbar t/\alpha^2)^{K+1}\pcNorm a$. For fixed $K$ this tends uniformly to zero on the approximation window. Let $Y\ge1$, $0<\varepsilon<1$ and $T(\hbar)+\log Y\le t\le\delta(\alpha/\hbar)^{1/2}$. By \eqref{ev:c0}, the third fact with $q=f_t$, and \eqref{ev:proj} with $G=\mathcal O_{f_t}$ and
 $c=\tfrac3\pi\hat f_t(1)$,
 \[
   \int_Y^\infty|c_0[v_t]|^2\frac{dy}{y^2}\ge(1-\varepsilon)\Bigl(\int_Y^\infty|\mathcal O_{f_t}|^2\frac{dy}{y^2}-Y\Bigl|\int_Y^\infty\mathcal O_{f_t}\frac{dy}{y^2}\Bigr|^2\Bigr)
@@ -443,7 +511,7 @@ so
 because $|\hat f_t(\tfrac12+ir)|\le C(1+|r+\tfrac1\hbar|)^{-3}$ and $|\tfrac12+ir|^{-1}\le4\hbar(1+|r+\tfrac1\hbar|)$ for $\hbar\le1$. Finally
 $\int_Y^\infty|f_t|^2dy/y^2=\int_{\ue^tY}^\infty|a_0|^2d\eta/\eta^2\le\int_{\ue^{T(\hbar)}}^\infty|a_0|^2d\eta/\eta^2\to0$ as $\hbar\to0$, a tail of the convergent integral $\mu_0$.
 So $\int_Y^\infty|c_0[v_t]|^2dy/y^2\ge(1-\varepsilon)\mu_0-o(1)$, where $o(1)$ tends to $0$ as $\hbar\to0$ for fixed $\varepsilon$, uniformly in $Y\ge1$ and in $t$ on the
-window. By Corollary~\ref{ev:transfer}(ii) and Step 4, $\norm{v_t}^2_{L^2(M)}\le(\norm{\psi(0)}+\epsilon_0)^2=\mu_0+o(1)$. Hence by \eqref{ev:cusp}
+window. By Corollary~\ref{ev:transfer}(ii) and Lemma~\ref{ev:initialnorm}, $\norm{v_t}^2_{L^2(M)}\le(\norm{\psi(0)}+\epsilon_0)^2=\mu_0+o(1)$. Hence by \eqref{ev:cusp}
 \[
   \int_{M_Y}|u^{(0)}(t)_\Gamma|^2d\nu\le\norm{v_t}^2-\int_Y^\infty|c_0[v_t]|^2\frac{dy}{y^2}\le\varepsilon\mu_0+o(1),
 \]
@@ -451,8 +519,8 @@ and since $\varepsilon$ is arbitrary the left side tends to $0$, uniformly on th
 $\norm{\mathbf 1_{M_Y}\psi(t)}\le\norm{\mathbf 1_{M_Y}u^{(0)}(t)_\Gamma}+\epsilon_0$ and
 $\norm{\mathbf 1_{M_Y}u^{(K)}(t)_\Gamma}\le\norm{\mathbf 1_{M_Y}\psi(t)}+\epsilon_K$, with $\epsilon_K\to0$ on the window for fixed $K$. This proves (ii).
 
-\emph{Step 7: the classical transport.} For $q$ continuous with compact support in $M$, the closed horocycles equidistribute:
+\emph{Classical transport.} For $q$ continuous with compact support in $M$, the closed horocycles equidistribute:
 $\int_0^1q(x+iy)\,dx\to\tfrac3\pi\int_Mq\,d\nu$ as $y\to0$. For smooth $q$ with compact support this is in \cite[Section~1, pp.~279--280]{Zag81}
 (see also \cite{Sar81}); for continuous $q$ it follows by uniform approximation, since the measures $dx$ on the horocycles and
 $\tfrac3\pi d\nu$ have mass $1$. The left side of (iii) equals
-$\int_0^\infty|a_0(\eta)|^2\big(\int_0^1q(x+i\ue^{-t}\eta)\,dx\big)\,d\eta/\eta^2$, and (iii) follows by dominated convergence. \qed
+$\int_0^\infty|a_0(\eta)|^2\big(\int_0^1q(x+i\ue^{-t}\eta)\,dx\big)\,d\eta/\eta^2$, and (iii) follows by dominated convergence. \end{proof}

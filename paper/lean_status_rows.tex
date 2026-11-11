@@ -7,10 +7,11 @@
 Theorem~\ref{pc:main} & L & \lean{pcmain_half}\\
 Corollary~\ref{pc:thm13} & L & \lean{pcthm13_half}\\
 Corollary~\ref{pc:cor15} & L & \lean{pccor15_half}\\
-Corollary~\ref{pc:cor16bg} & L & \lean{pccor16bg_half}\\
 Corollary~\ref{pc:cor16} & L & \lean{pccor16_half}\\
+Corollary~\ref{pc:cor16bg} & L & \lean{pccor16bg_half}\\
 Corollary~\ref{pc:allalpha} & L & \lean{pcmain_all}, \lean{pcthm13_all}, \lean{pccor15_all}, \lean{pccor16bg_all}, \lean{pccor16_all}; \lean{pcMainAt_all}, \lean{poisson_cw_all}, \lean{lift1_pr_all}\\
 Remark~\ref{rem:amplitude-examples} & P & elementary norm identities and an example; self-checked, not separately formalized\\
+Corollary~\ref{cor:escape-intro} & L$'$ & quantum conclusions from \lean{evmod}; the classical comparison is cited and not formalized\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:remainder}: periodization and the exact remainder}}\\
 Lemma~\ref{lem:p1} & L & \lean{poincareSup_lt_top}\\
 Lemma~\ref{lem:t2} & L & \lean{lem_t2}\\
@@ -51,25 +52,27 @@ Lemma~\ref{os:transfer} & L & \lean{transfer} (there for the weight $X_0^\beta$ 
 Proposition~\ref{os:p1} & L & \lean{poincare_omP}, \lean{mS_printed_sharp}, \lean{norm_surfV_printed_le}, \lean{mS_printed_le}\\
 Remark~\ref{os:indep} & L & \lean{surfV_indep}\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:printed}: proofs and companion results}}\\
-Remark~\ref{pc:classes} & P & \\
-Theorem~\ref{thm:main} & L & \lean{thm13R_rep}\\
-Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_exp}\\
-Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_rep}\\
-Corollary~\ref{cor:dd16} & L & \lean{cor16Rmain_rep}\\[2pt]
 Theorem~\ref{thm:dd-appx} & L & \lean{thm14R_rep}\\
+Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_exp}\\
+Corollary~\ref{thm:main} & L$'$ & \lean{thm14Rmain_exp} at K=N=0 and fixed radius, with radius monotonicity; \lean{thm13R_rep} separately has the narrower range beta>1 and alpha<pi/4\\
+Proposition~\ref{pc:classes} & P & \\
+Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_rep}\\
 Corollary~\ref{cor:dd15-appx} & L & \lean{cor15R_rep}\\
+Corollary~\ref{cor:dd16} & L & \lean{cor16Rmain_rep}\\[2pt]
 Corollary~\ref{cor:dd16-appx} & L & \lean{cor16R_rep}\\
 Lemma~\ref{lem:ex} & P & not used by the theorems\\[2pt]
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:g5}: sharpness and limitations}}\\
 Proposition~\ref{prop:g5} & L$'$ & \lean{printedThm13_false}: the negation of the printed theorem; the asymptotic formula is not formalized (Remark~\ref{rem:g5-lean})\\
 Proposition~\ref{prop:mean} & L & \lean{meanGrowth}; \lean{integral_approxSolB}, \lean{J_vecX}, \lean{J_vecY}, \lean{chP_dysT}, \lean{swapped_setup}, \lean{enorm_integral_le_perio}\\
 Remark~\ref{rem:g4} & P & \\
+Proposition~\ref{cl:relative} & P & extracted from the relative-error remark; self-checked\\
 Theorem~\ref{cl:main}, Lemmas~\ref{cl:ssob}, \ref{cl:asym}, \ref{cl:kernel}, \ref{cl:amp} & P & \\[2pt]
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:expect}: expectation values}}\\
 Corollary~\ref{ev:transfer} & L & \lean{evTransfer_main}, \lean{evTransfer_pc}; \lean{ev_transfer_core}\\
 Proposition~\ref{ev:mod} & L$'$ & parts (i), (ii): \lean{evmod}, with the statement \lean{Stmt_evmod}; part (iii) is a cited theorem and is not formalized\\
 Lemma~\ref{ev:meanlem} & L & \lean{integral_amp_mul_slice_L1}, \lean{integrableOn_amp_mul_slice_L1}, \lean{slice_lintegral_le}\\
+Lemmas~\ref{ev:mellinlemma}, \ref{ev:scattering}, \ref{ev:approxmode}, \ref{ev:initialnorm}, \ref{ev:outgoing} & P & editorial extractions from the proof of Proposition~\ref{ev:mod}; the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked\\
 \multicolumn{3}{@{}l}{\emph{Appendix~\ref{app:special}: special-function and kernel calculations}}\\
 Lemma~\ref{lem:gutzmer} & P & used only for Lemma~\ref{lem:ex}\\
-Lemma~\ref{os:poisson} & P & used only in Remark~\ref{pc:classes} and Section~\ref{subsec:cl}\\
+Lemma~\ref{os:poisson} & P & used only in Proposition~\ref{pc:classes} and Section~\ref{subsec:cl}\\
 Lemma~\ref{os:hk} & P & used only in Section~\ref{subsec:cl}\\
