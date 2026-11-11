@@ -21,8 +21,10 @@ the cusp height. Schubert's files are not part of this repository.
   with the critical-weight estimates placed beside the original-norm argument. Cusp-factor sharpness has its own
   section; the modular-surface application is stated in the introduction and proved through named intermediate lemmas.
   Three appendices contain auxiliary special-function/kernel calculations, formalization documentation, and a detailed comparison with Schubert's preprint.
-  The introduction maps amplitude constructions and radius ranges to their theorems and applications, and explains the dependencies between the approximation, sharpness, and escape blocks; the escape application
-  can be read without the sharpness sections. The localized-state application is highlighted alongside escape of mass.
+  The introduction separates approximation results, applications, and corrections, maps amplitude constructions and radius ranges to their theorems, and summarizes the comparison with Schubert's statements.
+  It explains the dependencies between the approximation, sharpness, and escape blocks; the escape application
+  can be read without the sharpness sections. The localized-state application is highlighted alongside escape of mass,
+  whose intermediate lemmas state their Mellin and scattering formulas explicitly.
   Cusp sharpness proceeds through separate auxiliary-estimate, amplitude-membership and noncancellation lemmas;
   its relative-error interpretation is stated beside the sharpness theorem. The pointwise
   corollaries display the sharper prefactor derived in the paper; the formalization appendix identifies the weaker

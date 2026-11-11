@@ -1,12 +1,13 @@
 \section{Analytic and weighted propagation estimates}\label{sec:analytic}
-We establish the estimates used to bound the exact remainder. After defining the mollifier and recording elliptic regularity,
-we prove Cauchy estimates for words in the vector fields and multiplication by spatial weights. These feed into analytic and
-weighted propagation for the mollified flow and the exponentially small unweighted mollifier defect.
-The principal outputs are Proposition~\ref{prop:a0} (analytic propagation with loss of radius), Proposition~\ref{prop:ws} (weighted propagation), and Lemma~\ref{lem:unw} (the unweighted defect). In the approximation proof, the first and third give an exponentially small unweighted error, while the second controls its spatially weighted norm. Interpolation then compensates for the growth caused by periodization and transport. The word estimates control the derivatives of the remainder amplitude.
-The proof has three tasks. Sections~\ref{subsec:dd-fc} and~\ref{app:m} control derivatives and
-changes of spatial weight. Sections~\ref{app:kl} and~\ref{app:ws} propagate analytic regularity
-and spatial decay separately. Section~\ref{subsec:dd-wb} combines the derivative estimates for
-the remainder and supplies the small unweighted defect used in interpolation.
+The exact remainder requires control of derivatives, analytic regularity and spatial decay.
+Sections~\ref{subsec:dd-fc} and~\ref{app:m} give factorial bounds for words in the vector fields
+and for changes of spatial weight. Sections~\ref{app:kl} and~\ref{app:ws} then prove analytic
+propagation with loss of radius (Proposition~\ref{prop:a0}) and weighted propagation
+(Proposition~\ref{prop:ws}) for the mollified flow. Finally, Section~\ref{subsec:dd-wb} bounds
+derivatives of the remainder amplitude and proves exponential smallness of the unweighted
+mollifier defect (Lemma~\ref{lem:unw}). In the approximation proofs, interpolation between
+the small unweighted defect and its weighted bound compensates for the growth caused by
+periodization and transport.
 
 \medskip\noindent\textbf{Notation for the analytic estimates.}
 Let $X=y\partial_x$, $Y=y\partial_y$, $\Delta=X^2+Y^2-Y$, $\Delta(s)=\ue^{-2s}X^2+Y^2-Y$,
@@ -16,8 +17,8 @@ For the analytic estimates we use the power-weight amplitude norm:
 \pwNorm a:=\norm{\ue^{\alpha\Lambda}X_0^\beta a}.
 \]
 By Lemma~\ref{lem:m2w} a finite norm with the weight $\ue^{\beta\langle d\rangle}$ at radius $\alpha$ gives a finite norm of this
-kind at the radius $c_0\alpha$; Theorem~\ref{thm:dd14} is deduced from Theorem~\ref{thm:dd-appx} in this way at the end of
-Section~\ref{subsec:dd-thm}. The two-time mollified propagator $V_\varepsilon(s_1,s_0)=V_\varepsilon(s_1)V_\varepsilon(s_0)^*$ is defined in
+kind at the radius $c_0\alpha$; this gives the reversed-weight consequence in Section~\ref{sec:swapped}.
+The two-time mollified propagator $V_\varepsilon(s_1,s_0)=V_\varepsilon(s_1)V_\varepsilon(s_0)^*$ is defined in
 Section~\ref{app:kl}.
 
 \subsection{The mollifier and elliptic regularity}

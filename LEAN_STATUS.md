@@ -18,11 +18,11 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Theorem 1.1 (`pc:main`) | L | `pcmain_all`; small-radius stage: `pcmain_half` |
-| Corollary 1.2 (`pc:thm13`) | L | `pcthm13_all` |
-| Corollary 1.3 (`pc:cor15`) | L | `pccor15_all` |
-| Corollary 1.4 (`pc:cor16`) | L′ | `pccor16_all`, `pccor16bg_all` state the weaker prefactor exponent -2N-4; the paper derives -2N-2 from the approximation bound and local Sobolev inequality |
-| Remark 1.5 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
+| Theorem 1.2 (`pc:main`) | L | `pcmain_all`; small-radius stage: `pcmain_half` |
+| Corollary 1.3 (`pc:thm13`) | L | `pcthm13_all` |
+| Corollary 1.4 (`pc:cor15`) | L | `pccor15_all` |
+| Corollary 1.5 (`pc:cor16`) | L′ | `pccor16_all`, `pccor16bg_all` state the weaker prefactor exponent -2N-4; the paper derives -2N-2 from the approximation bound and local Sobolev inequality |
+| Remark 1.1 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
 | Corollary 1.6 (`cor:escape-intro`) | L′ | quantum conclusions from `evmod`; the classical comparison is cited and not formalized |
 
 ## Section 2 (`sec:remainder`): periodization and the exact remainder

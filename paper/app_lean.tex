@@ -10,7 +10,7 @@
 
 The main approximation theorems, their optimal-truncation corollaries, and the supporting statements specified below
 are formalized in Lean~4 and checked by its kernel. The pointwise corollaries display a sharper prefactor derived in the text;
-the existing formal statements retain the weaker one. This appendix distinguishes direct counterparts,
+the existing formal statements retain the weaker one. Table~\ref{tab:lean} distinguishes direct counterparts,
 paper deductions and variants, and results without formal proofs.
 
 \subsection*{What is checked}
@@ -48,15 +48,9 @@ The printed statement is formalized as: for every Fuchsian $\Gamma$ and all $\al
 $\norm{u^{(0)}(t)_\Gamma-\cU(t)(a\ue^{i\varphi_b/\hbar})_\Gamma}_{L^2(M)}\le C\hbar\norm a_{\alpha,\beta}$ for all $0<\hbar\le\hbar_0$, all $0\le t\le\delta\hbar^{-1/2}$, all $b$ and all $C^\infty$ amplitudes of finite original norm. The restrictions to $\hbar\le\hbar_0$ and to $C^\infty$ amplitudes weaken the printed claim, and the formal theorem states that this weaker claim is false. Its proof uses $\Gamma=\{\mathrm{id}\}$, $\alpha=\tfrac12$, $\beta=2$, $b=\infty$ and the amplitude $a=\ue^{-\alpha\Lambda}\ue^{-3X_0}$, $X_0=\cosh d(i,\cdot)$. It takes the Dyson identity (iii) of Proposition~\ref{prop:dd-id} at $K=0$ and $K=1$, which gives the expansion in Proposition~\ref{prop:g5} with $R$ the second-order term, and uses that periodization over the trivial group is an isometry. The bound $\norm R\le\tfrac{\hbar^2t^2}8\sup_{r,s}\norm{\Delta(r)\Delta(s)a}$ comes from Lemma~\ref{lem:wb} at $N=0$, and, with $A:=Y^2-Y$, $\norm{Aa}\ge\norm a/4$ from $Y^*=1-Y$ on $\operatorname{Dom}(\Delta)$: $\langle a,Aa\rangle=-\norm{Ya}^2$ and $2\operatorname{Re}\langle a,Ya\rangle=\norm a^2$.
 
 \subsection*{Correspondence and exclusions}
-Table~\ref{tab:lean} separates direct counterparts, paper deductions and variants, and results without formal proofs.
-The file \texttt{LEAN\_STATUS.md} in the repository gives the correspondence for every labelled statement.
-
-\paragraph{Direct counterparts.}
-Table~\ref{tab:lean} identifies the principal statements with direct counterparts, under the
-interpretations above. These include the approximation estimates, optimal truncation and
-the quantum conclusions of Proposition~\ref{ev:mod}. Supporting statements are listed individually
-in \texttt{LEAN\_STATUS.md}. The variants below distinguish differences in bounds, parameter ranges
-and conclusions.
+The direct counterparts in Table~\ref{tab:lean} use the interpretations above.
+The file \texttt{LEAN\_STATUS.md} in the repository gives the correspondence for every labelled statement,
+including the supporting estimates. The differences in bounds, parameter ranges and conclusions are described below.
 
 \paragraph{Paper deductions and variants.}
 Corollaries~\ref{pc:cor16} and~\ref{cor:dd16} display the prefactor $(\alpha\hbar)^{-2N-2}$ obtained in

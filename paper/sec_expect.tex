@@ -4,6 +4,9 @@
 We first transfer the $L^2$ approximation estimates to bounded observables. We then prove the escape result
 stated in Corollary~\ref{cor:escape-intro}, for the modular surface and the zero-mode amplitude family specified below.
 This section uses the approximation results but does not depend on Sections~\ref{sec:g5} and~\ref{sec:cusp}.
+The pointwise growth in Section~\ref{sec:cusp} is measured at points moving into the cusp;
+the escape proved here concerns mass on fixed compact sets. Large values at increasing cusp
+heights are compatible with vanishing mass on every fixed compact set.
 
 \subsection{Transfer and cancellation}\label{subsec:ev-transfer}
 We use the reversed-weight norm $\swNorm a$ of Section~\ref{sec:setup}; the original-norm version uses $\pcNorm a$ instead.
@@ -74,7 +77,7 @@ $h_1\ge0$, $h_1\not\equiv0$. Let
 \[
   a:=\ue^{-\alpha\Lambda}h .
 \]
-Then $\pcNorm a=\norm{\ue^{\beta\langle d\rangle}h}<\infty$ for every $\beta$, so $a$ is an amplitude of the Poisson-smoothed data class, and it does
+Then $\pcNorm a=\norm{\ue^{\beta\langle d\rangle}h}<\infty$ for every $\beta$, so $a$ is an amplitude of the original-norm class, and it does
 not depend on $\hbar$. Let $\omega=X_0^{1/2}\ell^{\,c'}$ be the periodization weight of Section~\ref{sec:printed}, with $X_0=\cosh d(i,\cdot)$,
 $\ell=\log(2X_0)/\log2$ and a fixed $c'\in(\tfrac12,1)$. Since $h$ has compact support, $\omega h\in L^2(\Hb)$, so $\omega a\in L^2(\Hb)$ by
 Corollary~\ref{os:cwp}. On the line $\operatorname{Im}z=y$ we have $X_0=(x^2+y^2+1)/(2y)\ge\tfrac12\max(y,1/y)$, hence $\ell\ge\max(1,|\log y|/\log2)$ and
@@ -158,11 +161,25 @@ and if $\Psi\in L^1(\mathbb R)\cap L^2(\mathbb R)$, then
 \end{equation}
 
 \begin{lemma}[Mellin transform of the amplitude]\label{ev:mellinlemma}
-Let $g_\alpha=g^{1/2}_\alpha$ be the profile of Lemma~\ref{os:prof} and, for $|\operatorname{Re}k|\le\tfrac12$, set $m(k)=\int_{\mathbb R}g_\alpha(r)\cosh(kr)\,dr$. For $\tfrac14\le\operatorname{Re}s\le1$, put $A(s)=m(\tfrac12-s)\hat h_0(s)$. This agrees with $\hat a_0(s)$ for $\tfrac12\le\operatorname{Re}s\le1$, has the holomorphic extension and decay specified in \eqref{ev:mellin}, and satisfies
+Let $g_\alpha=g^{1/2}_\alpha$ be the profile of Lemma~\ref{os:prof}. Put
+$M_\alpha:=\int_{\mathbb R}g_\alpha(r)\ue^{|r|/2}\,dr<\infty$ and, for
+$|\operatorname{Re}k|\le\tfrac12$, set $m(k)=\int_{\mathbb R}g_\alpha(r)\cosh(kr)\,dr$.
+For $\tfrac14\le\operatorname{Re}s\le1$, the function
+\begin{equation}\label{ev:mellin}
+\begin{gathered}
+ A(s):=m(\tfrac12-s)\hat h_0(s)\quad\text{is holomorphic in }|\operatorname{Re}s-\tfrac12|<\tfrac14,\\
+ |A(\sigma+i\rho)|\le M_\alpha C_n(1+|\rho|)^{-n}\quad(\tfrac14\le\sigma\le1)
+\end{gathered}
+\end{equation}
+for every positive integer $n$, with $C_n$ depending on $h$ and $n$.
+It agrees with $\hat a_0(s)$ for $\tfrac12\le\operatorname{Re}s\le1$ and satisfies
 \[
  A(\tfrac12+i\rho)=\ue^{-\alpha(\rho^2+1/4)^{1/2}}\hat h_0(\tfrac12+i\rho).
 \]
-Moreover $0<\mu_0<\infty$, with the Plancherel formula \eqref{ev:mu0}.
+Moreover $0<\mu_0<\infty$, and
+\begin{equation}\label{ev:mu0}
+ \mu_0=\frac1{2\pi}\int_{\mathbb R}|\hat a_0(\tfrac12+i\rho)|^2\,d\rho .
+\end{equation}
 \end{lemma}
 \begin{proof}
 By Lemma~\ref{os:prof}(iv), summed over the
@@ -208,23 +225,13 @@ horizontal lines is $h_0$. So \eqref{ev:mult} reads
   \hat a_0(s)=m(\tfrac12-s)\,\hat h_0(s)\qquad(\tfrac12\le\operatorname{Re}s\le1),
 \end{equation}
 where the Mellin integral of $a_0$ converges absolutely. Since $h_0\in C_c^\infty((0,\infty))$, $\hat h_0$ is entire and, by integration by parts,
-$|\hat h_0(\sigma+i\rho)|\le C_n(1+|\rho|)^{-n}$ for $\tfrac14\le\sigma\le1$. Hence the function
-\begin{equation}\label{ev:mellin}
-\begin{gathered}
-  A(s):=m(\tfrac12-s)\,\hat h_0(s)\quad\text{is holomorphic in }|\operatorname{Re}s-\tfrac12|<\tfrac14,\\
-  |A(\sigma+i\rho)|\le M_\alpha C_n(1+|\rho|)^{-n}\quad(\tfrac14\le\sigma\le1),
-\end{gathered}
-\end{equation}
-it equals $\hat a_0$ on $\tfrac12\le\operatorname{Re}s\le1$, and $A(\tfrac12+i\rho)=\ue^{-\alpha(\rho^2+1/4)^{1/2}}\hat h_0(\tfrac12+i\rho)$.
+$|\hat h_0(\sigma+i\rho)|\le C_n(1+|\rho|)^{-n}$ for $\tfrac14\le\sigma\le1$.
+Together with the properties of $m$, this proves \eqref{ev:mellin} and the asserted value on the central line.
 
 \emph{(c) The mass $\mu_0$.} By the Cauchy--Schwarz inequality on horizontal lines and \eqref{ev:line},
 $|a_0(y)|^2\le2\pi\int_{\mathbb R}\omega^2|a|^2(x+iy)\,dx$, so $\mu_0\le2\pi\norm{\omega a}^2<\infty$. If $\mu_0=0$, then $a_0=0$ almost everywhere and
 $\hat a_0(\tfrac12)=0$; but $\hat a_0(\tfrac12)=m(0)\hat h_0(\tfrac12)=\ue^{-\alpha/2}\int_0^\infty h_0(y)y^{-3/2}dy>0$ by \eqref{ev:a0hat}. So $0<\mu_0<\infty$. By \eqref{ev:L1}
-with $\sigma=\tfrac12$, $y^{-3/2}a_0\in L^1(dy)$, so \eqref{ev:MP} gives
-\begin{equation}\label{ev:mu0}
-  \mu_0=\frac1{2\pi}\int_{\mathbb R}|\hat a_0(\tfrac12+i\rho)|^2\,d\rho .
-\qedhere
-\end{equation}
+with $\sigma=\tfrac12$, $y^{-3/2}a_0\in L^1(dy)$, so \eqref{ev:MP} gives \eqref{ev:mu0}.
 
 
 \end{proof}
@@ -278,35 +285,43 @@ $\int_0^\infty\!\int_0^1\bigl(\sum_na(x+n,y)-a_0(y)\bigr)E\,dx\,dy/y^2=0$ for al
 
 
 \subsection{Scattering and the zero mode of the approximation}\label{subsec:ev-scattering}
+Write $\Gamma_\infty$ for the translations by integers and $N_c$ for the number of residues
+modulo $c$ that are prime to $c$. The scattering coefficient is the meromorphic function
+\begin{equation}\label{ev:Phi}
+  \Phi(s):=\sqrt\pi\,\frac{\Gamma(s-\frac12)}{\Gamma(s)}\,\frac{\zeta(2s-1)}{\zeta(2s)}
+  =\pi^{2s-1}\,\frac{\Gamma(1-s)}{\Gamma(s)}\,\frac{\zeta(2-2s)}{\zeta(2s)} .
+\end{equation}
+The functional equation of $\zeta$ gives the second expression.
+
 \begin{lemma}[scattering formula for test functions]\label{ev:scattering}
-For $g\in C_c^\infty((0,\infty))$, let $E(z|g)=\sum_{\gamma\in\Gamma_\infty\backslash\Gamma}g(\operatorname{Im}\gamma z)$, with $\Gamma_\infty$ the translations by integers. This is a bounded function on $M$, its zero mode is $g+R_g$ as in \eqref{ev:zero}, and $R_g$ has the representation \eqref{ev:R} with scattering coefficient $\Phi$ given in \eqref{ev:Phi}. On the line $\operatorname{Re}s=\tfrac12$, $|\Phi(s)|=1$.
+For $g\in C_c^\infty((0,\infty))$, the function
+$E(z|g)=\sum_{\gamma\in\Gamma_\infty\backslash\Gamma}g(\operatorname{Im}\gamma z)$ is bounded on $M$, and for $y>0$ its zero mode is
+\begin{equation}\label{ev:zero}
+ c_0[E(\cdot|g)](y)=g(y)+R_g(y),\qquad
+ R_g(y):=\sum_{c\ge1}N_c\int_{\mathbb R}g\Bigl(\frac{y}{c^2(x^2+y^2)}\Bigr)dx .
+\end{equation}
+With $\Phi$ as in \eqref{ev:Phi},
+\begin{equation}\label{ev:R}
+ R_g(y)=\frac3\pi\hat g(1)+\mathcal O_g(y),\qquad
+ \mathcal O_g(y):=\frac1{2\pi}\int_{\mathbb R}\Phi(\tfrac12+ir)\hat g(\tfrac12+ir)y^{1/2-ir}\,dr .
+\end{equation}
+On the line $\operatorname{Re}s=\tfrac12$, $|\Phi(s)|=1$.
 \end{lemma}
 \begin{proof} Let $g\in C_c^\infty((0,\infty))$ and
 $E(z|g):=\sum_{\gamma\in\Gamma_\infty\backslash\Gamma}g(\operatorname{Im}\gamma z)$, where $\Gamma_\infty$ is the group of the translations $z\mapsto z+n$. The
 cosets are the identity and the classes of the matrices with bottom row $(c,d)$, $c\ge1$, $\gcd(c,d)=1$, and
 $\operatorname{Im}\gamma z=y/|cz+d|^2$. If $g$ vanishes outside $[y_1,y_2]$, a term with bottom row $(c,d)$ is nonzero at $z\in F$ only if
 $c^2y\le1/y_1$ and $|cx+d|^2\le y/y_1\le1/(c^2y_1^2)$; so the number of nonzero terms is bounded on $F$, and $E(\cdot|g)$ is a bounded, $\Gamma$-invariant
-measurable function. In particular $E(\cdot|g)\in L^2(M)$. By the substitution $d=d_0+cn$ its zero mode is
-\begin{equation}\label{ev:zero}
-  c_0[E(\cdot|g)](y)=g(y)+R_g(y),\qquad R_g(y):=\sum_{c\ge1}N_c\int_{\mathbb R}g\Big(\frac{y}{c^2(x^2+y^2)}\Big)dx\qquad(y>0),
-\end{equation}
-where $N_c$ is the number of residues $d_0$ modulo $c$ that are prime to $c$. For $w\in L^2(M)$, unfolding gives
+measurable function. In particular $E(\cdot|g)\in L^2(M)$. The substitution $d=d_0+cn$ gives
+the zero mode \eqref{ev:zero}. For $w\in L^2(M)$, unfolding gives
 \begin{equation}\label{ev:unf}
   \int_Mw\,\overline{E(\cdot|g)}\,d\nu=\int_0^\infty c_0[w](y)\,\overline{g(y)}\,\frac{dy}{y^2};
 \end{equation}
-this is justified because $E(\cdot||g|)$ is bounded and $w\in L^1(M)$. Let
-\begin{equation}\label{ev:Phi}
-  \Phi(s):=\sqrt\pi\,\frac{\Gamma(s-\frac12)}{\Gamma(s)}\,\frac{\zeta(2s-1)}{\zeta(2s)}
-  =\pi^{2s-1}\,\frac{\Gamma(1-s)}{\Gamma(s)}\,\frac{\zeta(2-2s)}{\zeta(2s)} ,
-\end{equation}
-the two forms being equal by the functional equation of $\zeta$. $\Phi$ is holomorphic in $\operatorname{Re}s\ge\tfrac12$ except for a simple
+this is justified because $E(\cdot||g|)$ is bounded and $w\in L^1(M)$. The function $\Phi$ is holomorphic in $\operatorname{Re}s\ge\tfrac12$ except for a simple
 pole at $s=1$ with residue $3/\pi$, $|\Phi(\tfrac12+ir)|=1$ (because $\Phi(s)\Phi(1-s)=1$ and $\overline{\Phi(s)}=\Phi(\bar s)$), and
 $|\Phi(s)|\le C(1+|\operatorname{Im}s|)^2$ in $\tfrac12\le\operatorname{Re}s\le\tfrac54$, $|\operatorname{Im}s|\ge2$: the Gamma quotient by Stirling's formula \cite[5.11.9]{DLMF},
-$\zeta(2s-1)$ by its polynomial growth in vertical strips, and $1/\zeta(2s)$ by \cite[Theorem~6.7]{MV07}. For $y>0$,
-\begin{equation}\label{ev:R}
-  R_g(y)=\frac3\pi\hat g(1)+\mathcal O_g(y),\qquad \mathcal O_g(y):=\frac1{2\pi}\int_{\mathbb R}\Phi(\tfrac12+ir)\hat g(\tfrac12+ir)\,y^{1/2-ir}\,dr .
-\end{equation}
-Indeed $\hat g$ is entire and rapidly decreasing on vertical lines, and Mellin inversion on $\operatorname{Re}s=\tfrac54$ gives
+$\zeta(2s-1)$ by its polynomial growth in vertical strips, and $1/\zeta(2s)$ by \cite[Theorem~6.7]{MV07}.
+To prove \eqref{ev:R}, use that $\hat g$ is entire and rapidly decreasing on vertical lines. Mellin inversion on $\operatorname{Re}s=\tfrac54$ gives
 \[
   R_g(y)=\frac1{2\pi i}\int_{(5/4)}\hat g(s)\Big(\sum_{c\ge1}\frac{N_c}{c^{2s}}\Big)\Big(\int_{\mathbb R}\frac{y^s\,dx}{(x^2+y^2)^s}\Big)ds
   =\frac1{2\pi i}\int_{(5/4)}\hat g(s)\,\Phi(s)\,y^{1-s}\,ds ,
@@ -327,7 +342,11 @@ Then $v_t\in L^2(M)$ and
 \[
  c_0[v_t](y)=f_t(y)+\frac3\pi\hat f_t(1)+\mathcal O_{f_t}(y)
 \]
-for almost every $y>0$, with $\|f_t\|^2=\|\mathcal O_{f_t}\|^2=\mu_0$ in $L^2(dy/y^2)$. The Mellin transform of $f_t$ is given by \eqref{ev:ft}.
+for almost every $y>0$, with $\|f_t\|^2=\|\mathcal O_{f_t}\|^2=\mu_0$ in $L^2(dy/y^2)$. The Mellin transform of $f_t$ is
+\begin{equation}\label{ev:ft}
+ \hat f_t(s)=\ue^{-it/(2\hbar)}\ue^{t(s-1/2)}\ue^{it/\hbar}\hat a_0(s+i/\hbar)
+ \qquad(\tfrac12\le\operatorname{Re}s\le1).
+\end{equation}
 \end{lemma}
 \begin{proof} Let
 \[
@@ -337,10 +356,7 @@ so that $f_t(y)=\int_{\mathbb R}u^{(0)}(t)(x+iy)\,dx$ for $u^{(0)}(t)=\ue^{-it/(
 \[
   \int_0^\infty|f_t|^2\,\frac{dy}{y^2}=\mu_0,\qquad\int_0^\infty|f_t|\,\frac{dy}{y^2}=\ue^{t/2}\int_0^\infty|a_0|\,\frac{dy}{y^2}<\infty,
 \]
-and the substitution $\eta=\ue^ty$ with \eqref{ev:a0hat} gives
-\begin{equation}\label{ev:ft}
-  \hat f_t(s)=\ue^{-it/(2\hbar)}\,\ue^{t(s-1/2)}\,\ue^{it/\hbar}\,\hat a_0(s+i/\hbar)\qquad(\tfrac12\le\operatorname{Re}s\le1).
-\end{equation}
+and the substitution $\eta=\ue^ty$ with \eqref{ev:a0hat} gives \eqref{ev:ft}.
 Since $\omega a\in L^2(\Hb)$, by Proposition~\ref{os:p1} and (W1), (W2) of Section~\ref{subsec:dd-surf} the orbit sums of
 $u^{(0)}(t)$ converge absolutely almost everywhere and $v_t:=u^{(0)}(t)_\Gamma\in L^2(M)$; also $\psi(0)=v_0$.
 
