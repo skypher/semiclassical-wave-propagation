@@ -387,7 +387,7 @@ explicit constants of \cite{S}.
 
 The theorems control the error of the approximation; they do not describe the
 approximation itself, which is again a sum over exponentially many sheets of the
-cover. In the picture that goes back to Berry and Balazs \cite{BB79}, waves
+cover. In the picture that goes back to Berry \cite{Ber77} (for propagated waves see \cite{BB79}, as cited in \cite{S}), waves
 propagated in a classically chaotic system behave at large times like random
 superpositions of plane waves. Ingremeau and Rivera \cite{IR22} proved that on compact
 manifolds of negative curvature, for a wide family of phases, a Lagrangian state evolved
@@ -507,7 +507,7 @@ $\hbar^{-1/2}$ is open.
 \item \emph{Expectation values on compact surfaces.} By Corollary~\ref{ev:transfer} the expectation values of
 $\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma$ up to times of order $\hbar^{-1/2}$ are those of the explicit sum $u^{(K)}(t)_\Gamma$. Beyond the Ehrenfest time
 the sum is not evaluated here, except in the case of Proposition~\ref{ev:mod}. On a compact surface there is no cusp to
-escape into, and neither equidistribution in the sense of \cite{Sch05} nor the random wave behaviour of \cite{BB79,IR22} is
+escape into, and neither equidistribution in the sense of \cite{Sch05} nor the random wave behaviour of \cite{Ber77,BB79,IR22} is
 known for these states between the Ehrenfest time and $\hbar^{-1/2}$.
 \item \emph{Expectation values on the modular surface.} Proposition~\ref{ev:mod} concerns amplitudes whose periodization along
 the cusp does not depend on $x$, and it gives a sufficient time only. We conjecture, on the heuristic of Remark~\ref{ev:time},
@@ -640,7 +640,7 @@ All estimates below are stated for $V_\varepsilon(s_1,s_0)$; this contains $V_\v
 Fourier transform in $x$; on the mode $\ue^{ikx}$, $k\ne0$, put $z=|k|y$ and $w=z^{1/2}f$. Then
 $L^2(dx\,dy/y^2)$ becomes $L^2(dz/z)$, $-\Delta$ becomes $-(z\partial_z)^2+z^2+\tfrac14$, and $X$ becomes multiplication by
 $i\operatorname{sgn}(k)\,z$. The Kontorovich--Lebedev transform $F(\nu)=\int_0^\infty K_{i\nu}(z)f(z)\,dz/z$, with Parseval
-$\int|f|^2dz/z=\int|F|^2w(\nu)\,d\nu$, $w(\nu)=\tfrac2{\pi^2}\nu\sinh(\pi\nu)$ (\cite[eqs.~(1.1)--(1.3)]{Y}), diagonalizes
+$\int|f|^2dz/z=\int|F|^2w(\nu)\,d\nu$, $w(\nu)=\tfrac2{\pi^2}\nu\sinh(\pi\nu)$ (\cite[eqs.~(1.1)--(1.3)]{Y}, applied to $f(z)/z$), diagonalizes
 $-\Delta=\nu^2+\tfrac14$. So $\Lambda$ acts as multiplication by $\Lambda(\nu)=(\nu^2+\tfrac14)^{1/2}$, and
 $|\Lambda(\nu)-\Lambda(\nu')|\le|\nu-\nu'|$. In the unitary picture $G=w^{1/2}F$, multiplication by $z$ has the kernel
 $Zt_1(\nu,\nu')$ computed in step (X) of the proof of Lemma~\ref{lem:fc}, and
@@ -734,7 +734,7 @@ $L\ge4/\varepsilon$, and monotone convergence in the spectral representation of 
 Here $X_0=\cosh d(x_0,\cdot)$ and $\tilde\psi=\log X_0$. The theorems use the two lemmas of the first subsection, in which the radius
 is reduced by a fixed factor. A fixed factor changes only constants, since $\alpha$ enters the conclusions through
 $(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$, the condition $\alpha^3\ge\kappa\hbar$ and the time window. The second subsection contains
-sharp forms, by the Gutzmer identity. They are not used by the theorems; they are used for Lemma~\ref{lem:ex}.
+sharp forms, by the Gutzmer identity \cite[\S7.2]{K}. They are not used by the theorems; they are used for Lemma~\ref{lem:ex}.
 
 \subsection{The forms used by the theorems}
 \begin{lemma}[analytic vectors from word bounds]\label{lem:expw}
@@ -825,7 +825,7 @@ For $0\le\alpha''<\alpha<\pi/2$, fix $r=(\alpha''+\alpha)/4$. If $h$ is bounded 
 $\norm{\ue^{\alpha''\Lambda}h\,\ue^{-\alpha\Lambda}}\le C(\alpha'',\alpha)\sup_{G\exp(irh_0)x_0}|h|$.
 \end{lemma}
 \begin{proof}
-By the Gutzmer identity on $SL(2,\mathbb R)$ (\cite[\S7.2, Thm.~7.2]{K}), the $L^2(G)$ norm of the holomorphic extension of $f$ restricted to
+By the Gutzmer identity on $SL(2,\mathbb R)$ (\cite[\S7.2, the identity before Theorem~7.2]{K}), the $L^2(G)$ norm of the holomorphic extension of $f$ restricted to
 the orbit $G\exp(irh_0)x_0$ equals $\norm{W_\sigma f}$, where $W_\sigma$ is the spectral multiplier
 $\varphi_\lambda(\exp(2irh_0))^{1/2}$ and $\sigma=4r$ in hyperbolic distance (Krötz's $\lambda$ is twice the standard
 spectral parameter). By \cite[14.20.15]{DLMF} (see also \cite[p.~473]{O}), $W_\sigma\asymp(1+\Lambda)^{-1/4}\ue^{\sigma\Lambda/2}$ for fixed
@@ -1057,29 +1057,36 @@ Anal.\ PDE \textbf{5} (2012), no.~2, 313--338,
 \bibitem[BB79]{BB79}
 M.~V.~Berry and N.~L.~Balazs,
 \emph{Evolution of semiclassical quantum states in phase space},
-J.\ Phys.\ A \textbf{12} (1979), no.~5, 625--642.
-
-\bibitem[BGP99]{BGP99}
-D.~Bambusi, S.~Graffi and T.~Paul,
-\emph{Long time semiclassical approximation of quantum flows: a proof of the
-Ehrenfest time},
-Asymptot.\ Anal.\ \textbf{21} (1999) 149--160,
-\href{https://doi.org/10.3233/ASY-1999-365}{doi:\allowbreak 10.3233/ASY-1999-365},
-\href{https://arxiv.org/abs/math-ph/9805018}{arXiv:math-ph/9805018}.
+J.\ Phys.\ A \textbf{12} (1979), no.~5, 625--642,
+\href{https://doi.org/10.1088/0305-4470/12/5/012}{doi:\allowbreak 10.1088/0305-4470/12/5/012}.
 
 \bibitem[BdB00]{BdB00}
 F.~Bonechi and S.~De Bi\`evre,
 \emph{Exponential mixing and $|\ln\hbar|$ time scales in quantized hyperbolic
 maps on the torus},
-Commun.\ Math.\ Phys.\ \textbf{211} (2000) 659--686,
+Commun.\ Math.\ Phys.\ \textbf{211} (2000), no.~3, 659--686,
 \href{https://doi.org/10.1007/s002200050831}{doi:\allowbreak 10.1007/s002200050831},
 \href{https://arxiv.org/abs/chao-dyn/9910014}{arXiv:chao-dyn/9910014}.
+
+\bibitem[Ber77]{Ber77}
+M.~V.~Berry,
+\emph{Regular and irregular semiclassical wavefunctions},
+J.\ Phys.\ A \textbf{10} (1977), no.~12, 2083--2091,
+\href{https://doi.org/10.1088/0305-4470/10/12/016}{doi:\allowbreak 10.1088/0305-4470/10/12/016}.
+
+\bibitem[BGP99]{BGP99}
+D.~Bambusi, S.~Graffi and T.~Paul,
+\emph{Long time semiclassical approximation of quantum flows: a proof of the
+Ehrenfest time},
+Asymptot.\ Anal.\ \textbf{21} (1999), no.~2, 149--160,
+\href{https://doi.org/10.3233/ASY-1999-365}{doi:\allowbreak 10.3233/ASY-1999-365},
+\href{https://arxiv.org/abs/math-ph/9805018}{arXiv:math-ph/9805018}.
 
 \bibitem[BR02]{BR02}
 A.~Bouzouina and D.~Robert,
 \emph{Uniform semiclassical estimates for the propagation of quantum
 observables},
-Duke Math.\ J.\ \textbf{111} (2002) 223--252,
+Duke Math.\ J.\ \textbf{111} (2002), no.~2, 223--252,
 \href{https://doi.org/10.1215/S0012-7094-02-11122-3}{doi:\allowbreak 10.1215/S0012-7094-02-11122-3}.
 
 \bibitem[Bro17]{Bro17}
@@ -1090,14 +1097,14 @@ S.~Brooks,
 \bibitem[Bro22]{Bro22}
 S.~Brooks,
 \emph{Eisenstein quasimodes and semiclassical behavior of expectation values},
-Ann.\ Henri Poincar\'e \textbf{23} (2022) 4429--4448,
+Ann.\ Henri Poincar\'e \textbf{23} (2022), no.~12, 4429--4448,
 \href{https://doi.org/10.1007/s00023-022-01184-y}{doi:\allowbreak 10.1007/s00023-022-01184-y}.
 
 \bibitem[CR97]{CR97}
 M.~Combescure and D.~Robert,
 \emph{Semiclassical spreading of quantum wave packets and applications near
 unstable fixed points of the classical flow},
-Asymptot.\ Anal.\ \textbf{14} (1997) 377--404,
+Asymptot.\ Anal.\ \textbf{14} (1997), no.~4, 377--404,
 \href{https://doi.org/10.3233/ASY-1997-14405}{doi:\allowbreak 10.3233/ASY-1997-14405}.
 
 \bibitem[DJ18]{DJ18}
@@ -1121,7 +1128,7 @@ Ann.\ Inst.\ Fourier (Grenoble) \textbf{57} (2007), no.~7, 2525--2599,
 \bibitem[GN98]{GN98}
 A.~Grigor'yan and M.~Noguchi,
 \emph{The heat kernel on hyperbolic space},
-Bull.\ London Math.\ Soc.\ \textbf{30} (1998) 643--650,
+Bull.\ London Math.\ Soc.\ \textbf{30} (1998), no.~6, 643--650,
 \href{https://doi.org/10.1112/S0024609398004780}{doi:\allowbreak 10.1112/S0024609398004780}.
 
 \bibitem[Han26]{Han26}
@@ -1133,7 +1140,7 @@ X.~Han,
 G.~A.~Hagedorn and A.~Joye,
 \emph{Exponentially accurate semiclassical dynamics: propagation, localization,
 Ehrenfest times, scattering, and more general states},
-Ann.\ Henri Poincar\'e \textbf{1} (2000) 837--883,
+Ann.\ Henri Poincar\'e \textbf{1} (2000), no.~5, 837--883,
 \href{https://doi.org/10.1007/PL00001017}{doi:\allowbreak 10.1007/PL00001017},
 \href{https://arxiv.org/abs/math-ph/9911036}{arXiv:math-ph/9911036}.
 
@@ -1146,8 +1153,9 @@ J.\ \'Ec.\ polytech.\ Math.\ \textbf{9} (2022) 177--212,
 
 \bibitem[Kr\"o09]{K}
 B.~Kr\"otz,
-\emph{Crown theory for the upper halfplane},
-Contemp.\ Math.\ \textbf{488} (2009),
+\emph{Crown theory for the upper half plane},
+Contemp.\ Math.\ \textbf{488} (2009), 147--182,
+\href{https://doi.org/10.1090/conm/488/09568}{doi:\allowbreak 10.1090/conm/488/09568},
 \href{https://arxiv.org/abs/0705.1243}{arXiv:0705.1243}.
 
 \bibitem[MV07]{MV07}
@@ -1163,19 +1171,20 @@ A~K~Peters, Wellesley, MA, 1997.
 
 \bibitem[PNT]{PNT}
 A.~Kontorovich, T.~Tao et al.,
-\emph{Prime Number Theorem and More}, a formalization project in Lean~4,
+\emph{Prime Number Theorem And \dots} (the PNT+ project), a formalization project in Lean~4,
 \url{https://github.com/AlexKontorovich/PrimeNumberTheoremAnd}.
 
 \bibitem[Sar81]{Sar81}
 P.~Sarnak,
 \emph{Asymptotic behavior of periodic orbits of the horocycle flow and Eisenstein series},
-Comm.\ Pure Appl.\ Math.\ \textbf{34} (1981), no.~6, 719--739.
+Comm.\ Pure Appl.\ Math.\ \textbf{34} (1981), no.~6, 719--739,
+\href{https://doi.org/10.1002/cpa.3160340602}{doi:\allowbreak 10.1002/cpa.3160340602}.
 
 \bibitem[Sch05]{Sch05}
 R.~Schubert,
 \emph{Semiclassical behaviour of expectation values in time evolved Lagrangian
 states for large times},
-Commun.\ Math.\ Phys.\ \textbf{256} (2005) 239--254,
+Commun.\ Math.\ Phys.\ \textbf{256} (2005), no.~1, 239--254,
 \href{https://doi.org/10.1007/s00220-005-1319-4}{doi:\allowbreak 10.1007/s00220-005-1319-4},
 \href{https://arxiv.org/abs/math/0402038}{arXiv:math/0402038}.
 
@@ -1188,29 +1197,34 @@ withdrawn by the author in v2 (2011).
 \bibitem[STV12]{STV12}
 R.~Schubert, R.~O.~Vallejos and F.~Toscano,
 \emph{How do wave packets spread? Time evolution on Ehrenfest time scales},
-J.\ Phys.\ A \textbf{45} (2012) 215307,
+J.\ Phys.\ A \textbf{45} (2012), no.~21, 215307,
 \href{https://doi.org/10.1088/1751-8113/45/21/215307}{doi:\allowbreak 10.1088/1751-8113/45/21/215307},
 \href{https://arxiv.org/abs/1112.4056}{arXiv:1112.4056}.
 
 \bibitem[TH91]{TH91}
 S.~Tomsovic and E.~J.~Heller,
 \emph{Semiclassical dynamics of chaotic motion: unexpected long-time accuracy},
-Phys.\ Rev.\ Lett.\ \textbf{67} (1991), no.~6, 664--667.
+Phys.\ Rev.\ Lett.\ \textbf{67} (1991), no.~6, 664--667,
+\href{https://doi.org/10.1103/PhysRevLett.67.664}{doi:\allowbreak 10.1103/PhysRevLett.67.664}.
 
 \bibitem[TH93]{TH93}
 S.~Tomsovic and E.~J.~Heller,
 \emph{Long-time semiclassical dynamics of chaos: the stadium billiard},
-Phys.\ Rev.\ E \textbf{47} (1993), no.~1, 282--299.
+Phys.\ Rev.\ E \textbf{47} (1993), no.~1, 282--299,
+\href{https://doi.org/10.1103/PhysRevE.47.282}{doi:\allowbreak 10.1103/PhysRevE.47.282}.
 
 \bibitem[Yak08]{Y}
 S.~B.~Yakubovich,
-Math.\ Model.\ Anal.\ \textbf{13} (2008), no.~2, 289--302.
+\emph{Uncertainty principles for the Kontorovich--Lebedev transform},
+Math.\ Model.\ Anal.\ \textbf{13} (2008), no.~2, 289--302,
+\href{https://doi.org/10.3846/1392-6292.2008.13.289-302}{doi:\allowbreak 10.3846/1392-6292.2008.13.289-302}.
 
 \bibitem[Zag81]{Zag81}
 D.~Zagier,
 \emph{Eisenstein series and the Riemann zeta-function},
 in: Automorphic Forms, Representation Theory and Arithmetic (Bombay, 1979),
-Tata Inst.\ Fund.\ Res.\ Studies in Math.\ 10, Springer, 1981, pp.~275--301.
+Tata Inst.\ Fund.\ Res.\ Studies in Math.\ 10, Springer, 1981, pp.~275--301,
+\href{https://doi.org/10.1007/978-3-662-00734-1_10}{doi:\allowbreak 10.1007/978-3-662-00734-1\_10}.
 
 \end{thebibliography}
 
