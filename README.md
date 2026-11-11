@@ -9,7 +9,7 @@ introduced in
 > withdrawn by its author in v2 (2011) for a gap in the proof of the dispersive estimates,
 
 are accurate up to times of order ħ^(-1/2) for fixed analytic radius, with explicit factorial dependence on the expansion and derivative orders. The strategy is
-Schubert's. The principal theorem uses Schubert’s original amplitude norm; companion results treat the reversed order of weights. The two main corrections to the preprint are: the error of the leading
+Schubert's. The principal theorem covers every bounded range of analytic radii and uses Schubert’s original amplitude norm; companion results treat the reversed order of weights. The two main corrections to the preprint are: the error of the leading
 approximation is of order ħt, and on surfaces with cusps the pointwise bound carries a factor that grows with
 the cusp height. Schubert's files are not part of this repository.
 
@@ -19,7 +19,7 @@ the cusp height. Schubert's files are not part of this repository.
   quotient remainder, analytic and critical-weight estimates, approximation proofs, sharpness and expectation values.
   The approximation proofs proceed from the power weight to the reversed weight order and then the original norm;
   the modular-surface application is stated in the introduction and proved through named intermediate lemmas.
-  Two appendices contain auxiliary special-function/kernel calculations and formalization documentation.
+  Three appendices contain auxiliary special-function/kernel calculations, formalization documentation, and a detailed comparison with Schubert's preprint.
   Build from `paper/` with `pdflatex paper.tex`
   (run it three times).
 - `lean/`: the Lean 4 development, namespace `Qschubert` (Lean `v4.35.0`, Mathlib `v4.35.0`, `physicslib4`, and

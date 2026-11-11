@@ -22,23 +22,36 @@ A kernel check certifies the proofs of the formal statements. Whether a formal s
 \item \emph{Boundary points.} The base point $x_0\in\Hb$ is a parameter, and $b=g\,\infty$ with $g\in\mathrm{SL}(2,\mathbb R)$, $g\,x_0=x_0$. Every $b\in\partial\Hb$ arises, and the objects depend on $b$ only (\lean{exists_stab_smul_infty}, \lean{initState_eq_of_stab}, \lean{approxSolB_eq_of_stab}).
 \item \emph{Amplitudes.} An amplitude is a function on $\Hb$ whose class has finite norm. The formal theorems produce its $C^\infty$ representative $a'$, equal to $a$ almost everywhere, before $\hbar,t,K,N,b$ are chosen, and $u^{(K)}$ is built from $a'$. Nonzero amplitudes of finite norm exist in both classes (\lean{printed_class_nonvacuous_beta}, \lean{swappedD_class_nonvacuous}).
 \item \emph{Conclusions.} Each $L^2$ theorem asserts that the two orbit sums converge absolutely almost everywhere and define elements of $L^2(M)$, and then bounds $\norm{\Delta^N[\,\cdot\,]}$, an element of $[0,\infty]$ that equals $\infty$ outside the domain of $\Delta^N$. The pointwise corollaries assert that the error lies in the domain of $\Delta^N$ and that $\Delta^NE$ has a continuous representative with the stated bound at every point of $M$.
-\item \emph{The cap on $\delta$ in the optimal-truncation corollaries.} For Corollary~\ref{pc:cor15} the condition $\delta\le\kappa^{1/2}/\max(1,C)$ is part of the formal statement. For Corollaries~\ref{cor:dd15} and~\ref{cor:dd15-appx} the formal statements assert that some $C$ and $\delta>0$ exist for which the bound holds on the window; their proofs take $\delta\le\kappa^{1/2}/\max(1,C)$, and $\delta$ may always be decreased, since this only shortens the time window.
-\item \emph{Ranges.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$. For the printed class the formal statements have the range $0<\alpha\le\tfrac12$ of Theorem~\ref{pc:main}, with constants $C,\delta$ that serve every $\alpha$ in it; the formal statements of Corollary~\ref{pc:allalpha} have the range $0<\alpha\le A$ for an arbitrary real $A$, with constants chosen after $A$. The formal statement of Proposition~\ref{prop:mean} has every $\hbar>0$ and every real $t$, and no hypothesis on the area: its inequality is one in $[0,\infty]$ with $0\cdot\infty=0$.
+\item \emph{The cap on $\delta$ in the optimal-truncation corollaries.} For Corollary~\ref{pc:cor15} the condition $\delta\le\kappa^{1/2}/\max(1,C)$ is part of the formal statement. For the two companion norms in Corollary~\ref{cor:dd15} the formal statements assert that some $C$ and $\delta>0$ exist for which the bound holds on the window; their proofs take $\delta\le\kappa^{1/2}/\max(1,C)$, and $\delta$ may always be decreased, since this only shortens the time window.
+\item \emph{Ranges and grouped statements.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$.
+Theorem~\ref{pc:main} states the bounded-radius result \lean{pcmain_all}; its proof first treats $\alpha\le\tfrac12$,
+the range of \lean{pcmain_half}. The original-norm corollaries likewise use the declarations with suffix \lean{all}.
+The pointwise statement combines the arbitrary-quotient estimate with its bounded-geometry specialization, and the companion
+corollaries group the two norms; Table~\ref{tab:lean} lists the declarations for these alternatives.
+Proposition~\ref{os:data} retains the condition $\sigma m\le\tfrac12$, although its paper proof does not need it:
+this is the range of its formal statement and suffices for its applications.
+The formal statement of Proposition~\ref{prop:mean} has every $\hbar>0$ and every real $t$, and no hypothesis on the area:
+its inequality is one in $[0,\infty]$ with $0\cdot\infty=0$.
 \end{itemize}
 
-\subsection*{The formalized counterexample}
+\subsection*{The formalized counterexample}\phantomsection\label{rem:g5-lean}
 For Proposition~\ref{prop:g5}, the formal theorem \lean{printedThm13_false} proves the negation of the printed bound,
-rather than the asymptotic formula (Remark~\ref{rem:g5-lean}).
+rather than the asymptotic formula.
 
 The printed statement is formalized as: for every Fuchsian $\Gamma$ and all $\alpha>0$, $\beta>1$ there are $C,\delta,\hbar_0>0$ such that
-$\norm{u^{(0)}(t)_\Gamma-\cU(t)(a\ue^{i\varphi_b/\hbar})_\Gamma}_{L^2(M)}\le C\hbar\norm a_{\alpha,\beta}$ for all $0<\hbar\le\hbar_0$, all $0\le t\le\delta\hbar^{-1/2}$, all $b$ and all $C^\infty$ amplitudes of finite printed norm. The restrictions to $\hbar\le\hbar_0$ and to $C^\infty$ amplitudes weaken the printed claim, and the formal theorem states that this weaker claim is false. Its proof uses $\Gamma=\{\mathrm{id}\}$, $\alpha=\tfrac12$, $\beta=2$, $b=\infty$ and the amplitude $a=\ue^{-\alpha\Lambda}\ue^{-3X_0}$, $X_0=\cosh d(i,\cdot)$. It takes the Dyson identity (iii) of Proposition~\ref{prop:dd-id} at $K=0$ and $K=1$, which gives the expansion in Proposition~\ref{prop:g5} with $R$ the second-order term, and uses that periodization over the trivial group is an isometry. The bound $\norm R\le\tfrac{\hbar^2t^2}8\sup_{r,s}\norm{\Delta(r)\Delta(s)a}$ comes from Lemma~\ref{lem:wb} at $N=0$, and, with $A:=Y^2-Y$, $\norm{Aa}\ge\norm a/4$ from $Y^*=1-Y$ on $\operatorname{Dom}(\Delta)$: $\langle a,Aa\rangle=-\norm{Ya}^2$ and $2\operatorname{Re}\langle a,Ya\rangle=\norm a^2$.
+$\norm{u^{(0)}(t)_\Gamma-\cU(t)(a\ue^{i\varphi_b/\hbar})_\Gamma}_{L^2(M)}\le C\hbar\norm a_{\alpha,\beta}$ for all $0<\hbar\le\hbar_0$, all $0\le t\le\delta\hbar^{-1/2}$, all $b$ and all $C^\infty$ amplitudes of finite original norm. The restrictions to $\hbar\le\hbar_0$ and to $C^\infty$ amplitudes weaken the printed claim, and the formal theorem states that this weaker claim is false. Its proof uses $\Gamma=\{\mathrm{id}\}$, $\alpha=\tfrac12$, $\beta=2$, $b=\infty$ and the amplitude $a=\ue^{-\alpha\Lambda}\ue^{-3X_0}$, $X_0=\cosh d(i,\cdot)$. It takes the Dyson identity (iii) of Proposition~\ref{prop:dd-id} at $K=0$ and $K=1$, which gives the expansion in Proposition~\ref{prop:g5} with $R$ the second-order term, and uses that periodization over the trivial group is an isometry. The bound $\norm R\le\tfrac{\hbar^2t^2}8\sup_{r,s}\norm{\Delta(r)\Delta(s)a}$ comes from Lemma~\ref{lem:wb} at $N=0$, and, with $A:=Y^2-Y$, $\norm{Aa}\ge\norm a/4$ from $Y^*=1-Y$ on $\operatorname{Dom}(\Delta)$: $\langle a,Aa\rangle=-\norm{Ya}^2$ and $2\operatorname{Re}\langle a,Ya\rangle=\norm a^2$.
 
 \subsection*{Scope and exclusions}
-The supporting statements used in the approximation proofs, the approximation estimates and their truncation and pointwise corollaries, Corollary~\ref{ev:transfer}, and parts (i) and (ii) of Proposition~\ref{ev:mod} are stated by Lean theorems, in the reading above, with the same hypotheses and the same form of the conclusion; where this paper names a constant without giving its value (``a constant $C$''), the Lean theorem gives a value or asserts existence. Consequences that a statement draws from its main assertion (introduced by ``hence'', ``consequently'' or ``in particular'') are proved in the text. Table~\ref{tab:lean} names the Lean theorems for the main statements; the file \texttt{LEAN\_STATUS.md} at the top level of the repository names them for every labelled statement of this paper.
+The supporting statements used in the approximation proofs, the approximation estimates and their truncation and pointwise corollaries, and parts (i) and (ii) of Proposition~\ref{ev:mod} are stated by Lean theorems, in the reading above, with the same hypotheses and the same form of the conclusion; where this paper names a constant without giving its value (``a constant $C$''), the Lean theorem gives a value or asserts existence. Consequences that a statement draws from its main assertion (introduced by ``hence'', ``consequently'' or ``in particular'') are proved in the text. Table~\ref{tab:lean} names the Lean theorems for the main statements; the file \texttt{LEAN\_STATUS.md} at the top level of the repository names them for every labelled statement of this paper.
+
+For Corollary~\ref{ev:transfer}, the reversed-weight result is \lean{evTransfer_main}.
+The declaration \lean{evTransfer_pc} states the original-norm result for $\alpha\le\tfrac12$. At every bounded range of original-norm radii, the manuscript's
+conclusion follows from \lean{pcmain_all} at $N=0$ and the general estimate \lean{ev_transfer_core}; no separate
+all-radius declaration for this corollary is asserted.
 
 The fixed-radius Corollary~\ref{thm:main} is presented here for $\beta>1/2$ and every fixed $\alpha>0$. It is deduced in the text from \lean{thm14Rmain_exp} at $K=N=0$, with a fixed radius and, for larger radii, monotonicity of the reversed-weight norm. The separately formalized \lean{thm13R_rep} has the narrower range $\beta>1$ and $\alpha\le\alpha_0<\pi/4$. Corollary~\ref{cor:escape-intro} summarizes Proposition~\ref{ev:mod}, including its unformalized classical comparison. Lemmas~\ref{ev:mellinlemma}, \ref{ev:scattering}, \ref{ev:approxmode}, \ref{ev:initialnorm} and~\ref{ev:outgoing} extract intermediate arguments from the proof of that proposition. The formal proof groups these arguments differently; no separate exact statement correspondence is asserted for these five editorial extractions.
 
-Not formalized are: the asymptotic formula of Proposition~\ref{prop:g5}, for which the formal theorem is the negation of the printed bound (Remark~\ref{rem:g5-lean}); the comparison of the two classes (Proposition~\ref{pc:classes}); Remark~\ref{rem:g4}; part (iii) of Proposition~\ref{ev:mod}, which is a cited theorem on the equidistribution of closed horocycles (parts (i) and (ii) are the Lean theorem \lean{evmod}, whose statement is \lean{Stmt_evmod}); the sharpness results on cusped surfaces (Section~\ref{subsec:cl}) with the kernel lemmas they use (Lemmas~\ref{os:poisson} and~\ref{os:hk}); and Lemmas~\ref{lem:gutzmer} and~\ref{lem:ex}, which the theorems do not use. For the sharpness results the development contains only implications from a formal statement of Theorem~\ref{cl:main}(ii), which is itself not proved formally.
+Not formalized are: the asymptotic formula of Proposition~\ref{prop:g5}, for which the formal theorem is the negation of the printed bound (see the formalized counterexample above); the comparison of the two classes (Proposition~\ref{pc:classes}); Remark~\ref{rem:g4}; part (iii) of Proposition~\ref{ev:mod}, which is a cited theorem on the equidistribution of closed horocycles (parts (i) and (ii) are the Lean theorem \lean{evmod}, whose statement is \lean{Stmt_evmod}); the sharpness results on cusped surfaces (Section~\ref{subsec:cl}) with the kernel lemmas they use (Lemmas~\ref{os:poisson} and~\ref{os:hk}); and Lemmas~\ref{lem:gutzmer} and~\ref{lem:ex}, which the theorems do not use. For the sharpness results the development contains only implications from a formal statement of Theorem~\ref{cl:main}(ii), which is itself not proved formally.
 
 \begin{table}[ht]
 \centering\small
@@ -47,22 +60,19 @@ Not formalized are: the asymptotic formula of Proposition~\ref{prop:g5}, for whi
 \hline
 Statement & Lean theorem\\
 \hline
-Theorem~\ref{pc:main} & \lean{pcmain_half}\\
-Corollary~\ref{pc:thm13} & \lean{pcthm13_half}\\
-Corollary~\ref{pc:cor15} & \lean{pccor15_half}\\
-Corollary~\ref{pc:cor16bg} & \lean{pccor16bg_half}\\
-Corollary~\ref{pc:cor16} & \lean{pccor16_half}\\
-Corollary~\ref{pc:allalpha} & \lean{pcmain_all}, \lean{pcthm13_all}, \lean{pccor15_all},\\
- & \lean{pccor16bg_all}, \lean{pccor16_all}\\
+Theorem~\ref{pc:main} & \lean{pcmain_all}\\
+Corollary~\ref{pc:thm13} & \lean{pcthm13_all}\\
+Corollary~\ref{pc:cor15} & \lean{pccor15_all}\\
+Corollary~\ref{pc:cor16} & \lean{pccor16_all}, \lean{pccor16bg_all}\\
 Lemma~\ref{pc:g43} & \lean{sobolev_M_mult}\\
 Proposition~\ref{prop:g5} & \lean{printedThm13_false} (negation of the printed bound)\\
 Proposition~\ref{prop:mean} & \lean{meanGrowth}\\
-Corollary~\ref{ev:transfer} & \lean{evTransfer_main}, \lean{evTransfer_pc}\\
+Corollary~\ref{ev:transfer} & \lean{evTransfer_main}; original norm: see text\\
 Proposition~\ref{ev:mod}(i),(ii) & \lean{evmod}\\
 Corollary~\ref{thm:main} & \lean{thm14Rmain_exp} (specialization; see text)\\
 Theorem~\ref{thm:dd14} & \lean{thm14Rmain_exp}\\
-Corollary~\ref{cor:dd15} & \lean{cor15Rmain_rep}\\
-Corollary~\ref{cor:dd16} & \lean{cor16Rmain_rep}\\
+Corollary~\ref{cor:dd15} & \lean{cor15Rmain_rep}, \lean{cor15R_rep}\\
+Corollary~\ref{cor:dd16} & \lean{cor16Rmain_rep}, \lean{cor16R_rep}\\
 Theorem~\ref{thm:dd-appx} & \lean{thm14R_rep}\\
 Theorem~\ref{os:cw} & \lean{cw_abstract}\\
 Lemma~\ref{os:transfer} & \lean{transfer}\\

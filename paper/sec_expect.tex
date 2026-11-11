@@ -4,10 +4,11 @@
 The theorems compare the solution with the periodized approximation in $L^2(M)$. This section records what follows for expectation
 values, and shows on the modular surface that accuracy of the approximation and classical behaviour of expectation values are
 different things: the approximation stays accurate up to times of order $\hbar^{-1/2}$, while the classical transport of the
-initial density fails to describe the expectation values after a time of order $\log(1/\hbar)\log\log(1/\hbar)$.
+initial density fails to describe the expectation values throughout a late-time window beginning at a sufficient escape
+time of order $\log(1/\hbar)\log\log(1/\hbar)$. The result does not determine the onset of escape.
 
 \subsection{Transfer and cancellation}\label{subsec:ev-transfer}
-We use the reversed-weight norm $\swNorm a$ of Section~\ref{sec:setup}; the printed-class version uses $\pcNorm a$ instead.
+We use the reversed-weight norm $\swNorm a$ of Section~\ref{sec:setup}; the original-norm version uses $\pcNorm a$ instead.
 \begin{corollary}\label{ev:transfer}
 Assume the hypotheses of Theorem~\ref{thm:dd14}, or those of Theorem~\ref{pc:main} with $\pcNorm a$ in place of $\swNorm a$. Let
 $K\in\mathbb N_0$ and $0\le t\le\delta(\alpha/\hbar)^{1/2}$, and put
@@ -75,7 +76,7 @@ $h_1\ge0$, $h_1\not\equiv0$. Let
 \[
   a:=\ue^{-\alpha\Lambda}h .
 \]
-Then $\pcNorm a=\norm{\ue^{\beta\langle d\rangle}h}<\infty$ for every $\beta$, so $a$ is an amplitude of the printed class, and it does
+Then $\pcNorm a=\norm{\ue^{\beta\langle d\rangle}h}<\infty$ for every $\beta$, so $a$ is an amplitude of the Poisson-smoothed data class, and it does
 not depend on $\hbar$. Let $\omega=X_0^{1/2}\ell^{\,c'}$ be the periodization weight of Section~\ref{sec:printed}, with $X_0=\cosh d(i,\cdot)$,
 $\ell=\log(2X_0)/\log2$ and a fixed $c'\in(\tfrac12,1)$. Since $h$ has compact support, $\omega h\in L^2(\Hb)$, so $\omega a\in L^2(\Hb)$ by
 Corollary~\ref{os:cwp}. On the line $\operatorname{Im}z=y$ we have $X_0=(x^2+y^2+1)/(2y)\ge\tfrac12\max(y,1/y)$, hence $\ell\ge\max(1,|\log y|/\log2)$ and

@@ -1,6 +1,7 @@
 % Subsection for sec_printed.tex: the cusp factor of Corollary pc:cor16 is necessary.
 % Notes source: notes/Cor16_cusps.md, Propositions G4.4 and G4.4P (reviews R22, R22c, R23, R23b). Labels prefix cl.
 \subsection{The cusp factor is necessary}\label{subsec:cl}
+\subsubsection{Statement and mechanism}
 
 \begin{remark}[the local Sobolev loss]\label{rem:g4}
 The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient with a cusp. In a cusp neighbourhood $\{y>Y\}/(x\sim x+1)$, take $u_S=\chi(\log y-S)$ with $0\ne\chi\in C_c^\infty(\mathbb R)$. For every integer $s\ge1$,
@@ -31,7 +32,7 @@ $t$ with $\max(2\log(1/\hbar),t_*)\le t\le\min(\hbar^{-1/5},\delta(\alpha/\hbar)
 \[
 |E_0(t)(z)|\ge c_*\,\ue^{t/2}\hbar^{3/2}t,\qquad m(z)\le5\ue^t .
 \]
-\item[(ii)] (Printed class.) The same holds for $a=\ue^{-\alpha\Lambda}\ue^{-\kappa X_0}$, with $\kappa\ge\kappa_*$ and $0<\alpha\le\alpha_*(\kappa):=\min(\alpha_0,c\kappa^{-6})$; here the
+\item[(ii)] (Poisson-smoothed data class.) The same holds for $a=\ue^{-\alpha\Lambda}\ue^{-\kappa X_0}$, with $\kappa\ge\kappa_*$ and $0<\alpha\le\alpha_*(\kappa):=\min(\alpha_0,c\kappa^{-6})$; here the
 proof uses Theorem~\ref{pc:main}.
 \end{enumerate}
 Consequently, on $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$ and for this $b$, the factor $m(z)^{1/2}$ in Corollary~\ref{pc:cor16} (and in its reversed-weight
@@ -45,6 +46,7 @@ $N=K=0$, which is claimed for every Fuchsian $\Gamma$ and every $b$, is false wh
 As throughout this paper, constants in the comparison with \cite[Theorem~1.4 and Corollary~1.6]{S} are independent of $\hbar$.
 \end{remark}
 
+\subsubsection{Local control and cusp asymptotics}
 \begin{lemma}[semiclassical local Sobolev inequality]\label{cl:ssob}
 For every Fuchsian $\Gamma$ there is an absolute $C$ with $|u(z)|\le C\,m(z)^{1/2}\bigl(r^{-1}\norm u_{L^2(M)}+r^3\norm{\Delta^2u}_{L^2(M)}\bigr)$ for
 $0<r\le1$, $z\in M$ and $u\in H^4(M)$. For $\Gamma=\mathrm{PSL}(2,\mathbb Z)$ and $z=x+iY$ with $Y\ge4$, $m(z)\le5Y$.
@@ -196,6 +198,7 @@ because $Y\ge\hbar^{-2}$ and $Y^{-1}\log(4Y)\le C\hbar^{1/2}$ for such $Y$.
 Summing over $(a,c)$, with $\sum_{(a,c)}\vartheta_{a,c}<\infty$, and adding the bounds for the translation part and for the terms $m\ne0$ proves the lemma.
 \end{proof}
 
+\subsubsection{Kernel bounds and amplitude construction}
 \begin{lemma}[the Poisson kernel off the diagonal]\label{cl:kernel}
 Fix $r_0\in(0,1]$. For $0<\alpha\le\alpha_0<\pi/2$ the kernel $k_\alpha(r)$ of $\ue^{-\alpha\Lambda}$ extends holomorphically to
 $\{a+i\theta:a>3r_0/4,\ |\theta|<r_0/4\}$ with $|\tilde k_\alpha(a+i\theta)|\le C\alpha\,\ue^{-a}(1+a)^{-3/2}$. Hence
@@ -354,6 +357,7 @@ Altogether
 which gives $|S_0(\hbar)|\ge\tfrac12\kappa\ue^{-\kappa}$ for $\kappa\ge\kappa_*$ and $\alpha\le c\kappa^{-6}$.
 \end{proof}
 
+\subsubsection{Proof of sharpness}
 \begin{proof}[Proof of Theorem~\ref{cl:main}]
 With $c_\hbar=i\hbar/2$, the definition of $u^{(K)}$ gives $E_0=M_1+M_2+E_2$, where
 $M_k=\ue^{-it/(2\hbar)}[(S(t)A_k)\ue^{i\varphi/\hbar}]_\Gamma$, $A_1=c_\hbar P_1(t)a$ and $A_2=c_\hbar^2P_2(t)a$. Since
@@ -372,7 +376,7 @@ Hence
 and the bracket is at least $\tfrac{\sqrt\pi}4|S_0(\hbar)|$ for $t\ge t_*$, $t\le\hbar^{-1/5}$ and $\hbar\le\hbar_0$. Lemma~\ref{cl:amp}(iii) bounds $|S_0|$ below.
 \end{proof}
 
-\subsubsection*{Relative accuracy and scope}
+\subsubsection{Relative accuracy and scope}
 \begin{proposition}[relative accuracy in the cusp]\label{cl:relative}
 At the points of Theorem~\ref{cl:main}, in case (i) (the reversed-weight amplitude $a=\ue^{-20X_0}$), the solution itself is large and the error remains
 small relative to it: for

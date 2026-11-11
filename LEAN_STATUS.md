@@ -18,14 +18,12 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Theorem 1.1 (`pc:main`) | L | `pcmain_half` |
-| Corollary 1.2 (`pc:thm13`) | L | `pcthm13_half` |
-| Corollary 1.3 (`pc:cor15`) | L | `pccor15_half` |
-| Corollary 1.4 (`pc:cor16`) | L | `pccor16_half` |
-| Corollary 1.5 (`pc:cor16bg`) | L | `pccor16bg_half` |
-| Corollary 1.6 (`pc:allalpha`) | L | `pcmain_all`, `pcthm13_all`, `pccor15_all`, `pccor16bg_all`, `pccor16_all`; `pcMainAt_all`, `poisson_cw_all`, `lift1_pr_all` |
-| Remark 1.7 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
-| Corollary 1.8 (`cor:escape-intro`) | L′ | quantum conclusions from `evmod`; the classical comparison is cited and not formalized |
+| Theorem 1.1 (`pc:main`) | L | `pcmain_all`; small-radius stage: `pcmain_half` |
+| Corollary 1.2 (`pc:thm13`) | L | `pcthm13_all` |
+| Corollary 1.3 (`pc:cor15`) | L | `pccor15_all` |
+| Corollary 1.4 (`pc:cor16`) | L | `pccor16_all`, `pccor16bg_all` (bounded-geometry specialization) |
+| Remark 1.5 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
+| Corollary 1.6 (`cor:escape-intro`) | L′ | quantum conclusions from `evmod`; the classical comparison is cited and not formalized |
 
 ## Section 2 (`sec:remainder`): periodization and the exact remainder
 
@@ -86,27 +84,25 @@ All Lean names are in the namespace `Qschubert`.
 | Theorem 5.3 (`thm:dd14`) | L | `thm14Rmain_exp` |
 | Corollary 5.4 (`thm:main`) | L′ | `thm14Rmain_exp` at K=N=0 and fixed radius, with radius monotonicity; `thm13R_rep` separately has the narrower range beta>1 and alpha<pi/4 |
 | Proposition 5.5 (`pc:classes`) | P |  |
-| Corollary 5.7 (`cor:dd15`) | L | `cor15Rmain_rep` |
-| Corollary 5.8 (`cor:dd15-appx`) | L | `cor15R_rep` |
-| Corollary 5.9 (`cor:dd16`) | L | `cor16Rmain_rep` |
-| Corollary 5.10 (`cor:dd16-appx`) | L | `cor16R_rep` |
-| Lemma 5.11 (`lem:ex`) | P | not used by the theorems |
+| Corollary 5.7 (`cor:dd15`) | L | `cor15Rmain_rep`, `cor15R_rep` (two companion norms) |
+| Corollary 5.8 (`cor:dd16`) | L | `cor16Rmain_rep`, `cor16R_rep` (two companion norms) |
+| Lemma 5.9 (`lem:ex`) | P | not used by the theorems |
 
 ## Section 6 (`sec:g5`): sharpness and limitations
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Proposition 6.1 (`prop:g5`) | L′ | `printedThm13_false`: the negation of the printed theorem; the asymptotic formula is not formalized (Remark 6.2 (`rem:g5-lean`)) |
-| Proposition 6.3 (`prop:mean`) | L | `meanGrowth`; `integral_approxSolB`, `J_vecX`, `J_vecY`, `chP_dysT`, `swapped_setup`, `enorm_integral_le_perio` |
-| Remark 6.5 (`rem:g4`) | P |  |
-| Proposition 6.12 (`cl:relative`) | P | extracted from the relative-error remark; self-checked |
-| Theorem 6.6 (`cl:main`), Lemmas 6.8 (`cl:ssob`), 6.9 (`cl:asym`), 6.10 (`cl:kernel`), 6.11 (`cl:amp`) | P |  |
+| Proposition 6.1 (`prop:g5`) | L′ | `printedThm13_false`: the negation of the printed theorem; the asymptotic formula is not formalized (Appendix B (`app:lean`)) |
+| Proposition 6.2 (`prop:mean`) | L | `meanGrowth`; `integral_approxSolB`, `J_vecX`, `J_vecY`, `chP_dysT`, `swapped_setup`, `enorm_integral_le_perio` |
+| Remark 6.4 (`rem:g4`) | P |  |
+| Proposition 6.11 (`cl:relative`) | P | extracted from the relative-error remark; self-checked |
+| Theorem 6.5 (`cl:main`), Lemmas 6.7 (`cl:ssob`), 6.8 (`cl:asym`), 6.9 (`cl:kernel`), 6.10 (`cl:amp`) | P |  |
 
 ## Section 7 (`sec:expect`): expectation values
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Corollary 7.1 (`ev:transfer`) | L | `evTransfer_main`, `evTransfer_pc`; `ev_transfer_core` |
+| Corollary 7.1 (`ev:transfer`) | L′ | `evTransfer_main`; original norm: `evTransfer_pc` has alpha<=1/2, while the all-radius consequence uses `pcmain_all` at N=0 and `ev_transfer_core` |
 | Proposition 7.3 (`ev:mod`) | L′ | parts (i), (ii): `evmod`, with the statement `Stmt_evmod`; part (iii) is a cited theorem and is not formalized |
 | Lemma 7.6 (`ev:meanlem`) | L | `integral_amp_mul_slice_L1`, `integrableOn_amp_mul_slice_L1`, `slice_lintegral_le` |
 | Lemmas 7.5 (`ev:mellinlemma`), 7.7 (`ev:scattering`), 7.8 (`ev:approxmode`), 7.9 (`ev:initialnorm`), 7.10 (`ev:outgoing`) | P | editorial extractions from the proof of Proposition 7.3 (`ev:mod`); the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked |
@@ -115,6 +111,6 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Lemma A.2 (`lem:gutzmer`) | P | used only for Lemma 5.11 (`lem:ex`) |
+| Lemma A.2 (`lem:gutzmer`) | P | used only for Lemma 5.9 (`lem:ex`) |
 | Lemma A.3 (`os:poisson`) | P | used only in Proposition 5.5 (`pc:classes`) and Section 6.3 (`subsec:cl`) |
 | Lemma A.4 (`os:hk`) | P | used only in Section 6.3 (`subsec:cl`) |

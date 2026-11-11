@@ -1,4 +1,4 @@
-% app_o1_static.tex : the printed class at the critical weight (wave-group route).
+% app_o1_static.tex : the Poisson-smoothed data class at the critical weight (wave-group route).
 % Input from paper.tex; no preamble. Macros below are prefixed \os.
 \newcommand{\osomc}{\omega_c}        % critical weight X_0^{1/2} l^c
 \newcommand{\osomp}{\omega}          % periodization weight X_0^{1/2} l^{c'}
@@ -9,6 +9,15 @@
 \newcommand{\osLam}{\Lambda}         % Lambda = (-Delta)^{1/2}
 
 \section{Critical-weight estimates}\label{app:o1st}
+
+Schubert's original norm controls the spatial decay of $f=\ue^{\alpha\Lambda}a$, before Poisson smoothing.
+It need not give the amplitude $a$ a power weight above exponent $1/2$ (Proposition~\ref{pc:classes}).
+At exponent $1/2$, periodization instead requires a logarithmic correction: the reciprocal square of the corrected
+weight is summable over every Fuchsian orbit. We first prove a multiplier theorem at this critical weight using finite
+propagation speed. It supplies a factorization $a=\ue^{-\sigma\Lambda_m}\tilde f$ with critically weighted data $\tilde f$.
+Word estimates at a power weight and a transfer estimate over shells then control the maps used in the remainder proof.
+The final proposition establishes periodization at the same critical weight.
+
 
 Throughout this section $x_0=i$, $d=d(i,\cdot)$, $\osX=\cosh d$, $\psi:=\log\osX\ge0$, $\osL:=\log(2\osX)/\log2=1+\psi/\log2\ge1$,
 $\osLam=(-\Delta)^{1/2}$ and $D=(-\Delta-\tfrac14)^{1/2}$. For $0\le c\le1$ the critical weight is
@@ -151,7 +160,7 @@ $\norm{\osomc(\Lambda_m-\osLam)f}\le K_{m,c}\norm{\osomc f}$.
 Theorem~\ref{os:cw} with $g=g^{1/2}_\tau$ and Lemma~\ref{os:prof}(i),(iv), respectively with $g=G_m$ and Lemma~\ref{os:prof}(v).
 \end{proof}
 
-\subsection{Factorization of the printed-class amplitudes}
+\subsection{Factorization of the Poisson-smoothed amplitudes}
 
 \begin{proposition}[factorization of the data]\label{os:data}
 Let $\tfrac12<c<1$, $m\ge\tfrac12$ and $0<\sigma<\alpha\le1$ with $\sigma m\le\tfrac12$, and put
@@ -171,8 +180,7 @@ The identity is the bounded functional calculus: $-\sigma\Lambda_m+\sigma(\Lambd
 $\mathsf B:=\Lambda_m-\osLam$ is bounded, and $\ue^{\sigma\mathsf B}=\sum_k\sigma^k\mathsf B^k/k!$ in operator norm. By Corollary~\ref{os:cwp},
 $\norm{\osomc\mathsf B^kf}\le K_{m,c}^k\norm{\osomc f}$, so the partial sums are bounded in the weighted norm by $\ue^{\sigma K_{m,c}}\norm{\osomc f}$, and
 Fatou's lemma gives $\norm{\osomc\ue^{\sigma\mathsf B}f}\le\ue^{K_{m,c}}\norm{\osomc f}$. Then apply Corollary~\ref{os:cwp} to
-$\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=K_c\,\ue^{K_{m,c}}$ works. (The condition $\sigma m\le\tfrac12$ is not used in this argument; it
-is the range in which the statement is formalized and in which it is applied.) For the consequence put $f=\ue^{\alpha\osLam}a$, so $a=\ue^{-\alpha\osLam}f$. Since $\psi\le d\le\langle d\rangle+1$ and
+$\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=K_c\,\ue^{K_{m,c}}$ works. For the consequence put $f=\ue^{\alpha\osLam}a$, so $a=\ue^{-\alpha\osLam}f$. Since $\psi\le d\le\langle d\rangle+1$ and
 $\beta>\tfrac12$, $\osomc\le\ue^{d/2}(1+d/\log2)\le C_\beta\,\ue^{\beta\langle d\rangle}$.
 \end{proof}
 

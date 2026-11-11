@@ -1,8 +1,8 @@
 \section{Proofs of the approximation theorems}\label{sec:dd}\label{sec:printed}
 
-We first prove the approximation with the power-weight norm $\|a\|_{\mathrm W}$ and transfer it to the reversed-weight norm $\|a\|_{\mathrm S}$. We then prove Theorem~\ref{pc:main} for the original norm $\|a\|_{\mathrm P}$: its critical-weight transfer replaces the interpolation of individual vectors used in the power-weight proof. The remaining subsections give the arbitrary-radius extension, the shared corollaries and Schubert's example amplitudes. This order follows the proofs' dependencies; the principal statements are collected in Section~\ref{sec:repair}.
+We first prove the approximation with the power-weight norm $\|a\|_{\mathrm W}$ and transfer it to the reversed-weight norm $\|a\|_{\mathrm S}$. We then prove Theorem~\ref{pc:main} for the original norm $\|a\|_{\mathrm P}$: its critical-weight transfer replaces the interpolation of individual vectors used in the power-weight proof. The remaining subsections give the completion of the proof for arbitrary radii, the shared corollaries and Schubert's example amplitudes. This order follows the proofs' dependencies; the principal statements are collected in Section~\ref{sec:repair}.
 Throughout, $\Gamma$ and the base point $x_0$ are fixed, $M=\Hb/\Gamma$, and $d=d(x_0,\cdot)$.
-The notation $\pcNorm a$ is the printed norm defined in Section~\ref{sec:repair}.
+The notation $\pcNorm a$ is the original norm defined in Section~\ref{sec:setup}.
 
 \medskip\noindent\emph{The remainder to be estimated.}
 Work in the normalization $x_0=i$, $b=\infty$ justified by Lemma~\ref{lem:base}, and use
@@ -32,7 +32,7 @@ with $N^{2N}:=1$ at $N=0$.
 
 \begin{remark}
 This is the power-weight form of the reversed-weight estimate. Lemma~\ref{lem:m2w} transfers it to the norm of
-Theorem~\ref{thm:dd14}; the deduction follows the proof below. Section~\ref{sec:changes} compares the resulting bounds with \cite{S}.
+Theorem~\ref{thm:dd14}; the deduction follows the proof below. Appendix~\ref{sec:changes} compares the resulting bounds with \cite{S}.
 \end{remark}
 
 \begin{proof}
@@ -189,26 +189,18 @@ Fix $\alpha_0\in(0,\min(1,\pi/4))$. For $0<\alpha\le\alpha_0$, take $K=N=0$ and 
 \end{proof}
 
 
-\subsection{The critical weight}\label{subsec:pc-weights}
-Let $\pcXzero:=\cosh d$, $\psi:=\log\pcXzero\ge0$, $\pcLog:=\log(2\pcXzero)/\log2\ge1$ and $\Lambda:=\sqrt{-\Delta}$. Fix $c':=\tfrac34$ (any exponent in
-$(\tfrac12,1)$ would do) and put
+\subsection{The original amplitude class}\label{subsec:pc-weights}
+Fix $c'=\tfrac34$ and put
 \[
-  \pcw:=\pcXzero^{1/2}\pcLog^{\,c'} .
+  \omega=X_0^{1/2}\ell^{c'},\qquad \ell=\log(2X_0)/\log2.
 \]
-This is the periodization weight: $\sum_\gamma\pcw(\gamma z)^{-2}$ is bounded for every Fuchsian group (Proposition~\ref{os:p1}); for $\pcXzero^{1/2}$ alone
-the sum $\sum_\gamma\pcXzero(\gamma z)^{-1}$ is not bounded when $M$ has finite area, because its integral over a fundamental domain is
-$\int_\Hb\pcXzero^{-1}d\nu=\infty$. Since
-$\psi\le d\le\langle d\rangle+1$, $\pcw\le C_\beta\ue^{\beta\langle d\rangle}$ for every $\beta>\tfrac12$. For $f:=\ue^{\alpha\Lambda}a$ the printed norm gives
-$\norm{\ue^{\beta\langle d\rangle}f}=\pcNorm a$, and therefore $\norm{\pcw f}\le C_\beta\pcNorm a$.
-This stronger decay belongs to $f$, before smoothing: the amplitude $a=\ue^{-\alpha\Lambda}f$ need not lie in any
-$X_0^{\beta'}$-weighted $L^2$ space with $\beta'>\tfrac12$ (Proposition~\ref{pc:classes}).
-In the reversed-weight class the mollifier part of the error is small because one vector is small without a weight and bounded with
-the weight $\pcXzero^\beta$, $\beta>\tfrac12$. Here the same interpolation is carried out for the linear maps that produce these vectors from the data,
-between $L^2(\Hb)$ and $L^2(\pcXzero^{2}d\nu)$ (Lemma~\ref{os:transfer}), after the data have been written as $a=\ue^{-\sigma\Lambda_m}\tilde f$ with an even
-smoothing operator and $\norm{\pcw\tilde f}\le C\pcNorm a$ (Proposition~\ref{os:data}).
+This is the critical periodization weight introduced in Section~\ref{app:o1st}.
+For $f=\ue^{\alpha\Lambda}a$, the original norm gives $\|\omega f\|\le C_\beta\|a\|_{\mathrm P}$.
+The next proposition explains why the power-weight argument above cannot be applied directly to $a$.
+The proof of Theorem~\ref{pc:main} instead uses the data factorization and transfer estimates of Section~\ref{app:o1st}.
 
 \begin{proposition}[the two amplitude classes and dependence on the radius]\label{pc:classes}
-For $\beta>\tfrac12$, the printed and reversed-weight norms are not equivalent. There are amplitudes of finite printed norm at a radius $0<\alpha<\pi/2$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and infinite printed norm at every smaller radius.
+For $\beta>\tfrac12$, the original and reversed-weight norms are not equivalent. There are amplitudes of finite original norm at a radius $0<\alpha<\pi/2$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and infinite original norm at every smaller radius.
 \end{proposition}
 \begin{proof}
 Let $\beta>\tfrac12$ and $0\le\alpha'<\alpha<\pi/2$, and put $h:=\ue^{-\beta\langle d\rangle}\mathbf 1_{B(x_0,1)}$ and $a:=\ue^{-\alpha\Lambda}h$, so that
@@ -220,18 +212,18 @@ radial kernel $k_\tau$ of Lemma~\ref{os:poisson}, and $d(z,w)\in[d(z)-1,d(z)+1]$
 with $c>0$ depending on $\tau$ and $\beta$. Since $\langle d\rangle\ge d-1$, for every $\beta'>\tfrac12$ the square of
 $\ue^{\beta'\langle d\rangle}\ue^{-\tau\Lambda}h$ is at least $c'\ue^{(2\beta'-2)d}(d+1)^{-3}$ where $d\ge2$, which is not integrable against the area
 element $\sinh\rho\,d\rho\,d\theta$; so this function is not in $L^2(\Hb)$. Two consequences follow.
-With $\tau=\alpha$: the amplitude $a$ of the printed class lies in no reversed-weight class with an exponent $\beta'>\tfrac12$, because
+With $\tau=\alpha$: the amplitude $a$ of the Poisson-smoothed data class lies in no reversed-weight class with an exponent $\beta'>\tfrac12$, because
 $\norm{\ue^{\alpha''\Lambda}\ue^{\beta'\langle d\rangle}a}\ge\norm{\ue^{\beta'\langle d\rangle}a}$ for $\alpha''\ge0$; in particular the norms
 $\norm{\ue^{\beta\langle d\rangle}\ue^{\alpha\Lambda}a}$ and $\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}$ are not equivalent for $\beta>\tfrac12$, contrary to
 \cite[Proposition~7.1, (7.2)]{S}.
-With $\tau=\alpha-\alpha'$ and $\beta'=\beta$: the printed norm of $a$ at $(\alpha',\beta)$ is infinite, since
-$\ue^{\alpha'\Lambda}a=\ue^{-(\alpha-\alpha')\Lambda}h$. So the printed norms are not monotone in $\alpha$, and Theorem~\ref{pc:main}, which is stated for
-$\alpha\le\tfrac12$, does not cover larger radii by a comparison of printed norms, as it does in the reversed-weight class (Section~\ref{sec:swapped}).
-Larger radii are covered by Corollary~\ref{pc:allalpha}, which compares the data at the critical weight instead.
+With $\tau=\alpha-\alpha'$ and $\beta'=\beta$: the original norm of $a$ at $(\alpha',\beta)$ is infinite, since
+$\ue^{\alpha'\Lambda}a=\ue^{-(\alpha-\alpha')\Lambda}h$. So the original norms are not monotone in $\alpha$. The proof of Theorem~\ref{pc:main} for larger radii therefore compares the data at the critical weight
+(Section~\ref{subsec:pc-all}), rather than using the radius monotonicity available in the reversed-weight class.
 \end{proof}
 
-\subsection{Proof of Theorem~\ref{pc:main}}\label{subsec:pc-proof}
-\begin{proof}
+\subsection{The original norm: radii at most \texorpdfstring{$1/2$}{1/2}}\label{subsec:pc-proof}
+\begin{proof}[Proof of Theorem~\ref{pc:main} for $0<\alpha\le\tfrac12$]
+We first prove the estimate with constants independent of $A$ on the range $0<\alpha\le\tfrac12$.
 We use the estimates of Sections~\ref{sec:analytic} and~\ref{app:o1st} and the remainder of Section~\ref{subsec:dd-id}; all lemmas are used with $\tau_0=1$.
 
 \medskip\noindent\emph{Step 0 (reductions and parameters).} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters below only through
@@ -343,12 +335,12 @@ radii below $\tau_0=1$.
 \end{proof}
 
 
-\subsection{Proof of the extension to arbitrary radii}\label{subsec:pc-all}
-Theorem~\ref{pc:main} is stated for $\alpha\le\tfrac12$. Its proof uses the amplitude only through the data of Step~1, so the estimate
-extends to every radius, although the printed norms at different radii are not comparable (Proposition~\ref{pc:classes}).
+\subsection{The original norm: completion for arbitrary radii}\label{subsec:pc-all}
+The preceding proof uses the amplitude through the data of Step~1. We now complete the theorem for $\alpha\le A$
+and its consequences for that range, using the critical-weight bounds rather than comparing the original norms at different radii.
 
-\begin{proof}[Proof of Corollary~\ref{pc:allalpha}]
-For $\alpha\le\tfrac12$ this is Theorem~\ref{pc:main}. Let $\tfrac12<\alpha\le A$. The reductions of Step~0 of the proof of
+\begin{proof}[Completion of the proof of Theorem~\ref{pc:main}]
+For $\alpha\le\tfrac12$ the estimate was obtained in Section~\ref{subsec:pc-proof}. Let $\tfrac12<\alpha\le A$. The reductions of Step~0 of the proof of
 Theorem~\ref{pc:main} apply as they stand, and $a$ is $C^\infty$ by Lemma~\ref{lem:lift}, because
 $\operatorname{Dom}(\ue^{\alpha\Lambda})\subset\operatorname{Dom}(\ue^{\min(\alpha,1)\Lambda})$. Steps~2 to~5 of that proof use
 the amplitude only through a representation $a=\ue^{-\sigma\Lambda_3}\tilde f$ and the number $\norm{\pcw\tilde f}$. For $\sigma\in(0,\tfrac1{12}]$,
@@ -380,7 +372,7 @@ two $\delta$.
 
 \emph{The corollaries.} The proofs of Corollaries~\ref{pc:thm13} and~\ref{pc:cor15} use only the form of the bound; for
 Corollary~\ref{pc:cor15}, once $C$ is fixed, decrease $\delta$ so that $\delta\le\kappa^{1/2}/\max(1,C)$. The proof of
-Corollaries~\ref{pc:cor16} and~\ref{pc:cor16bg} uses $\alpha\hbar\le1$ to replace the powers $(\alpha\hbar)^{-2N}$ and $(\alpha\hbar)^{-2N-2}$ by
+Corollary~\ref{pc:cor16} uses $\alpha\hbar\le1$ to replace the powers $(\alpha\hbar)^{-2N}$ and $(\alpha\hbar)^{-2N-2}$ by
 $(\alpha\hbar)^{-2N-4}$. For $\alpha\le A$ one has $\alpha\hbar\le\max(1,A)$, so both powers are at most $\max(1,A)^4(\alpha\hbar)^{-2N-4}$, and
 the factor $\max(1,A)^4$ goes into the constant.
 \end{proof}
@@ -390,7 +382,7 @@ the factor $\max(1,A)^4$ goes into the constant.
 The leading bound in Corollary~\ref{pc:thm13} is Theorem~\ref{pc:main} with $K=N=0$.
 
 \begin{proof}[Proof of Corollary~\ref{pc:cor15}]
-The same calculation applies to each of the three amplitude norms. The comparison with the truncation window in \cite{S} is given in Section~\ref{sec:changes}.
+The same calculation applies to each of the three amplitude norms. The comparison with the truncation window in \cite{S} is given in Appendix~\ref{sec:changes}.
 
 At $t=0$ the error vanishes. Let $t>0$. Theorem~\ref{pc:main} bounds the error by
 \[
@@ -418,38 +410,39 @@ Thus $\delta_K\le1$ and $C^N\delta_K=C^{N+1}\hbar t/\alpha^2\le C^{N+1}$. Combin
 $C'=\ue^{1/2}$.
 \end{proof}
 
-\begin{proof}[Proof of Corollaries~\ref{pc:cor16} and~\ref{pc:cor16bg}]
-Let $E$ be the bracket in their statements. By Theorem~\ref{pc:main} at $N$ and at $N+1$, $u:=\Delta^NE$ lies in $\operatorname{Dom}(\Delta_M)$. Apply
-Lemma~\ref{pc:g43} to $u$, and use $N^{2N}\le(\ue/2)^{2N}(2N)!$, $(N+1)^{2N+2}\le54^{N+1}(2N)!$ and $\alpha\hbar\le1$. This proves
-Corollary~\ref{pc:cor16}. Under the hypothesis of Corollary~\ref{pc:cor16bg}, the balls $B(\gamma\tilde z,r_0)$ are disjoint.
+\begin{proof}[Proof of Corollary~\ref{pc:cor16}]
+Let $E$ be the bracket in the statement. By Theorem~\ref{pc:main} at $N$ and at $N+1$, $u:=\Delta^NE$ lies in $\operatorname{Dom}(\Delta_M)$. Apply
+Lemma~\ref{pc:g43} to $u$, and use $N^{2N}\le(\ue/2)^{2N}(2N)!$, $(N+1)^{2N+2}\le54^{N+1}(2N)!$ and $\alpha\hbar\le1$. This proves the estimate for $\alpha\hbar\le1$; the completion argument in Section~\ref{subsec:pc-all} supplies the factor depending on $A$ for the remaining range.
+For the bounded-geometry specialization, the balls $B(\gamma\tilde z,r_0)$ are disjoint.
 Those with $d(\tilde z,\gamma\tilde z)<2$ lie in $B(\tilde z,2+r_0)$, so comparison of hyperbolic areas gives
-$m(z)\le C(r_0)$. This proves Corollary~\ref{pc:cor16bg}. \qedhere
+$m(z)\le C(r_0)$. This proves the bounded-geometry assertion. \qedhere
 \end{proof}
 
 \begin{remark}[pointwise bounds and cusp height]\label{pc:remcusp}
-In an embedded cusp of height $H$, deep enough, $m(z)\asymp H$, so the pointwise loss grows like $H^{1/2}$. Theorem~\ref{cl:main} shows that this exponent is necessary on the modular surface for a phase attached to the cusp. The proof above uses one Laplacian and gives the exponent $-2N-2$ of $\alpha\hbar$; we state $-2N-4$ to facilitate the comparison in Section~\ref{sec:changes}.
+In an embedded cusp of height $H$, deep enough, $m(z)\asymp H$, so the pointwise loss grows like $H^{1/2}$. Theorem~\ref{cl:main} shows that this exponent is necessary on the modular surface for a phase attached to the cusp. The proof above uses one Laplacian and gives the exponent $-2N-2$ of $\alpha\hbar$; we state $-2N-4$ to facilitate the comparison in Appendix~\ref{sec:changes}.
 \end{remark}
 
-\begin{corollaryR}[optimal truncation in the reversed-weight class]\label{cor:dd15}
-Under the hypotheses of Theorem~\ref{thm:dd14}, the estimate and truncation window of Corollary~\ref{pc:cor15} hold with $\swNorm a$ in place of $\pcNorm a$, with the constants of Theorem~\ref{thm:dd14} and $\delta\le\kappa^{1/2}/\max(1,C)$.
-\end{corollaryR}
-\begin{corollary}[optimal truncation with the power weight]\label{cor:dd15-appx}
-Under the hypotheses of Theorem~\ref{thm:dd-appx}, the estimate and truncation window of Corollary~\ref{pc:cor15} hold with $\pwNorm a$ in place of $\pcNorm a$, with the constants of Theorem~\ref{thm:dd-appx} and $\delta\le\kappa^{1/2}/\max(1,C)$.
+\begin{corollary}[optimal truncation for the companion norms]\label{cor:dd15}\label{cor:dd15-appx}
+Under the hypotheses of Theorem~\ref{thm:dd14}, respectively Theorem~\ref{thm:dd-appx}, the estimate and truncation window
+of Corollary~\ref{pc:cor15} hold with $\|a\|_{\mathrm S}$, respectively $\|a\|_{\mathrm W}$, in place of $\|a\|_{\mathrm P}$.
+Use the constants of the respective theorem and decrease $\delta$ so that $\delta\le\kappa^{1/2}/\max(1,C)$.
 \end{corollary}
-\begin{proof}[Proof of Corollaries~\ref{cor:dd15} and~\ref{cor:dd15-appx}]
-Apply the calculation above to Theorems~\ref{thm:dd14} and~\ref{thm:dd-appx}, respectively. The same absolute constant $C'=\ue^{1/2}$ works.
+\begin{proof}
+Apply the calculation in the proof of Corollary~\ref{pc:cor15} to the respective approximation theorem.
+The same absolute constant $C'=\ue^{1/2}$ works.
 \end{proof}
 
-\begin{corollaryR}[pointwise approximation in the reversed-weight class]\label{cor:dd16}
-Under the hypotheses of Theorem~\ref{thm:dd14}, assume that $M$ has injectivity radius at least $r_0>0$. Then Corollary~\ref{pc:cor16bg} holds with $\swNorm a$ in place of $\pcNorm a$ and a constant depending also on $r_0$. Optimal truncation gives the corresponding pointwise exponential estimate from Corollary~\ref{cor:dd15}.
-\end{corollaryR}
-\begin{corollary}[pointwise approximation with the power weight]\label{cor:dd16-appx}
-Under the hypotheses of Theorem~\ref{thm:dd-appx}, assume that $M$ has injectivity radius at least $r_0>0$. Then Corollary~\ref{pc:cor16bg} holds with $\pwNorm a$ in place of $\pcNorm a$ and a constant depending also on $r_0$. Optimal truncation gives the corresponding pointwise exponential estimate from Corollary~\ref{cor:dd15-appx}.
+\begin{corollary}[pointwise approximation for the companion norms]\label{cor:dd16}\label{cor:dd16-appx}
+Under the hypotheses of Theorem~\ref{thm:dd14}, respectively Theorem~\ref{thm:dd-appx}, assume that $M$ has injectivity
+radius at least $r_0>0$. The bounded-geometry estimate of Corollary~\ref{pc:cor16} holds with $\|a\|_{\mathrm S}$,
+respectively $\|a\|_{\mathrm W}$, in place of $\|a\|_{\mathrm P}$, and a constant depending also on $r_0$.
+Optimal truncation gives the corresponding pointwise exponential estimate from Corollary~\ref{cor:dd15}.
 \end{corollary}
-\begin{proof}[Proof of Corollaries~\ref{cor:dd16} and~\ref{cor:dd16-appx}]
-Apply Lemma~\ref{pc:g43} to $\Delta^NE$ and use the respective approximation theorem at $N$ and $N+1$, as in the proof of Corollary~\ref{pc:cor16bg}. Apply the same argument to the optimal-truncation bounds for the exponential estimates. On an arbitrary quotient the proof gives the additional factor $m(z)^{1/2}$, as in Corollary~\ref{pc:cor16}.
+\begin{proof}
+Apply Lemma~\ref{pc:g43} to $\Delta^NE$ and use the respective approximation theorem at $N$ and $N+1$, as in the proof of
+Corollary~\ref{pc:cor16}. Apply the same argument to the optimal-truncation bounds for the exponential estimates.
+On an arbitrary quotient the proof gives the additional factor $m(z)^{1/2}$.
 \end{proof}
-
 
 
 \subsection{Schubert's example amplitudes}\label{subsec:dd-ex}
