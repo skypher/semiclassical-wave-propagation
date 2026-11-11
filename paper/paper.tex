@@ -136,7 +136,7 @@ $L^2(M)$ up to times $\delta(\alpha/\hbar)^{1/2}$, far beyond the Ehrenfest time
 norm that measures analyticity in a strip of width $\alpha$, $\alpha^3\ge\kappa\hbar$, and exponential decay, the
 error after $N$ applications of the Laplacian is at most
 $C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$ times the norm of $a$, and a suitable choice of $K$
-makes it exponentially small. Estimates of this form were stated, with these constants, in Schubert's preprint
+makes it exponentially small in $\alpha^2/(\hbar t)$. Estimates of this form were stated, with these constants, in Schubert's preprint
 \emph{Semiclassical wave propagation for large times} (arXiv:0705.0134v1, 2007), which its author withdrew in
 2011 for ``a gap in the proof of the dispersive estimates''. We follow his strategy, with a different ordering
 of the expansion. The theorems are proved for two classes of amplitudes: the class in which the two weights of
@@ -151,8 +151,8 @@ approximation is not classical behaviour of expectation values: on the modular s
 cusp, the approximation remains accurate up to times of order $\hbar^{-1/2}$, while from a time of order
 $\log(1/\hbar)\log\log(1/\hbar)$ on, within this window, the mass of the state in every compact set tends to zero, contrary to the classical
 transport of its density. The proofs of the
-approximation theorems and of their corollaries, in both classes, and of this escape of mass, are formalized in Lean~4; the lower bound on
-the modular surface is not.
+approximation theorems and of their corollaries, in both classes, and of this accuracy and escape of mass, are formalized in Lean~4;
+the classical transport there is a cited equidistribution theorem, and the lower bound on the modular surface is not formalized.
 
 \vskip5pt
 \noindent\textbf{Keywords.}\enspace Semiclassical analysis; time-dependent
@@ -222,8 +222,9 @@ Schubert's amplitude norm is \cite[Def.~1.1]{S}
 Throughout, $\Lambda=\sqrt{-\Delta}$, $X_0=\cosh d(x_0,\cdot)$, $\tilde\psi=\log X_0$ and $W_\gamma=\ue^{\gamma\tilde\psi}$.
 
 \subsection{Results}\label{sec:repair}
-The definition of the amplitude norm in \cite{S} and the proofs there take the two weights in different orders, and for
-$\beta>\tfrac12$ the two orders define different classes (Remark~\ref{pc:classes}). We treat both. In this subsection
+The definition of the amplitude norm in \cite{S} and the proofs there take the two weights in different orders, and
+\cite[Proposition~7.1]{S} states that the two orders give equivalent norms. For
+$\beta>\tfrac12$ they do not: the two orders define different classes (Remark~\ref{pc:classes}). We treat both. In this subsection
 \[
 \norm a:=\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}_{L^2(\Hb)} ,
 \]
@@ -250,7 +251,7 @@ as in \cite{S}. By Proposition~\ref{prop:g5} the order $\hbar t$ cannot be impro
 This is the case $K=N=0$ of Theorem~\ref{thm:dd14} below, with $\kappa:=\alpha^3$ and with $\alpha_0$ as here: then
 $\alpha^3\ge\kappa\hbar$ for all $0<\hbar\le1$, $u^{(0)}$ is the approximation of order $0$, and the bound of Theorem~\ref{thm:dd14} reads
 $C\alpha^{-2}\hbar t\norm a$ for $0\le t\le\delta\alpha^{1/2}\hbar^{-1/2}$. The constants of the present theorem are
-$C\alpha^{-2}$ and $\delta\alpha^{1/2}$; they depend on the fixed $\alpha$.
+$C\alpha^{-2}$ and $\delta\alpha^{1/2}$, with $C$ and $\delta$ the constants of Theorem~\ref{thm:dd14} for $\kappa=\alpha^3$; they depend on the fixed $\alpha$.
 \end{proof}
 
 \begin{remark}
@@ -431,7 +432,9 @@ We list how the statements above relate to those of \cite{S}, equations (1.15)--
 self-adjoint operators. The exponential is not operator monotone: with $X=\mathrm{diag}(0,1)$,
 $H=\begin{pmatrix}1&1\\1&1\end{pmatrix}\ge0$ and $v=(-3,1)$, the function $g(s)=\norm{\ue^{X+sH}v}^2$ has
 $g'(0)=4(6-\ue^2)<0$. In addition, \cite[Def.~1.1]{S} and the proofs of \cite[Prop.~3.5, Lemma~3.11]{S} take the two weights
-of the norm in different orders.
+of the norm in different orders. The proof of \cite[Lemma~3.11]{S} passes from one order to the other by
+\cite[Proposition~7.1, (7.2)]{S}, which states that the two norms are equivalent; for $\beta>\tfrac12$ they are not
+(Remark~\ref{pc:classes}).
 \item \emph{Amplitude class.} Theorems 1.3R and 1.4R and their corollaries use the order of the proofs, with the weight
 $\langle d\rangle$ of \cite{S}. Theorem~\ref{pc:main} and its corollaries give the same bounds with the norm of
 \cite[Def.~1.1]{S}, for $\alpha\le\tfrac12$.
@@ -471,21 +474,30 @@ Section~\ref{sec:printed}, and Appendix~\ref{app:lean} describes the formalizati
 \section{The order \texorpdfstring{$\hbar t$}{ht} of the leading error is attained}\label{sec:g5}
 \begin{proposition}\label{prop:g5}
 Let $\Gamma=\{\mathrm{id}\}$, allowed in \cite{S} since a Fuchsian group there is any discrete subgroup.
-Let $a\ne0$ lie in every Sobolev space, e.g.\ $a=\ue^{-\alpha\sqrt{-\Delta}}\ue^{-\beta\langle d\rangle}f$ with
-$f\in C_c^\infty$. Then for $t=d\,\hbar^{-1/2}$, $d>0$ fixed,
+Let $a\ne0$ be such that every word in $X,Y$ applied to $a$ lies in $L^2(\Hb)$. This holds for every $a$ of finite swapped
+norm (Lemmas~\ref{lem:m2w} and~\ref{lem:sc}) and for every $a$ of finite printed norm
+(Lemma~\ref{lem:lift}, since then $a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$), in both cases with a smaller radius in the
+cited lemmas if necessary; nonzero amplitudes of the two kinds are
+$\ue^{-\beta\langle d\rangle}\ue^{-\alpha\Lambda}g$ and $\ue^{-\alpha\Lambda}\ue^{-\beta\langle d\rangle}g$ with $0\ne g\in L^2(\Hb)$, whose swapped and printed
+norm, respectively, is $\norm g$. Then for $t=d\,\hbar^{-1/2}$, $d>0$ fixed,
 \[
 \norm{u^{(0)}(t)-\cU(t)(a\ue^{i\varphi/\hbar})}_{L^2(\Hb)}=\tfrac d2\sqrt\hbar\,\norm{Aa}+O_{a,d}(\hbar),\qquad A=Y^2-Y,
 \]
-and $\norm{Aa}\ge\norm a/4>0$. Hence the order $\hbar t$ of Theorem~\ref{thm:main} is attained, and the bound
-$C\hbar\norm a_{\alpha,\beta}$ of \cite[(1.18)]{S} cannot hold on the window \cite[(1.19)]{S}.
+and $\norm{Aa}\ge\norm a/4>0$. Hence the order $\hbar t$ of Theorem~\ref{thm:main} is attained by every nonzero amplitude of the
+swapped class, and the bound
+$C\hbar\norm a_{\alpha,\beta}$ of \cite[(1.18)]{S} cannot hold on the window \cite[(1.19)]{S} for any nonzero amplitude of the printed class.
 \end{proposition}
 \begin{proof}
-By \eqref{eq:factor} and unitarity of $\cU,V$, the left side equals $\norm{V(t)a-a}$. Backward Duhamel on
-the fixed input gives
-\[V(t)a-a=\tfrac{i\hbar}{2}\int_0^t\Delta(s)a\,ds+R\]
-with $\norm R\le\tfrac{\hbar^2t^2}{8}\sup_{r,s}\norm{\Delta(r)\Delta(s)a}$,
+By \eqref{eq:factor} and unitarity of $\cU$ and $V(t)$, the left side equals $\norm{V(t)a-a}=\norm{a-V(t)^*a}$. The Dyson
+identity (D1) of Proposition~\ref{prop:dd-id} at $K=1$, whose hypothesis is the one made on $a$, reads, with $c=i\hbar/2$,
+\[a-V(t)^*a=c\,V(t)^*P_1(t)a+R,\qquad R=c^2\int_{t>s_1>s_2>0}V(s_1)^*\Delta(s_1)\Delta(s_2)a\,ds_1\,ds_2,\]
+and, since $\Delta(s)=A+\ue^{-2s}X^2$,
+\[P_1(t)=\int_0^t\Delta(s)\,ds=tA+\tfrac{1-\ue^{-2t}}2X^2\]
 and
-\[\int_0^t\Delta(s)\,ds=tA+\tfrac{1-\ue^{-2t}}2X^2.\] In the variable $r=\log y$ and after the unitary
+\[\norm{\Delta(r)\Delta(s)a}\le M_a:=\norm{A^2a}+\norm{AX^2a}+\norm{X^2Aa}+\norm{X^4a}<\infty\qquad(r,s\ge0).\]
+So $\norm R\le\tfrac{\hbar^2t^2}{8}M_a$, and since $V(t)^*$ is unitary,
+\[\bigl|\norm{V(t)a-a}-\tfrac{\hbar t}2\norm{Aa}\bigr|\le\tfrac\hbar4\norm{X^2a}+\tfrac{\hbar^2t^2}{8}M_a ,\]
+which is $\hbar\,(\tfrac14\norm{X^2a}+\tfrac{d^2}8M_a)$ at $t=d\,\hbar^{-1/2}$. In the variable $r=\log y$ and after the unitary
 gauge $a=\ue^{r/2}g$, $A$ becomes $\partial_r^2-1/4$, so $-A\ge1/4$.
 \end{proof}
 
