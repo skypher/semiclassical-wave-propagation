@@ -63,7 +63,8 @@ $\varphi_b=\varphi_\infty\circ\gamma^{-1}$ up to a constant, the approximation f
 $(b,a)$ is a constant phase times the error for $(\infty,a\circ\gamma)$. So take $a_b:=a\circ\gamma^{-1}$, that is $\ue^{-\kappa\cosh d(\gamma i,\cdot)}$ in case
 (i) and $\ue^{-\alpha\Lambda}\ue^{-\kappa\cosh d(\gamma i,\cdot)}$ in case (ii) ($\Lambda$ commutes with isometries); these have finite norms about the base
 point $i$, since $\langle d(i,\cdot)\rangle\le\langle d(\gamma i,\cdot)\rangle+d(i,\gamma i)$ and the tube argument of Lemma~\ref{cl:amp}(i) is isometry
-invariant. Like the printed Corollary~1.6, Corollary~\ref{pc:cor16} is stated uniformly for every Fuchsian $\Gamma$ and every $b$; by Theorem~\ref{cl:main} no
+invariant. Like the printed Corollary~1.6, Corollary~\ref{pc:cor16} is stated for every Fuchsian $\Gamma$ and every $b$, with constants that do not depend on $b$
+(in Corollary~\ref{pc:cor16} they may depend on $\Gamma$); by Theorem~\ref{cl:main} no
 statement of that form can have $m(z)^\gamma$ with $\gamma<\tfrac12$, so the exponent $\tfrac12$ is optimal among them (the power of $\hbar$ is not
 claimed optimal). For irrational $b$, and for cusped quotients other than $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$, the necessity of the factor is not decided
 here; a bound depending on $b$ without that factor is not excluded. The mechanism below is not special to $b=\infty$: in the frame where
@@ -91,7 +92,8 @@ $d(z,z+n)=2\operatorname{arcsinh}(|n|/(2Y))<2$ if and only if $|n|<2Y\sinh1$. So
 
 \begin{lemma}[cusp asymptotics]\label{cl:asym}
 Let $\vartheta$ be either $X_0^{-2}$ or $\ue^{-d(i,\cdot)}(1+d(i,\cdot))^{-3/2}$, and for $A\in C^4(\Hb)$ put
-$B(A):=\sup_w\vartheta(w)^{-1}\sum_{|S|\le4}|Z_SA(w)|$. There is a $C$ (depending only on the choice of $\vartheta$) such that for $0<\hbar\le\tfrac12$,
+$B(A):=\sup_w\vartheta(w)^{-1}\sum_{|S|\le4}|Z_SA(w)|$. There is a $C$ (depending only on the choice of $\vartheta$) such that for every $A$ with
+$B(A)<\infty$, $0<\hbar\le\tfrac12$,
 $t\ge2\log(1/\hbar)$, $Y=\ue^t$ and $z=x+iY$,
 \begin{multline*}
 \Bigl|\bigl[(S(t)A)\ue^{i\varphi/\hbar}\bigr]_\Gamma(z)-\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}\sum_{c\ge1}c^{2i/\hbar}\sum_{a\in\mathbb Z,(a,c)=1}A\Bigl(\frac ac+\frac i{c^2}\Bigr)\Bigr|\\
@@ -270,8 +272,13 @@ $|K_\alpha^{(j)}(\cosh r)|\le C_{j,r_0}\alpha\,\ue^{-r}(1+r)^{-3/2}(\cosh r)^{-j
 of terms $K_\alpha^{(j)}(\cosh d)\prod_{l\le j}Z_{S_l}^w\cosh d$, which proves the claim.
 \end{itemize}
 
-(i) $f=\ue^{\beta\langle d\rangle}a$ continues to the crown with $\operatorname{Re}\tilde X_0=\cos(2r)X_0$ and $\operatorname{Re}\widetilde{\langle d\rangle}\le\langle d\rangle+C_Hr^2$ (proof of
-Lemma~\ref{lem:ex}), so its tube norm is finite and $\norm{\ue^{\alpha\Lambda}f}\le C_0N_\alpha(f)$ as there. By the relations in (d), every word applied to
+(i) Fix $R\in(r_1,\tfrac12)$. As in the proof of Lemma~\ref{lem:ex}, $f=\ue^{\beta\langle d\rangle}a=\ue^{\beta H(X_0)-\kappa X_0}$ extends holomorphically to the
+sub-crown $\Xi_R$ (not to the whole crown: $H$ has a branch point where $1+G=0$), and on the orbit at radius $r\le r_1$, in the notation of that proof,
+$\tilde X_0=cA+isB$, so $\operatorname{Re}\tilde X_0=\cos(2r)X_0$. The two estimates of that proof also give an upper bound: since $H'(cA)$ is real,
+$\operatorname{Re}H(\tilde X_0)\le H(cA)+\tfrac12\sup|H''|\,s^2B^2\le H(cA)+Cs^2$, and $H(cA)\le H(A)$ because $H$ is nondecreasing on
+$(\cos1,\infty)\ni cA$. So $\operatorname{Re}\widetilde{\langle d\rangle}\le\langle d\rangle+C_Hr^2$ and
+$|\tilde f|\le\ue^{\beta C_Hr^2}\ue^{\beta\langle d\rangle}\ue^{-\kappa\cos(2r)X_0}$ on that orbit; as $\cos(2r_1)>0$, the tube norm of $f$ is finite, and
+$\norm{\ue^{\alpha\Lambda}f}\le C_0N_\alpha(f)$ as there. By the relations in (d), every word applied to
 $X_0$ is bounded by $C_SX_0$, and $Z_S\ue^{-\kappa X_0}$ is $\ue^{-\kappa X_0}$ times a sum of products of at most $|S|$ factors $-\kappa Z_{S_l}X_0$. So
 \begin{equation}\label{cl:hwords}
 |Z_S\ue^{-\kappa X_0}|\le C_S(1+\kappa)^{|S|}X_0^{|S|}\ue^{-\kappa X_0},
