@@ -29,7 +29,8 @@ A kernel check certifies the proofs of the formal statements. Whether a formal s
 \item \emph{Ranges and grouped statements.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$. Theorems~\ref{thm:dd14} and~\ref{thm:dd-appx} and their corollaries keep the range $\alpha_0<\pi/4$ of
 the formal statements; their paper proofs use only $\alpha_0\le1$, since all estimates of Section~\ref{sec:analytic} are
 applied with $\tau_0=1$. The second statement of Theorem~\ref{thm:dd-appx}, the uniformity in $\Gamma$, is
-\lean{thm14R_unifX}, which is stated for $C^\infty$ amplitudes and $0<\alpha\le1$.
+\lean{thm14R_unifX}, which is stated for $C^\infty$ amplitudes and $0<\alpha\le1$; the representative comes from
+Lemma~\ref{lem:lift} (\lean{lift1}), as in the bullet on amplitudes.
 Theorem~\ref{pc:main} states the bounded-radius result \lean{pcmain_all}; its proof treats $\alpha\le\tfrac12$, the range of
 \lean{pcmain_half}, and $\tfrac12<\alpha\le A$ separately, both through Proposition~\ref{pc:core}, which is \lean{dd_core_pc} with
 \lean{SurfW.surf_D4}. The original-norm corollaries likewise use the declarations with suffix \lean{all}.
