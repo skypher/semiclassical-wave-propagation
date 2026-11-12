@@ -8,11 +8,9 @@
 
 \section{Formalization}\label{app:lean}
 
-The main approximation theorems, their optimal-truncation corollaries, and the supporting statements specified below
-are formalized in Lean~4 and checked by its kernel. For the pointwise corollaries, the formalization
-proves estimates with prefactor $(\alpha\hbar)^{-2N-4}$; the text derives the sharper
-prefactor $(\alpha\hbar)^{-2N-2}$. Table~\ref{tab:lean} distinguishes direct counterparts,
-paper deductions and variants, and results without formal proofs.
+The principal $L^2$ approximation estimates, their optimal-truncation corollaries, and the supporting statements specified below
+are formalized in Lean~4 and checked by its kernel. Table~\ref{tab:lean} gives an overview of direct counterparts,
+paper deductions and variants, and results without formal proofs; the text explains the substantive differences.
 
 \subsection*{What is checked}
 The formal development is the directory \texttt{lean/} of the repository \leanrepo, namespace \lean{Qschubert}, at commit \leancommit. It is built with Lean~4 \cite{Lean4} (toolchain \texttt{v4.35.0}), Mathlib \cite{Mathlib} at the tag \texttt{v4.35.0}, and \texttt{physicslib4} \cite{Phys} (commit \texttt{2337279}), which supplies the spectral theorem for unbounded self-adjoint operators. The development also depends on the project \emph{Prime Number Theorem And \dots} \cite{PNT} (commit \texttt{127b50e}), from which it takes the classical zero-free region of the Riemann zeta function; this is used only in the proof of Theorem~\ref{ev:mod}.
@@ -28,13 +26,11 @@ A kernel check certifies the proofs of the formal statements. Whether a formal s
 \item \emph{Operators.} $-\Delta$ on $L^2(\Hb)$ and on $L^2(M)$ is the Friedrichs extension from test functions, respectively from periodized test functions; $\Lambda$, $\ue^{\alpha\Lambda}$, $\cU(t)$ and $\Delta^N$ are functions of it by the spectral theorem.
 \item \emph{Boundary points.} The base point $x_0\in\Hb$ is a parameter, and $b=g\,\infty$ with $g\in\mathrm{SL}(2,\mathbb R)$, $g\,x_0=x_0$. Every $b\in\partial\Hb$ arises, and the objects depend on $b$ only (\lean{exists_stab_smul_infty}, \lean{initState_eq_of_stab}, \lean{approxSolB_eq_of_stab}).
 \item \emph{Amplitudes.} An amplitude is a function on $\Hb$ whose class has finite norm. The formal theorems produce its $C^\infty$ representative $a'$, equal to $a$ almost everywhere, before $\hbar,t,K,N,b$ are chosen, and $u^{(K)}$ is built from $a'$. Nonzero amplitudes of finite norm exist in both classes (\lean{printed_class_nonvacuous_beta}, \lean{swappedD_class_nonvacuous}).
-\item \emph{Conclusions.} Each $L^2$ theorem asserts that the two orbit sums converge absolutely almost everywhere and define elements of $L^2(M)$, and then bounds $\norm{\Delta^N[\,\cdot\,]}$, an element of $[0,\infty]$ that equals $\infty$ outside the domain of $\Delta^N$. The pointwise declarations assert that the error lies in the domain of $\Delta^N$ and that $\Delta^NE$ has a continuous representative at every point of $M$. Their prefactor is weaker than the one displayed here; the difference is specified below.
+\item \emph{Conclusions.} Each $L^2$ theorem asserts that the two orbit sums converge absolutely almost everywhere and define elements of $L^2(M)$, and then bounds $\norm{\Delta^N[\,\cdot\,]}$, an element of $[0,\infty]$ that equals $\infty$ outside the domain of $\Delta^N$. The pointwise declarations assert that the error lies in the domain of $\Delta^N$ and that $\Delta^NE$ has a continuous representative at every point of $M$.
 \item \emph{The cap on $\delta$ in the optimal-truncation corollaries.} For Corollary~\ref{pc:cor15} the condition $\delta\le\kappa^{1/2}/\max(1,C)$ is part of the formal statement. For the two companion norms in Corollary~\ref{cor:dd15} the formal statements assert that some $C$ and $\delta>0$ exist for which the bound holds on the window; their proofs take $\delta\le\kappa^{1/2}/\max(1,C)$, and $\delta$ may always be decreased, since this only shortens the time window.
 \item \emph{Ranges and grouped statements.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$.
 Theorem~\ref{pc:main} states the bounded-radius result \lean{pcmain_all}; its proof first treats $\alpha\le\tfrac12$,
 the range of \lean{pcmain_half}. The original-norm corollaries likewise use the declarations with suffix \lean{all}.
-The pointwise statement combines the arbitrary-quotient estimate with its bounded-geometry specialization, and the companion
-corollaries group the two norms; Table~\ref{tab:lean} lists the declarations for these alternatives.
 Proposition~\ref{os:data} retains the condition $\sigma m\le\tfrac12$, although its paper proof does not need it:
 this is the range of its formal statement and suffices for its applications.
 The formal statement of Proposition~\ref{prop:mean} has every $\hbar>0$ and every real $t$, and no hypothesis on the area:
@@ -66,12 +62,24 @@ estimate \lean{ev_transfer_core}. Its reversed-weight version is \lean{evTransfe
 For the original norm, \lean{evTransfer_pc} covers $\alpha\le\tfrac12$; \lean{pcmain_all}
 supplies the approximation bound on every bounded radius range.
 
+Corollary~\ref{cor:escape-summary} is the introductory consequence of Theorem~\ref{ev:mod}:
+its quantum assertions follow from the formalized parts (i),(ii), and its classical comparison uses the unformalized part (iii).
+
 The fixed-radius Corollary~\ref{thm:main} is presented here for $\beta>1/2$ and every fixed $\alpha>0$. It is deduced in the text from \lean{thm14Rmain_exp} at $K=N=0$, with a fixed radius and, for larger radii, monotonicity of the reversed-weight norm. The separately formalized \lean{thm13R_rep} has the narrower range $\beta>1$ and $\alpha\le\alpha_0<\pi/4$. The Mellin, scattering, zero-mode, initial-norm and outgoing-mass lemmas of
 Section~\ref{sec:expect} are ingredients of the formal proof of Theorem~\ref{ev:mod};
 their individual statements do not have separate exact formal counterparts.
 
 \paragraph{Results without formal proofs.}
-Not formalized are: the asymptotic formula of Proposition~\ref{prop:g5}, for which the formal theorem is the negation of the printed bound (see the formalized counterexample above); the comparison of the two classes (Proposition~\ref{pc:classes}); Remark~\ref{rem:g4}; part (iii) of Theorem~\ref{ev:mod}, which is a cited theorem on the equidistribution of closed horocycles (parts (i) and (ii) are the Lean theorem \lean{evmod}, whose statement is \lean{Stmt_evmod}); the sharpness results on cusped surfaces (Section~\ref{subsec:cl}) with the kernel lemmas they use (Lemmas~\ref{os:poisson} and~\ref{os:hk}); and Lemmas~\ref{lem:gutzmer} and~\ref{lem:ex} and their localized-state consequence, Corollary~\ref{cor:localized}. These last results are not used by the approximation theorems. For the sharpness results the development contains only implications from a formal statement of Theorem~\ref{cl:main}(ii), which is itself not proved formally.
+The classical comparison in Theorem~\ref{ev:mod}(iii) uses the cited equidistribution theorem for closed horocycles;
+only parts (i),(ii) are covered by \lean{evmod}, whose statement is \lean{Stmt_evmod}.
+The amplitude-class comparison (Proposition~\ref{pc:classes}) and the cusp sharpness argument of Section~\ref{sec:cusp},
+including Remark~\ref{rem:g4} and the kernel Lemmas~\ref{os:poisson} and~\ref{os:hk}, have no formal proofs.
+For cusp sharpness the development contains only implications from a formal statement of Theorem~\ref{cl:main}(ii),
+which is itself not proved formally.
+
+The example-amplitude results, Lemmas~\ref{lem:gutzmer} and~\ref{lem:ex} and Corollary~\ref{cor:localized},
+are also outside the formalization and are not used by the approximation theorems.
+The status of Proposition~\ref{prop:g5} is explained in the formalized-counterexample discussion above.
 
 \begin{table}[ht]
 \centering\small
@@ -94,6 +102,7 @@ Theorem~\ref{os:cw} & \lean{cw_abstract}\\
 Lemma~\ref{os:transfer} & \lean{transfer}\\
 \hline
 \multicolumn{2}{@{}l}{\emph{Paper deductions and variants}}\\
+Corollary~\ref{cor:escape-summary} & Consequence of Theorem~\ref{ev:mod}; classical comparison unformalized\\
 Corollary~\ref{pc:cor16} & \lean{pccor16_all}, \lean{pccor16bg_all}: weaker exponent $-2N-4$\\
 Corollary~\ref{cor:dd16} & \lean{cor16Rmain_rep}, \lean{cor16R_rep}: bounded geometry, weaker exponent $-2N-4$\\
 Corollary~\ref{thm:main} & Specialization of \lean{thm14Rmain_exp}; see text\\

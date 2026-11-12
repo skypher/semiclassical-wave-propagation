@@ -22,6 +22,7 @@ All Lean names are in the namespace `Qschubert`.
 | Corollary 1.2 (`pc:thm13`) | L | `pcthm13_all` |
 | Corollary 1.3 (`pc:cor15`) | L | `pccor15_all` |
 | Corollary 1.4 (`pc:cor16`) | L′ | `pccor16_all`, `pccor16bg_all` state the weaker prefactor exponent -2N-4; the paper derives -2N-2 from the approximation bound and local Sobolev inequality |
+| Corollary 1.5 (`cor:escape-summary`) | L′ | Introductory consequence of Theorem 7.3 (`ev:mod`); quantum assertions use `evmod`, classical comparison is not formalized; no separate declaration |
 
 ## Section 2 (`sec:remainder`): periodization and the exact remainder
 
@@ -73,14 +74,14 @@ All Lean names are in the namespace `Qschubert`.
 | Proposition 5.1 (`pc:classes`) | P |  |
 | Lemma 5.2 (`os:speed`) | L | `finite_speed`, `finite_speed_inner` |
 | Theorem 5.3 (`os:cw`) | L | `cw_abstract` |
-| Lemma 5.4 (`os:int`) | L | `wI0`, `wI2` |
-| Lemma 5.5 (`os:prof`) | L | `gTauM_symbol`, `gTauM_expmass`, `hSM_symbol`, `hSM_expmass`, `gTau_TailB`, `bProf_symbol`, `bProf_TailB` |
-| Corollary 5.6 (`os:cwp`) | L | `poisson_cw`, `B_cw` |
-| Proposition 5.7 (`os:data`) | L | `data_factor`, `omP_le_exp_angle` |
-| Lemma 5.8 (`os:words`) | L | `poissonM_w`, `lamM_w`, `lamM_pow_w`, `words_rec`, `words_w` |
-| Lemma 5.9 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
-| Proposition 5.10 (`os:p1`) | L | `poincare_omP`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
-| Remark 5.11 (`os:indep`) | L | `surfV_indep` |
+| Lemma A.2 (`os:int`) | L | `wI0`, `wI2` |
+| Lemma A.3 (`os:prof`) | L | `gTauM_symbol`, `gTauM_expmass`, `hSM_symbol`, `hSM_expmass`, `gTau_TailB`, `bProf_symbol`, `bProf_TailB` |
+| Corollary 5.4 (`os:cwp`) | L | `poisson_cw`, `B_cw` |
+| Proposition 5.5 (`os:data`) | L | `data_factor`, `omP_le_exp_angle` |
+| Lemma 5.6 (`os:words`) | L | `poissonM_w`, `lamM_w`, `lamM_pow_w`, `words_rec`, `words_w` |
+| Lemma 5.7 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
+| Proposition 5.8 (`os:p1`) | L | `poincare_omP`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
+| Remark 5.9 (`os:indep`) | L | `surfV_indep` |
 
 ## Section 6 (`sec:consequences`): consequences and localized amplitudes
 
@@ -122,6 +123,6 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Lemma A.2 (`lem:gutzmer`) | P | used only for Lemma 6.6 (`lem:ex`) |
-| Lemma A.3 (`os:poisson`) | P | used only in Proposition 5.1 (`pc:classes`) and Section 9 (`subsec:cl`) |
-| Lemma A.4 (`os:hk`) | P | used only in Section 9 (`subsec:cl`) |
+| Lemma A.4 (`lem:gutzmer`) | P | used only for Lemma 6.6 (`lem:ex`) |
+| Lemma A.5 (`os:poisson`) | P | used only in Proposition 5.1 (`pc:classes`) and Section 9 (`subsec:cl`) |
+| Lemma A.6 (`os:hk`) | P | used only in Section 9 (`subsec:cl`) |

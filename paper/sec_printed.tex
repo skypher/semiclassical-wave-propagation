@@ -1,5 +1,23 @@
 \section{Approximation for the original amplitude norm}\label{sec:dd}\label{sec:printed}
-The original norm imposes spatial decay on the data before Poisson smoothing. We first explain why the preceding power-weight argument does not apply directly, then develop the critical-weight estimates that replace it. The proof of Theorem~\ref{pc:main} uses those estimates to control three linear maps: derivatives of the smoothed data, the mollified flow, and its defect.
+The original norm imposes spatial decay on the data before Poisson smoothing. Proposition~\ref{pc:classes}
+explains why the power-weight argument cannot be applied directly. The proof of Theorem~\ref{pc:main}
+then has three stages: factor the amplitude through critically weighted data
+(Sections~\ref{app:o1st} and~\ref{subsec:pc-data}); control derivatives, propagation and the defect at that weight
+(Section~\ref{subsec:pc-transfer}); and apply quotient Duhamel and integrate the exact remainder
+(Sections~\ref{subsec:pc-proof} and~\ref{subsec:pc-all}). The comparison with the model proof is:
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}@{}}
+\hline
+Stage & Power-weight proof & Original-norm proof\\
+\hline
+Data & Weighted analytic amplitude & Factorization through the shifted Poisson semigroup\\[4pt]
+Weight estimate & H\"older interpolation & Transfer over shells\\[4pt]
+Periodization & Weight above exponent $1/2$ & Critical weight with a logarithmic correction\\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{The original-norm class}\label{subsec:pc-weights}
 Fix $c'=\tfrac34$ and put
@@ -34,21 +52,8 @@ $\ue^{\alpha'\Lambda}a=\ue^{-(\alpha-\alpha')\Lambda}h$. So the original norms a
 \input{sec_critical}
 
 \subsection{Proof for small analytic radii}\label{subsec:pc-proof}
-The proof follows the power-weight argument of Section~\ref{subsec:dd-thm}, with three changes:
-\begin{center}
-\small
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}@{}}
-\hline
-Stage & Power-weight proof & Original-norm proof\\
-\hline
-Data & Weighted analytic amplitude & Factorization through the shifted Poisson semigroup\\[4pt]
-Weight estimate & H\"older interpolation & Transfer over shells\\[4pt]
-Periodization & Weight above exponent $1/2$ & Critical weight with a logarithmic correction\\
-\hline
-\end{tabular}
-\end{center}
-Both arguments conclude by integrating the exact remainder over the simplex.
-The proof below applies the preceding estimates in five stages: factor the data, transfer
+As in the power-weight proof of Section~\ref{subsec:dd-thm}, the final bound comes from integrating the exact remainder over the simplex.
+We apply the preceding estimates in five stages: factor the data, transfer
 the derivative, flow and defect bounds to $\omega$, apply Duhamel on the quotient, pass to general
 data by density, and integrate the exact remainder \eqref{pc:remainder} over the simplex.
 Section~\ref{subsec:pc-all} extends the radius range using the same estimates.

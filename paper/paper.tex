@@ -148,9 +148,9 @@ and pointwise estimates require a local multiplicity factor whose square-root gr
 For a family of analytic states whose periodization along cusp translations is independent of the horizontal coordinate,
 mass escapes every compact set of the modular surface on a window beginning at a sufficient time of order
 $\log(1/\hbar)\log\log(1/\hbar)$, while the approximation remains accurate.
-The density formed by taking the squared modulus after periodization along cusp translations instead
-equidistributes under classical transport and projection to the surface.
-The main approximation theorems and the quantum escape estimates are formalized in Lean~4.
+For the same states, classical transport of the initial density on the cusp cylinder equidistributes after projection
+to the modular surface; this density is the squared modulus of the cusp-periodized amplitude.
+The principal $L^2$ approximation estimates and the quantum escape conclusions are formalized in Lean~4.
 
 \vskip5pt
 \noindent\textbf{Keywords.}\enspace Semiclassical analysis; time-dependent
@@ -200,7 +200,7 @@ For suitable states attached to the cusp of the modular surface, Theorem~\ref{ev
 set throughout the part of the approximation window beyond a sufficient time of order
 $\log(1/\hbar)\log\log(1/\hbar)$, whereas the corresponding classical density on the cusp cylinder
 equidistributes after projection to the surface.
-The main approximation results and the quantum escape estimates are formalized in Lean~4; Appendix~\ref{app:lean}
+The principal $L^2$ approximation estimates and the quantum escape conclusions are formalized in Lean~4; Appendix~\ref{app:lean}
 specifies their correspondence with the manuscript and the exclusions.
 
 \subsection{Setting and notation}\label{sec:setup}
@@ -212,18 +212,13 @@ $y^{-2}(dx^2+dy^2)$, volume $d\nu=y^{-2}dx\,dy$, and Laplacian $\Delta=y^2(\part
 spectrum of $-\Delta$ on $L^2(\Hb)$ is $[1/4,\infty)$.
 Put $X=y\partial_x$, $Y=y\partial_y$; then $\Delta=X^2+Y^2-Y$.
 The boundary point is $b=\infty$, with $\varphi=\varphi_b=-\log y$ \cite[(2.1)]{S}.
-The transport $S(t)a(x,y)=\ue^{-t/2}a(x,\ue^t y)$ is unitary \cite[Lemma~2.1]{S}. On either $\Hb$ or $M$ let $\cU(t)=\ue^{i\hbar t\Delta/2}$, with the underlying space specified by its argument. The
-dispersive part is the unitary operator
-\begin{equation}\label{eq:factor}
-V(t):=\ue^{it/(2\hbar)}S(t)^{*}\,\ue^{-i\varphi/\hbar}\,\cU(t)\,\ue^{i\varphi/\hbar},\quad\text{so that}\quad
-\ue^{-i\varphi/\hbar}\,\cU(t)\,\ue^{i\varphi/\hbar}=\ue^{-it/(2\hbar)}S(t)V(t).
-\end{equation}
-By \cite[Prop.~2.2]{S} it is the propagator of $i\partial_tV=-\tfrac{\hbar}{2}\Delta(t)V$, $V(0)=I$, with
+The transport $S(t)a(x,y)=\ue^{-t/2}a(x,\ue^t y)$ is unitary \cite[Lemma~2.1]{S}.
+On either $\Hb$ or $M$ let $\cU(t)=\ue^{i\hbar t\Delta/2}$, with the underlying space specified by its argument.
+The operators used to construct the approximation are
 \[
-\Delta(t)=S(t)^*\Delta S(t)=y^2(\partial_y^2+\ue^{-2t}\partial_x^2)=\ue^{-2t}X^2+Y^2-Y
+\Delta(t):=\ue^{-2t}X^2+Y^2-Y
 \]
-\cite[(2.9)]{S}; we use this equation only on amplitudes all of whose derivatives by $X$ and $Y$ are square integrable
-(Proposition~\ref{prop:dd-id}).
+\cite[(2.9)]{S}; their relation to the exact evolution is explained in Section~\ref{subsec:method}.
 For a Fuchsian group $\Gamma$ and $u$ on $\Hb$, $u_\Gamma=\sum_{\gamma\in\Gamma}u\circ\gamma^{-1}$.
 
 The approximations are those of \cite[(1.20), (1.27)--(1.29)]{S}. For $k\ge1$ let
@@ -244,7 +239,7 @@ Schubert's amplitude norm is \cite[Def.~1.1]{S}
 \norm{a}_{\alpha,\beta}:=\norm{\ue^{\beta\langle d\rangle}\ue^{\alpha\sqrt{-\Delta}}a}_{L^2},\qquad
 \langle d\rangle=(1+d(x_0,\cdot)^2)^{1/2}-1 .
 \]
-Throughout, $\Lambda=\sqrt{-\Delta}$, $X_0=\cosh d(x_0,\cdot)$, $\tilde\psi=\log X_0$ and $W_\gamma=\ue^{\gamma\tilde\psi}$.
+Put $\Lambda=\sqrt{-\Delta}$ and $X_0=\cosh d(x_0,\cdot)$.
 We measure analytic regularity spectrally: the analytic radius $\alpha$ is the parameter in
 $\operatorname{Dom}(\ue^{\alpha\Lambda})$. The estimates below use this definition; the holomorphic extension needed for
 Schubert's example amplitudes is described in Appendix~\ref{subsec:gutzmer}.
@@ -284,13 +279,12 @@ Theorem~\ref{thm:dd-appx}; model argument and input to the reversed-weight estim
 \end{center}
 The original-norm and reversed-weight classes are not equivalent. Theorem~\ref{pc:main}
 and Theorem~\ref{thm:dd14} therefore treat distinct amplitude hypotheses; the localized-state application uses the latter.
-In fact, an amplitude can have finite original norm at one radius and infinite original norm at every smaller radius,
-as well as infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$
-(Proposition~\ref{pc:classes}). Thus decreasing the analytic radius need not preserve the original-norm class.
+Proposition~\ref{pc:classes} explains their nonequivalence and the original norm's failure of monotonicity in the analytic radius.
 An unadorned norm denotes an $L^2$ norm, or the corresponding operator norm when applied to an operator.
 Amplitudes of finite norm are taken in their unique smooth representatives (Lemma~\ref{lem:lift}); periodizations are
 absolutely convergent almost everywhere under the hypotheses used below (Section~\ref{sec:remainder}).
 
+\clearpage
 \subsection{Main results}\label{sec:repair}\label{subsec:pc-thm}
 Our principal theorem uses Schubert's amplitude norm exactly as defined in \cite[Def.~1.1]{S} and controls the expansion
 order $K$ and the number $N$ of Laplacians simultaneously.
@@ -307,11 +301,14 @@ $\pcNorm{a}<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
 with $N^{2N}:=1$ at $N=0$.
 \end{theorem}
 
-The proof is in Sections~\ref{subsec:pc-proof} and~\ref{subsec:pc-all}. For fixed $\alpha>0$, the time window has order $\hbar^{-1/2}$.
+The reversed-weight alternative, Theorem~\ref{thm:dd14}, gives the same estimate with $\swNorm a$ in place of $\pcNorm a$
+for $0<\alpha\le\alpha_0<\pi/4$. It also specifies uniformity over groups with a common Poincar\'e series bound.
+This alternative supplies the localized-state application; the original-norm theorem supplies the escape application.
+
+The proof of Theorem~\ref{pc:main} is in Sections~\ref{subsec:pc-proof} and~\ref{subsec:pc-all}. For fixed $\alpha>0$, the time window has order $\hbar^{-1/2}$.
 Its dependence on the analytic radius improves the window
 $\delta\alpha^{3/2}\hbar^{-1/2}$ of \cite[Theorem~1.4]{S} to
-$\delta(\alpha/\hbar)^{1/2}$. The reversed-weight estimate of Theorem~\ref{thm:dd14} has the same dependence
-on the analytic radius; this yields the longer window for the localized amplitudes below,
+$\delta(\alpha/\hbar)^{1/2}$. The radius dependence is relevant to the localized amplitudes below,
 whose analytic radius tends to zero with $\hbar$.
 The following corollaries give the leading error, the exponential estimate obtained by choosing $K$, and the pointwise bounds.
 
@@ -355,8 +352,11 @@ If the injectivity radius of $M$ is at least $r_0>0$, the factor $m(z)^{1/2}$ ma
 depending also on $r_0$.
 \end{corollary}
 
-The exponent $1/2$ of $m(z)$ is necessary on the modular surface for a phase attached to the cusp
-(Theorem~\ref{cl:main}). Appendix~\ref{sec:changes} compares this estimate with Schubert's pointwise bound.
+\paragraph{Corrections and sharpness.}
+The exponent $1/2$ of $m(z)$ is optimal for estimates of this generality, as shown on the modular surface for a phase attached to the cusp
+(Theorem~\ref{cl:main}); no optimality of the semiclassical prefactor is asserted.
+Together with the order $\hbar t$ attained on $\Hb$, this gives the two corrections to Schubert's bounds.
+Appendix~\ref{sec:changes} gives the detailed comparison.
 
 \subsection{Applications}
 The two applications use different amplitude classes: localized states use the reversed-weight estimate,
@@ -373,21 +373,36 @@ The approximation is accurate on a time window of order $\hbar^{\eta/4-1/2}$:
 the leading error tends uniformly to zero throughout that window.
 
 \paragraph{Escape of mass despite an accurate approximation.}
-On the modular surface, take $0<\alpha\le\tfrac12$ and
+On the modular surface $M=\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$, take a fixed $0<\alpha\le\tfrac12$ and
 $a=\ue^{-\alpha\Lambda}h$, where $h\in C_c^\infty(\Hb)$ is nonzero and nonnegative
 and $\sum_{n\in\mathbb Z}h(x+n,y)$ is independent of $x$.
 Such data can be constructed by averaging a test function over one unit of horizontal translation.
-These amplitudes have finite original norm. Theorem~\ref{ev:mod} proves that the corresponding quantum state
-has a positive limiting total mass but its mass on every fixed compact set tends to zero, uniformly on a window
+These amplitudes have finite original norm. Put $a_0(y):=\int_{\mathbb R}a(x+iy)\,dx$ and
+$\mu_0:=\int_0^\infty|a_0(y)|^2dy/y^2$. Periodization along the cusp translations gives $a_0$, a function of $y$ alone.
+
+\newpage
+\begin{corollary}[escape while the approximation remains accurate]\label{cor:escape-summary}
+For these data, let $\psi_\hbar(t):=\cU(t)(a\ue^{i\varphi/\hbar})_\Gamma$, with $\Gamma=\mathrm{PSL}(2,\mathbb Z)$.
+Then $\|\psi_\hbar(t)\|^2\to\mu_0>0$ as $\hbar\to0$.
+For every compact $Q\subset M$ choose $Y\ge1$ so that $Q$ lies below height $Y$ in the standard cusp.
+There are $C_1,\delta>0$ such that
 \[
- C_1\log(1/\hbar)\log\log(1/\hbar)+\log Y\le t\le\delta(\alpha/\hbar)^{1/2},
+ \int_Q|\psi_\hbar(t)|^2d\nu\longrightarrow0
+ \quad\text{uniformly for}\quad
+ C_1\log(1/\hbar)\log\log(1/\hbar)+\log Y\le t\le\delta(\alpha/\hbar)^{1/2}.
 \]
-where $Y\ge1$ is fixed so that the compact set lies below height $Y$ in the standard cusp.
+The leading approximation has $L^2$ error tending uniformly to zero on this window.
+Classical transport of the initial density $|a_0|^2$ on the cusp cylinder equidistributes after projection to $M$.
+\end{corollary}
+\begin{proof}
+Theorem~\ref{ev:mod}(i),(ii) gives the norm limit and escape, since $Q\subset M_Y$.
+At fixed $\alpha$, its leading approximation error is $O(\hbar t)=O(\sqrt\hbar)$ throughout the window.
+Part (iii) gives the classical comparison.
+\end{proof}
+
 The lower endpoint is a sufficient escape time; no onset time is asserted.
-Throughout this window the periodized approximation remains accurate.
-For the classical comparison, we first periodize the amplitude along cusp translations and then take its squared modulus.
-This gives the density $|a_0(y)|^2$ on the cusp cylinder, where $a_0(y)=\int_{\mathbb R}a(x+iy)\,dx$.
-Classical transport of this density equidistributes after projection to the surface.
+The initial density in the classical comparison is formed by first periodizing the amplitude along cusp translations and then taking its squared modulus.
+Theorem~\ref{ev:mod} gives the full statement and proof.
 
 \subsection{Context and related work}\label{subsec:context}
 Estimates up to the Ehrenfest time for coherent states were obtained by Combescure and Robert \cite{CR97} and
@@ -436,14 +451,20 @@ measure. The distinction matters on surfaces with cusps. Brooks
 \cite{Bro22} showed that, for Lagrangian states attached
 to unstable horocycles on the modular surface, expectation values of the
 wave-propagated states depart from classical transport along the geodesic flow
-at logarithmic times, because the states escape into the cusp. Brooks's initial states carry a fixed smooth cutoff in $y$
-and so are not analytic amplitudes of the class of Theorem~\ref{pc:main}, and he uses the wave group; we do not compare the
-two results directly. Theorem~\ref{ev:mod} proves the corresponding statement for the Schr\"odinger flow and for
-amplitudes of the original-norm class whose periodization along the cusp does not depend on $x$.
+at logarithmic times, because the states escape into the cusp. Brooks uses the wave group and initial states with a fixed smooth cutoff in $y$,
+outside the analytic class of Theorem~\ref{pc:main}. Theorem~\ref{ev:mod} gives analogous escape behavior for the Schr\"odinger flow, with
+original-norm amplitudes whose periodization along the cusp is independent of $x$.
 
 \subsection{Method of proof}\label{subsec:method}
-By \eqref{eq:factor} the error of $u^{(K)}$ is governed by the dispersive part $V(t)$, and $u^{(K)}$ corresponds to the Dyson
-expansion of $V(t)$ to order $K$.
+Schubert's exact factorization separates transport from dispersion. On $L^2(\Hb)$ define the unitary operator
+\begin{equation}\label{eq:factor}
+V(t):=\ue^{it/(2\hbar)}S(t)^{*}\,\ue^{-i\varphi/\hbar}\,\cU(t)\,\ue^{i\varphi/\hbar},\quad\text{so that}\quad
+\ue^{-i\varphi/\hbar}\,\cU(t)\,\ue^{i\varphi/\hbar}=\ue^{-it/(2\hbar)}S(t)V(t).
+\end{equation}
+By \cite[Proposition~2.2]{S}, $V$ is the propagator of $i\partial_tV=-\tfrac{\hbar}{2}\Delta(t)V$, $V(0)=I$, with
+$\Delta(t)=S(t)^*\Delta S(t)$ as defined in Section~\ref{sec:setup}.
+We use this evolution equation only on amplitudes whose derivatives by every word in $X,Y$ lie in $L^2$
+(Proposition~\ref{prop:dd-id}). The approximation $u^{(K)}$ corresponds to its Dyson expansion to order $K$.
 
 \emph{An exact remainder.} We write the remainder of the Dyson expansion with the unitary propagator on the outside
 (Proposition~\ref{prop:dd-id}). Put $\Delta_\varphi(s):=S(s)^*\ue^{-i\varphi/\hbar}\Delta\ue^{i\varphi/\hbar}S(s)$, the Laplacian conjugated by the phase and transport.
@@ -504,7 +525,10 @@ Appendix~\ref{app:lean} documents the scope of the formalization.
 \input{sec_consequences}
 \input{sec_expect}
 
-\section{Sharpness and limitations}\label{sec:g5}
+\section{Leading-error sharpness and the mean of the approximation}\label{sec:g5}
+Proposition~\ref{prop:g5} gives an asymptotic formula showing that the leading error has order $\hbar t$ on $\Hb$.
+Proposition~\ref{prop:mean} gives a separate limitation on finite-area quotients, expressed through the oscillatory mean $J$.
+Since its size as $\hbar\to0$ is not estimated here, that limitation does not determine a semiclassical breakdown time.
 \subsection{The order \texorpdfstring{$\hbar t$}{ht} of the leading error is attained}
 Every amplitude of finite reversed-weight norm has all its words in $X,Y$ in $L^2(\Hb)$
 (Lemmas~\ref{lem:m2w} and~\ref{lem:sc}); the same holds for the original norm
@@ -620,10 +644,8 @@ on $a$; it is not estimated here. On $\Hb$ itself, and on surfaces of infinite a
 
 \section{Open problems and outlook}\label{sec:outlook}
 \subsection{Questions arising from the results}
-\paragraph{Longer approximation times.} The window $t\le\delta(\alpha/\hbar)^{1/2}$ comes from the mollification at scale
-$\varepsilon=(\alpha\hbar)^{1/2}/2$: the mollified flow is controlled up to times of order $\varepsilon/\hbar$
-(Propositions~\ref{prop:a0} and~\ref{prop:ws}), and the defect of the mollifier is small only when $\varepsilon$ is small
-compared with $\alpha$ (Lemma~\ref{lem:unw}). \cite[Conjecture~1]{S} is a dispersive estimate for the unmollified flow on the
+\paragraph{Longer approximation times.} Extending the approximation window requires overcoming the balance between mollified propagation and the defect described in Section~\ref{subsec:method}.
+\cite[Conjecture~1]{S} is a dispersive estimate for the unmollified flow on the
 time scale $1/\hbar$; according to \cite{S} it would allow one to extend the time scale from $\hbar^{-1/2}$ to $\hbar^{-1}$.
 An extension by this route also requires analytic and periodization estimates on the longer window.
 Whether the periodized approximation stays accurate beyond
@@ -631,14 +653,11 @@ $\hbar^{-1/2}$ is open. When $J\ne0$, on a surface of finite area Proposition~\r
 approximation $u^{(K)}(t)_\Gamma$ of fixed order $K$ in terms of $J$ (Remark~\ref{rem:mean}); the size of $J$ as $\hbar\to0$ is not
 determined here.
 
-\paragraph{Expectation values.} By Corollary~\ref{ev:transfer} the expectation values of
-$\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma$ up to times of order $\hbar^{-1/2}$ are approximated by those of the explicit sum $u^{(K)}(t)_\Gamma$, with the error in Corollary~\ref{ev:transfer}. Beyond the Ehrenfest time
-the sum is not evaluated here, except in the case of Theorem~\ref{ev:mod}. On a compact surface there is no cusp to
-escape into, and neither equidistribution in the sense of \cite{Sch05} nor the random wave behaviour of \cite{Ber77,BB79,IR22} is
+\paragraph{Expectation values.} Evaluating the periodized approximation beyond the Ehrenfest time remains open outside the family of Theorem~\ref{ev:mod}.
+On compact surfaces, neither equidistribution in the sense of \cite{Sch05} nor the random wave behaviour of \cite{Ber77,BB79,IR22} is
 known for these states between the Ehrenfest time and $\hbar^{-1/2}$.
 
-On the modular surface, Theorem~\ref{ev:mod} concerns amplitudes whose periodization along
-the cusp does not depend on $x$, and it gives a sufficient time only. The heuristic in Remark~\ref{ev:time} suggests $2\log(1/\hbar)$ as a candidate transition scale between classical expectation values and escape from fixed compact sets. Establishing such a transition, including the time range on which the classical prediction holds, is open. For general amplitudes of the class the part with
+On the modular surface, the heuristic in Remark~\ref{ev:time} suggests $2\log(1/\hbar)$ as a candidate transition scale between classical expectation values and escape from fixed compact sets. Establishing such a transition, including the time range on which the classical prediction holds, is open. For general amplitudes of the class the part with
 nonzero Fourier modes in $x$ is not treated. The states of Brooks \cite{Bro22} are not in the class
 (Section~\ref{subsec:context}); a transfer to them by approximation in $L^2$ would need a bound for the periodized
 approximation of the difference, which Proposition~\ref{os:p1} gives only with the factor $\ue^{t/2}(1+t/\log2)^{c'}$ and a
@@ -676,7 +695,7 @@ Sol, Fable, Google Gemini~4 Argon (\texttt{gemini-4-argon}) and OpenAI GPT-6~Pro
 (\texttt{gpt-6-pro}) reviewed working notes or manuscript versions.
 OpenAI Codex and ChatGPT sessions checked revisions and formal-statement correspondence;
 Codex revised the exposition, proof guides and section hierarchy, made the intermediate escape estimates self-contained,
-and presented the localized-state consequence and sharper pointwise prefactor.
+and presented the introductory escape consequence, localized-state consequence and sharper pointwise prefactor.
 These AI checks do not constitute external peer review. The detailed contribution history
 is retained in the repository revisions.
 

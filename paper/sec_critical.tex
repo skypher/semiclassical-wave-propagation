@@ -8,7 +8,7 @@
 \newcommand{\osHK}{\widetilde p}     % continuation of the heat kernel to complex distance
 \newcommand{\osLam}{\Lambda}         % Lambda = (-Delta)^{1/2}
 
-\subsection{Critical-weight multipliers and their transform profiles}\label{app:o1st}
+\subsection{Critical-weight multipliers}\label{app:o1st}
 
 To handle the original-norm class we work at exponent $1/2$ with a logarithmic correction.
 The reciprocal square of this weight is summable over every Fuchsian orbit
@@ -20,7 +20,7 @@ derivatives, flow and defect appearing in the remainder.
 The decisive balance occurs in Theorem~\ref{os:cw}. Passing from an inner shell to an outer one
 costs an exponential factor from $X_0^{1/2}$; finite propagation speed and the multiplier tail
 supply the opposite exponential factor. Their cancellation leaves a polynomial shell kernel.
-The logarithmic exponent $1/2<c<1$ permits its summation. The profiles constructed after the theorem
+The logarithmic exponent $1/2<c<1$ permits its summation. The profiles in Appendix~\ref{app:profiles}
 verify this tail condition for the Poisson semigroup and the change of spectral parameter.
 
 Throughout the critical-weight estimates and the proof below, $x_0=i$, $d=d(i,\cdot)$, $\osX=\cosh d$, $\psi:=\log\osX\ge0$, $\osL:=\log(2\osX)/\log2=1+\psi/\log2\ge1$,
@@ -84,77 +84,11 @@ $p_l\le p_n$. For $l>2n+1$: $\mathsf B(l,n)p_l\le CB(1+n)^{-c}(1+l)^{c-2}$, and 
 So $\sum_l(\sum_n\mathsf B(l,n)a_n)^2\le(C'B)^2\sum_na_n^2=(C'B)^2\norm{\osomc f}^2$.
 \end{proof}
 
-\subsubsection{Cosine-transform representations and tail estimates}
-
-\begin{lemma}[two integrals]\label{os:int}
-For $a,b>0$,
-\[
-\int_0^\infty\ue^{-a^2u^2-b^2/u^2}\,du=\frac{\sqrt\pi}{2a}\,\ue^{-2ab},\qquad\int_0^\infty u^{-2}\,\ue^{-a^2u^2-b^2/u^2}\,du=\frac{\sqrt\pi}{2b}\,\ue^{-2ab}.
-\]
-\end{lemma}
-\begin{proof}
-Let $F(u)$ be the integrand of the first integral. The map $u\mapsto v=au-b/u$ is a bijection of $(0,\infty)$ onto $\mathbb R$ with
-$dv=(a+b/u^2)\,du$ and $a^2u^2+b^2/u^2=v^2+2ab$, so $\int_0^\infty(a+b/u^2)F\,du=\sqrt\pi\,\ue^{-2ab}$. The substitution $u\mapsto b/(au)$
-preserves $F$ and exchanges $a\int F$ with $b\int u^{-2}F$, so the two are equal.
-\end{proof}
-
-For $m\ge\tfrac12$ and $\tau>0$ define the even positive function
-\[
-g^m_\tau(r):=\frac{\tau}{2\pi}\int_0^\infty u^{-3}\exp\Bigl(-m^2u^2-\frac{r^2+\tau^2}{4u^2}\Bigr)du .
-\]
-
-\begin{lemma}[cosine-transform representations and tails]\label{os:prof}
-Let $m\ge\tfrac12$ and $\tau,s>0$.
-\begin{itemize}
-\item[(i)] $\int_{\mathbb R}g^m_\tau(r)\cos(r\nu)\,dr=\ue^{-\tau(\nu^2+m^2)^{1/2}}$ for real $\nu$. Hence $\ue^{-\tau\Lambda_m}=\int_{\mathbb R}g^m_\tau(r)\cos(rD)\,dr$.
-\item[(ii)] For $\kappa\ge0$ with $2\kappa^2<m^2$, $\int_{\mathbb R}g^m_\tau(r)\,\ue^{\kappa|r|}\,dr\le\sqrt2$.
-\item[(iii)] The function $h^m_s:=-\partial_sg^m_s$ satisfies $\Lambda_m\ue^{-s\Lambda_m}=\int_{\mathbb R}h^m_s(r)\cos(rD)\,dr$ and
-$|h^m_s|\le(\sqrt2\,c_H/s)\,g^m_{s/\sqrt2}$, with $c_H:=1+4/\ue$. Hence $\int_{\mathbb R}|h^m_s(r)|\,\ue^{\kappa|r|}\,dr\le2c_H/s$ for $\kappa$ as
-in (ii).
-\item[(iv)] For $m=\tfrac12$ and $0<\tau\le1$: $\int_{|r|\ge T}g^{1/2}_\tau(r)\,dr\le B_0\,\ue^{-T/2}(1+T)^{-3/2}$ for all $T\ge0$, with
-an absolute constant $B_0$.
-\item[(v)] The function $G_m(r):=\frac1{2\pi}\int_0^\infty\bigl(\ue^{-u^2/4}-\ue^{-m^2u^2}\bigr)u^{-3}\ue^{-r^2/(4u^2)}\,du\ge0$ is integrable,
-$\int_{\mathbb R}G_m(r)\cos(r\nu)\,dr=(\nu^2+m^2)^{1/2}-(\nu^2+\tfrac14)^{1/2}$, and
-$\int_{|r|\ge T}G_m\le B_m\,\ue^{-T/2}(1+T)^{-3/2}$ for all $T\ge0$, with a constant $B_m$ depending only on $m$.
-Hence $\Lambda_m-\osLam=\int_{\mathbb R}G_m(r)\cos(rD)\,dr$.
-\end{itemize}
-\end{lemma}
-\begin{proof}
-We use, for $u>0$ and $T>0$,
-\begin{gather*}
-\int_{\mathbb R}\ue^{-r^2/(4u^2)}\cos(r\nu)\,dr=2\sqrt\pi\,u\,\ue^{-u^2\nu^2},\qquad
-\int_{\mathbb R}\ue^{-r^2/(4u^2)}\,\ue^{\kappa|r|}\,dr\le\sqrt2\cdot2\sqrt\pi\,u\,\ue^{2\kappa^2u^2},\\
-\int_{|r|\ge T}\ue^{-r^2/(4u^2)}\,dr\le\frac{4u^2}{T}\,\ue^{-T^2/(4u^2)} .
-\end{gather*}
-The second holds because $\kappa|r|\le r^2/(8u^2)+2\kappa^2u^2$ and $\int_{\mathbb R}\ue^{-r^2/(8u^2)}dr=\sqrt2\cdot2\sqrt\pi\,u$.
-All integrands are positive or dominated, so Tonelli and Fubini apply.
-
-(i) The left side is $\frac{\tau}{\sqrt\pi}\int_0^\infty u^{-2}\exp(-(\nu^2+m^2)u^2-\tau^2/(4u^2))\,du$, and Lemma~\ref{os:int} with
-$a=(\nu^2+m^2)^{1/2}$, $b=\tau/2$ gives the value. The operator identity is the spectral calculus of $D$.
-
-(ii) In the same way, with $a=(m^2-2\kappa^2)^{1/2}>0$, $\int g^m_\tau(r)\,\ue^{\kappa|r|}\,dr\le\sqrt2\,\ue^{-\tau a}\le\sqrt2$.
-
-(iii) Differentiating under the integral,
-$h^m_s(r)=\frac1{2\pi}\int_0^\infty\bigl(\frac{s^2}{2u^5}-\frac1{u^3}\bigr)\exp(-m^2u^2-\frac{r^2+s^2}{4u^2})\,du$. With $x=s^2/u^2$,
-$|x/2-1|\,\ue^{-x/4}\le(1+x/2)\ue^{-x/4}\le c_H\,\ue^{-x/8}$, which gives the domination. The cosine transform of $h^m_s$ is $-\partial_s$ of
-(i), and the last bound follows from (ii) for $g^m_{s/\sqrt2}$.
-
-(iv) The mass is $\ue^{-\tau/2}\le1$ by (i) at $\nu=0$. For $T>0$, with $\varrho:=(T^2+\tau^2)^{1/2}$ and
-$\Phi(u):=\exp(-u^2/4-\varrho^2/(4u^2))$,
-\begin{align*}
-\int_{|r|\ge T}g^{1/2}_\tau&\le\frac{2\tau}{\pi T}\int_0^\infty u^{-1}\Phi\,du\le\frac{2\tau}{\pi T}\Bigl(\int_0^\infty u^{-2}\Phi\Bigr)^{1/2}\Bigl(\int_0^\infty\Phi\Bigr)^{1/2}\\
-&=\frac{2\tau}{\sqrt\pi\,T}\,\varrho^{-1/2}\ue^{-\varrho/2}\le\frac{2\tau}{\sqrt\pi}\,T^{-3/2}\ue^{-T/2},
-\end{align*}
-by Lemma~\ref{os:int} with $a=\tfrac12$, $b=\varrho/2$. Use this for $T\ge1$ and the mass bound for $T<1$; $B_0=2^{3/2}\ue^{1/2}$ works.
-
-(v) From $\int_0^\infty u^{-2}(1-\ue^{-Au^2})\,du=\sqrt{\pi A}$ (integrate by parts),
-\[
-(\nu^2+m^2)^{1/2}-(\nu^2+\tfrac14)^{1/2}=\pi^{-1/2}\int_0^\infty u^{-2}\bigl(\ue^{-u^2/4}-\ue^{-m^2u^2}\bigr)\ue^{-u^2\nu^2}\,du,
-\]
-which is the cosine transform of $G_m$. At $\nu=0$ this gives $\int G_m=m-\tfrac12$. Since $\ue^{-u^2/4}-\ue^{-m^2u^2}\le\ue^{-u^2/4}$, the tail of
-$G_m$ is at most $\frac{2}{\pi T}\int_0^\infty u^{-1}\exp(-u^2/4-T^2/(4u^2))\,du\le\frac2{\sqrt\pi}T^{-3/2}\ue^{-T/2}$, as in (iv). With the mass
-bound for $T<1$ this gives the tail bound.
-\end{proof}
+\subsubsection{Poisson and shifted spectral multipliers}
+The cosine-transform representations and tail bounds needed to apply Theorem~\ref{os:cw}
+are given in Lemma~\ref{os:prof}, proved in Appendix~\ref{app:profiles}.
+They give the following two operator bounds: Poisson smoothing preserves the critical weight,
+and the change from $\Lambda$ to $\Lambda_m$ is bounded at that weight.
 
 \begin{corollary}\label{os:cwp}
 Let $\tfrac12<c<1$. For $0<\tau\le1$ and $f\in L^2$, $\norm{\osomc\,\ue^{-\tau\osLam}f}\le K_c\norm{\osomc f}$. For $m\ge\tfrac12$,
@@ -193,6 +127,7 @@ $\beta>\tfrac12$, $\osomc\le\ue^{d/2}(1+d/\log2)\le C_\beta\,\ue^{\beta\langle d
 \end{proof}
 
 \subsubsection{Words at a power weight}
+Write $c_H:=1+4/\ue$, the constant in the profile bound of Lemma~\ref{os:prof}(iii).
 
 \begin{lemma}[the even semigroup at a bounded weight]\label{os:words}
 Let $m\ge\tfrac12$ and $\rho\ge0$ with $2(\rho+\tfrac12)^2<m^2$, and let $W$ be a bounded weight (Section~\ref{app:ws}) with
