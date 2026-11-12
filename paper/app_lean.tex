@@ -1,13 +1,14 @@
 % Formalization status. \leanrepo is the public repository; \leancommit is a commit of it.
 \providecommand{\lean}[1]{\texttt{\detokenize{#1}}}
-\providecommand{\leancommit}{\texttt{6e5ae4e}}
+\providecommand{\leancommit}{\texttt{2184fa3}}
 \providecommand{\leanrepo}{\url{https://github.com/skypher/semiclassical-wave-propagation}}
 
 \section{Formalization}\label{app:lean}
 
-The principal $L^2$ approximation estimates, their optimal-truncation corollaries, and the supporting statements specified below
-are formalized in Lean~4 and checked by its kernel. Table~\ref{tab:lean} gives an overview of direct counterparts,
-paper deductions and variants, and results without formal proofs; the text explains the substantive differences.
+The approximation theorems and their leading-error, truncation, pointwise, fixed-radius and expectation-value corollaries,
+Proposition~\ref{prop:g5}, parts (i) and (ii) of Theorem~\ref{ev:mod}, and the
+supporting statements specified below are formalized in Lean~4 and checked by its kernel. Table~\ref{tab:lean} lists the direct
+counterparts and the results without formal proofs; the text explains the reading of the formal statements.
 
 \subsection{What is checked}
 The formal development is the directory \texttt{lean/} of the repository \leanrepo, namespace \lean{Qschubert}, at commit \leancommit. It is built with Lean~4 \cite{Lean4} (toolchain \texttt{v4.35.0}), Mathlib \cite{Mathlib} at the tag \texttt{v4.35.0}, and \texttt{physicslib4} \cite{Phys} (commit \texttt{2337279}), which supplies the spectral theorem for unbounded self-adjoint operators. The development also depends on the project \emph{Prime Number Theorem And \dots} \cite{PNT} (commit \texttt{127b50e}), from which it takes the classical zero-free region of the Riemann zeta function; this is used only in the proof of Theorem~\ref{ev:mod}.
@@ -35,19 +36,27 @@ The formal statement of Proposition~\ref{prop:mean} has every $\hbar>0$ and ever
 its inequality is one in $[0,\infty]$ with $0\cdot\infty=0$.
 \end{itemize}
 
-\subsection{The formalized counterexample}\label{rem:g5-lean}
-For Proposition~\ref{prop:g5}, the formal theorem \lean{printedThm13_false} proves the negation of the bound of \cite{S},
-rather than the asymptotic formula.
+\subsection{Proposition~\texorpdfstring{\ref{prop:g5}}{1.6} and the counterexample}\label{rem:g5-lean}
+Proposition~\ref{prop:g5} is \lean{propG5}. On the trivial group the periodization is an isometry, and the error is read in
+$L^2(\Hb/\{\mathrm{id}\})=L^2(\Hb)$. The formal statement takes $b=\infty$, an amplitude $a$ with $L^2$ class $A\ne0$ all of whose
+words lie in $L^2(\Hb)$, and $L:=Y^2-Y$. It asserts $\norm A\le4\norm{LA}$, and, for every $\tau>0$, a constant $C$ with
+$\bigl|\norm{u^{(0)}(t)-\cU(t)(a\ue^{i\varphi/\hbar})}-\tfrac\tau2\sqrt\hbar\,\norm{LA}\bigr|\le C\hbar$ at $t=\tau\hbar^{-1/2}$, for every $\hbar>0$.
+Its proof follows the proof in Section~\ref{subsec:g5proof}. It uses the Dyson identity (ii) of Proposition~\ref{prop:dd-id} at $K=0$
+and $K=1$, and bounds the second-order term by the norms of the words of $a$ of length at most four.
 
-The statement of \cite[Theorem~1.3]{S} is formalized as: for every Fuchsian $\Gamma$ and all $\alpha>0$, $\beta>1$ there are $C,\delta,\hbar_0>0$ such that
-$\norm{u^{(0)}(t)_\Gamma-\cU(t)(a\ue^{i\varphi_b/\hbar})_\Gamma}_{L^2(M)}\le C\hbar\norm a_{\alpha,\beta}$ for all $0<\hbar\le\hbar_0$, all $0\le t\le\delta\hbar^{-1/2}$, all $b$ and all $C^\infty$ amplitudes of finite original norm. The restrictions to $\hbar\le\hbar_0$ and to $C^\infty$ amplitudes weaken that claim, and the formal theorem states that this weaker claim is false. Its proof uses $\Gamma=\{\mathrm{id}\}$, $\alpha=\tfrac12$, $\beta=2$, $b=\infty$ and the amplitude $a=\ue^{-\alpha\Lambda}\ue^{-3X_0}$, $X_0=\cosh d(i,\cdot)$. It takes the Dyson identity (ii) of Proposition~\ref{prop:dd-id} at $K=0$ and $K=1$, which gives the expansion in Proposition~\ref{prop:g5} with $R$ the second-order term, and uses that periodization over the trivial group is an isometry. The bound $\norm R\le\tfrac{\hbar^2t^2}8\sup_{r,s}\norm{\Delta(r)\Delta(s)a}$ comes from Lemma~\ref{lem:wb} at $N=0$, and, with $L:=Y^2-Y$, $\norm{La}\ge\norm a/4$ from $Y^*=1-Y$ on $\operatorname{Dom}(\Delta)$: $\langle a,La\rangle=-\norm{Ya}^2$ and $2\operatorname{Re}\langle a,Ya\rangle=\norm a^2$.
+The separate theorem \lean{printedThm13_false} proves the negation of \cite[Theorem~1.3]{S}, formalized as follows: for every
+Fuchsian $\Gamma$ and all $\alpha>0$, $\beta>1$ there are $C,\delta,\hbar_0>0$ such that
+$\norm{u^{(0)}(t)_\Gamma-\cU(t)(a\ue^{i\varphi_b/\hbar})_\Gamma}_{L^2(M)}\le C\hbar\norm a_{\alpha,\beta}$ for all $0<\hbar\le\hbar_0$, all
+$0\le t\le\delta\hbar^{-1/2}$, all $b$ and all $C^\infty$ amplitudes of finite original norm. The restrictions to $\hbar\le\hbar_0$ and to
+$C^\infty$ amplitudes weaken that claim, and the formal theorem states that this weaker claim is false. Its proof uses
+$\Gamma=\{\mathrm{id}\}$, $\alpha=\tfrac12$, $\beta=2$, $b=\infty$ and the amplitude $a=\ue^{-\alpha\Lambda}\ue^{-3X_0}$, $X_0=\cosh d(i,\cdot)$.
 
 \subsection{Correspondence and exclusions}
 The direct counterparts in Table~\ref{tab:lean} use the interpretations above.
 The file \texttt{LEAN\_STATUS.md} in the repository gives the correspondence for every labelled statement,
 including the supporting estimates. The differences in bounds, parameter ranges and conclusions are described below.
 
-\paragraph{Paper deductions and variants.}
+\paragraph{Assembled counterparts.}
 Corollary~\ref{ev:transfer} is \lean{evTransfer_pc_all} for the original norm and \lean{evTransfer_main} for the reversed-weight
 norm; both combine the approximation bound at $N=0$ with the bounded-observable estimate \lean{ev_transfer_core}.
 Corollary~\ref{thm:main} is \lean{thm13R_fixed}, deduced from \lean{thm14Rmain_exp} at $K=N=0$ and the monotonicity of the
@@ -66,7 +75,6 @@ which is itself not proved formally.
 
 The example-amplitude results, Lemmas~\ref{lem:gutzmer} and~\ref{lem:ex} and Corollary~\ref{cor:localized},
 are also outside the formalization and are not used by the approximation theorems.
-The status of Proposition~\ref{prop:g5} is explained in the formalized-counterexample discussion above.
 
 \begin{table}[ht]
 \centering\small
@@ -90,10 +98,8 @@ Theorem~\ref{thm:dd-appx} & \lean{thm14R_rep}\\
 Theorem~\ref{os:cw} & \lean{cw_abstract}\\
 Lemma~\ref{os:transfer} & \lean{transfer}\\
 Corollary~\ref{thm:main} & \lean{thm13R_fixed}\\
+Proposition~\ref{prop:g5} & \lean{propG5}; negation of Schubert's bound \lean{printedThm13_false}\\
 Corollary~\ref{ev:transfer} & \lean{evTransfer_pc_all}, \lean{evTransfer_main}\\
-\hline
-\multicolumn{2}{@{}l}{\emph{Paper deductions and variants}}\\
-Proposition~\ref{prop:g5} & \lean{printedThm13_false}: negation of Schubert's bound only\\
 \hline
 \multicolumn{2}{@{}l}{\emph{Results without formal proofs}}\\
 Corollary~\ref{cor:localized} & Paper deduction from Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}\\

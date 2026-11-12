@@ -23,7 +23,7 @@ All Lean names are in the namespace `Qschubert`.
 | Corollary 1.3 (`pc:thm13`) | L | `pcthm13_all` |
 | Corollary 1.4 (`pc:cor15`) | L | `pccor15_all` |
 | Corollary 1.5 (`pc:cor16`) | L | `pccor16_all`; bounded geometry: `pccor16bg_all` |
-| Proposition 1.6 (`prop:g5`) | L′ | `printedThm13_false`: the negation of the printed theorem; the asymptotic formula is not formalized (Appendix C (`app:lean`)) |
+| Proposition 1.6 (`prop:g5`) | L | `propG5`; the negation of Schubert's bound is `printedThm13_false` |
 | Theorem 1.7 (`cl:necessary`) | P | deduced from Theorem 9.2 (`cl:main`); not formalized |
 | Theorem 1.8 (`ev:mod`) | L′ | parts (i), (ii): `evmod`, with the statement `Stmt_evmod`; part (iii) is a cited theorem and is not formalized |
 
