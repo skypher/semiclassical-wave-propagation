@@ -1,13 +1,21 @@
 \section{Analytic and weighted propagation estimates}\label{sec:analytic}
-The exact remainder requires control of derivatives, analytic regularity and spatial decay.
-Sections~\ref{subsec:dd-fc} and~\ref{app:m} give factorial bounds for words in the vector fields
-and for changes of spatial weight. Sections~\ref{app:kl} and~\ref{app:ws} then prove analytic
-propagation with loss of radius (Proposition~\ref{prop:a0}) and weighted propagation
-(Proposition~\ref{prop:ws}) for the mollified flow. Finally, Section~\ref{subsec:dd-wb} bounds
-derivatives of the remainder amplitude and proves exponential smallness of the unweighted
-mollifier defect (Lemma~\ref{lem:unw}). In the approximation proofs, interpolation between
-the small unweighted defect and its weighted bound compensates for the growth caused by
-periodization and transport.
+Proposition~\ref{prop:dd-id}(iii) reduces the approximation error to a simplex integral of
+$\|\mathcal V_{s_1}b'\|$, where $b'$ is a polynomial in $X,Y$ applied to the amplitude.
+The estimates in this section serve the two terms of a comparison with the mollified flow.
+For $g(r)=V_\varepsilon(r,s_1)b'$ and
+$d(r)=(\Delta(r)-\Delta_\varepsilon(r))g(r)$, quotient Duhamel gives
+\[
+ \mathcal V_{s_1}b'=\mathcal V_0g(0)-\frac{i\hbar}{2}
+ \int_0^{s_1}\mathcal V_r d(r)\,dr.
+\]
+The proof in Section~\ref{sec:companion} justifies this identity in the required weighted class.
+Weighted propagation (Proposition~\ref{prop:ws}) and periodization control the first term.
+For the second, analytic propagation (Proposition~\ref{prop:a0}) and the mollifier-defect
+estimate (Lemma~\ref{lem:unw}) give exponential smallness without a spatial weight;
+Lemma~\ref{lem:path} gives a weighted bound. Interpolation between these bounds compensates
+for the growth caused by periodization and transport. The derivative estimates of
+Sections~\ref{subsec:dd-fc}, \ref{app:m} and~\ref{subsec:dd-wb} control $b'$ with the required
+factorial dependence on the expansion and derivative orders.
 
 \medskip\noindent\textbf{Notation for the analytic estimates.}
 Let $X=y\partial_x$, $Y=y\partial_y$, $\Delta=X^2+Y^2-Y$, $\Delta(s)=\ue^{-2s}X^2+Y^2-Y$,

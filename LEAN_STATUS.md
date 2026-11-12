@@ -35,7 +35,6 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 2.7 (`lem:surf-duh`) | L | `SurfW.surf_duhamel` |
 | Corollary 2.8 (`cor:surf-dyson`) | L | `SurfW.surf_dyson` |
 | Proposition 2.9 (`prop:dd-id`) | L | `dd_D12_simplex`, `dd_D3`, `SurfW.surf_D4`, `SurfW.surf_D4_bound` |
-| Lemma 2.10 (`pc:g43`) | L | `sobolev_M_mult` |
 
 ## Section 3 (`sec:analytic`): analytic and weighted propagation estimates
 
@@ -87,11 +86,12 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Corollary 6.2 (`cor:dd15`) | L | `cor15Rmain_rep`, `cor15R_rep` (two companion norms) |
-| Corollary 6.3 (`cor:dd16`) | L′ | `cor16Rmain_rep`, `cor16R_rep` cover bounded geometry with weaker prefactor exponent -2N-4; the paper derives -2N-2 and the arbitrary-quotient estimate with the multiplicity factor for both companion norms |
-| Remark 6.4 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
-| Lemma 6.5 (`lem:ex`) | P | not used by the theorems |
-| Corollary 6.6 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.5 (`lem:ex`) and Theorem 4.3 (`thm:dd14`); self-checked, not separately formalized |
+| Lemma 6.1 (`pc:g43`) | L | `sobolev_M_mult` |
+| Corollary 6.3 (`cor:dd15`) | L | `cor15Rmain_rep`, `cor15R_rep` (two companion norms) |
+| Corollary 6.4 (`cor:dd16`) | L′ | `cor16Rmain_rep`, `cor16R_rep` cover bounded geometry with weaker prefactor exponent -2N-4; the paper derives -2N-2 and the arbitrary-quotient estimate with the multiplicity factor for both companion norms |
+| Remark 6.5 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
+| Lemma 6.6 (`lem:ex`) | P | not used by the theorems |
+| Corollary 6.7 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.6 (`lem:ex`) and Theorem 4.3 (`thm:dd14`); self-checked, not separately formalized |
 
 ## Section 7 (`sec:expect`): expectation values and escape of mass
 
@@ -122,6 +122,6 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Lemma A.2 (`lem:gutzmer`) | P | used only for Lemma 6.5 (`lem:ex`) |
+| Lemma A.2 (`lem:gutzmer`) | P | used only for Lemma 6.6 (`lem:ex`) |
 | Lemma A.3 (`os:poisson`) | P | used only in Proposition 5.1 (`pc:classes`) and Section 9 (`subsec:cl`) |
 | Lemma A.4 (`os:hk`) | P | used only in Section 9 (`subsec:cl`) |

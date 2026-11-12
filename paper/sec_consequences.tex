@@ -1,5 +1,35 @@
 \section{Consequences and localized amplitudes}\label{sec:consequences}
-We derive optimal truncation and pointwise estimates from the approximation theorems, and then treat Schubert's localized example through the reversed-weight class. The estimates for the original norm are stated in Section~\ref{sec:repair}; the companion-norm consequences are recorded here.
+We first establish the local Sobolev estimate needed for pointwise control, then derive
+optimal truncation and pointwise consequences of the approximation theorems. We conclude
+with Schubert's localized example in the reversed-weight class. The consequences for the
+original norm are stated in Section~\ref{sec:repair}; the companion-norm versions are recorded here.
+
+\subsection{Local pointwise control}\label{subsec:local-pointwise}
+\begin{lemma}[local Sobolev inequality on a Fuchsian quotient]\label{pc:g43}
+Let $m(z):=\#\{\gamma\in\Gamma:\ d(\tilde z,\gamma\tilde z)<2\}$ for $z\in M$ with a lift $\tilde z$; $m$ is finite and does not depend on the lift.
+There is an absolute constant $C$ such that every $u\in\operatorname{Dom}(\Delta_M)$ has a continuous representative, and for all $z\in M$,
+\[
+  |u(z)|\le C\,m(z)^{1/2}\big(\norm{\Delta u}_{L^2(M)}+\norm{u}_{L^2(M)}\big).
+\]
+\end{lemma}
+\begin{proof}
+\emph{Step 1 (the lift).} Let $\tilde u$ and $\tilde f$ be the $\Gamma$-invariant lifts of $u$ and of $f:=\Delta_Mu$. Then $\Delta\tilde u=\tilde f$ in the
+sense of distributions on $\Hb$: for $\phi\in C_c^\infty(\Hb)$, unfolding gives
+$\langle\tilde u,\Delta\phi\rangle_{\Hb}=\langle u,(\Delta\phi)_\Gamma\rangle_M=\langle u,\Delta_M\phi_\Gamma\rangle_M=\langle f,\phi_\Gamma\rangle_M=\langle\tilde f,\phi\rangle_{\Hb}$.
+
+\emph{Step 2 (counting).} For a $\Gamma$-invariant $\tilde h$ and a fundamental domain $F$,
+$\int_{B(\tilde z,1)}|\tilde h|^2d\nu=\int_Fn(w)|h(w)|^2d\nu(w)$, where $n(w):=\#\{\gamma:\gamma w\in B(\tilde z,1)\}$. If $\gamma_0w$ and $\gamma w$ both lie in
+$B(\tilde z,1)$, then $d(\tilde z,\gamma\gamma_0^{-1}\tilde z)<2$; hence $n(w)\le m(z)$ and $\int_{B(\tilde z,1)}|\tilde h|^2\le m(z)\norm{h}^2_{L^2(M)}$. In
+particular $\tilde u$ and $\tilde f$ are locally square integrable. The number $m(z)$ is finite because $\Gamma$ acts properly discontinuously.
+
+\emph{Step 3 (interior regularity).} Let $v\in L^2(B(\tilde z,1))$ with $\Delta v\in L^2(B(\tilde z,1))$ in the sense of distributions. By interior
+elliptic regularity, uniform in $\tilde z$ by the homogeneity of $\Hb$, $v\in H^2(B(\tilde z,\tfrac12))$ with
+$\norm v_{H^2(B(\tilde z,1/2))}\le C(\norm{\Delta v}_{L^2(B(\tilde z,1))}+\norm v_{L^2(B(\tilde z,1))})$, and since $H^2\subset C^0$ in dimension two, $v$ is
+continuous on $B(\tilde z,\tfrac12)$ with $|v(\tilde z)|\le C\norm v_{H^2(B(\tilde z,1/2))}$.
+
+Apply Step~3 to $v=\tilde u$ and use Step~2 for $\tilde h=\tilde u$ and $\tilde h=\tilde f$. The continuous representative of $\tilde u$ is $\Gamma$-invariant
+and descends to $M$. \qedhere
+\end{proof}
 
 \subsection{Truncation and pointwise consequences}\label{subsec:pc-cor}\label{subsec:dd-cor}
 The leading bound in Corollary~\ref{pc:thm13} is Theorem~\ref{pc:main} with $K=N=0$.

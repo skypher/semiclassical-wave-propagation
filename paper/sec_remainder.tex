@@ -1,7 +1,8 @@
 \section{Periodization and the exact remainder}\label{sec:remainder}
 The approximation error will be expressed through a quotient Duhamel formula. We first establish periodization,
 fix the representatives and isometric reductions, and then derive the exact remainder on the quotient.
-The analytic estimates needed to bound that remainder are developed in Sections~\ref{sec:analytic} and~\ref{app:o1st}.
+The analytic estimates needed to bound that remainder are developed in Sections~\ref{sec:analytic} and~\ref{app:o1st};
+local pointwise control is established with the consequences in Section~\ref{sec:consequences}.
 
 On $\Hb$, $-\Delta$ denotes the Friedrichs extension from $C_c^\infty(\Hb)$; on $M$, it denotes the
 Friedrichs extension from periodized test functions. The propagator and the powers of the Laplacian on either space
@@ -130,7 +131,7 @@ The hypothesis $g\,x_0=x_0$ is used in (iii): the Poincar\'e sum of $\Gamma$ is 
 has parabolic elements, so the base point of the weight must be the point at which the sum is taken.
 \end{remark}
 
-\subsection{The quotient propagator and Duhamel formula}\label{subsec:dd-surf}
+\subsection{The quotient propagator and exact remainder}\label{subsec:dd-surf}\label{subsec:dd-id}
 
 Periodization needs decay, and Proposition~\ref{prop:ws} gives weighted bounds only for $V_\varepsilon$, not for $V$. So $[\ue^{i\varphi/\hbar}V(s)^*g]_\Gamma$ cannot be read as a convergent sum, and the identity $\cU(t)u_\Gamma=\sum_\gamma(\cU(t)u)\circ\gamma^{-1}$ of \cite{S} is not available for $u=\ue^{i\varphi/\hbar}V(s)^*g$. We therefore define this object on $M$ through the surface propagator, and prove the Duhamel formula on $M$.
 
@@ -216,19 +217,11 @@ $P_k(s)a$ is a finite sum of continuous scalar functions times fixed words appli
 \end{proof}
 
 
-\subsection{Dyson identities and the exact remainder}\label{subsec:dd-id}
-
-Let $V(t)$ be the unitary operator of \eqref{eq:factor}, let $V(t,s):=V(t)V(s)^{-1}$, the propagator of
-$i\partial_tV=-\tfrac{\hbar}{2}\Delta(t)V$ (\cite[(1.22)]{S}), and let $c:=i\hbar/2$. By \eqref{eq:factor} (which is \cite[(1.23)]{S}),
-\[
-\cU(t)(a\,\ue^{i\varphi/\hbar})=\ue^{-it/(2\hbar)}\bigl(S(t)V(t)a\bigr)\ue^{i\varphi/\hbar},
-\qquad (S(t)w)(x,y)=\ue^{-t/2}w(x,\ue^{t}y),
-\]
-with $S(t)$ unitary. Then
-\[S(t)^{-1}XS(t)=\ue^{-t}X,\qquad S(t)^{-1}YS(t)=Y,\]
-hence $S(t)^{-1}\Delta S(t)=\Delta(t)$.
-Multiplication by $\ue^{i\varphi/\hbar}=y^{-i/\hbar}$ preserves every Sobolev space $H^k$, and so do $\cU(t)$ and $S(t)$.
-By the factorization, so do $V(t)^{\pm1}$ and $V(t,s)$.
+The quotient expansion now gives the differentiated remainder used in the approximation proofs.
+For later use on the universal cover, we also record its trivial-group specialization and the
+corresponding conjugation identity. Multiplication by $\ue^{i\varphi/\hbar}=y^{-i/\hbar}$
+preserves every Sobolev space $H^k$, as do $\cU(t)$ and $S(t)$; hence, by
+\eqref{eq:factor}, so do $V(t)$ and $V(t)^*$.
 
 \begin{proposition}[Dyson identities and quotient remainder]\label{prop:dd-id}
 \begin{enumerate}
@@ -263,16 +256,10 @@ Everything of high order is now inside $b'(s)$, which is a fixed word-polynomial
 \begin{proof}
 \medskip\noindent\textbf{(i).}
 
-$V(s)^*=V(0,s)$ and $\partial_sV(t,s)=-c\,V(t,s)\Delta(s)$ on $H^\infty$. So for $b$ with all words in $L^2$, $s\mapsto V(s)^*b$ is
-differentiable in $L^2$ with derivative $-c\,V(s)^*\Delta(s)b$. (In integrated form this is Lemma~\ref{lem:surf-duh} for the trivial
-group, the weight $\omega=1$ and the constant path $g(s)=b$: then $\mathcal V_sg=\ue^{i\varphi/\hbar}V(s)^*g$ by \eqref{eq:factor}; that lemma was proved directly on the quotient.)
-
-$P_k(s)a$ is a finite sum of continuous scalar functions of $s$ times fixed words applied to $a$; $\partial_sP_k(s)=\Delta(s)P_{k-1}(s)$
-and $P_k(0)=0$ for $k\ge1$.
-
-With $J_k(t):=\int_0^tV(s)^*\Delta(s)P_k(s)a\,ds$ this gives $V(t)^*P_k(t)a=J_{k-1}(t)-cJ_k(t)$ for $k\ge1$, and $V(t)^*a-a=-cJ_0(t)$.
-
-Multiplying by $c^k$ and summing telescopes to $a-V(t)^*a^{(K)}(t)=c^{K+1}J_K(t)$. Expanding $P_K$ gives the integral over $\Sigma_{K+1}(t)$.
+Apply Corollary~\ref{cor:surf-dyson} with $\Gamma=\{\mathrm{id}\}$ and $\omega=1$.
+These choices satisfy (W1), (W2), and the hypothesis on $a$ is exactly that of the corollary.
+By \eqref{eq:factor}, $\mathcal V_sg=\ue^{i\varphi/\hbar}V(s)^*g$.
+Multiplication of the resulting identity by $\ue^{-i\varphi/\hbar}$ gives (i).
 
 \medskip\noindent\textbf{(ii).}
 
@@ -292,31 +279,4 @@ By Corollary~\ref{cor:surf-dyson}, $\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c^{K+1}
 
 By Lemma~\ref{lem:surf-lap} $N$ times, $\Delta_M^N\mathcal V_{s_1}g=\mathcal V_{s_1}\Delta_\varphi(s_1)^Ng$. Closedness of $\Delta_M^N$ and Minkowski's inequality give the bound, with $|c|^{K+1}=(\hbar/2)^{K+1}$.
 (i) and (ii) are identities on $\Hb$; on $M$ the proof of (iii) uses their surface versions in Section~\ref{subsec:dd-surf}. \qedhere
-\end{proof}
-
-\subsection{Local pointwise control}
-\begin{lemma}[local Sobolev inequality on a Fuchsian quotient]\label{pc:g43}
-Let $m(z):=\#\{\gamma\in\Gamma:\ d(\tilde z,\gamma\tilde z)<2\}$ for $z\in M$ with a lift $\tilde z$; $m$ is finite and does not depend on the lift.
-There is an absolute constant $C$ such that every $u\in\operatorname{Dom}(\Delta_M)$ has a continuous representative, and for all $z\in M$,
-\[
-  |u(z)|\le C\,m(z)^{1/2}\big(\norm{\Delta u}_{L^2(M)}+\norm{u}_{L^2(M)}\big).
-\]
-\end{lemma}
-\begin{proof}
-\emph{Step 1 (the lift).} Let $\tilde u$ and $\tilde f$ be the $\Gamma$-invariant lifts of $u$ and of $f:=\Delta_Mu$. Then $\Delta\tilde u=\tilde f$ in the
-sense of distributions on $\Hb$: for $\phi\in C_c^\infty(\Hb)$, unfolding gives
-$\langle\tilde u,\Delta\phi\rangle_{\Hb}=\langle u,(\Delta\phi)_\Gamma\rangle_M=\langle u,\Delta_M\phi_\Gamma\rangle_M=\langle f,\phi_\Gamma\rangle_M=\langle\tilde f,\phi\rangle_{\Hb}$.
-
-\emph{Step 2 (counting).} For a $\Gamma$-invariant $\tilde h$ and a fundamental domain $F$,
-$\int_{B(\tilde z,1)}|\tilde h|^2d\nu=\int_Fn(w)|h(w)|^2d\nu(w)$, where $n(w):=\#\{\gamma:\gamma w\in B(\tilde z,1)\}$. If $\gamma_0w$ and $\gamma w$ both lie in
-$B(\tilde z,1)$, then $d(\tilde z,\gamma\gamma_0^{-1}\tilde z)<2$; hence $n(w)\le m(z)$ and $\int_{B(\tilde z,1)}|\tilde h|^2\le m(z)\norm{h}^2_{L^2(M)}$. In
-particular $\tilde u$ and $\tilde f$ are locally square integrable. The number $m(z)$ is finite because $\Gamma$ acts properly discontinuously.
-
-\emph{Step 3 (interior regularity).} Let $v\in L^2(B(\tilde z,1))$ with $\Delta v\in L^2(B(\tilde z,1))$ in the sense of distributions. By interior
-elliptic regularity, uniform in $\tilde z$ by the homogeneity of $\Hb$, $v\in H^2(B(\tilde z,\tfrac12))$ with
-$\norm v_{H^2(B(\tilde z,1/2))}\le C(\norm{\Delta v}_{L^2(B(\tilde z,1))}+\norm v_{L^2(B(\tilde z,1))})$, and since $H^2\subset C^0$ in dimension two, $v$ is
-continuous on $B(\tilde z,\tfrac12)$ with $|v(\tilde z)|\le C\norm v_{H^2(B(\tilde z,1/2))}$.
-
-Apply Step~3 to $v=\tilde u$ and use Step~2 for $\tilde h=\tilde u$ and $\tilde h=\tilde f$. The continuous representative of $\tilde u$ is $\Gamma$-invariant
-and descends to $M$. \qedhere
 \end{proof}

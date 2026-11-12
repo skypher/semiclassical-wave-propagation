@@ -284,3 +284,42 @@ $|F(\tilde d^2,\tau^2)^{-1/2}|\le c_{\theta_0}^{-1/2}F(a^2,\tau^2)^{-1/2}$. Fina
 $|e^{-\tilde d^2/(4s)}|=e^{\theta^2/(4s)}e^{-a^2/(4s)}$, and the $\tau$-integral is dominated uniformly on compact sets of $\tilde d$, so the continuation is
 holomorphic. This gives the bound.
 \end{proof}
+
+\subsection{Auxiliary estimates for cusp sharpness}\label{app:cusp-aux}
+We prove the off-diagonal kernel bound and the derivative and packing estimates stated in
+Section~\ref{sec:cusp}. Throughout, $x_0=i$, $X_0=\cosh d(i,\cdot)$ and
+$\vartheta(w)=\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$. The kernel $k_\alpha$ is that of
+Lemma~\ref{os:poisson}.
+
+\begin{proof}[Proof of Lemma~\ref{cl:kernel}]
+By Lemma~\ref{os:hk} with $\theta_0=r_0/4$,
+\[
+|\tilde k_\alpha(a+i\theta)|\le C\int_0^\infty\alpha(4\pi)^{-1/2}s^{-3/2}\ue^{-(\alpha^2-\theta^2)/(4s)}p_s(a)\,ds .
+\]
+The computation in the proof of Lemma~\ref{os:poisson}, with $\alpha^2-\theta^2$ in place of $\alpha^2$, turns this into
+\[
+C\alpha\int_a^\infty\frac{\rho\,K_2\bigl(\sqrt{\rho^2+\alpha^2-\theta^2}/2\bigr)}{\rho^2+\alpha^2-\theta^2}\,\frac{d\rho}{(\cosh\rho-\cosh a)^{1/2}},
+\]
+which converges because $\rho^2+\alpha^2-\theta^2\ge r_0^2/2$. For $a\ge1$ it is bounded as in \textup{(\ref{os:ub})}. For $3r_0/4<a<1$ the factor
+$\rho\,K_2(\cdot)/(\rho^2+\alpha^2-\theta^2)$ is bounded by a constant times $\ue^{-\rho/2}$ on $\rho\ge a$, with a constant depending on $r_0$, and
+$\int_a^\infty\ue^{-\rho/2}(\cosh\rho-\cosh a)^{-1/2}d\rho$ is bounded for these $a$; so the integral is at most $C\alpha$ there, which is the claim. Cauchy estimates on discs of radius $r_0/8$ give the derivative bounds.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{cl:aux}]
+\begin{enumerate}
+\item[(a)] Indeed the affine maps $z\mapsto p_1z+p_2$,
+$p_1>0$, are isometries, commute with $X$ and $Y$ and act transitively, so it suffices to take $w=i$; there the bound is interior elliptic regularity for
+$\Delta$ on $B(i,1)$ and the Sobolev embedding $H^{2k}\subset C^{|S|}$ in dimension two.
+\item[(b)] The balls $B(p,\delta_0/2)$ are disjoint, and a
+ball of radius $R$ has area $2\pi(\cosh R-1)$, so $\#\{p\in P:d(p,w')\le R\}\le C_{\delta_0}\ue^R$ for all $w'\in\Hb$ and $R\ge0$. Summing over the shells
+$R\le d(p,w')<R+1$, $\sum_{p\in P}\ue^{-d(p,w')}(1+d(p,w'))^{-3/2}\le C_{\delta_0}$ for every $w'\in\Hb$.
+\item[(c)] The estimate follows because $d(w,w')\ge d(i,w)-d(i,w')$ and
+$1+d(i,w)\le(1+d(w,w'))(1+d(i,w'))$.
+\item[(d)] Indeed, let $p$ be the affine map with $p(i)=w'$; then
+$\cosh d(w,w')=X_0(p^{-1}w)$, so $Z_S^w\cosh d(w,w')=(Z_SX_0)(p^{-1}w)$. The relations $XX_0=x$, $YX_0=y-X_0$, $Xx=y$, $Yy=y$, $Xy=Yx=0$ and
+$|x|\le X_0$, $y\le2X_0$ give $|Z_SX_0|\le C_SX_0$, hence $|Z_S^w\cosh d(w,w')|\le C_S\cosh d(w,w')$. Write $k_\alpha(r)=K_\alpha(\cosh r)$. Since
+$\tfrac{d}{d\cosh r}=(\sinh r)^{-1}\tfrac d{dr}$ and the derivatives of $(\sinh r)^{-1}$ are $O(1/\cosh r)$ on $r\ge r_0$, Lemma~\ref{cl:kernel} gives
+$|K_\alpha^{(j)}(\cosh r)|\le C_{j,r_0}\alpha\,\ue^{-r}(1+r)^{-3/2}(\cosh r)^{-j}$ for $r\ge r_0$. By the chain rule $Z_S^w[K_\alpha(\cosh d(w,w'))]$ is a sum
+of terms $K_\alpha^{(j)}(\cosh d)\prod_{l\le j}Z_{S_l}^w\cosh d$, which proves the claim.
+\end{enumerate}
+\end{proof}

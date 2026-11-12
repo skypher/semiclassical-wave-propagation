@@ -19,10 +19,20 @@ Throughout this subsection $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $M=\Gamma\backsla
 $b=\infty$ and $\varphi=-\log y$. For a function $F$ on $\Hb$ we write $[F]_\Gamma(z)=\sum_{\gamma\in\Gamma}F(\gamma z)$, and
 $E_K(t):=\cU(t)(a\,\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma$. Words $Z_S$ are products of $X$ and $Y$. In this subsection only, $\ampNorm a:=\swNorm a$ in case (i) and $\ampNorm a:=\pcNorm a$ in case (ii), so that the common estimates cover both amplitude classes.
 
-The proof has three stages. Lemma~\ref{cl:asym} gives the cusp asymptotic of a transported
-amplitude. Lemmas~\ref{cl:amp} and~\ref{cl:noncancel} supply an admissible amplitude with a nonzero
-leading coefficient. The approximation theorem then controls the remaining error.
-The auxiliary derivative, packing and kernel estimates are collected in Lemma~\ref{cl:aux}.
+The proof starts from the decomposition
+\[
+\begin{gathered}
+ E_0=M_1+M_2+E_2,\qquad
+ M_k:=\ue^{-it/(2\hbar)}\bigl[(S(t)A_k)\ue^{i\varphi/\hbar}\bigr]_\Gamma,\\
+ A_k:=\Bigl(\frac{i\hbar}{2}\Bigr)^kP_k(t)a\quad(k=1,2).
+\end{gathered}
+\]
+Lemma~\ref{cl:asym} gives the cusp asymptotic of $M_1$ and a bound for $M_2$.
+Lemmas~\ref{cl:amp} and~\ref{cl:noncancel} supply an admissible amplitude for which the leading
+coefficient of $M_1$ is bounded away from zero. The approximation theorem and the local
+Sobolev estimate of Lemma~\ref{cl:ssob} control $E_2$.
+The auxiliary kernel and derivative bounds are stated in Lemmas~\ref{cl:kernel} and~\ref{cl:aux};
+their proofs are collected in Appendix~\ref{app:cusp-aux}.
 
 The mechanism is the following. The error contains the explicit first Dyson term $\ue^{-it/(2\hbar)}(S(t)\,\tfrac{i\hbar}2P_1(t)a)\ue^{i\varphi/\hbar}$,
 periodized. High in the cusp the sum over $\Gamma$ concentrates, by stationary phase, at the tops $a/c+i/(c^2Y)$ of the horocycles $\gamma(\mathbb R+iY)$,
@@ -230,17 +240,7 @@ $\{a+i\theta:a>3r_0/4,\ |\theta|<r_0/4\}$ with $|\tilde k_\alpha(a+i\theta)|\le 
 $|\partial_r^jk_\alpha(r)|\le C_j\alpha\,\ue^{-r}(1+r)^{-3/2}$ for $r\ge r_0$, uniformly in $\alpha\le\alpha_0$.
 \end{lemma}
 \begin{proof}
-By Lemma~\ref{os:hk} with $\theta_0=r_0/4$,
-\[
-|\tilde k_\alpha(a+i\theta)|\le C\int_0^\infty\alpha(4\pi)^{-1/2}s^{-3/2}\ue^{-(\alpha^2-\theta^2)/(4s)}p_s(a)\,ds .
-\]
-The computation in the proof of Lemma~\ref{os:poisson}, with $\alpha^2-\theta^2$ in place of $\alpha^2$, turns this into
-\[
-C\alpha\int_a^\infty\frac{\rho\,K_2\bigl(\sqrt{\rho^2+\alpha^2-\theta^2}/2\bigr)}{\rho^2+\alpha^2-\theta^2}\,\frac{d\rho}{(\cosh\rho-\cosh a)^{1/2}},
-\]
-which converges because $\rho^2+\alpha^2-\theta^2\ge r_0^2/2$. For $a\ge1$ it is bounded as in \textup{(\ref{os:ub})}. For $3r_0/4<a<1$ the factor
-$\rho\,K_2(\cdot)/(\rho^2+\alpha^2-\theta^2)$ is bounded by a constant times $\ue^{-\rho/2}$ on $\rho\ge a$, with a constant depending on $r_0$, and
-$\int_a^\infty\ue^{-\rho/2}(\cosh\rho-\cosh a)^{-1/2}d\rho$ is bounded for these $a$; so the integral is at most $C\alpha$ there, which is the claim. Cauchy estimates on discs of radius $r_0/8$ give the derivative bounds.
+See Appendix~\ref{app:cusp-aux}.
 \end{proof}
 
 \begin{lemma}[local derivative, packing and kernel estimates]\label{cl:aux}
@@ -260,22 +260,7 @@ $|Z_S^w[k_\alpha(d(w,w'))]|\le C_{S,r_0}\,\alpha\,\ue^{-d(w,w')}(1+d(w,w'))^{-3/
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-\begin{enumerate}
-\item[(a)] Indeed the affine maps $z\mapsto p_1z+p_2$,
-$p_1>0$, are isometries, commute with $X$ and $Y$ and act transitively, so it suffices to take $w=i$; there the bound is interior elliptic regularity for
-$\Delta$ on $B(i,1)$ and the Sobolev embedding $H^{2k}\subset C^{|S|}$ in dimension two.
-\item[(b)] The balls $B(p,\delta_0/2)$ are disjoint, and a
-ball of radius $R$ has area $2\pi(\cosh R-1)$, so $\#\{p\in P:d(p,w')\le R\}\le C_{\delta_0}\ue^R$ for all $w'\in\Hb$ and $R\ge0$. Summing over the shells
-$R\le d(p,w')<R+1$, $\sum_{p\in P}\ue^{-d(p,w')}(1+d(p,w'))^{-3/2}\le C_{\delta_0}$ for every $w'\in\Hb$.
-\item[(c)] The estimate follows because $d(w,w')\ge d(i,w)-d(i,w')$ and
-$1+d(i,w)\le(1+d(w,w'))(1+d(i,w'))$.
-\item[(d)] Indeed, let $p$ be the affine map with $p(i)=w'$; then
-$\cosh d(w,w')=X_0(p^{-1}w)$, so $Z_S^w\cosh d(w,w')=(Z_SX_0)(p^{-1}w)$. The relations $XX_0=x$, $YX_0=y-X_0$, $Xx=y$, $Yy=y$, $Xy=Yx=0$ and
-$|x|\le X_0$, $y\le2X_0$ give $|Z_SX_0|\le C_SX_0$, hence $|Z_S^w\cosh d(w,w')|\le C_S\cosh d(w,w')$. Write $k_\alpha(r)=K_\alpha(\cosh r)$. Since
-$\tfrac{d}{d\cosh r}=(\sinh r)^{-1}\tfrac d{dr}$ and the derivatives of $(\sinh r)^{-1}$ are $O(1/\cosh r)$ on $r\ge r_0$, Lemma~\ref{cl:kernel} gives
-$|K_\alpha^{(j)}(\cosh r)|\le C_{j,r_0}\alpha\,\ue^{-r}(1+r)^{-3/2}(\cosh r)^{-j}$ for $r\ge r_0$. By the chain rule $Z_S^w[K_\alpha(\cosh d(w,w'))]$ is a sum
-of terms $K_\alpha^{(j)}(\cosh d)\prod_{l\le j}Z_{S_l}^w\cosh d$, which proves the claim.
-\end{enumerate}
+See Appendix~\ref{app:cusp-aux}.
 \end{proof}
 
 \subsubsection{Amplitude membership}

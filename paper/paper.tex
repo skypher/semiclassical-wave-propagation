@@ -307,6 +307,10 @@ with $N^{2N}:=1$ at $N=0$.
 \end{theorem}
 
 The proof is in Sections~\ref{subsec:pc-proof} and~\ref{subsec:pc-all}. For fixed $\alpha>0$, the time window has order $\hbar^{-1/2}$.
+Its dependence on the analytic radius improves the window
+$\delta\alpha^{3/2}\hbar^{-1/2}$ of \cite[Theorem~1.4]{S} to
+$\delta(\alpha/\hbar)^{1/2}$. This distinction matters for the localized amplitudes below,
+whose analytic radius tends to zero with $\hbar$.
 The following corollaries give the leading error, the exponential estimate obtained by choosing $K$, and the pointwise bounds.
 
 \begin{corollary}[leading approximation]\label{pc:thm13}
@@ -381,12 +385,6 @@ The lower endpoint is a sufficient escape time; no onset time is asserted.
 Throughout this window the periodized approximation remains accurate.
 In contrast, classical transport of the density $|a_0(y)|^2$ on the cusp cylinder,
 where $a_0(y)=\int_{\mathbb R}a(x+iy)\,dx$, equidistributes after projection to the surface.
-
-The corrections to Schubert's bounds are established in the sharpness sections:
-Proposition~\ref{prop:g5} treats the leading error and Theorem~\ref{cl:main} the cusp factor.
-Theorem~\ref{pc:main} also extends the radius-dependent window from
-$\delta\alpha^{3/2}\hbar^{-1/2}$ to $\delta(\alpha/\hbar)^{1/2}$.
-Appendix~\ref{sec:changes} gives the detailed comparison with Schubert's statements and identifies the gap in their proof.
 
 \subsection{Context and related work}\label{subsec:context}
 Estimates up to the Ehrenfest time for coherent states were obtained by Combescure and Robert \cite{CR97} and
@@ -483,7 +481,8 @@ The paper has three blocks. Sections~\ref{sec:remainder}--\ref{sec:consequences}
 The quotient remainder of Section~\ref{sec:remainder} and the analytic estimates of Section~\ref{sec:analytic}
 are their common inputs. Section~\ref{sec:companion} gives the model argument for the power-weight class and its
 reversed-weight consequence. Section~\ref{sec:printed} adds the critical-weight estimates needed for the original norm
-and proves Theorem~\ref{pc:main}. Section~\ref{sec:consequences} derives the corollaries and treats localized amplitudes.
+and proves Theorem~\ref{pc:main}. Section~\ref{sec:consequences} establishes local pointwise control,
+derives the corollaries and treats localized amplitudes.
 
 Section~\ref{sec:expect} applies the approximation theorem to expectation values and escape of mass.
 Sections~\ref{sec:g5}--\ref{sec:cusp} then address sharpness and limitations: the leading error and the mean of the
@@ -622,8 +621,9 @@ on $a$; it is not estimated here. On $\Hb$ itself, and on surfaces of infinite a
 $\varepsilon=(\alpha\hbar)^{1/2}/2$: the mollified flow is controlled up to times of order $\varepsilon/\hbar$
 (Propositions~\ref{prop:a0} and~\ref{prop:ws}), and the defect of the mollifier is small only when $\varepsilon$ is small
 compared with $\alpha$ (Lemma~\ref{lem:unw}). \cite[Conjecture~1]{S} is a dispersive estimate for the unmollified flow on the
-time scale $1/\hbar$; according to \cite{S} it would allow one to extend the time scale from $\hbar^{-1/2}$ to $\hbar^{-1}$. We have
-not examined which of the other steps of the present proofs would then extend. Whether the periodized approximation stays accurate beyond
+time scale $1/\hbar$; according to \cite{S} it would allow one to extend the time scale from $\hbar^{-1/2}$ to $\hbar^{-1}$.
+An extension by this route also requires analytic and periodization estimates on the longer window.
+Whether the periodized approximation stays accurate beyond
 $\hbar^{-1/2}$ is open. When $J\ne0$, on a surface of finite area Proposition~\ref{prop:mean} limits the time of validity of each
 approximation $u^{(K)}(t)_\Gamma$ of fixed order $K$ in terms of $J$ (Remark~\ref{rem:mean}); the size of $J$ as $\hbar\to0$ is not
 determined here.
@@ -674,8 +674,6 @@ Sol, Fable, Google Gemini~4 Argon (\texttt{gemini-4-argon}) and OpenAI GPT-6~Pro
 OpenAI Codex and ChatGPT sessions checked revisions and formal-statement correspondence;
 Codex revised the exposition and organization, made the intermediate escape estimates self-contained,
 and presented the localized-state consequence and sharper pointwise prefactor.
-It also streamlined the introduction, placed escape of mass before the sharpness arguments,
-and reorganized the critical-weight estimates around their multiplier theorem.
 These AI checks do not constitute external peer review. The detailed contribution history
 is retained in the repository revisions.
 
