@@ -629,7 +629,7 @@ derives the corollaries and treats localized amplitudes.
 
 Section~\ref{sec:expect} applies the approximation theorem to expectation values and proves Theorem~\ref{ev:mod}.
 Section~\ref{sec:g5} proves Proposition~\ref{prop:g5} and computes the mean of the approximation, which bounds the error from
-below on surfaces of finite area after the approximation window, and
+below on surfaces of finite area (Remark~\ref{rem:mean} says when that bound can take effect), and
 Section~\ref{sec:cusp} proves Theorem~\ref{cl:necessary}. Section~\ref{sec:outlook} collects the open questions.
 
 Sections~\ref{sec:expect}--\ref{sec:cusp} are independent of each other and use only the following earlier results.
@@ -658,7 +658,7 @@ Appendix~\ref{app:lean} documents the scope of the formalization.
 \section{The leading error and the mean of the approximation}\label{sec:g5}
 Section~\ref{subsec:g5proof} proves Proposition~\ref{prop:g5}: the order $\hbar t$ of the leading error is attained on $\Hb$.
 Section~\ref{subsec:mean} computes the mean of the approximation over $\Hb$ exactly and derives from it a lower bound for
-the error on surfaces of finite area; that bound takes effect only after the approximation window.
+the error on surfaces of finite area; Remark~\ref{rem:mean} and Section~\ref{sec:outlook} say when that bound can take effect.
 \subsection{The order \texorpdfstring{$\hbar t$}{ht} of the leading error is attained}\label{subsec:g5proof}
 For every amplitude of finite reversed-weight norm, all words in $X,Y$ applied to it lie in $L^2(\Hb)$
 (Lemmas~\ref{lem:m2w} and~\ref{lem:sc}); the same holds for the original norm
@@ -688,8 +688,10 @@ gauge $a=\ue^{r/2}g$, $L$ becomes $\partial_r^2-1/4$, so $-L\ge1/4$; hence $\nor
 \subsection{The mean of the approximation}\label{subsec:mean}
 The integral of $u^{(K)}(t)$ over $\Hb$ has a closed form (Proposition~\ref{prop:mean}). On a surface of finite area this
 gives a lower bound for the error in terms of the mean $\mathcal J$ of the initial state. Since $\mathcal J$ is exponentially
-small (Corollary~\ref{cor:meanJ}), the bound does not act inside the window of Theorem~\ref{thm:dd14} (Remark~\ref{rem:mean});
-it limits approximations of fixed order at later times (Section~\ref{sec:outlook}). For $w\in\mathbb C$ let
+small (Corollary~\ref{cor:meanJ}), for $K=0$ and amplitudes whose initial state has norm at least $c\swNorm a$, $c>0$ fixed,
+the bound can take effect only after the window of Theorem~\ref{thm:dd14}, up to a bounded time (Remark~\ref{rem:mean}). For
+higher fixed $K$ the comparison has an offset $O_K(\log(1/\hbar))$ (Section~\ref{sec:outlook}), and if $\mathcal J=0$ it gives
+no bound. For $w\in\mathbb C$ let
 $T_K(w):=\sum_{k=0}^{K}w^k/k!$.
 
 \begin{proposition}[the mean of the approximation]\label{prop:mean}
