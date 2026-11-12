@@ -17,7 +17,7 @@ there. The mode $k=0$ has measure zero in the direct integral. Put $\gamma:=\alp
 \[
 \ue^{\alpha''\Lambda}Z\ue^{-\alpha'\Lambda}=\bigl(\ue^{\alpha''\Lambda}Z\ue^{-\alpha''\Lambda}\Lambda^{-1}\bigr)\bigl(\Lambda\ue^{-\gamma\Lambda}\bigr).
 \]
-The second factor has norm $\le\sup_{\lambda\ge1/2}\lambda\ue^{-\gamma\lambda}\le1/(\ue\gamma)$. It remains to bound the first factor uniformly for $\alpha''\le\tau_0$, and $Y=Y_0+\tfrac12$ adds at most $\tfrac12$.
+The second factor has norm $\le\sup_{\lambda\ge1/2}\lambda\ue^{-\gamma\lambda}\le1/(\ue\gamma)$. It remains to bound the first factor uniformly for $\alpha''\le\tau_0$, and $Y=\mathring Y+\tfrac12$ adds at most $\tfrac12$.
 
 \medskip\noindent\emph{Spectral notation.} We put $x:=\nu-\nu'$, $p:=\pi(\nu+\nu')/2$ and $q:=\pi x/2$. Since $\sinh\pi\nu\,\sinh\pi\nu'=\sinh(p+q)\sinh(p-q)$,
 \[
@@ -261,8 +261,8 @@ k_\tau(r)=\frac{\sqrt2}{8\pi^2}\,\tau\int_r^\infty\frac{\rho\,K_2\bigl(\sqrt{\rh
 \]
 Consequently there are $0<c,C<\infty$, depending only on $\tau_0$, with
 \begin{align}
-k_\tau(r)&\le C\,\tau\,\ue^{-r}\osbr{r}^{-3/2}\quad(r\ge1),\label{os:ub}\\
-k_\tau(r)&\ge c\,\tau\,\ue^{-r}\osbr{r}^{-3/2}\quad(r\ge1),\label{os:lb}\\
+k_\tau(r)&\le C\,\tau\,\ue^{-r}(1+r)^{-3/2}\quad(r\ge1),\label{os:ub}\\
+k_\tau(r)&\ge c\,\tau\,\ue^{-r}(1+r)^{-3/2}\quad(r\ge1),\label{os:lb}\\
 c\,\tau(\tau^2+r^2)^{-3/2}\le k_\tau(r)&\le C\,\tau(\tau^2+r^2)^{-3/2}\quad(0\le r\le1).\label{os:small}
 \end{align}
 \end{lemma}
@@ -285,7 +285,7 @@ comparable to $\int_0^{C}(r^2+\tau^2+v^2)^{-2}\,dv\asymp(r^2+\tau^2)^{-3/2}$, wh
 exponential estimate. This gives \eqref{os:small}.
 \end{proof}
 
-Let $\osHK$ denote the continuation of $p_s$ to complex distance $\tilde d=a+i\theta$, $a\ge0$, $|\theta|\le\theta_0<\pi/2$.
+Let $\osHK$ denote the continuation of $p_s$ to complex distance $\tilde d=r+i\theta$, $r\ge0$, $|\theta|\le\theta_0<\pi/2$.
 McKean's formula for $p_s$ is first put in $d^2$-form. With $g(w)=\sinh\sqrt w/(2\sqrt w)$ (an entire function of $w$) and
 $F(w,v^2)=\int_0^1g(w+\lambda v^2)\,d\lambda=(\cosh\sqrt{w+v^2}-\cosh\sqrt w)/v^2$, substituting $\rho=\sqrt{d^2+v^2}$ gives
 \[
@@ -293,13 +293,13 @@ p_s(d)=c_s\,\ue^{-d^2/(4s)}\int_0^\infty \ue^{-v^2/(4s)}F(d^2,v^2)^{-1/2}\,dv,\q
 \]
 
 \begin{lemma}[continued heat kernel]\label{os:hk}
-Let $0<\theta_0<\pi/2$ and $c_{\theta_0}=\cos\theta_0\,\ue^{-\theta_0}$. For $a\ge0$, $|\theta|\le\theta_0$ and $s>0$,
+Let $0<\theta_0<\pi/2$ and $c_{\theta_0}=\cos\theta_0\,\ue^{-\theta_0}$. For $r\ge0$, $|\theta|\le\theta_0$ and $s>0$,
 \[
-|\osHK_s(a+i\theta)|\le c_{\theta_0}^{-1/2}\,\ue^{\theta^2/(4s)}\,p_s(a).
+|\osHK_s(r+i\theta)|\le c_{\theta_0}^{-1/2}\,\ue^{\theta^2/(4s)}\,p_s(r).
 \]
 \end{lemma}
 \begin{proof}
-Put $d^2\mapsto\tilde d^2=a^2-\theta^2+2ia\theta$ in the $d^2$-representation. Let $x=a^2+\lambda v^2\ge a^2$ and $w=x-\theta^2+2ia\theta$,
+Put $d^2\mapsto\tilde d^2=r^2-\theta^2+2ir\theta$ in the $d^2$-representation. Let $x=r^2+\lambda v^2\ge r^2$ and $w=x-\theta^2+2ir\theta$,
 and write $\sqrt w=A+iB$ with $A\ge0$. Then $|w|\le x+\theta^2$, so $B^2=(|w|-(x-\theta^2))/2\le\theta^2$; also $A^2=x-\theta^2+B^2\le x$.
 Hence $0\le\sqrt x-A$, and if $x\ge\theta^2$ then $\sqrt x-A\le|\theta|$.
 
@@ -311,9 +311,9 @@ logarithmic derivative of $\sinh u/u$ lies in $[0,1]$, so $\sinh A/A\ge \ue^{-|\
 \]
 (The case $x<\theta^2$ is handled directly, since then $\sinh A/A\ge1\ge(\sinh\sqrt x/\sqrt x)\ue^{-\theta_0}$.)
 
-Hence $\operatorname{Re}F(\tilde d^2,v^2)\ge c_{\theta_0}F(a^2,v^2)>0$. For $\operatorname{Re}z>0$ one has $|z^{-1/2}|\le(\operatorname{Re}z)^{-1/2}$, so
-$|F(\tilde d^2,v^2)^{-1/2}|\le c_{\theta_0}^{-1/2}F(a^2,v^2)^{-1/2}$. Finally
-$|\ue^{-\tilde d^2/(4s)}|=\ue^{\theta^2/(4s)}\ue^{-a^2/(4s)}$, and the $v$-integral is dominated uniformly on compact sets of $\tilde d$, so the continuation is
+Hence $\operatorname{Re}F(\tilde d^2,v^2)\ge c_{\theta_0}F(r^2,v^2)>0$. For $\operatorname{Re}z>0$ one has $|z^{-1/2}|\le(\operatorname{Re}z)^{-1/2}$, so
+$|F(\tilde d^2,v^2)^{-1/2}|\le c_{\theta_0}^{-1/2}F(r^2,v^2)^{-1/2}$. Finally
+$|\ue^{-\tilde d^2/(4s)}|=\ue^{\theta^2/(4s)}\ue^{-r^2/(4s)}$, and the $v$-integral is dominated uniformly on compact sets of $\tilde d$, so the continuation is
 holomorphic. This gives the bound.
 \end{proof}
 
@@ -326,15 +326,15 @@ Lemma~\ref{os:poisson}.
 \begin{proof}[Proof of Lemma~\ref{cl:kernel}]
 By Lemma~\ref{os:hk} with $\theta_0=r_0/4$,
 \[
-|\tilde k_\alpha(a+i\theta)|\le C\int_0^\infty\alpha(4\pi)^{-1/2}s^{-3/2}\ue^{-(\alpha^2-\theta^2)/(4s)}p_s(a)\,ds .
+|\tilde k_\alpha(r+i\theta)|\le C\int_0^\infty\alpha(4\pi)^{-1/2}s^{-3/2}\ue^{-(\alpha^2-\theta^2)/(4s)}p_s(r)\,ds .
 \]
 The computation in the proof of Lemma~\ref{os:poisson}, with $\alpha^2-\theta^2$ in place of $\alpha^2$, turns this into
 \[
-C\alpha\int_a^\infty\frac{\rho\,K_2\bigl(\sqrt{\rho^2+\alpha^2-\theta^2}/2\bigr)}{\rho^2+\alpha^2-\theta^2}\,\frac{d\rho}{(\cosh\rho-\cosh a)^{1/2}},
+C\alpha\int_r^\infty\frac{\rho\,K_2\bigl(\sqrt{\rho^2+\alpha^2-\theta^2}/2\bigr)}{\rho^2+\alpha^2-\theta^2}\,\frac{d\rho}{(\cosh\rho-\cosh r)^{1/2}},
 \]
-which converges because $\rho^2+\alpha^2-\theta^2\ge r_0^2/2$. For $a\ge1$ it is bounded as in \textup{(\ref{os:ub})}. For $3r_0/4<a<1$ the factor
-$\rho\,K_2(\cdot)/(\rho^2+\alpha^2-\theta^2)$ is bounded by a constant times $\ue^{-\rho/2}$ on $\rho\ge a$, with a constant depending on $r_0$, and
-$\int_a^\infty\ue^{-\rho/2}(\cosh\rho-\cosh a)^{-1/2}d\rho$ is bounded for these $a$; so the integral is at most $C\alpha$ there, which is the claim. Cauchy estimates on discs of radius $r_0/8$ give the derivative bounds.
+which converges because $\rho^2+\alpha^2-\theta^2\ge r_0^2/2$. For $r\ge1$ it is bounded as in \textup{(\ref{os:ub})}. For $3r_0/4<r<1$ the factor
+$\rho\,K_2(\cdot)/(\rho^2+\alpha^2-\theta^2)$ is bounded by a constant times $\ue^{-\rho/2}$ on $\rho\ge r$, with a constant depending on $r_0$, and
+$\int_r^\infty\ue^{-\rho/2}(\cosh\rho-\cosh r)^{-1/2}d\rho$ is bounded for these $r$; so the integral is at most $C\alpha$ there, which is the claim. Cauchy estimates on discs of radius $r_0/8$ give the derivative bounds.
 \end{proof}
 
 \begin{proof}[Proof of Lemma~\ref{cl:aux}]

@@ -18,7 +18,7 @@ The repository's README gives the commands for reproducing the build and audits.
 
 A kernel check certifies the proofs of the formal statements. Whether a formal statement says what the corresponding statement of this paper says is a matter of reading; the choices made are listed next. The formal statements were compared with the text in independent AI reviews of the statements, which did not repeat the build or the axiom check. These comparisons are distinct from kernel checking and do not constitute external peer review.
 
-\subsection{Interpretation of the formal statements}
+\subsection{Interpretation of the formal statements}\label{subsec:lean-reading}
 \begin{itemize}
 \item \emph{Groups and surfaces.} A Fuchsian group is a subgroup $\Gamma\le\mathrm{PGL}(2,\mathbb R)$ that acts properly discontinuously on $\Hb$ and consists of classes of matrices of positive determinant. $M$ is the orbit space with the measure induced from a fundamental domain; no manifold structure on $M$ is used.
 \item \emph{Operators.} $-\Delta$ on $L^2(\Hb)$ and on $L^2(M)$ is the Friedrichs extension from test functions, respectively from periodized test functions; $\Lambda$, $\ue^{\alpha\Lambda}$, $\cU(t)$ and $\Delta^N$ are functions of it by the spectral theorem.
@@ -27,7 +27,9 @@ A kernel check certifies the proofs of the formal statements. Whether a formal s
 \item \emph{Conclusions.} Each $L^2$ theorem asserts that the two orbit sums converge absolutely almost everywhere and define elements of $L^2(M)$, and then bounds $\norm{\Delta^N[\,\cdot\,]}$, an element of $[0,\infty]$ that equals $\infty$ outside the domain of $\Delta^N$. The pointwise declarations assert that the error lies in the domain of $\Delta^N$ and that $\Delta^NE$ has a continuous representative at every point of $M$.
 \item \emph{The cap on $\delta$ in the optimal-truncation corollaries.} For Corollary~\ref{pc:cor15} the condition $\delta\le\kappa^{1/2}/\max(1,C)$ is part of the formal statement. For the reversed-weight and power-weight norms in Corollary~\ref{cor:dd15} the formal statements assert that some $C$ and $\delta>0$ exist for which the bound holds on the window; their proofs take $\delta\le\kappa^{1/2}/\max(1,C)$, and $\delta$ may always be decreased, since this only shortens the time window.
 \item \emph{Ranges and grouped statements.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$. Theorems~\ref{thm:dd14} and~\ref{thm:dd-appx} and their corollaries keep the range $\alpha_0<\pi/4$ of
-the formal statements; their paper proofs use only $\alpha_0\le1$.
+the formal statements; their paper proofs use only $\alpha_0\le1$, since all estimates of Section~\ref{sec:analytic} are
+applied with $\tau_0=1$. The second statement of Theorem~\ref{thm:dd-appx}, the uniformity in $\Gamma$, is
+\lean{thm14R_unifX}, which is stated for $C^\infty$ amplitudes and $0<\alpha\le1$.
 Theorem~\ref{pc:main} states the bounded-radius result \lean{pcmain_all}; its proof treats $\alpha\le\tfrac12$, the range of
 \lean{pcmain_half}, and $\tfrac12<\alpha\le A$ separately, both through Proposition~\ref{pc:core}, which is \lean{dd_core_pc} with
 \lean{SurfW.surf_D4}. The original-norm corollaries likewise use the declarations with suffix \lean{all}.
@@ -39,7 +41,7 @@ its inequality is one in $[0,\infty]$ with $0\cdot\infty=0$.
 
 \subsection{Proposition~\texorpdfstring{\ref{prop:g5}}{1.6} and the counterexample}\label{rem:g5-lean}
 Proposition~\ref{prop:g5} is \lean{propG5}. On the trivial group the periodization is an isometry, and the error is read in
-$L^2(\Hb/\{\mathrm{id}\})=L^2(\Hb)$. The formal statement takes $b=\infty$, an amplitude $a$ with $L^2$ class $A\ne0$ all of whose
+$L^2(\{\mathrm{id}\}\backslash\Hb)=L^2(\Hb)$. The formal statement takes $b=\infty$, an amplitude $a$ with $L^2$ class $A\ne0$ all of whose
 words lie in $L^2(\Hb)$, and $L:=Y^2-Y$. It asserts $\norm A\le4\norm{LA}$, and, for every $\tau>0$, a constant $C$ with
 $\bigl|\norm{u^{(0)}(t)-\cU(t)(a\ue^{i\varphi/\hbar})}-\tfrac\tau2\sqrt\hbar\,\norm{LA}\bigr|\le C\hbar$ at $t=\tau\hbar^{-1/2}$, for every $\hbar>0$.
 Its proof follows the proof in Section~\ref{subsec:g5proof}. It uses the Dyson expansion on the trivial quotient
@@ -78,10 +80,9 @@ which is itself not proved formally.
 The example-amplitude results, Lemmas~\ref{lem:gutzmer} and~\ref{lem:ex} and Corollary~\ref{cor:localized},
 are also outside the formalization and are not used by the approximation theorems.
 
-\begin{table}[ht]
-\centering\small
-\caption{Formal counterparts and the principal exceptions.}\label{tab:lean}
-\begin{tabular}{@{}p{0.36\linewidth}p{0.60\linewidth}@{}}
+{\small
+\begin{longtable}{@{}p{0.36\linewidth}p{0.60\linewidth}@{}}
+\caption{Formal counterparts and the principal exceptions.}\label{tab:lean}\\
 \hline
 Statement & Lean theorem or scope\\
 \hline
@@ -93,7 +94,7 @@ Corollary~\ref{pc:cor15} & \lean{pccor15_all}\\
 Corollary~\ref{pc:cor16} & \lean{pccor16_all}; bounded geometry \lean{pccor16bg_all}\\
 Proposition~\ref{prop:g5} & \lean{propG5}; negation of Schubert's bound \lean{printedThm13_false}\\
 Theorem~\ref{ev:mod}(i),(ii) & \lean{evmod}\\
-Theorem~\ref{thm:dd-appx} & \lean{thm14R_rep}\\
+Theorem~\ref{thm:dd-appx} & \lean{thm14R_rep}; uniformity in $\Gamma$: \lean{thm14R_unifX}\\
 Theorem~\ref{os:cw} & \lean{cw_abstract}\\
 Lemma~\ref{os:transfer} & \lean{transfer}\\
 Lemma~\ref{pc:g43} & \lean{sobolev_M_mult}\\
@@ -109,5 +110,4 @@ Theorem~\ref{ev:mod}(iii) & Cited horocycle equidistribution theorem\\
 Corollary~\ref{cor:localized} & Paper deduction from Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}\\
 Corollary~\ref{cor:meanJ} & Paper deduction from Proposition~\ref{prop:mean} and Theorem~\ref{thm:dd14}\\
 \hline
-\end{tabular}
-\end{table}
+\end{longtable}}

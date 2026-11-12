@@ -19,7 +19,9 @@ $\langle\tilde u,\Delta\phi\rangle_{\Hb}=\langle u,(\Delta\phi)_\Gamma\rangle_M=
 \emph{Step 2 (counting).} For a $\Gamma$-invariant $\tilde h$ and a fundamental domain $F$,
 $\int_{B(\tilde z,1)}|\tilde h|^2d\nu=\int_Fn(w)|h(w)|^2d\nu(w)$, where $n(w):=\#\{\gamma:\gamma w\in B(\tilde z,1)\}$. If $\gamma_0w$ and $\gamma w$ both lie in
 $B(\tilde z,1)$, then $d(\tilde z,\gamma\gamma_0^{-1}\tilde z)<2$; hence $n(w)\le m(z)$ and $\int_{B(\tilde z,1)}|\tilde h|^2\le m(z)\norm{h}^2_{L^2(M)}$. In
-particular $\tilde u$ and $\tilde f$ are locally square integrable. The number $m(z)$ is finite because $\Gamma$ acts properly discontinuously.
+particular $\tilde u$ and $\tilde f$ are locally square integrable. The number $m(z)$ is finite because $\Gamma$ acts properly
+discontinuously, and it does not depend on the lift: for another lift $\gamma_0\tilde z$, the map $\gamma\mapsto\gamma_0^{-1}\gamma\gamma_0$ is a
+bijection of $\Gamma$, and $d(\gamma_0\tilde z,\gamma\gamma_0\tilde z)=d(\tilde z,\gamma_0^{-1}\gamma\gamma_0\tilde z)$.
 
 \emph{Step 3 (interior regularity).} Let $v\in L^2(B(\tilde z,1))$ with $\Delta v\in L^2(B(\tilde z,1))$ in the sense of distributions. By interior
 elliptic regularity, uniform in $\tilde z$ by the homogeneity of $\Hb$, $v\in H^2(B(\tilde z,\tfrac12))$ with
@@ -49,7 +51,7 @@ The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient wit
 \norm{u_S}_{L^1}\asymp\norm{\Delta^su_S}_{L^1}\asymp\ue^{-S},\qquad
 \norm{u_S}_{L^2}\asymp\norm{\Delta^su_S}_{L^2}\asymp\ue^{-S/2},
 \]
-whereas $\sup|u_S|$ is independent of $S$. Thus both the global $L^2$-to-pointwise Sobolev bound and the $L^1$-to-$L^2$ bound used in \cite{S} fail on cusps. Theorem~\ref{cl:main} shows that the same loss occurs for the approximation error itself.
+whereas $\sup|u_S|$ is independent of $S$. Thus both the global $L^2$-to-pointwise Sobolev bound and the $L^1$-to-$L^2$ bound used in \cite{S} fail on cusps.
 \end{remark}
 
 \subsection{Truncation and pointwise consequences}\label{subsec:pc-cor}\label{subsec:dd-cor}
@@ -58,7 +60,7 @@ This is Theorem~\ref{pc:main} with $K=N=0$.
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{pc:cor15}]
-At $t=0$ the error vanishes. Let $t>0$. Theorem~\ref{pc:main} bounds the error by
+For $t=0$ the range of $K$ is empty, so let $t>0$. Theorem~\ref{pc:main} bounds the error by
 \[
   C^NN^{2N}(\alpha\hbar)^{-2N}q^{K+1}K!\,\pcNorm a,
   \qquad q=\frac{C\hbar t}{\alpha^2}.

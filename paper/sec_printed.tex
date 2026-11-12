@@ -1,10 +1,10 @@
 \section{Approximation for the original amplitude norm}\label{sec:dd}\label{sec:printed}
 The original norm imposes spatial decay on the data before Poisson smoothing. Proposition~\ref{pc:classes}
 explains why the power-weight argument cannot be applied directly. The proof of Theorem~\ref{pc:main}
-then has three stages: factor the amplitude through critically weighted data
-(Sections~\ref{app:o1st} and~\ref{subsec:pc-data}); control derivatives, propagation and the defect at that weight
-(Section~\ref{subsec:pc-transfer}); and apply quotient Duhamel and integrate the exact remainder, for data in this form
-(Proposition~\ref{pc:core}, Section~\ref{subsec:pc-proof}). Section~\ref{subsec:pc-all} assembles the proof for every bounded range of
+then has three stages: factor the amplitude through critically weighted data and bound its derivatives at a power
+weight (Sections~\ref{app:o1st} and~\ref{subsec:pc-data}); transfer the derivative, propagation and defect bounds to the
+critical weight (Section~\ref{subsec:pc-transfer}); and apply quotient Duhamel and integrate the exact remainder, for data in
+this form (Proposition~\ref{pc:core}, Section~\ref{subsec:pc-proof}). Section~\ref{subsec:pc-all} assembles the proof for every bounded range of
 radii. Table~\ref{tab:compare} compares this proof with the power-weight proof of Section~\ref{sec:companion}.
 
 \subsection{The original-norm class}\label{subsec:pc-weights}
@@ -26,7 +26,7 @@ For $f=\ue^{\alpha\Lambda}a$ and $\beta>\tfrac12$, the original norm gives $\|\o
 $\omega\le C_\beta\ue^{\beta\langle d\rangle}$.
 
 \begin{proposition}[the two amplitude classes and dependence on the radius]\label{pc:classes}
-For $\beta>\tfrac12$, the original and reversed-weight norms are not equivalent. For every $0<\alpha<\pi/2$ there are amplitudes of finite original norm at radius $\alpha$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and infinite original norm at every smaller radius.
+For $\beta>\tfrac12$, the original and reversed-weight norms are not equivalent. For every $0<\alpha<\pi/2$ there are amplitudes of finite original norm at radius $\alpha$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and infinite original norm, with the same $\beta$, at every smaller radius.
 \end{proposition}
 \begin{proof}
 Let $\beta>\tfrac12$ and $0\le\alpha'<\alpha<\pi/2$, and put $h:=\ue^{-\beta\langle d\rangle}\mathbf 1_{B(x_0,1)}$ and $a:=\ue^{-\alpha\Lambda}h$, so that
@@ -77,16 +77,14 @@ and put $a:=\ue^{-\sigma\Lambda_m}h$. Then for $0\le t\le\delta'(\sigma/\hbar)^{
 \]
 \end{proposition}
 
-The condition $m>3/\sqrt2$ is the hypothesis $2(\gamma+\tfrac12)^2<m^2$ of Lemma~\ref{os:words} at $\gamma=1$, which
+The condition $m>3/\sqrt2$ is the hypothesis $2(\lambda+\tfrac12)^2<m^2$ of Lemma~\ref{os:words} at $\lambda=1$, which
 Step~1(a) of the proof uses.
 
 \begin{proof}
-The proof follows the common structure described at the beginning of Section~\ref{sec:companion}. Step~1 below supplies,
-at the weight $\varpi$, the word, flow and defect bounds that the proof of Theorem~\ref{thm:dd-appx} obtains at power weights,
-with the shell transfer of Lemma~\ref{os:transfer} in place of H\"older's inequality; Step~2 contains the mollified part and
-the defect part, for data of bounded support; Step~3 removes that restriction by density, a step without counterpart in
-Section~\ref{sec:companion}. We use the estimates of Section~\ref{sec:analytic} and Sections~\ref{app:o1st}--\ref{subsec:pc-transfer}
-and the remainder of Section~\ref{subsec:dd-id}; all lemmas are used with $\tau_0=1$. In this proof $C$ denotes constants that depend only on
+The proof has the structure of Section~\ref{sec:companion} (Table~\ref{tab:compare}). Step~1 supplies the word, flow and
+defect bounds at the weight $\varpi$, with the shell transfer of Lemma~\ref{os:transfer} in place of H\"older's inequality;
+Step~2 bounds the mollified part and the defect part for data of bounded support; Step~3 removes that restriction by
+density. All lemmas are used with $\tau_0=1$. In this proof $C$ denotes constants that depend only on
 $c$, $C_{\mathrm{sh}}$, $C_{\mathrm{gr}}$, $m$, $\kappa'$ and $P$.
 
 \medskip\noindent\emph{Step 0 (parameters).} By Lemma~\ref{os:words}, $\norm{\ue^{\sigma\Lambda}a}\le\norm h$, so $a$ is $C^\infty$ by
@@ -109,8 +107,8 @@ there and at the weight $\pcXzero$ on functions supported in one shell. Lemma~\r
 Write $C_{\mathrm{tr}}$ for its constant for $c$ and $C_{\mathrm{sh}}$; it is independent of $K,N,\hbar$ and the integration variables.
 
 \smallskip\noindent(a) \emph{Words.} For a word $Z_S$ of length $n$ let $T_wh:=Z_SB'_{\mathbf s}\mathsf Eh$. Expand $B'_{\mathbf s}$ as in the proof of
-Lemma~\ref{lem:wb}. Each term is a coefficient times a word of length at most $L$ applied to $\mathsf Eh$, and by Lemma~\ref{os:words}(b), with $\gamma=1$
-(so $2(\gamma+\tfrac12)^2<m^2$), it is bounded at the weight $\pcXzero$ by $2(L+1)L!\,(QC_6/\sigma)^L\norm{\pcXzero h}$. This is the bound of Lemma~\ref{lem:sc}
+Lemma~\ref{lem:wb}. Each term is a coefficient times a word of length at most $L$ applied to $\mathsf Eh$, and by Lemma~\ref{os:words}(b), with $\lambda=1$
+(so $2(\lambda+\tfrac12)^2<m^2$), it is bounded at the weight $\pcXzero$ by $2(L+1)L!\,(QC_6/\sigma)^L\norm{\pcXzero h}$. This is the bound of Lemma~\ref{lem:sc}
 with $(2,QC_6,\sigma)$ in place of $(B_\beta,C_3,\alpha)$, so the count in the proof of Lemma~\ref{lem:wb} gives, for a suitable $C_5\ge C_4$,
 \[
   \norm{\pcXzero Z_SB'_{\mathbf s}\mathsf Eu}\le F_n\norm{\pcXzero u},\qquad\norm{Z_SB'_{\mathbf s}\mathsf Eu}\le F_n\norm u ;
@@ -138,7 +136,7 @@ $t\le\tfrac13c_A\varepsilon/\hbar$), and by Lemma~\ref{lem:unw} with $r=r_2$, wh
   \norm{T_dh}\le M_0\norm h,\qquad M_0:=C\sigma^{-4}\ue^{-\xi/8}\,C_4^{N+K+1}(2N)!\,(2K+2)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}.
 \]
 \emph{Weighted bound.} Let $u$ be supported in one shell and assume $\hbar s_1\le\varepsilon$. By (a), $\pcXzero ZB'_{\mathbf s}\mathsf Eu\in L^2$ for $Z\in\{1,X,Y,X^2,Y^2\}$, and
-Lemma~\ref{lem:path}(b) with $\gamma=1$ and $b'=B'_{\mathbf s}\mathsf Eu$ gives
+Lemma~\ref{lem:path}(b) with $\lambda=1$ and $b'=B'_{\mathbf s}\mathsf Eu$ gives
 \[
   \norm{\pcXzero T_du}\le M_1\norm{\pcXzero u},\qquad M_1:=C\varepsilon^{-3}F_2 .
 \]
@@ -150,7 +148,7 @@ Lemma~\ref{os:transfer} requires $M_0\le M_1$; we apply it with $M_0+M_1$ in pla
 \medskip\noindent\emph{Step 2 (Duhamel on $M$ for data of bounded support).} Let $h\in L^2$ be supported in $\{\tilde\psi\le R_0\}$ for some $R_0$, and let
 $b'_h:=B'_{\mathbf s}\mathsf Eh$, $g(t'):=V_\varepsilon(t',s_1)b'_h$ for $0\le t'\le s_1$, $w_h:=g(0)$ and $\mathfrak d_h(t'):=T_dh$. Then $\pcXzero h\in L^2$ and, by (a), all
 words applied to $b'_h$ lie in $L^2(\pcXzero^2d\nu)$. The weight $\pcXzero^{3/4}$ satisfies (W1) and (W2) (Lemma~\ref{lem:t2}), and by
-Lemma~\ref{lem:path}(c) with $\gamma=\tfrac34$ the path $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for it. As in the power-weight proof of Theorem~\ref{thm:dd-appx},
+Lemma~\ref{lem:path}(c) with $\lambda=\tfrac34$ the path $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for it. As in the power-weight proof of Theorem~\ref{thm:dd-appx},
 \[
   \mathcal V_{s_1}b'_h=\mathcal V_0w_h-\tfrac{i\hbar}2\int_0^{s_1}\mathcal V_{t'}\mathfrak d_h(t')\,dt' .
 \]

@@ -31,7 +31,8 @@ cover both amplitude classes. Theorem~\ref{cl:necessary} is deduced from Theorem
 \begin{remark}[comparison with Schubert's pointwise bound]\label{cl:reading}
 \cite[Corollary~1.6]{S}, that is \cite[(1.34)]{S} at $N=K=0$, states the bound $C(\alpha\hbar)^{-8}\norm a_{\alpha,\beta}$ for every
 Fuchsian $\Gamma$ and every $b$, with $C$ independent of $\hbar$ and $z$ and without a cusp factor. At $t=20\log(1/\hbar)$ the lower
-bound of Theorem~\ref{cl:main}(ii) exceeds this bound for small $\hbar$; this is the case $p=8$ of Theorem~\ref{cl:necessary}(i).
+bound of Theorem~\ref{cl:main}(ii) exceeds this bound for small $\hbar$; this is the case $p=8$ of Theorem~\ref{cl:necessary}(i),
+where $t_8(\hbar)=20\log(1/\hbar)$.
 \end{remark}
 
 
@@ -43,6 +44,12 @@ c\,\hbar t\le\frac{|E_0(t)(z)|}{|u^{(0)}(t)_\Gamma(z)|}\le C\,\hbar t,\qquad z=x
 \end{proposition}
 This is the relative-accuracy statement of Section~\ref{subsec:corrections}. It concerns this amplitude on this window only;
 it is not a general relative-error theorem. Its proof is in Section~\ref{subsec:cl-relative}.
+
+\medskip\noindent\emph{The mechanism.} The error contains the explicit first Dyson term
+$\ue^{-it/(2\hbar)}(S(t)\,\tfrac{i\hbar}2P_1(t)a)\ue^{i\varphi/\hbar}$, periodized. At height $H=\ue^t$ in the cusp the sum
+over $\Gamma$ concentrates, by stationary phase, at the tops $n/c+i/(c^2H)$ of the horocycles $\gamma(\mathbb R+iH)$, whose
+images under $\delta_t:(x,y)\mapsto(x,\ue^ty)$ are the points $n/c+i/c^2$ ($c\ge1$, $\gcd(n,c)=1$), and its size is
+$\ue^{t/2}\sqrt{\pi\hbar}\cdot\hbar t$; the remainder is controlled by the $L^2$ theorem.
 
 \medskip\noindent\emph{Plan of the proof.} The proof starts from the decomposition
 \[
@@ -58,23 +65,21 @@ coefficient of $T_1$ is bounded away from zero. The approximation theorem and th
 Sobolev estimate of Lemma~\ref{cl:ssob} control $E_2$.
 The auxiliary kernel and derivative bounds are stated in Lemmas~\ref{cl:kernel} and~\ref{cl:aux};
 their proofs are collected in Appendix~\ref{app:cusp-aux}.
-
-The mechanism is the following. The error contains the explicit first Dyson term $\ue^{-it/(2\hbar)}(S(t)\,\tfrac{i\hbar}2P_1(t)a)\ue^{i\varphi/\hbar}$,
-periodized. At height $H=\ue^t$ in the cusp the sum over $\Gamma$ concentrates, by stationary phase, at the tops $n/c+i/(c^2H)$ of the horocycles
-$\gamma(\mathbb R+iH)$, whose images under $\delta_t:(x,y)\mapsto(x,\ue^ty)$ are the points $n/c+i/c^2$ ($c\ge1$, $\gcd(n,c)=1$),
-and its size is $\ue^{t/2}\sqrt{\pi\hbar}\cdot\hbar t$; the remainder is controlled by the $L^2$ theorem.
 We apply Theorems~\ref{thm:dd14} and~\ref{pc:main} at fixed radius with their parameter $\kappa=\alpha^3$,
 so their condition $\alpha^3\ge\kappa\hbar$ holds for every $\hbar\le1$.
 
 \subsection{Local control and cusp asymptotics}
-\begin{lemma}[semiclassical local Sobolev inequality]\label{cl:ssob}
+\begin{lemma}[scaled local Sobolev inequality]\label{cl:ssob}
 \begin{itemize}
-\item[\textup{(a)}] There is an absolute constant $C$ such that for every Fuchsian group $\Gamma$, $0<r\le1$, $z\in M$ and $u\in H^4(M)$,
+\item[\textup{(a)}] There is an absolute constant $C$ such that for every Fuchsian group $\Gamma$, $0<r\le1$, $z\in M$ and
+$u\in\operatorname{Dom}(\Delta_M^2)$, taken in its continuous representative (Lemma~\ref{pc:g43}),
 $|u(z)|\le C\,m(z)^{1/2}\bigl(r^{-1}\norm u_{L^2(M)}+r^3\norm{\Delta^2u}_{L^2(M)}\bigr)$.
 \item[\textup{(b)}] For $\Gamma=\mathrm{PSL}(2,\mathbb Z)$ and $z=x+iH$ with $H\ge4$, $m(z)\le5H$ (compare Remark~\ref{pc:remcusp}).
 \end{itemize}
 \end{lemma}
 \begin{proof}
+Steps~1 and~2 of the proof of Lemma~\ref{pc:g43}, applied to $u$ and to $\Delta_Mu$, show that the lift $\tilde u$ and
+$\Delta^2\tilde u$ (in the sense of distributions) are locally square integrable, with the counting bound of Step~2.
 By homogeneity take $\tilde z=i$. In normal coordinates $\xi$ at $i$ put $v(\xi)=\tilde u(\exp_i(r\xi))$ for $|\xi|<1$. Then
 $r^4(\Delta^2\tilde u)(\exp_i(r\xi))=L_r^2v(\xi)$, where $L_r$ is $r^2\Delta$ in these coordinates: a uniformly elliptic operator whose coefficients are
 bounded in $C^\infty$ uniformly for $0<r\le1$. Interior regularity for $L_r^2$ and $H^4\subset L^\infty$ give
@@ -223,7 +228,7 @@ Summing over $(n,c)$, with $\sum_{(n,c)}\vartheta_{n,c}<\infty$, and adding the 
 \subsection{Kernel bounds and amplitude construction}
 \begin{lemma}[the Poisson kernel off the diagonal]\label{cl:kernel}
 Fix $r_0\in(0,1]$. For $0<\alpha\le\alpha_0<\pi/2$ the kernel $k_\alpha(r)$ of $\ue^{-\alpha\Lambda}$ extends holomorphically to
-$\{a+i\theta:a>3r_0/4,\ |\theta|<r_0/4\}$ with $|\tilde k_\alpha(a+i\theta)|\le C\,\alpha\,\ue^{-a}(1+a)^{-3/2}$. Hence
+$\{r+i\theta:r>3r_0/4,\ |\theta|<r_0/4\}$ with $|\tilde k_\alpha(r+i\theta)|\le C\,\alpha\,\ue^{-r}(1+r)^{-3/2}$. Hence
 $|\partial_r^jk_\alpha(r)|\le C_j\,\alpha\,\ue^{-r}(1+r)^{-3/2}$ for $r\ge r_0$. The constants $C$ and $C_j$ depend only on $r_0$
 and $\alpha_0$; in particular the bounds are uniform in $\alpha\le\alpha_0$.
 \end{lemma}
@@ -301,14 +306,14 @@ $X_0$ is bounded by $C_SX_0$, and $Z_S\ue^{-\mu X_0}$ is $\ue^{-\mu X_0}$ times 
 \end{equation}
 with $C_S$ independent of $\mu$; this is the word bound.
 
-(ii) The norm is the definition: $\ue^{\alpha\Lambda}a=h:=\ue^{-\mu X_0}$. Fix a radial $\psi\in C_c^\infty(B(i,\tfrac14))$ with $\psi=1$ on $B(i,\tfrac18)$, and for
-$w\in\Hb$ put $\psi_w:=\psi\circ p_w^{-1}$ with $p_w$ the affine map taking $i$ to $w$. Then $\psi_w=1$ on $B(w,\tfrac18)$,
-$\operatorname{supp}\psi_w\subset B(w,\tfrac14)$, and $|Z_S\psi_w|\le C_S$ uniformly in $w$. Fix $w$ and split
+(ii) The norm is the definition: $\ue^{\alpha\Lambda}a=h:=\ue^{-\mu X_0}$. Fix a radial $\eta\in C_c^\infty(B(i,\tfrac14))$ with $\eta=1$ on $B(i,\tfrac18)$, and for
+$w\in\Hb$ put $\eta_w:=\eta\circ p_w^{-1}$ with $p_w$ the affine map taking $i$ to $w$. Then $\eta_w=1$ on $B(w,\tfrac18)$,
+$\operatorname{supp}\eta_w\subset B(w,\tfrac14)$, and $|Z_S\eta_w|\le C_S$ uniformly in $w$. Fix $w$ and split
 \[
-a=a^{\rm n}+a^{\rm f},\qquad a^{\rm n}:=\ue^{-\alpha\Lambda}(h\psi_w),\qquad a^{\rm f}:=\ue^{-\alpha\Lambda}(h(1-\psi_w)).
+a=a^{\rm n}+a^{\rm f},\qquad a^{\rm n}:=\ue^{-\alpha\Lambda}(h\eta_w),\qquad a^{\rm f}:=\ue^{-\alpha\Lambda}(h(1-\eta_w)).
 \]
-\emph{Far part.} $a^{\rm f}(\tilde w)=\int k_\alpha(d(\tilde w,w'))(1-\psi_w)(w')h(w')\,d\nu(w')$. For $\tilde w\in B(w,\tfrac1{16})$ and $w'$ in the support of
-$1-\psi_w$ we have $d(\tilde w,w')\ge\tfrac1{16}$, so by Lemma~\ref{cl:aux}(d) with $r_0=\tfrac1{16}$ one may differentiate under the integral, and at $\tilde w=w$, by Lemma~\ref{cl:aux}(c),
+\emph{Far part.} $a^{\rm f}(\tilde w)=\int k_\alpha(d(\tilde w,w'))(1-\eta_w)(w')h(w')\,d\nu(w')$. For $\tilde w\in B(w,\tfrac1{16})$ and $w'$ in the support of
+$1-\eta_w$ we have $d(\tilde w,w')\ge\tfrac1{16}$, so by Lemma~\ref{cl:aux}(d) with $r_0=\tfrac1{16}$ one may differentiate under the integral, and at $\tilde w=w$, by Lemma~\ref{cl:aux}(c),
 \begin{multline*}
 |Z_Sa^{\rm f}(w)|\le C_S\alpha\int\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}h(w')\,d\nu(w')\\
 \le C_S\alpha\,\vartheta(w)\int\ue^{d(i,w')}(1+d(i,w'))^{3/2}\ue^{-\mu X_0(w')}d\nu(w')=C_{S,\mu}\alpha\,\vartheta(w).
@@ -316,7 +321,7 @@ $1-\psi_w$ we have $d(\tilde w,w')\ge\tfrac1{16}$, so by Lemma~\ref{cl:aux}(d) w
 \emph{Near part.} Put $k=\lceil|S|/2\rceil+1$. The operator $\ue^{-\alpha\Lambda}$ commutes with $\Delta$ and is a contraction, and $\Delta^j$ is a combination of words of length at most $2j$. So by Lemma~\ref{cl:aux}(a),
 the Leibniz rule and \eqref{cl:hwords},
 \[
-|Z_Sa^{\rm n}(w)|\le C_S\sum_{j\le k}\norm{\Delta^j(h\psi_w)}\le C_S(1+\mu)^{2k}\sup_{B(w,1/4)}X_0^{2k}\ue^{-\mu X_0} .
+|Z_Sa^{\rm n}(w)|\le C_S\sum_{j\le k}\norm{\Delta^j(h\eta_w)}\le C_S(1+\mu)^{2k}\sup_{B(w,1/4)}X_0^{2k}\ue^{-\mu X_0} .
 \]
 On $B(w,\tfrac14)$, $X_0\ge\cosh(\max(0,d(i,w)-\tfrac14))$, so the right side is at most
 \[
@@ -352,7 +357,7 @@ not depend on $\mu\ge1$ or on $\alpha\le\tfrac12$.
 \emph{The other points.} Let $P$ be the set of the points $n/c+i/c^2$ with $c\ge1$, $(n,c)=1$ and $(n,c)\ne(0,1)$. Two distinct points
 $n/c+i/c^2$ and $n'/c'+i/c'^2$ have $\cosh d=1+\tfrac12\bigl[(nc'-n'c)^2+(c'/c-c/c')^2\bigr]\ge\tfrac32$, since $nc'=n'c$ forces
 $(n,c)=(n',c')$ for coprime pairs with $c,c'\ge1$. So $P\cup\{i\}$ is $0.96$-separated; in particular $d(i,w)\ge0.96$ for $w\in P$. Split
-$h=h_1+h_2$ with $h_1=h\psi^{(1)}$, where $\psi^{(1)}=1$ on $B(i,0.44)$ and $\operatorname{supp}\psi^{(1)}\subset B(i,0.45)$, so that $h_2$ vanishes on $B(i,0.44)$.
+$h=h_1+h_2$ with $h_1=h\eta^{(1)}$, where $\eta^{(1)}=1$ on $B(i,0.44)$ and $\operatorname{supp}\eta^{(1)}\subset B(i,0.45)$, so that $h_2$ vanishes on $B(i,0.44)$.
 
 For $h_1$ and $w\in P$: the support of $h_1$ has distance at least $0.51$ from $w$, so by Lemma~\ref{cl:aux}(d) with $r_0=\tfrac12$ and Lemma~\ref{cl:aux}(c),
 \[
@@ -360,12 +365,12 @@ For $h_1$ and $w\in P$: the support of $h_1$ has distance at least $0.51$ from $
 \]
 and $\sum_{w\in P}\vartheta(w)\le C$ by Lemma~\ref{cl:aux}(b). So $h_1$ contributes at most $C\alpha\mu^{-1}\ue^{-\mu}$ to the sum over $P$.
 
-For $h_2$ and $w\in P$ use the split in the proof of Lemma~\ref{cl:amp}(ii), $h_2=h_2\psi_w+h_2(1-\psi_w)$. The far parts are bounded there by
+For $h_2$ and $w\in P$ use the split in the proof of Lemma~\ref{cl:amp}(ii), $h_2=h_2\eta_w+h_2(1-\eta_w)$. The far parts are bounded there by
 $C\alpha\int\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}|h_2(w')|\,d\nu(w')$; summing over $w\in P$ under the integral with Lemma~\ref{cl:aux}(b) gives at most
 $C\alpha\int|h_2|\,d\nu\le C\alpha\mu^{-1}\ue^{-\mu\cosh0.44}$. For the near parts, $B(w,\tfrac14)$ does not meet $B(i,0.45)$, so $h_2=h$ there, and
 by Lemma~\ref{cl:aux}(a) with $k=2$ and \eqref{cl:hwords}, as in the proof of Lemma~\ref{cl:amp}(ii),
 \[
-|(Y^2-Y)\ue^{-\alpha\Lambda}(h_2\psi_w)(w)|\le C(1+\mu)^4\cosh^4(d(i,w)+\tfrac14)\,\ue^{-\mu\cosh(d(i,w)-1/4)} .
+|(Y^2-Y)\ue^{-\alpha\Lambda}(h_2\eta_w)(w)|\le C(1+\mu)^4\cosh^4(d(i,w)+\tfrac14)\,\ue^{-\mu\cosh(d(i,w)-1/4)} .
 \]
 Since $\cosh(d(i,w)-\tfrac14)\ge\cosh0.71>\cosh0.44$ and $\mu\ge1$, the right side is at most
 $C\mu^4\ue^{-\mu\cosh0.44}\cosh^4(d(i,w)+\tfrac14)\,\ue^{-(\cosh(d(i,w)-1/4)-\cosh0.44)}$, and the sum of the last two factors over $w\in P$ is finite
@@ -401,9 +406,9 @@ and Lemma~\ref{cl:ssob}(b) gives $m(z)\le5\ue^t$.
 \begin{proof}[Proof of Theorem~\ref{cl:necessary}]
 Take $a$ and $\alpha$ as in case (i), respectively (ii), of Theorem~\ref{cl:main}, and let $\hbar_0,c_*,t_*,\delta$ be its constants.
 Every $z\in M$ has $m(z)\ge1$, since $\gamma=\mathrm{id}$ is counted.
-(i) Let $p\ge0$ and $t:=(2p+4)\log(1/\hbar)$. For small $\hbar$ this $t$ lies in the range of Theorem~\ref{cl:main} and below
-$\hbar^{-1/5}$, and at $z=x+i\ue^t$ that theorem gives $|E_0(t)(z)|\ge c_*\ue^{t/2}\hbar^{3/2}t=c_*\hbar^{-p-1/2}t$. A bound
-$C(\alpha\hbar)^{-p}\ampNorm a$ with $C$ independent of $\hbar$ is smaller for small $\hbar$.
+(i) Let $p\ge0$ and $t:=t_p(\hbar)=(2p+4)\log(1/\hbar)$. For small $\hbar$ this $t$ lies in the range of Theorem~\ref{cl:main},
+and at $z=x+i\ue^t$ that theorem gives $|E_0(t)(z)|\ge c_*\ue^{t/2}\hbar^{3/2}t=c_*\hbar^{-p-1/2}t$. A bound
+$C\hbar^{-p}\ampNorm a$ with $C$ independent of $\hbar$ is smaller for small $\hbar$.
 (ii) Let $\sigma<\tfrac12$, $p\ge0$ and $t:=\hbar^{-1/5}$, which lies in the range of Theorem~\ref{cl:main} for small $\hbar$. At
 $z=x+i\ue^t$ we have $m(z)^\sigma\le(5\ue^t)^{\max(\sigma,0)}$, so a bound $C\,m(z)^\sigma\hbar^{-p}\ampNorm a$ is at most
 $C'\ue^{\max(\sigma,0)t}\hbar^{-p}$, while $|E_0(t)(z)|\ge c_*\ue^{t/2}\hbar^{3/2}t$. The ratio of the lower to the upper bound is at least

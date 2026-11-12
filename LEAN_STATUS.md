@@ -34,7 +34,7 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 2.1 (`lem:count`) | P | elementary area count; its orbit case, used for Lemma 2.3 (`lem:p1`) and Proposition 5.9 (`os:p1`), is `exists_orbit_count` |
 | Lemma 2.3 (`lem:p1`) | L | `poincareSup_lt_top` |
 | Lemma 2.4 (`lem:t2`) | L | `lem_t2` |
-| Lemma 2.5 (`lem:lift`) | L | `allWords_of_exp`, `patch_smooth`, `glue_smooth`, `lift1` |
+| Lemma 2.5 (`lem:lift`) | L | `allWords_of_exp`, `patch_smooth`, `glue_smooth`, `lift1`, `lift1D` |
 | Lemma 2.6 (`lem:base`) | L | `exists_stab_smul_infty`, `initState_mul`, `approxSolB_mul`, `expLambda_iso`, `poincareSup_conj_move` |
 | Lemma 2.8 (`lem:surf-lap`) | L | `SurfW.surf_lap` |
 | Lemma 2.9 (`lem:surf-duh`) | L | `SurfW.surf_duhamel` |
@@ -67,7 +67,7 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Theorem 4.1 (`thm:dd-appx`) | L | `thm14R_rep` |
+| Theorem 4.1 (`thm:dd-appx`) | L | `thm14R_rep`; uniformity over groups (second statement): `thm14R_unifX`, stated for smooth amplitudes and radii up to 1 |
 
 ## Section 5 (`sec:printed`): original-norm approximation and critical weights
 

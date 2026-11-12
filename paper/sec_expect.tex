@@ -67,13 +67,14 @@ Since $2c'>1$, $\int_0^\infty y^{2\sigma}\min(1,y)\lambda(y)\,dy/y^2<\infty$ for
 \begin{equation}\label{ev:L1}
   \int_\Hb y^{\sigma}|a|\,d\nu\le\Bigl(\int_\Hb y^{2\sigma}\omega^{-2}\,d\nu\Bigr)^{1/2}\norm{\omega a}<\infty\qquad(0\le\sigma\le\tfrac12).
 \end{equation}
-In particular $a\in L^1(\Hb)$, and
+In particular $a\in L^1(\Hb)$, and the function $a_0$ of Section~\ref{subsec:applications},
 \begin{equation}\label{ev:a0}
-  a_0(y)=\int_{\mathbb R}a(x+iy)\,dx
+  a_0(y)=\int_{\mathbb R}a(x+iy)\,dx,
 \end{equation}
 is defined for almost every $y>0$. By Corollary~\ref{ev:perio} below, $\sum_{n}a(x+n,y)=a_0(y)$ for almost every $(x,y)$: the
 periodization of $a$ along the translations does not depend on $x$. So the periodized leading approximation
-$u^{(0)}(t)_\Gamma$ is a sum over $\Gamma_\infty\backslash\Gamma$ of a function of $\operatorname{Im}\gamma z$, and the proof below
+$u^{(0)}(t)_\Gamma$ is a sum over $\Gamma_\infty\backslash\Gamma$, where $\Gamma_\infty$ is the group of translations by integers, of a
+function of $\operatorname{Im}\gamma z$, and the proof below
 evaluates its zero Fourier mode by means of the scattering coefficient \eqref{ev:Phi}.
 
 \begin{remark}[heuristics]\label{ev:time}
@@ -89,7 +90,7 @@ behaviour; this is compatible with Brooks's result \cite{Bro22}, but the heurist
 contributing sheets. Third, for $r>0$ and a continuous choice of the argument, the scattering coefficient $\Phi$ of
 \eqref{ev:Phi} satisfies $-\tfrac{d}{dr}\arg\Phi(\tfrac12+ir)=2\log(r/\pi)+4\operatorname{Re}\tfrac{\zeta'}{\zeta}(1+2ir)+O(r^{-2})$. This is the
 time delay of a wave packet at $r=1/\hbar$, and its first term is twice the Ehrenfest time $\log(1/\hbar)$, up to a constant. The
-bound for $\zeta'/\zeta$ on the line $\operatorname{Re}s=1$ that this region gives \cite[Theorem~6.7]{MV07} is of the same order $\log r$
+bound for $\zeta'/\zeta$ on the line $\operatorname{Re}s=1$ that the classical zero-free region gives \cite[Theorem~6.7]{MV07} is of the same order $\log r$
 as that term, so this is an indication only: we do not prove a statement with the constant $2$, and we do not prove that the
 classical prediction holds before that time.
 \end{remark}
@@ -244,7 +245,7 @@ $\int_0^\infty\!\int_0^1\bigl(\sum_na(x+n,y)-a_0(y)\bigr)\Theta\,dx\,dy/y^2=0$ f
 
 
 \subsection{Scattering and the zero mode of the approximation}\label{subsec:ev-scattering}
-Write $\Gamma_\infty$ for the translations by integers and $N_c$ for the number of residues
+Recall that $\Gamma_\infty$ is the group of translations by integers, and write $N_c$ for the number of residues
 modulo $c$ that are prime to $c$. The scattering coefficient is the meromorphic function
 \begin{equation}\label{ev:Phi}
   \Phi(s):=\sqrt\pi\,\frac{\Gamma(s-\frac12)}{\Gamma(s)}\,\frac{\zeta(2s-1)}{\zeta(2s)}
@@ -453,10 +454,10 @@ Second, for $G\in L^2((H,\infty),dy/y^2)$ and a constant $c$,
 \begin{equation}\label{ev:proj}
   \int_H^\infty|G+c|^2\,\frac{dy}{y^2}\ge\int_H^\infty|G|^2\,\frac{dy}{y^2}-H\,\Bigl|\int_H^\infty G\,\frac{dy}{y^2}\Bigr|^2 :
 \end{equation}
-expand the square, use $\int_H^\infty dy/y^2=1/H$, and complete the square in $c$. Third, $|p+q|^2\ge(1-\theta)|p|^2-\theta^{-1}|q|^2$ for complex $p,q$ and
+expand the square, use $\int_H^\infty dy/y^2=1/H$, and complete the square in $c$. Third, $|p+p'|^2\ge(1-\theta)|p|^2-\theta^{-1}|p'|^2$ for complex $p,p'$ and
 $0<\theta<1$.
 
-Write $\mathcal E_K=C^{K+1}K!(\hbar t/\alpha^2)^{K+1}\pcNorm a$. For fixed $K$ this tends uniformly to zero on the approximation window. Let $H\ge1$, $0<\theta<1$ and $T(\hbar)+\log H\le t\le\delta(\alpha/\hbar)^{1/2}$. By \eqref{ev:c0}, the third fact with $q=f_t$, and \eqref{ev:proj} with $G=\mathcal O_{f_t}$ and
+Write $\mathcal E_K=C^{K+1}K!(\hbar t/\alpha^2)^{K+1}\pcNorm a$. For fixed $K$ this tends uniformly to zero on the approximation window. Let $H\ge1$, $0<\theta<1$ and $T(\hbar)+\log H\le t\le\delta(\alpha/\hbar)^{1/2}$. By \eqref{ev:c0}, the third fact with $p'=f_t$, and \eqref{ev:proj} with $G=\mathcal O_{f_t}$ and
 $c=\tfrac3\pi\hat f_t(1)$,
 \[
   \int_H^\infty|\mathcal F_0[v_t]|^2\frac{dy}{y^2}\ge(1-\theta)\Bigl(\int_H^\infty|\mathcal O_{f_t}|^2\frac{dy}{y^2}-H\Bigl|\int_H^\infty\mathcal O_{f_t}\frac{dy}{y^2}\Bigr|^2\Bigr)

@@ -1,16 +1,8 @@
 \section{Analytic and weighted propagation estimates}\label{sec:analytic}
-Proposition~\ref{prop:dd-id}(ii) reduces the approximation error to a simplex integral of
-$\|\mathcal V_{s_1}b'\|$, where $b'$ is a polynomial in $X,Y$ applied to the amplitude.
-The estimates in this section serve the two terms of the comparison of $\mathcal V_{s_1}b'$ with the mollified flow
-$V_\varepsilon$ made in the proofs of Section~\ref{sec:companion}: the term $\mathcal V_0V_\varepsilon(s_1)^*b'$, and a Duhamel
-integral of the mollifier defect $(\Delta(r)-\Delta_\varepsilon(r))V_\varepsilon(r,s_1)b'$, $0\le r\le s_1$.
-Weighted propagation (Proposition~\ref{prop:ws}) and periodization control the first term.
-For the second, analytic propagation (Proposition~\ref{prop:a0}) and the mollifier-defect
-estimate (Lemma~\ref{lem:unw}) give exponential smallness without a spatial weight;
-Lemma~\ref{lem:path} gives a weighted bound. Interpolation between these bounds compensates
-for the growth caused by periodization and transport. The derivative estimates of
-Sections~\ref{subsec:dd-fc}, \ref{app:m} and~\ref{subsec:dd-wb} control $b'$ with the required
-factorial dependence on the expansion and derivative orders.
+This section supplies the estimates for the comparison with the mollified flow outlined in Section~\ref{subsec:method}:
+weighted propagation (Proposition~\ref{prop:ws}) for the mollified part; analytic propagation (Proposition~\ref{prop:a0}),
+the mollifier defect (Lemma~\ref{lem:unw}) and the weighted bound of Lemma~\ref{lem:path} for the defect part; and the
+derivative estimates of Sections~\ref{subsec:dd-fc}, \ref{app:m} and~\ref{subsec:dd-wb} for the remainder amplitude $b'$.
 
 \medskip\noindent\textbf{Notation.}
 We use $X$, $Y$, $\Delta(s)$, $\Lambda$, $X_0$, $\tilde\psi$ and the power-weight norm $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}$
@@ -86,7 +78,8 @@ Take equally spaced radii $\alpha''=r_0<r_1<\cdots<r_m=\alpha$, and insert $\ue^
 Each factor $\ue^{r_{i-1}\Lambda}Z_i\ue^{-r_i\Lambda}$ is bounded by $C_1m/(\alpha-\alpha'')$ (Lemma~\ref{lem:fc}). The bound of Lemma~\ref{lem:fc} is proved on the spectral core of Appendix~\ref{app:fc-proof} and extends to the product by closure, since each $\ue^{r_i\Lambda}$ is closed. Finally $m^m\le\ue^m m!$. \qedhere
 \end{proof}
 
-Weights enter through the following three-dimensional space of functions. Let $\mathfrak A:=\operatorname{span}\{y,\;x,\;(x^2+1)/y\}$.
+For an index set $S=\{i_1<\dots<i_k\}$ and letters $Z_i\in\{X,Y\}$ we write $Z_S:=Z_{i_1}\cdots Z_{i_k}$ ($Z_\emptyset:=1$),
+a word of length $|S|$; every word has this form. Weights enter through the following three-dimensional space of functions. Let $\mathfrak A:=\operatorname{span}\{y,\;x,\;(x^2+1)/y\}$.
 \begin{itemize}
 \item $\mathfrak A$ contains $X_0=\tfrac12\bigl((x^2+1)/y+y\bigr)$.
 \item $\mathfrak A$ is invariant under $X$ and $Y$: $Xy=0$, $Xx=y$, $X((x^2+1)/y)=2x$; $Yy=y$, $Yx=0$, $Y((x^2+1)/y)=-(x^2+1)/y$.
@@ -98,7 +91,7 @@ Weights enter through the following three-dimensional space of functions. Let $\
 \begin{lemma}[Faà di Bruno bound]\label{lem:fdb}
 For $\beta\ge0$ and a word $Z_S$ of length $j$:
 \[
-|X_0^\beta Z_SX_0^{-\beta}|\le B_\beta\,j!\,\rho_*^{-j},\qquad \rho_*:=\tfrac14\log(3/2)
+X_0^\beta\,|Z_S(X_0^{-\beta})|\le B_\beta\,j!\,\rho_*^{-j},\qquad \rho_*:=\tfrac14\log(3/2)
 \]
 (any fixed value below $\tfrac12\log(3/2)$ works; $\rho_*$ does not depend on $\beta$), where $B_\beta$ depends only on $\beta$.
 \end{lemma}
@@ -111,7 +104,7 @@ Cauchy's estimate on $|z|=\rho<\log(3/2)$ gives the bound $C_{\beta,\rho}\,j!\,\
 \end{proof}
 
 \begin{lemma}[weighted Cauchy estimate for words]\label{lem:sc}
-For $\beta\ge0$, a word $Z_1\cdots Z_m$ and $0<\alpha\le\tau_0$, with $F:=X_0^\beta a$ and $\norm{\ue^{\alpha\Lambda}F}<\infty$:
+For $\beta\ge0$, a word $Z_1\cdots Z_m$ and $0<\alpha\le\tau_0<\pi/2$, with $F:=X_0^\beta a$ and $\norm{\ue^{\alpha\Lambda}F}<\infty$:
 \[
 \norm{X_0^\beta Z_1\cdots Z_m a}\le B_\beta(m+1)\,m!\,(C_3/\alpha)^m\,\norm{\ue^{\alpha\Lambda}X_0^\beta a},
 \qquad C_3:=\max(\ue C_1,\tau_0/\rho_*).
@@ -120,7 +113,7 @@ For $\beta\ge0$, a word $Z_1\cdots Z_m$ and $0<\alpha\le\tau_0$, with $F:=X_0^\b
 
 \begin{proof}
 By the Leibniz rule for words of derivations,
-\[X_0^\beta Z_1\cdots Z_m(X_0^{-\beta}F)=\sum_{S\subseteq[m]}(X_0^\beta Z_SX_0^{-\beta})\,(Z_{S^c}F)\]
+\[X_0^\beta Z_1\cdots Z_m(X_0^{-\beta}F)=\sum_{S\subseteq[m]}X_0^\beta\,Z_S(X_0^{-\beta})\cdot Z_{S^c}F\]
 pointwise. Bound each term by $B_\beta|S|!\rho_*^{-|S|}\norm{Z_{S^c}F}$, and the second factor by Lemma~\ref{lem:wc} with $\alpha''=0$: $\norm{Z_{S^c}F}\le(\ue C_1/\alpha)^{m-|S|}(m-|S|)!\,\norm{\ue^{\alpha\Lambda}F}$.
 Since $\sum_{|S|=j}j!(m-j)!=m!$, the sum is $\le B_\beta\,m!\sum_j\rho_*^{-j}(\ue C_1/\alpha)^{m-j}\le B_\beta(m+1)m!(C_3/\alpha)^m$. \qedhere
 \end{proof}
@@ -315,21 +308,21 @@ $D:=(-\Delta-\tfrac14)^{1/2}$, so that $\Lambda=(D^2+\tfrac14)^{1/2}$. Explicitl
 $(XX_0)^2+(YX_0)^2=X_0^2-1$.
 
 \medskip\noindent\textbf{Bounded weights.} A \emph{bounded weight} is a smooth function $W>0$ on $\Hb$ such that $Z_SW$ is bounded
-for every word $Z_S$ in $X,Y$, the empty word included. For $\rho,K\ge0$ let $\mathcal W(\rho,K)$ be the set of bounded weights
+for every word $Z_S$ in $X,Y$, the empty word included. For $\rho,\mathcal K\ge0$ let $\mathcal W(\rho,\mathcal K)$ be the set of bounded weights
 with, for $Z\in\{X,Y\}$,
 \[
-|ZW|\le\rho\,W,\qquad|Z^2W|\le K\,W,\qquad|\Delta W|\le K\,W,\qquad|Z^2(W^2)|\le K\,W^2 .
+|ZW|\le\rho\,W,\qquad|Z^2W|\le\mathcal K\,W,\qquad|\Delta W|\le\mathcal K\,W,\qquad|Z^2(W^2)|\le\mathcal K\,W^2 .
 \]
-For $\gamma\ge0$ and an integer $n\ge1$ put $W_{\gamma,n}:=(X_0^{-\gamma}+1/n)^{-1}$. Then $W_{\gamma,n}\le n$,
-$W_{\gamma,n}\uparrow X_0^\gamma$ as $n\to\infty$,
+For $\lambda\ge0$ and an integer $n\ge1$ put $W_{\lambda,n}:=(X_0^{-\lambda}+1/n)^{-1}$. Then $W_{\lambda,n}\le n$,
+$W_{\lambda,n}\uparrow X_0^\lambda$ as $n\to\infty$,
 \[
-(X\log W_{\gamma,n})^2+(Y\log W_{\gamma,n})^2\le\gamma^2,
+(X\log W_{\lambda,n})^2+(Y\log W_{\lambda,n})^2\le\lambda^2,
 \]
-and $W_{\gamma,n}\in\mathcal W(\gamma,K_\gamma)$ with a constant $K_\gamma$ depending only on $\gamma$ ($K_\gamma=8\gamma^2+7\gamma$ works).
-Indeed, with $\phi=X_0^{-\gamma}$ one has $(X\phi)^2+(Y\phi)^2\le\gamma^2\phi^2$ and, since $X^2X_0=y\le2X_0$ and $Y^2X_0=X_0$,
-$|Z^2\phi|\le(\gamma^2+3\gamma)\phi$; now differentiate $W_{\gamma,n}=(\phi+1/n)^{-1}$ and $W_{\gamma,n}^2$, and use $\phi\le\phi+1/n$.
-All words applied to $\phi$ are bounded (Lemma~\ref{lem:fdb}), hence so are all words applied to $W_{\gamma,n}$.
-A bound for all $W_{\gamma,n}$ with a constant independent of $n$ passes to the weight $X_0^\gamma$ by monotone convergence. The
+and $W_{\lambda,n}\in\mathcal W(\lambda,\mathcal K_\lambda)$ with a constant $\mathcal K_\lambda$ depending only on $\lambda$ ($\mathcal K_\lambda=8\lambda^2+7\lambda$ works).
+Indeed, with $\phi=X_0^{-\lambda}$ one has $(X\phi)^2+(Y\phi)^2\le\lambda^2\phi^2$ and, since $X^2X_0=y\le2X_0$ and $Y^2X_0=X_0$,
+$|Z^2\phi|\le(\lambda^2+3\lambda)\phi$; now differentiate $W_{\lambda,n}=(\phi+1/n)^{-1}$ and $W_{\lambda,n}^2$, and use $\phi\le\phi+1/n$.
+All words applied to $\phi$ are bounded (Lemma~\ref{lem:fdb}), hence so are all words applied to $W_{\lambda,n}$.
+A bound for all $W_{\lambda,n}$ with a constant independent of $n$ passes to the weight $X_0^\lambda$ by monotone convergence. The
 bounds below are used in this way.
 
 \begin{lemma}[wave energy at a bounded weight]\label{lem:wave}
@@ -369,9 +362,9 @@ $R\to\infty$, since $W$ is bounded.
 \end{proof}
 
 \begin{lemma}[commutator with the wave group]\label{lem:wcomm}
-Let $W\in\mathcal W(\rho,K)$. For $u,g$ in the range of a spectral projection $1_{[0,R]}(\Lambda)$, $R<\infty$, and $s\in\mathbb R$,
+Let $W\in\mathcal W(\rho,\mathcal K)$. For $u,g$ in the range of a spectral projection $1_{[0,R]}(\Lambda)$, $R<\infty$, and $s\in\mathbb R$,
 \[
-\bigl|\langle u,[\cos(s\Lambda),W^2]g\rangle\bigr|\le\bigl(8\rho|s|+(2K+2\rho)s^2\bigr)\ue^{4\rho|s|}\norm{Wu}\norm{Wg}.
+\bigl|\langle u,[\cos(s\Lambda),W^2]g\rangle\bigr|\le\bigl(8\rho|s|+(2\mathcal K+2\rho)s^2\bigr)\ue^{4\rho|s|}\norm{Wu}\norm{Wg}.
 \]
 \end{lemma}
 \begin{proof}
@@ -386,25 +379,25 @@ $[\Delta,h]f=(\Delta h)f+2(Xh)Xf+2(Yh)Yf$, and $[\Delta,h]^*=-[\Delta,h]$. With 
 \langle u,v(s)\rangle=-\int_0^s\Bigl(\bigl\langle(\Delta h)\,q(s-r),c(r)g\bigr\rangle+2\bigl\langle(Xh)Xq(s-r)+(Yh)Yq(s-r),c(r)g\bigr\rangle\Bigr)dr,
 \]
 in which no derivative falls on $c(r)g$. Now
-$|Xh|,|Yh|\le2\rho h$ and $|\Delta h|\le|X^2h|+|Y^2h|+|Yh|\le(2K+2\rho)h$. By Lemma~\ref{lem:wave}(a),
+$|Xh|,|Yh|\le2\rho h$ and $|\Delta h|\le|X^2h|+|Y^2h|+|Yh|\le(2\mathcal K+2\rho)h$. By Lemma~\ref{lem:wave}(a),
 $\norm{Wc(r)g}\le\ue^{2\rho|r|}\norm{Wg}$, $\norm{WXq(r)}+\norm{WYq(r)}\le2\ue^{2\rho|r|}\norm{Wu}$, and
 $\norm{Wq(r)}\le|r|\ue^{2\rho|r|}\norm{Wu}$ because $q(r)=\int_0^rc(r')u\,dr'$. So the integrand is at most
-$\bigl((2K+2\rho)|s-r|+8\rho\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$. Integrating over $r$ gives the bound
-$\bigl(8\rho|s|+(K+\rho)s^2\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$, which implies the claim.
+$\bigl((2\mathcal K+2\rho)|s-r|+8\rho\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$. Integrating over $r$ gives the bound
+$\bigl(8\rho|s|+(\mathcal K+\rho)s^2\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$, which implies the claim.
 \end{proof}
 
 By Fourier inversion, since $j_\varepsilon$ is even,
 \[
 J_\varepsilon=\frac1\pi\int_0^\infty h_\varepsilon(s)\cos(s\Lambda)\,ds,\qquad h_\varepsilon(s)=\varepsilon^{-1}\hat\chi(s/\varepsilon)\,\ue^{-s^2/2},
 \]
-where $h_\varepsilon$ is real, even and Schwartz. For $0<\varepsilon\le1$, $k,r\ge0$ and $C\ge0$,
+where $h_\varepsilon$ is real, even and Schwartz. For $0<\varepsilon\le1$, $k,r\ge0$ and $c\ge0$,
 \begin{equation}\label{eq:hmom}
-\int_0^\infty|h_\varepsilon^{(r)}(s)|\,\ue^{Cs}\,ds\le C_{r}\,\varepsilon^{-r},\qquad\int_0^\infty|h_\varepsilon(s)|\,s^k\,\ue^{Cs}\,ds\le C_{k}\,\varepsilon^{k},
+\int_0^\infty|h_\varepsilon^{(r)}(s)|\,\ue^{cs}\,ds\le C_{r}\,\varepsilon^{-r},\qquad\int_0^\infty|h_\varepsilon(s)|\,s^k\,\ue^{cs}\,ds\le C_{k}\,\varepsilon^{k},
 \end{equation}
-with constants depending on $C$ and $\chi$ (substitute $s=\varepsilon\sigma$ and use $\ue^{Cs-s^2/2}\le\ue^{C^2/2}$).
+with constants depending on $c$ and $\chi$ (substitute $s=\varepsilon\sigma$ and use $\ue^{cs-s^2/2}\le\ue^{c^2/2}$).
 
 \begin{lemma}[weighted mollifier]\label{lem:wmoll}
-Let $W\in\mathcal W(\rho,K)$ and $0<\varepsilon\le1$. There is $C_W=C_W(\rho,K)$ such that for all $u,v,g\in L^2(\Hb)$ and
+Let $W\in\mathcal W(\rho,\mathcal K)$ and $0<\varepsilon\le1$. There is $C_W=C_W(\rho,\mathcal K)$ such that for all $u,v,g\in L^2(\Hb)$ and
 $Z\in\{X,Y\}$:
 \begin{itemize}
 \item[(i)] $\norm{WJ_\varepsilon u}\le C_W\norm{Wu}$;
@@ -427,18 +420,18 @@ $\operatorname{Dom}(\Delta)$, and
 Z^2(Wf)&=WZ^2f+2(ZW)Zf+(Z^2W)f,\\
 \Delta(Wf)&=W\Delta f+2(XW)Xf+2(YW)Yf+(\Delta W)f,
 \end{align*}
-with $|ZW|\le\rho W$, $|Z^2W|\le KW$ and $|\Delta W|\le KW$. So Lemma~\ref{lem:ell}, applied to $Wf$, bounds
+with $|ZW|\le\rho W$, $|Z^2W|\le\mathcal KW$ and $|\Delta W|\le\mathcal KW$. So Lemma~\ref{lem:ell}, applied to $Wf$, bounds
 $\norm{WZ^2f}$ by a constant times $\norm{W\Delta f}+\max_Z\norm{WZf}+\norm{Wf}$, and (i), (ii) and the first bound of (iii) apply. (iv) follows from
 Lemma~\ref{lem:wcomm} and \eqref{eq:hmom} with $k=1,2$. The last claim holds because $\Delta(s)=\ue^{-2s}X^2+Y^2-Y$.
 \end{proof}
 
 \begin{proposition}[weighted propagation for the mollified flow]\label{prop:ws}
-Let $W\in\mathcal W(\rho,K)$. There is $G=G(\rho,K)$ such that for $0<\varepsilon\le1$, $\hbar>0$, $s_0,s_1\ge0$ and $a\in L^2(\Hb)$,
+Let $W\in\mathcal W(\rho,\mathcal K)$. There is $G=G(\rho,\mathcal K)$ such that for $0<\varepsilon\le1$, $\hbar>0$, $s_0,s_1\ge0$ and $a\in L^2(\Hb)$,
 \[
 \norm{W\,V_\varepsilon(s_1,s_0)a}\le\ue^{G\hbar|s_1-s_0|/(2\varepsilon)}\norm{Wa}.
 \]
-Consequently, for $\gamma\ge0$ and $X_0^\gamma a\in L^2$,
-$\norm{X_0^\gamma V_\varepsilon(s_1,s_0)a}\le\ue^{G_\gamma\hbar|s_1-s_0|/(2\varepsilon)}\norm{X_0^\gamma a}$ with $G_\gamma=G(\gamma,K_\gamma)$.
+Consequently, for $\lambda\ge0$ and $X_0^\lambda a\in L^2$,
+$\norm{X_0^\lambda V_\varepsilon(s_1,s_0)a}\le\ue^{G_\lambda\hbar|s_1-s_0|/(2\varepsilon)}\norm{X_0^\lambda a}$ with $G_\lambda=G(\lambda,\mathcal K_\lambda)$.
 \end{proposition}
 \begin{proof}
 Let $v(s)=V_\varepsilon(s,s_0)a$ and $h=W^2$. Since $v'=\tfrac{i\hbar}2\Delta_\varepsilon(s)v$ in $L^2$ and $W$ is bounded,
@@ -453,34 +446,34 @@ most $4\rho\norm{Wf}\max_Z\norm{WZf}\le4\rho C_W^2\varepsilon^{-1}\norm{Wv}^2$ i
 Lemma~\ref{lem:wmoll}(iv) and its last claim, the second term is at most
 $C_W\varepsilon\,\norm{W\Delta(s)J_\varepsilon v}\norm{Wv}\le3C_W^2\varepsilon^{-1}\norm{Wv}^2$. So
 $|\tfrac d{ds}\norm{Wv}^2|\le G\hbar\varepsilon^{-1}\norm{Wv}^2$ with $G:=(4\rho+3)C_W^2$, at all times $s\ge0$, and Gr\"onwall's inequality gives
-the first claim. The second follows with $W=W_{\gamma,n}$ and $n\to\infty$.
+the first claim. The second follows with $W=W_{\lambda,n}$ and $n\to\infty$.
 \end{proof}
 
 \begin{lemma}[the backward mollified flow of a remainder amplitude]\label{lem:path}
-Let $\gamma\ge0$, $0<\varepsilon\le1$, $\hbar>0$ and $s_1\ge0$ with $\hbar s_1\le\varepsilon$. Let $\mathcal S:=\{1,X,Y,X^2,Y^2\}$, let $b'$ be such that
-$X_0^\gamma Zb'\in L^2(\Hb)$ for every $Z\in\mathcal S$, and put
-$g(s):=V_\varepsilon(s,s_1)b'$ for $0\le s\le s_1$. There is $C=C(\gamma)$ such that:
+Let $\lambda\ge0$, $0<\varepsilon\le1$, $\hbar>0$ and $s_1\ge0$ with $\hbar s_1\le\varepsilon$. Let $\mathcal S:=\{1,X,Y,X^2,Y^2\}$, let $b'$ be such that
+$X_0^\lambda Zb'\in L^2(\Hb)$ for every $Z\in\mathcal S$, and put
+$g(s):=V_\varepsilon(s,s_1)b'$ for $0\le s\le s_1$. There is $C=C(\lambda)$ such that:
 \begin{itemize}
 \item[(a)] $g(s)=b'+J_\varepsilon h(s)$ with $h(s):=\tfrac{i\hbar}2\int_{s_1}^s\Delta(r)J_\varepsilon g(r)\,dr$, where $h$ is Lipschitz from
-$[0,s_1]$ to $L^2(X_0^{2\gamma}d\nu)$ and $\norm{X_0^\gamma h(s)}\le C\varepsilon^{-1}\norm{X_0^\gamma b'}$;
+$[0,s_1]$ to $L^2(X_0^{2\lambda}d\nu)$ and $\norm{X_0^\lambda h(s)}\le C\varepsilon^{-1}\norm{X_0^\lambda b'}$;
 \item[(b)] the defect $\mathfrak d(s):=(\Delta(s)-\Delta_\varepsilon(s))g(s)$ satisfies
-$\norm{X_0^\gamma\mathfrak d(s)}\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\gamma Zb'}$;
-\item[(c)] $g$ is $C^1$ from $[0,s_1]$ to $L^2(X_0^{2\gamma}d\nu)$ with $g'=\tfrac{i\hbar}2\Delta_\varepsilon(s)g$, and $Zg$ is
-continuous from $[0,s_1]$ to $L^2(X_0^{2\gamma}d\nu)$ for every $Z\in\mathcal S$.
+$\norm{X_0^\lambda\mathfrak d(s)}\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\lambda Zb'}$;
+\item[(c)] $g$ is $C^1$ from $[0,s_1]$ to $L^2(X_0^{2\lambda}d\nu)$ with $g'=\tfrac{i\hbar}2\Delta_\varepsilon(s)g$, and $Zg$ is
+continuous from $[0,s_1]$ to $L^2(X_0^{2\lambda}d\nu)$ for every $Z\in\mathcal S$.
 \end{itemize}
 \end{lemma}
 \begin{proof}
-The bounds of Lemma~\ref{lem:wmoll}(i)--(iii) and of Proposition~\ref{prop:ws} hold at the weight $X_0^\gamma$, with $C_W=C_W(\gamma,K_\gamma)$
-and $G_\gamma$.
+The bounds of Lemma~\ref{lem:wmoll}(i)--(iii) and of Proposition~\ref{prop:ws} hold at the weight $X_0^\lambda$, with $C_W=C_W(\lambda,\mathcal K_\lambda)$
+and $G_\lambda$.
 (a) Since $\partial_sg=\tfrac{i\hbar}2J_\varepsilon\Delta(s)J_\varepsilon g$ and $g(s_1)=b'$, the formula for $g$ holds. For $0\le r\le s_1$,
-$\hbar|r-s_1|\le\varepsilon$, so $\norm{X_0^\gamma g(r)}\le\ue^{G_\gamma/2}\norm{X_0^\gamma b'}$ and
-$\norm{X_0^\gamma\Delta(r)J_\varepsilon g(r)}\le3C_W\varepsilon^{-2}\ue^{G_\gamma/2}\norm{X_0^\gamma b'}$. Hence $h$ is Lipschitz, and
-$\norm{X_0^\gamma h(s)}\le\tfrac12\hbar|s-s_1|\cdot3C_W\varepsilon^{-2}\ue^{G_\gamma/2}\norm{X_0^\gamma b'}\le\tfrac32C_W\ue^{G_\gamma/2}\varepsilon^{-1}\norm{X_0^\gamma b'}$.
+$\hbar|r-s_1|\le\varepsilon$, so $\norm{X_0^\lambda g(r)}\le\ue^{G_\lambda/2}\norm{X_0^\lambda b'}$ and
+$\norm{X_0^\lambda\Delta(r)J_\varepsilon g(r)}\le3C_W\varepsilon^{-2}\ue^{G_\lambda/2}\norm{X_0^\lambda b'}$. Hence $h$ is Lipschitz, and
+$\norm{X_0^\lambda h(s)}\le\tfrac12\hbar|s-s_1|\cdot3C_W\varepsilon^{-2}\ue^{G_\lambda/2}\norm{X_0^\lambda b'}\le\tfrac32C_W\ue^{G_\lambda/2}\varepsilon^{-1}\norm{X_0^\lambda b'}$.
 (b) By (a),
 $\mathfrak d(s)=\Delta(s)b'-J_\varepsilon\Delta(s)J_\varepsilon b'+\Delta(s)J_\varepsilon h(s)-J_\varepsilon\Delta(s)J_\varepsilon J_\varepsilon h(s)$. The first term is
-bounded by the words $X^2b'$, $Y^2b'$, $Yb'$; the others by $3C_W^2\varepsilon^{-2}\norm{X_0^\gamma b'}$ and
-$(3C_W+3C_W^3)\varepsilon^{-2}\norm{X_0^\gamma h(s)}$. (c) follows from (a) and Lemma~\ref{lem:wmoll}: $ZJ_\varepsilon$ is bounded on
-$L^2(X_0^{2\gamma}d\nu)$ for $Z\in\mathcal S$, and so is $J_\varepsilon\Delta(s)J_\varepsilon$, continuously in $s$.
+bounded by the words $X^2b'$, $Y^2b'$, $Yb'$; the others by $3C_W^2\varepsilon^{-2}\norm{X_0^\lambda b'}$ and
+$(3C_W+3C_W^3)\varepsilon^{-2}\norm{X_0^\lambda h(s)}$. (c) follows from (a) and Lemma~\ref{lem:wmoll}: $ZJ_\varepsilon$ is bounded on
+$L^2(X_0^{2\lambda}d\nu)$ for $Z\in\mathcal S$, and so is $J_\varepsilon\Delta(s)J_\varepsilon$, continuously in $s$.
 \end{proof}
 
 \subsection{Remainder bounds}\label{subsec:dd-wb}

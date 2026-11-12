@@ -3,7 +3,6 @@
 \newcommand{\osomp}{\omega}          % periodization weight X_0^{1/2} l^{c'}
 \newcommand{\osX}{X_0}               % X_0 = cosh d(x_0,\cdot)
 \newcommand{\osL}{\ell}              % l = log(2X_0)/log 2
-\newcommand{\osbr}[1]{\langle #1\rangle}  % <r> = (1+r^2)^{1/2}
 \newcommand{\osHK}{\widetilde p}     % continuation of the heat kernel to complex distance
 \newcommand{\osLam}{\Lambda}         % Lambda = (-Delta)^{1/2}
 
@@ -15,10 +14,10 @@ $a=\ue^{-\sigma\Lambda_m}\tilde f$ with critically weighted data $\tilde f$ (Pro
 (Lemma~\ref{os:words}) and transfer over shells (Section~\ref{subsec:pc-transfer}) then control the derivatives, flow and defect
 appearing in the remainder.
 
-The multiplier theorem rests on a balance between two exponential factors. Moving mass from a shell $A_n$ to a shell $A_l$
-with $l>n$ costs the factor $\ue^{(l-n)/2}$ of the weight $X_0^{1/2}$. By finite propagation speed, only the part of the
-multiplier with $|r|\ge l-n-1$ contributes, and its tail supplies the factor $\ue^{-(l-n)/2}(1+l-n)^{-3/2}$. What remains is a
-polynomially decaying kernel in $l-n$, and the logarithmic exponent $\tfrac12<c<1$ makes it summable. The profiles in
+The multiplier theorem rests on a balance between two exponential factors. Moving mass from a shell $A_n$ to a shell $A_k$
+with $k>n$ costs the factor $\ue^{(k-n)/2}$ of the weight $X_0^{1/2}$. By finite propagation speed, only the part of the
+multiplier with $|r|\ge k-n-1$ contributes, and its tail supplies the factor $\ue^{-(k-n)/2}(1+k-n)^{-3/2}$. What remains is a
+polynomially decaying kernel in $k-n$, and the logarithmic exponent $\tfrac12<c<1$ makes it summable. The profiles in
 Appendix~\ref{app:profiles} verify the tail condition for the Poisson semigroup and for the change of spectral parameter.
 
 \begin{lemma}[finite propagation speed]\label{os:speed}
@@ -47,25 +46,25 @@ and let $\mathsf G:=\int_{\mathbb R}g(r)\cos(rD)\,dr$, a bounded operator on $L^
 with $C_c$ depending only on $c$.
 \end{theorem}
 \begin{proof}
-Put $f_n=1_nf$ and $a_n=\norm{\osomc f_n}$, and let $T(l,n):=\max(|l-n|-1,0)$. By Lemma~\ref{os:speed}, for $h$ supported in $A_l$ the function
-$r\mapsto\langle h,\cos(rD)f_n\rangle$ vanishes on $|r|<T(l,n)$. Hence
-$\norm{1_l\mathsf Gf_n}\le\int_{|r|\ge T(l,n)}|g|\,\norm{f_n}\le B\,\ue^{-T/2}(1+T)^{-3/2}\norm{f_n}$, and by \eqref{os:shell}
+Put $f_n=1_nf$ and $a_n=\norm{\osomc f_n}$, and let $T(k,n):=\max(|k-n|-1,0)$. By Lemma~\ref{os:speed}, for $h$ supported in $A_k$ the function
+$r\mapsto\langle h,\cos(rD)f_n\rangle$ vanishes on $|r|<T(k,n)$. Hence
+$\norm{1_k\mathsf Gf_n}\le\int_{|r|\ge T(k,n)}|g|\,\norm{f_n}\le B\,\ue^{-T/2}(1+T)^{-3/2}\norm{f_n}$, and by \eqref{os:shell}
 \[
 \begin{gathered}
-\norm{\osomc1_l\mathsf Gf_n}\le\mathsf B(l,n)\,a_n,\\
-\mathsf B(l,n):=C\,B\,\Bigl(\frac{1+l}{1+n}\Bigr)^c(1+|l-n|)^{-3/2}\times
-\begin{cases}1,&l\ge n,\\ \ue^{-(n-l)},&l<n.\end{cases}
+\norm{\osomc1_k\mathsf Gf_n}\le\mathsf B(k,n)\,a_n,\\
+\mathsf B(k,n):=C\,B\,\Bigl(\frac{1+k}{1+n}\Bigr)^c(1+|k-n|)^{-3/2}\times
+\begin{cases}1,&k\ge n,\\ \ue^{-(n-k)},&k<n.\end{cases}
 \end{gathered}
 \]
-Since $\mathsf Gf=\sum_n\mathsf Gf_n$ in $L^2$, $\norm{\osomc\mathsf Gf}^2\le\sum_l\bigl(\sum_n\mathsf B(l,n)a_n\bigr)^2$. We apply the Schur test on
+Since $\mathsf Gf=\sum_n\mathsf Gf_n$ in $L^2$, $\norm{\osomc\mathsf Gf}^2\le\sum_k\bigl(\sum_n\mathsf B(k,n)a_n\bigr)^2$. We apply the Schur test on
 $\mathbb N_0$ with the weights $p_n=(1+n)^{-1/2}$.
 \begin{itemize}
-\item $\sum_n\mathsf B(l,n)p_n\le C'B\,p_l$. For $n\ge l/2$: $((1+l)/(1+n))^c\le2^c$, $p_n\le\sqrt2\,p_l$, and $\sum_k(1+k)^{-3/2}<\infty$. For $n<l/2$:
-$\mathsf B(l,n)p_n\le CB(1+l)^{c-3/2}(1+n)^{-c-1/2}$; the sum over $n$ converges because $c>\tfrac12$, and $(1+l)^{c-3/2}\le p_l$ because $c<1$.
-\item $\sum_l\mathsf B(l,n)p_l\le C'B\,p_n$. For $l<n$: $((1+l)/(1+n))^cp_l\le p_n$ because $c>\tfrac12$. For $n\le l\le2n+1$: $((1+l)/(1+n))^c\le2^c$ and
-$p_l\le p_n$. For $l>2n+1$: $\mathsf B(l,n)p_l\le CB(1+n)^{-c}(1+l)^{c-2}$, and $\sum_{l>2n+1}(1+l)^{c-2}\le C(1+n)^{c-1}$ because $c<1$.
+\item $\sum_n\mathsf B(k,n)p_n\le C'B\,p_k$. For $n\ge k/2$: $((1+k)/(1+n))^c\le2^c$, $p_n\le\sqrt2\,p_k$, and $\sum_j(1+j)^{-3/2}<\infty$. For $n<k/2$:
+$\mathsf B(k,n)p_n\le CB(1+k)^{c-3/2}(1+n)^{-c-1/2}$; the sum over $n$ converges because $c>\tfrac12$, and $(1+k)^{c-3/2}\le p_k$ because $c<1$.
+\item $\sum_k\mathsf B(k,n)p_k\le C'B\,p_n$. For $k<n$: $((1+k)/(1+n))^cp_k\le p_n$ because $c>\tfrac12$. For $n\le k\le2n+1$: $((1+k)/(1+n))^c\le2^c$ and
+$p_k\le p_n$. For $k>2n+1$: $\mathsf B(k,n)p_k\le CB(1+n)^{-c}(1+k)^{c-2}$, and $\sum_{k>2n+1}(1+k)^{c-2}\le C(1+n)^{c-1}$ because $c<1$.
 \end{itemize}
-So $\sum_l(\sum_n\mathsf B(l,n)a_n)^2\le(C'B)^2\sum_na_n^2=(C'B)^2\norm{\osomc f}^2$.
+So $\sum_k(\sum_n\mathsf B(k,n)a_n)^2\le(C'B)^2\sum_na_n^2=(C'B)^2\norm{\osomc f}^2$.
 \end{proof}
 
 The cosine-transform representations and tail bounds needed to apply Theorem~\ref{os:cw}
@@ -92,9 +91,9 @@ Let $\tfrac12<c<1$, $m\ge\tfrac12$ and $0<\sigma<\alpha\le1$ with $\sigma m\le\t
 \]
 a bounded operator. Then $\ue^{-\sigma\Lambda_m}\mathsf R=\ue^{-\alpha\osLam}$, and
 $\norm{\osomc\mathsf Rf}\le C_{\mathrm d}\norm{\osomc f}$ for all $f\in L^2$, with a constant $C_{\mathrm d}$ depending only on $m$ and $c$.
-Consequently, if $\beta>\tfrac12$ and $\norm{\ue^{\beta\langle d\rangle}\ue^{\alpha\osLam}a}<\infty$, then $\tilde f:=\mathsf R\,\ue^{\alpha\osLam}a$ satisfies
+Consequently, if $\beta>\tfrac12$ and $\pcNorm a<\infty$ at $(\alpha,\beta)$, then $\tilde f:=\mathsf R\,\ue^{\alpha\osLam}a$ satisfies
 \[
-a=\ue^{-\sigma\Lambda_m}\tilde f,\qquad\norm{\osomc\tilde f}\le C\,\norm{\ue^{\beta\langle d\rangle}\ue^{\alpha\osLam}a},
+a=\ue^{-\sigma\Lambda_m}\tilde f,\qquad\norm{\osomc\tilde f}\le C\,\pcNorm a,
 \]
 with $C=C(m,c,\beta)$.
 \end{proposition}
@@ -106,9 +105,6 @@ Fatou's lemma gives $\norm{\osomc\ue^{\sigma\mathsf B}f}\le\ue^{k_{m,c}}\norm{\o
 $\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=k_c\,\ue^{k_{m,c}}$ works. For the consequence put $f=\ue^{\alpha\osLam}a$, so $a=\ue^{-\alpha\osLam}f$. Since $\tilde\psi\le d\le\langle d\rangle+1$ and
 $\beta>\tfrac12$, $\osomc\le\ue^{d/2}(1+d/\log2)\le C_\beta\,\ue^{\beta\langle d\rangle}$.
 \end{proof}
-
-The proof does not use the condition $\sigma m\le\tfrac12$. It is kept because it holds in every application below
-(Section~\ref{subsec:pc-all}) and is the range of the formal statement (Appendix~\ref{app:lean}).
 
 For the derivative bounds write $c_H:=1+4/\ue$, the constant in the profile bound of Lemma~\ref{os:prof}(iii).
 
@@ -127,14 +123,14 @@ Hence for $j\ge1$ and $\sigma>0$, $\norm{W(\mu-\Delta)^j\ue^{-\sigma\Lambda_m}u}
 \norm{WZ_S\,\ue^{-\sigma\Lambda_m}h}\le\sqrt2\,Q^k\,k!\,(C_6/\sigma)^k\,\norm{Wh}.
 \]
 \end{itemize}
-In particular, let $\gamma\ge0$ with $2(\gamma+\tfrac12)^2<m^2$ and $\osX^\gamma h\in L^2$. Then, with $\rho=\gamma$ in the definition of $Q$,
+In particular, let $\lambda\ge0$ with $2(\lambda+\tfrac12)^2<m^2$ and $\osX^\lambda h\in L^2$. Then, with $\rho=\lambda$ in the definition of $Q$,
 \[
-\norm{\osX^\gamma Z_S\,\ue^{-\sigma\Lambda_m}h}\le\sqrt2\,Q^k\,k!\,(C_6/\sigma)^k\,\norm{\osX^\gamma h}.
+\norm{\osX^\lambda Z_S\,\ue^{-\sigma\Lambda_m}h}\le\sqrt2\,Q^k\,k!\,(C_6/\sigma)^k\,\norm{\osX^\lambda h}.
 \]
 Moreover $\norm{\ue^{\sigma\osLam}\ue^{-\sigma\Lambda_m}}\le1$.
 \end{lemma}
 \begin{proof}
-(a) By Lemma~\ref{os:prof}(i), Lemma~\ref{lem:wave}(b) and Lemma~\ref{os:prof}(ii) with $\lambda=\rho+\tfrac12$,
+(a) By Lemma~\ref{os:prof}(i), Lemma~\ref{lem:wave}(b) and Lemma~\ref{os:prof}(ii) with $\rho+\tfrac12$ in the role of $\lambda$,
 $\norm{W\ue^{-\tau\Lambda_m}u}\le\int g^m_\tau(r)\ue^{\lambda|r|}dr\,\norm{Wu}\le\sqrt2\norm{Wu}$. The same with $h^m_s$ and Lemma~\ref{os:prof}(iii) gives the second
 bound. For the third write $(\mu-\Delta)^j\ue^{-\sigma\Lambda_m}=(\Lambda_m\ue^{-(\sigma/2j)\Lambda_m})^{2j}$.
 
@@ -163,7 +159,7 @@ $(2k+2\rho)\,n!\le(2+2\rho)(n+1)!$ and $(C_6/\sigma)^n\le(C_6/\sigma)^{n+1}/C_6$
 \[
 A_{k+1,j}\le\sqrt2\,Q^k(C_6/\sigma)^{n+1}(n+1)!\,\bigl((2+2\rho)/C_6+\sqrt2\bigr)\norm{Wh},
 \]
-which is the claim for $k+1$, because $C_6\ge1$ and so $(2+2\rho)/C_6+\sqrt2\le Q$. The case $j=0$ is (b). The statement for $\osX^\gamma$ follows with $W=W_{\gamma,n}$ and $n\to\infty$, and the last
+which is the claim for $k+1$, because $C_6\ge1$ and so $(2+2\rho)/C_6+\sqrt2\le Q$. The case $j=0$ is (b). The statement for $\osX^\lambda$ follows with $W=W_{\lambda,n}$ and $n\to\infty$, and the last
 statement from $\Lambda_m\ge\osLam$.
 \end{proof}
 
@@ -186,15 +182,15 @@ Then for every $h\in L^2$,
 with a constant $C_{\mathrm{tr}}$ depending only on $c$ and $C_{\mathrm{sh}}$.
 \end{lemma}
 \begin{proof}
-Let $u=1_nh$. By (a), $\norm{1_lTu}\le M_0\norm u$. By (b), since $\osX\ge\ue^l$ on $A_l$ and $\osX\le\ue^{n+1}$ on $A_n$,
-$\norm{1_lTu}\le\ue\,M_1\ue^{-(l-n)}\norm u$. For $l\ge n$, $\min(x,y)\le x^{1/4}y^{3/4}$ gives
-$\norm{1_lT1_n}\le\ue^{3/4}M_0^{1/4}M_1^{3/4}\ue^{-3(l-n)/4}$; for $l<n$ we use $M_0\le M_0^{1/4}M_1^{3/4}$. By the bounds for $\varpi$ and $c\le1$,
-$\sup_{A_l}\varpi/\inf_{A_n}\varpi\le C_{\mathrm{sh}}\,\ue^{(l-n)/2}(1+(l-n)_+)$. So with $a_n:=\norm{\varpi1_nh}$,
+Let $u=1_nh$. By (a), $\norm{1_kTu}\le M_0\norm u$. By (b), since $\osX\ge\ue^k$ on $A_k$ and $\osX\le\ue^{n+1}$ on $A_n$,
+$\norm{1_kTu}\le\ue\,M_1\ue^{-(k-n)}\norm u$. For $k\ge n$, $\min(x,y)\le x^{1/4}y^{3/4}$ gives
+$\norm{1_kT1_n}\le\ue^{3/4}M_0^{1/4}M_1^{3/4}\ue^{-3(k-n)/4}$; for $k<n$ we use $M_0\le M_0^{1/4}M_1^{3/4}$. By the bounds for $\varpi$ and $c\le1$,
+$\sup_{A_k}\varpi/\inf_{A_n}\varpi\le C_{\mathrm{sh}}\,\ue^{(k-n)/2}(1+(k-n)_+)$. So with $a_n:=\norm{\varpi1_nh}$,
 \[
-\norm{\varpi1_lT1_nh}\le M_0^{1/4}M_1^{3/4}\,k(l-n)\,a_n,\qquad k(j):=\begin{cases}C_{\mathrm{sh}}\ue^{3/4}(1+j)\ue^{-j/4},&j\ge0,\\C_{\mathrm{sh}}\ue^{-|j|/2},&j<0.\end{cases}
+\norm{\varpi1_kT1_nh}\le M_0^{1/4}M_1^{3/4}\,w_{k-n}\,a_n,\qquad w_j:=\begin{cases}C_{\mathrm{sh}}\ue^{3/4}(1+j)\ue^{-j/4},&j\ge0,\\C_{\mathrm{sh}}\ue^{-|j|/2},&j<0.\end{cases}
 \]
 Since $T$ is additive and bounded, $Th=\sum_nT1_nh$ in $L^2$, and therefore
-$\norm{\varpi Th}^2\le\sum_l\bigl(\sum_n\norm{\varpi1_lT1_nh}\bigr)^2\le M_0^{1/2}M_1^{3/2}\bigl(\sum_jk(j)\bigr)^2\sum_na_n^2$ by Young's inequality for
+$\norm{\varpi Th}^2\le\sum_k\bigl(\sum_n\norm{\varpi1_kT1_nh}\bigr)^2\le M_0^{1/2}M_1^{3/2}\bigl(\sum_jw_j\bigr)^2\sum_na_n^2$ by Young's inequality for
 sequences.
 \end{proof}
 
@@ -210,10 +206,10 @@ $\osomp(z)/\osomp(\delta_sz)\le\ue^{|s|/2}(1+|s|/\log2)^{c'}\le(2/\log2)\,\ue^{|
 \begin{proof}
 The proof is that of Lemma~\ref{lem:t2}, with $\osomp$ in place of $\ue^{s\tilde\psi}$; only the first and last steps change.
 
-\emph{Pointwise Cauchy--Schwarz.} Since $\osomp(w)^2\asymp\ue^{d(w,x_0)}\osbr{d(w,x_0)}^{2c'}$ and $d(\gamma z,x_0)=d(z,\gamma^{-1}x_0)$,
+\emph{Pointwise Cauchy--Schwarz.} Since $\osomp(z')^2\asymp\ue^{d(z',x_0)}(1+d(z',x_0))^{2c'}$ for $z'\in\Hb$ and $d(\gamma z,x_0)=d(z,\gamma^{-1}x_0)$,
 reindexing $\gamma\mapsto\gamma^{-1}$ and the counting bound of Lemma~\ref{lem:count} for the orbit $\Gamma x_0$ give
 \[
-\sum_\gamma\osomp(\gamma z)^{-2}\le C\sum_\gamma\ue^{-d(z,\gamma x_0)}\osbr{d(z,\gamma x_0)}^{-2c'}\le C\sum_{n\ge0}\ue^{n}\ue^{-n}(1+n)^{-2c'}<\infty,
+\sum_\gamma\osomp(\gamma z)^{-2}\le C\sum_\gamma\ue^{-d(z,\gamma x_0)}(1+d(z,\gamma x_0))^{-2c'}\le C\sum_{n\ge0}\ue^{n}\ue^{-n}(1+n)^{-2c'}<\infty,
 \]
 uniformly in $z$, since $2c'>1$. Cauchy--Schwarz and unfolding, as in Lemma~\ref{lem:t2}, give
 $\|[f]_\Gamma\|^2_{L^2(M)}\le C\int_\Hb\osomp^2|f|^2\,d\nu$ for $f=(S(t)w)\ue^{i\varphi/\hbar}$, with almost everywhere absolute convergence.
@@ -228,11 +224,11 @@ Let $\varpi_1,\varpi_2$ be two weights satisfying \textup{(W1)}, \textup{(W2)}. 
 \[
  \mathcal V_sg=\ue^{-is/(2\hbar)}\cU(-s)[\ue^{i\varphi/\hbar}S(s)g]_\Gamma\in L^2(M)
 \]
-is the same for both weights. In particular this applies to $\varpi_1=\osX^{\gamma}$ with $\gamma>\tfrac12$ and
-$\varpi_2=\osomp$, and $L^2_{\osX^\gamma}\subset L^2_{\osomp}$.
+is the same for both weights. In particular this applies to $\varpi_1=\osX^{\lambda}$ with $\lambda>\tfrac12$ and
+$\varpi_2=\osomp$, and $L^2_{\osX^\lambda}\subset L^2_{\osomp}$.
 \end{lemma}
 \begin{proof}
 For both weights the periodization is the same almost everywhere absolutely convergent sum, by \textup{(W1)}.
-The inclusion holds because $\osomp=\osX^{1/2}\osL^{\,c'}\le C_\gamma\osX^\gamma$ for $\gamma>\tfrac12$, since $\osL=1+\tilde\psi/\log2$
+The inclusion holds because $\osomp=\osX^{1/2}\osL^{\,c'}\le C_\lambda\osX^\lambda$ for $\lambda>\tfrac12$, since $\osL=1+\tilde\psi/\log2$
 grows like $\log\osX$.
 \end{proof}
