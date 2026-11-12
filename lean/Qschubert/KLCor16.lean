@@ -129,7 +129,7 @@ lemma pow_fact_le' (N : ℕ) : (N : ℝ) ^ (2 * N) ≤ 54 ^ (N + 1) * ((2 * N).f
 lemma pt_arith {C K₀ X Y : ℝ} {K N : ℕ} (hC : 0 < C) (hK₀ : 0 ≤ K₀) (hX : 1 ≤ X) (hY : 0 ≤ Y) :
     K₀ * (C ^ (N + K + 1) * (N : ℝ) ^ (2 * N) * (K.factorial : ℝ) * X ^ (2 * N) * Y
         + C ^ (N + 1 + K + 1) * ((N + 1 : ℕ) : ℝ) ^ (2 * (N + 1)) * (K.factorial : ℝ) * X ^ (2 * (N + 1)) * Y)
-      ≤ (2 * (K₀ + 1) * (max C 1) ^ 2 * 54) ^ (N + K + 1) * ((2 * N).factorial : ℝ) * (K.factorial : ℝ) * X ^ (2 * N + 4) * Y := by
+      ≤ (2 * (K₀ + 1) * (max C 1) ^ 2 * 54) ^ (N + K + 1) * ((2 * N).factorial : ℝ) * (K.factorial : ℝ) * X ^ (2 * N + 2) * Y := by
   set C₁ := max C 1 with hC₁
   have hC₁1 : 1 ≤ C₁ := le_max_right _ _
   have hCC : C ≤ C₁ := le_max_left _ _
@@ -139,13 +139,13 @@ lemma pt_arith {C K₀ X Y : ℝ} {K N : ℕ} (hC : 0 < C) (hK₀ : 0 ≤ K₀) 
   have hQ0 : 0 ≤ Q := Nat.cast_nonneg _
   have hF0 : 0 ≤ F := Nat.cast_nonneg _
   have hX0 : 0 ≤ X := by linarith
-  set T : ℝ := C₁ ^ (M + 1) * ((54 : ℝ) ^ (N + 1) * Q) * F * X ^ (2 * N + 4) * Y with hT
+  set T : ℝ := C₁ ^ (M + 1) * ((54 : ℝ) ^ (N + 1) * Q) * F * X ^ (2 * N + 2) * Y with hT
   have hT0 : 0 ≤ T := by positivity
   have t1 : C ^ M * (N : ℝ) ^ (2 * N) * F * X ^ (2 * N) * Y ≤ T := by
     have a1 : C ^ M ≤ C₁ ^ (M + 1) :=
       (pow_le_pow_left₀ hC.le hCC M).trans (pow_le_pow_right₀ hC₁1 (by omega))
     have a2 := pow_fact_le' N
-    have a3 : X ^ (2 * N) ≤ X ^ (2 * N + 4) := pow_le_pow_right₀ hX (by omega)
+    have a3 : X ^ (2 * N) ≤ X ^ (2 * N + 2) := pow_le_pow_right₀ hX (by omega)
     rw [hT]
     gcongr
   have t2 : C ^ (N + 1 + K + 1) * ((N + 1 : ℕ) : ℝ) ^ (2 * (N + 1)) * F * X ^ (2 * (N + 1)) * Y ≤ T := by
@@ -153,7 +153,7 @@ lemma pt_arith {C K₀ X Y : ℝ} {K N : ℕ} (hC : 0 < C) (hK₀ : 0 ≤ K₀) 
       rw [show N + 1 + K + 1 = M + 1 by omega]
       exact pow_le_pow_left₀ hC.le hCC _
     have a2 := pow_fact_le N
-    have a3 : X ^ (2 * (N + 1)) ≤ X ^ (2 * N + 4) := pow_le_pow_right₀ hX (by omega)
+    have a3 : X ^ (2 * (N + 1)) ≤ X ^ (2 * N + 2) := pow_le_pow_right₀ hX (by omega)
     rw [hT]
     gcongr
   have step1 : K₀ * (C ^ M * (N : ℝ) ^ (2 * N) * F * X ^ (2 * N) * Y
@@ -169,10 +169,10 @@ lemma pt_arith {C K₀ X Y : ℝ} {K N : ℕ} (hC : 0 < C) (hK₀ : 0 ≤ K₀) 
   have b2 : C₁ ^ (M + 1) ≤ (C₁ ^ 2) ^ M := by
     rw [← pow_mul]; exact pow_le_pow_right₀ hC₁1 (by omega)
   have b3 : (54 : ℝ) ^ (N + 1) ≤ 54 ^ M := pow_le_pow_right₀ (by norm_num) (by omega)
-  have e : (2 * (K₀ + 1) * C₁ ^ 2 * 54) ^ M * Q * F * X ^ (2 * N + 4) * Y
-      = (2 * (K₀ + 1)) ^ M * ((C₁ ^ 2) ^ M * ((54 : ℝ) ^ M * Q)) * F * X ^ (2 * N + 4) * Y := by
+  have e : (2 * (K₀ + 1) * C₁ ^ 2 * 54) ^ M * Q * F * X ^ (2 * N + 2) * Y
+      = (2 * (K₀ + 1)) ^ M * ((C₁ ^ 2) ^ M * ((54 : ℝ) ^ M * Q)) * F * X ^ (2 * N + 2) * Y := by
     rw [mul_pow, mul_pow]; ring
-  have e2 : 2 * (K₀ + 1) * T = 2 * (K₀ + 1) * (C₁ ^ (M + 1) * ((54 : ℝ) ^ (N + 1) * Q)) * F * X ^ (2 * N + 4) * Y := by
+  have e2 : 2 * (K₀ + 1) * T = 2 * (K₀ + 1) * (C₁ ^ (M + 1) * ((54 : ℝ) ^ (N + 1) * Q)) * F * X ^ (2 * N + 2) * Y := by
     rw [hT]; ring
   rw [e, e2]
   gcongr

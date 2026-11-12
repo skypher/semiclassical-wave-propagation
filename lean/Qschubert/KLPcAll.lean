@@ -501,11 +501,11 @@ theorem pccor15_all : Stmt_pccor15_all := by
 
 /-! ### The pointwise corollaries on a range `α ≤ A` without the restriction `A < 1` -/
 
-/-- `pt_arith` with `X` replaced by `m X ≥ 1`, `m ≥ 1`: the factor `m^{2N+4}` goes into the constant. -/
+/-- `pt_arith` with `X` replaced by `m X ≥ 1`, `m ≥ 1`: the factor `m^{2N+2}` goes into the constant. -/
 lemma pt_arith_A {C K₀ X Y m : ℝ} {K N : ℕ} (hC : 0 < C) (hK₀ : 0 ≤ K₀) (hm : 1 ≤ m) (hX0 : 0 ≤ X) (hX : 1 ≤ m * X) (hY : 0 ≤ Y) :
     K₀ * (C ^ (N + K + 1) * (N : ℝ) ^ (2 * N) * (K.factorial : ℝ) * X ^ (2 * N) * Y
         + C ^ (N + 1 + K + 1) * ((N + 1 : ℕ) : ℝ) ^ (2 * (N + 1)) * (K.factorial : ℝ) * X ^ (2 * (N + 1)) * Y)
-      ≤ (2 * (K₀ + 1) * (max C 1) ^ 2 * 54 * m ^ 4) ^ (N + K + 1) * ((2 * N).factorial : ℝ) * (K.factorial : ℝ) * X ^ (2 * N + 4) * Y := by
+      ≤ (2 * (K₀ + 1) * (max C 1) ^ 2 * 54 * m ^ 4) ^ (N + K + 1) * ((2 * N).factorial : ℝ) * (K.factorial : ℝ) * X ^ (2 * N + 2) * Y := by
   have h := pt_arith (C := C) (K₀ := K₀) (X := m * X) (Y := Y) (K := K) (N := N) hC hK₀ hX hY
   have hm0 : 0 ≤ m := by linarith
   have hXm : X ≤ m * X := by nlinarith
@@ -529,19 +529,19 @@ lemma pt_arith_A {C K₀ X Y m : ℝ} {K N : ℕ} (hC : 0 < C) (hK₀ : 0 ≤ K�
     have : (0 : ℝ) ≤ max C 1 := le_trans zero_le_one (le_max_right _ _)
     rw [hD]
     positivity
-  have hmp : m ^ (2 * N + 4) ≤ (m ^ 4) ^ (N + K + 1) := by
+  have hmp : m ^ (2 * N + 2) ≤ (m ^ 4) ^ (N + K + 1) := by
     rw [← pow_mul]
     exact pow_le_pow_right₀ hm (by omega)
-  have hXp : (0 : ℝ) ≤ X ^ (2 * N + 4) := pow_nonneg hX0 _
-  calc D ^ (N + K + 1) * ((2 * N).factorial : ℝ) * (K.factorial : ℝ) * (m * X) ^ (2 * N + 4) * Y
-      = D ^ (N + K + 1) * m ^ (2 * N + 4) * (((2 * N).factorial : ℝ) * (K.factorial : ℝ) * X ^ (2 * N + 4) * Y) := by
+  have hXp : (0 : ℝ) ≤ X ^ (2 * N + 2) := pow_nonneg hX0 _
+  calc D ^ (N + K + 1) * ((2 * N).factorial : ℝ) * (K.factorial : ℝ) * (m * X) ^ (2 * N + 2) * Y
+      = D ^ (N + K + 1) * m ^ (2 * N + 2) * (((2 * N).factorial : ℝ) * (K.factorial : ℝ) * X ^ (2 * N + 2) * Y) := by
         rw [mul_pow]
         ring
-    _ ≤ D ^ (N + K + 1) * (m ^ 4) ^ (N + K + 1) * (((2 * N).factorial : ℝ) * (K.factorial : ℝ) * X ^ (2 * N + 4) * Y) := by
-        have hR0 : (0 : ℝ) ≤ ((2 * N).factorial : ℝ) * (K.factorial : ℝ) * X ^ (2 * N + 4) * Y :=
+    _ ≤ D ^ (N + K + 1) * (m ^ 4) ^ (N + K + 1) * (((2 * N).factorial : ℝ) * (K.factorial : ℝ) * X ^ (2 * N + 2) * Y) := by
+        have hR0 : (0 : ℝ) ≤ ((2 * N).factorial : ℝ) * (K.factorial : ℝ) * X ^ (2 * N + 2) * Y :=
           mul_nonneg (mul_nonneg (mul_nonneg hQ0 hF0) hXp) hY
         exact mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_left hmp (pow_nonneg hD0 _)) hR0
-    _ = (D * m ^ 4) ^ (N + K + 1) * ((2 * N).factorial : ℝ) * (K.factorial : ℝ) * X ^ (2 * N + 4) * Y := by
+    _ = (D * m ^ 4) ^ (N + K + 1) * ((2 * N).factorial : ℝ) * (K.factorial : ℝ) * X ^ (2 * N + 2) * Y := by
         rw [mul_pow]
         ring
 

@@ -2863,3 +2863,5 @@ import Qschubert
 #print axioms Qschubert.enorm_integral_le_perio
 #print axioms Qschubert.enorm_le_approxErr_add
 #print axioms Qschubert.meanGrowth
+#print axioms Qschubert.cor16Rmain_mult
+#print axioms Qschubert.cor16R_mult

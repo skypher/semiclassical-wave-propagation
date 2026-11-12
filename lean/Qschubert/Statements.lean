@@ -165,9 +165,9 @@ def PointwiseBound (Γ : Subgroup PGL(2, ℝ)) [ProperlyDiscontinuousSMul Γ ℍ
   ∃ hdom : E ∈ (lapPowM Γ N).domain, ∃ f : Surf Γ → ℂ, Continuous f ∧
     f =ᵐ[surfMeasure Γ] ⇑(lapPowM Γ N ⟨E, hdom⟩) ∧ ∀ x, ‖f x‖ₑ ≤ B x
 
-/-- `C^{N+K+1} (2N)! K! (αħ)^{-2N-4} (ħt/α²)^{K+1}`. -/
+/-- `C^{N+K+1} (2N)! K! (αħ)^{-2N-2} (ħt/α²)^{K+1}`. -/
 noncomputable def ptBound (C α ħ' t : ℝ) (K N : ℕ) : ℝ :=
-  C ^ (N + K + 1) * ((2 * N).factorial : ℝ) * (K.factorial : ℝ) * ((α * ħ')⁻¹) ^ (2 * N + 4)
+  C ^ (N + K + 1) * ((2 * N).factorial : ℝ) * (K.factorial : ℝ) * ((α * ħ')⁻¹) ^ (2 * N + 2)
     * (ħ' * t / α ^ 2) ^ (K + 1)
 
 /-- **Corollary 1.6R** (`cor:dd16-appx`), swapped class on bounded geometry, smooth-representative
