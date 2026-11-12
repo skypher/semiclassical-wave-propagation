@@ -46,12 +46,12 @@ necessary on the modular surface for a phase attached to the cusp.
 \end{remark}
 
 \begin{remark}[the local Sobolev loss]\label{rem:g4}
-The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient with a cusp. In a cusp neighbourhood $\{y>H\}/(x\sim x+1)$, take $u_S=f(\log y-S)$ with $0\ne f\in C_c^\infty(\mathbb R)$. For every integer $s\ge1$,
+The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient with a cusp. In a cusp neighbourhood $\{y>H\}/(x\sim x+1)$, take $u_R=f(\log y-R)$ with $0\ne f\in C_c^\infty(\mathbb R)$ and $R$ so large that $u_R$ is supported in $\{y>H\}$. For every integer $j\ge1$,
 \[
-\norm{u_S}_{L^1}\asymp\norm{\Delta^su_S}_{L^1}\asymp\ue^{-S},\qquad
-\norm{u_S}_{L^2}\asymp\norm{\Delta^su_S}_{L^2}\asymp\ue^{-S/2},
+\norm{u_R}_{L^1}\asymp\norm{\Delta^ju_R}_{L^1}\asymp\ue^{-R},\qquad
+\norm{u_R}_{L^2}\asymp\norm{\Delta^ju_R}_{L^2}\asymp\ue^{-R/2},
 \]
-whereas $\sup|u_S|$ is independent of $S$. Thus both the global $L^2$-to-pointwise Sobolev bound and the $L^1$-to-$L^2$ bound used in \cite{S} fail on cusps.
+whereas $\sup|u_R|$ is independent of $R$. Thus both the global $L^2$-to-pointwise Sobolev bound and the $L^1$-to-$L^2$ bound used in \cite{S} fail on cusps.
 \end{remark}
 
 \subsection{Truncation and pointwise consequences}\label{subsec:pc-cor}\label{subsec:dd-cor}
@@ -65,10 +65,10 @@ For $t=0$ the range of $K$ is empty, so let $t>0$. Theorem~\ref{pc:main} bounds 
   C^NN^{2N}(\alpha\hbar)^{-2N}q^{K+1}K!\,\pcNorm a,
   \qquad q=\frac{C\hbar t}{\alpha^2}.
 \]
-The time window, $\alpha^3\ge\kappa\hbar$ and the choice of $\delta$ give
+The time window $t\le\delta_1(\alpha/\hbar)^{1/2}$, $\alpha^3\ge\kappa\hbar$ and the choice of $\delta_1$ give
 \[
-  \frac{\hbar t}{\alpha^2}\le\delta\hbar^{1/2}\alpha^{-3/2}
-  \le\delta\kappa^{-1/2}\le\frac1{\max(1,C)}.
+  \frac{\hbar t}{\alpha^2}\le\delta_1\hbar^{1/2}\alpha^{-3/2}
+  \le\delta_1\kappa^{-1/2}\le\frac1{\max(1,C)}.
 \]
 Thus $q\le1$ and $C^Nq=C^{N+1}\hbar t/\alpha^2\le C^{N+1}$. In particular $K\ge(1-\theta)/q\ge1-\theta>0$, so $K\ge1$ in
 the stated range. Stirling's inequality and $Kq\le1-\theta/2$ give
@@ -111,9 +111,9 @@ Fix $\alpha_0\in(0,\pi/4)$. For $0<\alpha\le\alpha_0$, take $K=N=0$ and $\kappa=
 \end{proof}
 
 \begin{corollary}[optimal truncation for the reversed-weight and power-weight norms]\label{cor:dd15}\label{cor:dd15-appx}
-Assume the hypotheses of Theorem~\ref{thm:dd14}, respectively Theorem~\ref{thm:dd-appx}, with the constants $C,\delta$ of that
-theorem and $\delta$ replaced by $\min(\delta,\kappa^{1/2}/\max(1,C))$. Then the estimate of Corollary~\ref{pc:cor15}, for the
-same range of $K$, holds with $\swNorm a$, respectively $\pwNorm a$, in place of $\pcNorm a$.
+Assume the hypotheses of Theorem~\ref{thm:dd14}, respectively Theorem~\ref{thm:dd-appx}, let $C,\delta$ be the constants of
+that theorem, and put $\delta_1:=\min(\delta,\kappa^{1/2}/\max(1,C))$. Then for $0\le t\le\delta_1(\alpha/\hbar)^{1/2}$ the estimate
+of Corollary~\ref{pc:cor15}, for the same range of $K$, holds with $\swNorm a$, respectively $\pwNorm a$, in place of $\pcNorm a$.
 \end{corollary}
 \begin{proof}
 Apply the calculation in the proof of Corollary~\ref{pc:cor15} to the respective approximation theorem.
@@ -148,7 +148,7 @@ positive.
 \end{remark}
 
 \begin{lemma}[analytic norm of the localized example]\label{lem:ex}
-Fix $r_1<\tfrac12$. There are constants $C_\Upsilon$ and $C_{\mathrm E}$, depending only on $r_1$, such that for $\mu\ge1$ and
+Fix $0<r_1<\tfrac12$. There are constants $C_\Upsilon$ and $C_{\mathrm E}$, depending only on $r_1$, such that for $\mu\ge1$ and
 $0<\alpha\le\min(r_1,\mu^{-1/2})$,
 \[
 \norm{\ue^{\alpha\Lambda}\ue^{-\mu\langle d\rangle}}_{L^2(\Hb)}\le(\pi\ue)^{1/2}\,\ue^{C_\Upsilon\mu\alpha^2}\norm{\ue^{-\mu\langle d\rangle}}_{L^2(\Hb)}\le C_{\mathrm E}\,\mu^{-1/2}.
@@ -156,7 +156,8 @@ $0<\alpha\le\min(r_1,\mu^{-1/2})$,
 \end{lemma}
 
 \begin{proof}
-We use the notation of Section~\ref{subsec:gutzmer}, with $x_0=i$.
+We use the notation of Section~\ref{subsec:gutzmer}, with $x_0=i$: $\Xi_R$ is the domain of holomorphic extension and
+$N_\rho(f)$ the $L^2$ norm of $f$ on the orbit $G\exp(i\rho\mathsf h)x_0$.
 
 \emph{The function $\Upsilon$.} Let $\Theta(z):=-\arccos(z)^2$ and $\Upsilon(z):=(1+\Theta(z))^{1/2}-1$. The function $\Theta$ is holomorphic on
 $\mathbb C\setminus(-\infty,-1]$ and equals $d^2$ at $z=\cosh d$, so $\langle d\rangle=\Upsilon(X_0)$ on $\Hb$. The number $1+\Theta(z)$ is real and at most $0$ only for
@@ -167,16 +168,16 @@ $L=\log(z+(z^2-1)^{1/2})=\log(2z)+O(|z|^{-2})$, hence $\Upsilon=L-1+O(1/|L|)$; s
 depending only on $r_1',r_2$, such that the disc of radius $c|z|$ about any $z\in S_{r_1'}$ lies in $S_{r_2}$, and Cauchy's estimates for
 $\Upsilon-\log$ on these discs give
 \[
-|\Upsilon'(z)|\le C_2/|z|,\qquad|\Upsilon''(z)|\le C_2/|z|^2\qquad(z\in S_{r_1'}).
+|\Upsilon'(z)|\le C'_\Upsilon/|z|,\qquad|\Upsilon''(z)|\le C'_\Upsilon/|z|^2\qquad(z\in S_{r_1'}).
 \]
 
 \emph{The orbit norms.} By Lemma~\ref{lem:gutzmer}(b), on the orbit $G\exp(i\rho\mathsf h)x_0$, $\rho\le r_1'$, the extension of $X_0$ takes the
 values $\tilde X_0=cA+isB$ with $c=\cos2\rho$, $s=\sin2\rho$, $A=X_0(gx_0)\ge1$ and $|B|\le A$; these lie in $S_\rho\subset S_{r_1'}$, and so does
 the vertical segment from $cA$ to $\tilde X_0$. So $f:=\ue^{-\mu\langle d\rangle}=\ue^{-\mu \Upsilon(X_0)}$ extends holomorphically to $\Xi_{r_1'}$. Since $\Upsilon'(cA)$ is
-real, Taylor's formula on that segment gives $\operatorname{Re}\Upsilon(\tilde X_0)\ge \Upsilon(cA)-\tfrac12\sup|\Upsilon''|\,s^2B^2\ge \Upsilon(cA)-C_2s^2/(2c^2)$, and
-$\Upsilon(A)-\Upsilon(cA)\le(1-c)A\sup_{[cA,A]}|\Upsilon'|\le C_2(1-c)/c$. With $1-c\le2\rho^2$, $s^2\le4\rho^2$ and $c\ge\cos1>\tfrac12$,
+real, Taylor's formula on that segment gives $\operatorname{Re}\Upsilon(\tilde X_0)\ge \Upsilon(cA)-\tfrac12\sup|\Upsilon''|\,s^2B^2\ge \Upsilon(cA)-C'_\Upsilon s^2/(2c^2)$, and
+$\Upsilon(A)-\Upsilon(cA)\le(1-c)A\sup_{[cA,A]}|\Upsilon'|\le C'_\Upsilon(1-c)/c$. With $1-c\le2\rho^2$, $s^2\le4\rho^2$ and $c\ge\cos1>\tfrac12$,
 \[
-\operatorname{Re}\Upsilon(\tilde X_0)\ge\langle d\rangle(gx_0)-C_\Upsilon\rho^2,\qquad C_\Upsilon:=12\,C_2 .
+\operatorname{Re}\Upsilon(\tilde X_0)\ge\langle d\rangle(gx_0)-C_\Upsilon\rho^2,\qquad C_\Upsilon:=12\,C'_\Upsilon .
 \]
 Hence $|f(g\exp(i\rho\mathsf h)x_0)|\le\ue^{C_\Upsilon\mu\rho^2}f(gx_0)$ and $N_\rho(f)\le\ue^{C_\Upsilon\mu\rho^2}\norm f$ for $\rho\le r_1'$. In particular
 $\sup_{\rho<r_1'}N_\rho(f)<\infty$, and Lemma~\ref{lem:gutzmer}(a), with $R=r_1'$ and $r=\alpha\le r_1$, gives the first inequality.
@@ -204,7 +205,7 @@ $0\le t\le\delta(\alpha_\hbar/\hbar)^{1/2}$,
  \le C^{N+K+1}N^{2N}K!\,(\alpha_\hbar\hbar)^{-2N}
  \Big(\frac{\hbar t}{\alpha_\hbar^2}\Big)^{K+1},
 \]
-where $u^{(K)}$ is built from $a_\hbar$ and $N^{2N}=1$ at $N=0$.
+where $u^{(K)}$ is built from $a_\hbar$.
 Here $\alpha_\hbar\asymp\hbar^{\eta/2}$, so the upper endpoint of the time window has order
 $\hbar^{\eta/4-1/2}$.
 \end{corollary}

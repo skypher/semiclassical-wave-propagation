@@ -8,7 +8,38 @@ derivative estimates of Sections~\ref{subsec:dd-fc}, \ref{app:m} and~\ref{subsec
 We use $X$, $Y$, $\Delta(s)$, $\Lambda$, $X_0$, $\tilde\psi$ and the power-weight norm $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}$
 of Section~\ref{sec:setup}.
 The two-time mollified propagator $V_\varepsilon(s_1,s_0)=V_\varepsilon(s_1)V_\varepsilon(s_0)^*$ is defined in
-Section~\ref{app:kl}.
+Section~\ref{app:kl}. Table~\ref{tab:constants} lists the named constants of Sections~\ref{sec:analytic}--\ref{sec:printed}
+and where they are fixed.
+
+\begin{table}[!htb]
+\centering\small
+\caption{Named constants of Sections~\ref{sec:analytic}--\ref{sec:printed}. ``Absolute'' means independent of all parameters;
+the dependence on the fixed mollifier cutoff $\chi$ is not listed.}\label{tab:constants}
+\begin{tabular}{@{}lll@{}}
+\hline
+Constant & Fixed in & Depends on\\
+\hline
+$C_1$ & Lemma~\ref{lem:fc} & $\tau_0$\\
+$B_\beta$; $\rho_*=\tfrac14\log(3/2)$ & Lemma~\ref{lem:fdb} & $\beta$; absolute\\
+$C_2=\max(\ue C_1,\tau_0/\rho_*)$ & Lemma~\ref{lem:sc} & $\tau_0$\\
+$C_*=4$ & Lemma~\ref{lem:expw} & absolute\\
+$c_M=1/(4\max(C_2,1))$ & Lemma~\ref{lem:mw} & $\tau_0$\\
+$A_1$, $A_2$ & Lemma~\ref{lem:clip} & $\tau_0$\\
+$c_A=(1+32A_1A_2)^{-1}$ & Proposition~\ref{prop:a0} & $\tau_0$\\
+$\mathcal K_\lambda=8\lambda^2+7\lambda$ & Section~\ref{app:ws} & $\lambda$\\
+$C_W$ & Lemma~\ref{lem:wmoll} & $\rho$, $\mathcal K$\\
+$G=(4\rho+3)C_W^2$; $G_\lambda=G(\lambda,\mathcal K_\lambda)$ & Proposition~\ref{prop:ws} & $\rho$, $\mathcal K$; $\lambda$\\
+$C_3\ge1$ & Lemma~\ref{lem:wb} & $\tau_0$\\
+$C_4=20+60(1+4C_1)^2$ & Lemma~\ref{lem:unw} & absolute ($\tau_0=1$)\\
+$k_c$; $k_{m,c}$ & Corollary~\ref{os:cwp} & $c$; $m$, $c$\\
+$C_{\mathrm d}=k_c\,\ue^{k_{m,c}}$ & Proposition~\ref{os:data} & $m$, $c$\\
+$c_H=1+4/\ue$; $C_5=2\ue\,c_H$ & Lemma~\ref{os:prof}(iii); Lemma~\ref{os:words} & absolute\\
+$C_{\mathrm{tr}}$ & Lemma~\ref{os:transfer} & $c$, $C_{\mathrm{sh}}$\\
+$C_6\ge C_3$ & Proposition~\ref{pc:core}, Step~1(a) & absolute ($\tau_0=1$)\\
+$B_0$; $B_m$ & Lemma~\ref{os:prof}(iv), (v) & absolute; $m$\\
+\hline
+\end{tabular}
+\end{table}
 
 \subsection{The mollifier and elliptic regularity}
 Let $J_\varepsilon:=j_\varepsilon(\Lambda)$ with $j_\varepsilon:=g*\chi(\varepsilon\,\cdot)$, where $g$ is the unit Gaussian and, as in
@@ -16,7 +47,7 @@ Let $J_\varepsilon:=j_\varepsilon(\Lambda)$ with $j_\varepsilon:=g*\chi(\varepsi
 addition $\chi$ is real, even and $0\le\chi\le1$, so $0\le j_\varepsilon\le1$. (In the notation of \cite{S},
 $J_\varepsilon=\chi_\varepsilon(\varepsilon\Lambda)$ with $\chi_\varepsilon=g_\varepsilon*\chi$ and $g_\varepsilon=\varepsilon^{-1}g(\cdot/\varepsilon)$.) Put $\Delta_\varepsilon(t)=J_\varepsilon\Delta(t)J_\varepsilon$, with $\Delta(t)=\ue^{-2t}X^2+Y^2-Y$.
 
-\begin{lemma}[elliptic estimate]\label{lem:ell}
+\begin{lemma}[integration by parts and elliptic estimate]\label{lem:ell}
 For $f,g\in C_c^\infty(\Hb)$,
 $\langle Xf,g\rangle=-\langle f,Xg\rangle$ and $\langle Yf,g\rangle=-\langle f,Yg\rangle+\langle f,g\rangle$, and
 \[
@@ -63,7 +94,7 @@ For $\tau_0<\pi/2$ there is $C_1=C_1(\tau_0)$ such that for $Z\in\{X,Y\}$ and $0
 \end{lemma}
 
 \begin{proof}
-The Kontorovich--Lebedev kernel calculation is given in Appendix~\ref{app:special}, Section~\ref{app:fc-proof}.
+The Kontorovich--Lebedev kernel calculation is given in Appendix~\ref{app:fc-proof}.
 \end{proof}
 
 \begin{lemma}[Cauchy estimate for words]\label{lem:wc}
@@ -106,8 +137,8 @@ Cauchy's estimate on $|z|=\rho<\log(3/2)$ gives the bound $C_{\beta,\rho}\,j!\,\
 \begin{lemma}[weighted Cauchy estimate for words]\label{lem:sc}
 For $\beta\ge0$, a word $Z_1\cdots Z_m$ and $0<\alpha\le\tau_0<\pi/2$, with $F:=X_0^\beta a$ and $\norm{\ue^{\alpha\Lambda}F}<\infty$:
 \[
-\norm{X_0^\beta Z_1\cdots Z_m a}\le B_\beta(m+1)\,m!\,(C_3/\alpha)^m\,\norm{\ue^{\alpha\Lambda}X_0^\beta a},
-\qquad C_3:=\max(\ue C_1,\tau_0/\rho_*).
+\norm{X_0^\beta Z_1\cdots Z_m a}\le B_\beta(m+1)\,m!\,(C_2/\alpha)^m\,\norm{\ue^{\alpha\Lambda}X_0^\beta a},
+\qquad C_2:=\max(\ue C_1,\tau_0/\rho_*).
 \]
 \end{lemma}
 
@@ -115,7 +146,7 @@ For $\beta\ge0$, a word $Z_1\cdots Z_m$ and $0<\alpha\le\tau_0<\pi/2$, with $F:=
 By the Leibniz rule for words of derivations,
 \[X_0^\beta Z_1\cdots Z_m(X_0^{-\beta}F)=\sum_{S\subseteq[m]}X_0^\beta\,Z_S(X_0^{-\beta})\cdot Z_{S^c}F\]
 pointwise. Bound each term by $B_\beta|S|!\rho_*^{-|S|}\norm{Z_{S^c}F}$, and the second factor by Lemma~\ref{lem:wc} with $\alpha''=0$: $\norm{Z_{S^c}F}\le(\ue C_1/\alpha)^{m-|S|}(m-|S|)!\,\norm{\ue^{\alpha\Lambda}F}$.
-Since $\sum_{|S|=j}j!(m-j)!=m!$, the sum is $\le B_\beta\,m!\sum_j\rho_*^{-j}(\ue C_1/\alpha)^{m-j}\le B_\beta(m+1)m!(C_3/\alpha)^m$. \qedhere
+Since $\sum_{|S|=j}j!(m-j)!=m!$, the sum is $\le B_\beta\,m!\sum_j\rho_*^{-j}(\ue C_1/\alpha)^{m-j}\le B_\beta(m+1)m!(C_2/\alpha)^m$. \qedhere
 \end{proof}
 
 \subsection{Multiplication by spatial weights}\label{app:m}
@@ -140,7 +171,7 @@ of $\Lambda$ gives $\norm{\cosh(r\Lambda)G}\le2BN_0$, and $\ue^{r\lambda}\le2\co
 \end{proof}
 
 \begin{lemma}[removing a spatial weight with loss of analytic radius]\label{lem:mw}
-Let $\beta\ge0$ and $\tau_0<\pi/2$, let $B_\beta$, $C_3$ be the constants of Lemma~\ref{lem:sc}, and put $c_M:=1/(4\max(C_3,1))$. For
+Let $\beta\ge0$ and $\tau_0<\pi/2$, let $B_\beta$, $C_2$ be the constants of Lemma~\ref{lem:sc}, and put $c_M:=1/(4\max(C_2,1))$. For
 $0<\alpha\le\min(1,\tau_0)$ and every $a$ with $\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$,
 \[
 \norm{\ue^{c_M\alpha\Lambda}a}\le C_*B_\beta\,\norm{\ue^{\alpha\Lambda}X_0^\beta a},
@@ -149,8 +180,8 @@ with $C_*$ the constant of Lemma~\ref{lem:expw}.
 \end{lemma}
 \begin{proof}
 By Lemma~\ref{lem:sc} and $X_0\ge1$, every word satisfies
-$\norm{Z_1\cdots Z_ma}\le\norm{X_0^\beta Z_1\cdots Z_ma}\le B_\beta(m+1)m!(C_3/\alpha)^m\norm{\ue^{\alpha\Lambda}X_0^\beta a}$.
-Apply Lemma~\ref{lem:expw} with $L=\max(C_3,1)$.
+$\norm{Z_1\cdots Z_ma}\le\norm{X_0^\beta Z_1\cdots Z_ma}\le B_\beta(m+1)m!(C_2/\alpha)^m\norm{\ue^{\alpha\Lambda}X_0^\beta a}$.
+Apply Lemma~\ref{lem:expw} with $L=\max(C_2,1)$.
 \end{proof}
 
 \begin{lemma}[comparison of the spatial weights]\label{lem:m2w}
@@ -483,16 +514,16 @@ amplitude, and exponential smallness of the mollifier defect without a spatial w
 \begin{lemma}[derivative bounds for the remainder amplitude]\label{lem:wb}
 Let $\beta\ge0$, let $b'(s)$ be as in Proposition~\ref{prop:dd-id}(ii), and assume $0<\hbar\le1$ and
 $0<\alpha\le\alpha_0\le\min(1,\tau_0)$. Let $Z_S$ be a word in $X,Y$ of length at most $n$ (the empty word is the identity).
-There is a constant $C_4\ge1$, depending only on $\tau_0$, such that uniformly in $s\in\Sigma_{K+1}(t)$:
+There is a constant $C_3\ge1$, depending only on $\tau_0$, such that uniformly in $s\in\Sigma_{K+1}(t)$:
 \begin{itemize}
 \item[\textup{(i)}]
 \[
-\norm{X_0^\beta Z_Sb'(s)}\le B_\beta C_4^{N+K+n+1}(2N)!\,(n+2K+2)!\,\alpha^{-(n+2K+2)}(\alpha\hbar)^{-2N}\pwNorm a ,
+\norm{X_0^\beta Z_Sb'(s)}\le B_\beta C_3^{N+K+n+1}(2N)!\,(n+2K+2)!\,\alpha^{-(n+2K+2)}(\alpha\hbar)^{-2N}\pwNorm a ,
 \]
 with $B_\beta$ the constant of Lemma~\ref{lem:fdb};
-\item[\textup{(ii)}] for $0\le\alpha_1<\alpha_0'\le\alpha_0$ with $\alpha_0'-\alpha_1\ge\alpha/4$:
+\item[\textup{(ii)}] for $0\le r'<r\le\alpha_0$ with $r-r'\ge\alpha/4$:
 \[
-\norm{\ue^{\alpha_1\Lambda}b'(s)}\le C_4^{N+K+1}(2N)!\,(2K+2)!\,\alpha^{-(2K+2)}(\alpha\hbar)^{-2N}\norm{\ue^{\alpha_0'\Lambda}a}.
+\norm{\ue^{r'\Lambda}b'(s)}\le C_3^{N+K+1}(2N)!\,(2K+2)!\,\alpha^{-(2K+2)}(\alpha\hbar)^{-2N}\norm{\ue^{r\Lambda}a}.
 \]
 \end{itemize}
 \end{lemma}
@@ -505,25 +536,25 @@ $\hbar^{-2}(-1+i\hbar)$ (length $0$, coefficient of modulus at most $2\hbar^{-2}
 of modulus at most $1$.
 Suppose $n_0,n_1,n_2$ of the $N$ $\Delta_\varphi$-factors choose these three kinds. The coefficient is $\le2^{n_0+n_1}\hbar^{-2n_0-n_1}$, and the word length is $\le L:=n+q+2K+2$, with $q:=n_1+2n_2\le2N$.
 Since $2n_0+n_1=2N-q$, the coefficient is $\le2^N\hbar^{-2N+q}$.
-By Lemma~\ref{lem:sc}, and since $m\mapsto(m+1)m!(C_3/\alpha)^m$ is increasing, each term is $\le B_\beta(L+1)L!(C_3/\alpha)^L\pwNorm a$.
+By Lemma~\ref{lem:sc}, and since $m\mapsto(m+1)m!(C_2/\alpha)^m$ is increasing, each term is $\le B_\beta(L+1)L!(C_2/\alpha)^L\pwNorm a$.
 Use $L!\le2^Lq!(n+2K+2)!$, and then
 \[
 \begin{aligned}
-\hbar^{-2N+q}q!(C_3/\alpha)^q&=\hbar^{-2N}q!(C_3\hbar/\alpha)^q\\
-&\le\hbar^{-2N}(2N)!\max(1,C_3\hbar/\alpha)^{2N}\le(2N)!\,C_3^{2N}(\alpha\hbar)^{-2N},
+\hbar^{-2N+q}q!(C_2/\alpha)^q&=\hbar^{-2N}q!(C_2\hbar/\alpha)^q\\
+&\le\hbar^{-2N}(2N)!\max(1,C_2\hbar/\alpha)^{2N}\le(2N)!\,C_2^{2N}(\alpha\hbar)^{-2N},
 \end{aligned}
 \]
-using $\alpha,\hbar\le1\le C_3$.
+using $\alpha,\hbar\le1\le C_2$.
 Summed over all choices, the factors $2^{n_0+n_1}$ give at most $7^N3^{K+1}$: each $\Delta_\varphi$-factor has two choices
 that carry the factor $2$ (lengths $0$ and $1$) and three that carry the factor $1$, so it contributes $2+2+1+1+1=7$, and each
-$\Delta(s_j)$ has three choices. Collecting the powers of $2$ and $7$ into $C_4$ gives (i).
+$\Delta(s_j)$ has three choices. Collecting the powers of $2$ and $7$ into $C_3$ gives (i).
 Part (ii) follows from the same count, using Lemma~\ref{lem:wc} (gap $\ge\alpha/4$) in place of Lemma~\ref{lem:sc}, and $n=0$. \qedhere
 \end{proof}
 
 \begin{lemma}[analytic mollifier defect]\label{lem:unw}
-There is a constant $C_0$ such that for $0<\varepsilon\le1$, $0<r\le1$, $s\ge0$ and $v\in\operatorname{Dom}(\ue^{r\Lambda})$,
+There is a constant $C_4$ such that for $0<\varepsilon\le1$, $0<r\le1$, $s\ge0$ and $v\in\operatorname{Dom}(\ue^{r\Lambda})$,
 \[
-\norm{(\Delta_\varepsilon(s)-\Delta(s))v}\le C_0\,r^{-4}\,\ue^{-r/(8\varepsilon)}\,\norm{\ue^{r\Lambda}v}.
+\norm{(\Delta_\varepsilon(s)-\Delta(s))v}\le C_4\,r^{-4}\,\ue^{-r/(8\varepsilon)}\,\norm{\ue^{r\Lambda}v}.
 \]
 \end{lemma}
 
@@ -553,5 +584,5 @@ If $\lambda>1/(2\varepsilon)$, then $1-j_\varepsilon\le1$ and $(1+\lambda^2)\ue^
 $\norm{\ue^{(r/2)\Lambda}\Delta(s)v}\le3(1+4C_1/r)^2\norm{\ue^{r\Lambda}v}$. By the symbol bound with $r/2$ in place of $r$,
 $\norm{(1-J_\varepsilon)w}\le20\,r^{-2}\ue^{-r/(8\varepsilon)}\norm{\ue^{(r/2)\Lambda}w}$. Take $w=\Delta(s)v$.
 
-Adding the two terms gives the claim with $C_0=20+60(1+4C_1)^2$. \qedhere
+Adding the two terms gives the claim with $C_4=20+60(1+4C_1)^2$. \qedhere
 \end{proof}

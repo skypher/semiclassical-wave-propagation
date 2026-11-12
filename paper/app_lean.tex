@@ -25,18 +25,19 @@ A kernel check certifies the proofs of the formal statements. Whether a formal s
 \item \emph{Boundary points.} The base point $x_0\in\Hb$ is a parameter, and $b=g\,\infty$ with $g\in\mathrm{SL}(2,\mathbb R)$, $g\,x_0=x_0$. Every $b\in\partial\Hb$ arises, and the objects depend on $b$ only (\lean{exists_stab_smul_infty}, \lean{initState_eq_of_stab}, \lean{approxSolB_eq_of_stab}).
 \item \emph{Amplitudes.} An amplitude is a function on $\Hb$ whose class has finite norm. The formal theorems produce its $C^\infty$ representative $a'$, equal to $a$ almost everywhere, before $\hbar,t,K,N,b$ are chosen, and $u^{(K)}$ is built from $a'$. Nonzero amplitudes of finite norm exist in both classes (\lean{printed_class_nonvacuous_beta}, \lean{swappedD_class_nonvacuous}).
 \item \emph{Conclusions.} Each $L^2$ theorem asserts that the two orbit sums converge absolutely almost everywhere and define elements of $L^2(M)$, and then bounds $\norm{\Delta^N[\,\cdot\,]}$, an element of $[0,\infty]$ that equals $\infty$ outside the domain of $\Delta^N$. The pointwise declarations assert that the error lies in the domain of $\Delta^N$ and that $\Delta^NE$ has a continuous representative at every point of $M$.
-\item \emph{The cap on $\delta$ in the optimal-truncation corollaries.} For Corollary~\ref{pc:cor15} the condition $\delta\le\kappa^{1/2}/\max(1,C)$ is part of the formal statement. For the reversed-weight and power-weight norms in Corollary~\ref{cor:dd15} the formal statements assert that some $C$ and $\delta>0$ exist for which the bound holds on the window; their proofs take $\delta\le\kappa^{1/2}/\max(1,C)$, and $\delta$ may always be decreased, since this only shortens the time window.
-\item \emph{Ranges and grouped statements.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$. Theorems~\ref{thm:dd14} and~\ref{thm:dd-appx} and their corollaries keep the range $\alpha_0<\pi/4$ of
+\item \emph{The cap on $\delta$ in the optimal-truncation corollaries.} For Corollary~\ref{pc:cor15} the window constant $\delta_1=\min(\delta,\kappa^{1/2}/\max(1,C))$ is part of the formal statement. For the reversed-weight and power-weight norms in Corollary~\ref{cor:dd15} the formal statements assert that some $C$ and $\delta>0$ exist for which the bound holds on the window; their proofs take $\delta\le\kappa^{1/2}/\max(1,C)$, and $\delta$ may always be decreased, since this only shortens the time window.
+\item \emph{Ranges.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$. Theorems~\ref{thm:dd14} and~\ref{thm:dd-appx} and their corollaries keep the range $\alpha_0<\pi/4$ of
 the formal statements; their paper proofs use only $\alpha_0\le1$, since all estimates of Section~\ref{sec:analytic} are
-applied with $\tau_0=1$. The second statement of Theorem~\ref{thm:dd-appx}, the uniformity in $\Gamma$, is
+applied with $\tau_0=1$.
+\item \emph{Uniformity in the group.} The uniformity in $\Gamma$ in Theorem~\ref{thm:dd-appx} is
 \lean{thm14R_unifX}, which is stated for $C^\infty$ amplitudes and $0<\alpha\le1$; the representative comes from
 Lemma~\ref{lem:lift} (\lean{lift1}), as in the bullet on amplitudes.
-Theorem~\ref{pc:main} states the bounded-radius result \lean{pcmain_all}; its proof treats $\alpha\le\tfrac12$, the range of
+\item \emph{The radius ranges of Theorem~\ref{pc:main}.} Theorem~\ref{pc:main} states the bounded-radius result \lean{pcmain_all}; its proof treats $\alpha\le\tfrac12$, the range of
 \lean{pcmain_half}, and $\tfrac12<\alpha\le A$ separately, both through Proposition~\ref{pc:core}, which is \lean{dd_core_pc} with
 \lean{SurfW.surf_D4}. The original-norm corollaries likewise use the declarations with suffix \lean{all}.
-Proposition~\ref{os:data} retains the condition $\sigma m\le\tfrac12$, although its paper proof does not need it:
+\item \emph{Proposition~\ref{os:data}} retains the condition $\sigma m\le\tfrac12$, although its paper proof does not need it:
 this is the range of its formal statement and suffices for its applications.
-The formal statement of Proposition~\ref{prop:mean} has every $\hbar>0$ and every real $t$, and no hypothesis on the area:
+\item \emph{Proposition~\ref{prop:mean}.} Its formal statement has every $\hbar>0$ and every real $t$, and no hypothesis on the area:
 its inequality is one in $[0,\infty]$ with $0\cdot\infty=0$.
 \end{itemize}
 
@@ -81,9 +82,10 @@ which is itself not proved formally.
 The example-amplitude results, Lemmas~\ref{lem:gutzmer} and~\ref{lem:ex} and Corollary~\ref{cor:localized},
 are also outside the formalization and are not used by the approximation theorems.
 
-{\small
-\begin{longtable}{@{}p{0.36\linewidth}p{0.60\linewidth}@{}}
-\caption{Formal counterparts and the principal exceptions.}\label{tab:lean}\\
+\begin{table}[tbp]
+\centering\small
+\caption{Formal counterparts and the principal exceptions.}\label{tab:lean}
+\begin{tabular}{@{}p{0.36\linewidth}p{0.60\linewidth}@{}}
 \hline
 Statement & Lean theorem or scope\\
 \hline
@@ -111,4 +113,5 @@ Theorem~\ref{ev:mod}(iii) & Cited horocycle equidistribution theorem\\
 Corollary~\ref{cor:localized} & Paper deduction from Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}\\
 Corollary~\ref{cor:meanJ} & Paper deduction from Proposition~\ref{prop:mean} and Theorem~\ref{thm:dd14}\\
 \hline
-\end{longtable}}
+\end{tabular}
+\end{table}

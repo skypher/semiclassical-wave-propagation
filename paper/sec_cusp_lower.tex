@@ -37,18 +37,19 @@ where $t_8(\hbar)=20\log(1/\hbar)$.
 
 
 \begin{proposition}[relative accuracy in the cusp]\label{cl:relative}
-In case (i) of Theorem~\ref{cl:main}, for $\hbar\le\hbar_0$ and $t$ in the range of Theorem~\ref{cl:main},
+In case (i) of Theorem~\ref{cl:main} there are constants $c_{\mathrm{rel}},C_{\mathrm{rel}}>0$, depending on $\alpha$ and $\beta$,
+such that for $\hbar\le\hbar_0$ and $t$ in the range of Theorem~\ref{cl:main},
 \[
-c\,\hbar t\le\frac{|E_0(t)(z)|}{|u^{(0)}(t)_\Gamma(z)|}\le C\,\hbar t,\qquad z=x+i\ue^t .
+c_{\mathrm{rel}}\,\hbar t\le\frac{|E_0(t)(z)|}{|u^{(0)}(t)_\Gamma(z)|}\le C_{\mathrm{rel}}\,\hbar t,\qquad z=x+i\ue^t .
 \]
 \end{proposition}
 This is the relative-accuracy statement of Section~\ref{subsec:corrections}. It concerns this amplitude on this window only;
 it is not a general relative-error theorem. Its proof is in Section~\ref{subsec:cl-relative}.
 
-\medskip\noindent\emph{The mechanism.} The error contains the explicit first Dyson term
-$\ue^{-it/(2\hbar)}(S(t)\,\tfrac{i\hbar}2P_1(t)a)\ue^{i\varphi/\hbar}$, periodized. At height $H=\ue^t$ in the cusp the sum
+\medskip\noindent\emph{The mechanism.} The error contains the periodization of the explicit first
+Dyson term $\ue^{-it/(2\hbar)}(S(t)\,\tfrac{i\hbar}2P_1(t)a)\ue^{i\varphi/\hbar}$. At height $H=\ue^t$ in the cusp the sum
 over $\Gamma$ concentrates, by stationary phase, at the tops $n/c+i/(c^2H)$ of the horocycles $\gamma(\mathbb R+iH)$, whose
-images under $\delta_t:(x,y)\mapsto(x,\ue^ty)$ are the points $n/c+i/c^2$ ($c\ge1$, $\gcd(n,c)=1$), and its size is
+images under $\Omega_t:(x,y)\mapsto(x,\ue^ty)$ are the points $n/c+i/c^2$ ($c\ge1$, $\gcd(n,c)=1$), and its size is
 $\ue^{t/2}\sqrt{\pi\hbar}\cdot\hbar t$; the remainder is controlled by the $L^2$ theorem.
 
 \medskip\noindent\emph{Plan of the proof.} The proof starts from the decomposition
@@ -102,7 +103,7 @@ and the double series converges absolutely.
 \end{lemma}
 \begin{proof}
 In this proof $C$ denotes constants that depend only on the choice of $\vartheta$; they do not depend on $A$, $\hbar$, $t$, $x$, on the pair
-$(n,c)$ or on the frequency $\ell$ below. Put $F:=(S(t)A)\ue^{i\varphi/\hbar}$, where $S(t)A=\ue^{-t/2}A\circ \delta_t$ and $\delta_t(x,y)=(x,\ue^ty)$. Note that
+$(n,c)$ or on the frequency $\nu$ below. Put $F:=(S(t)A)\ue^{i\varphi/\hbar}$, where $S(t)A=\ue^{-t/2}A\circ \Omega_t$ and $\Omega_t(x,y)=(x,\ue^ty)$. Note that
 $H=\ue^t\ge\hbar^{-2}\ge4$.
 
 \emph{Cosets.} An element of $\mathrm{PSL}(2,\mathbb Z)$ is a translation $z\mapsto z+k$, or has lower-left entry $c\ge1$ and acts by $w\mapsto n/c-1/(c(cw+d))$ with
@@ -112,7 +113,7 @@ absolutely by the bounds below. For the translation part, $|F(z+k)|\le\ue^{-t/2}
 $X_0(x+k+iH^2)\ge\tfrac12H^2\bigl(1+(x+k)^2H^{-4}\bigr)$, so $\sum_k\vartheta(x+k+iH^2)\le C$ for both choices of $\vartheta$ (use
 $\vartheta\le X_0^{-1}$ for the second). So the translation part is at most $C\ue^{-t/2}B(A)\le C\ue^{t/2}\hbar^{3/2}B(A)$, because $\ue^{-t}\le\hbar^2$.
 
-\emph{Change of variable.} With $\tau=(c(x+u)+d_n)/H$, the point $\delta_t\gamma_{n,c}(z+u)$ is
+\emph{Change of variable.} With $\tau=(c(x+u)+d_n)/H$, the point $\Omega_t\gamma_{n,c}(z+u)$ is
 \[
 Q(\tau)=\frac nc-\frac{\tau}{cH(\tau^2+c^2)}+\frac{i}{\tau^2+c^2},\qquad \varphi(\gamma_{n,c}(z+u))=t+\log(\tau^2+c^2),
 \]
@@ -126,12 +127,12 @@ derivatives of $r_1$ and $r_2$ at $\tau/c$, times a power $H^{-k}$ with $k\ge0$,
 \begin{equation}\label{cl:der}
 |\partial_\tau^j[A(Q(\tau))]|\le C_j\,c^{-j}B(A)\,\vartheta(Q(\tau))\qquad(j\le4).
 \end{equation}
-Write $Q=q+ip$. Then $X_0(Q)=(q^2+1)/(2p)+p/2\ge\tfrac12(q^2+1)(\tau^2+c^2)$, and $|qc-n|\le1/(2cH)\le\tfrac12$, so $q^2c^2\ge n^2/4$ and
+Write $Q=q_1+iq_2$. Then $X_0(Q)=(q_1^2+1)/(2q_2)+q_2/2\ge\tfrac12(q_1^2+1)(\tau^2+c^2)$, and $|q_1c-n|\le1/(2cH)\le\tfrac12$, so $q_1^2c^2\ge n^2/4$ and
 $X_0(Q(\tau))\ge\tfrac18(n^2+c^2)(1+\tau^2/c^2)$. Hence
 \begin{equation}\label{cl:theta}
-\vartheta(Q(\tau))\le C\,\vartheta_{n,c}\,(1+\tau^2/c^2)^{-\nu},
+\vartheta(Q(\tau))\le C\,\vartheta_{n,c}\,(1+\tau^2/c^2)^{-p},
 \end{equation}
-where $\nu=2$, $\vartheta_{n,c}=(n^2+c^2)^{-2}$ for $\vartheta=X_0^{-2}$, and $\nu=1$,
+where $p=2$, $\vartheta_{n,c}=(n^2+c^2)^{-2}$ for $\vartheta=X_0^{-2}$, and $p=1$,
 $\vartheta_{n,c}=(n^2+c^2)^{-1}(1+\log(n^2+c^2))^{-3/2}$ for the second choice (for which $\vartheta\le X_0^{-1}(1+\log X_0)^{-3/2}$, a decreasing
 function of $X_0$). In both cases $\sum_{(n,c)}\vartheta_{n,c}<\infty$ (for the second, by
 partial summation, since $\#\{(n,c):n^2+c^2\le R\}\le CR$). By \eqref{cl:theta}, $\sum_k|G_{n,c}(k)|\le C\ue^{-t/2}B(A)\vartheta_{n,c}(H+1)$, which gives the
@@ -139,53 +140,53 @@ absolute convergence, and at $\tau=0$ it gives $|A(n/c+i/c^2)|\le CB(A)\vartheta
 We abbreviate $\eta_{n,c}:=\ue^{-t/2}B(A)\,\vartheta_{n,c}$.
 
 \emph{Poisson summation.} By \eqref{cl:der} and \eqref{cl:theta}, $G_{n,c}$ is $C^4$ and its derivatives up to order $2$ are $O((1+u^2)^{-1})$, so
-$\sum_kG_{n,c}(k)=\sum_\ell\hat G(\ell)$ with
+$\sum_kG_{n,c}(k)=\sum_\nu\hat G(\nu)$ with
 \[
-\hat G(\ell)=\frac Hc\,\ue^{2\pi i\ell(x+d_n/c)}\int g(\tau)\,\ue^{-2\pi i\ell H\tau/c}\,d\tau .
+\hat G(\nu)=\frac Hc\,\ue^{2\pi i\nu(x+d_n/c)}\int g(\tau)\,\ue^{-2\pi i\nu H\tau/c}\,d\tau .
 \]
-Let $\ell\ne0$, and write the integrand as $u\,\ue^{i\Theta}$ with $u(\tau)=\ue^{-t/2}A(Q(\tau))\ue^{it/\hbar}$ and
-$\Theta(\tau)=\hbar^{-1}\log(\tau^2+c^2)-2\pi\ell H\tau/c$. Then $\Theta'=(\hbar c)^{-1}r_1(\tau/c)-2\pi\ell H/c$, so
-$|\Theta'|\ge2\pi|\ell|H/c-1/(\hbar c)\ge\pi|\ell|H/c$ (as $\hbar H\ge\hbar^{-1}\ge2$), $|\Theta''|\le2/(\hbar c^2)$ and
+Let $\nu\ne0$, and write the integrand as $u\,\ue^{i\Theta}$ with $u(\tau)=\ue^{-t/2}A(Q(\tau))\ue^{it/\hbar}$ and
+$\Theta(\tau)=\hbar^{-1}\log(\tau^2+c^2)-2\pi\nu H\tau/c$. Then $\Theta'=(\hbar c)^{-1}r_1(\tau/c)-2\pi\nu H/c$, so
+$|\Theta'|\ge2\pi|\nu|H/c-1/(\hbar c)\ge\pi|\nu|H/c$ (as $\hbar H\ge\hbar^{-1}\ge2$), $|\Theta''|\le2/(\hbar c^2)$ and
 $|\Theta'''|\le C/(\hbar c^3)$. Two integrations by parts, without boundary terms, give $\int u\,\ue^{i\Theta}=-\int\bigl((u/\Theta')'/\Theta'\bigr)'\ue^{i\Theta}$, and
 \begin{multline*}
 \Bigl|\Bigl(\frac{(u/\Theta')'}{\Theta'}\Bigr)'\Bigr|\le\frac{|u''|}{|\Theta'|^2}+3\frac{|u'||\Theta''|}{|\Theta'|^3}+\frac{|u||\Theta'''|}{|\Theta'|^3}+3\frac{|u||\Theta''|^2}{|\Theta'|^4}\\
-\le\frac{C}{\ell^2H^2}\Bigl(1+\frac1{\hbar|\ell|H}+\frac1{(\hbar\ell H)^2}\Bigr)\ue^{-t/2}B(A)\,\vartheta(Q(\tau))
+\le\frac{C}{\nu^2H^2}\Bigl(1+\frac1{\hbar|\nu|H}+\frac1{(\hbar\nu H)^2}\Bigr)\ue^{-t/2}B(A)\,\vartheta(Q(\tau))
 \end{multline*}
-by \eqref{cl:der}. Since $\hbar H\ge2$ and $\int(1+\tau^2/c^2)^{-\nu}d\tau\le Cc$, \eqref{cl:theta} gives
+by \eqref{cl:der}. Since $\hbar H\ge2$ and $\int(1+\tau^2/c^2)^{-p}d\tau\le Cc$, \eqref{cl:theta} gives
 \[
-\Bigl|\int g\,\ue^{-2\pi i\ell H\tau/c}d\tau\Bigr|\le C\eta_{n,c}\,\frac c{\ell^2H^2}.
+\Bigl|\int g\,\ue^{-2\pi i\nu H\tau/c}d\tau\Bigr|\le C\eta_{n,c}\,\frac c{\nu^2H^2}.
 \]
-Hence $\sum_{\ell\ne0}|\hat G(\ell)|\le C\eta_{n,c}/H$, and the sum of these bounds over $(n,c)$ is at most
+Hence $\sum_{\nu\ne0}|\hat G(\nu)|\le C\eta_{n,c}/H$, and the sum of these bounds over $(n,c)$ is at most
 $C\ue^{-3t/2}B(A)\le C\ue^{t/2}\hbar^{3/2}B(A)$.
 
-\emph{The term $\ell=0$.} With $\tau=c\sigma$, $\hat G(0)=H\ue^{it/\hbar}c^{2i/\hbar}\int f(\sigma)\ue^{i\theta(\sigma)/\hbar}d\sigma$, where
+\emph{The term $\nu=0$.} With $\tau=c\sigma$, $\hat G(0)=H\ue^{it/\hbar}c^{2i/\hbar}\int f(\sigma)\ue^{i\theta(\sigma)/\hbar}d\sigma$, where
 $f(\sigma)=\ue^{-t/2}A(Q(c\sigma))$ and $\theta(\sigma)=\log(1+\sigma^2)$, so that $\theta'=r_1$. By \eqref{cl:der} and \eqref{cl:theta},
 \begin{equation}\label{cl:fbd}
-|f^{(j)}(\sigma)|\le C\eta_{n,c}(1+\sigma^2)^{-\nu}\qquad(j\le4),
+|f^{(j)}(\sigma)|\le C\eta_{n,c}(1+\sigma^2)^{-p}\qquad(j\le4),
 \end{equation}
 and the same bound holds for $j\le2$ when $A$ is replaced by $Z_SA$ with $|S|\le2$. By \eqref{cl:chain},
 \begin{equation}\label{cl:fprime}
 f'=-\theta'f_1-H^{-1}r_2f_2,\qquad f_1:=\ue^{-t/2}(YA)(Q(c\sigma)),\quad f_2:=\ue^{-t/2}(XA)(Q(c\sigma)),
 \end{equation}
-and likewise $f_1'=-\theta'f_{11}-H^{-1}r_2f_{21}$ with $f_{11}$, $f_{21}$ defined by $Y^2A$ and $XYA$. Let $\lambda$ be a fixed cutoff, $\lambda=1$ on
-$[-\tfrac12,\tfrac12]$, $\operatorname{supp}\lambda\subset[-1,1]$, and split $f=\lambda f+(1-\lambda)f$.
+and likewise $f_1'=-\theta'f_{11}-H^{-1}r_2f_{21}$ with $f_{11}$, $f_{21}$ defined by $Y^2A$ and $XYA$. Let $\psi$ be a fixed cutoff, $\psi=1$ on
+$[-\tfrac12,\tfrac12]$, $\operatorname{supp}\psi\subset[-1,1]$, and split $f=\psi f+(1-\psi)f$.
 
 \emph{Near part.} On $[-1,1]$, $\theta=s(\sigma)^2$ with $s(\sigma)=\operatorname{sign}(\sigma)(\log(1+\sigma^2))^{1/2}$, a fixed smooth function with $s'>0$ and
-$s'(0)=1$. With the inverse function $\sigma(s)$ put $h(s)=(\lambda f)(\sigma(s))\sigma'(s)$; it is $C^4$, supported in $[-1,1]$, and
+$s'(0)=1$. With the inverse function $\sigma(s)$ put $h(s)=(\psi f)(\sigma(s))\sigma'(s)$; it is $C^4$, supported in $[-1,1]$, and
 $\norm h_{C^4}\le C\eta_{n,c}$ by \eqref{cl:fbd}, since the change of variable is fixed. By the Fourier inversion formula and
 $\int\ue^{is^2/\hbar+is\xi}ds=\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{-i\hbar\xi^2/4}$,
 \[
-\int\lambda f\,\ue^{i\theta/\hbar}d\sigma=\int h\,\ue^{is^2/\hbar}ds=\sqrt{\pi\hbar}\,\ue^{i\pi/4}\,\frac1{2\pi}\int\hat h(\xi)\,\ue^{-i\hbar\xi^2/4}d\xi ,
+\int\psi f\,\ue^{i\theta/\hbar}d\sigma=\int h\,\ue^{is^2/\hbar}ds=\sqrt{\pi\hbar}\,\ue^{i\pi/4}\,\frac1{2\pi}\int\hat h(\xi)\,\ue^{-i\hbar\xi^2/4}d\xi ,
 \]
 and $\frac1{2\pi}\int\hat h=h(0)=f(0)$. Since $|\ue^{-i\hbar\xi^2/4}-1|\le\hbar\xi^2/4$ and
 $(1+\xi^2)^2|\hat h(\xi)|\le\norm{(1-\partial_s^2)^2h}_{L^1}\le8\norm h_{C^4}$,
 \[
-\Bigl|\int\lambda f\,\ue^{i\theta/\hbar}d\sigma-\sqrt{\pi\hbar}\,\ue^{i\pi/4}f(0)\Bigr|\le\sqrt{\pi\hbar}\,\frac\hbar{8\pi}\int\xi^2|\hat h(\xi)|\,d\xi\le C\hbar^{3/2}\eta_{n,c}.
+\Bigl|\int\psi f\,\ue^{i\theta/\hbar}d\sigma-\sqrt{\pi\hbar}\,\ue^{i\pi/4}f(0)\Bigr|\le\sqrt{\pi\hbar}\,\frac\hbar{8\pi}\int\xi^2|\hat h(\xi)|\,d\xi\le C\hbar^{3/2}\eta_{n,c}.
 \]
 
-\emph{Far part.} Let $\lambda_H(\sigma)=\lambda(\sigma/(2H))$, so that $\lambda_H=1$ on $|\sigma|\le H$, $\lambda_H=0$ on $|\sigma|\ge2H$ and
-$|\lambda_H^{(k)}|\le CH^{-k}$, and put $\zeta=(1-\lambda)\lambda_H$. By \eqref{cl:fbd}, $\int|(1-\lambda)(1-\lambda_H)f|\le C\eta_{n,c}\int_{|\sigma|\ge H}\sigma^{-2\nu}d\sigma\le C\eta_{n,c}/H$.
-It remains to bound $\int\zeta f\,\ue^{i\theta/\hbar}d\sigma$. On $|\sigma|\ge\tfrac12$ put $\rho:=1/\theta'=(1+\sigma^2)/(2\sigma)$; then
+\emph{Far part.} Let $\psi_H(\sigma)=\psi(\sigma/(2H))$, so that $\psi_H=1$ on $|\sigma|\le H$, $\psi_H=0$ on $|\sigma|\ge2H$ and
+$|\psi_H^{(k)}|\le CH^{-k}$, and put $\psi_*=(1-\psi)\psi_H$. By \eqref{cl:fbd}, $\int|(1-\psi)(1-\psi_H)f|\le C\eta_{n,c}\int_{|\sigma|\ge H}\sigma^{-2p}d\sigma\le C\eta_{n,c}/H$.
+It remains to bound $\int\psi_* f\,\ue^{i\theta/\hbar}d\sigma$. On $|\sigma|\ge\tfrac12$ put $\rho:=1/\theta'=(1+\sigma^2)/(2\sigma)$; then
 \begin{equation}\label{cl:rho}
 |\rho|\le C(1+|\sigma|),\qquad|\rho'|\le C,\qquad|\rho''|\le C(1+|\sigma|)^{-3},
 \end{equation}
@@ -195,26 +196,26 @@ and for every $C^1$ function $v$ with compact support in $\{|\sigma|\ge\tfrac12\
 \end{equation}
 The cutoff satisfies
 \begin{equation}\label{cl:omega}
-|\zeta'\rho|\le C,\qquad|(\zeta'\rho)'\rho|\le C\ \text{on }\tfrac12\le|\sigma|\le1,\qquad|(\zeta'\rho)'\rho|\le C\ \text{on }H\le|\sigma|\le2H,
+|\psi_*'\rho|\le C,\qquad|(\psi_*'\rho)'\rho|\le C\ \text{on }\tfrac12\le|\sigma|\le1,\qquad|(\psi_*'\rho)'\rho|\le C\ \text{on }H\le|\sigma|\le2H,
 \end{equation}
-and $\zeta'$ vanishes elsewhere (on $[H,2H]$ use $|\lambda_H'|\le C/H$, $|\lambda_H''|\le C/H^2$ and $|\rho|\le CH$). By \eqref{cl:fprime},
+and $\psi_*'$ vanishes elsewhere (on $[H,2H]$ use $|\psi_H'|\le C/H$, $|\psi_H''|\le C/H^2$ and $|\rho|\le CH$). By \eqref{cl:fprime},
 $f'\rho=-f_1-H^{-1}r_2\rho f_2$, so
 \[
-(\zeta f\rho)'=W-H^{-1}\zeta r_2\rho f_2,\qquad W:=\zeta'\rho f+\zeta\rho'f-\zeta f_1 .
+(\psi_* f\rho)'=W-H^{-1}\psi_* r_2\rho f_2,\qquad W:=\psi_*'\rho f+\psi_*\rho'f-\psi_* f_1 .
 \]
 The last term is integrated directly: by \eqref{cl:fbd} and \eqref{cl:rho},
 \[
-\int|H^{-1}\zeta r_2\rho f_2|\,d\sigma\le C\eta_{n,c}H^{-1}\int_{|\sigma|\le2H}(1+|\sigma|)^{1-2\nu}d\sigma\le C\eta_{n,c}H^{-1}\log(4H).
+\int|H^{-1}\psi_* r_2\rho f_2|\,d\sigma\le C\eta_{n,c}H^{-1}\int_{|\sigma|\le2H}(1+|\sigma|)^{1-2p}d\sigma\le C\eta_{n,c}H^{-1}\log(4H).
 \]
 The function $W$ is $C^1$ with compact support in $\{|\sigma|\ge\tfrac12\}$, and we apply \eqref{cl:ibp} once more, to $v=W$, where
 \[
-(W\rho)'=(\zeta'\rho)'\rho f+\zeta'\rho\,(f'\rho)+\zeta'\rho\,\rho'f+\zeta\rho''\rho f+\zeta\rho'(f'\rho)-\zeta'\rho f_1-\zeta\,(f_1'\rho)+W\rho' .
+(W\rho)'=(\psi_*'\rho)'\rho f+\psi_*'\rho\,(f'\rho)+\psi_*'\rho\,\rho'f+\psi_*\rho''\rho f+\psi_*\rho'(f'\rho)-\psi_*'\rho f_1-\psi_*\,(f_1'\rho)+W\rho' .
 \]
-On the support of $\zeta$ we have $|\sigma|\le2H$, hence $H^{-1}|\rho|\le C$ and, by \eqref{cl:fprime} and its analogue for $f_1$,
-$|f'\rho|+|f_1'\rho|\le C\eta_{n,c}(1+\sigma^2)^{-\nu}$. With \eqref{cl:fbd}, \eqref{cl:rho} and \eqref{cl:omega} (and $|\rho''\rho|\le C$, $|W|\le C\eta_{n,c}(1+\sigma^2)^{-\nu}$) every term of $(W\rho)'$ is
-bounded by $C\eta_{n,c}(1+\sigma^2)^{-\nu}$. So $\int|(W\rho)'|\le C\eta_{n,c}$, and altogether
+On the support of $\psi_*$ we have $|\sigma|\le2H$, hence $H^{-1}|\rho|\le C$ and, by \eqref{cl:fprime} and its analogue for $f_1$,
+$|f'\rho|+|f_1'\rho|\le C\eta_{n,c}(1+\sigma^2)^{-p}$. With \eqref{cl:fbd}, \eqref{cl:rho} and \eqref{cl:omega} (and $|\rho''\rho|\le C$, $|W|\le C\eta_{n,c}(1+\sigma^2)^{-p}$) every term of $(W\rho)'$ is
+bounded by $C\eta_{n,c}(1+\sigma^2)^{-p}$. So $\int|(W\rho)'|\le C\eta_{n,c}$, and altogether
 \[
-\Bigl|\int(1-\lambda)f\,\ue^{i\theta/\hbar}d\sigma\Bigr|\le C\eta_{n,c}\bigl(H^{-1}+\hbar\,H^{-1}\log(4H)+\hbar^2\bigr)\le C\hbar^{3/2}\eta_{n,c},
+\Bigl|\int(1-\psi)f\,\ue^{i\theta/\hbar}d\sigma\Bigr|\le C\eta_{n,c}\bigl(H^{-1}+\hbar\,H^{-1}\log(4H)+\hbar^2\bigr)\le C\hbar^{3/2}\eta_{n,c},
 \]
 because $H\ge\hbar^{-2}$ and $H^{-1}\log(4H)\le C\hbar^{1/2}$ for such $H$.
 
@@ -222,7 +223,7 @@ because $H\ge\hbar^{-2}$ and $H^{-1}\log(4H)\le C\hbar^{1/2}$ for such $H$.
 \[
 \hat G(0)=\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}c^{2i/\hbar}A\Bigl(\frac nc+\frac i{c^2}\Bigr)+O\bigl(\ue^{t/2}\hbar^{3/2}B(A)\vartheta_{n,c}\bigr).
 \]
-Summing over $(n,c)$, with $\sum_{(n,c)}\vartheta_{n,c}<\infty$, and adding the bounds for the translation part and for the terms $\ell\ne0$ proves the lemma.
+Summing over $(n,c)$, with $\sum_{(n,c)}\vartheta_{n,c}<\infty$, and adding the bounds for the translation part and for the terms $\nu\ne0$ proves the lemma.
 \end{proof}
 
 \subsection{Kernel bounds and amplitude construction}

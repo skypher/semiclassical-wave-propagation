@@ -1,5 +1,5 @@
 \section{Periodization and the exact remainder}\label{sec:remainder}
-The approximation error will be expressed through a quotient Duhamel formula. We first establish periodization,
+The approximation error will be expressed through a Duhamel formula on the quotient. We first establish periodization,
 fix the representatives and isometric reductions, and then derive the exact remainder on the quotient.
 The analytic estimates needed to bound that remainder are developed in Section~\ref{sec:analytic} and Sections~\ref{app:o1st}--\ref{subsec:pc-transfer};
 local pointwise control is established with the consequences in Section~\ref{sec:consequences}.
@@ -112,7 +112,7 @@ The approximations $u^{(K)}$ are always built from this representative.
 \begin{lemma}[base point]\label{lem:base}
 Let $x_0\in\Hb$ and $b\in\partial\Hb$.
 \begin{itemize}
-\item[\textup{(i)}] There is $g\in SL(2,\mathbb R)$ with $g\,x_0=x_0$ and $g\,\infty=b$, unique up to sign. By the definition in Section~\ref{sec:setup},
+\item[\textup{(i)}] There is $g\in\mathrm{SL}(2,\mathbb R)$ with $g\,x_0=x_0$ and $g\,\infty=b$, unique up to sign. By the definition in Section~\ref{sec:setup},
 $\varphi_b=\varphi_\infty\circ g^{-1}$. The construction of \cite[(1.20)--(1.29)]{S} is covariant under isometries: the initial state and
 the approximations for $b$ are $v\mapsto v\circ g^{-1}$ applied to those for $\infty$ with the amplitude $a\circ g$.
 \item[\textup{(ii)}] Let $p(z)=(\operatorname{Im}x_0)\,z+\operatorname{Re}x_0$ and $q:=g\,p$, so $q\,i=x_0$ and $q\,\infty=b$. For an amplitude $a$ put
@@ -131,8 +131,8 @@ for every $x_0$ and $b$.
 \end{lemma}
 
 \begin{proof}
-(i) The stabilizer of $x_0$ in $PSL(2,\mathbb R)$ acts simply transitively on $\partial\Hb$, so $g$ exists and is unique up
-to sign in $SL(2,\mathbb R)$. The phase $\varphi_b$, the transport and
+(i) The stabilizer of $x_0$ in $\mathrm{PSL}(2,\mathbb R)$ acts simply transitively on $\partial\Hb$, so $g$ exists and is unique up
+to sign in $\mathrm{SL}(2,\mathbb R)$. The phase $\varphi_b$, the transport and
 the operators $\Delta(s)$ for $b$ are defined from the geodesics ending at $b$, so they are the transports by $g$ of those for $\infty$.
 
 (ii) $\varphi_b\circ q=\varphi_\infty\circ p=\varphi_\infty-\log\operatorname{Im}x_0$, since $\operatorname{Im}p(z)=(\operatorname{Im}x_0)\operatorname{Im}z$.
@@ -146,8 +146,9 @@ $d(i,q^{-1}\gamma qz)=d(x_0,\gamma(qz))$.
 \end{proof}
 
 \begin{remark}[the base point of the weight]
-The hypothesis $g\,x_0=x_0$ is used in (iii): the Poincar\'e sum of $\Gamma$ is not bounded uniformly in the base point when $\Gamma$
-has parabolic elements, so the base point of the weight must be the point at which the sum is taken.
+The hypothesis $g\,x_0=x_0$ is used in (iii): it gives $q\,i=x_0$, so the weights and the Poincar\'e series based at $x_0$
+become those based at $i$. An isometry that moved $x_0$ would move the base point of the Poincar\'e series, and when $\Gamma$
+has parabolic elements that series is not bounded uniformly in its base point.
 \end{remark}
 
 \subsection{The quotient propagator and exact remainder}\label{subsec:dd-surf}\label{subsec:dd-id}
@@ -156,12 +157,12 @@ avoids periodizing $V(s)^*g$, which would need decay bounds for the unmollified 
 for the mollified flow (Section~\ref{sec:analytic}). In particular, the identity
 $\cU(t)u_\Gamma=\sum_\gamma(\cU(t)u)\circ\gamma^{-1}$ used in \cite{S} is never applied to $u=\ue^{i\varphi/\hbar}V(s)^*g$.
 
-Let $\varpi\ge1$ be a locally bounded measurable weight on $\Hb$, $L^2_\varpi:=\{f:\varpi f\in L^2(\Hb)\}$, and $\delta_sz:=x+i\ue^sy$. Assume:
+Let $\varpi\ge1$ be a locally bounded measurable weight on $\Hb$, $L^2_\varpi:=\{f:\varpi f\in L^2(\Hb)\}$, and $\Omega_sz:=x+i\ue^sy$. Assume:
 \begin{itemize}
 \item[(W1)] $f\mapsto f_\Gamma$ is bounded from $L^2_\varpi$ to $L^2(M)$, the sum converging absolutely a.e.;
-\item[(W2)] $\sup\{\varpi(z)/\varpi(\delta_sz):|s|\le T,\ z\in\Hb\}<\infty$ for every $T$.
+\item[(W2)] $\sup\{\varpi(z)/\varpi(\Omega_sz):|s|\le T,\ z\in\Hb\}<\infty$ for every $T$.
 \end{itemize}
-Lemma~\ref{lem:t2} (its proof, $t=0$) gives (W1) for $\varpi=X_0^\sigma$, $\sigma>1/2$. Proposition~\ref{os:p1} gives it for the periodization weight $\varpi=\omega=X_0^{1/2}\ell^{\,c'}$, $\ell=\log(2X_0)/\log2$, of Section~\ref{sec:printed}. Since $d(z,\delta_sz)=|s|$ and $\tilde\psi$ is $1$-Lipschitz, (W2) holds with the explicit ratios $(X_0(z)/X_0(\delta_sz))^\sigma\le\ue^{\sigma|s|}$ and $\omega(z)/\omega(\delta_sz)\le\ue^{|s|/2}(1+|s|/\log 2)^{c'}$. By (W2), $S(s)$ is bounded on $L^2_\varpi$, locally uniformly in $s$; it is strongly continuous there, by density of $C_c(\Hb)$.
+The proof of Lemma~\ref{lem:t2}, at $t=0$, gives (W1) for $\varpi=X_0^\sigma$, $\sigma>1/2$. Proposition~\ref{os:p1} gives it for the periodization weight $\varpi=\omega=X_0^{1/2}\ell^{\,c'}$, $\ell=\log(2X_0)/\log2$, of Section~\ref{sec:printed}. Since $d(z,\Omega_sz)=|s|$ and $\tilde\psi$ is $1$-Lipschitz, (W2) holds with the explicit ratios $(X_0(z)/X_0(\Omega_sz))^\sigma\le\ue^{\sigma|s|}$ and $\omega(z)/\omega(\Omega_sz)\le\ue^{|s|/2}(1+|s|/\log 2)^{c'}$. By (W2), $S(s)$ is bounded on $L^2_\varpi$, locally uniformly in $s$; it is strongly continuous there, by density of $C_c(\Hb)$.
 
 Let $\mathcal D_\varpi$ be the set of $g\in L^2_\varpi$ with $Xg,Yg,X^2g,Y^2g\in L^2_\varpi$ (weak derivatives). For $g\in L^2_\varpi$ and $s\in\mathbb R$ put
 \[

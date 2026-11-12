@@ -54,21 +54,22 @@ For this reason the proof of Theorem~\ref{pc:main} for larger radii compares the
 \subsection{The remainder for critically weighted data}\label{subsec:pc-proof}
 The proof of Theorem~\ref{pc:main} uses the amplitude only through a representation $a=\ue^{-\sigma\Lambda_m}h$ with
 critically weighted data $h$. The following proposition bounds the error in terms of the weighted norm of $h$;
-Section~\ref{subsec:pc-all} then constructs $h$ from $a$ for every bounded range of radii. As in the power-weight proof of
-Section~\ref{subsec:dd-thm}, the bound comes from integrating the exact remainder over the simplex. The proposition is
-stated for every weight $\varpi$ with the properties of $\omega$ that the proof uses.
+Section~\ref{subsec:pc-all} then constructs $h$ from $a$ for every bounded range of radii. The proposition is stated, like
+its formal counterpart, for every weight $\varpi$ with the properties of $\omega$ that the proof uses; it is applied only with
+$\varpi=\omega$.
 
 \begin{proposition}[the remainder for critically weighted data]\label{pc:core}
 Let $0\le c\le1$, $C_{\mathrm{sh}}>0$, $C_{\mathrm{gr}}\ge0$, $m>3/\sqrt2$ and $\kappa'>0$. There is $\delta'>0$, and for every
 $P<\infty$ there is $C'$, with the following property. Let $\Gamma$ be a Fuchsian group, $x_0=i$ and $b=\infty$, and let $\varpi\ge1$
-be a continuous weight that satisfies \textup{(W1)} with $\norm{f_\Gamma}^2_{L^2(M)}\le P\norm{\varpi f}^2$ for $f\in L^2_\varpi$, and
-\textup{(W2)}, and such that
+be a continuous weight that satisfies \textup{(W1)} with $\norm{f_\Gamma}^2_{L^2(M)}\le P\norm{\varpi f}^2$ for $f\in L^2_\varpi$
+and such that
 \[
 \begin{gathered}
   \ue^{n/2}(1+n)^c\le\varpi\le C_{\mathrm{sh}}\,\ue^{n/2}(1+n)^c\quad\text{on }A_n\ (n\ge0),\\
-  \varpi(z)\le C_{\mathrm{gr}}\,\ue^{|s|}\varpi(\delta_sz)\quad(s\in\mathbb R,\ z\in\Hb).
+  \varpi(z)\le C_{\mathrm{gr}}\,\ue^{|s|}\varpi(\Omega_sz)\quad(s\in\mathbb R,\ z\in\Hb);
 \end{gathered}
 \]
+the last condition implies \textup{(W2)}.
 Let $0<\hbar\le1$ and $0<\sigma\le1$ with $\sigma^3\ge\kappa'\hbar$, let $K,N\in\mathbb N_0$, let $h\in L^2(\Hb)$ with $\varpi h\in L^2(\Hb)$,
 and put $a:=\ue^{-\sigma\Lambda_m}h$. Then for $0\le t\le\delta'(\sigma/\hbar)^{1/2}$,
 \[
@@ -98,22 +99,23 @@ so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=\xi/2$ and $\sigma/\varepsi
 \]
 so that $b'(\mathbf s)=B'_{\mathbf s}a$ in (ii) of Proposition~\ref{prop:dd-id}. For $n\ge0$ put
 \[
-  F_n:=C_5^{N+K+n+1}(2N)!\,(n+2K+2)!\,\sigma^{-(n+2K+2)}(\sigma\hbar)^{-2N},
+  F_n:=C_6^{N+K+n+1}(2N)!\,(n+2K+2)!\,\sigma^{-(n+2K+2)}(\sigma\hbar)^{-2N},
 \]
-with a constant $C_5\ge1$ fixed in Step~1(a).
+with a constant $C_6\ge1$ fixed in Step~1(a).
 
-\medskip\noindent\emph{Step 1 (derivative, flow and defect estimates).} Each of the following maps is linear on $L^2(\Hb)$, and is bounded
+\medskip\noindent\emph{Step 1 (derivative, flow and defect estimates).} Each of the following maps is linear on $L^2(\Hb)$ (in particular additive, as Lemma~\ref{os:transfer}
+requires), and is bounded
 there and at the weight $\pcXzero$ on functions supported in one shell. Lemma~\ref{os:transfer} then bounds it at the weight $\varpi$.
 Write $C_{\mathrm{tr}}$ for its constant for $c$ and $C_{\mathrm{sh}}$; it is independent of $K,N,\hbar$ and the integration variables.
 
 \smallskip\noindent(a) \emph{Words.} For a word $Z_S$ of length $n$ let $T_wh:=Z_SB'_{\mathbf s}\mathsf Eh$. Expand $B'_{\mathbf s}$ as in the proof of
 Lemma~\ref{lem:wb}. Each term is a coefficient times a word of length at most $L$ applied to $\mathsf Eh$, and by Lemma~\ref{os:words}(b), with $\lambda=1$
-(so $2(\lambda+\tfrac12)^2<m^2$), it is bounded at the weight $\pcXzero$ by $2(L+1)L!\,(QC_6/\sigma)^L\norm{\pcXzero h}$. This is the bound of Lemma~\ref{lem:sc}
-with $(2,QC_6,\sigma)$ in place of $(B_\beta,C_3,\alpha)$, so the count in the proof of Lemma~\ref{lem:wb} gives, for a suitable $C_5\ge C_4$,
+(so $2(\lambda+\tfrac12)^2<m^2$), it is bounded at the weight $\pcXzero$ by $2(L+1)L!\,(QC_5/\sigma)^L\norm{\pcXzero h}$. This is the bound of Lemma~\ref{lem:sc}
+with $(2,QC_5,\sigma)$ in place of $(B_\beta,C_2,\alpha)$, so the count in the proof of Lemma~\ref{lem:wb} gives, for a suitable $C_6\ge C_3$,
 \[
   \norm{\pcXzero Z_SB'_{\mathbf s}\mathsf Eu}\le F_n\norm{\pcXzero u},\qquad\norm{Z_SB'_{\mathbf s}\mathsf Eu}\le F_n\norm u ;
 \]
-the second bound is the same argument without a weight. Lemma~\ref{os:transfer} with $M_0=M_1=F_n$ gives
+the second bound is the same argument without a weight. Lemma~\ref{os:transfer} with $\mathcal M_0=\mathcal M_1=F_n$ gives
 \begin{equation}\label{pc:wbw}
   \norm{\varpi Z_SB'_{\mathbf s}\mathsf Eh}\le C_{\mathrm{tr}}\,F_n\,\norm{\varpi h}.
 \end{equation}
@@ -133,16 +135,16 @@ Proposition~\ref{prop:ws}, norm at most $\ue^{G_1/2}$ at the weight $\pcXzero$. 
 $\alpha$ and the radii $r_1:=\tfrac34\sigma<\sigma$, by Proposition~\ref{prop:a0} from $r_1$ to $r_2:=\tfrac12\sigma$ (valid for
 $t\le\tfrac13c_A\varepsilon/\hbar$), and by Lemma~\ref{lem:unw} with $r=r_2$, where $r_2/(8\varepsilon)=\xi/8$,
 \[
-  \norm{T_dh}\le M_0\norm h,\qquad M_0:=C\sigma^{-4}\ue^{-\xi/8}\,C_4^{N+K+1}(2N)!\,(2K+2)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}.
+  \norm{T_dh}\le \mathcal M_0\norm h,\qquad \mathcal M_0:=C\sigma^{-4}\ue^{-\xi/8}\,C_3^{N+K+1}(2N)!\,(2K+2)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}.
 \]
 \emph{Weighted bound.} Let $u$ be supported in one shell and assume $\hbar s_1\le\varepsilon$. By (a), $\pcXzero ZB'_{\mathbf s}\mathsf Eu\in L^2$ for $Z\in\{1,X,Y,X^2,Y^2\}$, and
 Lemma~\ref{lem:path}(b) with $\lambda=1$ and $b'=B'_{\mathbf s}\mathsf Eu$ gives
 \[
-  \norm{\pcXzero T_du}\le M_1\norm{\pcXzero u},\qquad M_1:=C\varepsilon^{-3}F_2 .
+  \norm{\pcXzero T_du}\le \mathcal M_1\norm{\pcXzero u},\qquad \mathcal M_1:=C\varepsilon^{-3}F_2 .
 \]
-Lemma~\ref{os:transfer} requires $M_0\le M_1$; we apply it with $M_0+M_1$ in place of $M_1$. Since $M_0\le C\sigma^{-4}\ue^{-\xi/8}F_2$,
+Lemma~\ref{os:transfer} requires $\mathcal M_0\le \mathcal M_1$; we apply it with $\mathcal M_0+\mathcal M_1$ in place of $\mathcal M_1$. Since $\mathcal M_0\le C\sigma^{-4}\ue^{-\xi/8}F_2$,
 \begin{equation}\label{pc:defect}
-  \norm{\varpi T_dh}\le C_{\mathrm{tr}}\bigl(M_0+M_0^{1/4}M_1^{3/4}\bigr)\norm{\varpi h}\le C\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-\xi/32}\,F_2\,\norm{\varpi h}.
+  \norm{\varpi T_dh}\le C_{\mathrm{tr}}\bigl(\mathcal M_0+\mathcal M_0^{1/4}\mathcal M_1^{3/4}\bigr)\norm{\varpi h}\le C\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-\xi/32}\,F_2\,\norm{\varpi h}.
 \end{equation}
 
 \medskip\noindent\emph{Step 2 (Duhamel on $M$ for data of bounded support).} Let $h\in L^2$ be supported in $\{\tilde\psi\le R_0\}$ for some $R_0$, and let
@@ -179,10 +181,10 @@ So $R\le C\,\xi^{9}\ue^{-\xi/64}\le C\,\xi^{-2}$, and $\xi^{-2}=\hbar/\sigma\le\
 \textup{(W1)} and \eqref{pc:wbw} with $n=0$. The functions of bounded $\tilde\psi$-support are dense in $L^2(\varpi^2d\nu)$. So \eqref{pc:star} holds for
 every $h$ with $\varpi h\in L^2$, and
 \[
-  \norm{\mathcal V_{s_1}b'(\mathbf s)}\le C\,C_5^{N+K+3}(2N)!\,(2K+4)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}\norm{\varpi h}.
+  \norm{\mathcal V_{s_1}b'(\mathbf s)}\le C\,C_6^{N+K+3}(2N)!\,(2K+4)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}\norm{\varpi h}.
 \]
 
-\medskip\noindent\emph{Step 4 (collecting).} By Step~1(a), every word applied to $a$ lies in $L^2_{\varpi}$, and $\varpi$ satisfies (W1), (W2). So
+\medskip\noindent\emph{Step 4 (collecting).} By Step~1(a), every word applied to $a$ lies in $L^2_{\varpi}$, and $\varpi$ satisfies (W1) and, by the ratio bound, (W2). So
 Proposition~\ref{prop:dd-id}(ii) bounds the error by $(\hbar/2)^{K+1}$ times the integral of $\norm{\mathcal V_{s_1}b'(\mathbf s)}$ over
 $\Sigma_{K+1}(t)$. This simplex has volume $t^{K+1}/(K+1)!$, and the factorial estimates \eqref{eq:factorial-assembly} apply. Together with
 $\hbar^{K+1}t^{K+1}\sigma^{-(2K+2)}=(\hbar t/\sigma^2)^{K+1}$, Step~3 gives the asserted bound.
