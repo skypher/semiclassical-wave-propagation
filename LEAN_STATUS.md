@@ -91,8 +91,8 @@ All Lean names are in the namespace `Qschubert`.
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Lemma 6.1 (`pc:g43`) | L | `sobolev_M_mult` |
-| Corollary 6.3 (`cor:dd15`) | L | `cor15Rmain_rep`, `cor15R_rep` (reversed-weight and power-weight norms) |
-| Corollary 6.4 (`cor:dd16`) | L | `cor16Rmain_mult`, `cor16R_mult`; bounded geometry: `cor16Rmain_rep`, `cor16R_rep` |
+| Corollary 6.3 (`cor:dd15`) | L | `cor15Rmain_exp` (reversed-weight norm, exponent `β+1/2`), `cor15R_rep` (power-weight norm) |
+| Corollary 6.4 (`cor:dd16`) | L | `cor16Rmain_expmult`, `cor16R_mult`; bounded geometry: `cor16Rmain_expbg`, `cor16R_rep` |
 | Lemma 6.5 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
 | Lemma 6.6 (`lem:ex`) | P | not used by the theorems |
 | Corollary 6.7 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.6 (`lem:ex`) and Theorem 1.2 (`thm:dd14`); self-checked, not separately formalized |
