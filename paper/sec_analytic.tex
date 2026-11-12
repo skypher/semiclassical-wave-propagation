@@ -15,8 +15,6 @@ factorial dependence on the expansion and derivative orders.
 \medskip\noindent\textbf{Notation.}
 We use $X$, $Y$, $\Delta(s)$, $\Lambda$, $X_0$, $\tilde\psi$ and the power-weight norm $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}$
 of Section~\ref{sec:setup}.
-By Lemma~\ref{lem:m2w} a finite norm with the weight $\ue^{\beta\langle d\rangle}$ at radius $\alpha$ gives a finite norm of this
-kind at the radius $c_0\alpha$; this gives the reversed-weight consequence in Section~\ref{sec:swapped}.
 The two-time mollified propagator $V_\varepsilon(s_1,s_0)=V_\varepsilon(s_1)V_\varepsilon(s_0)^*$ is defined in
 Section~\ref{app:kl}.
 
@@ -85,10 +83,10 @@ For a word $Z_1\cdots Z_m$ with $Z_i\in\{X,Y\}$, and $0\le\alpha''<\alpha\le\tau
 
 \begin{proof}
 Take equally spaced radii $\alpha''=r_0<r_1<\cdots<r_m=\alpha$, and insert $\ue^{-r_i\Lambda}\ue^{r_i\Lambda}$.
-Each factor $\ue^{r_{i-1}\Lambda}Z_i\ue^{-r_i\Lambda}$ is bounded by $C_1m/(\alpha-\alpha'')$ (Lemma~\ref{lem:fc}). The identity extends from the spectral core of Appendix~\ref{app:fc-proof} by closure, since each $\ue^{r_i\Lambda}$ is closed. Finally $m^m\le\ue^m m!$. \qedhere
+Each factor $\ue^{r_{i-1}\Lambda}Z_i\ue^{-r_i\Lambda}$ is bounded by $C_1m/(\alpha-\alpha'')$ (Lemma~\ref{lem:fc}). The bound of Lemma~\ref{lem:fc} is proved on the spectral core of Appendix~\ref{app:fc-proof} and extends to the product by closure, since each $\ue^{r_i\Lambda}$ is closed. Finally $m^m\le\ue^m m!$. \qedhere
 \end{proof}
 
-Weights enter through the following algebra. Let $\mathfrak A:=\operatorname{span}\{y,\;x,\;(x^2+1)/y\}$.
+Weights enter through the following three-dimensional space of functions. Let $\mathfrak A:=\operatorname{span}\{y,\;x,\;(x^2+1)/y\}$.
 \begin{itemize}
 \item $\mathfrak A$ contains $X_0=\tfrac12\bigl((x^2+1)/y+y\bigr)$.
 \item $\mathfrak A$ is invariant under $X$ and $Y$: $Xy=0$, $Xx=y$, $X((x^2+1)/y)=2x$; $Yy=y$, $Yx=0$, $Y((x^2+1)/y)=-(x^2+1)/y$.
@@ -106,8 +104,8 @@ For $\beta\ge0$ and a word $Z_S$ of length $j$:
 \end{lemma}
 
 \begin{proof}
-Expand by induction on $j$: $Z_S\varphi(X_0)=\sum_{\pi}\varphi^{(|\pi|)}(X_0)\prod_{B\in\pi}Z_BX_0$, the sum over partitions $\pi$ of $S$, where each block $B$ inherits the order of $S$.
-With $\varphi(u)=u^{-\beta}$, $|\varphi^{(k)}(u)|=(\beta)_ku^{-\beta-k}$. So the bound is $2^j\sum_kS(j,k)(\beta)_k2^k$, with the Stirling numbers $S(j,k)$.
+For a smooth function $G$ on $(0,\infty)$, expand by induction on $j$: $Z_SG(X_0)=\sum_{\pi}G^{(|\pi|)}(X_0)\prod_{B\in\pi}Z_BX_0$, the sum over partitions $\pi$ of $S$, where each block $B$ inherits the order of $S$.
+With $G(u)=u^{-\beta}$, $|G^{(k)}(u)|=(\beta)_ku^{-\beta-k}$, where $(\beta)_k:=\beta(\beta+1)\cdots(\beta+k-1)$. So the bound is $2^j\sum_kS(j,k)(\beta)_k2^k$, with the Stirling numbers $S(j,k)$.
 The exponential generating function of $\sum_kS(j,k)(\beta)_k2^k$ is $(3-2\ue^z)^{-\beta}$, which is holomorphic on $|z|<\log(3/2)$.
 Cauchy's estimate on $|z|=\rho<\log(3/2)$ gives the bound $C_{\beta,\rho}\,j!\,\rho^{-j}$. Combined with the factor $2^j$, this gives $\rho_*=\rho/2$. \qedhere
 \end{proof}
@@ -171,9 +169,9 @@ $0<\alpha\le1$ and every $a$ with $\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\
 \end{lemma}
 \begin{proof}
 The fields $X,Y$ and the operator $\Lambda$ commute with the affine isometries $z\mapsto pz+q$, $p>0$, which act transitively on
-$\Hb$; so we may take $x_0=i$. Put $F:=\ue^{\beta\langle d\rangle}a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$. Then $X_0^\beta a=mF$ with
+$\Hb$; so we may take $x_0=i$. Put $F:=\ue^{\beta\langle d\rangle}a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$. Then $X_0^\beta a=\mathfrak mF$ with
 \[
-m:=X_0^\beta\ue^{-\beta\langle d\rangle}=\Phi(\tilde\psi),\qquad\Phi(\psi):=\exp\beta\bigl(\psi-(1+d^2)^{1/2}+1\bigr),
+\mathfrak m:=X_0^\beta\ue^{-\beta\langle d\rangle}=\Phi(\tilde\psi),\qquad\Phi(\psi):=\exp\beta\bigl(\psi-(1+d^2)^{1/2}+1\bigr),
 \]
 where $d\ge0$ is the function of $\psi\ge0$ given by $\psi=\log\cosh d$.
 
@@ -190,7 +188,7 @@ $\operatorname{Re}(1-\ue^{-2\psi})>0$, $\operatorname{Re}\lambda\ge0$, $\operato
 is holomorphic there with $|\Phi|\le\ue^{2\beta}$. Compactness of $[0,2]$, and Cauchy's estimate on discs of radius $\tfrac15$ around
 the points of $[2,\infty)$, give Step~1.
 
-\emph{Step 2: $|Z_Sm|\le A\,c^j\,j!$ for every word $Z_S$ of length $j$, with $c=4+3/\rho$.} Put $\xi:=x/X_0$ and $\upsilon:=y/X_0$, so
+\emph{Step 2: $|Z_S\mathfrak m|\le A\,c^j\,j!$ for every word $Z_S$ of length $j$, with $c=4+3/\rho$.} Put $\xi:=x/X_0$ and $\upsilon:=y/X_0$, so
 $|\xi|\le1$, $0<\upsilon\le2$, $X\tilde\psi=\xi$ and $Y\tilde\psi=\upsilon-1$. The polynomials in $(\xi,\upsilon)$ are stable under $X$ and $Y$:
 $X\xi=\upsilon-\xi^2$, $X\upsilon=-\xi\upsilon$, $Y\xi=\xi-\xi\upsilon$, $Y\upsilon=2\upsilon-\upsilon^2$. For
 $Q=\sum c_{ab}\xi^a\upsilon^b$ let $\norm Q_*:=\sum|c_{ab}|2^b$, so $|Q|\le\norm Q_*$ pointwise. The four formulas give
@@ -198,12 +196,12 @@ $\norm{ZQ}_*\le4(\deg Q)\norm Q_*$, and $\norm{(Z\tilde\psi)Q}_*\le3\norm Q_*$. 
 $Z_S\Phi(\tilde\psi)=\sum_{k=0}^j\Phi^{(k)}(\tilde\psi)\,Q_{S,k}(\xi,\upsilon)$ with polynomials of degree at most $j$ satisfying
 $Q_{ZS,k}=(Z\tilde\psi)Q_{S,k-1}+ZQ_{S,k}$. With $q_{j,k}:=\max_{|S|=j}\norm{Q_{S,k}}_*$ this gives
 $q_{j+1,k}\le3q_{j,k-1}+4j\,q_{j,k}$, and then $T_j:=\sum_kk!\,\rho^{-k}q_{j,k}$ satisfies
-$T_{j+1}\le(3(j+1)/\rho+4j)T_j\le c\,(j+1)\,T_j$, so $T_j\le c^jj!$. By Step~1, $|Z_Sm|\le A\,T_j$.
+$T_{j+1}\le(3(j+1)/\rho+4j)T_j\le c\,(j+1)\,T_j$, so $T_j\le c^jj!$. By Step~1, $|Z_S\mathfrak m|\le A\,T_j$.
 
 \emph{Step 3.} By the Leibniz rule for words, Step~2 and Lemma~\ref{lem:wc} at $\alpha''=0$ (with $\tau_0=1$), for a word of length $j$,
 \[
 \begin{aligned}
-\norm{Z_S(mF)}&\le\sum_{S'\subseteq S}A\,c^{|S'|}|S'|!\,\Bigl(\frac{\ue C_1}{\alpha}\Bigr)^{j-|S'|}(j-|S'|)!\,\norm{\ue^{\alpha\Lambda}F}
+\norm{Z_S(\mathfrak mF)}&\le\sum_{S'\subseteq S}A\,c^{|S'|}|S'|!\,\Bigl(\frac{\ue C_1}{\alpha}\Bigr)^{j-|S'|}(j-|S'|)!\,\norm{\ue^{\alpha\Lambda}F}
 \\ &\le A\,(j+1)\,j!\,(L/\alpha)^j\norm{\ue^{\alpha\Lambda}F},
 \end{aligned}
 \]
@@ -346,7 +344,7 @@ range of a spectral projection $1_{[0,R]}(\Lambda)$, $R<\infty$, then, with $q=\
 \end{itemize}
 \end{lemma}
 \begin{proof}
-First let $u$ lie in the range of a spectral projection $1_{[0,L]}(\Lambda)$. Then all functions below are smooth, lie in the domain of
+First let $u$ lie in the range of a spectral projection $1_{[0,R]}(\Lambda)$, $R<\infty$. Then all functions below are smooth, lie in the domain of
 every power of $\Delta$, and are differentiable in $s$. For $f\in\operatorname{Dom}(\Delta)$ and $g$ in the form domain,
 $\langle g,\Delta f\rangle=-\langle Xg,Xf\rangle-\langle Yg,Yf\rangle$ (Lemma~\ref{lem:ell}), and $W^2g$ is in the form domain when $g$ is,
 since $W$ and $XW$, $YW$ are bounded.
@@ -366,8 +364,8 @@ Pointwise
 $|X(W^2)\,Xq+Y(W^2)\,Yq|\le2l\,W^2(|Xq|^2+|Yq|^2)^{1/2}$, so the first two terms are at most
 $4l\norm{Wp}(\norm{WXq}^2+\norm{WYq}^2)^{1/2}\le2lE$ together, and $|\langle W^2p,q\rangle|\le\norm{Wp}\norm{Wq}\le E$. So $|E'|\le(2l+1)E$.
 
-For general $u$ the bounds for $\cos(s\Lambda)u$ and $\cos(sD)u$ follow by applying this to $u_L=1_{[0,L]}(\Lambda)u$ and letting
-$L\to\infty$, since $W$ is bounded.
+For general $u$ the bounds for $\cos(s\Lambda)u$ and $\cos(sD)u$ follow by applying this to $u_R=1_{[0,R]}(\Lambda)u$ and letting
+$R\to\infty$, since $W$ is bounded.
 \end{proof}
 
 \begin{lemma}[commutator with the wave group]\label{lem:wcomm}
@@ -458,15 +456,15 @@ $|\tfrac d{ds}\norm{Wv}^2|\le G\hbar\varepsilon^{-1}\norm{Wv}^2$ with $G:=(4\rho
 the first claim. The second follows with $W=W_{\gamma,n}$ and $n\to\infty$.
 \end{proof}
 
-\begin{lemma}[the path of the mollified flow]\label{lem:path}
+\begin{lemma}[the backward mollified flow of a remainder amplitude]\label{lem:path}
 Let $\gamma\ge0$, $0<\varepsilon\le1$, $\hbar>0$ and $s_1\ge0$ with $\hbar s_1\le\varepsilon$. Let $\mathcal S:=\{1,X,Y,X^2,Y^2\}$, let $b'$ be such that
 $X_0^\gamma Zb'\in L^2(\Hb)$ for every $Z\in\mathcal S$, and put
 $g(s):=V_\varepsilon(s,s_1)b'$ for $0\le s\le s_1$. There is $C=C(\gamma)$ such that:
 \begin{itemize}
 \item[(a)] $g(s)=b'+J_\varepsilon h(s)$ with $h(s):=\tfrac{i\hbar}2\int_{s_1}^s\Delta(r)J_\varepsilon g(r)\,dr$, where $h$ is Lipschitz from
 $[0,s_1]$ to $L^2(X_0^{2\gamma}d\nu)$ and $\norm{X_0^\gamma h(s)}\le C\varepsilon^{-1}\norm{X_0^\gamma b'}$;
-\item[(b)] the defect $d(s):=(\Delta(s)-\Delta_\varepsilon(s))g(s)$ satisfies
-$\norm{X_0^\gamma d(s)}\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\gamma Zb'}$;
+\item[(b)] the defect $\mathfrak d(s):=(\Delta(s)-\Delta_\varepsilon(s))g(s)$ satisfies
+$\norm{X_0^\gamma\mathfrak d(s)}\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\gamma Zb'}$;
 \item[(c)] $g$ is $C^1$ from $[0,s_1]$ to $L^2(X_0^{2\gamma}d\nu)$ with $g'=\tfrac{i\hbar}2\Delta_\varepsilon(s)g$, and $Zg$ is
 continuous from $[0,s_1]$ to $L^2(X_0^{2\gamma}d\nu)$ for every $Z\in\mathcal S$.
 \end{itemize}
@@ -479,7 +477,7 @@ $\hbar|r-s_1|\le\varepsilon$, so $\norm{X_0^\gamma g(r)}\le\ue^{G_\gamma/2}\norm
 $\norm{X_0^\gamma\Delta(r)J_\varepsilon g(r)}\le3C_W\varepsilon^{-2}\ue^{G_\gamma/2}\norm{X_0^\gamma b'}$. Hence $h$ is Lipschitz, and
 $\norm{X_0^\gamma h(s)}\le\tfrac12\hbar|s-s_1|\cdot3C_W\varepsilon^{-2}\ue^{G_\gamma/2}\norm{X_0^\gamma b'}\le\tfrac32C_W\ue^{G_\gamma/2}\varepsilon^{-1}\norm{X_0^\gamma b'}$.
 (b) By (a),
-$d(s)=\Delta(s)b'-J_\varepsilon\Delta(s)J_\varepsilon b'+\Delta(s)J_\varepsilon h(s)-J_\varepsilon\Delta(s)J_\varepsilon J_\varepsilon h(s)$. The first term is
+$\mathfrak d(s)=\Delta(s)b'-J_\varepsilon\Delta(s)J_\varepsilon b'+\Delta(s)J_\varepsilon h(s)-J_\varepsilon\Delta(s)J_\varepsilon J_\varepsilon h(s)$. The first term is
 bounded by the words $X^2b'$, $Y^2b'$, $Yb'$; the others by $3C_W^2\varepsilon^{-2}\norm{X_0^\gamma b'}$ and
 $(3C_W+3C_W^3)\varepsilon^{-2}\norm{X_0^\gamma h(s)}$. (c) follows from (a) and Lemma~\ref{lem:wmoll}: $ZJ_\varepsilon$ is bounded on
 $L^2(X_0^{2\gamma}d\nu)$ for $Z\in\mathcal S$, and so is $J_\varepsilon\Delta(s)J_\varepsilon$, continuously in $s$.
@@ -490,12 +488,15 @@ The remainder proof needs two estimates with different roles: factorial derivati
 amplitude, and exponential smallness of the mollifier defect without a spatial weight.
 
 \begin{lemma}[derivative bounds for the remainder amplitude]\label{lem:wb}
-Assume $0<\hbar\le1$ and $0<\alpha\le\alpha_0\le\min(1,\tau_0)$. Let $Z_S$ be a word in $X,Y$ of length at most $n$ (the empty word is the identity). Uniformly in $s\in\Sigma_{K+1}(t)$:
+Let $\beta\ge0$, let $b'(s)$ be as in Proposition~\ref{prop:dd-id}(ii), and assume $0<\hbar\le1$ and
+$0<\alpha\le\alpha_0\le\min(1,\tau_0)$. Let $Z_S$ be a word in $X,Y$ of length at most $n$ (the empty word is the identity).
+There is a constant $C_4\ge1$, depending only on $\tau_0$, such that uniformly in $s\in\Sigma_{K+1}(t)$:
 \begin{itemize}
 \item[\textup{(i)}]
 \[
-\norm{X_0^\beta Z_Sb'(s)}\le B_\beta C_4^{N+K+n+1}(2N)!\,(n+2K+2)!\,\alpha^{-(n+2K+2)}(\alpha\hbar)^{-2N}\pwNorm a
+\norm{X_0^\beta Z_Sb'(s)}\le B_\beta C_4^{N+K+n+1}(2N)!\,(n+2K+2)!\,\alpha^{-(n+2K+2)}(\alpha\hbar)^{-2N}\pwNorm a ,
 \]
+with $B_\beta$ the constant of Lemma~\ref{lem:fdb};
 \item[\textup{(ii)}] for $0\le\alpha_1<\alpha_0'\le\alpha_0$ with $\alpha_0'-\alpha_1\ge\alpha/4$:
 \[
 \norm{\ue^{\alpha_1\Lambda}b'(s)}\le C_4^{N+K+1}(2N)!\,(2K+2)!\,\alpha^{-(2K+2)}(\alpha\hbar)^{-2N}\norm{\ue^{\alpha_0'\Lambda}a}.

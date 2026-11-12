@@ -11,8 +11,9 @@
 
 To handle the original-norm class we work at the weight $X_0^{1/2}$ with a logarithmic correction, in the notation of
 Section~\ref{subsec:pc-weights}. A multiplier theorem at this weight (Theorem~\ref{os:cw}) gives a factorization
-$a=\ue^{-\sigma\Lambda_m}\tilde f$ with critically weighted data $\tilde f$ (Proposition~\ref{os:data}); word bounds and transfer
-over shells then control the derivatives, flow and defect appearing in the remainder (Section~\ref{subsec:pc-transfer}).
+$a=\ue^{-\sigma\Lambda_m}\tilde f$ with critically weighted data $\tilde f$ (Proposition~\ref{os:data}); word bounds
+(Lemma~\ref{os:words}) and transfer over shells (Section~\ref{subsec:pc-transfer}) then control the derivatives, flow and defect
+appearing in the remainder.
 
 The multiplier theorem rests on a balance between two exponential factors. Moving mass from a shell $A_n$ to a shell $A_l$
 with $l>n$ costs the factor $\ue^{(l-n)/2}$ of the weight $X_0^{1/2}$. By finite propagation speed, only the part of the
@@ -105,6 +106,9 @@ Fatou's lemma gives $\norm{\osomc\ue^{\sigma\mathsf B}f}\le\ue^{k_{m,c}}\norm{\o
 $\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=k_c\,\ue^{k_{m,c}}$ works. For the consequence put $f=\ue^{\alpha\osLam}a$, so $a=\ue^{-\alpha\osLam}f$. Since $\tilde\psi\le d\le\langle d\rangle+1$ and
 $\beta>\tfrac12$, $\osomc\le\ue^{d/2}(1+d/\log2)\le C_\beta\,\ue^{\beta\langle d\rangle}$.
 \end{proof}
+
+The proof does not use the condition $\sigma m\le\tfrac12$. It is kept because it holds in every application below
+(Section~\ref{subsec:pc-all}) and is the range of the formal statement (Appendix~\ref{app:lean}).
 
 For the derivative bounds write $c_H:=1+4/\ue$, the constant in the profile bound of Lemma~\ref{os:prof}(iii).
 

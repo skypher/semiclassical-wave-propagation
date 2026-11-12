@@ -21,23 +21,9 @@ $1_n$ denotes multiplication by the indicator of $A_n$. Since $1+n\le\ell\le3(1+
 For $m\ge\tfrac12$ put $\Lambda_m:=(m^2-\tfrac14-\Delta)^{1/2}=(D^2+m^2)^{1/2}$; thus $\Lambda_{1/2}=\Lambda$ and $\Lambda_m\ge\Lambda$.
 
 
-\begin{center}
-\small
-\captionof{table}{The power-weight proof and the original-norm proof.}\label{tab:compare}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}@{}}
-\hline
-Stage & Power-weight proof (Section~\ref{sec:companion}) & Original-norm proof\\
-\hline
-Data & $a$ with $\pwNorm a<\infty$ & $a=\ue^{-\sigma\Lambda_m}\tilde f$ with $\omega\tilde f\in L^2$ (Proposition~\ref{os:data})\\[4pt]
-Weighted bounds & H\"older interpolation between $L^2$ and the weight $X_0^\beta$ & interpolation shell by shell between $L^2$ and the weight $X_0$ (Lemma~\ref{os:transfer})\\[4pt]
-Periodization & weight $X_0^\gamma$, $\gamma>\tfrac12$ (Lemma~\ref{lem:t2}) & weight $\omega=X_0^{1/2}\ell^{c'}$ (Proposition~\ref{os:p1})\\
-\hline
-\end{tabular}
-\end{center}
 
 For $f=\ue^{\alpha\Lambda}a$ and $\beta>\tfrac12$, the original norm gives $\|\omega f\|\le C_\beta\pcNorm a$, since
 $\omega\le C_\beta\ue^{\beta\langle d\rangle}$.
-The next proposition explains why the power-weight argument above cannot be applied directly to $a$.
 
 \begin{proposition}[the two amplitude classes and dependence on the radius]\label{pc:classes}
 For $\beta>\tfrac12$, the original and reversed-weight norms are not equivalent. For every $0<\alpha<\pi/2$ there are amplitudes of finite original norm at radius $\alpha$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and infinite original norm at every smaller radius.
@@ -90,6 +76,9 @@ and put $a:=\ue^{-\sigma\Lambda_m}h$. Then for $0\le t\le\delta'(\sigma/\hbar)^{
   \le C'^{\,N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Big(\frac{\hbar t}{\sigma^2}\Big)^{K+1}\norm{\varpi h}.
 \]
 \end{proposition}
+
+The condition $m>3/\sqrt2$ is the hypothesis $2(\gamma+\tfrac12)^2<m^2$ of Lemma~\ref{os:words} at $\gamma=1$, which
+Step~1(a) of the proof uses.
 
 \begin{proof}
 The proof follows the common structure described at the beginning of Section~\ref{sec:companion}. Step~1 below supplies,
@@ -159,11 +148,11 @@ Lemma~\ref{os:transfer} requires $M_0\le M_1$; we apply it with $M_0+M_1$ in pla
 \end{equation}
 
 \medskip\noindent\emph{Step 2 (Duhamel on $M$ for data of bounded support).} Let $h\in L^2$ be supported in $\{\tilde\psi\le R_0\}$ for some $R_0$, and let
-$b'_h:=B'_{\mathbf s}\mathsf Eh$, $g(t'):=V_\varepsilon(t',s_1)b'_h$ for $0\le t'\le s_1$, $w_h:=g(0)$ and $d_h(t'):=T_dh$. Then $\pcXzero h\in L^2$ and, by (a), all
+$b'_h:=B'_{\mathbf s}\mathsf Eh$, $g(t'):=V_\varepsilon(t',s_1)b'_h$ for $0\le t'\le s_1$, $w_h:=g(0)$ and $\mathfrak d_h(t'):=T_dh$. Then $\pcXzero h\in L^2$ and, by (a), all
 words applied to $b'_h$ lie in $L^2(\pcXzero^2d\nu)$. The weight $\pcXzero^{3/4}$ satisfies (W1) and (W2) (Lemma~\ref{lem:t2}), and by
 Lemma~\ref{lem:path}(c) with $\gamma=\tfrac34$ the path $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for it. As in the power-weight proof of Theorem~\ref{thm:dd-appx},
 \[
-  \mathcal V_{s_1}b'_h=\mathcal V_0w_h-\tfrac{i\hbar}2\int_0^{s_1}\mathcal V_{t'}d_h(t')\,dt' .
+  \mathcal V_{s_1}b'_h=\mathcal V_0w_h-\tfrac{i\hbar}2\int_0^{s_1}\mathcal V_{t'}\mathfrak d_h(t')\,dt' .
 \]
 On $A_n$ we have $\pcXzero\ge\ue^n$, so $\varpi\le C_{\mathrm{sh}}\ue^{n/2}(1+n)^c\le C\pcXzero^{3/4}$ and $L^2_{\pcXzero^{3/4}}\subset L^2_\varpi$. By Lemma~\ref{os:indep}
 each term may therefore be estimated through the weight $\varpi$. Since $S(t')$ is unitary, the ratio bound for $\varpi$ gives
@@ -173,7 +162,7 @@ $\norm{\varpi S(t')g}\le C_{\mathrm{gr}}\ue^{t'}\norm{\varpi g}$. So, by \textup
 \]
 and by \textup{(W1)}, the ratio bound and \eqref{pc:defect},
 \[
-  \norm{\mathcal V_{t'}d_h(t')}\le P^{1/2}C_{\mathrm{gr}}\ue^{t'}\norm{\varpi d_h(t')}\le C\,\ue^{t'}\varepsilon^{-3}\sigma^{-4}\ue^{-\xi/32}F_2\norm{\varpi h}.
+  \norm{\mathcal V_{t'}\mathfrak d_h(t')}\le P^{1/2}C_{\mathrm{gr}}\ue^{t'}\norm{\varpi \mathfrak d_h(t')}\le C\,\ue^{t'}\varepsilon^{-3}\sigma^{-4}\ue^{-\xi/32}F_2\norm{\varpi h}.
 \]
 Hence $\norm{\mathcal V_{s_1}b'_h}\le C(F_0+R\,F_2)\norm{\varpi h}$ with
 \[

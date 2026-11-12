@@ -14,6 +14,21 @@ mollified part, controlled by weighted propagation and periodization; a defect p
 interpolated against a weighted bound and absorbs the transport growth on the window; and the integration over the simplex.
 They differ in the weight $\varpi$ and in the interpolation (Table~\ref{tab:compare}).
 
+\begin{center}
+\small
+\captionof{table}{The power-weight proof and the original-norm proof. The operator $\Lambda_m$ and the weight $\omega$ are
+defined in Section~\ref{subsec:pc-weights}.}\label{tab:compare}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}@{}}
+\hline
+Stage & Power-weight proof (Section~\ref{subsec:dd-thm}) & Original-norm proof (Section~\ref{sec:printed})\\
+\hline
+Data & $a$ with $\pwNorm a<\infty$ & $a=\ue^{-\sigma\Lambda_m}\tilde f$ with $\omega\tilde f\in L^2$ (Proposition~\ref{os:data})\\[4pt]
+Weighted bounds & H\"older interpolation between $L^2$ and the weight $X_0^\beta$ & interpolation shell by shell between $L^2$ and the weight $X_0$ (Lemma~\ref{os:transfer})\\[4pt]
+Periodization & weight $X_0^\gamma$, $\gamma>\tfrac12$ (Lemma~\ref{lem:t2}) & weight $\omega=X_0^{1/2}\ell^{c'}$ (Proposition~\ref{os:p1})\\
+\hline
+\end{tabular}
+\end{center}
+
 \subsection{Approximation with the power weight \texorpdfstring{$X_0^\beta$}{X0}}\label{subsec:dd-thm}
 
 \begin{theorem}[approximation with the power weight $X_0^\beta$]\label{thm:dd-appx}
@@ -25,14 +40,16 @@ There are $C,\delta>0$, depending only on $\beta$, $\kappa$, $\alpha_0$, $\Gamma
 with $N^{2N}:=1$ at $N=0$.
 \end{theorem}
 
-\begin{remark}[power weight and reversed weight]
-This is the power-weight form of the reversed-weight estimate. Lemma~\ref{lem:m2w} transfers it to the norm of
-Theorem~\ref{thm:dd14}; the deduction follows the proof below. Appendix~\ref{sec:changes} compares the resulting bounds with \cite{S}.
+\begin{remark}[dependence on the group]\label{rem:dd-gamma}
+The proof below gives more than the statement: $\delta$ does not depend on $\Gamma$, and $C$ depends on $\Gamma$ only through
+the Poincar\'e series bound $P_\Gamma(\beta+\tfrac12)$ of Lemma~\ref{lem:t2} (see the paragraph on the dependence on $\Gamma$ at the
+end of the proof). Theorem~\ref{thm:dd14} uses this uniformity, and Lemma~\ref{lem:m2w} transfers the estimate to its norm
+(Section~\ref{sec:swapped}).
 \end{remark}
 
 \begin{proof}
 \medskip\noindent\emph{Step 0 (reductions and parameters).} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters the estimates below only
-through the Poincar\'e series bound at the base point. By Lemma~\ref{lem:lift}, $a$ is $C^\infty$. We write $\varphi=\varphi_\infty$, $c=i\hbar/2$, and
+through the Poincar\'e series bound at the base point. By Lemma~\ref{lem:lift}, $a$ is $C^\infty$. We write $\varphi=\varphi_\infty$ and
 \[
  E:=\Delta^N\bigl[\cU(t)[a\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\bigr].
 \]
@@ -74,19 +91,19 @@ By Lemma~\ref{lem:wb}(i) with $n=0$:
 \medskip\noindent\emph{Step 2 (defect part).}
 
 By Lemma~\ref{lem:wb}(i) with $n\le2$, $X_0^\beta Zb'\in L^2$ for every $Z$ in $\mathcal S=\{1,X,Y,X^2,Y^2\}$. Thus Lemma~\ref{lem:path}(c), with the exponent
-$\gamma$, shows that $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for $\varpi=X_0^\gamma$. Since $g'=c\,\Delta_\varepsilon(t')g$,
-Duhamel on $M$ gives $\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)=-c\int_0^{s_1}\mathcal V_{t'}d(t')\,dt'$, with
+$\gamma$, shows that $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for $\varpi=X_0^\gamma$. Since $g'=c_\hbar\,\Delta_\varepsilon(t')g$,
+Duhamel on $M$ gives $\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)=-c_\hbar\int_0^{s_1}\mathcal V_{t'}\mathfrak d(t')\,dt'$, with
 \[
-d(t'):=(\Delta(t')-\Delta_\varepsilon(t'))\,g(t').
+\mathfrak d(t'):=(\Delta(t')-\Delta_\varepsilon(t'))\,g(t').
 \]
 By the unitarity of $\cU(t')$ on $M$ and Lemma~\ref{lem:t2} (exponent $\gamma$),
-\[\norm{\mathcal V_{t'}d(t')}=\norm{[\ue^{i\varphi/\hbar}S(t')d(t')]_\Gamma}\le C\ue^{\gamma t'}\norm{X_0^\gamma d(t')}.\]
-H\"older's inequality gives $\norm{X_0^\gamma d}\le\norm{X_0^\beta d}^\theta\norm{d}^{1-\theta}$, since $X_0^\gamma=(X_0^\beta)^\theta$.
+\[\norm{\mathcal V_{t'}\mathfrak d(t')}=\norm{[\ue^{i\varphi/\hbar}S(t')\mathfrak d(t')]_\Gamma}\le C\ue^{\gamma t'}\norm{X_0^\gamma \mathfrak d(t')}.\]
+H\"older's inequality gives $\norm{X_0^\gamma\mathfrak d}\le\norm{X_0^\beta\mathfrak d}^\theta\norm{\mathfrak d}^{1-\theta}$, since $X_0^\gamma=(X_0^\beta)^\theta$.
 We estimate the two factors separately.
 
 \emph{Weighted factor.} By Lemma~\ref{lem:path}(b) with the exponent $\beta$, and Lemma~\ref{lem:wb}(i) with $n\le2$ (five words; the bound increases with $n$),
 \begin{align*}
-\norm{X_0^\beta d(t')}&\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\beta Zb'}\\
+\norm{X_0^\beta \mathfrak d(t')}&\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\beta Zb'}\\
 &\le C\varepsilon^{-3}\,C_4^{N+K+3}(2N)!\,(2K+4)!\,\alpha^{-(2K+4)}(\alpha\hbar)^{-2N}\pwNorm a.
 \end{align*}
 \emph{Unweighted factor.} Lemma~\ref{lem:mw} gives $\norm{\ue^{r_0\Lambda}a}\le C_*B_\beta\pwNorm a$.
@@ -94,7 +111,7 @@ Lemma~\ref{lem:wb}(ii), applied with $r_0$ in the role of $\alpha$ and the radii
 $\norm{\ue^{r_1\Lambda}b'}\le C_4^{N+K+1}(2N)!(2K+2)!\,r_0^{-(2K+2)}(r_0\hbar)^{-2N}\norm{\ue^{r_0\Lambda}a}$.
 Proposition~\ref{prop:a0}, from the radius $r_1$ to $r_2$ (so $(r_1-r_2)/r_1=\tfrac13$) and for $|t'-s_1|\le t\le\tfrac13c_A\varepsilon/\hbar$, gives
 $\norm{\ue^{r_2\Lambda}g(t')}\le\norm{\ue^{r_1\Lambda}b'}$.
-Lemma~\ref{lem:unw} with $r=r_2$ gives $\norm{d(t')}\le C_0r_2^{-4}\ue^{-r_2/(8\varepsilon)}\norm{\ue^{r_2\Lambda}g(t')}$, and $r_2/(8\varepsilon)=c_M\xi/8$.
+Lemma~\ref{lem:unw} with $r=r_2$ gives $\norm{\mathfrak d(t')}\le C_0r_2^{-4}\ue^{-r_2/(8\varepsilon)}\norm{\ue^{r_2\Lambda}g(t')}$, and $r_2/(8\varepsilon)=c_M\xi/8$.
 
 \emph{Combining the factors.} Put
 \[

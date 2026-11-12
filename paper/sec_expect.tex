@@ -86,14 +86,19 @@ $\operatorname{Im}\gamma z=y/((cx+d)^2+c^2y^2)$, so the part of the state within
 $\asymp\ue^t/c^2$, which is at least $H\ge1$ when $c\lesssim H^{-1/2}\ue^{t/2}$. The periodization sums over all these sheets,
 and beyond the Ehrenfest time the interference between them, which the classical prediction ignores, governs the fine
 behaviour; this is compatible with Brooks's result \cite{Bro22}, but the heuristic does not compare the mass or phase of the
-contributing sheets. Third, the proof uses the classical zero-free region of the Riemann zeta function \cite[Theorem~6.6]{MV07}, which gives
-the sufficient time $T(\hbar)$. For $r>0$ and a continuous choice of the argument, the scattering coefficient $\Phi$ of
+contributing sheets. Third, for $r>0$ and a continuous choice of the argument, the scattering coefficient $\Phi$ of
 \eqref{ev:Phi} satisfies $-\tfrac{d}{dr}\arg\Phi(\tfrac12+ir)=2\log(r/\pi)+4\operatorname{Re}\tfrac{\zeta'}{\zeta}(1+2ir)+O(r^{-2})$. This is the
 time delay of a wave packet at $r=1/\hbar$, and its first term is twice the Ehrenfest time $\log(1/\hbar)$, up to a constant. The
 bound for $\zeta'/\zeta$ on the line $\operatorname{Re}s=1$ that this region gives \cite[Theorem~6.7]{MV07} is of the same order $\log r$
 as that term, so this is an indication only: we do not prove a statement with the constant $2$, and we do not prove that the
 classical prediction holds before that time.
 \end{remark}
+
+The time $T(\hbar)$ has a different origin. The proof of Lemma~\ref{ev:outgoing} shifts a contour into the classical
+zero-free region of the Riemann zeta function \cite[Theorem~6.6]{MV07}. At height of order $1/\hbar$ this region has width
+of order $1/\log(1/\hbar)$, so the shift gains a factor $\ue^{-\vartheta t}$ with $\vartheta$ of order $1/\log(1/\hbar)$,
+while the scattering coefficient is bounded there only by a power of $\log(1/\hbar)$ (estimate \eqref{ev:PhiD}).
+Beating that loss needs $t$ of order $\log(1/\hbar)\log\log(1/\hbar)$, which is the size of $T(\hbar)$.
 
 \subsection{The zero mode and its Mellin transform}\label{subsec:ev-mellin}
 In Sections~\ref{subsec:ev-mellin}--\ref{subsec:ev-final}, $0<\hbar\le1$ and $t\ge0$, and constants may depend on $\alpha$ and $h$, and
@@ -427,11 +432,7 @@ If $t-\log H\ge1$, then $\int_0^Hy^{-1}(t-\log y)^{-2}\,dy=(t-\log H)^{-1}\le1$,
 
 \emph{Conclusion.} Let $C_T:=10/c_Z$ and $t-\log H\ge T(\hbar)=C_T\mathsf L\log\mathsf L$. Then $t-\log H\ge1$ and
 $2\vartheta(t-\log H)\ge10\,\mathsf L\log\mathsf L/\log(3/\hbar)\ge5\log\mathsf L$, so $\mathsf L^4\ue^{-2\vartheta(t-\log H)}\le1/\mathsf L$. Since also
-$\mathsf L\hbar\le1$, the three parts give
-\begin{equation}\label{ev:out}
-  \int_0^H|\mathcal O_{f_t}|^2\frac{dy}{y^2}\le\frac{C}{\log(1/\hbar)}\qquad\bigl(0<\hbar\le\ue^{-\ue},\ t\ge T(\hbar)+\log H,\ H>0\bigr).
-\qedhere
-\end{equation}
+$\mathsf L\hbar\le1$, the three parts give the claim. \qedhere
 
 
 \end{proof}
@@ -461,7 +462,7 @@ $c=\tfrac3\pi\hat f_t(1)$,
   \int_H^\infty|\mathcal F_0[v_t]|^2\frac{dy}{y^2}\ge(1-\theta)\Bigl(\int_H^\infty|\mathcal O_{f_t}|^2\frac{dy}{y^2}-H\Bigl|\int_H^\infty\mathcal O_{f_t}\frac{dy}{y^2}\Bigr|^2\Bigr)
   -\frac1\theta\int_H^\infty|f_t|^2\frac{dy}{y^2}.
 \]
-By \eqref{ev:Onorm} and \eqref{ev:out}, $\int_H^\infty|\mathcal O_{f_t}|^2dy/y^2\ge\mu_0-C/\log(1/\hbar)$. By Fubini's theorem,
+By \eqref{ev:Onorm} and Lemma~\ref{ev:outgoing}, $\int_H^\infty|\mathcal O_{f_t}|^2dy/y^2\ge\mu_0-C/\log(1/\hbar)$. By Fubini's theorem,
 \[
   \int_H^\infty\mathcal O_{f_t}\,\frac{dy}{y^2}=\frac1{2\pi}\int_{\mathbb R}\Phi(\tfrac12+ir)\,\hat f_t(\tfrac12+ir)\,\frac{H^{-1/2-ir}}{\tfrac12+ir}\,dr,
 \]
@@ -476,7 +477,7 @@ window. By Corollary~\ref{ev:transfer}(ii) and Lemma~\ref{ev:initialnorm}, $\nor
 \[
   \int_{M_H}|u^{(0)}(t)_\Gamma|^2d\nu\le\norm{v_t}^2-\int_H^\infty|\mathcal F_0[v_t]|^2\frac{dy}{y^2}\le\theta\mu_0+o(1),
 \]
-and since $\theta$ is arbitrary the left side tends to $0$, uniformly on the window. Then
+and since $\theta$ is arbitrary the left side tends to $0$, uniformly for $T(\hbar)+\log H\le t\le\delta(\alpha/\hbar)^{1/2}$. Then
 $\norm{\mathbf 1_{M_H}\psi(t)}\le\norm{\mathbf 1_{M_H}u^{(0)}(t)_\Gamma}+\mathcal E_0$ and
 $\norm{\mathbf 1_{M_H}u^{(K)}(t)_\Gamma}\le\norm{\mathbf 1_{M_H}\psi(t)}+\mathcal E_K$, with $\mathcal E_K\to0$ on the window for fixed $K$. This proves (ii).
 

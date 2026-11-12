@@ -1,7 +1,7 @@
 \section{Special-function and kernel calculations}\label{app:special}
 This appendix supplies the spectral calculation for Lemma~\ref{lem:fc}, the cosine-transform profiles
 for the critical-weight estimates, the Gutzmer comparison used for the example amplitudes,
-and the kernel bounds used in the cusp sharpness argument. The main estimates and their applications
+and the kernel bounds used in Proposition~\ref{pc:classes} and in the cusp sharpness argument. The main estimates and their applications
 are stated in the body of the paper.
 
 \subsection{The first-order Cauchy estimate}\label{app:fc-proof}
@@ -9,10 +9,10 @@ are stated in the body of the paper.
 \medskip\noindent\emph{Reduction.}
 We use the Kontorovich--Lebedev picture of Section~\ref{app:kl}: after Fourier transform in $x$, on the mode $\ue^{ikx}$, $k\ne0$,
 with $z=|k|y$ and the function of $y$ written as $z^{1/2}f(z)$, $f\in L^2(dz/z)$, we have $-\Delta-\tfrac14=-(z\partial_z)^2+z^2$,
-$X=i\,\operatorname{sgn}(k)\,z$ and $Y=z\partial_z+\tfrac12$. Thus $Y_0:=Y-\tfrac12=z\partial_z=:D_z$ is skew-adjoint on $L^2(dz/z)$.
+$X=i\,\operatorname{sgn}(k)\,z$ and $Y=z\partial_z+\tfrac12$. Thus $\mathring Y:=Y-\tfrac12=z\partial_z=:D_z$ is skew-adjoint on $L^2(dz/z)$.
 The transform $F(\nu)=\int_0^\infty K_{i\nu}(z)f(z)\,dz/z$, with the density $w(\nu)=\tfrac{2}{\pi^2}\nu\sinh\pi\nu$, makes $\Lambda$ the
-multiplication by $\Lambda(\nu)=(\nu^2+\tfrac14)^{1/2}$, and the operators are the same for every $k$, so bounds are uniform in $k$. On the $k=0$ mode, $X=0$, while $Y_0$ and $\Lambda$ commute: in $r=\log y$, $Y_0=\partial_r$ and $\Lambda=(-\partial_r^2+\tfrac14)^{1/2}$. So
-\[\norm{\ue^{\alpha''\Lambda}Y_0\ue^{-\alpha'\Lambda}}\le\norm{\Lambda\ue^{-(\alpha'-\alpha'')\Lambda}}\]
+multiplication by $\Lambda(\nu)=(\nu^2+\tfrac14)^{1/2}$, and the operators are the same for every $k$, so bounds are uniform in $k$. On the $k=0$ mode, $X=0$, while $\mathring Y$ and $\Lambda$ commute: in $r=\log y$, $\mathring Y=\partial_r$ and $\Lambda=(-\partial_r^2+\tfrac14)^{1/2}$. So
+\[\norm{\ue^{\alpha''\Lambda}\mathring Y\ue^{-\alpha'\Lambda}}\le\norm{\Lambda\ue^{-(\alpha'-\alpha'')\Lambda}}\]
 there. The mode $k=0$ has measure zero in the direct integral. Put $\gamma:=\alpha'-\alpha''$ and write
 \[
 \ue^{\alpha''\Lambda}Z\ue^{-\alpha'\Lambda}=\bigl(\ue^{\alpha''\Lambda}Z\ue^{-\alpha''\Lambda}\Lambda^{-1}\bigr)\bigl(\Lambda\ue^{-\gamma\Lambda}\bigr).
@@ -37,7 +37,7 @@ M_s(a,b):=\int_0^\infty z^{s-1}K_a(z)K_b(z)\,dz=2^{s-3}\,\frac{\Gamma\bigl(\tfra
 Substitute $u=rt$ and $v=r(1-t)$ in the remaining double integral. The $r$-integral gives
 $\Gamma(\tfrac{s-a+b}{2})$, and the $t$-integral gives the beta function
 $\Gamma(\tfrac{s-a-b}{2})\Gamma(\tfrac{s+a+b}{2})/\Gamma(s)$, yielding the formula above.
-The absolute integrand is the same expression with $a,b$ replaced by $\operatorname{Re}a,\operatorname{Re}b$ (since $|(z/2)^a|=(z/2)^{\operatorname{Re}a}$). For $\operatorname{Re}s>|\operatorname{Re}a|+|\operatorname{Re}b|$ the same computation then gives a finite value with all Gamma arguments of positive real part, so Tonelli justifies every exchange. This covers $a=i\nu$, $b=i\nu'$ at $s=1$, and $b=i\nu'\pm1$ at $s=1+\eta$, $\eta>0$. \qed
+The absolute integrand is the same expression with $a,b$ replaced by $\operatorname{Re}a,\operatorname{Re}b$ (since $|(z/2)^a|=(z/2)^{\operatorname{Re}a}$). For $\operatorname{Re}s>|\operatorname{Re}a|+|\operatorname{Re}b|$ the same computation then gives a finite value with all Gamma arguments of positive real part, so Tonelli justifies every exchange. This covers $a=i\nu$, $b=i\nu'$ at $s=1$, and $b=i\nu'\pm1$ at $s=1+\eta$, $\eta>0$. This proves the formula.
 
 \medskip\noindent\emph{(X) Kernel of $z$.}
 Since the measure is $dz/z$, the kernel of multiplication by $z$ is $(w w')^{1/2}M_1(i\nu,i\nu')$. The identity $|\Gamma(\tfrac12+iy)|^2=\pi/\cosh\pi y$ gives
@@ -81,11 +81,11 @@ The Sokhotski--Plemelj formula gives $\frac{2}{\eta\pm ix}\to\mp2i\,\mathrm{PV}\
 For $x\neq0$ the pointwise limit is $I_0=-\pi^2/(4\sinh p\,\sinh q)$ (same Gamma reflections). Hence, on $\mathcal C\times\mathcal C$,
 \[
 \langle f,D_zg\rangle=\mathrm{PV}\iint\bar F G\,w\,w'\,I_0,
-\qquad\text{i.e.}\qquad
-\begin{gathered}
-\tilde D(\nu,\nu')=-\frac{(\nu\nu')^{1/2}\rho(\nu,\nu')}{2\sinh q},\\
+\]
+so the kernel of $D_z$ in the unitary picture is
+\[
+\tilde D(\nu,\nu')=-\frac{(\nu\nu')^{1/2}\rho(\nu,\nu')}{2\sinh q},\qquad
 \rho:=\Bigl(1-\frac{\sinh^2q}{\sinh^2p}\Bigr)^{1/2}\in[0,1].
-\end{gathered}
 \]
 
 This kernel is real and antisymmetric, as $D_z$ must be.
@@ -122,7 +122,7 @@ Combining the near and far bounds gives $\norm{Q}\le C(\tau_0)$ on $\mathcal C$,
 \subsection{Cosine-transform profiles at the critical weight}\label{app:profiles}
 
 We prove the profile bounds used in Corollary~\ref{os:cwp} and Lemma~\ref{os:words}.
-The operators $D$ and $\Lambda_m$ and the critical weights are defined in Section~\ref{app:o1st}.
+The operator $D$ is defined in Section~\ref{app:ws}, and $\Lambda_m$ and the critical weights in Section~\ref{subsec:pc-weights}.
 
 \begin{lemma}[two integrals]\label{os:int}
 For $a,b>0$,
@@ -226,7 +226,7 @@ spectral parameter is $2\lambda$) states that for $f$ as in (a) and $r<R$ the nu
 Plancherel measure with the additional weight $\phi_\lambda(\exp(2ir\mathsf h))$, the value at $\exp(2ir\mathsf h)x_0$ of the holomorphic extension of the
 spherical function $\phi_\lambda$. A radial eigenfunction of $\Delta$ with eigenvalue $-(\lambda^2+\tfrac14)$ that equals $1$ at $x_0$ is the regular
 solution of Legendre's equation in the variable $X_0$, so $\phi_\lambda=P_{-1/2+i\lambda}(X_0)$, a conical function \cite[\S14.20]{DLMF}; by (b),
-$X_0(\exp(2ir\mathsf h)x_0)=\cos4r$. With $\theta:=4r\in(0,2]$, the Mehler--Dirichlet integral \cite[14.20.9]{DLMF} and the substitution $\phi=\theta v$ give
+$X_0(\exp(2ir\mathsf h)x_0)=\cos4r$. With $\theta:=4r\in(0,2]$, the Mehler--Dirichlet integral \cite[14.20.9]{DLMF}, with its integration variable replaced by $\theta v$, gives
 \[
 P_{-1/2+i\lambda}(\cos\theta)=\frac2\pi\int_0^1\frac{\cosh(\lambda\theta v)\,\theta}{\sqrt{2(\cos\theta v-\cos\theta)}}\,dv
 \ge\frac2\pi\int_0^1\frac{\cosh(\lambda\theta v)}{\sqrt{1-v^2}}\,dv=I_0(\lambda\theta),

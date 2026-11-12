@@ -54,17 +54,17 @@ a fundamental domain. Applied to the right side of the last display, this gives
 \[
 \norm{[f]_\Gamma}^2_{L^2(M)}\le P_\Gamma(2s)\int_\Hb\ue^{2sd(z,x_0)}|f(z)|^2\,d\nu(z).
 \]
-Prove this first for finite partial sums, then pass to the limit by monotone convergence. In particular $\sum_\gamma|f\circ\gamma|$ converges a.e. and in $L^2(M)$. Torsion-freeness is not needed: the fixed sets of elliptic elements are null, so unfolding over a fundamental domain carries no stabilizer factor, and any multiplicity is already counted in the orbit series $P_\Gamma(2s)$.
+We prove this first for finite partial sums and then pass to the limit by monotone convergence. In particular $\sum_\gamma|f\circ\gamma|$ converges a.e. and in $L^2(M)$. Torsion-freeness is not needed: the fixed sets of elliptic elements are null, so unfolding over a fundamental domain carries no stabilizer factor, and any multiplicity is already counted in the orbit series $P_\Gamma(2s)$.
 
 \emph{Transport.} Take $f=(S(t)w)\ue^{i\varphi/\hbar}$, so $|f|=|S(t)w|$.
 Since $(S(t)w)(z)=\ue^{-t/2}w(z_t)$, where $z_t$ is at distance $t$ from $z$, we have
 $d(z,x_0)\le d(z_t,x_0)+t$. Unitarity of $S(t)$ therefore gives
 \[
-  \int\ue^{2sd(z)}|S(t)w(z)|^2\,d\nu(z)
-  \le\ue^{2st}\int\ue^{2sd(z')}|w(z')|^2\,d\nu(z').
+  \int\ue^{2sd(z,x_0)}|S(t)w(z)|^2\,d\nu(z)
+  \le\ue^{2st}\int\ue^{2sd(z',x_0)}|w(z')|^2\,d\nu(z').
 \]
 
-Finally $\ue^{sd}\le2^s\ue^{s\tilde\psi}$, since $\tilde\psi=\log\cosh d\ge d-\log2$. \qedhere
+Finally $\ue^{sd(z,x_0)}\le2^s\ue^{s\tilde\psi(z)}$, since $\tilde\psi(z)=\log\cosh d(z,x_0)\ge d(z,x_0)-\log2$. \qedhere
 \end{proof}
 
 
@@ -79,8 +79,6 @@ Let $0<\alpha\le1$ and $F\in\operatorname{Dom}(\ue^{\alpha\Lambda})$. Then $F$ h
 $X,Y$ applied to it lies in $L^2(\Hb)$. Consequently every $a$ with $\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$, and every
 $a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, has a unique $C^\infty$ representative.
 \end{lemma}
-
-The approximations $u^{(K)}$ are always built from this representative.
 
 \begin{proof}
 
@@ -105,6 +103,8 @@ every point. Two continuous representatives on an open set coincide, so they glu
 For the consequences take $F=X_0^\beta a$, respectively $F=a$; $X_0^{-\beta}$ is smooth and positive. \qedhere
 
 \end{proof}
+
+The approximations $u^{(K)}$ are always built from this representative.
 
 \begin{lemma}[base point]\label{lem:base}
 Let $x_0\in\Hb$ and $b\in\partial\Hb$.
@@ -198,11 +198,13 @@ Fix $n$. Essential self-adjointness gives test functions $F_m\to\eta_nf$ in grap
 For a test function $F$, $F_\Gamma\in\operatorname{Dom}(\Delta_M)$ and $\Delta_MF_\Gamma=(\Delta F)_\Gamma$. By (W1) and closedness of $\Delta_M$, first in $m$ and then in $n$, the claim for $f$ follows. The statement for $\mathcal V_s$ follows since $\cU(-s)$ commutes with $\Delta_M$.\qedhere
 \end{proof}
 
+From now on we write $c_\hbar:=i\hbar/2$.
+
 \begin{lemma}[Duhamel on $M$]\label{lem:surf-duh}
 Let $g\in C^1([0,T];L^2_\varpi)$ with $g(s)\in\mathcal D_\varpi$ for every $s$, and with $Yg$, $X^2g$, $Y^2g$ in
-$C([0,T];L^2_\varpi)$, and put $c=i\hbar/2$. Then
+$C([0,T];L^2_\varpi)$. Then
 \[
-\mathcal V_Tg(T)-\mathcal V_0g(0)=\int_0^T\mathcal V_s\bigl(g'(s)-c\,\Delta(s)g(s)\bigr)\,ds\qquad\text{in }L^2(M).
+\mathcal V_Tg(T)-\mathcal V_0g(0)=\int_0^T\mathcal V_s\bigl(g'(s)-c_\hbar\,\Delta(s)g(s)\bigr)\,ds\qquad\text{in }L^2(M).
 \]
 \end{lemma}
 
@@ -210,19 +212,19 @@ $C([0,T];L^2_\varpi)$, and put $c=i\hbar/2$. Then
 For $g_0$ with $g_0,Yg_0\in L^2_\varpi$: $S(s)g_0-S(r)g_0=\int_r^sS(\tau)(Y-\tfrac12)g_0\,d\tau$. This holds in $L^2(\Hb)$ (generator of the dilation group), the right side converges in $L^2_\varpi$ by strong continuity, and $L^2_\varpi\subset L^2$ since $\varpi\ge1$.
 Hence $s\mapsto S(s)g(s)$ is $C^1$ into $L^2_\varpi$, and by (W1) $h(s):=[\ue^{i\varphi/\hbar}S(s)g(s)]_\Gamma$ is $C^1$ into $L^2(M)$ with $h'=[\ue^{i\varphi/\hbar}S(s)((Y-\tfrac12)g+g')]_\Gamma$.
 By Lemma~\ref{lem:surf-lap}, $h(s)\in\operatorname{Dom}(\Delta_M)$ and $\Delta_Mh=[\ue^{i\varphi/\hbar}S(s)\Delta_\varphi(s)g]_\Gamma$, continuous in $s$. So $\tfrac{d}{ds}\cU(-s)h(s)=\cU(-s)\bigl(h'(s)-\tfrac{i\hbar}{2}\Delta_Mh(s)\bigr)$.
-Since $\Delta_\varphi(s)=\Delta(s)-\tfrac{2i}{\hbar}(Y-\tfrac12)-\hbar^{-2}$, we have $-\tfrac{i\hbar}{2}\Delta_\varphi(s)=-c\Delta(s)-(Y-\tfrac12)+\tfrac{i}{2\hbar}$. The $(Y-\tfrac12)$ terms cancel, and $\tfrac{i}{2\hbar}$ cancels the derivative of $\ue^{-is/(2\hbar)}$. Thus $\tfrac{d}{ds}\mathcal V_sg(s)=\mathcal V_s(g'(s)-c\Delta(s)g(s))$; integrate.\qedhere
+Since $\Delta_\varphi(s)=\Delta(s)-\tfrac{2i}{\hbar}(Y-\tfrac12)-\hbar^{-2}$, we have $-\tfrac{i\hbar}{2}\Delta_\varphi(s)=-c_\hbar\Delta(s)-(Y-\tfrac12)+\tfrac{i}{2\hbar}$. The $(Y-\tfrac12)$ terms cancel, and $\tfrac{i}{2\hbar}$ cancels the derivative of $\ue^{-is/(2\hbar)}$. Thus $\tfrac{d}{ds}\mathcal V_sg(s)=\mathcal V_s(g'(s)-c_\hbar\Delta(s)g(s))$; integrate.\qedhere
 \end{proof}
 
-For $k\ge1$ put $\Sigma_k(t):=\{t>s_1>\cdots>s_k>0\}$ and let $c:=i\hbar/2$.
+For $k\ge1$ put $\Sigma_k(t):=\{t>s_1>\cdots>s_k>0\}$.
 \begin{corollary}[Dyson expansion on $M$]\label{cor:surf-dyson}
-If every word in $X,Y$ applied to $a$ lies in $L^2_\varpi$, then with $a^{(K)}(t)=\sum_{k\le K}c^kP_k(t)a$,
+If every word in $X,Y$ applied to $a$ lies in $L^2_\varpi$, then with $a^{(K)}(t)=\sum_{k\le K}c_\hbar^kP_k(t)a$,
 \[
-\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}\bigl(\Delta(s_1)\cdots\Delta(s_{K+1})a\bigr)\,ds.
+\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c_\hbar^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}\bigl(\Delta(s_1)\cdots\Delta(s_{K+1})a\bigr)\,ds.
 \]
 \end{corollary}
 
 \begin{proof}
-$P_k(s)a$ is a finite sum of continuous scalar functions times fixed words applied to $a$, so Lemma~\ref{lem:surf-duh} applies to it. Since $\partial_sP_{k}(s)=\Delta(s)P_{k-1}(s)$ for $k\ge1$ and $P_k(0)=0$, with $J_k(t):=\int_0^t\mathcal V_s\Delta(s)P_k(s)a\,ds$ we get $\mathcal V_tP_k(t)a=J_{k-1}(t)-cJ_k(t)$ for $k\ge1$, and $\mathcal V_ta-\mathcal V_0a=-cJ_0(t)$. Multiplying by $c^k$ and summing telescopes to $\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c^{K+1}J_K(t)$. Expanding $P_K$ gives the integral over $\Sigma_{K+1}(t)$.
+$P_k(s)a$ is a finite sum of continuous scalar functions times fixed words applied to $a$, so Lemma~\ref{lem:surf-duh} applies to it. Since $\partial_sP_{k}(s)=\Delta(s)P_{k-1}(s)$ for $k\ge1$ and $P_k(0)=0$, with $J_k(t):=\int_0^t\mathcal V_s\Delta(s)P_k(s)a\,ds$ we get $\mathcal V_tP_k(t)a=J_{k-1}(t)-c_\hbar J_k(t)$ for $k\ge1$, and $\mathcal V_ta-\mathcal V_0a=-c_\hbar J_0(t)$. Multiplying by $c_\hbar^k$ and summing telescopes to $\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c_\hbar^{K+1}J_K(t)$. Expanding $P_K$ gives the integral over $\Sigma_{K+1}(t)$.
 \end{proof}
 
 
@@ -232,9 +234,9 @@ universal cover we also record its trivial-group specialization.
 \begin{proposition}[Dyson identity and quotient remainder]\label{prop:dd-id}
 \begin{enumerate}
 \item[\textup{(i)}] \emph{Dyson expansion.} Let $a$ be such that every word in $X,Y$ applied to $a$ lies in $L^2(\Hb)$, and let
-$P_k(t)$ and $a^{(K)}(t)$ be as in Section~\ref{sec:setup}. Then, with $\Sigma_{K+1}(t)$ and $c=i\hbar/2$ as above,
+$P_k(t)$ and $a^{(K)}(t)$ be as in Section~\ref{sec:setup}. Then, with $\Sigma_{K+1}(t)$ and $c_\hbar$ as above,
 \[
-a-V(t)^*a^{(K)}(t)=c^{K+1}\int_{\Sigma_{K+1}(t)}V(s_1)^*\,\Delta(s_1)\cdots\Delta(s_{K+1})a\,ds .
+a-V(t)^*a^{(K)}(t)=c_\hbar^{K+1}\int_{\Sigma_{K+1}(t)}V(s_1)^*\,\Delta(s_1)\cdots\Delta(s_{K+1})a\,ds .
 \]
 \item[\textup{(ii)}] \emph{The error.} Let $E:=\Delta^N\bigl[\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\bigr]$, with $u^{(K)}$ as in
 Section~\ref{sec:setup}. If every word in $X,Y$ applied to $a$ lies in $L^2_\varpi$, for a weight $\varpi$ satisfying \textup{(W1)}
@@ -262,7 +264,7 @@ Multiplication of the resulting identity by $\ue^{-i\varphi/\hbar}$ gives (i).
 By definition $u^{(K)}(t)=\ue^{-it/(2\hbar)}\ue^{i\varphi/\hbar}S(t)a^{(K)}(t)$, so $u^{(K)}(t)_\Gamma=\cU(t)\mathcal V_ta^{(K)}(t)$. Since $\cU(t)$
 is unitary on $L^2(M)$ and commutes with $\Delta_M$, $\norm E=\norm{\Delta_M^N(\mathcal V_0a-\mathcal V_ta^{(K)}(t))}$; no commutation of
 $\cU(t)$ with periodization is used. By Corollary~\ref{cor:surf-dyson},
-$\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}(\Delta(s_1)\cdots\Delta(s_{K+1})a)\,ds$. By
+$\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c_\hbar^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}(\Delta(s_1)\cdots\Delta(s_{K+1})a)\,ds$. By
 Lemma~\ref{lem:surf-lap}, applied $N$ times, $\Delta_M^N\mathcal V_{s_1}g=\mathcal V_{s_1}\Delta_\varphi(s_1)^Ng$. Closedness of $\Delta_M^N$
-and Minkowski's inequality give the bound, with $|c|^{K+1}=(\hbar/2)^{K+1}$.
+and Minkowski's inequality give the bound, with $|c_\hbar|^{K+1}=(\hbar/2)^{K+1}$.
 \end{proof}

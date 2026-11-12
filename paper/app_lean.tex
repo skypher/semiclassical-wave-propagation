@@ -26,7 +26,8 @@ A kernel check certifies the proofs of the formal statements. Whether a formal s
 \item \emph{Amplitudes.} An amplitude is a function on $\Hb$ whose class has finite norm. The formal theorems produce its $C^\infty$ representative $a'$, equal to $a$ almost everywhere, before $\hbar,t,K,N,b$ are chosen, and $u^{(K)}$ is built from $a'$. Nonzero amplitudes of finite norm exist in both classes (\lean{printed_class_nonvacuous_beta}, \lean{swappedD_class_nonvacuous}).
 \item \emph{Conclusions.} Each $L^2$ theorem asserts that the two orbit sums converge absolutely almost everywhere and define elements of $L^2(M)$, and then bounds $\norm{\Delta^N[\,\cdot\,]}$, an element of $[0,\infty]$ that equals $\infty$ outside the domain of $\Delta^N$. The pointwise declarations assert that the error lies in the domain of $\Delta^N$ and that $\Delta^NE$ has a continuous representative at every point of $M$.
 \item \emph{The cap on $\delta$ in the optimal-truncation corollaries.} For Corollary~\ref{pc:cor15} the condition $\delta\le\kappa^{1/2}/\max(1,C)$ is part of the formal statement. For the reversed-weight and power-weight norms in Corollary~\ref{cor:dd15} the formal statements assert that some $C$ and $\delta>0$ exist for which the bound holds on the window; their proofs take $\delta\le\kappa^{1/2}/\max(1,C)$, and $\delta$ may always be decreased, since this only shortens the time window.
-\item \emph{Ranges and grouped statements.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$.
+\item \emph{Ranges and grouped statements.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$. Theorems~\ref{thm:dd14} and~\ref{thm:dd-appx} and their corollaries keep the range $\alpha_0<\pi/4$ of
+the formal statements; their paper proofs use only $\alpha_0\le1$.
 Theorem~\ref{pc:main} states the bounded-radius result \lean{pcmain_all}; its proof treats $\alpha\le\tfrac12$, the range of
 \lean{pcmain_half}, and $\tfrac12<\alpha\le A$ separately, both through Proposition~\ref{pc:core}, which is \lean{dd_core_pc} with
 \lean{SurfW.surf_D4}. The original-norm corollaries likewise use the declarations with suffix \lean{all}.
@@ -86,27 +87,27 @@ Statement & Lean theorem or scope\\
 \hline
 \multicolumn{2}{@{}l}{\emph{Direct counterparts in the reading above}}\\
 Theorem~\ref{pc:main} & \lean{pcmain_all}\\
+Theorem~\ref{thm:dd14} & \lean{thm14Rmain_exp}\\
 Corollary~\ref{pc:thm13} & \lean{pcthm13_all}\\
 Corollary~\ref{pc:cor15} & \lean{pccor15_all}\\
-Lemma~\ref{pc:g43} & \lean{sobolev_M_mult}\\
-Proposition~\ref{prop:mean} & \lean{meanGrowth}\\
-Theorem~\ref{ev:mod}(i),(ii) & \lean{evmod}\\
 Corollary~\ref{pc:cor16} & \lean{pccor16_all}; bounded geometry \lean{pccor16bg_all}\\
-Corollary~\ref{cor:dd16} & \lean{cor16Rmain_expmult}, \lean{cor16R_mult}; bounded geometry \lean{cor16Rmain_expbg}, \lean{cor16R_rep}\\
-Theorem~\ref{thm:dd14} & \lean{thm14Rmain_exp}\\
-Corollary~\ref{cor:dd15} & \lean{cor15Rmain_exp}, \lean{cor15R_rep}\\
+Proposition~\ref{prop:g5} & \lean{propG5}; negation of Schubert's bound \lean{printedThm13_false}\\
+Theorem~\ref{ev:mod}(i),(ii) & \lean{evmod}\\
 Theorem~\ref{thm:dd-appx} & \lean{thm14R_rep}\\
 Theorem~\ref{os:cw} & \lean{cw_abstract}\\
 Lemma~\ref{os:transfer} & \lean{transfer}\\
+Lemma~\ref{pc:g43} & \lean{sobolev_M_mult}\\
 Corollary~\ref{thm:main} & \lean{thm13R_fixed}\\
-Proposition~\ref{prop:g5} & \lean{propG5}; negation of Schubert's bound \lean{printedThm13_false}\\
+Corollary~\ref{cor:dd15} & \lean{cor15Rmain_exp}, \lean{cor15R_rep}\\
+Corollary~\ref{cor:dd16} & \lean{cor16Rmain_expmult}, \lean{cor16R_mult}; bounded geometry \lean{cor16Rmain_expbg}, \lean{cor16R_rep}\\
 Corollary~\ref{ev:transfer} & \lean{evTransfer_pc_all}, \lean{evTransfer_main}\\
+Proposition~\ref{prop:mean} & \lean{meanGrowth}\\
 \hline
 \multicolumn{2}{@{}l}{\emph{Results without formal proofs}}\\
-Corollary~\ref{cor:localized} & Paper deduction from Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}\\
-Proposition~\ref{pc:classes}; Theorem~\ref{cl:necessary}; Section~\ref{sec:cusp} & Amplitude-class comparison and cusp sharpness\\
-Corollary~\ref{cor:meanJ} & Paper deduction from Proposition~\ref{prop:mean} and Theorem~\ref{thm:dd14}\\
+Theorem~\ref{cl:necessary}; Proposition~\ref{pc:classes}; Section~\ref{sec:cusp} & Amplitude-class comparison and cusp sharpness\\
 Theorem~\ref{ev:mod}(iii) & Cited horocycle equidistribution theorem\\
+Corollary~\ref{cor:localized} & Paper deduction from Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}\\
+Corollary~\ref{cor:meanJ} & Paper deduction from Proposition~\ref{prop:mean} and Theorem~\ref{thm:dd14}\\
 \hline
 \end{tabular}
 \end{table}

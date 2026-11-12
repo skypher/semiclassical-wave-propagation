@@ -141,8 +141,8 @@ orders and exponentially small errors under optimal truncation. Two bounds of th
 leading error has order $\hbar t$, and this order is attained on the hyperbolic plane; pointwise estimates need a factor
 $m(z)^{1/2}$ given by a local multiplicity, and the exponent $1/2$ cannot be lowered on the modular surface. For a
 family of analytic states on the modular surface, the mass leaves every compact set for all times between
-$C\log(1/\hbar)\log\log(1/\hbar)$ and $\delta\hbar^{-1/2}$, although the approximation stays accurate, while the
-classical transport of the corresponding density on the cusp cylinder equidistributes. The principal $L^2$ estimates
+$C\log(1/\hbar)\log\log(1/\hbar)$ and $\delta\hbar^{-1/2}$, and the approximation stays accurate on that range. The
+classical transport of the corresponding density on the cusp cylinder, by contrast, equidistributes. The principal $L^2$ estimates
 and the escape of mass are formalized in Lean~4.
 
 \vskip5pt
@@ -165,7 +165,7 @@ amplitudes; Dyson expansion.
 \section{Introduction}\label{sec:intro}
 
 Semiclassical approximations describe the solutions of the Schr\"odinger equation
-$i\hbar\,\partial_t\psi=-\tfrac{\hbar^2}{2}\Delta\psi$ for small $\hbar$ through the geodesic flow. For hyperbolic flows, the coherent-state and Egorov estimates cited below typically control propagation up to the Ehrenfest time
+$i\hbar\,\partial_t\psi=-\tfrac{\hbar^2}{2}\Delta\psi$ for small $\hbar$ through the geodesic flow. For hyperbolic flows, coherent-state and Egorov estimates typically control propagation up to the Ehrenfest time
 $T\sim\lambda^{-1}\log(1/\hbar)$, where $\lambda$ is a Lyapunov exponent \cite{CR97,HJ00,BGP99,BR02}. The results below concern a special family
 of Lagrangian states on constant-curvature quotients; Section~\ref{subsec:context} places them in the wider propagation
 and equidistribution literature.
@@ -215,7 +215,8 @@ The operators used to construct the approximation are
 \Delta(t):=\ue^{-2t}X^2+Y^2-Y
 \]
 \cite[(2.9)]{S}; their relation to the exact evolution is explained in Section~\ref{subsec:method}.
-For a Fuchsian group $\Gamma$ and $u$ on $\Hb$, $u_\Gamma=\sum_{\gamma\in\Gamma}u\circ\gamma^{-1}$.
+For a Fuchsian group $\Gamma$ and $u$ on $\Hb$, the periodization of $u$ is
+$u_\Gamma=[u]_\Gamma:=\sum_{\gamma\in\Gamma}u\circ\gamma^{-1}=\sum_{\gamma\in\Gamma}u\circ\gamma$; both notations are used.
 
 The approximations are those of \cite[(1.20), (1.27)--(1.29)]{S}. For $k\ge1$ let
 \[
@@ -228,7 +229,7 @@ u^{(K)}(t):=\ue^{-it/(2\hbar)}\bigl(S(t)a^{(K)}(t)\bigr)\ue^{i\varphi/\hbar}.
 \]
 So the leading approximation is $u^{(0)}(t)=\ue^{-it/(2\hbar)}(S(t)a)\ue^{i\varphi/\hbar}$. For a boundary point $b\ne\infty$ the
 phase $\varphi_b$, the transport and the approximations are the images of those for $\infty$ under an isometry that fixes the
-base point $x_0$ of the norms and maps $\infty$ to $b$ (Lemma~\ref{lem:base}); in statements for general $b$, $u^{(K)}$
+base point $x_0\in\Hb$ of the norms defined below and maps $\infty$ to $b$ (Lemma~\ref{lem:base}); in statements for general $b$, $u^{(K)}$
 denotes the approximation built in this way with $\varphi_b$.
 
 Schubert's amplitude norm is \cite[Def.~1.1]{S}
@@ -260,7 +261,8 @@ of the mollifier (Section~\ref{sec:analytic}) is fixed once and for all, and con
 
 \paragraph{Notation.} The following symbols keep one meaning throughout, except where a proof or definition explicitly
 declares a local summation index, integration variable or auxiliary parameter (for instance the bound $K$ of the weight class
-$\mathcal W(\rho,K)$ in Section~\ref{app:ws}, or the scalar parameters of the special-function calculations in
+$\mathcal W(\rho,K)$ in Section~\ref{app:ws}, the word length $m$ in Section~\ref{sec:analytic}, the parameter $m$ of the
+operator $\Lambda_m$ in Section~\ref{sec:printed}, or the scalar parameters of the special-function calculations in
 Appendix~\ref{app:special}): $a$ the amplitude, $\alpha$ its analytic radius,
 $\beta$ the spatial decay exponent, $\kappa$ the constant in the condition $\alpha^3\ge\kappa\hbar$, $b$ the boundary point,
 $x_0$ the base point of the weights, $\Gamma$ the group and $M$ the quotient, $X,Y$ the vector fields above, $X_0$ and
@@ -293,11 +295,11 @@ Section~\ref{subsec:applications}, whose analytic radius tends to zero with $\hb
 same estimate holds on a restricted range of radii, uniformly over groups with a common Poincar\'e series bound.
 
 \begin{theorem}[approximation in the reversed-weight class]\label{thm:dd14}
-Fix $\beta>1/2$, $\kappa>0$ and $\alpha_0\in(0,\pi/4)$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$,
+Fix $\beta>\tfrac12$, $\kappa>0$ and $\alpha_0\in(0,\pi/4)$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$,
 such that for every Fuchsian group $\Gamma$ with $\sup_z\sum_{\gamma\in\Gamma}\ue^{-(\beta+1/2)\,d(x_0,\gamma z)}\le P$, all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$
 with $\swNorm a<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
 \[
-\norm{\Delta^N\big[\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}
+\norm{\Delta^N\big[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}
 \le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\swNorm a ,
 \]
 with $N^{2N}:=1$ at $N=0$.
@@ -305,7 +307,9 @@ with $N^{2N}:=1$ at $N=0$.
 
 The supremum in the hypothesis is finite for every Fuchsian group by Lemma~\ref{lem:p1}, since $\beta+\tfrac12>1$; thus
 $\delta$ does not depend on $\Gamma$, and $C$ depends on $\Gamma$ only through that supremum. Theorem~\ref{thm:dd14} is
-proved in Section~\ref{sec:swapped}. The following corollaries of Theorem~\ref{pc:main} give the leading error, the
+proved in Section~\ref{sec:swapped}. Its proof uses the bound $\alpha_0<\pi/4$ only through $\alpha_0\le1$: all estimates
+of Section~\ref{sec:analytic} are applied with $\tau_0=1$. The range $\alpha_0<\pi/4$ is that of the formal statements
+(Appendix~\ref{app:lean}). The following corollaries of Theorem~\ref{pc:main} give the leading error, the
 exponential estimate obtained by choosing $K$, and pointwise bounds. For the reversed-weight norm,
 Corollaries~\ref{thm:main}, \ref{cor:dd15} and~\ref{cor:dd16} in Section~\ref{subsec:pc-cor} give the leading error at a fixed
 radius, optimal truncation and pointwise bounds as consequences of Theorem~\ref{thm:dd14}.
@@ -323,14 +327,15 @@ The factorial control in Theorem~\ref{pc:main} allows the expansion order to gro
 choosing $K$ of order $\alpha^2/(\hbar t)$ gives an exponentially small error.
 
 \begin{corollary}[optimal truncation]\label{pc:cor15}
-Assume the hypotheses of Theorem~\ref{pc:main}, let $C,\delta$ be its constants, and decrease $\delta$ so that
-$\delta\le\kappa^{1/2}/\max(1,C)$. Put
+Assume the hypotheses of Theorem~\ref{pc:main}, let $C,\delta$ be its constants, and replace $\delta$ by
+$\min(\delta,\kappa^{1/2}/\max(1,C))$. Put
 $q:=C\hbar t/\alpha^2$ and let $\theta\in(0,1)$. For every integer $K$ with $(1-\theta)/q\le K\le(1-\theta/2)/q$,
 \begin{multline*}
   \norm{\Delta^N\big[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}\\
   \le C'\theta^{-1/2}C^{N+1}N^{2N}(\alpha\hbar)^{-2N}\ue^{-(1-\theta)\alpha^2/(C\hbar t)}\pcNorm{a},
 \end{multline*}
-with an absolute constant $C'$. If no integer lies in this range the statement is vacuous; at $t=0$ the error is $0$.
+with an absolute constant $C'$. The range of $K$ has length $\theta/(2q)$, so it contains an integer whenever
+$q\le\theta/2$. At $t=0$ the error is $0$.
 \end{corollary}
 
 For pointwise estimates, let
@@ -351,6 +356,11 @@ The error lies in $\operatorname{Dom}(\Delta_M^N)$, and the left side is the val
 If the injectivity radius of $M$ is at least $r_0>0$, the factor $m(z)^{1/2}$ may be replaced by $1$, with a constant
 depending also on $r_0$.
 \end{corollary}
+
+Here the injectivity radius of $M$ is at least $r_0$ if $d(\tilde z,\gamma\tilde z)\ge2r_0$ for all $\tilde z\in\Hb$ and all
+$\gamma\in\Gamma\setminus\{\mathrm{id}\}$; in particular $\Gamma$ then has no elliptic elements. Corollary~\ref{pc:cor16}
+carries $(2N)!$ where Theorem~\ref{pc:main} carries $N^{2N}$; the two agree up to a factor $C^N$, since
+$(2N)!\le4^NN^{2N}$ and $N^{2N}\le(\ue/2)^{2N}(2N)!$.
 
 Table~\ref{tab:classes} summarizes the three amplitude classes, the radius ranges of the theorems and their uses.
 \begin{center}
@@ -385,16 +395,16 @@ Two bounds of \cite{S} need correction. The first is the leading error bound $C\
 Let $\Gamma=\{\mathrm{id}\}$ and let $a\ne0$ be such that every word in $X,Y$ applied to $a$ lies in $L^2(\Hb)$.
 Then for $t=\tau\hbar^{-1/2}$, $\tau>0$ fixed,
 \[
-\norm{u^{(0)}(t)-\cU(t)(a\ue^{i\varphi/\hbar})}_{L^2(\Hb)}=\tfrac\tau2\sqrt\hbar\,\norm{La}+O_{a,\tau}(\hbar),\qquad L=Y^2-Y,
+\norm{\cU(t)(a\,\ue^{i\varphi/\hbar})-u^{(0)}(t)}_{L^2(\Hb)}=\tfrac\tau2\sqrt\hbar\,\norm{La}+O_{a,\tau}(\hbar),\qquad L=Y^2-Y,
 \]
-and $\norm{La}\ge\norm a/4>0$. Hence the order $\hbar t$ of Corollary~\ref{thm:main} is attained by every nonzero amplitude of the
-reversed-weight class, that of Corollary~\ref{pc:thm13} by every nonzero amplitude of the original-norm class, and the bound
-$C\hbar\norm a_{\alpha,\beta}$ of \cite[(1.18)]{S} cannot hold on the window \cite[(1.19)]{S} for any nonzero amplitude of the
-original-norm class.
+and $\norm{La}\ge\norm a/4>0$. Hence the order $\hbar t$ of Corollary~\ref{pc:thm13} is attained by every nonzero amplitude of the
+original-norm class, that of Corollary~\ref{thm:main} by every nonzero amplitude of the reversed-weight class, and the bound
+$C\hbar\norm a_{\alpha,\beta}$ of \cite[(1.18)]{S} cannot hold on the window $0\le t\le\delta\hbar^{-1/2}$ of \cite[(1.19)]{S}
+for any nonzero amplitude of the original-norm class.
 \end{proposition}
 
 Proposition~\ref{prop:g5} is proved in Section~\ref{sec:g5}. The second correction concerns pointwise bounds.
-\cite[Corollary~1.6]{S} states a pointwise bound without the factor $m(z)^{1/2}$, for every Fuchsian group. On a
+The pointwise bound of \cite[Corollary~1.6]{S} has no factor $m(z)^{1/2}$ and is stated for every Fuchsian group. On a
 quotient with a cusp, $m(z)$ grows like the height (Remark~\ref{pc:remcusp}), and the error itself sees this growth.
 
 \begin{theorem}[the cusp factor is necessary]\label{cl:necessary}
@@ -410,6 +420,8 @@ all $z\in M$.
 \end{itemize}
 \end{theorem}
 
+Since $\alpha$ is fixed, the prefactors $(\alpha\hbar)^{-p}$ in (i) and $\hbar^{-p}$ in (ii) are interchangeable; (i) is
+written in the form of the prefactor $(\alpha\hbar)^{-8}$ of \cite[Corollary~1.6]{S} (Remark~\ref{cl:reading}).
 For small $\hbar$ the times $t\le\hbar^{-1/5}$ lie in the windows of Theorems~\ref{pc:main} and~\ref{thm:dd14}. So the factor
 $m(z)^{1/2}$ in Corollary~\ref{pc:cor16} cannot be dropped, or replaced by $m(z)^\sigma$ with $\sigma<\tfrac12$, in a bound valid
 for every Fuchsian group and every boundary point. No optimality of the power of $\hbar$ is asserted. Theorem~\ref{cl:necessary}
@@ -418,6 +430,13 @@ extended to rational boundary points (Corollary~\ref{cl:rational}). What fails i
 of the approximation: for the amplitude of Theorem~\ref{cl:main}(i), at the points where that theorem bounds the error from
 below, the approximation itself has size of order $m(z)^{1/2}\hbar^{1/2}$, and the error is smaller than it by a factor of order
 $\hbar t$ (Proposition~\ref{cl:relative}).
+
+Two further points of \cite{S} are corrected here. First, the two orders of the weights give norms that are not
+equivalent for $\beta>\tfrac12$ (Proposition~\ref{pc:classes}), contrary to \cite[Proposition~7.1, (7.2)]{S}; this is
+why the original norm needs the separate argument of Section~\ref{sec:printed}. Second, the gap named in the withdrawal
+lies in the proofs of \cite[Theorems~4.1 and~4.4]{S}, which infer $\norm{\ue^Aa}\le\norm{\ue^Ba}$ from an operator
+inequality $A\le B$ between non-commuting self-adjoint operators. The exponential is not operator monotone;
+Appendix~\ref{sec:changes} gives a $2\times2$ counterexample and locates the steps.
 
 \subsection{Applications}\label{subsec:applications}
 \paragraph{Localized states.}
@@ -443,8 +462,8 @@ $a$ lies in the original-norm class; it does not depend on $\hbar$. Put
 \[
   a_0(y):=\int_{\mathbb R}a(x+iy)\,dx,\qquad\mu_0:=\int_0^\infty|a_0(y)|^2\,\frac{dy}{y^2}.
 \]
-Section~\ref{subsec:ev-mod} shows that $a\in L^1(\Hb)$, so that $a_0$ is defined almost everywhere, and that the periodization of
-$a$ along the translations $z\mapsto z+n$ is $a_0$ (Corollary~\ref{ev:perio}).
+Section~\ref{subsec:ev-mod} shows that $a\in L^1(\Hb)$, so that $a_0$ is defined almost everywhere, and
+Corollary~\ref{ev:perio} shows that the periodization of $a$ along the translations $z\mapsto z+n$ is $a_0$.
 
 \begin{theorem}[escape of mass and classical comparison]\label{ev:mod}\label{cor:escape-intro}
 Let $\alpha$, $h$, $a$, $a_0$, $\mu_0$ be as above, $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $x_0=i$, $b=\infty$, $\varphi=-\log y$,
@@ -468,11 +487,15 @@ $\norm{\psi(t)-u^{(K)}(t)_\Gamma}_{L^2(M)}\le C^{K+1}K!\,(\hbar t/\alpha^2)^{K+1
 \end{itemize}
 \end{theorem}
 
-By (ii), the mass of $\psi(t)$ in every compact set tends to $0$ uniformly on the window, while by (i) the approximation
-remains accurate there; at fixed $\alpha$ its leading error is $O(\hbar t)=O(\hbar^{1/2})$. The left side of (iii) is the
-classical prediction for $\langle q\,\psi(t),\psi(t)\rangle$: the density $|a_0|^2$ on the cusp cylinder, transported by the
-geodesic flow and projected to $M$. Its limit $\tfrac3\pi\mu_0\int_Mq\,d\nu$ is positive for $q\ge0$, $q\not\equiv0$. The lower
-endpoint $T(\hbar)+\log H$ is a sufficient escape time; we do not claim that escape fails at earlier times.
+By (ii), the mass of $\psi(t)$ in every compact set tends to $0$ uniformly for $T(\hbar)+\log H\le t\le\delta(\alpha/\hbar)^{1/2}$,
+while by (i) the approximation remains accurate there; at fixed $\alpha$ its leading error is $O(\hbar t)=O(\hbar^{1/2})$. The
+left side of (iii) is the classical prediction for $\langle q\,\psi(t),\psi(t)\rangle$: the density $|a_0|^2$ on the cusp
+cylinder, transported by the geodesic flow and projected to $M$. Its limit $\tfrac3\pi\mu_0\int_Mq\,d\nu$ is positive for
+$q\ge0$, $q\not\equiv0$. So for such $q$, supported in some $M_H$, the quantum expectation
+$\langle q\,\psi(t),\psi(t)\rangle\le\sup q\int_{M_H}|\psi(t)|^2\,d\nu$ tends to $0$ on this range of times, while the
+classical prediction tends to a positive limit. The lower endpoint $T(\hbar)+\log H$ is a sufficient escape time; we do not
+claim that escape fails at earlier times. The factor $\log\log(1/\hbar)$ in $T(\hbar)$ comes from the width of the classical
+zero-free region of the Riemann zeta function (Remark~\ref{ev:time}).
 Theorem~\ref{ev:mod} is proved in Section~\ref{sec:expect}.
 
 \subsection{Context and related work}\label{subsec:context}
@@ -543,11 +566,10 @@ weighted $L^2$ space.
 The error is then bounded by $(\hbar/2)^{K+1}$ times an integral over the simplex
 $t>s_1>\dots>s_{K+1}>0$ of a periodized propagator applied to
 $b'(\mathbf s)=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a$, $\mathbf s=(s_1,\dots,s_{K+1})$, a fixed polynomial in the
-vector fields $X,Y$ applied to the amplitude. The operator $\mathcal V_s$ that carries the propagator of $M$ to the amplitude
-is defined in Section~\ref{subsec:dd-surf}.
+vector fields $X,Y$ applied to the amplitude.
 No resummation of the series is needed, and all derivatives fall on $a$. Analytic regularity of $a$ at radius
 $\alpha$ bounds a word of length $k$ in $X,Y$ applied to $a$ by $C^kk!\,\alpha^{-k}$ (Cauchy estimates,
-Lemmas~\ref{lem:fc}--\ref{lem:wb}), and the integration over the simplex then gives the factor
+Lemmas~\ref{lem:fc}, \ref{lem:wc}, \ref{lem:sc} and~\ref{lem:wb}), and the integration over the simplex then gives the factor
 $C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$.
 
 \emph{The periodized flow.} It remains to bound the periodized propagator applied to $b'$ in $L^2(M)$, uniformly in $s_1\le t$.
@@ -561,14 +583,18 @@ is proved by an energy estimate with a frequency-clipped multiplier. Without a w
 $\ue^{-r/(8\varepsilon)}$, on vectors of analytic radius $r$ (Lemma~\ref{lem:unw}); with the
 weight $X_0^\beta$ the bound we use is a power of $\varepsilon^{-1}$ (Lemma~\ref{lem:path}). Interpolation gives smallness at an
 intermediate weight, still above the critical one, and this pays for the growth of the periodization bound. With
-$\varepsilon=(\alpha\hbar)^{1/2}/2$ all requirements are met for $t\le\delta(\alpha/\hbar)^{1/2}$.
+$\varepsilon=(\alpha\hbar)^{1/2}/2$ all requirements are met for $t\le\delta(\alpha/\hbar)^{1/2}$. Indeed, put
+$\xi:=(\alpha/\hbar)^{1/2}$. The mollified flow is controlled for times up to a multiple of $\varepsilon/\hbar=\xi/2$, and
+on vectors of radius comparable to $\alpha$ the defect is of size $\ue^{-c\alpha/\varepsilon}=\ue^{-2c\xi}$. Both scales
+are $\xi$, and for $t\le\delta\xi$ with $\delta$ small the gain $\ue^{-2c\xi}$, reduced by the interpolation, still beats
+the growth $\ue^{\gamma t}$ of the periodization bound. This is the origin of the time scale $(\alpha/\hbar)^{1/2}$.
 
 \emph{The original amplitude norm.} An amplitude of the original-norm class is $a=\ue^{-\alpha\Lambda}f$,
 where $f=\ue^{\alpha\Lambda}a$ has the exponential weighted bound $\norm{\ue^{\beta\langle d\rangle}f}=\pcNorm a$.
 Poisson smoothing need not preserve a spatial weight above the critical exponent, so this bound on $f$ does not give the
 corresponding bound on $a$ (Proposition~\ref{pc:classes}). The argument therefore uses the representation
-$a=\ue^{-\sigma\Lambda_m}\tilde f$, with $\tilde f$ controlled at the critical weight with a logarithmic factor
-(Proposition~\ref{os:data}). We interpolate the linear maps producing the vectors of the proof between unweighted $L^2$
+$a=\ue^{-\sigma\Lambda_m}\tilde f$, where $\Lambda_m=(m^2-\tfrac14-\Delta)^{1/2}$ is a shifted square root of $-\Delta$ and
+$\tilde f$ is controlled at the critical weight with a logarithmic factor (Proposition~\ref{os:data}). We interpolate the linear maps producing the vectors of the proof between unweighted $L^2$
 and a power-weighted space (Lemma~\ref{os:transfer}). The smoothing operators are bounded at the critical weight by a
 multiplier theorem proved using finite propagation speed (Theorem~\ref{os:cw}); periodization is controlled at the same weight
 by Proposition~\ref{os:p1}. These estimates yield Theorem~\ref{pc:main}.
@@ -609,14 +635,15 @@ Appendix~\ref{app:lean} documents the scope of the formalization.
 \input{sec_expect}
 
 \section{Lower bounds for the approximation error}\label{sec:g5}
-This section gives two lower bounds for the error. Section~\ref{subsec:g5proof} proves Proposition~\ref{prop:g5}: the order
+This section gives a lower bound for the error and an exact formula for the mean of the approximation.
+Section~\ref{subsec:g5proof} proves Proposition~\ref{prop:g5}: the order
 $\hbar t$ of the leading error is attained on $\Hb$. Section~\ref{subsec:mean} computes the mean of the approximation exactly
 (Proposition~\ref{prop:mean}). On a surface of finite area this bounds the error from below in terms of the mean $\mathcal J$ of the
 initial state on $\Hb$. Corollary~\ref{cor:meanJ} shows that $\mathcal J$ is exponentially small. So for $K=0$ and amplitudes
 with $\norm{\psi_0}\ge c\swNorm a$ this bound can take effect only within a bounded time of the end of the approximation window,
 or later (Remark~\ref{rem:mean}); if $\mathcal J=0$ it gives no bound.
 \subsection{The order \texorpdfstring{$\hbar t$}{ht} of the leading error is attained}\label{subsec:g5proof}
-Every amplitude of finite reversed-weight norm has all its words in $X,Y$ in $L^2(\Hb)$
+For every amplitude of finite reversed-weight norm, all words in $X,Y$ applied to it lie in $L^2(\Hb)$
 (Lemmas~\ref{lem:m2w} and~\ref{lem:sc}); the same holds for the original norm
 (Lemma~\ref{lem:lift}), using a smaller radius in these lemmas if necessary.
 Thus Proposition~\ref{prop:g5} applies to both classes. Nonzero examples are
@@ -627,8 +654,8 @@ the corresponding norm is $\norm g$.
 
 \begin{proof}[Proof of Proposition~\ref{prop:g5}]
 By \eqref{eq:factor} and unitarity of $\cU$ and $V(t)$, the left side equals $\norm{V(t)a-a}=\norm{a-V(t)^*a}$. The Dyson
-identity (i) of Proposition~\ref{prop:dd-id} at $K=1$, whose hypothesis is the one made on $a$, reads, with $c=i\hbar/2$,
-\[a-V(t)^*a=c\,V(t)^*P_1(t)a+R,\qquad R=c^2\int_{t>s_1>s_2>0}V(s_1)^*\Delta(s_1)\Delta(s_2)a\,ds_1\,ds_2,\]
+identity (i) of Proposition~\ref{prop:dd-id} at $K=1$, whose hypothesis is the one made on $a$, reads, with $c_\hbar=i\hbar/2$,
+\[a-V(t)^*a=c_\hbar\,V(t)^*P_1(t)a+R,\qquad R=c_\hbar^2\int_{t>s_1>s_2>0}V(s_1)^*\Delta(s_1)\Delta(s_2)a\,ds_1\,ds_2,\]
 and, since $\Delta(s)=L+\ue^{-2s}X^2$,
 \[P_1(t)=\int_0^t\Delta(s)\,ds=tL+\tfrac{1-\ue^{-2t}}2X^2\]
 and
@@ -643,8 +670,9 @@ gauge $a=\ue^{r/2}g$, $L$ becomes $\partial_r^2-1/4$, so $-L\ge1/4$; hence $\nor
 
 \subsection{The mean of the approximation}\label{subsec:mean}
 The integral of $u^{(K)}(t)$ over $\Hb$ can be computed exactly. On a surface of finite area this bounds the error of the
-approximation from below at large times. Under the hypotheses of Corollary~\ref{cor:meanJ} and Remark~\ref{rem:mean}, its comparison
-at $K=0$ does not shorten the window of Theorem~\ref{thm:dd14}. We include the exact formula for the mean because, when the mean
+approximation from below at large times. For $K=0$ and amplitudes with $\norm{\psi_0}\ge c\swNorm a$, $c>0$ fixed, this lower
+bound takes effect only after the window of Theorem~\ref{thm:dd14}, up to a bounded time (Corollary~\ref{cor:meanJ},
+Remark~\ref{rem:mean}). We include the exact formula for the mean because, when the mean
 is nonzero, it also gives the restrictions on approximations of fixed order discussed in Section~\ref{sec:outlook}. For $w\in\mathbb C$ let $T_K(w):=\sum_{k=0}^{K}w^k/k!$.
 
 \begin{proposition}[the mean of the approximation]\label{prop:mean}
@@ -719,7 +747,8 @@ $0<\hbar\le1$ and every $a$ with $\swNorm a<\infty$ at radius $\alpha$, the numb
 \]
 \end{corollary}
 \begin{proof}
-Take $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, so $\operatorname{area}(M)=\pi/3$, and $t:=\delta(\alpha/\hbar)^{1/2}$. Proposition~\ref{prop:mean}
+The number $\mathcal J$ is an integral over $\Hb$ and does not depend on any group; the modular group serves only as an
+auxiliary quotient of finite area. Take $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, so $\operatorname{area}(M)=\pi/3$, and $t:=\delta(\alpha/\hbar)^{1/2}$. Proposition~\ref{prop:mean}
 with $K=0$, where $T_0=1$, gives
 $\ue^{t/2}|\mathcal J|\le(\pi/3)^{1/2}\bigl(\norm{\cU(t)\psi_0-u^{(0)}(t)_\Gamma}+\norm{\psi_0}\bigr)$. The hypotheses of
 Theorem~\ref{thm:dd14} hold with $\kappa=\alpha^3$, since $\hbar\le1$, and at $K=N=0$ it bounds the first norm by
@@ -743,7 +772,6 @@ Theorem~\ref{thm:dd14}, up to a bounded time. On $\Hb$ itself, and on surfaces o
 \input{sec_cusp_lower}
 
 \section{Open problems and outlook}\label{sec:outlook}
-\subsection{Questions arising from the results}
 \paragraph{Longer approximation times.} Extending the approximation window requires a better trade-off than the one described in Section~\ref{subsec:method}
 between the growth allowed in mollified propagation and the smallness of the mollifier defect.
 \cite[Conjecture~1]{S} is a dispersive estimate for the unmollified flow on the
@@ -776,7 +804,6 @@ smaller for irrational $b$.
 Proposition~\ref{prop:g5} shows that the order $\hbar t$ of the leading error is attained on
 $\Hb$, that is, for the trivial group. Whether it is attained on compact surfaces is open.
 
-\subsection{Extensions}
 \paragraph{Other geometries.} The exact factorization \eqref{eq:factor} uses constant curvature and a phase attached to a
 boundary point. On real hyperbolic space of dimension $n$, in the upper half-space model with $Y=y\partial_y$, the
 analogous factorization holds, with $S(t)a(x,y)=\ue^{-(n-1)t/2}a(x,\ue^ty)$ and
@@ -815,10 +842,11 @@ Sol, Fable, Google Gemini~4 Argon (\texttt{gemini-4-argon}) and OpenAI GPT-6~Pro
 OpenAI Codex and ChatGPT sessions checked revisions and formal-statement correspondence;
 Codex revised the exposition, proof guides and section hierarchy, made the intermediate escape estimates self-contained,
 and wrote the statements of the localized-state consequence and of the sharper pointwise prefactor $(\alpha\hbar)^{-2N-2}$.
-Claude Opus~5.5 also wrote two referee reports on the presentation and carried out the resulting revisions of notation and
+Claude Opus~5.5 also wrote three referee reports on the presentation and carried out the resulting revisions of notation and
 organization; in the first it stated the necessity of the cusp factor as Theorem~\ref{cl:necessary} and added the bound on the mean
-in Corollary~\ref{cor:meanJ}, and in the second it added the two-sided bound for the local multiplicity in a cusp
-(Remark~\ref{pc:remcusp}). It also strengthened the formal pointwise corollaries to the prefactor $(\alpha\hbar)^{-2N-2}$ of
+in Corollary~\ref{cor:meanJ}, in the second it added the two-sided bound for the local multiplicity in a cusp
+(Remark~\ref{pc:remcusp}), and in the third it added the explanations of the time scale $(\alpha/\hbar)^{1/2}$ and of the
+factor $\log\log(1/\hbar)$ and collected the corrections to \cite{S} in Section~\ref{subsec:corrections}. It also strengthened the formal pointwise corollaries to the prefactor $(\alpha\hbar)^{-2N-2}$ of
 Corollaries~\ref{pc:cor16} and~\ref{cor:dd16}, formalized the arbitrary-quotient case of Corollary~\ref{cor:dd16}, and formalized
 Corollary~\ref{thm:main} at every fixed radius, Corollary~\ref{ev:transfer} for the original norm at every radius, and
 Proposition~\ref{prop:g5}.
