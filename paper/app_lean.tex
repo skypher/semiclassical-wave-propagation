@@ -26,8 +26,9 @@ A kernel check certifies the proofs of the formal statements. Whether a formal s
 \item \emph{Conclusions.} Each $L^2$ theorem asserts that the two orbit sums converge absolutely almost everywhere and define elements of $L^2(M)$, and then bounds $\norm{\Delta^N[\,\cdot\,]}$, an element of $[0,\infty]$ that equals $\infty$ outside the domain of $\Delta^N$. The pointwise declarations assert that the error lies in the domain of $\Delta^N$ and that $\Delta^NE$ has a continuous representative at every point of $M$.
 \item \emph{The cap on $\delta$ in the optimal-truncation corollaries.} For Corollary~\ref{pc:cor15} the condition $\delta\le\kappa^{1/2}/\max(1,C)$ is part of the formal statement. For the reversed-weight and power-weight norms in Corollary~\ref{cor:dd15} the formal statements assert that some $C$ and $\delta>0$ exist for which the bound holds on the window; their proofs take $\delta\le\kappa^{1/2}/\max(1,C)$, and $\delta$ may always be decreased, since this only shortens the time window.
 \item \emph{Ranges and grouped statements.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$.
-Theorem~\ref{pc:main} states the bounded-radius result \lean{pcmain_all}; its proof first treats $\alpha\le\tfrac12$,
-the range of \lean{pcmain_half}. The original-norm corollaries likewise use the declarations with suffix \lean{all}.
+Theorem~\ref{pc:main} states the bounded-radius result \lean{pcmain_all}; its proof treats $\alpha\le\tfrac12$, the range of
+\lean{pcmain_half}, and $\tfrac12<\alpha\le A$ separately, both through Proposition~\ref{pc:core}, which is \lean{dd_core_pc} with
+\lean{SurfW.surf_D4}. The original-norm corollaries likewise use the declarations with suffix \lean{all}.
 Proposition~\ref{os:data} retains the condition $\sigma m\le\tfrac12$, although its paper proof does not need it:
 this is the range of its formal statement and suffices for its applications.
 The formal statement of Proposition~\ref{prop:mean} has every $\hbar>0$ and every real $t$, and no hypothesis on the area:

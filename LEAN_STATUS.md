@@ -84,6 +84,7 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 5.8 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
 | Proposition 5.9 (`os:p1`) | L | `poincare_omP`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
 | Lemma 5.10 (`os:indep`) | L | `surfV_indep` |
+| Proposition 5.11 (`pc:core`) | L | `dd_core_pc` (the bound for the Dyson remainder of Proposition 2.10 (`prop:dd-id`)(ii)), with `SurfW.surf_D4` (the error equals that remainder) |
 
 ## Section 6 (`sec:consequences`): consequences and localized amplitudes
 

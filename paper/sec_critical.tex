@@ -168,27 +168,29 @@ The transfer estimate below applies to the derivative, flow and defect maps in t
 Periodization at the same weight then turns these estimates into bounds on the quotient.
 
 \begin{lemma}[transfer over shells]\label{os:transfer}
-Let $0\le c\le1$. Let $T:L^2(\Hb)\to L^2(\Hb)$ be additive, and let $0<M_0\le M_1$ be such that
+Let $0\le c\le1$ and $D>0$, and let $\varpi$ be a measurable weight with $\ue^{n/2}(1+n)^c\le\varpi\le D\,\ue^{n/2}(1+n)^c$ on $A_n$ for
+every $n\ge0$; by \eqref{os:shell}, $\varpi=\osomc$ with $D=3\ue^{1/2}$ is an example. Let $T:L^2(\Hb)\to L^2(\Hb)$ be additive, and let
+$0<M_0\le M_1$ be such that
 \begin{itemize}
 \item[(a)] $\norm{Tu}\le M_0\norm u$ for all $u\in L^2$, and
 \item[(b)] $\norm{\osX\,Tu}\le M_1\norm{\osX u}$ for every $u$ supported in one shell $A_n$.
 \end{itemize}
 Then for every $h\in L^2$,
 \[
-\norm{\osomc\,Th}\le C_{\mathrm{tr}}\,M_0^{1/4}M_1^{3/4}\,\norm{\osomc h},
+\norm{\varpi\,Th}\le C_{\mathrm{tr}}\,M_0^{1/4}M_1^{3/4}\,\norm{\varpi h},
 \]
-with a constant $C_{\mathrm{tr}}$ depending only on $c$.
+with a constant $C_{\mathrm{tr}}$ depending only on $c$ and $D$.
 \end{lemma}
 \begin{proof}
 Let $u=1_nh$. By (a), $\norm{1_lTu}\le M_0\norm u$. By (b), since $\osX\ge\ue^l$ on $A_l$ and $\osX\le\ue^{n+1}$ on $A_n$,
 $\norm{1_lTu}\le\ue\,M_1\ue^{-(l-n)}\norm u$. For $l\ge n$, $\min(x,y)\le x^{1/4}y^{3/4}$ gives
-$\norm{1_lT1_n}\le\ue^{3/4}M_0^{1/4}M_1^{3/4}\ue^{-3(l-n)/4}$; for $l<n$ we use $M_0\le M_0^{1/4}M_1^{3/4}$. By \eqref{os:shell} and $c\le1$,
-$\sup_{A_l}\osomc/\inf_{A_n}\osomc\le3\ue^{1/2}\ue^{(l-n)/2}(1+(l-n)_+)$. So with $a_n:=\norm{\osomc1_nh}$,
+$\norm{1_lT1_n}\le\ue^{3/4}M_0^{1/4}M_1^{3/4}\ue^{-3(l-n)/4}$; for $l<n$ we use $M_0\le M_0^{1/4}M_1^{3/4}$. By the bounds for $\varpi$ and $c\le1$,
+$\sup_{A_l}\varpi/\inf_{A_n}\varpi\le D\,\ue^{(l-n)/2}(1+(l-n)_+)$. So with $a_n:=\norm{\varpi1_nh}$,
 \[
-\norm{\osomc1_lT1_nh}\le M_0^{1/4}M_1^{3/4}\,k(l-n)\,a_n,\qquad k(j):=\begin{cases}3\ue^{5/4}(1+j)\ue^{-j/4},&j\ge0,\\3\ue^{1/2}\ue^{-|j|/2},&j<0.\end{cases}
+\norm{\varpi1_lT1_nh}\le M_0^{1/4}M_1^{3/4}\,k(l-n)\,a_n,\qquad k(j):=\begin{cases}D\ue^{3/4}(1+j)\ue^{-j/4},&j\ge0,\\D\ue^{-|j|/2},&j<0.\end{cases}
 \]
 Since $T$ is additive and bounded, $Th=\sum_nT1_nh$ in $L^2$, and therefore
-$\norm{\osomc Th}^2\le\sum_l\bigl(\sum_n\norm{\osomc1_lT1_nh}\bigr)^2\le M_0^{1/2}M_1^{3/2}\bigl(\sum_jk(j)\bigr)^2\sum_na_n^2$ by Young's inequality for
+$\norm{\varpi Th}^2\le\sum_l\bigl(\sum_n\norm{\varpi1_lT1_nh}\bigr)^2\le M_0^{1/2}M_1^{3/2}\bigl(\sum_jk(j)\bigr)^2\sum_na_n^2$ by Young's inequality for
 sequences.
 \end{proof}
 
