@@ -1,6 +1,6 @@
 % Formalization status. \leanrepo is the public repository; \leancommit is a commit of it.
 \providecommand{\lean}[1]{\texttt{\detokenize{#1}}}
-\providecommand{\leancommit}{\texttt{d8923a4}}
+\providecommand{\leancommit}{\texttt{6e5ae4e}}
 \providecommand{\leanrepo}{\url{https://github.com/skypher/semiclassical-wave-propagation}}
 
 \section{Formalization}\label{app:lean}
@@ -48,12 +48,10 @@ The file \texttt{LEAN\_STATUS.md} in the repository gives the correspondence for
 including the supporting estimates. The differences in bounds, parameter ranges and conclusions are described below.
 
 \paragraph{Paper deductions and variants.}
-Corollary~\ref{ev:transfer} follows from the approximation bound at $N=0$ and the bounded-observable
-estimate \lean{ev_transfer_core}. Its reversed-weight version is \lean{evTransfer_main}.
-For the original norm, \lean{evTransfer_pc} covers $\alpha\le\tfrac12$; \lean{pcmain_all}
-supplies the approximation bound on every bounded radius range.
-
-The fixed-radius Corollary~\ref{thm:main} is presented here for $\beta>1/2$ and every fixed $\alpha>0$. It is deduced in the text from \lean{thm14Rmain_exp} at $K=N=0$, with a fixed radius and, for larger radii, monotonicity of the reversed-weight norm. The separately formalized \lean{thm13R_rep} has the narrower range $\beta>1$ and $\alpha\le\alpha_0<\pi/4$. The Mellin, scattering, zero-mode, initial-norm and outgoing-mass lemmas of
+Corollary~\ref{ev:transfer} is \lean{evTransfer_pc_all} for the original norm and \lean{evTransfer_main} for the reversed-weight
+norm; both combine the approximation bound at $N=0$ with the bounded-observable estimate \lean{ev_transfer_core}.
+Corollary~\ref{thm:main} is \lean{thm13R_fixed}, deduced from \lean{thm14Rmain_exp} at $K=N=0$ and the monotonicity of the
+reversed-weight norm in the radius (\lean{swNormD_mono}). The Mellin, scattering, zero-mode, initial-norm and outgoing-mass lemmas of
 Section~\ref{sec:expect} are ingredients of the formal proof of Theorem~\ref{ev:mod};
 their individual statements do not have separate exact formal counterparts.
 
@@ -91,10 +89,10 @@ Corollary~\ref{cor:dd15} & \lean{cor15Rmain_rep}, \lean{cor15R_rep}\\
 Theorem~\ref{thm:dd-appx} & \lean{thm14R_rep}\\
 Theorem~\ref{os:cw} & \lean{cw_abstract}\\
 Lemma~\ref{os:transfer} & \lean{transfer}\\
+Corollary~\ref{thm:main} & \lean{thm13R_fixed}\\
+Corollary~\ref{ev:transfer} & \lean{evTransfer_pc_all}, \lean{evTransfer_main}\\
 \hline
 \multicolumn{2}{@{}l}{\emph{Paper deductions and variants}}\\
-Corollary~\ref{thm:main} & Specialization of \lean{thm14Rmain_exp}; see text\\
-Corollary~\ref{ev:transfer} & \lean{evTransfer_main}; original norm uses \lean{pcmain_all} and \lean{ev_transfer_core}\\
 Proposition~\ref{prop:g5} & \lean{printedThm13_false}: negation of Schubert's bound only\\
 \hline
 \multicolumn{2}{@{}l}{\emph{Results without formal proofs}}\\

@@ -41,7 +41,7 @@ Lemma~\ref{lem:wb} & L & \lean{lem_wb_w}, \lean{lem_wb_u}\\
 Lemma~\ref{lem:unw} & L & \lean{unw_err}\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:companion}: power-weight and reversed-weight approximation}}\\
 Theorem~\ref{thm:dd-appx} & L & \lean{thm14R_rep}\\
-Corollary~\ref{thm:main} & L$'$ & \lean{thm14Rmain_exp} at K=N=0 and fixed radius, with radius monotonicity; \lean{thm13R_rep} separately has the narrower range beta>1 and alpha<pi/4\\
+Corollary~\ref{thm:main} & L & \lean{thm13R_fixed} (from \lean{thm14Rmain_exp} and \lean{swNormD_mono})\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:printed}: original-norm approximation and critical weights}}\\
 Proposition~\ref{pc:classes} & P & \\
 Lemma~\ref{os:speed} & L & \lean{finite_speed}, \lean{finite_speed_inner}\\
@@ -63,7 +63,7 @@ Lemma~\ref{rem:amplitude-examples} & P & elementary norm identities and an examp
 Lemma~\ref{lem:ex} & P & not used by the theorems\\[2pt]
 Corollary~\ref{cor:localized} & P & extracted from the localized-state application of Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}; self-checked, not separately formalized\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:expect}: expectation values and escape of mass}}\\
-Corollary~\ref{ev:transfer} & L$'$ & \lean{evTransfer_main}; original norm: \lean{evTransfer_pc} has alpha<=1/2, while the all-radius consequence uses \lean{pcmain_all} at N=0 and \lean{ev_transfer_core}\\
+Corollary~\ref{ev:transfer} & L & original norm: \lean{evTransfer_pc_all}; reversed-weight norm: \lean{evTransfer_main}\\
 Lemma~\ref{ev:meanlem} & L & \lean{integral_amp_mul_slice_L1}, \lean{integrableOn_amp_mul_slice_L1}, \lean{slice_lintegral_le}\\
 Corollary~\ref{ev:perio} & P & elementary consequence of Lemma~\ref{ev:meanlem}; self-checked, not separately formalized\\
 Lemmas~\ref{ev:mellinlemma}, \ref{ev:scattering}, \ref{ev:approxmode}, \ref{ev:initialnorm}, \ref{ev:outgoing} & P & editorial extractions from the proof of Theorem~\ref{ev:mod}; the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked\\

@@ -67,7 +67,7 @@ All Lean names are in the namespace `Qschubert`.
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Theorem 4.2 (`thm:dd-appx`) | L | `thm14R_rep` |
-| Corollary 4.5 (`thm:main`) | L′ | `thm14Rmain_exp` at K=N=0 and fixed radius, with radius monotonicity; `thm13R_rep` separately has the narrower range beta>1 and alpha<pi/4 |
+| Corollary 4.5 (`thm:main`) | L | `thm13R_fixed` (from `thm14Rmain_exp` and `swNormD_mono`) |
 
 ## Section 5 (`sec:printed`): original-norm approximation and critical weights
 
@@ -101,7 +101,7 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Corollary 7.1 (`ev:transfer`) | L′ | `evTransfer_main`; original norm: `evTransfer_pc` has alpha<=1/2, while the all-radius consequence uses `pcmain_all` at N=0 and `ev_transfer_core` |
+| Corollary 7.1 (`ev:transfer`) | L | original norm: `evTransfer_pc_all`; reversed-weight norm: `evTransfer_main` |
 | Lemma 7.14 (`ev:meanlem`) | L | `integral_amp_mul_slice_L1`, `integrableOn_amp_mul_slice_L1`, `slice_lintegral_le` |
 | Corollary 7.17 (`ev:perio`) | P | elementary consequence of Lemma 7.14 (`ev:meanlem`); self-checked, not separately formalized |
 | Lemmas 7.9 (`ev:mellinlemma`), 7.19 (`ev:scattering`), 7.23 (`ev:approxmode`), 7.28 (`ev:initialnorm`), 7.29 (`ev:outgoing`) | P | editorial extractions from the proof of Theorem 1.8 (`ev:mod`); the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked |
