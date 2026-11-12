@@ -250,3 +250,4 @@ import Qschubert.KLMean
 import Qschubert.KLCor16R
 import Qschubert.KLExactCor
 import Qschubert.KLPropG5
+import Qschubert.KLCorRexp

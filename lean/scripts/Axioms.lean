@@ -2873,3 +2873,6 @@ import Qschubert
 #print axioms Qschubert.norm_polyAct_bP_two
 #print axioms Qschubert.norm_xK_one_le
 #print axioms Qschubert.propG5
+#print axioms Qschubert.cor15Rmain_exp
+#print axioms Qschubert.cor16Rmain_expbg
+#print axioms Qschubert.cor16Rmain_expmult
