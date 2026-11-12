@@ -59,21 +59,34 @@ The same absolute constant $C'=\ue^{1/2}$ works.
 \end{proof}
 
 \begin{corollary}[pointwise approximation for the companion norms]\label{cor:dd16}\label{cor:dd16-appx}
-Under the hypotheses of Theorem~\ref{thm:dd14}, respectively Theorem~\ref{thm:dd-appx}, assume that $M$ has injectivity
-radius at least $r_0>0$. The bounded-geometry estimate of Corollary~\ref{pc:cor16} holds with $\|a\|_{\mathrm S}$,
-respectively $\|a\|_{\mathrm W}$, in place of $\|a\|_{\mathrm P}$, and a constant depending also on $r_0$.
+Under the hypotheses of Theorem~\ref{thm:dd14}, respectively Theorem~\ref{thm:dd-appx}, the arbitrary-quotient estimate
+of Corollary~\ref{pc:cor16}, including the factor $m(z)^{1/2}$, holds with $\|a\|_{\mathrm S}$,
+respectively $\|a\|_{\mathrm W}$, in place of $\|a\|_{\mathrm P}$.
+If $M$ has injectivity radius at least $r_0>0$, this factor may be replaced by $1$, with a constant depending also on $r_0$.
 Optimal truncation gives the corresponding pointwise exponential estimate from Corollary~\ref{cor:dd15}.
 \end{corollary}
 \begin{proof}
 Apply Lemma~\ref{pc:g43} to $\Delta^NE$ and use the respective approximation theorem at $N$ and $N+1$, as in the proof of
 Corollary~\ref{pc:cor16}. Apply the same argument to the optimal-truncation bounds for the exponential estimates.
-On an arbitrary quotient the proof gives the additional factor $m(z)^{1/2}$.
+The arbitrary-quotient bound follows directly; the packing argument in the proof of Corollary~\ref{pc:cor16} gives the bounded-geometry specialization.
 \end{proof}
 
 
 \subsection{Schubert's example amplitudes}\label{subsec:dd-ex}
 
-\begin{proof}[Proof of Remark~\ref{rem:amplitude-examples}]
+\begin{remark}[constructing amplitudes]\label{rem:amplitude-examples}
+For $f\in L^2(\Hb)$ with $\ue^{\beta\langle d\rangle}f\in L^2(\Hb)$, the amplitude
+$a=\ue^{-\alpha\Lambda}f$ satisfies
+\[
+  \pcNorm a=\norm{\ue^{\beta\langle d\rangle}f}.
+\]
+Conversely, every amplitude of finite original norm has this form, with $f=\ue^{\alpha\Lambda}a$.
+For example, $f=\ue^{-qX_0}$ with any $q>0$ gives a nonzero amplitude at every fixed analytic radius.
+In the reversed-weight class one writes $a=\ue^{-\beta\langle d\rangle}F$, with
+$F\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, and $\swNorm a=\norm{\ue^{\alpha\Lambda}F}$.
+The localized family below uses the reversed-weight class.
+\end{remark}
+\begin{proof}
 The spectral calculus gives $\ue^{\alpha\Lambda}\ue^{-\alpha\Lambda}f=f$ for $f\in L^2$ and
 $a=\ue^{-\alpha\Lambda}\ue^{\alpha\Lambda}a$ for $a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$.
 These identities give the original-norm assertions, and multiplication by $\ue^{\beta\langle d\rangle}$ gives the

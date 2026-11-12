@@ -20,7 +20,7 @@ derivatives, flow and defect appearing in the remainder.
 The decisive balance occurs in Theorem~\ref{os:cw}. Passing from an inner shell to an outer one
 costs an exponential factor from $X_0^{1/2}$; finite propagation speed and the multiplier tail
 supply the opposite exponential factor. Their cancellation leaves a polynomial shell kernel.
-The logarithmic exponent $1/2<c<1$ permits its summation. The profiles developed first below
+The logarithmic exponent $1/2<c<1$ permits its summation. The profiles constructed after the theorem
 verify this tail condition for the Poisson semigroup and the change of spectral parameter.
 
 Throughout this section $x_0=i$, $d=d(i,\cdot)$, $\osX=\cosh d$, $\psi:=\log\osX\ge0$, $\osL:=\log(2\osX)/\log2=1+\psi/\log2\ge1$,
@@ -34,6 +34,55 @@ $1_n$ denotes multiplication by the indicator of $A_n$. Since $1+n\le\osL\le3(1+
 \ue^{n/2}(1+n)^c\le\osomc\le3\,\ue^{1/2}\,\ue^{n/2}(1+n)^c\qquad\text{on }A_n .
 \end{equation}
 For $m\ge\tfrac12$ put $\Lambda_m:=(m^2-\tfrac14-\Delta)^{1/2}=(D^2+m^2)^{1/2}$; thus $\Lambda_{1/2}=\osLam$ and $\Lambda_m\ge\osLam$.
+
+\subsubsection{Finite propagation speed and the multiplier theorem}
+
+\begin{lemma}[finite propagation speed]\label{os:speed}
+Let $f,h\in L^2(\Hb)$ with $\operatorname{supp}f\subset\{\psi\le a\}$ and $\operatorname{supp}h\subset\{\psi\ge b\}$. Then
+$\langle h,\cos(rD)f\rangle=0$ and $\langle f,\cos(rD)h\rangle=0$ for $|r|<b-a$.
+\end{lemma}
+\begin{proof}
+For $\lambda>0$ apply Lemma~\ref{lem:wave}(b) to $W_{\lambda,n}$, with $l=\lambda$, and let $n\to\infty$. This gives
+\[
+\norm{\osX^\lambda\cos(rD)f}\le\ue^{(\lambda+1/2)|r|}\norm{\osX^\lambda f}\le\ue^{(\lambda+1/2)|r|+\lambda a}\norm f.
+\]
+Hence
+$\norm{1_{\{\psi\ge b\}}\cos(rD)f}\le\ue^{|r|/2}\ue^{-\lambda(b-a-|r|)}\norm f$, which tends to $0$ as $\lambda\to\infty$. The second identity follows
+because $\cos(rD)$ is self-adjoint.
+\end{proof}
+
+\begin{theorem}[multiplier theorem at the critical weight]\label{os:cw}
+Let $\tfrac12<c<1$. Let $g\in L^1(\mathbb R)$ be real with
+\[
+\int_{|r|\ge T}|g(r)|\,dr\le B\,\ue^{-T/2}(1+T)^{-3/2}\qquad\text{for all }T\ge0,
+\]
+and let $\mathsf G:=\int_{\mathbb R}g(r)\cos(rD)\,dr$, a bounded operator on $L^2(\Hb)$. Then for all $f\in L^2(\Hb)$,
+\[
+\norm{\osomc\,\mathsf Gf}\le C_c\,B\,\norm{\osomc f},
+\]
+with $C_c$ depending only on $c$.
+\end{theorem}
+\begin{proof}
+Put $f_n=1_nf$ and $a_n=\norm{\osomc f_n}$, and let $T(l,n):=\max(|l-n|-1,0)$. By Lemma~\ref{os:speed}, for $h$ supported in $A_l$ the function
+$r\mapsto\langle h,\cos(rD)f_n\rangle$ vanishes on $|r|<T(l,n)$. Hence
+$\norm{1_l\mathsf Gf_n}\le\int_{|r|\ge T(l,n)}|g|\,\norm{f_n}\le B\,\ue^{-T/2}(1+T)^{-3/2}\norm{f_n}$, and by \eqref{os:shell}
+\[
+\begin{gathered}
+\norm{\osomc1_l\mathsf Gf_n}\le\mathsf B(l,n)\,a_n,\\
+\mathsf B(l,n):=C\,B\,\Bigl(\frac{1+l}{1+n}\Bigr)^c(1+|l-n|)^{-3/2}\times
+\begin{cases}1,&l\ge n,\\ \ue^{-(n-l)},&l<n.\end{cases}
+\end{gathered}
+\]
+Since $\mathsf Gf=\sum_n\mathsf Gf_n$ in $L^2$, $\norm{\osomc\mathsf Gf}^2\le\sum_l\bigl(\sum_n\mathsf B(l,n)a_n\bigr)^2$. We apply the Schur test on
+$\mathbb N_0$ with the weights $p_n=(1+n)^{-1/2}$.
+\begin{itemize}
+\item $\sum_n\mathsf B(l,n)p_n\le C'B\,p_l$. For $n\ge l/2$: $((1+l)/(1+n))^c\le2^c$, $p_n\le\sqrt2\,p_l$, and $\sum_k(1+k)^{-3/2}<\infty$. For $n<l/2$:
+$\mathsf B(l,n)p_n\le CB(1+l)^{c-3/2}(1+n)^{-c-1/2}$; the sum over $n$ converges because $c>\tfrac12$, and $(1+l)^{c-3/2}\le p_l$ because $c<1$.
+\item $\sum_l\mathsf B(l,n)p_l\le C'B\,p_n$. For $l<n$: $((1+l)/(1+n))^cp_l\le p_n$ because $c>\tfrac12$. For $n\le l\le2n+1$: $((1+l)/(1+n))^c\le2^c$ and
+$p_l\le p_n$. For $l>2n+1$: $\mathsf B(l,n)p_l\le CB(1+n)^{-c}(1+l)^{c-2}$, and $\sum_{l>2n+1}(1+l)^{c-2}\le C(1+n)^{c-1}$ because $c<1$.
+\end{itemize}
+So $\sum_l(\sum_n\mathsf B(l,n)a_n)^2\le(C'B)^2\sum_na_n^2=(C'B)^2\norm{\osomc f}^2$.
+\end{proof}
 
 \subsubsection{Cosine-transform representations and tail estimates}
 
@@ -105,55 +154,6 @@ by Lemma~\ref{os:int} with $a=\tfrac12$, $b=\varrho/2$. Use this for $T\ge1$ and
 which is the cosine transform of $G_m$. At $\nu=0$ this gives $\int G_m=m-\tfrac12$. Since $\ue^{-u^2/4}-\ue^{-m^2u^2}\le\ue^{-u^2/4}$, the tail of
 $G_m$ is at most $\frac{2}{\pi T}\int_0^\infty u^{-1}\exp(-u^2/4-T^2/(4u^2))\,du\le\frac2{\sqrt\pi}T^{-3/2}\ue^{-T/2}$, as in (iv). With the mass
 bound for $T<1$ this gives the tail bound.
-\end{proof}
-
-\subsubsection{Finite propagation speed and the multiplier theorem}
-
-\begin{lemma}[finite propagation speed]\label{os:speed}
-Let $f,h\in L^2(\Hb)$ with $\operatorname{supp}f\subset\{\psi\le a\}$ and $\operatorname{supp}h\subset\{\psi\ge b\}$. Then
-$\langle h,\cos(rD)f\rangle=0$ and $\langle f,\cos(rD)h\rangle=0$ for $|r|<b-a$.
-\end{lemma}
-\begin{proof}
-For $\lambda>0$ apply Lemma~\ref{lem:wave}(b) to $W_{\lambda,n}$, with $l=\lambda$, and let $n\to\infty$. This gives
-\[
-\norm{\osX^\lambda\cos(rD)f}\le\ue^{(\lambda+1/2)|r|}\norm{\osX^\lambda f}\le\ue^{(\lambda+1/2)|r|+\lambda a}\norm f.
-\]
-Hence
-$\norm{1_{\{\psi\ge b\}}\cos(rD)f}\le\ue^{|r|/2}\ue^{-\lambda(b-a-|r|)}\norm f$, which tends to $0$ as $\lambda\to\infty$. The second identity follows
-because $\cos(rD)$ is self-adjoint.
-\end{proof}
-
-\begin{theorem}[multiplier theorem at the critical weight]\label{os:cw}
-Let $\tfrac12<c<1$. Let $g\in L^1(\mathbb R)$ be real with
-\[
-\int_{|r|\ge T}|g(r)|\,dr\le B\,\ue^{-T/2}(1+T)^{-3/2}\qquad\text{for all }T\ge0,
-\]
-and let $\mathsf G:=\int_{\mathbb R}g(r)\cos(rD)\,dr$, a bounded operator on $L^2(\Hb)$. Then for all $f\in L^2(\Hb)$,
-\[
-\norm{\osomc\,\mathsf Gf}\le C_c\,B\,\norm{\osomc f},
-\]
-with $C_c$ depending only on $c$.
-\end{theorem}
-\begin{proof}
-Put $f_n=1_nf$ and $a_n=\norm{\osomc f_n}$, and let $T(l,n):=\max(|l-n|-1,0)$. By Lemma~\ref{os:speed}, for $h$ supported in $A_l$ the function
-$r\mapsto\langle h,\cos(rD)f_n\rangle$ vanishes on $|r|<T(l,n)$. Hence
-$\norm{1_l\mathsf Gf_n}\le\int_{|r|\ge T(l,n)}|g|\,\norm{f_n}\le B\,\ue^{-T/2}(1+T)^{-3/2}\norm{f_n}$, and by \eqref{os:shell}
-\[
-\begin{gathered}
-\norm{\osomc1_l\mathsf Gf_n}\le\mathsf B(l,n)\,a_n,\\
-\mathsf B(l,n):=C\,B\,\Bigl(\frac{1+l}{1+n}\Bigr)^c(1+|l-n|)^{-3/2}\times
-\begin{cases}1,&l\ge n,\\ \ue^{-(n-l)},&l<n.\end{cases}
-\end{gathered}
-\]
-Since $\mathsf Gf=\sum_n\mathsf Gf_n$ in $L^2$, $\norm{\osomc\mathsf Gf}^2\le\sum_l\bigl(\sum_n\mathsf B(l,n)a_n\bigr)^2$. We apply the Schur test on
-$\mathbb N_0$ with the weights $p_n=(1+n)^{-1/2}$.
-\begin{itemize}
-\item $\sum_n\mathsf B(l,n)p_n\le C'B\,p_l$. For $n\ge l/2$: $((1+l)/(1+n))^c\le2^c$, $p_n\le\sqrt2\,p_l$, and $\sum_k(1+k)^{-3/2}<\infty$. For $n<l/2$:
-$\mathsf B(l,n)p_n\le CB(1+l)^{c-3/2}(1+n)^{-c-1/2}$; the sum over $n$ converges because $c>\tfrac12$, and $(1+l)^{c-3/2}\le p_l$ because $c<1$.
-\item $\sum_l\mathsf B(l,n)p_l\le C'B\,p_n$. For $l<n$: $((1+l)/(1+n))^cp_l\le p_n$ because $c>\tfrac12$. For $n\le l\le2n+1$: $((1+l)/(1+n))^c\le2^c$ and
-$p_l\le p_n$. For $l>2n+1$: $\mathsf B(l,n)p_l\le CB(1+n)^{-c}(1+l)^{c-2}$, and $\sum_{l>2n+1}(1+l)^{c-2}\le C(1+n)^{c-1}$ because $c<1$.
-\end{itemize}
-So $\sum_l(\sum_n\mathsf B(l,n)a_n)^2\le(C'B)^2\sum_na_n^2=(C'B)^2\norm{\osomc f}^2$.
 \end{proof}
 
 \begin{corollary}\label{os:cwp}
@@ -304,9 +304,11 @@ $\osL(z)\le\osL(\delta_sz)+|s|/\log2\le\osL(\delta_sz)(1+|s|/\log2)$; this is th
 $\int\osomp^2|S(t)w|^2d\nu\le\ue^{t}(1+t/\log2)^{2c'}\int\osomp^2|w|^2d\nu$. Combining gives the claim.
 \end{proof}
 
-\begin{remark}[the surface object does not depend on the weight]\label{os:indep}
+\begin{remark}[the quotient propagator does not depend on the weight]\label{os:indep}
 Let $\omega_1,\omega_2$ be two weights satisfying \textup{(W1)}, \textup{(W2)}. For $g\in L^2_{\omega_1}\cap L^2_{\omega_2}$ the element
-$\mathcal V_sg=\ue^{-is/(2\hbar)}\cU(-s)[\ue^{i\varphi/\hbar}S(s)g]_\Gamma$ of $L^2(M)$ is the same for both weights, because the periodization is in both
-cases the same almost everywhere absolutely convergent sum. In particular this applies to $\omega_1=\osX^{\gamma}$ with $\gamma>\tfrac12$ and
+\[
+ \mathcal V_sg=\ue^{-is/(2\hbar)}\cU(-s)[\ue^{i\varphi/\hbar}S(s)g]_\Gamma\in L^2(M)
+\]
+is the same for both weights, because the periodization is in both cases the same almost everywhere absolutely convergent sum. In particular this applies to $\omega_1=\osX^{\gamma}$ with $\gamma>\tfrac12$ and
 $\omega_2=\osomp$, and $L^2_{\osX^\gamma}\subset L^2_{\osomp}$.
 \end{remark}

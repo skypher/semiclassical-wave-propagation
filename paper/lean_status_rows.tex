@@ -8,8 +8,6 @@ Theorem~\ref{pc:main} & L & \lean{pcmain_all}; small-radius stage: \lean{pcmain_
 Corollary~\ref{pc:thm13} & L & \lean{pcthm13_all}\\
 Corollary~\ref{pc:cor15} & L & \lean{pccor15_all}\\
 Corollary~\ref{pc:cor16} & L$'$ & \lean{pccor16_all}, \lean{pccor16bg_all} state the weaker prefactor exponent -2N-4; the paper derives -2N-2 from the approximation bound and local Sobolev inequality\\
-Remark~\ref{rem:amplitude-examples} & P & elementary norm identities and an example; self-checked, not separately formalized\\
-Corollary~\ref{cor:escape-intro} & L$'$ & quantum conclusions from \lean{evmod}; the classical comparison is cited and not formalized\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:remainder}: periodization and the exact remainder}}\\
 Lemma~\ref{lem:p1} & L & \lean{poincareSup_lt_top}\\
 Lemma~\ref{lem:t2} & L & \lean{lem_t2}\\
@@ -44,10 +42,10 @@ Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_exp}\\
 Corollary~\ref{thm:main} & L$'$ & \lean{thm14Rmain_exp} at K=N=0 and fixed radius, with radius monotonicity; \lean{thm13R_rep} separately has the narrower range beta>1 and alpha<pi/4\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:printed}: original-norm approximation and critical weights}}\\
 Proposition~\ref{pc:classes} & P & \\
-Lemma~\ref{os:int} & L & \lean{wI0}, \lean{wI2}\\
-Lemma~\ref{os:prof} & L & \lean{gTauM_symbol}, \lean{gTauM_expmass}, \lean{hSM_symbol}, \lean{hSM_expmass}, \lean{gTau_TailB}, \lean{bProf_symbol}, \lean{bProf_TailB}\\
 Lemma~\ref{os:speed} & L & \lean{finite_speed}, \lean{finite_speed_inner}\\
 Theorem~\ref{os:cw} & L & \lean{cw_abstract}\\
+Lemma~\ref{os:int} & L & \lean{wI0}, \lean{wI2}\\
+Lemma~\ref{os:prof} & L & \lean{gTauM_symbol}, \lean{gTauM_expmass}, \lean{hSM_symbol}, \lean{hSM_expmass}, \lean{gTau_TailB}, \lean{bProf_symbol}, \lean{bProf_TailB}\\
 Corollary~\ref{os:cwp} & L & \lean{poisson_cw}, \lean{B_cw}\\
 Proposition~\ref{os:data} & L & \lean{data_factor}, \lean{omP_le_exp_angle}\\
 Lemma~\ref{os:words} & L & \lean{poissonM_w}, \lean{lamM_w}, \lean{lamM_pow_w}, \lean{words_rec}, \lean{words_w}\\
@@ -56,9 +54,15 @@ Proposition~\ref{os:p1} & L & \lean{poincare_omP}, \lean{mS_printed_sharp}, \lea
 Remark~\ref{os:indep} & L & \lean{surfV_indep}\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:consequences}: consequences and localized amplitudes}}\\
 Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_rep}, \lean{cor15R_rep} (two companion norms)\\
-Corollary~\ref{cor:dd16} & L$'$ & \lean{cor16Rmain_rep}, \lean{cor16R_rep} state the weaker prefactor exponent -2N-4; the paper derives -2N-2 for both companion norms\\
+Corollary~\ref{cor:dd16} & L$'$ & \lean{cor16Rmain_rep}, \lean{cor16R_rep} cover bounded geometry with weaker prefactor exponent -2N-4; the paper derives -2N-2 and the arbitrary-quotient estimate with the multiplicity factor for both companion norms\\
+Remark~\ref{rem:amplitude-examples} & P & elementary norm identities and an example; self-checked, not separately formalized\\
 Lemma~\ref{lem:ex} & P & not used by the theorems\\[2pt]
 Corollary~\ref{cor:localized} & P & extracted from the localized-state application of Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}; self-checked, not separately formalized\\
+\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:expect}: expectation values and escape of mass}}\\
+Corollary~\ref{ev:transfer} & L$'$ & \lean{evTransfer_main}; original norm: \lean{evTransfer_pc} has alpha<=1/2, while the all-radius consequence uses \lean{pcmain_all} at N=0 and \lean{ev_transfer_core}\\
+Theorem~\ref{ev:mod} & L$'$ & parts (i), (ii): \lean{evmod}, with the statement \lean{Stmt_evmod}; part (iii) is a cited theorem and is not formalized\\
+Lemma~\ref{ev:meanlem} & L & \lean{integral_amp_mul_slice_L1}, \lean{integrableOn_amp_mul_slice_L1}, \lean{slice_lintegral_le}\\
+Lemmas~\ref{ev:mellinlemma}, \ref{ev:scattering}, \ref{ev:approxmode}, \ref{ev:initialnorm}, \ref{ev:outgoing} & P & editorial extractions from the proof of Theorem~\ref{ev:mod}; the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:g5}: sharpness and limitations}}\\
 Proposition~\ref{prop:g5} & L$'$ & \lean{printedThm13_false}: the negation of the printed theorem; the asymptotic formula is not formalized (Appendix~\ref{app:lean})\\
 Proposition~\ref{prop:mean} & L & \lean{meanGrowth}; \lean{integral_approxSolB}, \lean{J_vecX}, \lean{J_vecY}, \lean{chP_dysT}, \lean{swapped_setup}, \lean{enorm_integral_le_perio}\\
@@ -67,11 +71,6 @@ Remark~\ref{rem:g4} & P & \\
 Proposition~\ref{cl:relative} & P & extracted from the relative-error remark; self-checked\\
 Theorem~\ref{cl:main}, Lemmas~\ref{cl:ssob}, \ref{cl:asym}, \ref{cl:kernel}, \ref{cl:amp} & P & \\
 Lemmas~\ref{cl:aux}, \ref{cl:noncancel} & P & auxiliary estimates and noncancellation separated from the amplitude proof; self-checked, not separately formalized\\[2pt]
-\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:expect}: expectation values and escape of mass}}\\
-Corollary~\ref{ev:transfer} & L$'$ & \lean{evTransfer_main}; original norm: \lean{evTransfer_pc} has alpha<=1/2, while the all-radius consequence uses \lean{pcmain_all} at N=0 and \lean{ev_transfer_core}\\
-Proposition~\ref{ev:mod} & L$'$ & parts (i), (ii): \lean{evmod}, with the statement \lean{Stmt_evmod}; part (iii) is a cited theorem and is not formalized\\
-Lemma~\ref{ev:meanlem} & L & \lean{integral_amp_mul_slice_L1}, \lean{integrableOn_amp_mul_slice_L1}, \lean{slice_lintegral_le}\\
-Lemmas~\ref{ev:mellinlemma}, \ref{ev:scattering}, \ref{ev:approxmode}, \ref{ev:initialnorm}, \ref{ev:outgoing} & P & editorial extractions from the proof of Proposition~\ref{ev:mod}; the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked\\
 \multicolumn{3}{@{}l}{\emph{Appendix~\ref{app:special}: special-function and kernel calculations}}\\
 Lemma~\ref{lem:gutzmer} & P & used only for Lemma~\ref{lem:ex}\\
 Lemma~\ref{os:poisson} & P & used only in Proposition~\ref{pc:classes} and Section~\ref{subsec:cl}\\

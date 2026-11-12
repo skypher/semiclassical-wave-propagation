@@ -2,7 +2,7 @@
 \section{Expectation values and escape of mass}\label{sec:expect}
 
 We first transfer the $L^2$ approximation estimates to bounded observables. We then prove the escape result
-stated in Corollary~\ref{cor:escape-intro}, for the modular surface and the zero-mode amplitude family specified below.
+outlined in Section~\ref{sec:intro}, for the modular surface and the zero-mode amplitude family specified below.
 This section uses the approximation results but does not depend on Sections~\ref{sec:g5} and~\ref{sec:cusp}.
 The pointwise growth in Section~\ref{sec:cusp} is measured at points moving into the cusp;
 the escape proved here concerns mass on fixed compact sets. Large values at increasing cusp
@@ -102,7 +102,7 @@ is defined for almost every $y>0$. Put
 By Lemma~\ref{ev:meanlem} below, $\sum_{n}a(x+n,y)=a_0(y)$ for almost every $(x,y)$: the periodization of $a$ along the
 translations does not depend on $x$.
 
-\begin{proposition}[accurate approximation, non-classical expectation values]\label{ev:mod}
+\begin{theorem}[escape of mass and classical comparison]\label{ev:mod}\label{cor:escape-intro}
 Let $\Gamma$, $\alpha$, $h$, $a$, $a_0$, $\mu_0$ be as above, $\psi(t)=\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma$, and let $C,\delta$ be the
 constants of Theorem~\ref{pc:main} for $\beta=1$ and $\kappa=1$. Then $0<\mu_0<\infty$, and there is an absolute constant $C_1$ such
 that, with $T(\hbar):=C_1\log(1/\hbar)\log\log(1/\hbar)$, the following hold.
@@ -121,7 +121,7 @@ $\norm{\psi(t)-u^{(K)}(t)_\Gamma}_{L^2(M)}\le C^{K+1}K!\,(\hbar t/\alpha^2)^{K+1
   \int_0^\infty\!\!\int_0^1q(z)\,\big|(S(t)a_0)(y)\big|^2\,dx\,\frac{dy}{y^2}\longrightarrow\frac3\pi\int_Mq\,d\nu\cdot\mu_0\qquad(t\to\infty).
 \]
 \end{itemize}
-\end{proposition}
+\end{theorem}
 The left side of (iii) is the classical prediction for $\langle q\,\psi(t),\psi(t)\rangle$: the density $|a_0|^2$ on
 $\Gamma_\infty\backslash\Hb$, transported by the geodesic flow for the time $t$ and projected to $M$; it is the sum of the squared
 moduli of the terms of $u^{(0)}(t)_\Gamma$, summed over $\Gamma_\infty\backslash\Gamma$. By (iii) this prediction tends to the
@@ -145,7 +145,7 @@ do not prove that the classical prediction holds before that time.
 \end{remark}
 
 \subsection{The zero mode and its Mellin transform}\label{subsec:ev-mellin}
-We prove Proposition~\ref{ev:mod} through five intermediate estimates: the Mellin transform of the amplitude, the scattering formula, the zero mode of the approximation, its initial norm, and the outgoing-mass bound. The final proof then combines these estimates with the approximation theorem.
+We prove Theorem~\ref{ev:mod} through five intermediate estimates: the Mellin transform of the amplitude, the scattering formula, the zero mode of the approximation, its initial norm, and the outgoing-mass bound. The final proof then combines these estimates with the approximation theorem.
 Throughout the proof, $0<\hbar\le1$ and $t\ge0$; $n$ denotes an arbitrary positive integer and constants may depend on $n$, $\alpha$ and $h$. Norms and inner products of
 functions on $(0,\infty)$ are those of $L^2((0,\infty),dy/y^2)$. For a function $f$ on $(0,\infty)$,
 $\hat f(s):=\int_0^\infty f(y)y^{-s}\,dy/y$ is its Mellin transform. For a function $w$ on $\Hb$ with $w(z+1)=w(z)$ we write
@@ -487,7 +487,7 @@ $\mathsf L\hbar\le1$, the three parts give
 \end{proof}
 
 \subsection{Proof of the escape and classical comparison}
-\begin{proof}[Proof of Proposition~\ref{ev:mod}]
+\begin{proof}[Proof of Theorem~\ref{ev:mod}]
 Lemma~\ref{ev:mellinlemma} gives $0<\mu_0<\infty$. Lemma~\ref{ev:initialnorm} and unitarity give the norm assertion in (i), and Theorem~\ref{pc:main} gives its approximation estimate. It remains to prove (ii) and (iii).
 
 \emph{Escape of mass.} We use three elementary facts. First, for $Y\ge1$ and a $\Gamma$-invariant $w\in L^2(M)$,

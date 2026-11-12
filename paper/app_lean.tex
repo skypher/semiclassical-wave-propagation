@@ -14,7 +14,7 @@ the existing formal statements retain the weaker one. Table~\ref{tab:lean} disti
 paper deductions and variants, and results without formal proofs.
 
 \subsection*{What is checked}
-The formal development is the directory \texttt{lean/} of the repository \leanrepo, namespace \lean{Qschubert}, at commit \leancommit. It is built with Lean~4 \cite{Lean4} (toolchain \texttt{v4.35.0}), Mathlib \cite{Mathlib} at the tag \texttt{v4.35.0}, and \texttt{physicslib4} \cite{Phys} (commit \texttt{2337279}), which supplies the spectral theorem for unbounded self-adjoint operators. The development also depends on the project \emph{Prime Number Theorem And \dots} \cite{PNT} (commit \texttt{127b50e}), from which it takes the classical zero-free region of the Riemann zeta function; this is used only in the proof of Proposition~\ref{ev:mod}.
+The formal development is the directory \texttt{lean/} of the repository \leanrepo, namespace \lean{Qschubert}, at commit \leancommit. It is built with Lean~4 \cite{Lean4} (toolchain \texttt{v4.35.0}), Mathlib \cite{Mathlib} at the tag \texttt{v4.35.0}, and \texttt{physicslib4} \cite{Phys} (commit \texttt{2337279}), which supplies the spectral theorem for unbounded self-adjoint operators. The development also depends on the project \emph{Prime Number Theorem And \dots} \cite{PNT} (commit \texttt{127b50e}), from which it takes the classical zero-free region of the Riemann zeta function; this is used only in the proof of Theorem~\ref{ev:mod}.
 At this commit the build and axiom audits pass: every declaration depends only on
 \lean{propext}, \lean{Classical.choice} and \lean{Quot.sound}, and none uses \lean{sorryAx}.
 The repository's README gives the commands for reproducing the build and audits.
@@ -56,20 +56,21 @@ including the supporting estimates. The differences in bounds, parameter ranges 
 Corollaries~\ref{pc:cor16} and~\ref{cor:dd16} display the prefactor $(\alpha\hbar)^{-2N-2}$ obtained in
 Section~\ref{subsec:pc-cor} from the approximation theorem at $N$ and $N+1$ and Lemma~\ref{pc:g43}.
 The listed Lean pointwise declarations instead state the weaker prefactor $(\alpha\hbar)^{-2N-4}$;
-no separate declaration of the sharper estimate is asserted.
+no separate declaration of the sharper estimate is asserted. For the companion norms, the listed declarations
+cover the bounded-geometry specialization; the arbitrary-quotient estimate with $m(z)^{1/2}$ is a paper deduction
+from the approximation theorems and Lemma~\ref{pc:g43}.
 
 Corollary~\ref{ev:transfer} follows from the approximation bound at $N=0$ and the bounded-observable
 estimate \lean{ev_transfer_core}. Its reversed-weight version is \lean{evTransfer_main}.
 For the original norm, \lean{evTransfer_pc} covers $\alpha\le\tfrac12$; \lean{pcmain_all}
 supplies the approximation bound on every bounded radius range.
 
-The fixed-radius Corollary~\ref{thm:main} is presented here for $\beta>1/2$ and every fixed $\alpha>0$. It is deduced in the text from \lean{thm14Rmain_exp} at $K=N=0$, with a fixed radius and, for larger radii, monotonicity of the reversed-weight norm. The separately formalized \lean{thm13R_rep} has the narrower range $\beta>1$ and $\alpha\le\alpha_0<\pi/4$. Corollary~\ref{cor:escape-intro} combines the quantum escape statement with the unformalized
-classical comparison. The Mellin, scattering, zero-mode, initial-norm and outgoing-mass lemmas of
-Section~\ref{sec:expect} are ingredients of the formal proof of Proposition~\ref{ev:mod};
+The fixed-radius Corollary~\ref{thm:main} is presented here for $\beta>1/2$ and every fixed $\alpha>0$. It is deduced in the text from \lean{thm14Rmain_exp} at $K=N=0$, with a fixed radius and, for larger radii, monotonicity of the reversed-weight norm. The separately formalized \lean{thm13R_rep} has the narrower range $\beta>1$ and $\alpha\le\alpha_0<\pi/4$. The Mellin, scattering, zero-mode, initial-norm and outgoing-mass lemmas of
+Section~\ref{sec:expect} are ingredients of the formal proof of Theorem~\ref{ev:mod};
 their individual statements do not have separate exact formal counterparts.
 
 \paragraph{Results without formal proofs.}
-Not formalized are: the asymptotic formula of Proposition~\ref{prop:g5}, for which the formal theorem is the negation of the printed bound (see the formalized counterexample above); the comparison of the two classes (Proposition~\ref{pc:classes}); Remark~\ref{rem:g4}; part (iii) of Proposition~\ref{ev:mod}, which is a cited theorem on the equidistribution of closed horocycles (parts (i) and (ii) are the Lean theorem \lean{evmod}, whose statement is \lean{Stmt_evmod}); the sharpness results on cusped surfaces (Section~\ref{subsec:cl}) with the kernel lemmas they use (Lemmas~\ref{os:poisson} and~\ref{os:hk}); and Lemmas~\ref{lem:gutzmer} and~\ref{lem:ex} and their localized-state consequence, Corollary~\ref{cor:localized}. These last results are not used by the approximation theorems. For the sharpness results the development contains only implications from a formal statement of Theorem~\ref{cl:main}(ii), which is itself not proved formally.
+Not formalized are: the asymptotic formula of Proposition~\ref{prop:g5}, for which the formal theorem is the negation of the printed bound (see the formalized counterexample above); the comparison of the two classes (Proposition~\ref{pc:classes}); Remark~\ref{rem:g4}; part (iii) of Theorem~\ref{ev:mod}, which is a cited theorem on the equidistribution of closed horocycles (parts (i) and (ii) are the Lean theorem \lean{evmod}, whose statement is \lean{Stmt_evmod}); the sharpness results on cusped surfaces (Section~\ref{subsec:cl}) with the kernel lemmas they use (Lemmas~\ref{os:poisson} and~\ref{os:hk}); and Lemmas~\ref{lem:gutzmer} and~\ref{lem:ex} and their localized-state consequence, Corollary~\ref{cor:localized}. These last results are not used by the approximation theorems. For the sharpness results the development contains only implications from a formal statement of Theorem~\ref{cl:main}(ii), which is itself not proved formally.
 
 \begin{table}[ht]
 \centering\small
@@ -84,7 +85,7 @@ Corollary~\ref{pc:thm13} & \lean{pcthm13_all}\\
 Corollary~\ref{pc:cor15} & \lean{pccor15_all}\\
 Lemma~\ref{pc:g43} & \lean{sobolev_M_mult}\\
 Proposition~\ref{prop:mean} & \lean{meanGrowth}\\
-Proposition~\ref{ev:mod}(i),(ii) & \lean{evmod}\\
+Theorem~\ref{ev:mod}(i),(ii) & \lean{evmod}\\
 Theorem~\ref{thm:dd14} & \lean{thm14Rmain_exp}\\
 Corollary~\ref{cor:dd15} & \lean{cor15Rmain_rep}, \lean{cor15R_rep}\\
 Theorem~\ref{thm:dd-appx} & \lean{thm14R_rep}\\
@@ -93,16 +94,15 @@ Lemma~\ref{os:transfer} & \lean{transfer}\\
 \hline
 \multicolumn{2}{@{}l}{\emph{Paper deductions and variants}}\\
 Corollary~\ref{pc:cor16} & \lean{pccor16_all}, \lean{pccor16bg_all}: weaker exponent $-2N-4$\\
-Corollary~\ref{cor:dd16} & \lean{cor16Rmain_rep}, \lean{cor16R_rep}: weaker exponent $-2N-4$\\
+Corollary~\ref{cor:dd16} & \lean{cor16Rmain_rep}, \lean{cor16R_rep}: bounded geometry, weaker exponent $-2N-4$\\
 Corollary~\ref{thm:main} & Specialization of \lean{thm14Rmain_exp}; see text\\
 Corollary~\ref{ev:transfer} & \lean{evTransfer_main}; original norm uses \lean{pcmain_all} and \lean{ev_transfer_core}\\
 Proposition~\ref{prop:g5} & \lean{printedThm13_false}: negation of Schubert's bound only\\
-Corollary~\ref{cor:escape-intro} & Quantum conclusions from \lean{evmod}; classical comparison not formalized\\
 \hline
 \multicolumn{2}{@{}l}{\emph{Results without formal proofs}}\\
 Corollary~\ref{cor:localized} & Paper deduction from Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}\\
 Proposition~\ref{pc:classes}; Section~\ref{sec:cusp} & Amplitude-class comparison and cusp sharpness\\
-Proposition~\ref{ev:mod}(iii) & Cited horocycle equidistribution theorem\\
+Theorem~\ref{ev:mod}(iii) & Cited horocycle equidistribution theorem\\
 \hline
 \end{tabular}
 \end{table}

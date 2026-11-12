@@ -15,22 +15,14 @@ the cusp height. Schubert's files are not part of this repository.
 
 ## Contents
 
-- `paper/`: LaTeX source of the manuscript (`paper.tex` with its input files). The ten main sections develop the
-  quotient remainder, analytic estimates, approximation proofs, consequences, sharpness and escape of mass.
-  The approximation proofs proceed from the power weight to the reversed weight order and then the original norm,
-  with the critical-weight estimates placed beside the original-norm argument. Cusp-factor sharpness has its own
-  section; the modular-surface application is stated in the introduction and proved through named intermediate lemmas.
-  Three appendices contain auxiliary special-function/kernel calculations, formalization documentation, and a detailed comparison with Schubert's preprint.
-  The introduction separates approximation results, applications, and corrections, maps amplitude constructions and radius ranges to their theorems, and summarizes the comparison with Schubert's statements.
-  It explains the dependencies between the approximation, sharpness, and escape blocks; the escape application
-  can be read without the sharpness sections. The localized-state application is highlighted alongside escape of mass,
-  whose intermediate lemmas state their Mellin and scattering formulas explicitly.
-  Cusp sharpness proceeds through separate auxiliary-estimate, amplitude-membership and noncancellation lemmas;
-  its relative-error interpretation is stated beside the sharpness theorem. The pointwise
-  corollaries display the sharper prefactor derived in the paper; the formalization appendix identifies the weaker
-  prefactor in the existing Lean statements.
-  Build from `paper/` with `pdflatex paper.tex`
-  (run it three times).
+- `paper/`: LaTeX source of the manuscript (`paper.tex` with its input files). The approximation proofs
+  proceed from the quotient remainder and analytic estimates through the power-weight model and reversed-weight
+  consequence to Schubert's original norm. Consequences and localized states are followed by the modular-surface
+  escape application, then the leading-error and cusp-factor sharpness arguments. The escape and sharpness
+  arguments use the approximation theorem independently. The introduction maps the amplitude classes and radius
+  ranges to their results and explains why the original norm requires a separate argument. Three appendices
+  contain special-function and kernel calculations, formalization documentation, and the detailed comparison
+  with Schubert's preprint. Build from `paper/` with `pdflatex paper.tex` (run it three times).
 - `lean/`: the Lean 4 development, namespace `Qschubert` (Lean `v4.35.0`, Mathlib `v4.35.0`, `physicslib4`, and
   `PrimeNumberTheoremAnd` for the zero-free region of the Riemann zeta function).
   Appendix "Formalization" of the manuscript says which statements are formalized, in which reading, and

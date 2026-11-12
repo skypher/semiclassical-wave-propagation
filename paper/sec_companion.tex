@@ -42,6 +42,17 @@ through the Poincar\'e series bound at the base point. By Lemma~\ref{lem:lift}, 
  E:=\Delta^N\bigl[\cU(t)(a\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr].
 \]
 
+\medskip\noindent\textbf{The two contributions.}
+For a remainder amplitude $b'$ and $g(t')=V_\varepsilon(t',s_1)b'$, write
+\[
+ \mathcal V_{s_1}b'=\mathcal V_0g(0)+
+ \bigl(\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)\bigr).
+\]
+The first term is bounded by weighted propagation of the mollified flow.
+For the second, quotient Duhamel expresses the difference through the mollifier defect;
+its analytic smallness compensates for transport growth after interpolation.
+We now choose the radii and mollification scale needed for these two bounds.
+
 \medskip\noindent\textbf{Parameters.} All lemmas are used with $\tau_0=1$. Let $c_M$ be the constant of Lemma~\ref{lem:mw} and $c_A$ that of
 Proposition~\ref{prop:a0}. Put
 \[
@@ -51,12 +62,9 @@ so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=x/2$ and $\alpha/\varepsilo
 
 Use Proposition~\ref{prop:dd-id}(iii) with $\omega=W_\gamma$; every word applied to $a$ lies in $L^2_\omega$ by Lemma~\ref{lem:sc}, since $W_\gamma\le X_0^\beta$. For each $\mathbf s=(s_1,\dots,s_{K+1})\in\Sigma_{K+1}(t)$ let
 \[
-g(t'):=V_\varepsilon(t',s_1)\,b',\quad0\le t'\le s_1,\qquad w:=g(0)=V_\varepsilon(s_1)^*b',
+g(t'):=V_\varepsilon(t',s_1)\,b',\quad0\le t'\le s_1,\qquad w:=g(0)=V_\varepsilon(s_1)^*b'.
 \]
-and write
-\[
-\mathcal V_{s_1}b'=\mathcal V_0w+\bigl(\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)\bigr).
-\]
+Thus $w=g(0)$ is the vector in the first contribution of the decomposition above.
 
 \medskip\noindent\textbf{(I) Mollified part.}
 
