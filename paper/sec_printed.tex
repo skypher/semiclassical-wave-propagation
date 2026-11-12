@@ -5,20 +5,7 @@ then has three stages: factor the amplitude through critically weighted data
 (Sections~\ref{app:o1st} and~\ref{subsec:pc-data}); control derivatives, propagation and the defect at that weight
 (Section~\ref{subsec:pc-transfer}); and apply quotient Duhamel and integrate the exact remainder, for data in this form
 (Proposition~\ref{pc:core}, Section~\ref{subsec:pc-proof}). Section~\ref{subsec:pc-all} assembles the proof for every bounded range of
-radii. The comparison with the model proof is:
-
-\begin{center}
-\small
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}@{}}
-\hline
-Stage & Power-weight proof (Section~\ref{sec:companion}) & Original-norm proof\\
-\hline
-Data & $a$ with $\pwNorm a<\infty$ & $a=\ue^{-\sigma\Lambda_3}\tilde f$ with $\omega\tilde f\in L^2$ (Proposition~\ref{os:data})\\[4pt]
-Weighted bounds & H\"older interpolation between $L^2$ and the weight $X_0^\beta$ & interpolation shell by shell between $L^2$ and the weight $X_0$ (Lemma~\ref{os:transfer})\\[4pt]
-Periodization & weight $X_0^\gamma$, $\gamma>\tfrac12$ (Lemma~\ref{lem:t2}) & weight $\omega=X_0^{1/2}\ell^{c'}$ (Proposition~\ref{os:p1})\\
-\hline
-\end{tabular}
-\end{center}
+radii. Table~\ref{tab:compare} compares this proof with the power-weight proof of Section~\ref{sec:companion}.
 
 \subsection{The original-norm class}\label{subsec:pc-weights}
 Throughout this section $x_0=i$, $d=d(i,\cdot)$, $X_0=\cosh d$, $\tilde\psi=\log X_0\ge0$, $\ell:=\log(2X_0)/\log2=1+\tilde\psi/\log2\ge1$
@@ -26,14 +13,29 @@ and $D=(-\Delta-\tfrac14)^{1/2}$ (Lemma~\ref{lem:base} reduces general base poin
 \[
 \omega_c:=X_0^{1/2}\ell^{\,c};
 \]
-the periodization weight is $\omega=\omega_{c'}$ with $c'=\tfrac34$; Section~\ref{sec:expect} uses any fixed $c'\in(\tfrac12,1)$. The shells are $A_n:=\{n\le\tilde\psi<n+1\}$, $n=0,1,2,\dots$, and
+the periodization weight is $\omega=\omega_{c'}$ with $c'=\tfrac34$. The shells are $A_n:=\{n\le\tilde\psi<n+1\}$, $n=0,1,2,\dots$, and
 $1_n$ denotes multiplication by the indicator of $A_n$. Since $1+n\le\ell\le3(1+n)$ on $A_n$,
 \begin{equation}\label{os:shell}
 \ue^{n/2}(1+n)^c\le\omega_c\le3\,\ue^{1/2}\,\ue^{n/2}(1+n)^c\qquad\text{on }A_n .
 \end{equation}
 For $m\ge\tfrac12$ put $\Lambda_m:=(m^2-\tfrac14-\Delta)^{1/2}=(D^2+m^2)^{1/2}$; thus $\Lambda_{1/2}=\Lambda$ and $\Lambda_m\ge\Lambda$.
 
-\noindent For $f=\ue^{\alpha\Lambda}a$ and $\beta>\tfrac12$, the original norm gives $\|\omega f\|\le C_\beta\|a\|_{\mathrm P}$, since
+
+\begin{center}
+\small
+\captionof{table}{The power-weight proof and the original-norm proof.}\label{tab:compare}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}@{}}
+\hline
+Stage & Power-weight proof (Section~\ref{sec:companion}) & Original-norm proof\\
+\hline
+Data & $a$ with $\pwNorm a<\infty$ & $a=\ue^{-\sigma\Lambda_m}\tilde f$ with $\omega\tilde f\in L^2$ (Proposition~\ref{os:data})\\[4pt]
+Weighted bounds & H\"older interpolation between $L^2$ and the weight $X_0^\beta$ & interpolation shell by shell between $L^2$ and the weight $X_0$ (Lemma~\ref{os:transfer})\\[4pt]
+Periodization & weight $X_0^\gamma$, $\gamma>\tfrac12$ (Lemma~\ref{lem:t2}) & weight $\omega=X_0^{1/2}\ell^{c'}$ (Proposition~\ref{os:p1})\\
+\hline
+\end{tabular}
+\end{center}
+
+For $f=\ue^{\alpha\Lambda}a$ and $\beta>\tfrac12$, the original norm gives $\|\omega f\|\le C_\beta\pcNorm a$, since
 $\omega\le C_\beta\ue^{\beta\langle d\rangle}$.
 The next proposition explains why the power-weight argument above cannot be applied directly to $a$.
 
@@ -55,9 +57,11 @@ $\norm{\ue^{\alpha''\Lambda}\ue^{\beta'\langle d\rangle}a}\ge\norm{\ue^{\beta'\l
 $\norm{\ue^{\beta\langle d\rangle}\ue^{\alpha\Lambda}a}$ and $\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}$ are not equivalent for $\beta>\tfrac12$, contrary to
 \cite[Proposition~7.1, (7.2)]{S}.
 With $\tau=\alpha-\alpha'$ and $\beta'=\beta$: the original norm of $a$ at $(\alpha',\beta)$ is infinite, since
-$\ue^{\alpha'\Lambda}a=\ue^{-(\alpha-\alpha')\Lambda}h$. So the original norms are not monotone in $\alpha$. The proof of Theorem~\ref{pc:main} for larger radii therefore compares the data at the critical weight
-(Section~\ref{subsec:pc-all}), rather than using the radius monotonicity available in the reversed-weight class.
+$\ue^{\alpha'\Lambda}a=\ue^{-(\alpha-\alpha')\Lambda}h$. So the original norms are not monotone in $\alpha$.
 \end{proof}
+
+For this reason the proof of Theorem~\ref{pc:main} for larger radii compares the data at the critical weight
+(Section~\ref{subsec:pc-all}), rather than using the radius monotonicity available in the reversed-weight class.
 
 \input{sec_critical}
 
@@ -69,35 +73,39 @@ Section~\ref{subsec:dd-thm}, the bound comes from integrating the exact remainde
 stated for every weight $\varpi$ with the properties of $\omega$ that the proof uses.
 
 \begin{proposition}[the remainder for critically weighted data]\label{pc:core}
-Let $0\le c\le1$, $D>0$, $D_g\ge0$, $m\ge\tfrac12$ with $2(\tfrac32)^2<m^2$, and $\kappa'>0$. There is $\delta'>0$, and for every
+Let $0\le c\le1$, $C_{\mathrm{sh}}>0$, $C_{\mathrm{gr}}\ge0$, $m>3/\sqrt2$ and $\kappa'>0$. There is $\delta'>0$, and for every
 $P<\infty$ there is $C'$, with the following property. Let $\Gamma$ be a Fuchsian group, $x_0=i$ and $b=\infty$, and let $\varpi\ge1$
 be a continuous weight that satisfies \textup{(W1)} with $\norm{f_\Gamma}^2_{L^2(M)}\le P\norm{\varpi f}^2$ for $f\in L^2_\varpi$, and
 \textup{(W2)}, and such that
 \[
 \begin{gathered}
-  \ue^{n/2}(1+n)^c\le\varpi\le D\,\ue^{n/2}(1+n)^c\quad\text{on }A_n\ (n\ge0),\\
-  \varpi(z)\le D_g\,\ue^{|s|}\varpi(\delta_sz)\quad(s\in\mathbb R,\ z\in\Hb).
+  \ue^{n/2}(1+n)^c\le\varpi\le C_{\mathrm{sh}}\,\ue^{n/2}(1+n)^c\quad\text{on }A_n\ (n\ge0),\\
+  \varpi(z)\le C_{\mathrm{gr}}\,\ue^{|s|}\varpi(\delta_sz)\quad(s\in\mathbb R,\ z\in\Hb).
 \end{gathered}
 \]
 Let $0<\hbar\le1$ and $0<\sigma\le1$ with $\sigma^3\ge\kappa'\hbar$, let $K,N\in\mathbb N_0$, let $h\in L^2(\Hb)$ with $\varpi h\in L^2(\Hb)$,
 and put $a:=\ue^{-\sigma\Lambda_m}h$. Then for $0\le t\le\delta'(\sigma/\hbar)^{1/2}$,
 \[
-  \norm{\Delta^N\big[\cU(t)\big(a\,\ue^{i\varphi/\hbar}\big)_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}
+  \norm{\Delta^N\big[\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}
   \le C'^{\,N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Big(\frac{\hbar t}{\sigma^2}\Big)^{K+1}\norm{\varpi h}.
 \]
 \end{proposition}
 
 \begin{proof}
-We use the estimates of Section~\ref{sec:analytic} and Sections~\ref{app:o1st}--\ref{subsec:pc-transfer} and the remainder of
-Section~\ref{subsec:dd-id}; all lemmas are used with $\tau_0=1$. In this proof $C$ denotes constants that depend only on
-$c$, $D$, $D_g$, $m$, $\kappa'$ and $P$.
+The proof follows the common structure described at the beginning of Section~\ref{sec:companion}. Step~1 below supplies,
+at the weight $\varpi$, the word, flow and defect bounds that the proof of Theorem~\ref{thm:dd-appx} obtains at power weights,
+with the shell transfer of Lemma~\ref{os:transfer} in place of H\"older's inequality; Step~2 contains the mollified part and
+the defect part, for data of bounded support; Step~3 removes that restriction by density, a step without counterpart in
+Section~\ref{sec:companion}. We use the estimates of Section~\ref{sec:analytic} and Sections~\ref{app:o1st}--\ref{subsec:pc-transfer}
+and the remainder of Section~\ref{subsec:dd-id}; all lemmas are used with $\tau_0=1$. In this proof $C$ denotes constants that depend only on
+$c$, $C_{\mathrm{sh}}$, $C_{\mathrm{gr}}$, $m$, $\kappa'$ and $P$.
 
 \medskip\noindent\emph{Step 0 (parameters).} By Lemma~\ref{os:words}, $\norm{\ue^{\sigma\Lambda}a}\le\norm h$, so $a$ is $C^\infty$ by
 Lemma~\ref{lem:lift}, and $u^{(K)}$ is built from this representative. Put
 \[
-  \mathsf E:=\ue^{-\sigma\Lambda_m},\qquad\varepsilon:=(\sigma\hbar)^{1/2}/2,\qquad x:=(\sigma/\hbar)^{1/2},
+  \mathsf E:=\ue^{-\sigma\Lambda_m},\qquad\varepsilon:=(\sigma\hbar)^{1/2}/2,\qquad \xi:=(\sigma/\hbar)^{1/2},
 \]
-so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=x/2$ and $\sigma/\varepsilon=2x$. For $\mathbf s\in\Sigma_{K+1}(t)$ let
+so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=\xi/2$ and $\sigma/\varepsilon=2\xi$. For $\mathbf s\in\Sigma_{K+1}(t)$ let
 \[
   B'_{\mathbf s}:=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1}),
 \]
@@ -109,7 +117,7 @@ with a constant $C_5\ge1$ fixed in Step~1(a).
 
 \medskip\noindent\emph{Step 1 (derivative, flow and defect estimates).} Each of the following maps is linear on $L^2(\Hb)$, and is bounded
 there and at the weight $\pcXzero$ on functions supported in one shell. Lemma~\ref{os:transfer} then bounds it at the weight $\varpi$.
-Write $C_{\mathrm{tr}}$ for its constant for $c$ and $D$; it is independent of $K,N,\hbar$ and the integration variables.
+Write $C_{\mathrm{tr}}$ for its constant for $c$ and $C_{\mathrm{sh}}$; it is independent of $K,N,\hbar$ and the integration variables.
 
 \smallskip\noindent(a) \emph{Words.} For a word $Z_S$ of length $n$ let $T_wh:=Z_SB'_{\mathbf s}\mathsf Eh$. Expand $B'_{\mathbf s}$ as in the proof of
 Lemma~\ref{lem:wb}. Each term is a coefficient times a word of length at most $L$ applied to $\mathsf Eh$, and by Lemma~\ref{os:words}(b), with $\gamma=1$
@@ -136,18 +144,18 @@ Proposition~\ref{prop:ws}, norm at most $\ue^{G_1/2}$ at the weight $\pcXzero$. 
 \]
 \emph{Unweighted bound.} By Lemma~\ref{os:words}, $\norm{\ue^{\sigma\Lambda}\mathsf Eh}\le\norm h$. By Lemma~\ref{lem:wb}(ii), with $\sigma$ in the role of
 $\alpha$ and the radii $r_1:=\tfrac34\sigma<\sigma$, by Proposition~\ref{prop:a0} from $r_1$ to $r_2:=\tfrac12\sigma$ (valid for
-$t\le\tfrac13c_A\varepsilon/\hbar$), and by Lemma~\ref{lem:unw} with $r=r_2$, where $r_2/(8\varepsilon)=x/8$,
+$t\le\tfrac13c_A\varepsilon/\hbar$), and by Lemma~\ref{lem:unw} with $r=r_2$, where $r_2/(8\varepsilon)=\xi/8$,
 \[
-  \norm{T_dh}\le M_0\norm h,\qquad M_0:=C\sigma^{-4}\ue^{-x/8}\,C_4^{N+K+1}(2N)!\,(2K+2)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}.
+  \norm{T_dh}\le M_0\norm h,\qquad M_0:=C\sigma^{-4}\ue^{-\xi/8}\,C_4^{N+K+1}(2N)!\,(2K+2)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}.
 \]
 \emph{Weighted bound.} Let $u$ be supported in one shell and assume $\hbar s_1\le\varepsilon$. By (a), $\pcXzero ZB'_{\mathbf s}\mathsf Eu\in L^2$ for $Z\in\{1,X,Y,X^2,Y^2\}$, and
 Lemma~\ref{lem:path}(b) with $\gamma=1$ and $b'=B'_{\mathbf s}\mathsf Eu$ gives
 \[
   \norm{\pcXzero T_du}\le M_1\norm{\pcXzero u},\qquad M_1:=C\varepsilon^{-3}F_2 .
 \]
-Lemma~\ref{os:transfer} requires $M_0\le M_1$; we apply it with $M_0+M_1$ in place of $M_1$. Since $M_0\le C\sigma^{-4}\ue^{-x/8}F_2$,
+Lemma~\ref{os:transfer} requires $M_0\le M_1$; we apply it with $M_0+M_1$ in place of $M_1$. Since $M_0\le C\sigma^{-4}\ue^{-\xi/8}F_2$,
 \begin{equation}\label{pc:defect}
-  \norm{\varpi T_dh}\le C_{\mathrm{tr}}\bigl(M_0+M_0^{1/4}M_1^{3/4}\bigr)\norm{\varpi h}\le C\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-x/32}\,F_2\,\norm{\varpi h}.
+  \norm{\varpi T_dh}\le C_{\mathrm{tr}}\bigl(M_0+M_0^{1/4}M_1^{3/4}\bigr)\norm{\varpi h}\le C\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-\xi/32}\,F_2\,\norm{\varpi h}.
 \end{equation}
 
 \medskip\noindent\emph{Step 2 (Duhamel on $M$ for data of bounded support).} Let $h\in L^2$ be supported in $\{\tilde\psi\le R_0\}$ for some $R_0$, and let
@@ -157,25 +165,25 @@ Lemma~\ref{lem:path}(c) with $\gamma=\tfrac34$ the path $g$ satisfies the hypoth
 \[
   \mathcal V_{s_1}b'_h=\mathcal V_0w_h-\tfrac{i\hbar}2\int_0^{s_1}\mathcal V_{t'}d_h(t')\,dt' .
 \]
-On $A_n$ we have $\pcXzero\ge\ue^n$, so $\varpi\le D\ue^{n/2}(1+n)^c\le C\pcXzero^{3/4}$ and $L^2_{\pcXzero^{3/4}}\subset L^2_\varpi$. By Lemma~\ref{os:indep}
+On $A_n$ we have $\pcXzero\ge\ue^n$, so $\varpi\le C_{\mathrm{sh}}\ue^{n/2}(1+n)^c\le C\pcXzero^{3/4}$ and $L^2_{\pcXzero^{3/4}}\subset L^2_\varpi$. By Lemma~\ref{os:indep}
 each term may therefore be estimated through the weight $\varpi$. Since $S(t')$ is unitary, the ratio bound for $\varpi$ gives
-$\norm{\varpi S(t')g}\le D_g\ue^{t'}\norm{\varpi g}$. So, by \textup{(W1)} for $\varpi$, \eqref{pc:flow} and \eqref{pc:wbw} with $n=0$,
+$\norm{\varpi S(t')g}\le C_{\mathrm{gr}}\ue^{t'}\norm{\varpi g}$. So, by \textup{(W1)} for $\varpi$, \eqref{pc:flow} and \eqref{pc:wbw} with $n=0$,
 \[
   \norm{\mathcal V_0w_h}\le P^{1/2}\norm{\varpi V_\varepsilon(0,s_1)b'_h}\le C\norm{\varpi b'_h}\le C\,F_0\,\norm{\varpi h},
 \]
 and by \textup{(W1)}, the ratio bound and \eqref{pc:defect},
 \[
-  \norm{\mathcal V_{t'}d_h(t')}\le P^{1/2}D_g\ue^{t'}\norm{\varpi d_h(t')}\le C\,\ue^{t'}\varepsilon^{-3}\sigma^{-4}\ue^{-x/32}F_2\norm{\varpi h}.
+  \norm{\mathcal V_{t'}d_h(t')}\le P^{1/2}C_{\mathrm{gr}}\ue^{t'}\norm{\varpi d_h(t')}\le C\,\ue^{t'}\varepsilon^{-3}\sigma^{-4}\ue^{-\xi/32}F_2\norm{\varpi h}.
 \]
 Hence $\norm{\mathcal V_{s_1}b'_h}\le C(F_0+R\,F_2)\norm{\varpi h}$ with
 \[
-  R:=\hbar t\,\ue^{t}\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-x/32}.
+  R:=\hbar t\,\ue^{t}\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-\xi/32}.
 \]
-\emph{Absorption.} Let $t\le\delta'x$ with $\delta'\le\tfrac1{64}$, so $\ue^t\le\ue^{x/64}$. Since $\sigma^3\ge\kappa'\hbar$ and $\sigma\le1$,
+\emph{Absorption.} Let $t\le\delta'\xi$ with $\delta'\le\tfrac1{64}$, so $\ue^t\le\ue^{\xi/64}$. Since $\sigma^3\ge\kappa'\hbar$ and $\sigma\le1$,
 \[
-  \sigma^{-1}\le x/\sqrt{\kappa'},\qquad\varepsilon^{-1}=2x/\sigma\le2x^2/\sqrt{\kappa'},\qquad\hbar t\le\delta'\sigma/x\le\delta'/x .
+  \sigma^{-1}\le \xi/\sqrt{\kappa'},\qquad\varepsilon^{-1}=2\xi/\sigma\le2\xi^2/\sqrt{\kappa'},\qquad\hbar t\le\delta'\sigma/\xi\le\delta'/\xi .
 \]
-So $R\le C\,x^{9}\ue^{-x/64}\le C\,x^{-2}$, and $x^{-2}=\hbar/\sigma\le\sigma^2/\kappa'$. Since $F_0\le\sigma^2F_2$,
+So $R\le C\,\xi^{9}\ue^{-\xi/64}\le C\,\xi^{-2}$, and $\xi^{-2}=\hbar/\sigma\le\sigma^2/\kappa'$. Since $F_0\le\sigma^2F_2$,
 \begin{equation}\label{pc:star}
   \norm{\mathcal V_{s_1}B'_{\mathbf s}\mathsf Eh}\le C\,\sigma^2F_2\,\norm{\varpi h}.
 \end{equation}
@@ -192,8 +200,8 @@ Proposition~\ref{prop:dd-id}(ii) bounds the error by $(\hbar/2)^{K+1}$ times the
 $\Sigma_{K+1}(t)$. This simplex has volume $t^{K+1}/(K+1)!$, and the factorial estimates \eqref{eq:factorial-assembly} apply. Together with
 $\hbar^{K+1}t^{K+1}\sigma^{-(2K+2)}=(\hbar t/\sigma^2)^{K+1}$, Step~3 gives the asserted bound.
 
-\medskip\noindent\emph{Time windows.} Steps~1(b), 1(c) and~2 use $\hbar s_1\le\varepsilon$, that is $t\le x/2$; Proposition~\ref{prop:a0} uses
-$t\le\tfrac13c_A\varepsilon/\hbar=c_Ax/6$; the absorption uses $t\le x/64$. So the proof holds for $t\le\delta'x$ with $\delta':=\min(\tfrac1{64},c_A/6)$.
+\medskip\noindent\emph{Time windows.} Steps~1(b), 1(c) and~2 use $\hbar s_1\le\varepsilon$, that is $t\le\xi/2$; Proposition~\ref{prop:a0} uses
+$t\le\tfrac13c_A\varepsilon/\hbar=c_A\xi/6$; the absorption uses $t\le\xi/64$. So the proof holds for $t\le\delta'\xi$ with $\delta':=\min(\tfrac1{64},c_A/6)$.
 Since $\sigma\le1$, all radii stay below $\tau_0=1$.
 \end{proof}
 
@@ -207,7 +215,7 @@ the critical weight, rather than comparing original norms at different radii, wh
 of Proposition~\ref{os:p1}, which is invariant under the conjugation of Lemma~\ref{lem:base}. Since
 $\operatorname{Dom}(\ue^{\alpha\Lambda})\subset\operatorname{Dom}(\ue^{\min(\alpha,1)\Lambda})$, $a$ is $C^\infty$ by Lemma~\ref{lem:lift}. The weight $\omega=\omega_{c'}$,
 $c'=\tfrac34$, is continuous and at least $1$, and by \eqref{os:shell} and Proposition~\ref{os:p1} it satisfies the hypotheses of
-Proposition~\ref{pc:core} with $c=c'$, $D=3\ue^{1/2}$, $D_g=2/\log2$ and $P=C(\Gamma,c')^2$; we use that proposition with these values and
+Proposition~\ref{pc:core} with $c=c'$, $C_{\mathrm{sh}}=3\ue^{1/2}$, $C_{\mathrm{gr}}=2/\log2$ and $P=C(\Gamma,c')^2$; we use that proposition with these values and
 $m=3$. Put $f:=\ue^{\alpha\Lambda}a$, so that $\norm{\omega f}\le C_\beta\pcNorm a$ (Section~\ref{subsec:pc-weights}).
 
 \emph{Radii $0<\alpha\le\tfrac12$.} Put $\sigma:=\alpha/6$ and $\kappa':=\kappa/216$, so that $\sigma\le\tfrac1{12}$ and $\sigma^3\ge\kappa'\hbar$.
@@ -219,12 +227,12 @@ $(\sigma\hbar)^{-2N}(\hbar t/\sigma^2)^{K+1}=6^{2N+2K+2}(\alpha\hbar)^{-2N}(\hba
 holds on $(0,\tfrac12]$ with constants that do not depend on $A$.
 
 \emph{Radii $\tfrac12<\alpha\le A$.} Put $\sigma:=\tfrac1{12}$ and $\kappa':=\kappa/(1728A^3)$; then $\sigma^3\ge\kappa'\hbar$, because
-$\kappa\hbar\le\alpha^3\le A^3$. Put $f_1:=\ue^{-(\alpha-1/2)\Lambda}f$, and let $n$ be an integer with $n\ge A$. Since $\ue^{-\tau\Lambda}$ is a
-semigroup, Corollary~\ref{os:cwp}, applied at most $n$ times with exponents in $(0,1]$, gives $\norm{\omega f_1}\le K_{c'}^{\,n}\norm{\omega f}$,
-where we may take $K_{c'}\ge1$. Now $a=\ue^{-\Lambda/2}f_1$, and Proposition~\ref{os:data}, with $\tfrac12$, $\tfrac1{12}$ and $3$ in the roles of
+$\kappa\hbar\le\alpha^3\le A^3$. Put $f_1:=\ue^{-(\alpha-1/2)\Lambda}f$, and let $j$ be an integer with $j\ge A$. Since $\ue^{-\tau\Lambda}$ is a
+semigroup, Corollary~\ref{os:cwp}, applied at most $j$ times with exponents in $(0,1]$, gives $\norm{\omega f_1}\le k_{c'}^{\,j}\norm{\omega f}$,
+where we may take $k_{c'}\ge1$. Now $a=\ue^{-\Lambda/2}f_1$, and Proposition~\ref{os:data}, with $\tfrac12$, $\tfrac1{12}$ and $3$ in the roles of
 $\alpha$, $\sigma$ and $m$, gives $\tilde f:=\mathsf Rf_1$ with
 \[
-  a=\ue^{-\sigma\Lambda_3}\tilde f,\qquad\norm{\omega\tilde f}\le C_{\mathrm d}K_{c'}^{\,n}C_\beta\,\pcNorm a .
+  a=\ue^{-\sigma\Lambda_3}\tilde f,\qquad\norm{\omega\tilde f}\le C_{\mathrm d}k_{c'}^{\,j}C_\beta\,\pcNorm a .
 \]
 Proposition~\ref{pc:core} with $h=\tilde f$, and constants $C',\delta'$ for this $\kappa'$, gives the bound with $\sigma$ in place of $\alpha$ for
 $t\le\delta'(\sigma/\hbar)^{1/2}$. For $\tfrac12<\alpha\le A$,
@@ -232,6 +240,6 @@ $t\le\delta'(\sigma/\hbar)^{1/2}$. For $\tfrac12<\alpha\le A$,
   (\sigma\hbar)^{-2N}\Big(\frac{\hbar t}{\sigma^2}\Big)^{K+1}&\le(12A)^{2N+2K+2}(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1},\\
   \delta'\Big(\frac{\sigma}{\hbar}\Big)^{1/2}&\ge\delta'(12A)^{-1/2}\Big(\frac{\alpha}{\hbar}\Big)^{1/2}.
 \end{align*}
-So the estimate holds on $(\tfrac12,A]$ with the constants $(12A)^2C'\max(1,C_{\mathrm d}K_{c'}^{\,n}C_\beta)$ and $\delta'(12A)^{-1/2}$. Take the
+So the estimate holds on $(\tfrac12,A]$ with the constants $(12A)^2C'\max(1,C_{\mathrm d}k_{c'}^{\,j}C_\beta)$ and $\delta'(12A)^{-1/2}$. Take the
 larger of the two constants $C$ and the smaller of the two $\delta$.
 \end{proof}

@@ -8,22 +8,27 @@ On $\Hb$, $-\Delta$ denotes the Friedrichs extension from $C_c^\infty(\Hb)$; on 
 Friedrichs extension from periodized test functions. The propagator and the powers of the Laplacian on either space
 are defined by spectral calculus; we write $\Delta_M$ when the distinction is needed.
 The vector field $Y=y\partial_y$ differs from the transport generator $i(y\partial_y-\tfrac12)$ denoted by $Y$ in \cite{S}.
-Throughout the estimates, $W_\gamma:=\ue^{\gamma\tilde\psi}=X_0^\gamma$, with $\tilde\psi=\log X_0$ as in Section~\ref{sec:setup}.
+The power weights are $X_0^\gamma=\ue^{\gamma\tilde\psi}$, with $\tilde\psi=\log X_0$ as in Section~\ref{sec:setup}.
 
 \subsection{Periodization by Cauchy--Schwarz}\label{sec:t2}
+
+\begin{lemma}[counting separated points]\label{lem:count}
+Let $P\subset\Hb$ be a set whose distinct points have mutual distance at least $2r_0>0$, and let each point carry a
+multiplicity at most $n_0$. Then, counted with multiplicity,
+\begin{equation}\label{eq:count}
+\#\{p\in P:d(w,p)<R\}\le n_0\,\frac{\cosh(R+r_0)-1}{\cosh r_0-1}\le C(r_0,n_0)\,\ue^{R}\qquad(w\in\Hb,\ R\ge0).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The balls $B(p,r_0)$, $p\in P$, are disjoint, those with $d(w,p)<R$ lie in $B(w,R+r_0)$, and a ball of radius $\rho$ has
+area $2\pi(\cosh\rho-1)$.
+\end{proof}
 
 \begin{lemma}[uniform Poincar\'e series bound]\label{lem:p1}
 For every Fuchsian $\Gamma$ and $s>1$: $\sup_{z}\sum_{\gamma}\ue^{-s\,d(x_0,\gamma z)}<\infty$.
 \end{lemma}
 \begin{proof}
-We first record a counting bound that is used again below. Let $P\subset\Hb$ be a set whose distinct points have mutual
-distance at least $2r_0>0$, and let each point carry a multiplicity at most $n_0$. The balls $B(p,r_0)$, $p\in P$, are disjoint,
-those with $d(w,p)<R$ lie in $B(w,R+r_0)$, and a ball of radius $\rho$ has area $2\pi(\cosh\rho-1)$. Hence, counted with
-multiplicity,
-\begin{equation}\label{eq:count}
-\#\{p\in P:d(w,p)<R\}\le n_0\,\frac{\cosh(R+r_0)-1}{\cosh r_0-1}\le C(r_0,n_0)\,\ue^{R}\qquad(w\in\Hb,\ R\ge0).
-\end{equation}
-The orbit $\Gamma x_0$ is such a set, because $\Gamma$ acts properly discontinuously: its distinct points are uniformly
+The orbit $\Gamma x_0$ is a set as in Lemma~\ref{lem:count}, because $\Gamma$ acts properly discontinuously: its distinct points are uniformly
 separated, and each is the image of $x_0$ under as many elements as the order of the finite stabilizer of $x_0$. With
 $d(x_0,\gamma z)=d(z,\gamma^{-1}x_0)$, \eqref{eq:count} gives
 $\sum_\gamma\ue^{-s\,d(x_0,\gamma z)}\le\sum_{n\ge0}C\ue^{n+1}\ue^{-sn}<\infty$, uniformly in $z$, for $s>1$.
@@ -72,9 +77,10 @@ $C^\infty$ amplitudes, the base point $i$ and $b=\infty$.
 \begin{lemma}[regularity]\label{lem:lift}
 Let $0<\alpha\le1$ and $F\in\operatorname{Dom}(\ue^{\alpha\Lambda})$. Then $F$ has a unique $C^\infty$ representative, and every word in
 $X,Y$ applied to it lies in $L^2(\Hb)$. Consequently every $a$ with $\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$, and every
-$a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, has a unique $C^\infty$ representative. The approximations $u^{(K)}$ are built from this
-representative.
+$a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, has a unique $C^\infty$ representative.
 \end{lemma}
+
+The approximations $u^{(K)}$ are always built from this representative.
 
 \begin{proof}
 
@@ -103,8 +109,8 @@ For the consequences take $F=X_0^\beta a$, respectively $F=a$; $X_0^{-\beta}$ is
 \begin{lemma}[base point]\label{lem:base}
 Let $x_0\in\Hb$ and $b\in\partial\Hb$.
 \begin{itemize}
-\item[\textup{(i)}] There is $g\in SL(2,\mathbb R)$, unique up to sign, with $g\,x_0=x_0$ and $g\,\infty=b$. We normalize
-$\varphi_b:=\varphi_\infty\circ g^{-1}$. The construction of \cite[(1.20)--(1.29)]{S} is covariant under isometries: the initial state and
+\item[\textup{(i)}] There is $g\in SL(2,\mathbb R)$, unique up to sign, with $g\,x_0=x_0$ and $g\,\infty=b$. By the definition in Section~\ref{sec:setup},
+$\varphi_b=\varphi_\infty\circ g^{-1}$. The construction of \cite[(1.20)--(1.29)]{S} is covariant under isometries: the initial state and
 the approximations for $b$ are $v\mapsto v\circ g^{-1}$ applied to those for $\infty$ with the amplitude $a\circ g$.
 \item[\textup{(ii)}] Let $p(z)=(\operatorname{Im}x_0)\,z+\operatorname{Re}x_0$ and $q:=g\,p$, so $q\,i=x_0$ and $q\,\infty=b$. For an amplitude $a$ put
 $a_q:=a\circ q$ and $\Gamma_q:=q^{-1}\Gamma q$. Then, with $c:=\ue^{-i\log(\operatorname{Im}x_0)/\hbar}$,
@@ -135,7 +141,7 @@ $d(i,q^{-1}\gamma qz)=d(x_0,\gamma(qz))$. \qedhere
 \end{itemize}
 \end{proof}
 
-\begin{remark}
+\begin{remark}[the base point of the weight]
 The hypothesis $g\,x_0=x_0$ is used in (iii): the Poincar\'e sum of $\Gamma$ is not bounded uniformly in the base point when $\Gamma$
 has parabolic elements, so the base point of the weight must be the point at which the sum is taken.
 \end{remark}
@@ -151,7 +157,7 @@ Let $\varpi\ge1$ be a locally bounded measurable weight on $\Hb$, $L^2_\varpi:=\
 \item[(W1)] $f\mapsto f_\Gamma$ is bounded from $L^2_\varpi$ to $L^2(M)$, the sum converging absolutely a.e.;
 \item[(W2)] $\sup\{\varpi(z)/\varpi(\delta_sz):|s|\le T,\ z\in\Hb\}<\infty$ for every $T$.
 \end{itemize}
-Lemma~\ref{lem:t2} (its proof, $t=0$) gives (W1) for $\varpi=W_\sigma$, $\sigma>1/2$. Proposition~\ref{os:p1} gives it for the periodization weight $\varpi=\omega=X_0^{1/2}\ell^{\,c'}$, $\ell=\log(2X_0)/\log2$, of Section~\ref{sec:printed}. Since $d(z,\delta_sz)=|s|$ and $\tilde\psi$ is $1$-Lipschitz, (W2) holds with the explicit ratios $W_\sigma(z)/W_\sigma(\delta_sz)\le\ue^{\sigma|s|}$ and $\omega(z)/\omega(\delta_sz)\le\ue^{|s|/2}(1+|s|/\log 2)^{c'}$. By (W2), $S(s)$ is bounded on $L^2_\varpi$, locally uniformly in $s$; it is strongly continuous there, by density of $C_c(\Hb)$.
+Lemma~\ref{lem:t2} (its proof, $t=0$) gives (W1) for $\varpi=X_0^\sigma$, $\sigma>1/2$. Proposition~\ref{os:p1} gives it for the periodization weight $\varpi=\omega=X_0^{1/2}\ell^{\,c'}$, $\ell=\log(2X_0)/\log2$, of Section~\ref{sec:printed}. Since $d(z,\delta_sz)=|s|$ and $\tilde\psi$ is $1$-Lipschitz, (W2) holds with the explicit ratios $(X_0(z)/X_0(\delta_sz))^\sigma\le\ue^{\sigma|s|}$ and $\omega(z)/\omega(\delta_sz)\le\ue^{|s|/2}(1+|s|/\log 2)^{c'}$. By (W2), $S(s)$ is bounded on $L^2_\varpi$, locally uniformly in $s$; it is strongly continuous there, by density of $C_c(\Hb)$.
 
 Let $\mathcal D_\varpi$ be the set of $g\in L^2_\varpi$ with $Xg,Yg,X^2g,Y^2g\in L^2_\varpi$ (weak derivatives). For $g\in L^2_\varpi$ and $s\in\mathbb R$ put
 \[
@@ -226,33 +232,33 @@ universal cover we also record its trivial-group specialization.
 \begin{proposition}[Dyson identity and quotient remainder]\label{prop:dd-id}
 \begin{enumerate}
 \item[\textup{(i)}] \emph{Dyson expansion.} Let $a$ be such that every word in $X,Y$ applied to $a$ lies in $L^2(\Hb)$, and let
-$P_k(t)$ and $a^{(K)}(t)$ be as in Section~\ref{sec:setup}. Then, with $\Sigma_{K+1}(t)=\{t>s_1>\cdots>s_{K+1}>0\}$ and $c=i\hbar/2$,
+$P_k(t)$ and $a^{(K)}(t)$ be as in Section~\ref{sec:setup}. Then, with $\Sigma_{K+1}(t)$ and $c=i\hbar/2$ as above,
 \[
 a-V(t)^*a^{(K)}(t)=c^{K+1}\int_{\Sigma_{K+1}(t)}V(s_1)^*\,\Delta(s_1)\cdots\Delta(s_{K+1})a\,ds .
 \]
-Every amplitude $a$ of Theorem~\ref{thm:dd-appx} satisfies the hypothesis, by Lemma~\ref{lem:sc}.
-\item[\textup{(ii)}] \emph{The error.} Let $E:=\Delta^N\bigl[\cU(t)(a\,\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr]$, with $u^{(K)}$ as in
+\item[\textup{(ii)}] \emph{The error.} Let $E:=\Delta^N\bigl[\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\bigr]$, with $u^{(K)}$ as in
 Section~\ref{sec:setup}. If every word in $X,Y$ applied to $a$ lies in $L^2_\varpi$, for a weight $\varpi$ satisfying \textup{(W1)}
 and \textup{(W2)}, then
 \[
 \begin{gathered}
-\norm{E}_{L^2(M)}\le\Bigl(\frac{\hbar}{2}\Bigr)^{K+1}\int_{\Sigma_{K+1}(t)}\bigl\|\mathcal V_{s_1}b'(s)\bigr\|_{L^2(M)}\,ds,\\
-b'(s):=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a.
+\norm{E}_{L^2(M)}\le\Bigl(\frac{\hbar}{2}\Bigr)^{K+1}\int_{\Sigma_{K+1}(t)}\bigl\|\mathcal V_{s_1}b'(\mathbf s)\bigr\|_{L^2(M)}\,d\mathbf s,\\
+b'(\mathbf s):=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a,\qquad\mathbf s=(s_1,\dots,s_{K+1}).
 \end{gathered}
 \]
 \end{enumerate}
 \end{proposition}
 
-In (ii) everything of high order is inside $b'(s)$, which is a fixed polynomial in $X,Y$ applied to $a$.
+In (ii) everything of high order is inside $b'(\mathbf s)$, which is a fixed polynomial in $X,Y$ applied to $a$. Every amplitude
+$a$ of Theorem~\ref{thm:dd-appx} satisfies the hypothesis of (i), by Lemma~\ref{lem:sc}.
 
 \begin{proof}
-\medskip\noindent\textbf{(i).}
+\medskip\noindent\emph{(i).}
 Apply Corollary~\ref{cor:surf-dyson} with $\Gamma=\{\mathrm{id}\}$ and $\varpi=1$.
 These choices satisfy (W1), (W2), and the hypothesis on $a$ is exactly that of the corollary.
 By \eqref{eq:factor}, $\mathcal V_sg=\ue^{i\varphi/\hbar}V(s)^*g$.
 Multiplication of the resulting identity by $\ue^{-i\varphi/\hbar}$ gives (i).
 
-\medskip\noindent\textbf{(ii).}
+\medskip\noindent\emph{(ii).}
 By definition $u^{(K)}(t)=\ue^{-it/(2\hbar)}\ue^{i\varphi/\hbar}S(t)a^{(K)}(t)$, so $u^{(K)}(t)_\Gamma=\cU(t)\mathcal V_ta^{(K)}(t)$. Since $\cU(t)$
 is unitary on $L^2(M)$ and commutes with $\Delta_M$, $\norm E=\norm{\Delta_M^N(\mathcal V_0a-\mathcal V_ta^{(K)}(t))}$; no commutation of
 $\cU(t)$ with periodization is used. By Corollary~\ref{cor:surf-dyson},

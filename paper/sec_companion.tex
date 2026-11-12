@@ -1,48 +1,42 @@
 \section{Approximation for power-weight and reversed-weight amplitudes}\label{sec:companion}
 
-We prove the approximation with the power-weight norm $\|a\|_{\mathrm W}$ and transfer it to the reversed-weight norm $\|a\|_{\mathrm S}$, which gives Theorem~\ref{thm:dd14}. These arguments exhibit the common remainder estimate and the balance between analytic smallness and weighted transport growth. Section~\ref{sec:printed} then treats the original norm, which requires additional critical-weight estimates.
+We prove the approximation with the power-weight norm $\pwNorm a$ and transfer it to the reversed-weight norm $\swNorm a$, which gives Theorem~\ref{thm:dd14}. These arguments exhibit the common remainder estimate and the balance between analytic smallness and weighted transport growth. Section~\ref{sec:printed} then treats the original norm, which requires additional critical-weight estimates.
 Throughout, $\Gamma$ and the base point $x_0$ are fixed, $M=\Hb/\Gamma$, and $d=d(x_0,\cdot)$.
-The notation $\pcNorm a$ is the original norm defined in Section~\ref{sec:setup}.
 
-\medskip\noindent\emph{The remainder to be estimated.}
-Work in the normalization $x_0=i$, $b=\infty$ justified by Lemma~\ref{lem:base}, and use
-$\Delta_\varphi(s)$, $\Sigma_{K+1}(t)$ and $\mathcal V_s$ from Section~\ref{subsec:dd-surf}.
-Both the power weights above exponent $1/2$ and the critical weight of Sections~\ref{app:o1st}--\ref{subsec:pc-transfer} satisfy the periodization and transport conditions (W1), (W2).
-Once every word in $X,Y$ applied to $a$ lies in $L^2_\varpi$, for a weight $\varpi$ satisfying (W1) and (W2), Proposition~\ref{prop:dd-id}(ii) gives
-\begin{equation}\label{pc:remainder}
-\begin{aligned}
-  &\norm{\Delta^N\bigl[\cU(t)(a\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr]}_{L^2(M)}\\
-  &\qquad\le\Bigl(\frac\hbar2\Bigr)^{K+1}\int_{\Sigma_{K+1}(t)}\norm{\mathcal V_{s_1}b'(\mathbf s)}_{L^2(M)}\,d\mathbf s,\\
-  &\qquad b'(\mathbf s):=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a .
-\end{aligned}
-\end{equation}
-Each proof below bounds the integrand uniformly in $\mathbf s$ and then integrates over the simplex. The identity and the
-quotient Duhamel formula used to obtain it are proved in Section~\ref{subsec:dd-surf}.
+\medskip\noindent\emph{The common structure.}
+The proof of Theorem~\ref{thm:dd-appx} below and the proof of Proposition~\ref{pc:core} in Section~\ref{subsec:pc-proof} both start from
+Proposition~\ref{prop:dd-id}(ii), in the normalization $x_0=i$, $b=\infty$ of Lemma~\ref{lem:base}: once every word in $X,Y$
+applied to $a$ lies in $L^2_\varpi$ for a weight $\varpi$ satisfying (W1) and (W2), the error is at most $(\hbar/2)^{K+1}$
+times the integral of $\norm{\mathcal V_{s_1}b'(\mathbf s)}_{L^2(M)}$ over $\Sigma_{K+1}(t)$. Both proofs then bound this integrand
+uniformly in $\mathbf s$ in the same steps: the parameters $\varepsilon=(\alpha\hbar)^{1/2}/2$ and $\xi=(\alpha/\hbar)^{1/2}$ (with a radius $\sigma$ in place of $\alpha$ in
+Proposition~\ref{pc:core}); a
+mollified part, controlled by weighted propagation and periodization; a defect part, whose analytic smallness is
+interpolated against a weighted bound and absorbs the transport growth on the window; and the integration over the simplex.
+They differ in the weight $\varpi$ and in the interpolation (Table~\ref{tab:compare}).
 
 \subsection{Approximation with the power weight \texorpdfstring{$X_0^\beta$}{X0}}\label{subsec:dd-thm}
 
 \begin{theorem}[approximation with the power weight $X_0^\beta$]\label{thm:dd-appx}
-Let $\Gamma$ be any Fuchsian group, $\beta>1/2$ and $\kappa>0$, and $\alpha_0\in(0,\min(1,\pi/4))$.
+Let $\Gamma$ be any Fuchsian group, $\beta>1/2$ and $\kappa>0$, and $\alpha_0\in(0,\pi/4)$.
 There are $C,\delta>0$, depending only on $\beta$, $\kappa$, $\alpha_0$, $\Gamma$ and $x_0$, such that the following holds for all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, every $b\in\partial\Hb$, every $a$ with $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$:
 \[
-\norm{\Delta^N\bigl[\cU(t)(a\,\ue^{i\varphi_b/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr]}_{L^2(M)}\le C^{N+K+1}\,N^{2N}\,K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}\pwNorm a,
+\norm{\Delta^N\bigl[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\bigr]}_{L^2(M)}\le C^{N+K+1}\,N^{2N}\,K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}\pwNorm a,
 \]
 with $N^{2N}:=1$ at $N=0$.
 \end{theorem}
 
-\begin{remark}
+\begin{remark}[power weight and reversed weight]
 This is the power-weight form of the reversed-weight estimate. Lemma~\ref{lem:m2w} transfers it to the norm of
 Theorem~\ref{thm:dd14}; the deduction follows the proof below. Appendix~\ref{sec:changes} compares the resulting bounds with \cite{S}.
 \end{remark}
 
 \begin{proof}
-\medskip\noindent\textbf{Reductions.} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters the estimates below only
+\medskip\noindent\emph{Step 0 (reductions and parameters).} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters the estimates below only
 through the Poincar\'e series bound at the base point. By Lemma~\ref{lem:lift}, $a$ is $C^\infty$. We write $\varphi=\varphi_\infty$, $c=i\hbar/2$, and
 \[
- E:=\Delta^N\bigl[\cU(t)(a\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr].
+ E:=\Delta^N\bigl[\cU(t)[a\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\bigr].
 \]
 
-\medskip\noindent\textbf{The two contributions.}
 For a remainder amplitude $b'$ and $g(t')=V_\varepsilon(t',s_1)b'$, write
 \[
  \mathcal V_{s_1}b'=\mathcal V_0g(0)+
@@ -51,50 +45,48 @@ For a remainder amplitude $b'$ and $g(t')=V_\varepsilon(t',s_1)b'$, write
 The first term is bounded by weighted propagation of the mollified flow.
 For the second, quotient Duhamel expresses the difference through the mollifier defect;
 its analytic smallness compensates for transport growth after interpolation.
-We now choose the radii and mollification scale needed for these two bounds.
-
-\medskip\noindent\textbf{Parameters.} All lemmas are used with $\tau_0=1$. Let $c_M$ be the constant of Lemma~\ref{lem:mw} and $c_A$ that of
+We now choose the radii and mollification scale needed for these two bounds. All lemmas are used with $\tau_0=1$. Let $c_M$ be the constant of Lemma~\ref{lem:mw} and $c_A$ that of
 Proposition~\ref{prop:a0}. Put
 \[
-r_0:=c_M\alpha,\qquad r_1:=\tfrac34r_0,\qquad r_2:=\tfrac12r_0,\qquad\varepsilon:=(\alpha\hbar)^{1/2}/2,\qquad x:=(\alpha/\hbar)^{1/2},
+r_0:=c_M\alpha,\qquad r_1:=\tfrac34r_0,\qquad r_2:=\tfrac12r_0,\qquad\varepsilon:=(\alpha\hbar)^{1/2}/2,\qquad \xi:=(\alpha/\hbar)^{1/2},
 \]
-so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=x/2$ and $\alpha/\varepsilon=2x$. Fix $\gamma:=(2\beta+1)/4\in(1/2,\beta)$ and put $\theta:=\gamma/\beta\in(0,1)$.
+so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=\xi/2$ and $\alpha/\varepsilon=2\xi$. Fix $\gamma:=(2\beta+1)/4\in(1/2,\beta)$ and put $\theta:=\gamma/\beta\in(0,1)$.
 
-Use Proposition~\ref{prop:dd-id}(ii) with $\varpi=W_\gamma$; every word applied to $a$ lies in $L^2_\varpi$ by Lemma~\ref{lem:sc}, since $W_\gamma\le X_0^\beta$. For each $\mathbf s=(s_1,\dots,s_{K+1})\in\Sigma_{K+1}(t)$ let
+Use Proposition~\ref{prop:dd-id}(ii) with $\varpi=X_0^\gamma$; every word applied to $a$ lies in $L^2_\varpi$ by Lemma~\ref{lem:sc}, since $X_0^\gamma\le X_0^\beta$. For each $\mathbf s=(s_1,\dots,s_{K+1})\in\Sigma_{K+1}(t)$ let
 \[
 g(t'):=V_\varepsilon(t',s_1)\,b',\quad0\le t'\le s_1,\qquad w:=g(0)=V_\varepsilon(s_1)^*b'.
 \]
 Thus $w=g(0)$ is the vector in the first contribution of the decomposition above.
 
-\medskip\noindent\textbf{(I) Mollified part.}
+\medskip\noindent\emph{Step 1 (mollified part).}
 
 Lemma~\ref{lem:t2} at $t=0$, and Proposition~\ref{prop:ws} at the weight $X_0^\gamma$ (with $\hbar s_1\le\varepsilon$), give
 \[
-\norm{\mathcal V_0w}=\norm{[\ue^{i\varphi/\hbar}V_\varepsilon(s_1)^*b']_\Gamma}\le C\norm{W_\gamma V_\varepsilon(0,s_1)b'}\le C\ue^{G_\gamma/2}\norm{W_\gamma b'}\le C\norm{X_0^\beta b'},
+\norm{\mathcal V_0w}=\norm{[\ue^{i\varphi/\hbar}V_\varepsilon(s_1)^*b']_\Gamma}\le C\norm{X_0^\gamma V_\varepsilon(0,s_1)b'}\le C\ue^{G_\gamma/2}\norm{X_0^\gamma b'}\le C\norm{X_0^\beta b'},
 \]
-using $W_\gamma=X_0^\gamma\le X_0^\beta$ (since $X_0\ge1$ and $\gamma\le\beta$).
+using $X_0^\gamma\le X_0^\beta$ (since $X_0\ge1$ and $\gamma\le\beta$).
 By Lemma~\ref{lem:wb}(i) with $n=0$:
 \[
-\text{(I)}\le C\,C_4^{N+K+1}(2N)!\,(2K+2)!\,\alpha^{-(2K+2)}(\alpha\hbar)^{-2N}\pwNorm a.
+\norm{\mathcal V_0w}\le C\,C_4^{N+K+1}(2N)!\,(2K+2)!\,\alpha^{-(2K+2)}(\alpha\hbar)^{-2N}\pwNorm a.
 \]
 
 
-\medskip\noindent\textbf{(II) Mollifier part.}
+\medskip\noindent\emph{Step 2 (defect part).}
 
 By Lemma~\ref{lem:wb}(i) with $n\le2$, $X_0^\beta Zb'\in L^2$ for every $Z$ in $\mathcal S=\{1,X,Y,X^2,Y^2\}$. Thus Lemma~\ref{lem:path}(c), with the exponent
-$\gamma$, shows that $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for $\varpi=W_\gamma$. Since $g'=c\,\Delta_\varepsilon(t')g$,
+$\gamma$, shows that $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for $\varpi=X_0^\gamma$. Since $g'=c\,\Delta_\varepsilon(t')g$,
 Duhamel on $M$ gives $\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)=-c\int_0^{s_1}\mathcal V_{t'}d(t')\,dt'$, with
 \[
 d(t'):=(\Delta(t')-\Delta_\varepsilon(t'))\,g(t').
 \]
 By the unitarity of $\cU(t')$ on $M$ and Lemma~\ref{lem:t2} (exponent $\gamma$),
-\[\norm{\mathcal V_{t'}d(t')}=\norm{[\ue^{i\varphi/\hbar}S(t')d(t')]_\Gamma}\le C\ue^{\gamma t'}\norm{W_\gamma d(t')}.\]
-H\"older's inequality gives $\norm{W_\gamma d}\le\norm{W_\beta d}^\theta\norm{d}^{1-\theta}$, since $W_\gamma=W_\beta^\theta$.
+\[\norm{\mathcal V_{t'}d(t')}=\norm{[\ue^{i\varphi/\hbar}S(t')d(t')]_\Gamma}\le C\ue^{\gamma t'}\norm{X_0^\gamma d(t')}.\]
+H\"older's inequality gives $\norm{X_0^\gamma d}\le\norm{X_0^\beta d}^\theta\norm{d}^{1-\theta}$, since $X_0^\gamma=(X_0^\beta)^\theta$.
 We estimate the two factors separately.
 
 \emph{Weighted factor.} By Lemma~\ref{lem:path}(b) with the exponent $\beta$, and Lemma~\ref{lem:wb}(i) with $n\le2$ (five words; the bound increases with $n$),
 \begin{align*}
-\norm{W_\beta d(t')}&\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\beta Zb'}\\
+\norm{X_0^\beta d(t')}&\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\beta Zb'}\\
 &\le C\varepsilon^{-3}\,C_4^{N+K+3}(2N)!\,(2K+4)!\,\alpha^{-(2K+4)}(\alpha\hbar)^{-2N}\pwNorm a.
 \end{align*}
 \emph{Unweighted factor.} Lemma~\ref{lem:mw} gives $\norm{\ue^{r_0\Lambda}a}\le C_*B_\beta\pwNorm a$.
@@ -102,26 +94,26 @@ Lemma~\ref{lem:wb}(ii), applied with $r_0$ in the role of $\alpha$ and the radii
 $\norm{\ue^{r_1\Lambda}b'}\le C_4^{N+K+1}(2N)!(2K+2)!\,r_0^{-(2K+2)}(r_0\hbar)^{-2N}\norm{\ue^{r_0\Lambda}a}$.
 Proposition~\ref{prop:a0}, from the radius $r_1$ to $r_2$ (so $(r_1-r_2)/r_1=\tfrac13$) and for $|t'-s_1|\le t\le\tfrac13c_A\varepsilon/\hbar$, gives
 $\norm{\ue^{r_2\Lambda}g(t')}\le\norm{\ue^{r_1\Lambda}b'}$.
-Lemma~\ref{lem:unw} with $r=r_2$ gives $\norm{d(t')}\le C_0r_2^{-4}\ue^{-r_2/(8\varepsilon)}\norm{\ue^{r_2\Lambda}g(t')}$, and $r_2/(8\varepsilon)=c_Mx/8$.
+Lemma~\ref{lem:unw} with $r=r_2$ gives $\norm{d(t')}\le C_0r_2^{-4}\ue^{-r_2/(8\varepsilon)}\norm{\ue^{r_2\Lambda}g(t')}$, and $r_2/(8\varepsilon)=c_M\xi/8$.
 
 \emph{Combining the factors.} Put
 \[
   F:=(C_4/c_M^2)^{N+K+3}(2N)!\,(2K+4)!\,\alpha^{-(2K+4)}(\alpha\hbar)^{-2N}\pwNorm a.
 \]
 Since $c_M\le1\le C_4$ and $\alpha\le1$, the weighted
-factor is at most $C\varepsilon^{-3}F$ and the unweighted one at most $C\alpha^{-4}\ue^{-c_Mx/8}F$. After the H\"older split, using $\varepsilon,\alpha\le1$,
+factor is at most $C\varepsilon^{-3}F$ and the unweighted one at most $C\alpha^{-4}\ue^{-c_M\xi/8}F$. After the H\"older split, using $\varepsilon,\alpha\le1$,
 \[
-\text{(II)}\le C\,F\,R,\qquad R:=\hbar t\,\ue^{\gamma t}\,\varepsilon^{-3}\,\alpha^{-4}\,\ue^{-(1-\theta)c_Mx/8}.
+\norm{\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)}\le C\,F\,R,\qquad R:=\hbar t\,\ue^{\gamma t}\,\varepsilon^{-3}\,\alpha^{-4}\,\ue^{-(1-\theta)c_M\xi/8}.
 \]
-For $t\le\delta x$ with $\delta\le(1-\theta)c_M/(16\gamma)$: $\ue^{\gamma t}\le\ue^{(1-\theta)c_Mx/16}$. Since $\alpha^3\ge\kappa\hbar$ and $\alpha\le1$,
+For $t\le\delta\xi$ with $\delta\le(1-\theta)c_M/(16\gamma)$: $\ue^{\gamma t}\le\ue^{(1-\theta)c_M\xi/16}$. Since $\alpha^3\ge\kappa\hbar$ and $\alpha\le1$,
 \[
-\alpha^{-1}\le x/\sqrt\kappa,\qquad\varepsilon^{-1}=2x/\alpha\le2x^2/\sqrt\kappa,\qquad\hbar t\le\delta\hbar x=\delta\alpha/x\le\delta/x .
+\alpha^{-1}\le \xi/\sqrt\kappa,\qquad\varepsilon^{-1}=2\xi/\alpha\le2\xi^2/\sqrt\kappa,\qquad\hbar t\le\delta\hbar\xi=\delta\alpha/\xi\le\delta/\xi .
 \]
-Hence $R\le C(\kappa)\,x^{9}\,\ue^{-(1-\theta)c_Mx/16}\le C(\kappa)\,x^{-2}$, and $x^{-2}=\hbar/\alpha\le\alpha^2/\kappa$. So $R\le C(\kappa)\alpha^2$, and
-(II) is at most $C\alpha^2F$.
+Hence $R\le C(\kappa)\,\xi^{9}\,\ue^{-(1-\theta)c_M\xi/16}\le C(\kappa)\,\xi^{-2}$, and $\xi^{-2}=\hbar/\alpha\le\alpha^2/\kappa$. So $R\le C(\kappa)\alpha^2$, and
+the defect part is at most $C\alpha^2F$.
 
 
-\medskip\noindent\textbf{Collecting.}
+\medskip\noindent\emph{Step 3 (collecting).}
 
 Integration over $\Sigma_{K+1}(t)$ gives $t^{K+1}/(K+1)!$. We use
 \begin{equation}\label{eq:factorial-assembly}
@@ -135,15 +127,15 @@ Hence
 \[
 \norm E\le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}\pwNorm a.
 \]
-\medskip\noindent\textbf{Time windows used.}
+\medskip\noindent\emph{Time windows used.}
 
-Weighted propagation and the path bound require $\hbar s_1\le\varepsilon$, that is $t\le x/2$.
-Analytic propagation requires $t\le\tfrac13c_A\varepsilon/\hbar=c_Ax/6$.
+Weighted propagation and the path bound require $\hbar s_1\le\varepsilon$, that is $t\le\xi/2$.
+Analytic propagation requires $t\le\tfrac13c_A\varepsilon/\hbar=c_A\xi/6$.
 The transport growth $\ue^{\gamma t}$ is absorbed when $\delta\le(1-\theta)c_M/(16\gamma)$.
 
 So $\delta:=\min\bigl(\tfrac12,\;c_A/6,\;(1-\theta)c_M/(16\gamma)\bigr)$ works.
 
-\medskip\noindent\textbf{Dependence on $\Gamma$.} The group enters only through Lemma~\ref{lem:t2}, used in (I) and (II) with exponent $\gamma$, whose
+\medskip\noindent\emph{Dependence on $\Gamma$.} The group enters only through Lemma~\ref{lem:t2}, used in Steps~1 and~2 with exponent $\gamma$, whose
 constant $C(\Gamma,\gamma)=2^\gamma P_\Gamma(2\gamma)^{1/2}$ depends on $\Gamma$ only through the Poincar\'e series bound $P_\Gamma(2\gamma)$, $2\gamma=\beta+\tfrac12$.
 All other inputs are estimates on $\Hb$. So $\delta$ does not depend on $\Gamma$, and $C$ depends on $\Gamma$ only through $P_\Gamma(\beta+\tfrac12)$;
 this is the uniformity claimed in Theorem~\ref{thm:dd14}.
@@ -157,21 +149,10 @@ weight $X_0^\beta=\ue^{\beta\tilde\psi}$ in place of $\ue^{\beta\langle d\rangle
 $c_0=c_0(\beta)\in(0,1]$.
 
 \begin{proof}[Proof of Theorem~\ref{thm:dd14}]
-Let $c_0$ and $C'$ be the constants of Lemma~\ref{lem:m2w}, and use the norm $\swNorm a$ of Section~\ref{sec:swapped}. If $\alpha\le\alpha_0$ and $\alpha^3\ge\kappa\hbar$, then $\bar\alpha:=c_0\alpha\le c_0\alpha_0$,
+Let $c_0$ and $C'$ be the constants $c_0$ and $C$ of Lemma~\ref{lem:m2w}. If $\alpha\le\alpha_0$ and $\alpha^3\ge\kappa\hbar$, then $\bar\alpha:=c_0\alpha\le c_0\alpha_0$,
 $\bar\alpha^3\ge c_0^3\kappa\hbar$ and $\norm{\ue^{\bar\alpha\Lambda}X_0^\beta a}\le C'\swNorm a$. Apply Theorem~\ref{thm:dd-appx} with
 $c_0\alpha_0$, $c_0^3\kappa$ and $\bar\alpha$ in place of $\alpha_0$, $\kappa$ and $\alpha$, and let $C_{\rm int},\delta_{\rm int}$ be its constants. Its
 window $t\le\delta_{\rm int}(\bar\alpha/\hbar)^{1/2}$ is the window $t\le\delta(\alpha/\hbar)^{1/2}$ with $\delta:=c_0^{1/2}\delta_{\rm int}$, and
 $(\bar\alpha\hbar)^{-2N}(\hbar t/\bar\alpha^2)^{K+1}=c_0^{-2N-2K-2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$. So the bound holds with
 $C:=C_{\rm int}\,c_0^{-2}\max(1,C')$. The dependence on $\Gamma$ is that of Theorem~\ref{thm:dd-appx}.
-\end{proof}
-
-
-\begin{corollary}[fixed-radius leading approximation]\label{thm:main}
-Let $\Gamma$ be a Fuchsian group, $\beta>1/2$ and $\alpha>0$ be fixed. There are $C,\delta>0$ such that for $0<\hbar\le1$, every $b\in\partial\Hb$ and every $a$ of finite reversed-weight norm,
-\[
-\norm{\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(0)}(t)_\Gamma}_{L^2(M)}\le C\hbar t\swNorm a,\qquad 0\le t\le\delta\hbar^{-1/2}.
-\]
-\end{corollary}
-\begin{proof}
-Fix $\alpha_0\in(0,\min(1,\pi/4))$. For $0<\alpha\le\alpha_0$, take $K=N=0$ and $\kappa=\alpha^3$ in Theorem~\ref{thm:dd14}, absorbing the fixed factors $\alpha^{-2}$ and $\alpha^{1/2}$ into $C$ and $\delta$. For $\alpha>\alpha_0$, the reversed-weight norm at radius $\alpha_0$ is bounded by that at radius $\alpha$.
 \end{proof}

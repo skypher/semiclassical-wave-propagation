@@ -3,20 +3,50 @@
 This section proves Theorem~\ref{cl:necessary}. It concerns the pointwise error at points whose height in the cusp increases
 with time.
 
-\begin{remark}[the local Sobolev loss]\label{rem:g4}
-The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient with a cusp. In a cusp neighbourhood $\{y>H\}/(x\sim x+1)$, take $u_S=f(\log y-S)$ with $0\ne f\in C_c^\infty(\mathbb R)$. For every integer $s\ge1$,
-\[
-\norm{u_S}_{L^1}\asymp\norm{\Delta^su_S}_{L^1}\asymp\ue^{-S},\qquad
-\norm{u_S}_{L^2}\asymp\norm{\Delta^su_S}_{L^2}\asymp\ue^{-S/2},
-\]
-whereas $\sup|u_S|$ is independent of $S$. Thus both the global $L^2$-to-pointwise Sobolev bound and the $L^1$-to-$L^2$ bound used in \cite{S} fail on cusps. Theorem~\ref{cl:main} shows that the same loss occurs for the approximation error itself.
-\end{remark}
-
 Throughout this section $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $M=\Gamma\backslash\Hb$ (cusp at $\infty$ of width $1$), $x_0=i$, $X_0=\cosh d(i,\cdot)$,
 $b=\infty$ and $\varphi=-\log y$. For a function $F$ on $\Hb$ we write $[F]_\Gamma(z)=\sum_{\gamma\in\Gamma}F(\gamma z)$, and
-$E_K(t):=\cU(t)(a\,\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma$. Words $Z_S$ are products of $X$ and $Y$.
+$E_K(t):=\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma$. Words $Z_S$ are products of $X$ and $Y$.
 
-The proof starts from the decomposition
+\begin{theorem}[lower bound high in the cusp]\label{cl:main}
+Let $\beta>\tfrac12$ and $\alpha_0:=\tfrac12$. Let $\alpha_1=\alpha_1(\beta)\in(0,\alpha_0]$ be the radius of Lemma~\ref{cl:amp}(i), and let
+$\mu_*\ge1$ and $c>0$ be the absolute constants of Lemma~\ref{cl:noncancel}. For a fixed radius $\alpha$, let $\delta$ be the constant
+of Theorem~\ref{thm:dd14} in case (i), and of Theorem~\ref{pc:main} with $A=\alpha_0$ in case (ii), both with $\kappa=\alpha^3$.
+\begin{enumerate}
+\item[(i)] (Reversed-weight class.) Let $\alpha\in(0,\alpha_1]$ and $a=\ue^{-20X_0}$. There are $\hbar_0,c_*,t_*>0$, depending on $\alpha$ and
+$\beta$, such that for $0<\hbar\le\hbar_0$, every $t$ with $\max(2\log(1/\hbar),t_*)\le t\le\min(\hbar^{-1/5},\delta(\alpha/\hbar)^{1/2})$, and
+every $z=x+i\ue^t$,
+\[
+|E_0(t)(z)|\ge c_*\,\ue^{t/2}\hbar^{3/2}t .
+\]
+\item[(ii)] (Original-norm class.) Let $\mu\ge\mu_*$, $0<\alpha\le\alpha_*(\mu):=\min(\alpha_0,c\mu^{-6})$ and $a=\ue^{-\alpha\Lambda}\ue^{-\mu X_0}$.
+Then the conclusion of (i) holds, with constants depending also on $\mu$.
+\end{enumerate}
+At the points $z=x+i\ue^t$ of (i) and (ii), $m(z)\le5\ue^t$.
+\end{theorem}
+
+In the rest of this section $\ampNorm a:=\swNorm a$ in case (i) and $\ampNorm a:=\pcNorm a$ in case (ii), so that the common estimates
+cover both amplitude classes. Theorem~\ref{cl:necessary} is deduced from Theorem~\ref{cl:main} in Section~\ref{subsec:cl-proof}.
+
+\begin{remark}[comparison with Schubert's pointwise bound]\label{cl:reading}
+\cite[Corollary~1.6]{S}, that is \cite[(1.34)]{S} at $N=K=0$, states the bound $C(\alpha\hbar)^{-8}\norm a_{\alpha,\beta}$ for every
+Fuchsian $\Gamma$ and every $b$, with $C$ independent of $\hbar$ and $z$ and without a cusp factor. At $t=20\log(1/\hbar)$ the lower
+bound of Theorem~\ref{cl:main}(ii) exceeds this bound for small $\hbar$; this is the case $p=8$ of Theorem~\ref{cl:necessary}(i).
+\end{remark}
+
+
+\begin{proposition}[relative accuracy in the cusp]\label{cl:relative}
+In case (i) of Theorem~\ref{cl:main}, for $\hbar\le\hbar_0$ and $t$ in the range of Theorem~\ref{cl:main},
+\[
+c\,\hbar t\le\frac{|E_0(t)(z)|}{|u^{(0)}(t)_\Gamma(z)|}\le C\,\hbar t,\qquad z=x+i\ue^t .
+\]
+\end{proposition}
+So at these points the solution itself is large and the error remains small relative to it: what fails is the form of
+Schubert's stated bound (a fixed multiple of $\ampNorm a$, independent of $z$), not the accuracy of the approximation. The
+periodized approximation and the solution both grow like $m(z)^{1/2}\hbar^{1/2}$ there, and their difference is a factor
+$O(\hbar t)$ smaller. Proposition~\ref{cl:relative} concerns this amplitude on this window only; it is not a general relative-error
+theorem. Its proof is in Section~\ref{subsec:cl-relative}.
+
+\medskip\noindent\emph{Plan of the proof.} The proof starts from the decomposition
 \[
 \begin{gathered}
  E_0=T_1+T_2+E_2,\qquad
@@ -37,44 +67,6 @@ $\gamma(\mathbb R+iH)$, whose images under $D_t:(x,y)\mapsto(x,\ue^ty)$ are the 
 and its size is $\ue^{t/2}\sqrt{\pi\hbar}\cdot\hbar t$; the remainder is controlled by the $L^2$ theorem.
 We apply Theorems~\ref{thm:dd14} and~\ref{pc:main} at fixed radius with their parameter $\kappa=\alpha^3$,
 so their condition $\alpha^3\ge\kappa\hbar$ holds for every $\hbar\le1$.
-
-
-\begin{theorem}[lower bound high in the cusp]\label{cl:main}
-Let $\beta>\tfrac12$ and $\alpha_0:=\tfrac12$, and let $\alpha_1=\alpha_1(\beta)\in(0,\alpha_0]$ be the radius of Lemma~\ref{cl:amp}(i). The constants
-below depend on the fixed radius $\alpha$ and on $\beta$, and in (ii) also on the decay rate $\mu$ of the amplitude; $\delta$ denotes the
-constant of Theorem~\ref{thm:dd14} in case (i), and of Theorem~\ref{pc:main} with $A=\alpha_0$ in case (ii), both with $\kappa=\alpha^3$.
-\begin{enumerate}
-\item[(i)] (Reversed-weight class.) Let $\alpha\in(0,\alpha_1]$. For $a=\ue^{-20X_0}$ there are $\hbar_0,c_*,t_*>0$ such that for $0<\hbar\le\hbar_0$, every
-$t$ with $\max(2\log(1/\hbar),t_*)\le t\le\min(\hbar^{-1/5},\delta(\alpha/\hbar)^{1/2})$, and every $z=x+i\ue^t$,
-\[
-|E_0(t)(z)|\ge c_*\,\ue^{t/2}\hbar^{3/2}t,\qquad m(z)\le5\ue^t .
-\]
-\item[(ii)] (Original-norm class.) The same holds for $a=\ue^{-\alpha\Lambda}\ue^{-\mu X_0}$, with $\mu\ge\mu_*$ and $0<\alpha\le\alpha_*(\mu):=\min(\alpha_0,c\mu^{-6})$.
-\end{enumerate}
-\end{theorem}
-
-In the rest of this section $\ampNorm a:=\swNorm a$ in case (i) and $\ampNorm a:=\pcNorm a$ in case (ii), so that the common estimates
-cover both amplitude classes. Theorem~\ref{cl:necessary} is deduced from Theorem~\ref{cl:main} in Section~\ref{subsec:cl-proof}.
-
-\begin{remark}[comparison with Schubert's pointwise bound]\label{cl:reading}
-\cite[Corollary~1.6]{S}, that is \cite[(1.34)]{S} at $N=K=0$, states a bound for every Fuchsian $\Gamma$ and every $b$ without a cusp factor,
-with a constant independent of $\hbar$.
-At $t=20\log(1/\hbar)$ the lower bound in Theorem~\ref{cl:main}(ii) exceeds
-$C(\alpha\hbar)^{-8}\norm a_{\alpha,\beta}$ for small $\hbar$, contradicting that bound.
-\end{remark}
-
-
-\begin{proposition}[relative accuracy in the cusp]\label{cl:relative}
-In case (i) of Theorem~\ref{cl:main}, for $\hbar\le\hbar_0$ and $t$ in the range of Theorem~\ref{cl:main},
-\[
-c\,\hbar t\le\frac{|E_0(t)(z)|}{|u^{(0)}(t)_\Gamma(z)|}\le C\,\hbar t,\qquad z=x+i\ue^t .
-\]
-\end{proposition}
-So at these points the solution itself is large and the error remains small relative to it: what fails is the form of
-Schubert's stated bound (a fixed multiple of $\ampNorm a$, independent of $z$), not the accuracy of the approximation. The
-periodized approximation and the solution both grow like $m(z)^{1/2}\hbar^{1/2}$ there, and their difference is a factor
-$O(\hbar t)$ smaller. Proposition~\ref{cl:relative} concerns this amplitude on this window only; it is not a general relative-error
-theorem. Its proof is in Section~\ref{subsec:cl-relative}.
 
 \subsection{Local control and cusp asymptotics}
 \begin{lemma}[semiclassical local Sobolev inequality]\label{cl:ssob}
@@ -341,7 +333,8 @@ Both bounds are uniform in $\alpha\le\alpha_0$.
 \begin{lemma}[noncancellation of the leading cusp coefficient]\label{cl:noncancel}
 For either amplitude of Lemma~\ref{cl:amp}, with its cases denoted by (i) and (ii), the following holds.
 Put $A_0=(Y^2-Y)a$ and $S_0(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}A_0(n/c+i/c^2)$. In case (i) with $\mu=20$, $|S_0(\hbar)|\ge0.98\,\mu\ue^{-\mu}$
-for all $\hbar$; in case (ii), $|S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for $\mu\ge\mu_*$, $\alpha\le c\mu^{-6}$ and all $\hbar$.
+for all $\hbar$. In case (ii) there are absolute constants $\mu_*\ge1$ and $c>0$ such that $|S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for
+$\mu\ge\mu_*$, $0<\alpha\le\min(\tfrac12,c\mu^{-6})$ and all $\hbar$.
 \end{lemma}
 \begin{proof}
 Put $\vartheta(w)=\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$.
@@ -415,10 +408,10 @@ Every $z\in M$ has $m(z)\ge1$, since $\gamma=\mathrm{id}$ is counted.
 (i) Let $p\ge0$ and $t:=(2p+4)\log(1/\hbar)$. For small $\hbar$ this $t$ lies in the range of Theorem~\ref{cl:main} and below
 $\hbar^{-1/5}$, and at $z=x+i\ue^t$ that theorem gives $|E_0(t)(z)|\ge c_*\ue^{t/2}\hbar^{3/2}t=c_*\hbar^{-p-1/2}t$. A bound
 $C(\alpha\hbar)^{-p}\ampNorm a$ with $C$ independent of $\hbar$ is smaller for small $\hbar$.
-(ii) Let $\gamma<\tfrac12$, $p\ge0$ and $t:=\hbar^{-1/5}$, which lies in the range of Theorem~\ref{cl:main} for small $\hbar$. At
-$z=x+i\ue^t$ we have $m(z)^\gamma\le(5\ue^t)^{\max(\gamma,0)}$, so a bound $C\,m(z)^\gamma\hbar^{-p}\ampNorm a$ is at most
-$C'\ue^{\max(\gamma,0)t}\hbar^{-p}$, while $|E_0(t)(z)|\ge c_*\ue^{t/2}\hbar^{3/2}t$. The ratio of the lower to the upper bound is at least
-$c\,\ue^{(1/2-\max(\gamma,0))\hbar^{-1/5}}\hbar^{p+3/2}$, which tends to infinity as $\hbar\to0$.
+(ii) Let $\sigma<\tfrac12$, $p\ge0$ and $t:=\hbar^{-1/5}$, which lies in the range of Theorem~\ref{cl:main} for small $\hbar$. At
+$z=x+i\ue^t$ we have $m(z)^\sigma\le(5\ue^t)^{\max(\sigma,0)}$, so a bound $C\,m(z)^\sigma\hbar^{-p}\ampNorm a$ is at most
+$C'\ue^{\max(\sigma,0)t}\hbar^{-p}$, while $|E_0(t)(z)|\ge c_*\ue^{t/2}\hbar^{3/2}t$. The ratio of the lower to the upper bound is at least
+$c\,\ue^{(1/2-\max(\sigma,0))\hbar^{-1/5}}\hbar^{p+3/2}$, which tends to infinity as $\hbar\to0$.
 \end{proof}
 
 \subsection{Relative accuracy and rational boundary points}\label{subsec:cl-relative}

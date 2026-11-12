@@ -24,21 +24,22 @@ All Lean names are in the namespace `Qschubert`.
 | Corollary 1.4 (`pc:cor15`) | L | `pccor15_all` |
 | Corollary 1.5 (`pc:cor16`) | L | `pccor16_all`; bounded geometry: `pccor16bg_all` |
 | Proposition 1.6 (`prop:g5`) | L | `propG5`; the negation of Schubert's bound is `printedThm13_false` |
-| Theorem 1.7 (`cl:necessary`) | P | deduced from Theorem 9.2 (`cl:main`); not formalized |
+| Theorem 1.7 (`cl:necessary`) | P | deduced from Theorem 9.1 (`cl:main`); not formalized |
 | Theorem 1.8 (`ev:mod`) | L′ | parts (i), (ii): `evmod`, with the statement `Stmt_evmod`; part (iii) is a cited theorem and is not formalized |
 
 ## Section 2 (`sec:remainder`): periodization and the exact remainder
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Lemma 2.1 (`lem:p1`) | L | `poincareSup_lt_top` |
-| Lemma 2.3 (`lem:t2`) | L | `lem_t2` |
-| Lemma 2.4 (`lem:lift`) | L | `allWords_of_exp`, `patch_smooth`, `glue_smooth`, `lift1` |
-| Lemma 2.5 (`lem:base`) | L | `exists_stab_smul_infty`, `initState_mul`, `approxSolB_mul`, `expLambda_iso`, `poincareSup_conj_move` |
-| Lemma 2.7 (`lem:surf-lap`) | L | `SurfW.surf_lap` |
-| Lemma 2.8 (`lem:surf-duh`) | L | `SurfW.surf_duhamel` |
-| Corollary 2.9 (`cor:surf-dyson`) | L | `SurfW.surf_dyson` |
-| Proposition 2.10 (`prop:dd-id`) | L | `dd_D12_simplex`, `SurfW.surf_D4`, `SurfW.surf_D4_bound` |
+| Lemma 2.1 (`lem:count`) | P | elementary area count; its orbit case, used for Lemma 2.3 (`lem:p1`) and Proposition 5.9 (`os:p1`), is `exists_orbit_count` |
+| Lemma 2.3 (`lem:p1`) | L | `poincareSup_lt_top` |
+| Lemma 2.4 (`lem:t2`) | L | `lem_t2` |
+| Lemma 2.5 (`lem:lift`) | L | `allWords_of_exp`, `patch_smooth`, `glue_smooth`, `lift1` |
+| Lemma 2.6 (`lem:base`) | L | `exists_stab_smul_infty`, `initState_mul`, `approxSolB_mul`, `expLambda_iso`, `poincareSup_conj_move` |
+| Lemma 2.8 (`lem:surf-lap`) | L | `SurfW.surf_lap` |
+| Lemma 2.9 (`lem:surf-duh`) | L | `SurfW.surf_duhamel` |
+| Corollary 2.10 (`cor:surf-dyson`) | L | `SurfW.surf_dyson` |
+| Proposition 2.11 (`prop:dd-id`) | L | `dd_D12_simplex`, `SurfW.surf_D4`, `SurfW.surf_D4_bound` |
 
 ## Section 3 (`sec:analytic`): analytic and weighted propagation estimates
 
@@ -66,8 +67,7 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Theorem 4.2 (`thm:dd-appx`) | L | `thm14R_rep` |
-| Corollary 4.5 (`thm:main`) | L | `thm13R_fixed` (from `thm14Rmain_exp` and `swNormD_mono`) |
+| Theorem 4.1 (`thm:dd-appx`) | L | `thm14R_rep` |
 
 ## Section 5 (`sec:printed`): original-norm approximation and critical weights
 
@@ -84,18 +84,21 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 5.8 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
 | Proposition 5.9 (`os:p1`) | L | `poincare_omP`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
 | Lemma 5.10 (`os:indep`) | L | `surfV_indep` |
-| Proposition 5.11 (`pc:core`) | L | `dd_core_pc` (the bound for the Dyson remainder of Proposition 2.10 (`prop:dd-id`)(ii)), with `SurfW.surf_D4` (the error equals that remainder) |
+| Proposition 5.11 (`pc:core`) | L | `dd_core_pc` (the bound for the Dyson remainder of Proposition 2.11 (`prop:dd-id`)(ii)), with `SurfW.surf_D4` (the error equals that remainder) |
 
 ## Section 6 (`sec:consequences`): consequences and localized amplitudes
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Lemma 6.1 (`pc:g43`) | L | `sobolev_M_mult` |
-| Corollary 6.3 (`cor:dd15`) | L | `cor15Rmain_exp` (reversed-weight norm, exponent `β+1/2`), `cor15R_rep` (power-weight norm) |
-| Corollary 6.4 (`cor:dd16`) | L | `cor16Rmain_expmult`, `cor16R_mult`; bounded geometry: `cor16Rmain_expbg`, `cor16R_rep` |
-| Lemma 6.5 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
-| Lemma 6.6 (`lem:ex`) | P | not used by the theorems |
-| Corollary 6.7 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.6 (`lem:ex`) and Theorem 1.2 (`thm:dd14`); self-checked, not separately formalized |
+| Remark 6.2 (`pc:remcusp`) | P | two-sided bound for `m(z)` in a cusp; self-checked, not formalized |
+| Remark 6.3 (`rem:g4`) | P |  |
+| Corollary 6.4 (`thm:main`) | L | `thm13R_fixed` (from `thm14Rmain_exp` and `swNormD_mono`) |
+| Corollary 6.5 (`cor:dd15`) | L | `cor15Rmain_exp` (reversed-weight norm, exponent `β+1/2`), `cor15R_rep` (power-weight norm) |
+| Corollary 6.6 (`cor:dd16`) | L | `cor16Rmain_expmult`, `cor16R_mult`; bounded geometry: `cor16Rmain_expbg`, `cor16R_rep` |
+| Remark 6.7 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
+| Lemma 6.8 (`lem:ex`) | P | not used by the theorems |
+| Corollary 6.9 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.8 (`lem:ex`) and Theorem 1.2 (`thm:dd14`); self-checked, not separately formalized |
 
 ## Section 7 (`sec:expect`): expectation values and escape of mass
 
@@ -117,16 +120,15 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Remark 9.1 (`rem:g4`) | P |  |
-| Proposition 9.4 (`cl:relative`) | P | extracted from the relative-error remark; self-checked |
-| Theorem 9.2 (`cl:main`), Lemmas 9.5 (`cl:ssob`), 9.6 (`cl:asym`), 9.15 (`cl:kernel`), 9.17 (`cl:amp`) | P |  |
-| Lemmas 9.16 (`cl:aux`), 9.19 (`cl:noncancel`) | P | auxiliary estimates and noncancellation separated from the amplitude proof; self-checked, not separately formalized |
-| Corollary 9.20 (`cl:rational`) | P | transport of Theorems 9.2 (`cl:main`) and 1.7 (`cl:necessary`) to rational boundary points; self-checked |
+| Proposition 9.3 (`cl:relative`) | P | extracted from the relative-error remark; self-checked |
+| Theorem 9.1 (`cl:main`), Lemmas 9.4 (`cl:ssob`), 9.5 (`cl:asym`), 9.14 (`cl:kernel`), 9.16 (`cl:amp`) | P |  |
+| Lemmas 9.15 (`cl:aux`), 9.18 (`cl:noncancel`) | P | auxiliary estimates and noncancellation separated from the amplitude proof; self-checked, not separately formalized |
+| Corollary 9.19 (`cl:rational`) | P | transport of Theorems 9.1 (`cl:main`) and 1.7 (`cl:necessary`) to rational boundary points; self-checked |
 
 ## Appendix A (`app:special`): special-function and kernel calculations
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Lemma A.3 (`lem:gutzmer`) | P | used only for Lemma 6.6 (`lem:ex`) |
+| Lemma A.3 (`lem:gutzmer`) | P | used only for Lemma 6.8 (`lem:ex`) |
 | Lemma A.4 (`os:poisson`) | P | used only in Proposition 5.2 (`pc:classes`) and Section 9 (`subsec:cl`) |
 | Lemma A.8 (`os:hk`) | P | used only in Section 9 (`subsec:cl`) |

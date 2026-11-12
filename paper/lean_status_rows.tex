@@ -13,6 +13,7 @@ Proposition~\ref{prop:g5} & L & \lean{propG5}; the negation of Schubert's bound 
 Theorem~\ref{cl:necessary} & P & deduced from Theorem~\ref{cl:main}; not formalized\\
 Theorem~\ref{ev:mod} & L$'$ & parts (i), (ii): \lean{evmod}, with the statement \lean{Stmt_evmod}; part (iii) is a cited theorem and is not formalized\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:remainder}: periodization and the exact remainder}}\\
+Lemma~\ref{lem:count} & P & elementary area count; its orbit case, used for Lemma~\ref{lem:p1} and Proposition~\ref{os:p1}, is \lean{exists_orbit_count}\\
 Lemma~\ref{lem:p1} & L & \lean{poincareSup_lt_top}\\
 Lemma~\ref{lem:t2} & L & \lean{lem_t2}\\
 Lemma~\ref{lem:lift} & L & \lean{allWords_of_exp}, \lean{patch_smooth}, \lean{glue_smooth}, \lean{lift1}\\
@@ -41,7 +42,6 @@ Lemma~\ref{lem:wb} & L & \lean{lem_wb_w}, \lean{lem_wb_u}\\
 Lemma~\ref{lem:unw} & L & \lean{unw_err}\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:companion}: power-weight and reversed-weight approximation}}\\
 Theorem~\ref{thm:dd-appx} & L & \lean{thm14R_rep}\\
-Corollary~\ref{thm:main} & L & \lean{thm13R_fixed} (from \lean{thm14Rmain_exp} and \lean{swNormD_mono})\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:printed}: original-norm approximation and critical weights}}\\
 Proposition~\ref{pc:classes} & P & \\
 Lemma~\ref{os:speed} & L & \lean{finite_speed}, \lean{finite_speed_inner}\\
@@ -56,10 +56,13 @@ Proposition~\ref{os:p1} & L & \lean{poincare_omP}, \lean{mS_printed_sharp}, \lea
 Lemma~\ref{os:indep} & L & \lean{surfV_indep}\\
 Proposition~\ref{pc:core} & L & \lean{dd_core_pc} (the bound for the Dyson remainder of Proposition~\ref{prop:dd-id}(ii)), with \lean{SurfW.surf_D4} (the error equals that remainder)\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:consequences}: consequences and localized amplitudes}}\\
-Lemma~\ref{pc:g43} & L & \lean{sobolev_M_mult}\\[2pt]
+Lemma~\ref{pc:g43} & L & \lean{sobolev_M_mult}\\
+Remark~\ref{pc:remcusp} & P & two-sided bound for $m(z)$ in a cusp; self-checked, not formalized\\
+Remark~\ref{rem:g4} & P & \\[2pt]
+Corollary~\ref{thm:main} & L & \lean{thm13R_fixed} (from \lean{thm14Rmain_exp} and \lean{swNormD_mono})\\
 Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_exp} (reversed-weight norm, exponent $\beta+\tfrac12$), \lean{cor15R_rep} (power-weight norm)\\
 Corollary~\ref{cor:dd16} & L & \lean{cor16Rmain_expmult}, \lean{cor16R_mult}; bounded geometry: \lean{cor16Rmain_expbg}, \lean{cor16R_rep}\\
-Lemma~\ref{rem:amplitude-examples} & P & elementary norm identities and an example; self-checked, not separately formalized\\
+Remark~\ref{rem:amplitude-examples} & P & elementary norm identities and an example; self-checked, not separately formalized\\
 Lemma~\ref{lem:ex} & P & not used by the theorems\\[2pt]
 Corollary~\ref{cor:localized} & P & extracted from the localized-state application of Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}; self-checked, not separately formalized\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:expect}: expectation values and escape of mass}}\\
@@ -71,7 +74,6 @@ Lemmas~\ref{ev:mellinlemma}, \ref{ev:scattering}, \ref{ev:approxmode}, \ref{ev:i
 Proposition~\ref{prop:mean} & L & \lean{meanGrowth}; \lean{integral_approxSolB}, \lean{J_vecX}, \lean{J_vecY}, \lean{chP_dysT}, \lean{swapped_setup}, \lean{enorm_integral_le_perio}\\
 Corollary~\ref{cor:meanJ} & P & deduced from Proposition~\ref{prop:mean} and Theorem~\ref{thm:dd14}; self-checked, not formalized\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:cusp}: sharpness of the cusp factor}}\\
-Remark~\ref{rem:g4} & P & \\
 Proposition~\ref{cl:relative} & P & extracted from the relative-error remark; self-checked\\
 Theorem~\ref{cl:main}, Lemmas~\ref{cl:ssob}, \ref{cl:asym}, \ref{cl:kernel}, \ref{cl:amp} & P & \\
 Lemmas~\ref{cl:aux}, \ref{cl:noncancel} & P & auxiliary estimates and noncancellation separated from the amplitude proof; self-checked, not separately formalized\\[2pt]

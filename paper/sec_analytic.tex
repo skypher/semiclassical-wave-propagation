@@ -1,14 +1,9 @@
 \section{Analytic and weighted propagation estimates}\label{sec:analytic}
 Proposition~\ref{prop:dd-id}(ii) reduces the approximation error to a simplex integral of
 $\|\mathcal V_{s_1}b'\|$, where $b'$ is a polynomial in $X,Y$ applied to the amplitude.
-The estimates in this section serve the two terms of a comparison with the mollified flow.
-For $g(r)=V_\varepsilon(r,s_1)b'$ and
-$d(r)=(\Delta(r)-\Delta_\varepsilon(r))g(r)$, quotient Duhamel gives
-\[
- \mathcal V_{s_1}b'=\mathcal V_0g(0)-\frac{i\hbar}{2}
- \int_0^{s_1}\mathcal V_r d(r)\,dr.
-\]
-The proof in Section~\ref{sec:companion} justifies this identity in the required weighted class.
+The estimates in this section serve the two terms of the comparison of $\mathcal V_{s_1}b'$ with the mollified flow
+$V_\varepsilon$ made in the proofs of Section~\ref{sec:companion}: the term $\mathcal V_0V_\varepsilon(s_1)^*b'$, and a Duhamel
+integral of the mollifier defect $(\Delta(r)-\Delta_\varepsilon(r))V_\varepsilon(r,s_1)b'$, $0\le r\le s_1$.
 Weighted propagation (Proposition~\ref{prop:ws}) and periodization control the first term.
 For the second, analytic propagation (Proposition~\ref{prop:a0}) and the mollifier-defect
 estimate (Lemma~\ref{lem:unw}) give exponential smallness without a spatial weight;
@@ -19,17 +14,17 @@ factorial dependence on the expansion and derivative orders.
 
 \medskip\noindent\textbf{Notation.}
 We use $X$, $Y$, $\Delta(s)$, $\Lambda$, $X_0$, $\tilde\psi$ and the power-weight norm $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}$
-of Section~\ref{sec:setup}, and $W_\beta=X_0^\beta$ of Section~\ref{sec:remainder}.
+of Section~\ref{sec:setup}.
 By Lemma~\ref{lem:m2w} a finite norm with the weight $\ue^{\beta\langle d\rangle}$ at radius $\alpha$ gives a finite norm of this
 kind at the radius $c_0\alpha$; this gives the reversed-weight consequence in Section~\ref{sec:swapped}.
 The two-time mollified propagator $V_\varepsilon(s_1,s_0)=V_\varepsilon(s_1)V_\varepsilon(s_0)^*$ is defined in
 Section~\ref{app:kl}.
 
 \subsection{The mollifier and elliptic regularity}
-Let $J_\varepsilon=\chi_\varepsilon(\varepsilon\Lambda)$, $\chi_\varepsilon=g_\varepsilon*\chi$, where, as in
-\cite[(4.20)--(4.21)]{S}, $\chi\in C_c^\infty(\mathbb R)$ has $\operatorname{supp}\chi\subset[-2,2]$ and $\chi=1$ on $[-1,1]$, and in
-addition $\chi$ is real, even and $0\le\chi\le1$; here $g_\varepsilon=\varepsilon^{-1}g(\cdot/\varepsilon)$ with $g$ the unit
-Gaussian, so $J_\varepsilon=j_\varepsilon(\Lambda)$ with $j_\varepsilon=g*\chi(\varepsilon\,\cdot)$ and $0\le j_\varepsilon\le1$. Put $\Delta_\varepsilon(t)=J_\varepsilon\Delta(t)J_\varepsilon$, with $\Delta(t)=\ue^{-2t}X^2+Y^2-Y$.
+Let $J_\varepsilon:=j_\varepsilon(\Lambda)$ with $j_\varepsilon:=g*\chi(\varepsilon\,\cdot)$, where $g$ is the unit Gaussian and, as in
+\cite[(4.20)--(4.21)]{S}, $\chi\in C_c^\infty(\mathbb R)$ has $\operatorname{supp}\chi\subset[-2,2]$ and $\chi=1$ on $[-1,1]$; in
+addition $\chi$ is real, even and $0\le\chi\le1$, so $0\le j_\varepsilon\le1$. (In the notation of \cite{S},
+$J_\varepsilon=\chi_\varepsilon(\varepsilon\Lambda)$ with $\chi_\varepsilon=g_\varepsilon*\chi$ and $g_\varepsilon=\varepsilon^{-1}g(\cdot/\varepsilon)$.) Put $\Delta_\varepsilon(t)=J_\varepsilon\Delta(t)J_\varepsilon$, with $\Delta(t)=\ue^{-2t}X^2+Y^2-Y$.
 
 \begin{lemma}[elliptic estimate]\label{lem:ell}
 For $f,g\in C_c^\infty(\Hb)$,
@@ -93,10 +88,10 @@ Take equally spaced radii $\alpha''=r_0<r_1<\cdots<r_m=\alpha$, and insert $\ue^
 Each factor $\ue^{r_{i-1}\Lambda}Z_i\ue^{-r_i\Lambda}$ is bounded by $C_1m/(\alpha-\alpha'')$ (Lemma~\ref{lem:fc}). The identity extends from the spectral core of Appendix~\ref{app:fc-proof} by closure, since each $\ue^{r_i\Lambda}$ is closed. Finally $m^m\le\ue^m m!$. \qedhere
 \end{proof}
 
-Weights enter through the following algebra. Let $\mathcal A:=\operatorname{span}\{y,\;x,\;(x^2+1)/y\}$.
+Weights enter through the following algebra. Let $\mathfrak A:=\operatorname{span}\{y,\;x,\;(x^2+1)/y\}$.
 \begin{itemize}
-\item $\mathcal A$ contains $X_0=\tfrac12\bigl((x^2+1)/y+y\bigr)$.
-\item $\mathcal A$ is invariant under $X$ and $Y$: $Xy=0$, $Xx=y$, $X((x^2+1)/y)=2x$; $Yy=y$, $Yx=0$, $Y((x^2+1)/y)=-(x^2+1)/y$.
+\item $\mathfrak A$ contains $X_0=\tfrac12\bigl((x^2+1)/y+y\bigr)$.
+\item $\mathfrak A$ is invariant under $X$ and $Y$: $Xy=0$, $Xx=y$, $X((x^2+1)/y)=2x$; $Yy=y$, $Yx=0$, $Y((x^2+1)/y)=-(x^2+1)/y$.
 \item In this basis the $\ell^1$-operator norms are $\norm{X}\le2$ and $\norm{Y}\le1$.
 \item Since $X_0\ge y/2$, $X_0\ge|x|$ (because $x^2+y^2+1-2y|x|=(|x|-y)^2+1$), and $X_0\ge(x^2+1)/(2y)$, every $v=c_1y+c_2x+c_3(x^2+1)/y$ satisfies $|v|\le2\norm{c}_1X_0$.
 \item Hence $|Z_BX_0|\le2\cdot2^{|B|}X_0$ for every word $Z_B$.
@@ -105,31 +100,31 @@ Weights enter through the following algebra. Let $\mathcal A:=\operatorname{span
 \begin{lemma}[Faà di Bruno bound]\label{lem:fdb}
 For $\beta\ge0$ and a word $Z_S$ of length $j$:
 \[
-|X_0^\beta Z_SX_0^{-\beta}|\le B_\beta\,j!\,\rho_\beta^{-j},\qquad \rho_\beta:=\tfrac14\log(3/2)
+|X_0^\beta Z_SX_0^{-\beta}|\le B_\beta\,j!\,\rho_*^{-j},\qquad \rho_*:=\tfrac14\log(3/2)
 \]
-(any fixed value below $\tfrac12\log(3/2)$ works), where $B_\beta$ depends only on $\beta$.
+(any fixed value below $\tfrac12\log(3/2)$ works; $\rho_*$ does not depend on $\beta$), where $B_\beta$ depends only on $\beta$.
 \end{lemma}
 
 \begin{proof}
 Expand by induction on $j$: $Z_S\varphi(X_0)=\sum_{\pi}\varphi^{(|\pi|)}(X_0)\prod_{B\in\pi}Z_BX_0$, the sum over partitions $\pi$ of $S$, where each block $B$ inherits the order of $S$.
 With $\varphi(u)=u^{-\beta}$, $|\varphi^{(k)}(u)|=(\beta)_ku^{-\beta-k}$. So the bound is $2^j\sum_kS(j,k)(\beta)_k2^k$, with the Stirling numbers $S(j,k)$.
 The exponential generating function of $\sum_kS(j,k)(\beta)_k2^k$ is $(3-2\ue^z)^{-\beta}$, which is holomorphic on $|z|<\log(3/2)$.
-Cauchy's estimate on $|z|=\rho<\log(3/2)$ gives the bound $C_{\beta,\rho}\,j!\,\rho^{-j}$. Combined with the factor $2^j$, this gives $\rho_\beta=\rho/2$. \qedhere
+Cauchy's estimate on $|z|=\rho<\log(3/2)$ gives the bound $C_{\beta,\rho}\,j!\,\rho^{-j}$. Combined with the factor $2^j$, this gives $\rho_*=\rho/2$. \qedhere
 \end{proof}
 
 \begin{lemma}[weighted Cauchy estimate for words]\label{lem:sc}
 For $\beta\ge0$, a word $Z_1\cdots Z_m$ and $0<\alpha\le\tau_0$, with $F:=X_0^\beta a$ and $\norm{\ue^{\alpha\Lambda}F}<\infty$:
 \[
 \norm{X_0^\beta Z_1\cdots Z_m a}\le B_\beta(m+1)\,m!\,(C_3/\alpha)^m\,\norm{\ue^{\alpha\Lambda}X_0^\beta a},
-\qquad C_3:=\max(\ue C_1,\tau_0/\rho_\beta).
+\qquad C_3:=\max(\ue C_1,\tau_0/\rho_*).
 \]
 \end{lemma}
 
 \begin{proof}
 By the Leibniz rule for words of derivations,
 \[X_0^\beta Z_1\cdots Z_m(X_0^{-\beta}F)=\sum_{S\subseteq[m]}(X_0^\beta Z_SX_0^{-\beta})\,(Z_{S^c}F)\]
-pointwise. Bound each term by $B_\beta|S|!\rho_\beta^{-|S|}\norm{Z_{S^c}F}$, and the second factor by Lemma~\ref{lem:wc} with $\alpha''=0$: $\norm{Z_{S^c}F}\le(\ue C_1/\alpha)^{m-|S|}(m-|S|)!\,\norm{\ue^{\alpha\Lambda}F}$.
-Since $\sum_{|S|=j}j!(m-j)!=m!$, the sum is $\le B_\beta\,m!\sum_j\rho_\beta^{-j}(\ue C_1/\alpha)^{m-j}\le B_\beta(m+1)m!(C_3/\alpha)^m$. \qedhere
+pointwise. Bound each term by $B_\beta|S|!\rho_*^{-|S|}\norm{Z_{S^c}F}$, and the second factor by Lemma~\ref{lem:wc} with $\alpha''=0$: $\norm{Z_{S^c}F}\le(\ue C_1/\alpha)^{m-|S|}(m-|S|)!\,\norm{\ue^{\alpha\Lambda}F}$.
+Since $\sum_{|S|=j}j!(m-j)!=m!$, the sum is $\le B_\beta\,m!\sum_j\rho_*^{-j}(\ue C_1/\alpha)^{m-j}\le B_\beta(m+1)m!(C_3/\alpha)^m$. \qedhere
 \end{proof}
 
 \subsection{Multiplication by spatial weights}\label{app:m}
@@ -235,7 +230,7 @@ $k_1(\nu,\nu')$ computed in step (X) of the proof of Lemma~\ref{lem:fc}, and
 The operators are the same for every $k$, so all bounds are uniform in $k$.
 
 \begin{lemma}[clipped conjugation of $XJ_\varepsilon$]\label{lem:clip}
-Let $\tau_0<\pi/2$, $L\ge\tfrac12$ and $\Lambda_L:=\min(\Lambda,L)$. For real $s$ let $R_s:=\ue^{s\Lambda_L}XJ_\varepsilon\ue^{-s\Lambda_L}$, a bounded
+Let $\tau_0<\pi/2$, $L\ge\tfrac12$ and $\Lambda_{\le L}:=\min(\Lambda,L)$. For real $s$ let $R_s:=\ue^{s\Lambda_{\le L}}XJ_\varepsilon\ue^{-s\Lambda_{\le L}}$, a bounded
 operator. Put
 \begin{gather*}
 g_K(x):=\frac{(1+|x|)\,\ue^{\tau_0|x|}}{2\cosh(\pi x/2)},\qquad g_Q(x):=\frac{(1+3|x|)\,|x|\,\ue^{\tau_0|x|}}{2\cosh(\pi x/2)},\\
@@ -244,16 +239,16 @@ A_1:=\int_{\mathbb R}g_K(x)\,dx,\qquad A_2:=\int_{\mathbb R}g_Q(x)\,dx .
 For $0\le\tau\le\tau_0$, $\varepsilon>0$ and $u\in L^2(\Hb)$,
 \[
 \bigl\|\tfrac12(R_\tau+R_{-\tau})u\bigr\|\le A_1\norm{\Lambda J_\varepsilon u},\qquad
-\bigl\|\tfrac12(R_\tau-R_{-\tau})u\bigr\|\le A_2\,\tau\,\norm{\Lambda_LJ_\varepsilon u},
+\bigl\|\tfrac12(R_\tau-R_{-\tau})u\bigr\|\le A_2\,\tau\,\norm{\Lambda_{\le L}J_\varepsilon u},
 \]
 and consequently
 \[
-\bigl|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle\bigr|\le2A_1A_2\,\tau\,\norm{\Lambda J_\varepsilon u}\,\norm{\Lambda_LJ_\varepsilon u}.
+\bigl|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle\bigr|\le2A_1A_2\,\tau\,\norm{\Lambda J_\varepsilon u}\,\norm{\Lambda_{\le L}J_\varepsilon u}.
 \]
 \end{lemma}
 \begin{proof}
-In the Kontorovich--Lebedev picture $\Lambda_L$ and $J_\varepsilon$ are multiplications by $\Lambda_L(\nu)=\min(\Lambda(\nu),L)$ and
-$j_\varepsilon(\Lambda(\nu))$. Put $x=\nu-\nu'$ and $\delta=\Lambda_L(\nu)-\Lambda_L(\nu')$, so $|\delta|\le|x|$. Up to the factor
+In the Kontorovich--Lebedev picture $\Lambda_{\le L}$ and $J_\varepsilon$ are multiplications by $\Lambda_{\le L}(\nu)=\min(\Lambda(\nu),L)$ and
+$j_\varepsilon(\Lambda(\nu))$. Put $x=\nu-\nu'$ and $\delta=\Lambda_{\le L}(\nu)-\Lambda_{\le L}(\nu')$, so $|\delta|\le|x|$. Up to the factor
 $i\operatorname{sgn}(k)$ of modulus one, the operators $\tfrac12(R_\tau+R_{-\tau})$ and $\tfrac12(R_\tau-R_{-\tau})$ have the kernels
 \[
 k_1(\nu,\nu')\cosh(\tau\delta)\,j_\varepsilon(\Lambda(\nu'))\qquad\text{and}\qquad k_1(\nu,\nu')\sinh(\tau\delta)\,j_\varepsilon(\Lambda(\nu')).
@@ -264,9 +259,9 @@ $(\nu\nu')^{1/2}\le(1+|x|)\Lambda(\nu')$. By \eqref{eq:zt1} and $\cosh(\tau\delt
 $K_A\circ\Lambda J_\varepsilon$ with a kernel $|K_A(\nu,\nu')|\le g_K(\nu-\nu')$, and the Schur test gives $\norm{K_A}\le A_1$.
 
 \emph{Odd part.} Here $|\sinh(\tau\delta)|\le\tau|\delta|\,\ue^{\tau_0|x|}$, and $\delta=0$ when $\Lambda(\nu)\ge L$ and
-$\Lambda(\nu')\ge L$. In the remaining cases $(\nu\nu')^{1/2}\le(1+|x|)\,\Lambda_L(\nu')$: if $\Lambda(\nu')\le L$ this is the inequality
-of the even part; if $\Lambda(\nu')>L\ge\Lambda(\nu)$, then $\Lambda_L(\nu')=L$ and
-$(\nu\nu')^{1/2}\le\nu+|x|/2\le L+|x|L$, because $\nu\le\Lambda(\nu)\le L$ and $L\ge\tfrac12$. So the odd part is $K_B\circ\Lambda_LJ_\varepsilon$ with
+$\Lambda(\nu')\ge L$. In the remaining cases $(\nu\nu')^{1/2}\le(1+|x|)\,\Lambda_{\le L}(\nu')$: if $\Lambda(\nu')\le L$ this is the inequality
+of the even part; if $\Lambda(\nu')>L\ge\Lambda(\nu)$, then $\Lambda_{\le L}(\nu')=L$ and
+$(\nu\nu')^{1/2}\le\nu+|x|/2\le L+|x|L$, because $\nu\le\Lambda(\nu)\le L$ and $L\ge\tfrac12$. So the odd part is $K_B\circ\Lambda_{\le L}J_\varepsilon$ with
 $|K_B(\nu,\nu')|\le\tau\,|x|\,g_K(x)\le\tau\,g_Q(x)$, and the Schur test gives $\norm{K_B}\le A_2\tau$.
 
 \emph{The imaginary part.} With $P=\tfrac12(R_\tau+R_{-\tau})u$ and $Q=\tfrac12(R_\tau-R_{-\tau})u$,
@@ -292,24 +287,24 @@ Indeed $j_\varepsilon(\lambda)\le\int_{|\mu|\le2/\varepsilon}g(\lambda-\mu)\,d\m
 $(4/\varepsilon)\lambda$. If $\lambda>4/\varepsilon$, then $\lambda-\mu>\lambda/2$ on the range of integration, so
 $j_\varepsilon(\lambda)\le\ue^{-\lambda^2/8}$ and $\lambda^2j_\varepsilon(\lambda)^2\le4/\ue$, while $\min(\lambda,L)\ge4/\varepsilon\ge4$.
 
-\emph{The clipped energy.} Fix $L\ge4/\varepsilon$, put $\Lambda_L=\min(\Lambda,L)$ and $\rho:=32A_1A_2\hbar/\varepsilon$, and let
-$\tau(s):=\alpha\,\ue^{-\rho|s-s_0|}$, $v(s):=V_\varepsilon(s,s_0)a$, $u(s):=\ue^{\tau(s)\Lambda_L}v(s)$. All operators involved are bounded.
+\emph{The clipped energy.} Fix $L\ge4/\varepsilon$, put $\Lambda_{\le L}=\min(\Lambda,L)$ and $\rho:=32A_1A_2\hbar/\varepsilon$, and let
+$\tau(s):=\alpha\,\ue^{-\rho|s-s_0|}$, $v(s):=V_\varepsilon(s,s_0)a$, $u(s):=\ue^{\tau(s)\Lambda_{\le L}}v(s)$. All operators involved are bounded.
 Since $v'=\tfrac{i\hbar}2\Delta_\varepsilon(s)v$,
 \[
-\tfrac{d}{ds}\norm{u}^2=2\tau'\langle u,\Lambda_Lu\rangle-\hbar\,\mathrm{Im}\bigl\langle u,\ue^{\tau\Lambda_L}\Delta_\varepsilon(s)\ue^{-\tau\Lambda_L}u\bigr\rangle .
+\tfrac{d}{ds}\norm{u}^2=2\tau'\langle u,\Lambda_{\le L}u\rangle-\hbar\,\mathrm{Im}\bigl\langle u,\ue^{\tau\Lambda_{\le L}}\Delta_\varepsilon(s)\ue^{-\tau\Lambda_{\le L}}u\bigr\rangle .
 \]
-Now $\Delta_\varepsilon(s)=J_\varepsilon\Delta J_\varepsilon-(1-\ue^{-2s})J_\varepsilon X^2J_\varepsilon$. The first term commutes with $\Lambda_L$ and is
-self-adjoint, so it does not contribute. For the second, $\ue^{\tau\Lambda_L}J_\varepsilon X^2J_\varepsilon\ue^{-\tau\Lambda_L}=-R_{-\tau}^*R_\tau$,
-because $X^*=-X$. Hence, by Lemma~\ref{lem:clip}, $\norm{\Lambda_LJ_\varepsilon u}\le\norm{\Lambda J_\varepsilon u}$ and the frequency bound,
+Now $\Delta_\varepsilon(s)=J_\varepsilon\Delta J_\varepsilon-(1-\ue^{-2s})J_\varepsilon X^2J_\varepsilon$. The first term commutes with $\Lambda_{\le L}$ and is
+self-adjoint, so it does not contribute. For the second, $\ue^{\tau\Lambda_{\le L}}J_\varepsilon X^2J_\varepsilon\ue^{-\tau\Lambda_{\le L}}=-R_{-\tau}^*R_\tau$,
+because $X^*=-X$. Hence, by Lemma~\ref{lem:clip}, $\norm{\Lambda_{\le L}J_\varepsilon u}\le\norm{\Lambda J_\varepsilon u}$ and the frequency bound,
 for $s\ge0$,
 \[
 \begin{aligned}
-\Bigl|\tfrac{d}{ds}\norm u^2-2\tau'\langle u,\Lambda_Lu\rangle\Bigr|\\ &=\hbar(1-\ue^{-2s})\bigl|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle\bigr|\\ &\le2A_1A_2\hbar\,\tau\,\langle u,\Lambda^2J_\varepsilon^2u\rangle\le2\rho\,\tau\,\langle u,\Lambda_Lu\rangle .
+\Bigl|\tfrac{d}{ds}\norm u^2-2\tau'\langle u,\Lambda_{\le L}u\rangle\Bigr|&=\hbar(1-\ue^{-2s})\bigl|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle\bigr|\\ &\le2A_1A_2\hbar\,\tau\,\langle u,\Lambda^2J_\varepsilon^2u\rangle\le2\rho\,\tau\,\langle u,\Lambda_{\le L}u\rangle .
 \end{aligned}
 \]
 Since $\tau'=-\rho\tau$ for $s>s_0$ and $\tau'=\rho\tau$ for $s<s_0$, $\norm{u(s)}$ does not increase as $s$ moves away from $s_0$, in
 either direction; all times between $s_0$ and $s_1$ are nonnegative. Therefore
-$\norm{\ue^{\tau(s_1)\Lambda_L}v(s_1)}\le\norm{\ue^{\alpha\Lambda_L}a}\le\norm{\ue^{\alpha\Lambda}a}$.
+$\norm{\ue^{\tau(s_1)\Lambda_{\le L}}v(s_1)}\le\norm{\ue^{\alpha\Lambda_{\le L}}a}\le\norm{\ue^{\alpha\Lambda}a}$.
 
 \emph{The radius.} By the hypothesis on $|s_1-s_0|$ and $32A_1A_2c_A\le1$,
 $\tau(s_1)\ge\alpha(1-\rho|s_1-s_0|)\ge\alpha'$. So $\norm{\ue^{\alpha'\min(\Lambda,L)}v(s_1)}\le\norm{\ue^{\alpha\Lambda}a}$ for every
@@ -396,8 +391,8 @@ in which no derivative falls on $c(r)g$. Now
 $|Xh|,|Yh|\le2\rho h$ and $|\Delta h|\le|X^2h|+|Y^2h|+|Yh|\le(2K+2\rho)h$. By Lemma~\ref{lem:wave}(a),
 $\norm{Wc(r)g}\le\ue^{2\rho|r|}\norm{Wg}$, $\norm{WXq(r)}+\norm{WYq(r)}\le2\ue^{2\rho|r|}\norm{Wu}$, and
 $\norm{Wq(r)}\le|r|\ue^{2\rho|r|}\norm{Wu}$ because $q(r)=\int_0^rc(r')u\,dr'$. So the integrand is at most
-$\bigl((2K+2\rho)|s-r|+8\rho\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$, and integrating gives the claim (with $\ue^{2\rho|s|}$ and
-$(K+\rho)s^2$).
+$\bigl((2K+2\rho)|s-r|+8\rho\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$. Integrating over $r$ gives the bound
+$\bigl(8\rho|s|+(K+\rho)s^2\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$, which implies the claim.
 \end{proof}
 
 By Fourier inversion, since $j_\varepsilon$ is even,
@@ -525,7 +520,9 @@ Use $L!\le2^Lq!(n+2K+2)!$, and then
 \end{aligned}
 \]
 using $\alpha,\hbar\le1\le C_3$.
-The per-factor weights for the $\Delta_\varphi$-factors are $2+2+1+1+1=7$ (weight $2$ for the length-$0$ and length-$1$ choices, weight $1$ for each of the three length-$\le2$ choices), so the weighted number of choices is $\le7^N3^{K+1}$, the factor $3^{K+1}$ coming from the $\Delta(s_j)$. Collecting the powers of $2$ and $7$ into $C_4$ gives (i).
+Summed over all choices, the factors $2^{n_0+n_1}$ give at most $7^N3^{K+1}$: each $\Delta_\varphi$-factor has two choices
+that carry the factor $2$ (lengths $0$ and $1$) and three that carry the factor $1$, so it contributes $2+2+1+1+1=7$, and each
+$\Delta(s_j)$ has three choices. Collecting the powers of $2$ and $7$ into $C_4$ gives (i).
 Part (ii) follows from the same count, using Lemma~\ref{lem:wc} (gap $\ge\alpha/4$) in place of Lemma~\ref{lem:sc}, and $n=0$. \qedhere
 \end{proof}
 

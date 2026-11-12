@@ -73,8 +73,8 @@ They give the following two operator bounds: Poisson smoothing preserves the cri
 and the change from $\Lambda$ to $\Lambda_m$ is bounded at that weight.
 
 \begin{corollary}[Poisson smoothing and the shifted multiplier at the critical weight]\label{os:cwp}
-Let $\tfrac12<c<1$. For $0<\tau\le1$ and $f\in L^2$, $\norm{\osomc\,\ue^{-\tau\osLam}f}\le K_c\norm{\osomc f}$. For $m\ge\tfrac12$,
-$\norm{\osomc(\Lambda_m-\osLam)f}\le K_{m,c}\norm{\osomc f}$.
+Let $\tfrac12<c<1$. For $0<\tau\le1$ and $f\in L^2$, $\norm{\osomc\,\ue^{-\tau\osLam}f}\le k_c\norm{\osomc f}$. For $m\ge\tfrac12$,
+$\norm{\osomc(\Lambda_m-\osLam)f}\le k_{m,c}\norm{\osomc f}$.
 \end{corollary}
 \begin{proof}
 Theorem~\ref{os:cw} with $g=g^{1/2}_\tau$ and Lemma~\ref{os:prof}(i),(iv), respectively with $g=G_m$ and Lemma~\ref{os:prof}(v).
@@ -100,9 +100,9 @@ with $C=C(m,c,\beta)$.
 \begin{proof}
 The identity is the bounded functional calculus: $-\sigma\Lambda_m+\sigma(\Lambda_m-\osLam)-(\alpha-\sigma)\osLam=-\alpha\osLam$. The operator
 $\mathsf B:=\Lambda_m-\osLam$ is bounded, and $\ue^{\sigma\mathsf B}=\sum_k\sigma^k\mathsf B^k/k!$ in operator norm. By Corollary~\ref{os:cwp},
-$\norm{\osomc\mathsf B^kf}\le K_{m,c}^k\norm{\osomc f}$, so the partial sums are bounded in the weighted norm by $\ue^{\sigma K_{m,c}}\norm{\osomc f}$, and
-Fatou's lemma gives $\norm{\osomc\ue^{\sigma\mathsf B}f}\le\ue^{K_{m,c}}\norm{\osomc f}$. Then apply Corollary~\ref{os:cwp} to
-$\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=K_c\,\ue^{K_{m,c}}$ works. For the consequence put $f=\ue^{\alpha\osLam}a$, so $a=\ue^{-\alpha\osLam}f$. Since $\tilde\psi\le d\le\langle d\rangle+1$ and
+$\norm{\osomc\mathsf B^kf}\le k_{m,c}^k\norm{\osomc f}$, so the partial sums are bounded in the weighted norm by $\ue^{\sigma k_{m,c}}\norm{\osomc f}$, and
+Fatou's lemma gives $\norm{\osomc\ue^{\sigma\mathsf B}f}\le\ue^{k_{m,c}}\norm{\osomc f}$. Then apply Corollary~\ref{os:cwp} to
+$\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=k_c\,\ue^{k_{m,c}}$ works. For the consequence put $f=\ue^{\alpha\osLam}a$, so $a=\ue^{-\alpha\osLam}f$. Since $\tilde\psi\le d\le\langle d\rangle+1$ and
 $\beta>\tfrac12$, $\osomc\le\ue^{d/2}(1+d/\log2)\le C_\beta\,\ue^{\beta\langle d\rangle}$.
 \end{proof}
 
@@ -168,8 +168,8 @@ The transfer estimate below applies to the derivative, flow and defect maps in t
 Periodization at the same weight then turns these estimates into bounds on the quotient.
 
 \begin{lemma}[transfer over shells]\label{os:transfer}
-Let $0\le c\le1$ and $D>0$, and let $\varpi$ be a measurable weight with $\ue^{n/2}(1+n)^c\le\varpi\le D\,\ue^{n/2}(1+n)^c$ on $A_n$ for
-every $n\ge0$; by \eqref{os:shell}, $\varpi=\osomc$ with $D=3\ue^{1/2}$ is an example. Let $T:L^2(\Hb)\to L^2(\Hb)$ be additive, and let
+Let $0\le c\le1$ and $C_{\mathrm{sh}}>0$, and let $\varpi$ be a measurable weight with $\ue^{n/2}(1+n)^c\le\varpi\le C_{\mathrm{sh}}\,\ue^{n/2}(1+n)^c$ on $A_n$ for
+every $n\ge0$; by \eqref{os:shell}, $\varpi=\osomc$ with $C_{\mathrm{sh}}=3\ue^{1/2}$ is an example. Let $T:L^2(\Hb)\to L^2(\Hb)$ be additive, and let
 $0<M_0\le M_1$ be such that
 \begin{itemize}
 \item[(a)] $\norm{Tu}\le M_0\norm u$ for all $u\in L^2$, and
@@ -179,15 +179,15 @@ Then for every $h\in L^2$,
 \[
 \norm{\varpi\,Th}\le C_{\mathrm{tr}}\,M_0^{1/4}M_1^{3/4}\,\norm{\varpi h},
 \]
-with a constant $C_{\mathrm{tr}}$ depending only on $c$ and $D$.
+with a constant $C_{\mathrm{tr}}$ depending only on $c$ and $C_{\mathrm{sh}}$.
 \end{lemma}
 \begin{proof}
 Let $u=1_nh$. By (a), $\norm{1_lTu}\le M_0\norm u$. By (b), since $\osX\ge\ue^l$ on $A_l$ and $\osX\le\ue^{n+1}$ on $A_n$,
 $\norm{1_lTu}\le\ue\,M_1\ue^{-(l-n)}\norm u$. For $l\ge n$, $\min(x,y)\le x^{1/4}y^{3/4}$ gives
 $\norm{1_lT1_n}\le\ue^{3/4}M_0^{1/4}M_1^{3/4}\ue^{-3(l-n)/4}$; for $l<n$ we use $M_0\le M_0^{1/4}M_1^{3/4}$. By the bounds for $\varpi$ and $c\le1$,
-$\sup_{A_l}\varpi/\inf_{A_n}\varpi\le D\,\ue^{(l-n)/2}(1+(l-n)_+)$. So with $a_n:=\norm{\varpi1_nh}$,
+$\sup_{A_l}\varpi/\inf_{A_n}\varpi\le C_{\mathrm{sh}}\,\ue^{(l-n)/2}(1+(l-n)_+)$. So with $a_n:=\norm{\varpi1_nh}$,
 \[
-\norm{\varpi1_lT1_nh}\le M_0^{1/4}M_1^{3/4}\,k(l-n)\,a_n,\qquad k(j):=\begin{cases}D\ue^{3/4}(1+j)\ue^{-j/4},&j\ge0,\\D\ue^{-|j|/2},&j<0.\end{cases}
+\norm{\varpi1_lT1_nh}\le M_0^{1/4}M_1^{3/4}\,k(l-n)\,a_n,\qquad k(j):=\begin{cases}C_{\mathrm{sh}}\ue^{3/4}(1+j)\ue^{-j/4},&j\ge0,\\C_{\mathrm{sh}}\ue^{-|j|/2},&j<0.\end{cases}
 \]
 Since $T$ is additive and bounded, $Th=\sum_nT1_nh$ in $L^2$, and therefore
 $\norm{\varpi Th}^2\le\sum_l\bigl(\sum_n\norm{\varpi1_lT1_nh}\bigr)^2\le M_0^{1/2}M_1^{3/2}\bigl(\sum_jk(j)\bigr)^2\sum_na_n^2$ by Young's inequality for
@@ -207,7 +207,7 @@ $\osomp(z)/\osomp(\delta_sz)\le\ue^{|s|/2}(1+|s|/\log2)^{c'}\le(2/\log2)\,\ue^{|
 The proof is that of Lemma~\ref{lem:t2}, with $\osomp$ in place of $\ue^{s\tilde\psi}$; only the first and last steps change.
 
 \emph{Pointwise Cauchy--Schwarz.} Since $\osomp(w)^2\asymp\ue^{d(w,x_0)}\osbr{d(w,x_0)}^{2c'}$ and $d(\gamma z,x_0)=d(z,\gamma^{-1}x_0)$,
-reindexing $\gamma\mapsto\gamma^{-1}$ and the counting bound \eqref{eq:count} for the orbit $\Gamma x_0$ give
+reindexing $\gamma\mapsto\gamma^{-1}$ and the counting bound of Lemma~\ref{lem:count} for the orbit $\Gamma x_0$ give
 \[
 \sum_\gamma\osomp(\gamma z)^{-2}\le C\sum_\gamma\ue^{-d(z,\gamma x_0)}\osbr{d(z,\gamma x_0)}^{-2c'}\le C\sum_{n\ge0}\ue^{n}\ue^{-n}(1+n)^{-2c'}<\infty,
 \]

@@ -6,7 +6,7 @@ are stated in the body of the paper.
 
 \subsection{The first-order Cauchy estimate}\label{app:fc-proof}
 \begin{proof}[Proof of Lemma~\ref{lem:fc}]
-\medskip\noindent\textbf{Reduction.}
+\medskip\noindent\emph{Reduction.}
 We use the Kontorovich--Lebedev picture of Section~\ref{app:kl}: after Fourier transform in $x$, on the mode $\ue^{ikx}$, $k\ne0$,
 with $z=|k|y$ and the function of $y$ written as $z^{1/2}f(z)$, $f\in L^2(dz/z)$, we have $-\Delta-\tfrac14=-(z\partial_z)^2+z^2$,
 $X=i\,\operatorname{sgn}(k)\,z$ and $Y=z\partial_z+\tfrac12$. Thus $Y_0:=Y-\tfrac12=z\partial_z=:D_z$ is skew-adjoint on $L^2(dz/z)$.
@@ -19,12 +19,12 @@ there. The mode $k=0$ has measure zero in the direct integral. Put $\gamma:=\alp
 \]
 The second factor has norm $\le\sup_{\lambda\ge1/2}\lambda\ue^{-\gamma\lambda}\le1/(\ue\gamma)$. It remains to bound the first factor uniformly for $\alpha''\le\tau_0$, and $Y=Y_0+\tfrac12$ adds at most $\tfrac12$.
 
-\medskip\noindent\textbf{Spectral notation.} Put $p:=\pi(\nu+\nu')/2$, $q:=\pi(\nu-\nu')/2$, $x:=\nu-\nu'$. Since $\sinh\pi\nu\,\sinh\pi\nu'=\sinh(p+q)\sinh(p-q)$,
+\medskip\noindent\emph{Spectral notation.} We put $x:=\nu-\nu'$, $p:=\pi(\nu+\nu')/2$ and $q:=\pi x/2$. Since $\sinh\pi\nu\,\sinh\pi\nu'=\sinh(p+q)\sinh(p-q)$,
 \[
 (w(\nu)w(\nu'))^{1/2}=\tfrac{2}{\pi^2}(\nu\nu')^{1/2}(\sinh^2p-\sinh^2q)^{1/2}=\tfrac{2}{\pi^2}(\nu\nu')^{1/2}(\cosh^2p-\cosh^2q)^{1/2}.
 \]
 
-\medskip\noindent\textbf{Mellin product formula.} For $\operatorname{Re}s>|\operatorname{Re}a|+|\operatorname{Re}b|$,
+\medskip\noindent\emph{Mellin product formula.} For $\operatorname{Re}s>|\operatorname{Re}a|+|\operatorname{Re}b|$,
 \[
 M_s(a,b):=\int_0^\infty z^{s-1}K_a(z)K_b(z)\,dz=2^{s-3}\,\frac{\Gamma\bigl(\tfrac{s+a+b}{2}\bigr)\Gamma\bigl(\tfrac{s+a-b}{2}\bigr)\Gamma\bigl(\tfrac{s-a+b}{2}\bigr)\Gamma\bigl(\tfrac{s-a-b}{2}\bigr)}{\Gamma(s)}.
 \]
@@ -39,7 +39,7 @@ $\Gamma(\tfrac{s-a+b}{2})$, and the $t$-integral gives the beta function
 $\Gamma(\tfrac{s-a-b}{2})\Gamma(\tfrac{s+a+b}{2})/\Gamma(s)$, yielding the formula above.
 The absolute integrand is the same expression with $a,b$ replaced by $\operatorname{Re}a,\operatorname{Re}b$ (since $|(z/2)^a|=(z/2)^{\operatorname{Re}a}$). For $\operatorname{Re}s>|\operatorname{Re}a|+|\operatorname{Re}b|$ the same computation then gives a finite value with all Gamma arguments of positive real part, so Tonelli justifies every exchange. This covers $a=i\nu$, $b=i\nu'$ at $s=1$, and $b=i\nu'\pm1$ at $s=1+\eta$, $\eta>0$. \qed
 
-\medskip\noindent\textbf{(X) Kernel of $z$.}
+\medskip\noindent\emph{(X) Kernel of $z$.}
 Since the measure is $dz/z$, the kernel of multiplication by $z$ is $(w w')^{1/2}M_1(i\nu,i\nu')$. The identity $|\Gamma(\tfrac12+iy)|^2=\pi/\cosh\pi y$ gives
 \[
 k_1(\nu,\nu')=(ww')^{1/2}\frac{\pi^2}{4\cosh p\cosh q}=\frac{(\nu\nu')^{1/2}(\cosh^2p-\cosh^2q)^{1/2}}{2\cosh p\cosh q},
@@ -55,7 +55,7 @@ Since $(\nu\nu')^{1/2}\le(\nu+\nu')/2\le\nu'+|x|/2$ and $\Lambda(\nu')\ge\max(\n
 \]
 So the kernel is at most $g(x):=(1+|x|)\ue^{\tau_0|x|}/(2\cosh(\pi x/2))$, which is integrable for $\tau_0<\pi/2$. The Schur test gives the bound $\int g$.
 
-\medskip\noindent\textbf{(Y) Kernel of $D_z$.} The integral $\int K_{i\nu}K'_{i\nu'}\,dz$ does not converge at $z=0$, so we regularize.
+\medskip\noindent\emph{(Y) Kernel of $D_z$.} The integral $\int K_{i\nu}K'_{i\nu'}\,dz$ does not converge at $z=0$, so we regularize.
 Let $F,G\in C_c^\infty((0,\infty))$ be the KL transforms of $f,g$ (the core $\mathcal C$).
 On $\mathcal C$, $f(\ue^{-L})$ and $zg'(z)|_{z=\ue^{-L}}$ decay faster than any power of $L$ as $L\to\infty$: they are integrals of smooth compactly supported densities against $\ue^{\pm i\nu L}$-oscillations, plus $O(\ue^{-2L})$. This uses $K_{i\nu}=\tfrac12\pi(I_{-i\nu}-I_{i\nu})/\sin(i\nu\pi)$ (\cite[10.27.4]{DLMF}) with the series of $I_{\pm i\nu}$ (\cite[10.25.2]{DLMF}), and $1/\sin(i\nu\pi)$ is smooth on $\operatorname{supp}F\subset(0,\infty)$.
 Hence $\langle f,D_zg\rangle=\int_0^\infty\bar f g'\,dz=\lim_{\eta\to0^+}\int z^\eta\bar fg'\,dz$, by dominated convergence.
@@ -90,11 +90,11 @@ For $x\neq0$ the pointwise limit is $I_0=-\pi^2/(4\sinh p\,\sinh q)$ (same Gamma
 
 This kernel is real and antisymmetric, as $D_z$ must be.
 
-\medskip\noindent\textbf{(Y) bound.} The kernel of $Q:=\ue^{\alpha''\Lambda}D_z\ue^{-\alpha''\Lambda}\Lambda^{-1}$ is $\ue^{\alpha''(\Lambda(\nu)-\Lambda(\nu'))}\tilde D(\nu,\nu')/\Lambda(\nu')$. It is valid on $\mathcal C$, because $\ue^{\pm\alpha''\Lambda}$ and $\Lambda^{-1}$ preserve $\mathcal C$. Split $Q=Q_{\rm far}+Q_{\rm near}$, with $Q_{\rm near}:=Q\cdot\mathbf 1_{|x|\le1}$.
+\medskip\noindent\emph{(Y) bound.} The kernel of $Q:=\ue^{\alpha''\Lambda}D_z\ue^{-\alpha''\Lambda}\Lambda^{-1}$ is $\ue^{\alpha''(\Lambda(\nu)-\Lambda(\nu'))}\tilde D(\nu,\nu')/\Lambda(\nu')$. It is valid on $\mathcal C$, because $\ue^{\pm\alpha''\Lambda}$ and $\Lambda^{-1}$ preserve $\mathcal C$. Split $Q=Q_{\rm far}+Q_{\rm near}$, with $Q_{\rm near}:=Q\cdot\mathbf 1_{|x|\le1}$.
 
-\textbf{$Q_{\rm far}$.} Here $|Q|\le(1+|x|)\ue^{\tau_0|x|}/(2\sinh(\pi|x|/2))$ on $|x|>1$. This is integrable, so the Schur test applies.
+\emph{The part $Q_{\rm far}$.} Here $|Q|\le(1+|x|)\ue^{\tau_0|x|}/(2\sinh(\pi|x|/2))$ on $|x|>1$. This is integrable, so the Schur test applies.
 
-\textbf{$Q_{\rm near}$.} Write $1/(2\sinh(\pi x/2))=1/(\pi x)+r(x)$, with $r$ bounded on $|x|\le1$.
+\emph{The part $Q_{\rm near}$.} Write $1/(2\sinh(\pi x/2))=1/(\pi x)+r(x)$, with $r$ bounded on $|x|\le1$.
 The $r$-part has a bounded kernel supported in $|x|\le1$, so the Schur test applies.
 In the main part $-a(\nu,\nu')/(\pi(\nu-\nu'))$, put
 \[a(\nu,\nu'):=\ue^{\alpha''(\Lambda(\nu)-\Lambda(\nu'))}(\nu\nu')^{1/2}\rho(\nu,\nu')/\Lambda(\nu').\]
@@ -241,7 +241,7 @@ $\ue^{2r\Lambda}\le\ue^{r}\ue^{2r\lambda}\le\sqrt{\ue}\,\ue^{2r\lambda}$,
 and integrating against $|\hat f|^2$ gives (a).
 \end{proof}
 
-\subsection{Kernels of the Poisson and heat semigroups}
+\subsection{Kernels of the Poisson and heat semigroups}\label{app:kernels}
 
 The two lemmas of this subsection are used in Section~\ref{sec:cusp} (Lemma~\ref{cl:kernel}), and the lower bound \eqref{os:lb}
 also in the proof of Proposition~\ref{pc:classes}. Neither is used in the proof of Theorem~\ref{pc:main}.
@@ -342,7 +342,7 @@ $\int_a^\infty\ue^{-\rho/2}(\cosh\rho-\cosh a)^{-1/2}d\rho$ is bounded for these
 \item[(a)] The affine maps $z\mapsto p_1z+p_2$,
 $p_1>0$, are isometries, commute with $X$ and $Y$ and act transitively, so it suffices to take $w=i$; there the bound is interior elliptic regularity for
 $\Delta$ on $B(i,1)$ and the Sobolev embedding $H^{2k}\subset C^{|S|}$ in dimension two.
-\item[(b)] The counting bound \eqref{eq:count}, with $2r_0=\delta_0$ and multiplicity $1$, gives $\#\{p\in P:d(p,w')\le R\}\le C_{\delta_0}\ue^R$
+\item[(b)] The counting bound of Lemma~\ref{lem:count}, with $2r_0=\delta_0$ and multiplicity $1$, gives $\#\{p\in P:d(p,w')\le R\}\le C_{\delta_0}\ue^R$
 for all $w'\in\Hb$ and $R\ge0$. Summing over the shells
 $R\le d(p,w')<R+1$, $\sum_{p\in P}\ue^{-d(p,w')}(1+d(p,w'))^{-3/2}\le C_{\delta_0}$ for every $w'\in\Hb$.
 \item[(c)] The estimate follows because $d(w,w')\ge d(i,w)-d(i,w')$ and
