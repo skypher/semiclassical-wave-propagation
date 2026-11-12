@@ -248,3 +248,4 @@ import Qschubert.EvModProof
 import Qschubert.KLPcAll
 import Qschubert.KLMean
 import Qschubert.KLCor16R
+import Qschubert.KLExactCor

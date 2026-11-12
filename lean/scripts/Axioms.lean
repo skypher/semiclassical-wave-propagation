@@ -2865,3 +2865,7 @@ import Qschubert
 #print axioms Qschubert.meanGrowth
 #print axioms Qschubert.cor16Rmain_mult
 #print axioms Qschubert.cor16R_mult
+#print axioms Qschubert.norm_expLambda_mono
+#print axioms Qschubert.swNormD_mono
+#print axioms Qschubert.thm13R_fixed
+#print axioms Qschubert.evTransfer_pc_all
