@@ -8,7 +8,7 @@ Theorem~\ref{pc:main} & L & \lean{pcmain_all}; small-radius stage: \lean{pcmain_
 Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_exp}\\
 Corollary~\ref{pc:thm13} & L & \lean{pcthm13_all}\\
 Corollary~\ref{pc:cor15} & L & \lean{pccor15_all}\\
-Corollary~\ref{pc:cor16} & L$'$ & \lean{pccor16_all}, \lean{pccor16bg_all} state the weaker prefactor exponent -2N-4; the paper derives -2N-2 from the approximation bound and local Sobolev inequality\\
+Corollary~\ref{pc:cor16} & L & \lean{pccor16_all}; bounded geometry: \lean{pccor16bg_all}\\
 Proposition~\ref{prop:g5} & L$'$ & \lean{printedThm13_false}: the negation of the printed theorem; the asymptotic formula is not formalized (Appendix~\ref{app:lean})\\
 Theorem~\ref{cl:necessary} & P & deduced from Theorem~\ref{cl:main}; not formalized\\
 Theorem~\ref{ev:mod} & L$'$ & parts (i), (ii): \lean{evmod}, with the statement \lean{Stmt_evmod}; part (iii) is a cited theorem and is not formalized\\
@@ -58,7 +58,7 @@ Proposition~\ref{pc:core} & L & \lean{dd_core_pc} (the bound for the Dyson remai
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:consequences}: consequences and localized amplitudes}}\\
 Lemma~\ref{pc:g43} & L & \lean{sobolev_M_mult}\\[2pt]
 Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_rep}, \lean{cor15R_rep} (reversed-weight and power-weight norms)\\
-Corollary~\ref{cor:dd16} & L$'$ & \lean{cor16Rmain_rep}, \lean{cor16R_rep} cover bounded geometry with weaker prefactor exponent -2N-4; the paper derives -2N-2 and the arbitrary-quotient estimate with the multiplicity factor for both companion norms\\
+Corollary~\ref{cor:dd16} & L & \lean{cor16Rmain_mult}, \lean{cor16R_mult}; bounded geometry: \lean{cor16Rmain_rep}, \lean{cor16R_rep}\\
 Lemma~\ref{rem:amplitude-examples} & P & elementary norm identities and an example; self-checked, not separately formalized\\
 Lemma~\ref{lem:ex} & P & not used by the theorems\\[2pt]
 Corollary~\ref{cor:localized} & P & extracted from the localized-state application of Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}; self-checked, not separately formalized\\

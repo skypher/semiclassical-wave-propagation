@@ -22,7 +22,7 @@ All Lean names are in the namespace `Qschubert`.
 | Theorem 1.2 (`thm:dd14`) | L | `thm14Rmain_exp` |
 | Corollary 1.3 (`pc:thm13`) | L | `pcthm13_all` |
 | Corollary 1.4 (`pc:cor15`) | L | `pccor15_all` |
-| Corollary 1.5 (`pc:cor16`) | L′ | `pccor16_all`, `pccor16bg_all` state the weaker prefactor exponent -2N-4; the paper derives -2N-2 from the approximation bound and local Sobolev inequality |
+| Corollary 1.5 (`pc:cor16`) | L | `pccor16_all`; bounded geometry: `pccor16bg_all` |
 | Proposition 1.6 (`prop:g5`) | L′ | `printedThm13_false`: the negation of the printed theorem; the asymptotic formula is not formalized (Appendix C (`app:lean`)) |
 | Theorem 1.7 (`cl:necessary`) | P | deduced from Theorem 9.2 (`cl:main`); not formalized |
 | Theorem 1.8 (`ev:mod`) | L′ | parts (i), (ii): `evmod`, with the statement `Stmt_evmod`; part (iii) is a cited theorem and is not formalized |
@@ -92,7 +92,7 @@ All Lean names are in the namespace `Qschubert`.
 |---|---|---|
 | Lemma 6.1 (`pc:g43`) | L | `sobolev_M_mult` |
 | Corollary 6.3 (`cor:dd15`) | L | `cor15Rmain_rep`, `cor15R_rep` (reversed-weight and power-weight norms) |
-| Corollary 6.4 (`cor:dd16`) | L′ | `cor16Rmain_rep`, `cor16R_rep` cover bounded geometry with weaker prefactor exponent -2N-4; the paper derives -2N-2 and the arbitrary-quotient estimate with the multiplicity factor for both companion norms |
+| Corollary 6.4 (`cor:dd16`) | L | `cor16Rmain_mult`, `cor16R_mult`; bounded geometry: `cor16Rmain_rep`, `cor16R_rep` |
 | Lemma 6.5 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
 | Lemma 6.6 (`lem:ex`) | P | not used by the theorems |
 | Corollary 6.7 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.6 (`lem:ex`) and Theorem 1.2 (`thm:dd14`); self-checked, not separately formalized |
