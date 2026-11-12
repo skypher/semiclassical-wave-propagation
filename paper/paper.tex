@@ -258,11 +258,15 @@ Amplitudes of finite norm are taken in their unique smooth representatives (Lemm
 absolutely convergent almost everywhere under the hypotheses used below (Section~\ref{sec:remainder}). The cutoff $\chi$
 of the mollifier (Section~\ref{sec:analytic}) is fixed once and for all, and constants may depend on it.
 
-\paragraph{Notation.} The following symbols keep one meaning throughout: $a$ the amplitude, $\alpha$ its analytic radius,
+\paragraph{Notation.} The following symbols keep one meaning throughout, except where a proof or definition explicitly
+declares a local summation index, integration variable or auxiliary parameter (for instance the bound $K$ of the weight class
+$\mathcal W(\rho,K)$ in Section~\ref{app:ws}, or the scalar parameters of the special-function calculations in
+Appendix~\ref{app:special}): $a$ the amplitude, $\alpha$ its analytic radius,
 $\beta$ the spatial decay exponent, $\kappa$ the constant in the condition $\alpha^3\ge\kappa\hbar$, $b$ the boundary point,
 $x_0$ the base point of the weights, $\Gamma$ the group and $M$ the quotient, $X,Y$ the vector fields above, $X_0$ and
 $\tilde\psi$ as above, $K$ the expansion order and $N$ the number of Laplacians, $\varepsilon$ the mollification scale,
-$\chi$ the mollifier cutoff, $\omega$ the periodization weight of Section~\ref{subsec:pc-weights}, $m(z)$ the local
+$\chi$ the mollifier cutoff, $\omega$ the periodization weight of Section~\ref{subsec:pc-weights} (a general weight is
+written $\varpi$), $m(z)$ the local
 multiplicity of Section~\ref{sec:repair}, and $H$ a height in a cusp. All other letters are local to the statement or
 proof in which they are introduced.
 
@@ -591,8 +595,9 @@ Appendix~\ref{app:lean} documents the scope of the formalization.
 This section gives two lower bounds for the error. Section~\ref{subsec:g5proof} proves Proposition~\ref{prop:g5}: the order
 $\hbar t$ of the leading error is attained on $\Hb$. Section~\ref{subsec:mean} computes the mean of the approximation exactly
 (Proposition~\ref{prop:mean}). On a surface of finite area this bounds the error from below in terms of the mean $\mathcal J$ of the
-initial state on $\Hb$; Corollary~\ref{cor:meanJ} shows that $\mathcal J$ is exponentially small, so that this bound cannot take
-effect before the end of the approximation window (Remark~\ref{rem:mean}).
+initial state on $\Hb$. Corollary~\ref{cor:meanJ} shows that $\mathcal J$ is exponentially small. Hence, for $K=0$ and amplitudes
+with $\norm{\psi_0}\ge c\swNorm a$, this bound takes effect at the earliest a bounded time before the end of the approximation
+window (Remark~\ref{rem:mean}); if $\mathcal J=0$ it gives no bound.
 \subsection{The order \texorpdfstring{$\hbar t$}{ht} of the leading error is attained}\label{subsec:g5proof}
 Every amplitude of finite reversed-weight norm has all its words in $X,Y$ in $L^2(\Hb)$
 (Lemmas~\ref{lem:m2w} and~\ref{lem:sc}); the same holds for the original norm
@@ -650,7 +655,7 @@ $Z_Sa\in L^1(\Hb)$ by the Cauchy--Schwarz inequality.
   \mathcal J(Xg)=0,\qquad \mathcal J(Yg)=\Bigl(1+\frac i\hbar\Bigr)\mathcal J(g).
 \]
 For the first identity let $\sigma_s(x+iy):=x+sy+iy$. This shear preserves $\nu$ and $y$, and
-$\tfrac{d}{ds}(g\circ\sigma_s)=(Xg)\circ\sigma_s$. So $g\circ\sigma_1-g=\int_0^1(Xg)\circ\sigma_s\,ds$ pointwise. Multiply by $e$ and
+$\tfrac{d}{ds}(g\circ\sigma_s)=(Xg)\circ\sigma_s$. So $g\circ\sigma_1-g=\int_0^1(Xg)\circ\sigma_s\,ds$ pointwise. Multiply by $\eta$ and
 integrate over $\Hb$; the order of integration may be exchanged, because $\int_{\Hb}|(Xg)\circ\sigma_s|\,d\nu=\norm{Xg}_{L^1}$ for
 every $s$. Since $\mathcal J(h\circ\sigma_s)=\mathcal J(h)$ for $h\in L^1$, this gives $0=\mathcal J(g\circ\sigma_1)-\mathcal J(g)=\mathcal J(Xg)$. For the second identity let
 $\delta_s(x+iy):=x+i\ue^sy$. Then $(\delta_s)_*\nu=\ue^s\nu$, $\eta\circ\delta_s=\ue^{-is/\hbar}\eta$ and
@@ -727,8 +732,11 @@ time scale $1/\hbar$; according to \cite{S} it would allow one to extend the tim
 An extension by this route also requires analytic and periodization estimates on the longer window.
 Whether the periodized approximation stays accurate beyond
 $\hbar^{-1/2}$ is open. On a surface of finite area, Proposition~\ref{prop:mean} limits the time of validity of each
-approximation $u^{(K)}(t)_\Gamma$ of fixed order $K$ in terms of the mean $\mathcal J$; by Corollary~\ref{cor:meanJ} this limit lies
-beyond the window $\delta(\alpha/\hbar)^{1/2}$ (Remark~\ref{rem:mean}), so it does not decide whether the window can be extended.
+approximation $u^{(K)}(t)_\Gamma$ of fixed order $K$ in terms of the mean $\mathcal J$, unless $\mathcal J=0$. For amplitudes with
+$\norm{\psi_0}\ge c\swNorm a$, $c>0$ fixed, Corollary~\ref{cor:meanJ} places this limit no earlier than
+$\delta(\alpha/\hbar)^{1/2}-O(1)$ for $K=0$ (Remark~\ref{rem:mean}). For $K\ge1$ it places the limit no earlier than
+$\delta(\alpha/\hbar)^{1/2}-O_K(\log(1/\hbar))$, because $|T_K(w)|\le C_K\hbar^{-3K/2}$ on the window. So this limit does not decide
+whether the window can be extended.
 
 \paragraph{Expectation values.} Evaluating the periodized approximation beyond the Ehrenfest time remains open outside the family of Theorem~\ref{ev:mod}.
 On compact surfaces, neither equidistribution in the sense of \cite{Sch05} nor the random wave behaviour of \cite{Ber77,BB79,IR22} is

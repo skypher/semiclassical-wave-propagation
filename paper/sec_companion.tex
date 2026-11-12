@@ -8,7 +8,7 @@ The notation $\pcNorm a$ is the original norm defined in Section~\ref{sec:setup}
 Work in the normalization $x_0=i$, $b=\infty$ justified by Lemma~\ref{lem:base}, and use
 $\Delta_\varphi(s)$, $\Sigma_{K+1}(t)$ and $\mathcal V_s$ from Section~\ref{subsec:dd-surf}.
 Both the power weights above exponent $1/2$ and the critical weight of Sections~\ref{app:o1st}--\ref{subsec:pc-transfer} satisfy the periodization and transport conditions (W1), (W2).
-Once every word in $X,Y$ applied to $a$ lies in $L^2_\omega$, Proposition~\ref{prop:dd-id}(ii) gives
+Once every word in $X,Y$ applied to $a$ lies in $L^2_\varpi$, for a weight $\varpi$ satisfying (W1) and (W2), Proposition~\ref{prop:dd-id}(ii) gives
 \begin{equation}\label{pc:remainder}
 \begin{aligned}
   &\norm{\Delta^N\bigl[\cU(t)(a\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma\bigr]}_{L^2(M)}\\
@@ -60,7 +60,7 @@ r_0:=c_M\alpha,\qquad r_1:=\tfrac34r_0,\qquad r_2:=\tfrac12r_0,\qquad\varepsilon
 \]
 so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=x/2$ and $\alpha/\varepsilon=2x$. Fix $\gamma:=(2\beta+1)/4\in(1/2,\beta)$ and put $\theta:=\gamma/\beta\in(0,1)$.
 
-Use Proposition~\ref{prop:dd-id}(ii) with $\omega=W_\gamma$; every word applied to $a$ lies in $L^2_\omega$ by Lemma~\ref{lem:sc}, since $W_\gamma\le X_0^\beta$. For each $\mathbf s=(s_1,\dots,s_{K+1})\in\Sigma_{K+1}(t)$ let
+Use Proposition~\ref{prop:dd-id}(ii) with $\varpi=W_\gamma$; every word applied to $a$ lies in $L^2_\varpi$ by Lemma~\ref{lem:sc}, since $W_\gamma\le X_0^\beta$. For each $\mathbf s=(s_1,\dots,s_{K+1})\in\Sigma_{K+1}(t)$ let
 \[
 g(t'):=V_\varepsilon(t',s_1)\,b',\quad0\le t'\le s_1,\qquad w:=g(0)=V_\varepsilon(s_1)^*b'.
 \]
@@ -82,7 +82,7 @@ By Lemma~\ref{lem:wb}(i) with $n=0$:
 \medskip\noindent\textbf{(II) Mollifier part.}
 
 By Lemma~\ref{lem:wb}(i) with $n\le2$, $X_0^\beta Zb'\in L^2$ for every $Z$ in $\mathcal S=\{1,X,Y,X^2,Y^2\}$. Thus Lemma~\ref{lem:path}(c), with the exponent
-$\gamma$, shows that $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for $\omega=W_\gamma$. Since $g'=c\,\Delta_\varepsilon(t')g$,
+$\gamma$, shows that $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for $\varpi=W_\gamma$. Since $g'=c\,\Delta_\varepsilon(t')g$,
 Duhamel on $M$ gives $\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)=-c\int_0^{s_1}\mathcal V_{t'}d(t')\,dt'$, with
 \[
 d(t'):=(\Delta(t')-\Delta_\varepsilon(t'))\,g(t').
