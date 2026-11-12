@@ -67,7 +67,7 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Theorem 4.1 (`thm:dd-appx`) | L | `thm14R_rep`; uniformity over groups: `thm14R_unifX`, stated for smooth amplitudes and radii up to 1 |
+| Theorem 4.1 (`thm:dd-appx`) | L | (i) `thm14R_rep`; (ii), the uniformity over groups: `thm14R_unifX`, stated for smooth amplitudes and radii up to 1 |
 
 ## Section 5 (`sec:printed`): original-norm approximation and critical weights
 

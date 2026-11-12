@@ -28,15 +28,21 @@ Periodization & weight $X_0^\lambda$, $\lambda>\tfrac12$ (Lemma~\ref{lem:t2}) & 
 \subsection{Approximation with the power weight \texorpdfstring{$X_0^\beta$}{X0}}\label{subsec:dd-thm}
 
 \begin{theorem}[approximation with the power weight $X_0^\beta$]\label{thm:dd-appx}
-Fix $\beta>\tfrac12$, $\kappa>0$ and $\alpha_0\in(0,\pi/4)$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$, such
-that the following holds for every Fuchsian group $\Gamma$ with $P_\Gamma(\beta+\tfrac12)\le P$, all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, every $b\in\partial\Hb$, every $a$ with $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$:
-\[
-\norm{\Delta^N\bigl[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\bigr]}_{L^2(M)}\le C^{N+K+1}\,N^{2N}\,K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}\pwNorm a .
-\]
+Let $\Gamma$ be a Fuchsian group, $\beta>\tfrac12$, $\kappa>0$ and $\alpha_0\in(0,\pi/4)$.
+\begin{itemize}
+\item[\textup{(i)}] There are $C,\delta>0$ such that for all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all
+$K,N\in\mathbb N_0$, every $b\in\partial\Hb$, every $a$ with $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$, and all
+$0\le t\le\delta(\alpha/\hbar)^{1/2}$,
+\begin{multline*}
+\norm{\Delta^N\bigl[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\bigr]}_{L^2(M)}\\
+\le C^{N+K+1}\,N^{2N}\,K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}\pwNorm a .
+\end{multline*}
+\item[\textup{(ii)}] In \textup{(i)}, $\delta$ can be chosen depending only on $\beta$, $\kappa$ and $\alpha_0$, and $C$ depending only on
+$\beta$, $\kappa$, $\alpha_0$ and an upper bound for $P_\Gamma(\beta+\tfrac12)$.
+\end{itemize}
 \end{theorem}
 
-Every Fuchsian group satisfies the hypothesis for some $P$, since $\beta+\tfrac12>1$ (Lemma~\ref{lem:p1}). The uniformity in
-$\Gamma$ is proved in the last paragraph of the proof; Theorem~\ref{thm:dd14} uses it.
+Part (ii) is proved in the last paragraph of the proof; Theorem~\ref{thm:dd14} uses it.
 
 \begin{proof}
 \medskip\noindent\emph{Step 0 (reductions and parameters).} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters the estimates below only
@@ -144,7 +150,7 @@ So $\delta:=\min\bigl(\tfrac12,\;c_A/6,\;(1-\theta)c_M/(16\lambda)\bigr)$ works.
 \medskip\noindent\emph{Dependence on $\Gamma$.} The group enters only through Lemma~\ref{lem:t2}, used in Steps~1 and~2 with exponent $\lambda$, whose
 constant $C(\Gamma,\lambda)=2^\lambda P_\Gamma(2\lambda)^{1/2}$ depends on $\Gamma$ only through the Poincar\'e series bound $P_\Gamma(2\lambda)$, $2\lambda=\beta+\tfrac12$.
 All other inputs are estimates on $\Hb$. So $\delta$ does not depend on $\Gamma$, and $C$ depends on $\Gamma$ only through $P_\Gamma(\beta+\tfrac12)$;
-this is the uniformity claimed in Theorem~\ref{thm:dd14}.
+this is part~(ii), the uniformity used in Theorem~\ref{thm:dd14}.
 \end{proof}
 
 
@@ -160,5 +166,5 @@ $\bar\alpha^3\ge c_0^3\kappa\hbar$ and $\norm{\ue^{\bar\alpha\Lambda}X_0^\beta a
 $c_0\alpha_0$, $c_0^3\kappa$ and $\bar\alpha$ in place of $\alpha_0$, $\kappa$ and $\alpha$, and let $C_{\rm pw},\delta_{\rm pw}$ be its constants. Its
 window $t\le\delta_{\rm pw}(\bar\alpha/\hbar)^{1/2}$ is the window $t\le\delta(\alpha/\hbar)^{1/2}$ with $\delta:=c_0^{1/2}\delta_{\rm pw}$, and
 $(\bar\alpha\hbar)^{-2N}(\hbar t/\bar\alpha^2)^{K+1}=c_0^{-2N-2K-2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$. So the bound holds with
-$C:=C_{\rm pw}\,c_0^{-2}\max(1,C')$. The dependence on $\Gamma$ is that of Theorem~\ref{thm:dd-appx}.
+$C:=C_{\rm pw}\,c_0^{-2}\max(1,C')$. The dependence on $\Gamma$ is that of Theorem~\ref{thm:dd-appx}(ii).
 \end{proof}
