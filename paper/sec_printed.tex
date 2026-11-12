@@ -33,16 +33,29 @@ $\ue^{\alpha'\Lambda}a=\ue^{-(\alpha-\alpha')\Lambda}h$. So the original norms a
 
 \input{sec_critical}
 
-\medskip\noindent\emph{Inputs to the original-norm proof.}
+\subsection{Proof for small analytic radii}\label{subsec:pc-proof}
+The proof follows the power-weight argument of Section~\ref{subsec:dd-thm}, with three changes:
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}@{}}
+\hline
+Stage & Power-weight proof & Original-norm proof\\
+\hline
+Data & Weighted analytic amplitude & Factorization through the shifted Poisson semigroup\\[4pt]
+Weight estimate & H\"older interpolation & Transfer over shells\\[4pt]
+Periodization & Weight above exponent $1/2$ & Critical weight with a logarithmic correction\\
+\hline
+\end{tabular}
+\end{center}
+Both arguments conclude by integrating the exact remainder over the simplex.
 The proof below applies the preceding estimates in five stages: factor the data, transfer
 the derivative, flow and defect bounds to $\omega$, apply Duhamel on the quotient, pass to general
 data by density, and integrate the exact remainder \eqref{pc:remainder} over the simplex.
 Section~\ref{subsec:pc-all} extends the radius range using the same estimates.
 
-\subsection{Proof for small analytic radii}\label{subsec:pc-proof}
 \begin{proof}[Proof of Theorem~\ref{pc:main} for $0<\alpha\le\tfrac12$]
 We first prove the estimate with constants independent of $A$ on the range $0<\alpha\le\tfrac12$.
-We use the estimates of Sections~\ref{sec:analytic} and~\ref{app:o1st} and the remainder of Section~\ref{subsec:dd-id}; all lemmas are used with $\tau_0=1$.
+We use the estimates of Section~\ref{sec:analytic} and Sections~\ref{app:o1st}--\ref{subsec:pc-transfer} and the remainder of Section~\ref{subsec:dd-id}; all lemmas are used with $\tau_0=1$.
 
 \medskip\noindent\emph{Step 0 (reductions and parameters).} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters below only through
 the constant $C(\Gamma,c')$ of Proposition~\ref{os:p1}, which is invariant under the conjugation of Lemma~\ref{lem:base}. Since

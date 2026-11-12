@@ -4,6 +4,7 @@
 \usepackage{lmodern}
 \usepackage{amsmath,amsthm,amssymb,amsfonts}
 \usepackage{mathtools}
+\usepackage{array}
 \usepackage{longtable}
 \usepackage[small,labelfont=bf,labelsep=period]{caption}
 \usepackage[
@@ -140,15 +141,15 @@ We study the Schr\"odinger evolution of analytic Lagrangian states attached to u
 quotients, for arbitrary Fuchsian groups. Following R.~Schubert's strategy in his 2007 preprint
 \emph{Semiclassical wave propagation for large times}, withdrawn in 2011, we establish explicit $L^2$
 approximations up to times of order $\hbar^{-1/2}$ for fixed analytic radius, beyond the Ehrenfest scale.
-The estimates give factorial control of the expansion and derivative orders and exponentially small errors under optimal truncation.
-They cover Schubert's original amplitude norm and the reversed order of its analytic and spatial weights.
+The estimates cover Schubert's original and reversed-weight amplitude classes, with factorial control of the
+expansion and derivative orders and exponentially small errors under optimal truncation.
 Two bounds in the preprint require correction: the leading error has order $\hbar t$, attained on the hyperbolic plane,
 and pointwise estimates require a local multiplicity factor whose square-root growth is necessary on the modular surface.
 For a family of analytic states whose periodization along cusp translations is independent of the horizontal coordinate,
-mass escapes every compact
-set of the modular surface on a window beginning at a sufficient time of order
+mass escapes every compact set of the modular surface on a window beginning at a sufficient time of order
 $\log(1/\hbar)\log\log(1/\hbar)$, while the approximation remains accurate.
-The corresponding classically transported density on the cusp cylinder equidistributes after projection to the surface.
+The density formed by taking the squared modulus after periodization along cusp translations instead
+equidistributes under classical transport and projection to the surface.
 The main approximation theorems and the quantum escape estimates are formalized in Lean~4.
 
 \vskip5pt
@@ -309,7 +310,8 @@ with $N^{2N}:=1$ at $N=0$.
 The proof is in Sections~\ref{subsec:pc-proof} and~\ref{subsec:pc-all}. For fixed $\alpha>0$, the time window has order $\hbar^{-1/2}$.
 Its dependence on the analytic radius improves the window
 $\delta\alpha^{3/2}\hbar^{-1/2}$ of \cite[Theorem~1.4]{S} to
-$\delta(\alpha/\hbar)^{1/2}$. This distinction matters for the localized amplitudes below,
+$\delta(\alpha/\hbar)^{1/2}$. The reversed-weight estimate of Theorem~\ref{thm:dd14} has the same dependence
+on the analytic radius; this yields the longer window for the localized amplitudes below,
 whose analytic radius tends to zero with $\hbar$.
 The following corollaries give the leading error, the exponential estimate obtained by choosing $K$, and the pointwise bounds.
 
@@ -383,8 +385,9 @@ has a positive limiting total mass but its mass on every fixed compact set tends
 where $Y\ge1$ is fixed so that the compact set lies below height $Y$ in the standard cusp.
 The lower endpoint is a sufficient escape time; no onset time is asserted.
 Throughout this window the periodized approximation remains accurate.
-In contrast, classical transport of the density $|a_0(y)|^2$ on the cusp cylinder,
-where $a_0(y)=\int_{\mathbb R}a(x+iy)\,dx$, equidistributes after projection to the surface.
+For the classical comparison, we first periodize the amplitude along cusp translations and then take its squared modulus.
+This gives the density $|a_0(y)|^2$ on the cusp cylinder, where $a_0(y)=\int_{\mathbb R}a(x+iy)\,dx$.
+Classical transport of this density equidistributes after projection to the surface.
 
 \subsection{Context and related work}\label{subsec:context}
 Estimates up to the Ehrenfest time for coherent states were obtained by Combescure and Robert \cite{CR97} and
@@ -491,8 +494,8 @@ The escape and sharpness arguments are independent applications of the approxima
 Section~\ref{sec:outlook} collects the open questions.
 
 Appendix~\ref{app:special} supplies the auxiliary special-function and kernel calculations.
-Appendix~\ref{app:lean} documents the scope of the formalization; Appendix~\ref{sec:changes} compares the results
-with Schubert's preprint.
+Appendix~\ref{sec:changes} compares the results with Schubert's preprint;
+Appendix~\ref{app:lean} documents the scope of the formalization.
 
 \input{sec_remainder}
 \input{sec_analytic}
@@ -672,7 +675,7 @@ Claude Haiku~5.5 (\texttt{claude-haiku-5-5}) checked citations, transcriptions a
 Sol, Fable, Google Gemini~4 Argon (\texttt{gemini-4-argon}) and OpenAI GPT-6~Pro
 (\texttt{gpt-6-pro}) reviewed working notes or manuscript versions.
 OpenAI Codex and ChatGPT sessions checked revisions and formal-statement correspondence;
-Codex revised the exposition and organization, made the intermediate escape estimates self-contained,
+Codex revised the exposition, proof guides and section hierarchy, made the intermediate escape estimates self-contained,
 and presented the localized-state consequence and sharper pointwise prefactor.
 These AI checks do not constitute external peer review. The detailed contribution history
 is retained in the repository revisions.
@@ -688,8 +691,8 @@ responsibility for all mathematical claims, citations, computations and wording.
 \renewcommand{\eqref}[1]{\textup{(\ref{#1})}}
 \makeatother
 \input{app_special}
-\input{app_lean}
 \input{app_comparison}
+\input{app_lean}
 
 \begin{thebibliography}{DLMF}
 

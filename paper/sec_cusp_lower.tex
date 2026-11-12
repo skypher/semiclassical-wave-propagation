@@ -58,9 +58,14 @@ proof uses Theorem~\ref{pc:main}.
 
 Consequently, on $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$ and for this $b$, the factor $m(z)^{1/2}$ in Corollary~\ref{pc:cor16} (and in its reversed-weight
 version) cannot be removed. For every $p\ge0$ no bound $\sup_M|E_0(t)|\le C(\alpha\hbar)^{-p}\ampNorm a$ with $C$ independent of $\hbar$ holds on the window (take
-$t=(2p+4)\log(1/\hbar)$), and for $\gamma<\tfrac12$ no bound $C\,m(z)^{\gamma}\hbar^{-p}\ampNorm a$ with $C$ independent of $\hbar$ holds (take $t=\hbar^{-1/5}$). In particular Schubert's Corollary~1.6, \cite[(1.34)]{S} at
-$N=K=0$, which is claimed for every Fuchsian $\Gamma$ and every $b$, is false when its constants $C,\delta$ do not depend on $\hbar$
-(Remark~\ref{cl:reading}): at $t=20\log(1/\hbar)$ the lower bound (ii) exceeds $C(\alpha\hbar)^{-8}\norm a_{\alpha,\beta}$ for small $\hbar$.
+$t=(2p+4)\log(1/\hbar)$), and for $\gamma<\tfrac12$ no bound $C\,m(z)^{\gamma}\hbar^{-p}\ampNorm a$ with $C$ independent of $\hbar$ holds (take $t=\hbar^{-1/5}$).
+
+\begin{remark}[comparison with Schubert's pointwise bound]\label{cl:reading}
+As throughout this paper, constants in the comparison with \cite[Theorem~1.4 and Corollary~1.6]{S} are independent of $\hbar$.
+Schubert's Corollary~1.6, \cite[(1.34)]{S} at $N=K=0$, claims a bound for every Fuchsian $\Gamma$ and every $b$ without a cusp factor.
+At $t=20\log(1/\hbar)$ the lower bound in Theorem~\ref{cl:main}(ii) exceeds
+$C(\alpha\hbar)^{-8}\norm a_{\alpha,\beta}$ for small $\hbar$, contradicting that bound.
+\end{remark}
 
 
 \begin{proposition}[relative accuracy in the cusp]\label{cl:relative}
@@ -75,10 +80,6 @@ periodized approximation and the solution both grow like $m(z)^{1/2}\hbar^{1/2}$
 smaller. (This is a statement about this amplitude on the window of Theorem~\ref{cl:main}; it is not a general relative-error theorem.)
 \end{proposition}
 The proof of Proposition~\ref{cl:relative} follows the sharpness proof in Section~\ref{subsec:cl-relative}.
-
-\begin{remark}[semiclassical constants]\label{cl:reading}
-As throughout this paper, constants in the comparison with \cite[Theorem~1.4 and Corollary~1.6]{S} are independent of $\hbar$.
-\end{remark}
 
 \subsection{Local control and cusp asymptotics}
 \begin{lemma}[semiclassical local Sobolev inequality]\label{cl:ssob}
@@ -430,7 +431,7 @@ and $0.98\,\kappa\ue^{-\kappa}\le|S_0(\hbar)|\le1.02\,\kappa\ue^{-\kappa}$. Divi
 \end{proof}
 
 \begin{remark}[scope]\label{cl:scope}
-Theorem~\ref{cl:main} extends to every $b\in\mathbb Q$, the other cusps of $\mathrm{PSL}(2,\mathbb Z)$: if $b=\gamma\infty$ with $\gamma\in\Gamma$, then
+Theorem~\ref{cl:main} extends to every $b\in\mathbb Q$, the other rational representatives of the unique cusp of $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$: if $b=\gamma\infty$ with $\gamma\in\Gamma$, then
 $\varphi_b=\varphi_\infty\circ\gamma^{-1}$ up to a constant, the approximation for $b$ is the $\gamma$-transport of the one for $\infty$, and the error for
 $(b,a)$ is a constant phase times the error for $(\infty,a\circ\gamma)$. So take $a_b:=a\circ\gamma^{-1}$, that is $\ue^{-\kappa\cosh d(\gamma i,\cdot)}$ in case
 (i) and $\ue^{-\alpha\Lambda}\ue^{-\kappa\cosh d(\gamma i,\cdot)}$ in case (ii) ($\Lambda$ commutes with isometries); these have finite norms about the base

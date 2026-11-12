@@ -8,7 +8,7 @@
 \newcommand{\osHK}{\widetilde p}     % continuation of the heat kernel to complex distance
 \newcommand{\osLam}{\Lambda}         % Lambda = (-Delta)^{1/2}
 
-\subsection{Critical-weight estimates}\label{app:o1st}
+\subsection{Critical-weight multipliers and their transform profiles}\label{app:o1st}
 
 To handle the original-norm class we work at exponent $1/2$ with a logarithmic correction.
 The reciprocal square of this weight is summable over every Fuchsian orbit
@@ -23,7 +23,7 @@ supply the opposite exponential factor. Their cancellation leaves a polynomial s
 The logarithmic exponent $1/2<c<1$ permits its summation. The profiles constructed after the theorem
 verify this tail condition for the Poisson semigroup and the change of spectral parameter.
 
-Throughout this section $x_0=i$, $d=d(i,\cdot)$, $\osX=\cosh d$, $\psi:=\log\osX\ge0$, $\osL:=\log(2\osX)/\log2=1+\psi/\log2\ge1$,
+Throughout the critical-weight estimates and the proof below, $x_0=i$, $d=d(i,\cdot)$, $\osX=\cosh d$, $\psi:=\log\osX\ge0$, $\osL:=\log(2\osX)/\log2=1+\psi/\log2\ge1$,
 $\osLam=(-\Delta)^{1/2}$ and $D=(-\Delta-\tfrac14)^{1/2}$. For $0\le c\le1$ the critical weight is
 \[
 \osomc:=\osX^{1/2}\osL^{\,c};
@@ -164,6 +164,10 @@ $\norm{\osomc(\Lambda_m-\osLam)f}\le K_{m,c}\norm{\osomc f}$.
 Theorem~\ref{os:cw} with $g=g^{1/2}_\tau$ and Lemma~\ref{os:prof}(i),(iv), respectively with $g=G_m$ and Lemma~\ref{os:prof}(v).
 \end{proof}
 
+\subsection{Factorization and derivative estimates for the data}\label{subsec:pc-data}
+We now factor the Poisson-smoothed amplitude through the shifted semigroup and bound its derivatives at a power weight.
+The next subsection transfers these bounds to the critical weight used for periodization.
+
 \subsubsection{Factorization of the Poisson-smoothed amplitudes}
 
 \begin{proposition}[factorization of the data]\label{os:data}
@@ -244,6 +248,10 @@ A_{k+1,j}\le\sqrt2\,Q^k(C_0/\sigma)^{n+1}(n+1)!\,\bigl((2+2\rho)/C_0+\sqrt2\bigr
 which is the claim for $k+1$, because $C_0\ge1$ and so $(2+2\rho)/C_0+\sqrt2\le Q$. The case $j=0$ is (b). The statement for $\osX^\gamma$ follows with $W=W_{\gamma,n}$ and $n\to\infty$, and the last
 statement from $\Lambda_m\ge\osLam$.
 \end{proof}
+
+\subsection{Transfer and periodization at the critical weight}\label{subsec:pc-transfer}
+The transfer estimate below applies to the derivative, flow and defect maps in the approximation proof.
+Periodization at the same weight then turns these estimates into bounds on the quotient.
 
 \subsubsection{Transfer from a power weight to the critical weight}
 

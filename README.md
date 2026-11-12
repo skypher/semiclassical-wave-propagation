@@ -21,8 +21,8 @@ the cusp height. Schubert's files are not part of this repository.
   escape application, then the leading-error and cusp-factor sharpness arguments. The escape and sharpness
   arguments use the approximation theorem independently. The introduction maps the amplitude classes and radius
   ranges to their results and explains why the original norm requires a separate argument. Three appendices
-  contain special-function, kernel and auxiliary cusp calculations, formalization documentation, and the detailed comparison
-  with Schubert's preprint. Build from `paper/` with `pdflatex paper.tex` (run it three times).
+  contain special-function, kernel and auxiliary cusp calculations, the detailed comparison with Schubert's preprint,
+  and formalization documentation, in that order. Build from `paper/` with `pdflatex paper.tex` (run it three times).
 - `lean/`: the Lean 4 development, namespace `Qschubert` (Lean `v4.35.0`, Mathlib `v4.35.0`, `physicslib4`, and
   `PrimeNumberTheoremAnd` for the zero-free region of the Riemann zeta function).
   Appendix "Formalization" of the manuscript says which statements are formalized, in which reading, and

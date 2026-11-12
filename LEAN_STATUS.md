@@ -106,7 +106,7 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Proposition 8.1 (`prop:g5`) | L′ | `printedThm13_false`: the negation of the printed theorem; the asymptotic formula is not formalized (Appendix B (`app:lean`)) |
+| Proposition 8.1 (`prop:g5`) | L′ | `printedThm13_false`: the negation of the printed theorem; the asymptotic formula is not formalized (Appendix C (`app:lean`)) |
 | Proposition 8.2 (`prop:mean`) | L | `meanGrowth`; `integral_approxSolB`, `J_vecX`, `J_vecY`, `chP_dysT`, `swapped_setup`, `enorm_integral_le_perio` |
 
 ## Section 9 (`sec:cusp`): sharpness of the cusp factor
@@ -114,7 +114,7 @@ All Lean names are in the namespace `Qschubert`.
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Remark 9.1 (`rem:g4`) | P |  |
-| Proposition 9.3 (`cl:relative`) | P | extracted from the relative-error remark; self-checked |
+| Proposition 9.4 (`cl:relative`) | P | extracted from the relative-error remark; self-checked |
 | Theorem 9.2 (`cl:main`), Lemmas 9.5 (`cl:ssob`), 9.6 (`cl:asym`), 9.7 (`cl:kernel`), 9.9 (`cl:amp`) | P |  |
 | Lemmas 9.8 (`cl:aux`), 9.10 (`cl:noncancel`) | P | auxiliary estimates and noncancellation separated from the amplitude proof; self-checked, not separately formalized |
 
