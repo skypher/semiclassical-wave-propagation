@@ -1,10 +1,7 @@
-% Formalization status. \leanrepo is the public repository; \leancommit is a commit of it (not of the working
-% repository). \leandecls is taken from the build and audit of lean/ at that commit
-% (lake build exit 0, 9344 jobs; lean/scripts/Axioms.lean).
+% Formalization status. \leanrepo is the public repository; \leancommit is a commit of it.
 \providecommand{\lean}[1]{\texttt{\detokenize{#1}}}
 \providecommand{\leancommit}{\texttt{9a4603a}}
 \providecommand{\leanrepo}{\url{https://github.com/skypher/semiclassical-wave-propagation}}
-\providecommand{\leandecls}{2863}
 
 \section{Formalization}\label{app:lean}
 
@@ -12,7 +9,7 @@ The principal $L^2$ approximation estimates, their optimal-truncation corollarie
 are formalized in Lean~4 and checked by its kernel. Table~\ref{tab:lean} gives an overview of direct counterparts,
 paper deductions and variants, and results without formal proofs; the text explains the substantive differences.
 
-\subsection*{What is checked}
+\subsection{What is checked}
 The formal development is the directory \texttt{lean/} of the repository \leanrepo, namespace \lean{Qschubert}, at commit \leancommit. It is built with Lean~4 \cite{Lean4} (toolchain \texttt{v4.35.0}), Mathlib \cite{Mathlib} at the tag \texttt{v4.35.0}, and \texttt{physicslib4} \cite{Phys} (commit \texttt{2337279}), which supplies the spectral theorem for unbounded self-adjoint operators. The development also depends on the project \emph{Prime Number Theorem And \dots} \cite{PNT} (commit \texttt{127b50e}), from which it takes the classical zero-free region of the Riemann zeta function; this is used only in the proof of Theorem~\ref{ev:mod}.
 At this commit the build and axiom audits pass: every declaration depends only on
 \lean{propext}, \lean{Classical.choice} and \lean{Quot.sound}, and none uses \lean{sorryAx}.
@@ -20,14 +17,14 @@ The repository's README gives the commands for reproducing the build and audits.
 
 A kernel check certifies the proofs of the formal statements. Whether a formal statement says what the corresponding statement of this paper says is a matter of reading; the choices made are listed next. The formal statements were compared with the text in independent AI reviews of the statements, which did not repeat the build or the axiom check. These comparisons are distinct from kernel checking and do not constitute external peer review.
 
-\subsection*{Interpretation of the formal statements}
+\subsection{Interpretation of the formal statements}
 \begin{itemize}
 \item \emph{Groups and surfaces.} A Fuchsian group is a subgroup $\Gamma\le\mathrm{PGL}(2,\mathbb R)$ that acts properly discontinuously on $\Hb$ and consists of classes of matrices of positive determinant. $M$ is the orbit space with the measure induced from a fundamental domain; no manifold structure on $M$ is used.
 \item \emph{Operators.} $-\Delta$ on $L^2(\Hb)$ and on $L^2(M)$ is the Friedrichs extension from test functions, respectively from periodized test functions; $\Lambda$, $\ue^{\alpha\Lambda}$, $\cU(t)$ and $\Delta^N$ are functions of it by the spectral theorem.
 \item \emph{Boundary points.} The base point $x_0\in\Hb$ is a parameter, and $b=g\,\infty$ with $g\in\mathrm{SL}(2,\mathbb R)$, $g\,x_0=x_0$. Every $b\in\partial\Hb$ arises, and the objects depend on $b$ only (\lean{exists_stab_smul_infty}, \lean{initState_eq_of_stab}, \lean{approxSolB_eq_of_stab}).
 \item \emph{Amplitudes.} An amplitude is a function on $\Hb$ whose class has finite norm. The formal theorems produce its $C^\infty$ representative $a'$, equal to $a$ almost everywhere, before $\hbar,t,K,N,b$ are chosen, and $u^{(K)}$ is built from $a'$. Nonzero amplitudes of finite norm exist in both classes (\lean{printed_class_nonvacuous_beta}, \lean{swappedD_class_nonvacuous}).
 \item \emph{Conclusions.} Each $L^2$ theorem asserts that the two orbit sums converge absolutely almost everywhere and define elements of $L^2(M)$, and then bounds $\norm{\Delta^N[\,\cdot\,]}$, an element of $[0,\infty]$ that equals $\infty$ outside the domain of $\Delta^N$. The pointwise declarations assert that the error lies in the domain of $\Delta^N$ and that $\Delta^NE$ has a continuous representative at every point of $M$.
-\item \emph{The cap on $\delta$ in the optimal-truncation corollaries.} For Corollary~\ref{pc:cor15} the condition $\delta\le\kappa^{1/2}/\max(1,C)$ is part of the formal statement. For the two companion norms in Corollary~\ref{cor:dd15} the formal statements assert that some $C$ and $\delta>0$ exist for which the bound holds on the window; their proofs take $\delta\le\kappa^{1/2}/\max(1,C)$, and $\delta$ may always be decreased, since this only shortens the time window.
+\item \emph{The cap on $\delta$ in the optimal-truncation corollaries.} For Corollary~\ref{pc:cor15} the condition $\delta\le\kappa^{1/2}/\max(1,C)$ is part of the formal statement. For the reversed-weight and power-weight norms in Corollary~\ref{cor:dd15} the formal statements assert that some $C$ and $\delta>0$ exist for which the bound holds on the window; their proofs take $\delta\le\kappa^{1/2}/\max(1,C)$, and $\delta$ may always be decreased, since this only shortens the time window.
 \item \emph{Ranges and grouped statements.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$.
 Theorem~\ref{pc:main} states the bounded-radius result \lean{pcmain_all}; its proof first treats $\alpha\le\tfrac12$,
 the range of \lean{pcmain_half}. The original-norm corollaries likewise use the declarations with suffix \lean{all}.
@@ -37,14 +34,14 @@ The formal statement of Proposition~\ref{prop:mean} has every $\hbar>0$ and ever
 its inequality is one in $[0,\infty]$ with $0\cdot\infty=0$.
 \end{itemize}
 
-\subsection*{The formalized counterexample}\phantomsection\label{rem:g5-lean}
-For Proposition~\ref{prop:g5}, the formal theorem \lean{printedThm13_false} proves the negation of the printed bound,
+\subsection{The formalized counterexample}\label{rem:g5-lean}
+For Proposition~\ref{prop:g5}, the formal theorem \lean{printedThm13_false} proves the negation of the bound of \cite{S},
 rather than the asymptotic formula.
 
-The printed statement is formalized as: for every Fuchsian $\Gamma$ and all $\alpha>0$, $\beta>1$ there are $C,\delta,\hbar_0>0$ such that
-$\norm{u^{(0)}(t)_\Gamma-\cU(t)(a\ue^{i\varphi_b/\hbar})_\Gamma}_{L^2(M)}\le C\hbar\norm a_{\alpha,\beta}$ for all $0<\hbar\le\hbar_0$, all $0\le t\le\delta\hbar^{-1/2}$, all $b$ and all $C^\infty$ amplitudes of finite original norm. The restrictions to $\hbar\le\hbar_0$ and to $C^\infty$ amplitudes weaken the printed claim, and the formal theorem states that this weaker claim is false. Its proof uses $\Gamma=\{\mathrm{id}\}$, $\alpha=\tfrac12$, $\beta=2$, $b=\infty$ and the amplitude $a=\ue^{-\alpha\Lambda}\ue^{-3X_0}$, $X_0=\cosh d(i,\cdot)$. It takes the Dyson identity (iii) of Proposition~\ref{prop:dd-id} at $K=0$ and $K=1$, which gives the expansion in Proposition~\ref{prop:g5} with $R$ the second-order term, and uses that periodization over the trivial group is an isometry. The bound $\norm R\le\tfrac{\hbar^2t^2}8\sup_{r,s}\norm{\Delta(r)\Delta(s)a}$ comes from Lemma~\ref{lem:wb} at $N=0$, and, with $A:=Y^2-Y$, $\norm{Aa}\ge\norm a/4$ from $Y^*=1-Y$ on $\operatorname{Dom}(\Delta)$: $\langle a,Aa\rangle=-\norm{Ya}^2$ and $2\operatorname{Re}\langle a,Ya\rangle=\norm a^2$.
+The statement of \cite[Theorem~1.3]{S} is formalized as: for every Fuchsian $\Gamma$ and all $\alpha>0$, $\beta>1$ there are $C,\delta,\hbar_0>0$ such that
+$\norm{u^{(0)}(t)_\Gamma-\cU(t)(a\ue^{i\varphi_b/\hbar})_\Gamma}_{L^2(M)}\le C\hbar\norm a_{\alpha,\beta}$ for all $0<\hbar\le\hbar_0$, all $0\le t\le\delta\hbar^{-1/2}$, all $b$ and all $C^\infty$ amplitudes of finite original norm. The restrictions to $\hbar\le\hbar_0$ and to $C^\infty$ amplitudes weaken that claim, and the formal theorem states that this weaker claim is false. Its proof uses $\Gamma=\{\mathrm{id}\}$, $\alpha=\tfrac12$, $\beta=2$, $b=\infty$ and the amplitude $a=\ue^{-\alpha\Lambda}\ue^{-3X_0}$, $X_0=\cosh d(i,\cdot)$. It takes the Dyson identity (ii) of Proposition~\ref{prop:dd-id} at $K=0$ and $K=1$, which gives the expansion in Proposition~\ref{prop:g5} with $R$ the second-order term, and uses that periodization over the trivial group is an isometry. The bound $\norm R\le\tfrac{\hbar^2t^2}8\sup_{r,s}\norm{\Delta(r)\Delta(s)a}$ comes from Lemma~\ref{lem:wb} at $N=0$, and, with $L:=Y^2-Y$, $\norm{La}\ge\norm a/4$ from $Y^*=1-Y$ on $\operatorname{Dom}(\Delta)$: $\langle a,La\rangle=-\norm{Ya}^2$ and $2\operatorname{Re}\langle a,Ya\rangle=\norm a^2$.
 
-\subsection*{Correspondence and exclusions}
+\subsection{Correspondence and exclusions}
 The direct counterparts in Table~\ref{tab:lean} use the interpretations above.
 The file \texttt{LEAN\_STATUS.md} in the repository gives the correspondence for every labelled statement,
 including the supporting estimates. The differences in bounds, parameter ranges and conclusions are described below.
@@ -53,7 +50,7 @@ including the supporting estimates. The differences in bounds, parameter ranges 
 Corollaries~\ref{pc:cor16} and~\ref{cor:dd16} display the prefactor $(\alpha\hbar)^{-2N-2}$ obtained in
 Section~\ref{subsec:pc-cor} from the approximation theorem at $N$ and $N+1$ and Lemma~\ref{pc:g43}.
 The listed Lean pointwise declarations instead state the weaker prefactor $(\alpha\hbar)^{-2N-4}$;
-no separate declaration of the sharper estimate is asserted. For the companion norms, the listed declarations
+no separate declaration of the sharper estimate is asserted. For the reversed-weight and power-weight norms, the listed declarations
 cover the bounded-geometry specialization; the arbitrary-quotient estimate with $m(z)^{1/2}$ is a paper deduction
 from the approximation theorems and Lemma~\ref{pc:g43}.
 
@@ -62,9 +59,6 @@ estimate \lean{ev_transfer_core}. Its reversed-weight version is \lean{evTransfe
 For the original norm, \lean{evTransfer_pc} covers $\alpha\le\tfrac12$; \lean{pcmain_all}
 supplies the approximation bound on every bounded radius range.
 
-Corollary~\ref{cor:escape-summary} is the introductory consequence of Theorem~\ref{ev:mod}:
-its quantum assertions follow from the formalized parts (i),(ii), and its classical comparison uses the unformalized part (iii).
-
 The fixed-radius Corollary~\ref{thm:main} is presented here for $\beta>1/2$ and every fixed $\alpha>0$. It is deduced in the text from \lean{thm14Rmain_exp} at $K=N=0$, with a fixed radius and, for larger radii, monotonicity of the reversed-weight norm. The separately formalized \lean{thm13R_rep} has the narrower range $\beta>1$ and $\alpha\le\alpha_0<\pi/4$. The Mellin, scattering, zero-mode, initial-norm and outgoing-mass lemmas of
 Section~\ref{sec:expect} are ingredients of the formal proof of Theorem~\ref{ev:mod};
 their individual statements do not have separate exact formal counterparts.
@@ -72,8 +66,9 @@ their individual statements do not have separate exact formal counterparts.
 \paragraph{Results without formal proofs.}
 The classical comparison in Theorem~\ref{ev:mod}(iii) uses the cited equidistribution theorem for closed horocycles;
 only parts (i),(ii) are covered by \lean{evmod}, whose statement is \lean{Stmt_evmod}.
-The amplitude-class comparison (Proposition~\ref{pc:classes}) and the cusp sharpness argument of Section~\ref{sec:cusp},
-including Remark~\ref{rem:g4} and the kernel Lemmas~\ref{os:poisson} and~\ref{os:hk}, have no formal proofs.
+The amplitude-class comparison (Proposition~\ref{pc:classes}), the bound on the mean (Corollary~\ref{cor:meanJ}) and the cusp
+sharpness argument of Section~\ref{sec:cusp}, including Theorem~\ref{cl:necessary}, Corollary~\ref{cl:rational}, Remark~\ref{rem:g4}
+and the kernel Lemmas~\ref{os:poisson} and~\ref{os:hk}, have no formal proofs.
 For cusp sharpness the development contains only implications from a formal statement of Theorem~\ref{cl:main}(ii),
 which is itself not proved formally.
 
@@ -102,7 +97,6 @@ Theorem~\ref{os:cw} & \lean{cw_abstract}\\
 Lemma~\ref{os:transfer} & \lean{transfer}\\
 \hline
 \multicolumn{2}{@{}l}{\emph{Paper deductions and variants}}\\
-Corollary~\ref{cor:escape-summary} & Consequence of Theorem~\ref{ev:mod}; classical comparison unformalized\\
 Corollary~\ref{pc:cor16} & \lean{pccor16_all}, \lean{pccor16bg_all}: weaker exponent $-2N-4$\\
 Corollary~\ref{cor:dd16} & \lean{cor16Rmain_rep}, \lean{cor16R_rep}: bounded geometry, weaker exponent $-2N-4$\\
 Corollary~\ref{thm:main} & Specialization of \lean{thm14Rmain_exp}; see text\\
@@ -111,7 +105,8 @@ Proposition~\ref{prop:g5} & \lean{printedThm13_false}: negation of Schubert's bo
 \hline
 \multicolumn{2}{@{}l}{\emph{Results without formal proofs}}\\
 Corollary~\ref{cor:localized} & Paper deduction from Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}\\
-Proposition~\ref{pc:classes}; Section~\ref{sec:cusp} & Amplitude-class comparison and cusp sharpness\\
+Proposition~\ref{pc:classes}; Theorem~\ref{cl:necessary}; Section~\ref{sec:cusp} & Amplitude-class comparison and cusp sharpness\\
+Corollary~\ref{cor:meanJ} & Paper deduction from Proposition~\ref{prop:mean} and Theorem~\ref{thm:dd14}\\
 Theorem~\ref{ev:mod}(iii) & Cited horocycle equidistribution theorem\\
 \hline
 \end{tabular}

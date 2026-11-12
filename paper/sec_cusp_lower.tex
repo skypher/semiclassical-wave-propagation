@@ -1,13 +1,10 @@
-% Cusp-factor sharpness, input from paper.tex.
-% Notes source: notes/Cor16_cusps.md, Propositions G4.4 and G4.4P (reviews R22, R22c, R23, R23b). Labels prefix cl.
 \section{Sharpness of the cusp factor}\label{sec:cusp}\label{subsec:cl}
 \subsection{Statement and mechanism}
-This section concerns pointwise error at points whose height increases with time.
-Section~\ref{sec:expect} studies the complementary question of mass on fixed compact sets;
-its escape argument uses the approximation theorem independently of the sharpness construction here.
+This section proves Theorem~\ref{cl:necessary}. It concerns the pointwise error at points whose height in the cusp increases
+with time.
 
 \begin{remark}[the local Sobolev loss]\label{rem:g4}
-The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient with a cusp. In a cusp neighbourhood $\{y>Y\}/(x\sim x+1)$, take $u_S=\chi(\log y-S)$ with $0\ne\chi\in C_c^\infty(\mathbb R)$. For every integer $s\ge1$,
+The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient with a cusp. In a cusp neighbourhood $\{y>H\}/(x\sim x+1)$, take $u_S=f(\log y-S)$ with $0\ne f\in C_c^\infty(\mathbb R)$. For every integer $s\ge1$,
 \[
 \norm{u_S}_{L^1}\asymp\norm{\Delta^su_S}_{L^1}\asymp\ue^{-S},\qquad
 \norm{u_S}_{L^2}\asymp\norm{\Delta^su_S}_{L^2}\asymp\ue^{-S/2},
@@ -15,78 +12,77 @@ The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient wit
 whereas $\sup|u_S|$ is independent of $S$. Thus both the global $L^2$-to-pointwise Sobolev bound and the $L^1$-to-$L^2$ bound used in \cite{S} fail on cusps. Theorem~\ref{cl:main} shows that the same loss occurs for the approximation error itself.
 \end{remark}
 
-Throughout this subsection $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $M=\Gamma\backslash\Hb$ (cusp at $\infty$ of width $1$), $x_0=i$, $X_0=\cosh d(i,\cdot)$,
+Throughout this section $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $M=\Gamma\backslash\Hb$ (cusp at $\infty$ of width $1$), $x_0=i$, $X_0=\cosh d(i,\cdot)$,
 $b=\infty$ and $\varphi=-\log y$. For a function $F$ on $\Hb$ we write $[F]_\Gamma(z)=\sum_{\gamma\in\Gamma}F(\gamma z)$, and
-$E_K(t):=\cU(t)(a\,\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma$. Words $Z_S$ are products of $X$ and $Y$. In this subsection only, $\ampNorm a:=\swNorm a$ in case (i) and $\ampNorm a:=\pcNorm a$ in case (ii), so that the common estimates cover both amplitude classes.
+$E_K(t):=\cU(t)(a\,\ue^{i\varphi/\hbar})_\Gamma-u^{(K)}(t)_\Gamma$. Words $Z_S$ are products of $X$ and $Y$.
 
 The proof starts from the decomposition
 \[
 \begin{gathered}
- E_0=M_1+M_2+E_2,\qquad
- M_k:=\ue^{-it/(2\hbar)}\bigl[(S(t)A_k)\ue^{i\varphi/\hbar}\bigr]_\Gamma,\\
+ E_0=T_1+T_2+E_2,\qquad
+ T_k:=\ue^{-it/(2\hbar)}\bigl[(S(t)A_k)\ue^{i\varphi/\hbar}\bigr]_\Gamma,\\
  A_k:=\Bigl(\frac{i\hbar}{2}\Bigr)^kP_k(t)a\quad(k=1,2).
 \end{gathered}
 \]
-Lemma~\ref{cl:asym} gives the cusp asymptotic of $M_1$ and a bound for $M_2$.
+Lemma~\ref{cl:asym} gives the cusp asymptotic of $T_1$ and a bound for $T_2$.
 Lemmas~\ref{cl:amp} and~\ref{cl:noncancel} supply an admissible amplitude for which the leading
-coefficient of $M_1$ is bounded away from zero. The approximation theorem and the local
+coefficient of $T_1$ is bounded away from zero. The approximation theorem and the local
 Sobolev estimate of Lemma~\ref{cl:ssob} control $E_2$.
 The auxiliary kernel and derivative bounds are stated in Lemmas~\ref{cl:kernel} and~\ref{cl:aux};
 their proofs are collected in Appendix~\ref{app:cusp-aux}.
 
 The mechanism is the following. The error contains the explicit first Dyson term $\ue^{-it/(2\hbar)}(S(t)\,\tfrac{i\hbar}2P_1(t)a)\ue^{i\varphi/\hbar}$,
-periodized. High in the cusp the sum over $\Gamma$ concentrates, by stationary phase, at the tops $a/c+i/(c^2Y)$ of the horocycles $\gamma(\mathbb R+iY)$,
-whose images under $D_t:(x,y)\mapsto(x,\ue^ty)$ are the points $a/c+i/c^2$,
+periodized. At height $H=\ue^t$ in the cusp the sum over $\Gamma$ concentrates, by stationary phase, at the tops $n/c+i/(c^2H)$ of the horocycles
+$\gamma(\mathbb R+iH)$, whose images under $D_t:(x,y)\mapsto(x,\ue^ty)$ are the points $n/c+i/c^2$ ($c\ge1$, $\gcd(n,c)=1$),
 and its size is $\ue^{t/2}\sqrt{\pi\hbar}\cdot\hbar t$; the remainder is controlled by the $L^2$ theorem.
 We apply Theorems~\ref{thm:dd14} and~\ref{pc:main} at fixed radius with their parameter $\kappa=\alpha^3$,
 so their condition $\alpha^3\ge\kappa\hbar$ holds for every $\hbar\le1$.
 
 
-\begin{theorem}[the cusp factor is necessary]\label{cl:main}
+\begin{theorem}[lower bound high in the cusp]\label{cl:main}
 Let $\beta>\tfrac12$ and $\alpha_0:=\tfrac12$, and let $\alpha_1=\alpha_1(\beta)\in(0,\alpha_0]$ be the radius of Lemma~\ref{cl:amp}(i). The constants
-below depend on the fixed radius $\alpha$ and on $\beta$, and in (ii) also on the decay rate $\kappa$ of the amplitude.
+below depend on the fixed radius $\alpha$ and on $\beta$, and in (ii) also on the decay rate $\mu$ of the amplitude; $\delta$ denotes the
+constant of Theorem~\ref{thm:dd14} in case (i), and of Theorem~\ref{pc:main} with $A=\alpha_0$ in case (ii), both with $\kappa=\alpha^3$.
 \begin{enumerate}
 \item[(i)] (Reversed-weight class.) Let $\alpha\in(0,\alpha_1]$. For $a=\ue^{-20X_0}$ there are $\hbar_0,c_*,t_*>0$ such that for $0<\hbar\le\hbar_0$, every
 $t$ with $\max(2\log(1/\hbar),t_*)\le t\le\min(\hbar^{-1/5},\delta(\alpha/\hbar)^{1/2})$, and every $z=x+i\ue^t$,
 \[
 |E_0(t)(z)|\ge c_*\,\ue^{t/2}\hbar^{3/2}t,\qquad m(z)\le5\ue^t .
 \]
-\item[(ii)] (Original-norm class.) The same holds for $a=\ue^{-\alpha\Lambda}\ue^{-\kappa X_0}$, with $\kappa\ge\kappa_*$ and $0<\alpha\le\alpha_*(\kappa):=\min(\alpha_0,c\kappa^{-6})$; here the
-proof uses Theorem~\ref{pc:main}.
+\item[(ii)] (Original-norm class.) The same holds for $a=\ue^{-\alpha\Lambda}\ue^{-\mu X_0}$, with $\mu\ge\mu_*$ and $0<\alpha\le\alpha_*(\mu):=\min(\alpha_0,c\mu^{-6})$.
 \end{enumerate}
 \end{theorem}
 
-The optimality concerns the exponent $1/2$ of the local multiplicity in estimates valid for every quotient and boundary point;
-the power of $\hbar$ in the pointwise upper bound is not claimed optimal.
-Consequently, on $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$ and for this $b$, the factor $m(z)^{1/2}$ in Corollary~\ref{pc:cor16} (and in its reversed-weight
-version) cannot be removed. For every $p\ge0$ no bound $\sup_M|E_0(t)|\le C(\alpha\hbar)^{-p}\ampNorm a$ with $C$ independent of $\hbar$ holds on the window (take
-$t=(2p+4)\log(1/\hbar)$), and for $\gamma<\tfrac12$ no bound $C\,m(z)^{\gamma}\hbar^{-p}\ampNorm a$ with $C$ independent of $\hbar$ holds (take $t=\hbar^{-1/5}$).
+In the rest of this section $\ampNorm a:=\swNorm a$ in case (i) and $\ampNorm a:=\pcNorm a$ in case (ii), so that the common estimates
+cover both amplitude classes. Theorem~\ref{cl:necessary} is deduced from Theorem~\ref{cl:main} in Section~\ref{subsec:cl-proof}.
 
 \begin{remark}[comparison with Schubert's pointwise bound]\label{cl:reading}
-As throughout this paper, constants in the comparison with \cite[Theorem~1.4 and Corollary~1.6]{S} are independent of $\hbar$.
-Schubert's Corollary~1.6, \cite[(1.34)]{S} at $N=K=0$, claims a bound for every Fuchsian $\Gamma$ and every $b$ without a cusp factor.
+\cite[Corollary~1.6]{S}, that is \cite[(1.34)]{S} at $N=K=0$, states a bound for every Fuchsian $\Gamma$ and every $b$ without a cusp factor,
+with a constant independent of $\hbar$.
 At $t=20\log(1/\hbar)$ the lower bound in Theorem~\ref{cl:main}(ii) exceeds
 $C(\alpha\hbar)^{-8}\norm a_{\alpha,\beta}$ for small $\hbar$, contradicting that bound.
 \end{remark}
 
 
 \begin{proposition}[relative accuracy in the cusp]\label{cl:relative}
-At the points of Theorem~\ref{cl:main}, in case (i) (the reversed-weight amplitude $a=\ue^{-20X_0}$), the solution itself is large and the error remains
-small relative to it: for
-$\hbar\le\hbar_0$ and $t$ in the range of Theorem~\ref{cl:main},
+In case (i) of Theorem~\ref{cl:main}, for $\hbar\le\hbar_0$ and $t$ in the range of Theorem~\ref{cl:main},
 \[
 c\,\hbar t\le\frac{|E_0(t)(z)|}{|u^{(0)}(t)_\Gamma(z)|}\le C\,\hbar t,\qquad z=x+i\ue^t .
 \]
-So what fails is the form of Schubert's stated bound (a fixed multiple of $\ampNorm a$, independent of $z$), not the accuracy of the approximation: the
-periodized approximation and the solution both grow like $m(z)^{1/2}\hbar^{1/2}$ at these points, and their difference is a factor $O(\hbar t)$
-smaller. (This is a statement about this amplitude on the window of Theorem~\ref{cl:main}; it is not a general relative-error theorem.)
 \end{proposition}
-The proof of Proposition~\ref{cl:relative} follows the sharpness proof in Section~\ref{subsec:cl-relative}.
+So at these points the solution itself is large and the error remains small relative to it: what fails is the form of
+Schubert's stated bound (a fixed multiple of $\ampNorm a$, independent of $z$), not the accuracy of the approximation. The
+periodized approximation and the solution both grow like $m(z)^{1/2}\hbar^{1/2}$ there, and their difference is a factor
+$O(\hbar t)$ smaller. Proposition~\ref{cl:relative} concerns this amplitude on this window only; it is not a general relative-error
+theorem. Its proof is in Section~\ref{subsec:cl-relative}.
 
 \subsection{Local control and cusp asymptotics}
 \begin{lemma}[semiclassical local Sobolev inequality]\label{cl:ssob}
-For every Fuchsian $\Gamma$ there is an absolute $C$ with $|u(z)|\le C\,m(z)^{1/2}\bigl(r^{-1}\norm u_{L^2(M)}+r^3\norm{\Delta^2u}_{L^2(M)}\bigr)$ for
-$0<r\le1$, $z\in M$ and $u\in H^4(M)$. For $\Gamma=\mathrm{PSL}(2,\mathbb Z)$ and $z=x+iY$ with $Y\ge4$, $m(z)\le5Y$.
+\begin{itemize}
+\item[\textup{(a)}] There is an absolute constant $C$ such that for every Fuchsian group $\Gamma$, $0<r\le1$, $z\in M$ and $u\in H^4(M)$,
+$|u(z)|\le C\,m(z)^{1/2}\bigl(r^{-1}\norm u_{L^2(M)}+r^3\norm{\Delta^2u}_{L^2(M)}\bigr)$.
+\item[\textup{(b)}] For $\Gamma=\mathrm{PSL}(2,\mathbb Z)$ and $z=x+iH$ with $H\ge4$, $m(z)\le5H$.
+\end{itemize}
 \end{lemma}
 \begin{proof}
 By homogeneity take $\tilde z=i$. In normal coordinates $\xi$ at $i$ put $v(\xi)=\tilde u(\exp_i(r\xi))$ for $|\xi|<1$. Then
@@ -94,108 +90,107 @@ $r^4(\Delta^2\tilde u)(\exp_i(r\xi))=L_r^2v(\xi)$, where $L_r$ is $r^2\Delta$ in
 bounded in $C^\infty$ uniformly for $0<r\le1$. Interior regularity for $L_r^2$ and $H^4\subset L^\infty$ give
 $|v(0)|\le C(\norm v_{L^2(B_1)}+\norm{L_r^2v}_{L^2(B_1)})$. Since $d\nu\asymp r^2d\xi$ on the ball,
 $|\tilde u(i)|\le C(r^{-1}\norm{\tilde u}_{L^2(B(i,r))}+r^3\norm{\Delta^2\tilde u}_{L^2(B(i,r))})$, and $B(\tilde z,r)\subset B(\tilde z,1)$, so the unfolding step of
-Lemma~\ref{pc:g43} applies. For the count: if $\gamma\notin\Gamma_\infty$ then $\operatorname{Im}\gamma z\le1/Y$ and $d(z,\gamma z)\ge2\log Y\ge2$; and
-$d(z,z+n)=2\operatorname{arcsinh}(|n|/(2Y))<2$ if and only if $|n|<2Y\sinh1$. So $m(z)\le4Y\sinh1+1\le5Y$ for $Y\ge4$.
+Lemma~\ref{pc:g43} applies. This proves (a). For (b): if $\gamma\notin\Gamma_\infty$ then $\operatorname{Im}\gamma z\le1/H$ and $d(z,\gamma z)\ge2\log H\ge2$; and
+$d(z,z+n)=2\operatorname{arcsinh}(|n|/(2H))<2$ if and only if $|n|<2H\sinh1$. So $m(z)\le4H\sinh1+1\le5H$ for $H\ge4$.
 \end{proof}
 
 \begin{lemma}[cusp asymptotics]\label{cl:asym}
 Let $\vartheta$ be either $X_0^{-2}$ or $\ue^{-d(i,\cdot)}(1+d(i,\cdot))^{-3/2}$, and for $A\in C^4(\Hb)$ put
 $B(A):=\sup_w\vartheta(w)^{-1}\sum_{|S|\le4}|Z_SA(w)|$. There is a $C$ (depending only on the choice of $\vartheta$) such that for every $A$ with
 $B(A)<\infty$, $0<\hbar\le\tfrac12$,
-$t\ge2\log(1/\hbar)$, $Y=\ue^t$ and $z=x+iY$,
+$t\ge2\log(1/\hbar)$, $H=\ue^t$ and $z=x+iH$,
 \begin{multline*}
-\Bigl|\bigl[(S(t)A)\ue^{i\varphi/\hbar}\bigr]_\Gamma(z)-\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}\sum_{c\ge1}c^{2i/\hbar}\sum_{a\in\mathbb Z,(a,c)=1}A\Bigl(\frac ac+\frac i{c^2}\Bigr)\Bigr|\\
+\Bigl|\bigl[(S(t)A)\ue^{i\varphi/\hbar}\bigr]_\Gamma(z)-\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}\sum_{c\ge1}c^{2i/\hbar}\sum_{n\in\mathbb Z,(n,c)=1}A\Bigl(\frac nc+\frac i{c^2}\Bigr)\Bigr|\\
 \le C\,\ue^{t/2}\hbar^{3/2}B(A),
 \end{multline*}
 and the double series converges absolutely.
 \end{lemma}
 \begin{proof}
 In this proof $C$ denotes constants that depend only on the choice of $\vartheta$; they do not depend on $A$, $\hbar$, $t$, $x$, on the pair
-$(a,c)$ or on the frequency $m$ below. Put $F:=(S(t)A)\ue^{i\varphi/\hbar}$, where $S(t)A=\ue^{-t/2}A\circ D_t$ and $D_t(x,y)=(x,\ue^ty)$. Note that
-$Y=\ue^t\ge\hbar^{-2}\ge4$.
+$(n,c)$ or on the frequency $m$ below. Put $F:=(S(t)A)\ue^{i\varphi/\hbar}$, where $S(t)A=\ue^{-t/2}A\circ D_t$ and $D_t(x,y)=(x,\ue^ty)$. Note that
+$H=\ue^t\ge\hbar^{-2}\ge4$.
 
-\emph{Cosets.} An element of $\mathrm{PSL}(2,\mathbb Z)$ is a translation $T^k$, or has lower-left entry $c\ge1$ and acts by $w\mapsto a/c-1/(c(cw+d))$ with
-$ad\equiv1\pmod c$. For fixed $c$ and $a$ coprime to $c$, $d$ runs over $d_a+c\mathbb Z$, and $d=d_a+cn$ corresponds to $w=z+n$. Hence
-$[F]_\Gamma(z)=\sum_kF(z+k)+\sum_{c\ge1}\sum_{(a,c)=1}\sum_{n\in\mathbb Z}G_{a,c}(n)$ with $G_{a,c}(u)=F(\gamma_{a,c}(z+u))$; all sums converge
-absolutely by the bounds below. For the translation part, $|F(z+k)|\le\ue^{-t/2}B(A)\,\vartheta(x+k+iY^2)$ and
-$X_0(x+k+iY^2)\ge\tfrac12Y^2\bigl(1+(x+k)^2Y^{-4}\bigr)$, so $\sum_k\vartheta(x+k+iY^2)\le C$ for both choices of $\vartheta$ (use
+\emph{Cosets.} An element of $\mathrm{PSL}(2,\mathbb Z)$ is a translation $z\mapsto z+k$, or has lower-left entry $c\ge1$ and acts by $w\mapsto n/c-1/(c(cw+d))$ with
+$nd\equiv1\pmod c$. For fixed $c$ and $n$ coprime to $c$, $d$ runs over $d_n+c\mathbb Z$, and $d=d_n+ck$ corresponds to $w=z+k$. Hence
+$[F]_\Gamma(z)=\sum_kF(z+k)+\sum_{c\ge1}\sum_{(n,c)=1}\sum_{k\in\mathbb Z}G_{n,c}(k)$ with $G_{n,c}(u)=F(\gamma_{n,c}(z+u))$; all sums converge
+absolutely by the bounds below. For the translation part, $|F(z+k)|\le\ue^{-t/2}B(A)\,\vartheta(x+k+iH^2)$ and
+$X_0(x+k+iH^2)\ge\tfrac12H^2\bigl(1+(x+k)^2H^{-4}\bigr)$, so $\sum_k\vartheta(x+k+iH^2)\le C$ for both choices of $\vartheta$ (use
 $\vartheta\le X_0^{-1}$ for the second). So the translation part is at most $C\ue^{-t/2}B(A)\le C\ue^{t/2}\hbar^{3/2}B(A)$, because $\ue^{-t}\le\hbar^2$.
 
-\emph{Change of variable.} With $\tau=(c(x+u)+d_a)/Y$, the point $D_t\gamma_{a,c}(z+u)$ is
+\emph{Change of variable.} With $\tau=(c(x+u)+d_n)/H$, the point $D_t\gamma_{n,c}(z+u)$ is
 \[
-Q(\tau)=\frac ac-\frac{\tau}{cY(\tau^2+c^2)}+\frac{i}{\tau^2+c^2},\qquad \varphi(\gamma_{a,c}(z+u))=t+\log(\tau^2+c^2),
+Q(\tau)=\frac nc-\frac{\tau}{cH(\tau^2+c^2)}+\frac{i}{\tau^2+c^2},\qquad \varphi(\gamma_{n,c}(z+u))=t+\log(\tau^2+c^2),
 \]
-so $G_{a,c}(u)=g(\tau):=\ue^{-t/2}A(Q(\tau))\,\ue^{i(t+\log(\tau^2+c^2))/\hbar}$ and $du=(Y/c)\,d\tau$. Put $a_1(\sigma)=2\sigma/(1+\sigma^2)$ and
-$a_2(\sigma)=(1-\sigma^2)/(1+\sigma^2)$; these functions and all their derivatives are bounded on $\mathbb R$. In this proof $Y$ is the height, and
-the two vector fields are written $\mathsf X=y\partial_x$ and $\mathsf Y=y\partial_y$. For every $C^1$ function $H$ on $\Hb$
+so $G_{n,c}(u)=g(\tau):=\ue^{-t/2}A(Q(\tau))\,\ue^{i(t+\log(\tau^2+c^2))/\hbar}$ and $du=(H/c)\,d\tau$. Put $r_1(\sigma)=2\sigma/(1+\sigma^2)$ and
+$r_2(\sigma)=(1-\sigma^2)/(1+\sigma^2)$; these functions and all their derivatives are bounded on $\mathbb R$. For every $C^1$ function $\Psi$ on $\Hb$
 \begin{equation}\label{cl:chain}
-\partial_\tau\bigl[H(Q(\tau))\bigr]=-\frac1c\,a_1\Bigl(\frac\tau c\Bigr)(\mathsf YH)(Q(\tau))-\frac1{cY}\,a_2\Bigl(\frac\tau c\Bigr)(\mathsf XH)(Q(\tau)) .
+\partial_\tau\bigl[\Psi(Q(\tau))\bigr]=-\frac1c\,r_1\Bigl(\frac\tau c\Bigr)(Y\Psi)(Q(\tau))-\frac1{cH}\,r_2\Bigl(\frac\tau c\Bigr)(X\Psi)(Q(\tau)) .
 \end{equation}
 Applying \eqref{cl:chain} $j$ times, $\partial_\tau^j[A(Q(\tau))]$ is a sum of at most $C_j$ terms, each of which is $c^{-j}$ times a product of
-derivatives of $a_1$ and $a_2$ at $\tau/c$, times a power $Y^{-k}$ with $k\ge0$, times $(Z_SA)(Q(\tau))$ for a word with $|S|\le j$. So
+derivatives of $r_1$ and $r_2$ at $\tau/c$, times a power $H^{-k}$ with $k\ge0$, times $(Z_SA)(Q(\tau))$ for a word with $|S|\le j$. So
 \begin{equation}\label{cl:der}
 |\partial_\tau^j[A(Q(\tau))]|\le C_j\,c^{-j}B(A)\,\vartheta(Q(\tau))\qquad(j\le4).
 \end{equation}
-Write $Q=q+ip$. Then $X_0(Q)=(q^2+1)/(2p)+p/2\ge\tfrac12(q^2+1)(\tau^2+c^2)$, and $|qc-a|\le1/(2cY)\le\tfrac12$, so $q^2c^2\ge a^2/4$ and
-$X_0(Q(\tau))\ge\tfrac18(a^2+c^2)(1+\tau^2/c^2)$. Hence
+Write $Q=q+ip$. Then $X_0(Q)=(q^2+1)/(2p)+p/2\ge\tfrac12(q^2+1)(\tau^2+c^2)$, and $|qc-n|\le1/(2cH)\le\tfrac12$, so $q^2c^2\ge n^2/4$ and
+$X_0(Q(\tau))\ge\tfrac18(n^2+c^2)(1+\tau^2/c^2)$. Hence
 \begin{equation}\label{cl:theta}
-\vartheta(Q(\tau))\le C\,\vartheta_{a,c}\,(1+\tau^2/c^2)^{-\nu},
+\vartheta(Q(\tau))\le C\,\vartheta_{n,c}\,(1+\tau^2/c^2)^{-\nu},
 \end{equation}
-where $\nu=2$, $\vartheta_{a,c}=(a^2+c^2)^{-2}$ for $\vartheta=X_0^{-2}$, and $\nu=1$,
-$\vartheta_{a,c}=(a^2+c^2)^{-1}(1+\log(a^2+c^2))^{-3/2}$ for the second choice (for which $\vartheta\le X_0^{-1}(1+\log X_0)^{-3/2}$, a decreasing
-function of $X_0$). In both cases $\sum_{(a,c)}\vartheta_{a,c}<\infty$ (for the second, by
-partial summation, since $\#\{(a,c):a^2+c^2\le N\}\le CN$). By \eqref{cl:theta}, $\sum_n|G_{a,c}(n)|\le C\ue^{-t/2}B(A)\vartheta_{a,c}(Y+1)$, which gives the
-absolute convergence, and at $\tau=0$ it gives $|A(a/c+i/c^2)|\le CB(A)\vartheta_{a,c}$, so the double series of the lemma converges absolutely.
-We abbreviate $\varepsilon_{a,c}:=\ue^{-t/2}B(A)\,\vartheta_{a,c}$.
+where $\nu=2$, $\vartheta_{n,c}=(n^2+c^2)^{-2}$ for $\vartheta=X_0^{-2}$, and $\nu=1$,
+$\vartheta_{n,c}=(n^2+c^2)^{-1}(1+\log(n^2+c^2))^{-3/2}$ for the second choice (for which $\vartheta\le X_0^{-1}(1+\log X_0)^{-3/2}$, a decreasing
+function of $X_0$). In both cases $\sum_{(n,c)}\vartheta_{n,c}<\infty$ (for the second, by
+partial summation, since $\#\{(n,c):n^2+c^2\le N\}\le CN$). By \eqref{cl:theta}, $\sum_k|G_{n,c}(k)|\le C\ue^{-t/2}B(A)\vartheta_{n,c}(H+1)$, which gives the
+absolute convergence, and at $\tau=0$ it gives $|A(n/c+i/c^2)|\le CB(A)\vartheta_{n,c}$, so the double series of the lemma converges absolutely.
+We abbreviate $\eta_{n,c}:=\ue^{-t/2}B(A)\,\vartheta_{n,c}$.
 
-\emph{Poisson summation.} By \eqref{cl:der} and \eqref{cl:theta}, $G_{a,c}$ is $C^4$ and its derivatives up to order $2$ are $O((1+u^2)^{-1})$, so
-$\sum_nG_{a,c}(n)=\sum_m\hat G(m)$ with
+\emph{Poisson summation.} By \eqref{cl:der} and \eqref{cl:theta}, $G_{n,c}$ is $C^4$ and its derivatives up to order $2$ are $O((1+u^2)^{-1})$, so
+$\sum_kG_{n,c}(k)=\sum_m\hat G(m)$ with
 \[
-\hat G(m)=\frac Yc\,\ue^{2\pi im(x+d_a/c)}\int g(\tau)\,\ue^{-2\pi imY\tau/c}\,d\tau .
+\hat G(m)=\frac Hc\,\ue^{2\pi im(x+d_n/c)}\int g(\tau)\,\ue^{-2\pi imH\tau/c}\,d\tau .
 \]
-Let $m\ne0$, and write the integrand as $u\,\ue^{i\Phi}$ with $u(\tau)=\ue^{-t/2}A(Q(\tau))\ue^{it/\hbar}$ and
-$\Phi(\tau)=\hbar^{-1}\log(\tau^2+c^2)-2\pi mY\tau/c$. Then $\Phi'=(\hbar c)^{-1}a_1(\tau/c)-2\pi mY/c$, so
-$|\Phi'|\ge2\pi|m|Y/c-1/(\hbar c)\ge\pi|m|Y/c$ (as $\hbar Y\ge\hbar^{-1}\ge2$), $|\Phi''|\le2/(\hbar c^2)$ and
-$|\Phi'''|\le C/(\hbar c^3)$. Two integrations by parts, without boundary terms, give $\int u\,\ue^{i\Phi}=-\int\bigl((u/\Phi')'/\Phi'\bigr)'\ue^{i\Phi}$, and
+Let $m\ne0$, and write the integrand as $u\,\ue^{i\Theta}$ with $u(\tau)=\ue^{-t/2}A(Q(\tau))\ue^{it/\hbar}$ and
+$\Theta(\tau)=\hbar^{-1}\log(\tau^2+c^2)-2\pi mH\tau/c$. Then $\Theta'=(\hbar c)^{-1}r_1(\tau/c)-2\pi mH/c$, so
+$|\Theta'|\ge2\pi|m|H/c-1/(\hbar c)\ge\pi|m|H/c$ (as $\hbar H\ge\hbar^{-1}\ge2$), $|\Theta''|\le2/(\hbar c^2)$ and
+$|\Theta'''|\le C/(\hbar c^3)$. Two integrations by parts, without boundary terms, give $\int u\,\ue^{i\Theta}=-\int\bigl((u/\Theta')'/\Theta'\bigr)'\ue^{i\Theta}$, and
 \begin{multline*}
-\Bigl|\Bigl(\frac{(u/\Phi')'}{\Phi'}\Bigr)'\Bigr|\le\frac{|u''|}{|\Phi'|^2}+3\frac{|u'||\Phi''|}{|\Phi'|^3}+\frac{|u||\Phi'''|}{|\Phi'|^3}+3\frac{|u||\Phi''|^2}{|\Phi'|^4}\\
-\le\frac{C}{m^2Y^2}\Bigl(1+\frac1{\hbar|m|Y}+\frac1{(\hbar mY)^2}\Bigr)\ue^{-t/2}B(A)\,\vartheta(Q(\tau))
+\Bigl|\Bigl(\frac{(u/\Theta')'}{\Theta'}\Bigr)'\Bigr|\le\frac{|u''|}{|\Theta'|^2}+3\frac{|u'||\Theta''|}{|\Theta'|^3}+\frac{|u||\Theta'''|}{|\Theta'|^3}+3\frac{|u||\Theta''|^2}{|\Theta'|^4}\\
+\le\frac{C}{m^2H^2}\Bigl(1+\frac1{\hbar|m|H}+\frac1{(\hbar mH)^2}\Bigr)\ue^{-t/2}B(A)\,\vartheta(Q(\tau))
 \end{multline*}
-by \eqref{cl:der}. Since $\hbar Y\ge2$ and $\int(1+\tau^2/c^2)^{-\nu}d\tau\le Cc$, \eqref{cl:theta} gives
+by \eqref{cl:der}. Since $\hbar H\ge2$ and $\int(1+\tau^2/c^2)^{-\nu}d\tau\le Cc$, \eqref{cl:theta} gives
 \[
-\Bigl|\int g\,\ue^{-2\pi imY\tau/c}d\tau\Bigr|\le C\varepsilon_{a,c}\,\frac c{m^2Y^2}.
+\Bigl|\int g\,\ue^{-2\pi imH\tau/c}d\tau\Bigr|\le C\eta_{n,c}\,\frac c{m^2H^2}.
 \]
-Hence $\sum_{m\ne0}|\hat G(m)|\le C\varepsilon_{a,c}/Y$, and the sum of these bounds over $(a,c)$ is at most
+Hence $\sum_{m\ne0}|\hat G(m)|\le C\eta_{n,c}/H$, and the sum of these bounds over $(n,c)$ is at most
 $C\ue^{-3t/2}B(A)\le C\ue^{t/2}\hbar^{3/2}B(A)$.
 
-\emph{The term $m=0$.} With $\tau=c\sigma$, $\hat G(0)=Y\ue^{it/\hbar}c^{2i/\hbar}\int f(\sigma)\ue^{i\theta(\sigma)/\hbar}d\sigma$, where
-$f(\sigma)=\ue^{-t/2}A(Q(c\sigma))$ and $\theta(\sigma)=\log(1+\sigma^2)$, so that $\theta'=a_1$. By \eqref{cl:der} and \eqref{cl:theta},
+\emph{The term $m=0$.} With $\tau=c\sigma$, $\hat G(0)=H\ue^{it/\hbar}c^{2i/\hbar}\int f(\sigma)\ue^{i\theta(\sigma)/\hbar}d\sigma$, where
+$f(\sigma)=\ue^{-t/2}A(Q(c\sigma))$ and $\theta(\sigma)=\log(1+\sigma^2)$, so that $\theta'=r_1$. By \eqref{cl:der} and \eqref{cl:theta},
 \begin{equation}\label{cl:fbd}
-|f^{(j)}(\sigma)|\le C\varepsilon_{a,c}(1+\sigma^2)^{-\nu}\qquad(j\le4),
+|f^{(j)}(\sigma)|\le C\eta_{n,c}(1+\sigma^2)^{-\nu}\qquad(j\le4),
 \end{equation}
 and the same bound holds for $j\le2$ when $A$ is replaced by $Z_SA$ with $|S|\le2$. By \eqref{cl:chain},
 \begin{equation}\label{cl:fprime}
-f'=-\theta'f_1-Y^{-1}a_2f_2,\qquad f_1:=\ue^{-t/2}(\mathsf YA)(Q(c\sigma)),\quad f_2:=\ue^{-t/2}(\mathsf XA)(Q(c\sigma)),
+f'=-\theta'f_1-H^{-1}r_2f_2,\qquad f_1:=\ue^{-t/2}(YA)(Q(c\sigma)),\quad f_2:=\ue^{-t/2}(XA)(Q(c\sigma)),
 \end{equation}
-and likewise $f_1'=-\theta'f_{11}-Y^{-1}a_2f_{21}$ with $f_{11}$, $f_{21}$ defined by $\mathsf Y^2A$ and $\mathsf X\mathsf YA$. Let $\chi$ be a fixed cutoff, $\chi=1$ on
-$[-\tfrac12,\tfrac12]$, $\operatorname{supp}\chi\subset[-1,1]$, and split $f=\chi f+(1-\chi)f$.
+and likewise $f_1'=-\theta'f_{11}-H^{-1}r_2f_{21}$ with $f_{11}$, $f_{21}$ defined by $Y^2A$ and $XYA$. Let $\lambda$ be a fixed cutoff, $\lambda=1$ on
+$[-\tfrac12,\tfrac12]$, $\operatorname{supp}\lambda\subset[-1,1]$, and split $f=\lambda f+(1-\lambda)f$.
 
 \emph{Near part.} On $[-1,1]$, $\theta=s(\sigma)^2$ with $s(\sigma)=\operatorname{sign}(\sigma)(\log(1+\sigma^2))^{1/2}$, a fixed smooth function with $s'>0$ and
-$s'(0)=1$. With the inverse function $\sigma(s)$ put $h(s)=(\chi f)(\sigma(s))\sigma'(s)$; it is $C^4$, supported in $[-1,1]$, and
-$\norm h_{C^4}\le C\varepsilon_{a,c}$ by \eqref{cl:fbd}, since the change of variable is fixed. By the Fourier inversion formula and
+$s'(0)=1$. With the inverse function $\sigma(s)$ put $h(s)=(\lambda f)(\sigma(s))\sigma'(s)$; it is $C^4$, supported in $[-1,1]$, and
+$\norm h_{C^4}\le C\eta_{n,c}$ by \eqref{cl:fbd}, since the change of variable is fixed. By the Fourier inversion formula and
 $\int\ue^{is^2/\hbar+is\xi}ds=\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{-i\hbar\xi^2/4}$,
 \[
-\int\chi f\,\ue^{i\theta/\hbar}d\sigma=\int h\,\ue^{is^2/\hbar}ds=\sqrt{\pi\hbar}\,\ue^{i\pi/4}\,\frac1{2\pi}\int\hat h(\xi)\,\ue^{-i\hbar\xi^2/4}d\xi ,
+\int\lambda f\,\ue^{i\theta/\hbar}d\sigma=\int h\,\ue^{is^2/\hbar}ds=\sqrt{\pi\hbar}\,\ue^{i\pi/4}\,\frac1{2\pi}\int\hat h(\xi)\,\ue^{-i\hbar\xi^2/4}d\xi ,
 \]
 and $\frac1{2\pi}\int\hat h=h(0)=f(0)$. Since $|\ue^{-i\hbar\xi^2/4}-1|\le\hbar\xi^2/4$ and
 $(1+\xi^2)^2|\hat h(\xi)|\le\norm{(1-\partial_s^2)^2h}_{L^1}\le8\norm h_{C^4}$,
 \[
-\Bigl|\int\chi f\,\ue^{i\theta/\hbar}d\sigma-\sqrt{\pi\hbar}\,\ue^{i\pi/4}f(0)\Bigr|\le\sqrt{\pi\hbar}\,\frac\hbar{8\pi}\int\xi^2|\hat h(\xi)|\,d\xi\le C\hbar^{3/2}\varepsilon_{a,c}.
+\Bigl|\int\lambda f\,\ue^{i\theta/\hbar}d\sigma-\sqrt{\pi\hbar}\,\ue^{i\pi/4}f(0)\Bigr|\le\sqrt{\pi\hbar}\,\frac\hbar{8\pi}\int\xi^2|\hat h(\xi)|\,d\xi\le C\hbar^{3/2}\eta_{n,c}.
 \]
 
-\emph{Far part.} Let $\chi_Y(\sigma)=\chi(\sigma/(2Y))$, so that $\chi_Y=1$ on $|\sigma|\le Y$, $\chi_Y=0$ on $|\sigma|\ge2Y$ and
-$|\chi_Y^{(k)}|\le CY^{-k}$, and put $\omega=(1-\chi)\chi_Y$. By \eqref{cl:fbd}, $\int|(1-\chi)(1-\chi_Y)f|\le C\varepsilon_{a,c}\int_{|\sigma|\ge Y}\sigma^{-2\nu}d\sigma\le C\varepsilon_{a,c}/Y$.
-It remains to bound $\int\omega f\,\ue^{i\theta/\hbar}d\sigma$. On $|\sigma|\ge\tfrac12$ put $\rho:=1/\theta'=(1+\sigma^2)/(2\sigma)$; then
+\emph{Far part.} Let $\lambda_H(\sigma)=\lambda(\sigma/(2H))$, so that $\lambda_H=1$ on $|\sigma|\le H$, $\lambda_H=0$ on $|\sigma|\ge2H$ and
+$|\lambda_H^{(k)}|\le CH^{-k}$, and put $\zeta=(1-\lambda)\lambda_H$. By \eqref{cl:fbd}, $\int|(1-\lambda)(1-\lambda_H)f|\le C\eta_{n,c}\int_{|\sigma|\ge H}\sigma^{-2\nu}d\sigma\le C\eta_{n,c}/H$.
+It remains to bound $\int\zeta f\,\ue^{i\theta/\hbar}d\sigma$. On $|\sigma|\ge\tfrac12$ put $\rho:=1/\theta'=(1+\sigma^2)/(2\sigma)$; then
 \begin{equation}\label{cl:rho}
 |\rho|\le C(1+|\sigma|),\qquad|\rho'|\le C,\qquad|\rho''|\le C(1+|\sigma|)^{-3},
 \end{equation}
@@ -205,38 +200,37 @@ and for every $C^1$ function $v$ with compact support in $\{|\sigma|\ge\tfrac12\
 \end{equation}
 The cutoff satisfies
 \begin{equation}\label{cl:omega}
-|\omega'\rho|\le C,\qquad|(\omega'\rho)'\rho|\le C\ \text{on }\tfrac12\le|\sigma|\le1,\qquad|(\omega'\rho)'\rho|\le C\ \text{on }Y\le|\sigma|\le2Y,
+|\zeta'\rho|\le C,\qquad|(\zeta'\rho)'\rho|\le C\ \text{on }\tfrac12\le|\sigma|\le1,\qquad|(\zeta'\rho)'\rho|\le C\ \text{on }H\le|\sigma|\le2H,
 \end{equation}
-and $\omega'$ vanishes elsewhere (on $[Y,2Y]$ use $|\chi_Y'|\le C/Y$, $|\chi_Y''|\le C/Y^2$ and $|\rho|\le CY$). By \eqref{cl:fprime},
-$f'\rho=-f_1-Y^{-1}a_2\rho f_2$, so
+and $\zeta'$ vanishes elsewhere (on $[H,2H]$ use $|\lambda_H'|\le C/H$, $|\lambda_H''|\le C/H^2$ and $|\rho|\le CH$). By \eqref{cl:fprime},
+$f'\rho=-f_1-H^{-1}r_2\rho f_2$, so
 \[
-(\omega f\rho)'=W-Y^{-1}\omega a_2\rho f_2,\qquad W:=\omega'\rho f+\omega\rho'f-\omega f_1 .
+(\zeta f\rho)'=W-H^{-1}\zeta r_2\rho f_2,\qquad W:=\zeta'\rho f+\zeta\rho'f-\zeta f_1 .
 \]
 The last term is integrated directly: by \eqref{cl:fbd} and \eqref{cl:rho},
 \[
-\int|Y^{-1}\omega a_2\rho f_2|\,d\sigma\le C\varepsilon_{a,c}Y^{-1}\int_{|\sigma|\le2Y}(1+|\sigma|)^{1-2\nu}d\sigma\le C\varepsilon_{a,c}Y^{-1}\log(4Y).
+\int|H^{-1}\zeta r_2\rho f_2|\,d\sigma\le C\eta_{n,c}H^{-1}\int_{|\sigma|\le2H}(1+|\sigma|)^{1-2\nu}d\sigma\le C\eta_{n,c}H^{-1}\log(4H).
 \]
 The function $W$ is $C^1$ with compact support in $\{|\sigma|\ge\tfrac12\}$, and we apply \eqref{cl:ibp} once more, to $v=W$, where
 \[
-(W\rho)'=(\omega'\rho)'\rho f+\omega'\rho\,(f'\rho)+\omega'\rho\,\rho'f+\omega\rho''\rho f+\omega\rho'(f'\rho)-\omega'\rho f_1-\omega\,(f_1'\rho)+W\rho' .
+(W\rho)'=(\zeta'\rho)'\rho f+\zeta'\rho\,(f'\rho)+\zeta'\rho\,\rho'f+\zeta\rho''\rho f+\zeta\rho'(f'\rho)-\zeta'\rho f_1-\zeta\,(f_1'\rho)+W\rho' .
 \]
-On the support of $\omega$ we have $|\sigma|\le2Y$, hence $Y^{-1}|\rho|\le C$ and, by \eqref{cl:fprime} and its analogue for $f_1$,
-$|f'\rho|+|f_1'\rho|\le C\varepsilon_{a,c}(1+\sigma^2)^{-\nu}$. With \eqref{cl:fbd}, \eqref{cl:rho} and \eqref{cl:omega} (and $|\rho''\rho|\le C$, $|W|\le C\varepsilon_{a,c}(1+\sigma^2)^{-\nu}$) every term of $(W\rho)'$ is
-bounded by $C\varepsilon_{a,c}(1+\sigma^2)^{-\nu}$. So $\int|(W\rho)'|\le C\varepsilon_{a,c}$, and altogether
+On the support of $\zeta$ we have $|\sigma|\le2H$, hence $H^{-1}|\rho|\le C$ and, by \eqref{cl:fprime} and its analogue for $f_1$,
+$|f'\rho|+|f_1'\rho|\le C\eta_{n,c}(1+\sigma^2)^{-\nu}$. With \eqref{cl:fbd}, \eqref{cl:rho} and \eqref{cl:omega} (and $|\rho''\rho|\le C$, $|W|\le C\eta_{n,c}(1+\sigma^2)^{-\nu}$) every term of $(W\rho)'$ is
+bounded by $C\eta_{n,c}(1+\sigma^2)^{-\nu}$. So $\int|(W\rho)'|\le C\eta_{n,c}$, and altogether
 \[
-\Bigl|\int(1-\chi)f\,\ue^{i\theta/\hbar}d\sigma\Bigr|\le C\varepsilon_{a,c}\bigl(Y^{-1}+\hbar\,Y^{-1}\log(4Y)+\hbar^2\bigr)\le C\hbar^{3/2}\varepsilon_{a,c},
+\Bigl|\int(1-\lambda)f\,\ue^{i\theta/\hbar}d\sigma\Bigr|\le C\eta_{n,c}\bigl(H^{-1}+\hbar\,H^{-1}\log(4H)+\hbar^2\bigr)\le C\hbar^{3/2}\eta_{n,c},
 \]
-because $Y\ge\hbar^{-2}$ and $Y^{-1}\log(4Y)\le C\hbar^{1/2}$ for such $Y$.
+because $H\ge\hbar^{-2}$ and $H^{-1}\log(4H)\le C\hbar^{1/2}$ for such $H$.
 
-\emph{Conclusion.} Since $f(0)=\ue^{-t/2}A(a/c+i/c^2)$ and $Y\ue^{-t/2}=\ue^{t/2}$,
+\emph{Conclusion.} Since $f(0)=\ue^{-t/2}A(n/c+i/c^2)$ and $H\ue^{-t/2}=\ue^{t/2}$,
 \[
-\hat G(0)=\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}c^{2i/\hbar}A\Bigl(\frac ac+\frac i{c^2}\Bigr)+O\bigl(\ue^{t/2}\hbar^{3/2}B(A)\vartheta_{a,c}\bigr).
+\hat G(0)=\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}c^{2i/\hbar}A\Bigl(\frac nc+\frac i{c^2}\Bigr)+O\bigl(\ue^{t/2}\hbar^{3/2}B(A)\vartheta_{n,c}\bigr).
 \]
-Summing over $(a,c)$, with $\sum_{(a,c)}\vartheta_{a,c}<\infty$, and adding the bounds for the translation part and for the terms $m\ne0$ proves the lemma.
+Summing over $(n,c)$, with $\sum_{(n,c)}\vartheta_{n,c}<\infty$, and adding the bounds for the translation part and for the terms $m\ne0$ proves the lemma.
 \end{proof}
 
 \subsection{Kernel bounds and amplitude construction}
-\subsubsection{Kernel and auxiliary estimates}
 \begin{lemma}[the Poisson kernel off the diagonal]\label{cl:kernel}
 Fix $r_0\in(0,1]$. For $0<\alpha\le\alpha_0<\pi/2$ the kernel $k_\alpha(r)$ of $\ue^{-\alpha\Lambda}$ extends holomorphically to
 $\{a+i\theta:a>3r_0/4,\ |\theta|<r_0/4\}$ with $|\tilde k_\alpha(a+i\theta)|\le C\alpha\,\ue^{-a}(1+a)^{-3/2}$. Hence
@@ -266,13 +260,12 @@ $|Z_S^w[k_\alpha(d(w,w'))]|\le C_{S,r_0}\,\alpha\,\ue^{-d(w,w')}(1+d(w,w'))^{-3/
 See Appendix~\ref{app:cusp-aux}.
 \end{proof}
 
-\subsubsection{Amplitude membership}
 \begin{lemma}[amplitude membership and derivative bounds]\label{cl:amp}
-(i) For every $\beta\ge0$ there is $\alpha_1=\alpha_1(\beta)\in(0,\tfrac12]$ such that for all $\kappa>0$ and $p\in\Hb$ the function
-$\ue^{\beta\langle d(p,\cdot)\rangle}\ue^{-\kappa X_0}$ lies in $\operatorname{Dom}(\ue^{\alpha_1\Lambda})$; in particular $a=\ue^{-\kappa X_0}$ has finite reversed-weight norm
-$\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}$ for every $\alpha\le\alpha_1$. Moreover $|Z_Sa|\le C_{S,\kappa}X_0^{|S|}\ue^{-\kappa X_0}$.
-(ii) $a=\ue^{-\alpha\Lambda}\ue^{-\kappa X_0}$ has $\norm a_{\alpha,\beta}=\norm{\ue^{\beta\langle d\rangle}\ue^{-\kappa X_0}}<\infty$, and
-$|Z_Sa(w)|\le C_{S,\kappa}\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$ uniformly in $\alpha\le\alpha_0$.
+(i) For every $\beta\ge0$ there is $\alpha_1=\alpha_1(\beta)\in(0,\tfrac12]$ such that for all $\mu>0$ and $p\in\Hb$ the function
+$\ue^{\beta\langle d(p,\cdot)\rangle}\ue^{-\mu X_0}$ lies in $\operatorname{Dom}(\ue^{\alpha_1\Lambda})$; in particular $a=\ue^{-\mu X_0}$ has finite reversed-weight norm
+$\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}$ for every $\alpha\le\alpha_1$. Moreover $|Z_Sa|\le C_{S,\mu}X_0^{|S|}\ue^{-\mu X_0}$.
+(ii) $a=\ue^{-\alpha\Lambda}\ue^{-\mu X_0}$ has $\norm a_{\alpha,\beta}=\norm{\ue^{\beta\langle d\rangle}\ue^{-\mu X_0}}<\infty$, and
+$|Z_Sa(w)|\le C_{S,\mu}\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$ uniformly in $\alpha\le\alpha_0$.
 
 \end{lemma}
 \begin{proof}
@@ -280,13 +273,13 @@ Write $\vartheta(w):=\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$. We use Lemma~\ref{cl:aux}.
 
 (i) Let $d_p:=d(p,\cdot)$, $X_p:=\cosh d_p$ and $m_p:=X_p^\beta\ue^{-\beta\langle d_p\rangle}$, so that
 \[
-\ue^{\beta\langle d_p\rangle}\ue^{-\kappa X_0}=\frac1{m_p}\cdot X_p^\beta\cdot\ue^{-\kappa X_0}.
+\ue^{\beta\langle d_p\rangle}\ue^{-\mu X_0}=\frac1{m_p}\cdot X_p^\beta\cdot\ue^{-\mu X_0}.
 \]
 We bound the words of the three factors; $j$ denotes the length of the word $Z_S$.
 
 \emph{The first factor.} For $p=i$, $m_i=\Phi(\tilde\psi)$ is the function of the proof of Lemma~\ref{lem:m2w}. Steps~1 and~2 of that proof apply
 to $1/\Phi$ in place of $\Phi$: $1/\Phi$ is holomorphic near every point of $[0,\infty)$, and on the strip of Step~1,
-$|1/\Phi|=\exp\beta\operatorname{Re}(\ell+(D+R)^{-1}-1)\le\ue^{\beta}$, because $|1+(1-\ue^{-2\psi})^{1/2}|\le3$ and $|D+R|^{-1}\le\tfrac{10}{17}$ there. So there
+$|1/\Phi|=\exp\beta\operatorname{Re}(\lambda+(D+R)^{-1}-1)\le\ue^{\beta}$, because $|1+(1-\ue^{-2\psi})^{1/2}|\le3$ and $|D+R|^{-1}\le\tfrac{10}{17}$ there. So there
 are $A_\beta,c_\beta\ge1$, depending only on $\beta$, with $|Z_S(1/m_i)|\le A_\beta c_\beta^{\,j}j!$. If $q$ is the affine isometry with $q(i)=p$, then
 $m_p=m_i\circ q^{-1}$, and $q$ commutes with $X$ and $Y$; so the same bound holds for $1/m_p$.
 
@@ -297,30 +290,30 @@ $|Z_BX_0|\le2\cdot2^{|B|}X_0$,
 \]
 with the Stirling numbers $S(j,k)$, and Cauchy's estimate on the disc of radius $u/2$ about $u\ge1$ gives
 $u^k|\phi^{(k)}(u)|\le k!\,2^k\sup_{|z-u|\le u/2}|\phi|$. For $\phi(u)=u^\beta$ the supremum is at most $(3u/2)^\beta$, and for
-$\phi(u)=\ue^{-\kappa u}$ it is at most $\ue^{-\kappa u/2}$. The exponential generating function of $\sum_kS(j,k)4^kk!$ is $(5-4\ue^z)^{-1}$, which is
+$\phi(u)=\ue^{-\mu u}$ it is at most $\ue^{-\mu u/2}$. The exponential generating function of $\sum_kS(j,k)4^kk!$ is $(5-4\ue^z)^{-1}$, which is
 holomorphic in $|z|<\log\tfrac54$ and at most $9$ in modulus on $|z|=\tfrac15$ (there $|5-4\ue^z|\ge5-4\ue^{1/5}>\tfrac19$); so
 $\sum_kS(j,k)4^kk!\le9\cdot5^jj!$. Hence
 \[
-|Z_S\,\ue^{-\kappa X_0}|\le9\cdot10^jj!\,\ue^{-\kappa X_0/2},\qquad|Z_SX_p^\beta|\le9\cdot10^jj!\,(3X_p/2)^\beta ,
+|Z_S\,\ue^{-\mu X_0}|\le9\cdot10^jj!\,\ue^{-\mu X_0/2},\qquad|Z_SX_p^\beta|\le9\cdot10^jj!\,(3X_p/2)^\beta ,
 \]
 the second by the first argument applied to $X_0^\beta$ and composition with $q^{-1}$.
 
-\emph{Conclusion.} By the Leibniz rule for three factors, with $M:=\max(c_\beta,10)$,
+\emph{Conclusion.} By the Leibniz rule for three factors, with $L:=\max(c_\beta,10)$,
 \begin{multline*}
-\bigl|Z_S\bigl(\ue^{\beta\langle d_p\rangle}\ue^{-\kappa X_0}\bigr)\bigr|\le81A_\beta\,j!\sum_{j_1+j_2+j_3=j}c_\beta^{\,j_1}10^{\,j_2+j_3}\,(3X_p/2)^\beta\ue^{-\kappa X_0/2}\\
-\le81A_\beta\,(j+1)\,j!\,(2M)^j\,(3X_p/2)^\beta\ue^{-\kappa X_0/2},
+\bigl|Z_S\bigl(\ue^{\beta\langle d_p\rangle}\ue^{-\mu X_0}\bigr)\bigr|\le81A_\beta\,j!\sum_{j_1+j_2+j_3=j}c_\beta^{\,j_1}10^{\,j_2+j_3}\,(3X_p/2)^\beta\ue^{-\mu X_0/2}\\
+\le81A_\beta\,(j+1)\,j!\,(2L)^j\,(3X_p/2)^\beta\ue^{-\mu X_0/2},
 \end{multline*}
-because the sum has $\binom{j+2}2\le(j+1)2^j$ terms. Since $X_p\le2\cosh d(p,i)\,X_0$, the function $(3X_p/2)^\beta\ue^{-\kappa X_0/2}$ lies in
-$L^2(\Hb)$. Lemma~\ref{lem:expw} (with $\alpha=1$ and $2M$ in the role of $M$) gives the claim with $\alpha_1:=1/(8M)$, which depends only on $\beta$.
+because the sum has $\binom{j+2}2\le(j+1)2^j$ terms. Since $X_p\le2\cosh d(p,i)\,X_0$, the function $(3X_p/2)^\beta\ue^{-\mu X_0/2}$ lies in
+$L^2(\Hb)$. Lemma~\ref{lem:expw} (with $\alpha=1$ and $2L$ in the role of $L$) gives the claim with $\alpha_1:=1/(8L)$, which depends only on $\beta$.
 
-\emph{The word bound.} By the relations in Lemma~\ref{cl:aux}(d), every word applied to
-$X_0$ is bounded by $C_SX_0$, and $Z_S\ue^{-\kappa X_0}$ is $\ue^{-\kappa X_0}$ times a sum of products of at most $|S|$ factors $-\kappa Z_{S_l}X_0$. So
+\emph{The word bound.} By the bound $|Z_BX_0|\le2\cdot2^{|B|}X_0$ of Section~\ref{subsec:dd-fc}, every word applied to
+$X_0$ is bounded by $C_SX_0$, and $Z_S\ue^{-\mu X_0}$ is $\ue^{-\mu X_0}$ times a sum of products of at most $|S|$ factors $-\mu Z_{S_l}X_0$. So
 \begin{equation}\label{cl:hwords}
-|Z_S\ue^{-\kappa X_0}|\le C_S(1+\kappa)^{|S|}X_0^{|S|}\ue^{-\kappa X_0},
+|Z_S\ue^{-\mu X_0}|\le C_S(1+\mu)^{|S|}X_0^{|S|}\ue^{-\mu X_0},
 \end{equation}
-with $C_S$ independent of $\kappa$; this is the word bound.
+with $C_S$ independent of $\mu$; this is the word bound.
 
-(ii) The norm is the definition: $\ue^{\alpha\Lambda}a=h:=\ue^{-\kappa X_0}$. Fix a radial $\psi\in C_c^\infty(B(i,\tfrac14))$ with $\psi=1$ on $B(i,\tfrac18)$, and for
+(ii) The norm is the definition: $\ue^{\alpha\Lambda}a=h:=\ue^{-\mu X_0}$. Fix a radial $\psi\in C_c^\infty(B(i,\tfrac14))$ with $\psi=1$ on $B(i,\tfrac18)$, and for
 $w\in\Hb$ put $\psi_w:=\psi\circ p_w^{-1}$ with $p_w$ the affine map taking $i$ to $w$. Then $\psi_w=1$ on $B(w,\tfrac18)$,
 $\operatorname{supp}\psi_w\subset B(w,\tfrac14)$, and $|Z_S\psi_w|\le C_S$ uniformly in $w$. Fix $w$ and split
 \[
@@ -330,118 +323,135 @@ a=a^{\rm n}+a^{\rm f},\qquad a^{\rm n}:=\ue^{-\alpha\Lambda}(h\psi_w),\qquad a^{
 $1-\psi_w$ we have $d(\tilde w,w')\ge\tfrac1{16}$, so by Lemma~\ref{cl:aux}(d) with $r_0=\tfrac1{16}$ one may differentiate under the integral, and at $\tilde w=w$, by Lemma~\ref{cl:aux}(c),
 \begin{multline*}
 |Z_Sa^{\rm f}(w)|\le C_S\alpha\int\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}h(w')\,d\nu(w')\\
-\le C_S\alpha\,\vartheta(w)\int\ue^{d(i,w')}(1+d(i,w'))^{3/2}\ue^{-\kappa X_0(w')}d\nu(w')=C_{S,\kappa}\alpha\,\vartheta(w).
+\le C_S\alpha\,\vartheta(w)\int\ue^{d(i,w')}(1+d(i,w'))^{3/2}\ue^{-\mu X_0(w')}d\nu(w')=C_{S,\mu}\alpha\,\vartheta(w).
 \end{multline*}
 \emph{Near part.} Put $k=\lceil|S|/2\rceil+1$. The operator $\ue^{-\alpha\Lambda}$ commutes with $\Delta$ and is a contraction, and $\Delta^j$ is a combination of words of length at most $2j$. So by Lemma~\ref{cl:aux}(a),
 the Leibniz rule and \eqref{cl:hwords},
 \[
-|Z_Sa^{\rm n}(w)|\le C_S\sum_{j\le k}\norm{\Delta^j(h\psi_w)}\le C_S(1+\kappa)^{2k}\sup_{B(w,1/4)}X_0^{2k}\ue^{-\kappa X_0} .
+|Z_Sa^{\rm n}(w)|\le C_S\sum_{j\le k}\norm{\Delta^j(h\psi_w)}\le C_S(1+\mu)^{2k}\sup_{B(w,1/4)}X_0^{2k}\ue^{-\mu X_0} .
 \]
 On $B(w,\tfrac14)$, $X_0\ge\cosh(\max(0,d(i,w)-\tfrac14))$, so the right side is at most
 \[
-C_{S,\kappa}\exp\bigl(-\tfrac\kappa2\cosh(\max(0,d(i,w)-\tfrac14))\bigr)\le C_{S,\kappa}\vartheta(w).
+C_{S,\mu}\exp\bigl(-\tfrac\mu2\cosh(\max(0,d(i,w)-\tfrac14))\bigr)\le C_{S,\mu}\vartheta(w).
 \]
 Both bounds are uniform in $\alpha\le\alpha_0$.
 
 \end{proof}
 
-\subsubsection{Noncancellation}
 \begin{lemma}[noncancellation of the leading cusp coefficient]\label{cl:noncancel}
 For either amplitude of Lemma~\ref{cl:amp}, with its cases denoted by (i) and (ii), the following holds.
-Put $A_0=(Y^2-Y)a$ and $S_0(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(a,c)=1}A_0(a/c+i/c^2)$. In case (i) with $\kappa=20$, $|S_0(\hbar)|\ge0.98\,\kappa\ue^{-\kappa}$
-for all $\hbar$; in case (ii), $|S_0(\hbar)|\ge\tfrac12\kappa\ue^{-\kappa}$ for $\kappa\ge\kappa_*$, $\alpha\le c\kappa^{-6}$ and all $\hbar$.
+Put $A_0=(Y^2-Y)a$ and $S_0(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}A_0(n/c+i/c^2)$. In case (i) with $\mu=20$, $|S_0(\hbar)|\ge0.98\,\mu\ue^{-\mu}$
+for all $\hbar$; in case (ii), $|S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for $\mu\ge\mu_*$, $\alpha\le c\mu^{-6}$ and all $\hbar$.
 \end{lemma}
 \begin{proof}
 Put $\vartheta(w)=\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$.
-$Y^2X_0=X_0$ gives $A_0=a[\kappa^2(y-X_0)^2-\kappa(2X_0-y)]$ in case (i), so $A_0(i)=-\kappa\ue^{-\kappa}$. At the other points $a/c+i/c^2$,
-$X_0=(a^2+c^2+c^{-2})/2$, $X_0-1\ge\max(\tfrac12,(n-2)/2)$ with $n=a^2+c^2$, and $|A_0|\le\kappa\ue^{-\kappa}\ue^{-\kappa(X_0-1)}(\kappa X_0^2+2X_0)$. For
-$\kappa=20$ and $q=\ue^{-10}<1/20000$: the two points $\pm1+i$ give at most $96q<0.005$; there is no coprime pair with $c\ge1$ and $n\in\{3,4\}$; the rest is
-at most $\sum_{n\ge5}(4n+4)[5(n+1)^2+n+1]q^{n-2}\le5184q^3/(1-8q)<0.01$.
+$Y^2X_0=X_0$ gives $A_0=a[\mu^2(y-X_0)^2-\mu(2X_0-y)]$ in case (i), so $A_0(i)=-\mu\ue^{-\mu}$. At the other points $n/c+i/c^2$,
+$X_0=(n^2+c^2+c^{-2})/2$, $X_0-1\ge\max(\tfrac12,(k-2)/2)$ with $k=n^2+c^2$, and $|A_0|\le\mu\ue^{-\mu}\ue^{-\mu(X_0-1)}(\mu X_0^2+2X_0)$. For
+$\mu=20$ and $q=\ue^{-10}<1/20000$: the two points $\pm1+i$ give at most $96q<0.005$; there is no coprime pair with $c\ge1$ and $k\in\{3,4\}$; the rest is
+at most $\sum_{k\ge5}(4k+4)[5(k+1)^2+k+1]q^{k-2}\le5184q^3/(1-8q)<0.01$.
 
-In case (ii) let $h=\ue^{-\kappa X_0}$, so that $A_0=(Y^2-Y)\ue^{-\alpha\Lambda}h$ and $(Y^2-Y)h(i)=-\kappa\ue^{-\kappa}$. In the rest of the proof $C$ does
-not depend on $\kappa\ge1$ or on $\alpha\le\alpha_0$.
+In case (ii) let $h=\ue^{-\mu X_0}$, so that $A_0=(Y^2-Y)\ue^{-\alpha\Lambda}h$ and $(Y^2-Y)h(i)=-\mu\ue^{-\mu}$. In the rest of the proof $C$ does
+not depend on $\mu\ge1$ or on $\alpha\le\alpha_0$.
 
 \emph{The point $i$.} By Lemma~\ref{cl:aux}(a) with $k=2$, $|\ue^{-\alpha\lambda}-1|\le\alpha\lambda$ in the spectral representation of $\Lambda$, $\Lambda\le(1-\Delta)^{1/2}$,
 \eqref{cl:hwords} and $d\nu=dX_0\,d\theta$ in geodesic polar coordinates,
 \begin{multline*}
-|A_0(i)+\kappa\ue^{-\kappa}|\le C\sum_{j\le2}\norm{\Delta^j(\ue^{-\alpha\Lambda}-1)h}\le C\alpha\norm{(1-\Delta)^3h}\\
-\le C\alpha(1+\kappa)^6\Bigl(\int_1^\infty X^{12}\ue^{-2\kappa X}dX\Bigr)^{1/2}\le C\alpha\kappa^6\ue^{-\kappa}.
+|A_0(i)+\mu\ue^{-\mu}|\le C\sum_{j\le2}\norm{\Delta^j(\ue^{-\alpha\Lambda}-1)h}\le C\alpha\norm{(1-\Delta)^3h}\\
+\le C\alpha(1+\mu)^6\Bigl(\int_1^\infty X^{12}\ue^{-2\mu X}dX\Bigr)^{1/2}\le C\alpha\mu^6\ue^{-\mu}.
 \end{multline*}
 
-\emph{The other points.} Let $P$ be the set of the points $a/c+i/c^2$ with $c\ge1$, $(a,c)=1$ and $(a,c)\ne(0,1)$. Two distinct points
-$a/c+i/c^2$ and $a'/c'+i/c'^2$ have $\cosh d=1+\tfrac12\bigl[(ac'-a'c)^2+(c'/c-c/c')^2\bigr]\ge\tfrac32$, since $ac'=a'c$ forces
-$(a,c)=(a',c')$ for coprime pairs with $c,c'\ge1$. So $P\cup\{i\}$ is $0.96$-separated; in particular $d(i,w)\ge0.96$ for $w\in P$. Split
+\emph{The other points.} Let $P$ be the set of the points $n/c+i/c^2$ with $c\ge1$, $(n,c)=1$ and $(n,c)\ne(0,1)$. Two distinct points
+$n/c+i/c^2$ and $n'/c'+i/c'^2$ have $\cosh d=1+\tfrac12\bigl[(nc'-n'c)^2+(c'/c-c/c')^2\bigr]\ge\tfrac32$, since $nc'=n'c$ forces
+$(n,c)=(n',c')$ for coprime pairs with $c,c'\ge1$. So $P\cup\{i\}$ is $0.96$-separated; in particular $d(i,w)\ge0.96$ for $w\in P$. Split
 $h=h_1+h_2$ with $h_1=h\psi^{(1)}$, where $\psi^{(1)}=1$ on $B(i,0.44)$ and $\operatorname{supp}\psi^{(1)}\subset B(i,0.45)$, so that $h_2$ vanishes on $B(i,0.44)$.
 
 For $h_1$ and $w\in P$: the support of $h_1$ has distance at least $0.51$ from $w$, so by Lemma~\ref{cl:aux}(d) with $r_0=\tfrac12$ and Lemma~\ref{cl:aux}(c),
 \[
-|(Y^2-Y)\ue^{-\alpha\Lambda}h_1(w)|\le C\alpha\,\vartheta(w)\int_{B(i,0.45)}\ue^{-\kappa X_0}d\nu\le C\alpha\,\kappa^{-1}\ue^{-\kappa}\vartheta(w),
+|(Y^2-Y)\ue^{-\alpha\Lambda}h_1(w)|\le C\alpha\,\vartheta(w)\int_{B(i,0.45)}\ue^{-\mu X_0}d\nu\le C\alpha\,\mu^{-1}\ue^{-\mu}\vartheta(w),
 \]
-and $\sum_{w\in P}\vartheta(w)\le C$ by Lemma~\ref{cl:aux}(b). So $h_1$ contributes at most $C\alpha\kappa^{-1}\ue^{-\kappa}$ to the sum over $P$.
+and $\sum_{w\in P}\vartheta(w)\le C$ by Lemma~\ref{cl:aux}(b). So $h_1$ contributes at most $C\alpha\mu^{-1}\ue^{-\mu}$ to the sum over $P$.
 
 For $h_2$ and $w\in P$ use the split in the proof of Lemma~\ref{cl:amp}(ii), $h_2=h_2\psi_w+h_2(1-\psi_w)$. The far parts are bounded there by
 $C\alpha\int\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}|h_2(w')|\,d\nu(w')$; summing over $w\in P$ under the integral with Lemma~\ref{cl:aux}(b) gives at most
-$C\alpha\int|h_2|\,d\nu\le C\alpha\kappa^{-1}\ue^{-\kappa\cosh0.44}$. For the near parts, $B(w,\tfrac14)$ does not meet $B(i,0.45)$, so $h_2=h$ there, and
+$C\alpha\int|h_2|\,d\nu\le C\alpha\mu^{-1}\ue^{-\mu\cosh0.44}$. For the near parts, $B(w,\tfrac14)$ does not meet $B(i,0.45)$, so $h_2=h$ there, and
 by Lemma~\ref{cl:aux}(a) with $k=2$ and \eqref{cl:hwords}, as in the proof of Lemma~\ref{cl:amp}(ii),
 \[
-|(Y^2-Y)\ue^{-\alpha\Lambda}(h_2\psi_w)(w)|\le C(1+\kappa)^4\cosh^4(d(i,w)+\tfrac14)\,\ue^{-\kappa\cosh(d(i,w)-1/4)} .
+|(Y^2-Y)\ue^{-\alpha\Lambda}(h_2\psi_w)(w)|\le C(1+\mu)^4\cosh^4(d(i,w)+\tfrac14)\,\ue^{-\mu\cosh(d(i,w)-1/4)} .
 \]
-Since $\cosh(d(i,w)-\tfrac14)\ge\cosh0.71>\cosh0.44$ and $\kappa\ge1$, the right side is at most
-$C\kappa^4\ue^{-\kappa\cosh0.44}\cosh^4(d(i,w)+\tfrac14)\,\ue^{-(\cosh(d(i,w)-1/4)-\cosh0.44)}$, and the sum of the last two factors over $w\in P$ is finite
-by the counting bound in Lemma~\ref{cl:aux}(b). So $h_2$ contributes at most $C\kappa^4\ue^{-\kappa\cosh0.44}$, and $\cosh0.44-1>0.098$.
+Since $\cosh(d(i,w)-\tfrac14)\ge\cosh0.71>\cosh0.44$ and $\mu\ge1$, the right side is at most
+$C\mu^4\ue^{-\mu\cosh0.44}\cosh^4(d(i,w)+\tfrac14)\,\ue^{-(\cosh(d(i,w)-1/4)-\cosh0.44)}$, and the sum of the last two factors over $w\in P$ is finite
+by the counting bound in Lemma~\ref{cl:aux}(b). So $h_2$ contributes at most $C\mu^4\ue^{-\mu\cosh0.44}$, and $\cosh0.44-1>0.098$.
 
 Altogether
 \[
-\sum_{w\in P}|A_0(w)|\le C\bigl(\alpha/\kappa^2+\kappa^3\ue^{-0.098\kappa}\bigr)\,\kappa\ue^{-\kappa},\qquad|A_0(i)|\ge(1-C\alpha\kappa^5)\,\kappa\ue^{-\kappa},
+\sum_{w\in P}|A_0(w)|\le C\bigl(\alpha/\mu^2+\mu^3\ue^{-0.098\mu}\bigr)\,\mu\ue^{-\mu},\qquad|A_0(i)|\ge(1-C\alpha\mu^5)\,\mu\ue^{-\mu},
 \]
-which gives $|S_0(\hbar)|\ge\tfrac12\kappa\ue^{-\kappa}$ for $\kappa\ge\kappa_*$ and $\alpha\le c\kappa^{-6}$.
+which gives $|S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for $\mu\ge\mu_*$ and $\alpha\le c\mu^{-6}$.
 \end{proof}
 
-\subsection{Proof of sharpness}
+\subsection{Proof of sharpness}\label{subsec:cl-proof}
 \begin{proof}[Proof of Theorem~\ref{cl:main}]
-With $c_\hbar=i\hbar/2$, the definition of $u^{(K)}$ gives $E_0=M_1+M_2+E_2$, where
-$M_k=\ue^{-it/(2\hbar)}[(S(t)A_k)\ue^{i\varphi/\hbar}]_\Gamma$, $A_1=c_\hbar P_1(t)a$ and $A_2=c_\hbar^2P_2(t)a$. Since
+With $c_\hbar=i\hbar/2$, the definition of $u^{(K)}$ gives $E_0=T_1+T_2+E_2$, where
+$T_k=\ue^{-it/(2\hbar)}[(S(t)A_k)\ue^{i\varphi/\hbar}]_\Gamma$, $A_1=c_\hbar P_1(t)a$ and $A_2=c_\hbar^2P_2(t)a$. Since
 $P_1(t)a=\int_0^t\Delta(s)a\,ds=\tfrac{1-\ue^{-2t}}2X^2a+t(Y^2-Y)a$, Lemma~\ref{cl:asym} gives
 \[
-|M_1(z)|\ge\ue^{t/2}\sqrt{\pi\hbar}\,\tfrac\hbar2\bigl(t|S_0(\hbar)|-S_X\bigr)-C\ue^{t/2}\hbar^{3/2}\hbar t,
+|T_1(z)|\ge\ue^{t/2}\sqrt{\pi\hbar}\,\tfrac\hbar2\bigl(t|S_0(\hbar)|-S_X\bigr)-C\ue^{t/2}\hbar^{3/2}\hbar t,
 \]
-with $S_X=\sum_{(a,c)}|X^2a(a/c+i/c^2)|<\infty$. $P_2(t)a$ is a combination of
-words of length at most $4$ with coefficients bounded by $t^2/2$, so $|M_2(z)|\le C\ue^{t/2}\hbar^{1/2}\hbar^2t^2$. For $E_2$, Theorem~\ref{thm:dd14} in case (i)
+with $S_X=\sum_{(n,c)}|X^2a(n/c+i/c^2)|<\infty$. $P_2(t)a$ is a combination of
+words of length at most $4$ with coefficients bounded by $t^2/2$, so $|T_2(z)|\le C\ue^{t/2}\hbar^{1/2}\hbar^2t^2$. For $E_2$, Theorem~\ref{thm:dd14} in case (i)
 and Theorem~\ref{pc:main} in case (ii), at $K=2$ and $N=0,2$, give $\norm{E_2}\le C(\hbar t/\alpha^2)^3\ampNorm a$ and
 $\norm{\Delta^2E_2}\le C(\alpha\hbar)^{-4}(\hbar t/\alpha^2)^3\ampNorm a$; Lemma~\ref{cl:ssob} with $r=\hbar$ gives $|E_2(z)|\le C\ue^{t/2}\hbar^{-1}\alpha^{-10}(\hbar t)^3\ampNorm a$.
 Hence
 \[
 |E_0(z)|\ge\ue^{t/2}\hbar^{3/2}t\Bigl[\tfrac{\sqrt\pi}2|S_0(\hbar)|-\tfrac{\sqrt\pi}2\frac{S_X}t-C\hbar-C\hbar t-C\hbar^{1/2}t^2\Bigr],
 \]
-and the bracket is at least $\tfrac{\sqrt\pi}4|S_0(\hbar)|$ for $t\ge t_*$, $t\le\hbar^{-1/5}$ and $\hbar\le\hbar_0$. Lemma~\ref{cl:noncancel} bounds $|S_0|$ below.
+and the bracket is at least $\tfrac{\sqrt\pi}4|S_0(\hbar)|$ for $t\ge t_*$, $t\le\hbar^{-1/5}$ and $\hbar\le\hbar_0$. Lemma~\ref{cl:noncancel} bounds $|S_0|$ below,
+and Lemma~\ref{cl:ssob}(b) gives $m(z)\le5\ue^t$.
 \end{proof}
 
-\subsection{Relative accuracy and scope}\label{subsec:cl-relative}
+\begin{proof}[Proof of Theorem~\ref{cl:necessary}]
+Take $a$ and $\alpha$ as in case (i), respectively (ii), of Theorem~\ref{cl:main}, and let $\hbar_0,c_*,t_*,\delta$ be its constants.
+Every $z\in M$ has $m(z)\ge1$, since $\gamma=\mathrm{id}$ is counted.
+(i) Let $p\ge0$ and $t:=(2p+4)\log(1/\hbar)$. For small $\hbar$ this $t$ lies in the range of Theorem~\ref{cl:main} and below
+$\hbar^{-1/5}$, and at $z=x+i\ue^t$ that theorem gives $|E_0(t)(z)|\ge c_*\ue^{t/2}\hbar^{3/2}t=c_*\hbar^{-p-1/2}t$. A bound
+$C(\alpha\hbar)^{-p}\ampNorm a$ with $C$ independent of $\hbar$ is smaller for small $\hbar$.
+(ii) Let $\gamma<\tfrac12$, $p\ge0$ and $t:=\hbar^{-1/5}$, which lies in the range of Theorem~\ref{cl:main} for small $\hbar$. At
+$z=x+i\ue^t$ we have $m(z)^\gamma\le(5\ue^t)^{\max(\gamma,0)}$, so a bound $C\,m(z)^\gamma\hbar^{-p}\ampNorm a$ is at most
+$C'\ue^{\max(\gamma,0)t}\hbar^{-p}$, while $|E_0(t)(z)|\ge c_*\ue^{t/2}\hbar^{3/2}t$. The ratio of the lower to the upper bound is at least
+$c\,\ue^{(1/2-\max(\gamma,0))\hbar^{-1/5}}\hbar^{p+3/2}$, which tends to infinity as $\hbar\to0$.
+\end{proof}
+
+\subsection{Relative accuracy and rational boundary points}\label{subsec:cl-relative}
 
 \begin{proof}[Proof of Proposition~\ref{cl:relative}]
 Lemma~\ref{cl:asym} with $A=a$ gives
 \[
 u^{(0)}(t)_\Gamma(z)=\ue^{-it/(2\hbar)}\bigl(\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}S_a(\hbar)+O(\ue^{t/2}\hbar^{3/2})\bigr),
 \]
-where $S_a(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(a',c)=1}a(a'/c+i/c^2)$.
-With $a=\ue^{-\kappa X_0}$ and $\kappa=20$, $a(i)=\ue^{-\kappa}$ and the other terms are at most $\ue^{-\kappa}\ue^{-\kappa(X_0-1)}$; the count in the proof of
-Lemma~\ref{cl:noncancel} gives $0.99\,\ue^{-\kappa}\le|S_a(\hbar)|\le1.01\,\ue^{-\kappa}$. The proof of Theorem~\ref{cl:main} gives
+where $S_a(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}a(n/c+i/c^2)$.
+With $a=\ue^{-\mu X_0}$ and $\mu=20$, $a(i)=\ue^{-\mu}$ and the other terms are at most $\ue^{-\mu}\ue^{-\mu(X_0-1)}$; the count in the proof of
+Lemma~\ref{cl:noncancel} gives $0.99\,\ue^{-\mu}\le|S_a(\hbar)|\le1.01\,\ue^{-\mu}$. The proof of Theorem~\ref{cl:main} gives
 \[
 |E_0(z)|=\ue^{t/2}\sqrt{\pi\hbar}\,\tfrac{\hbar t}2\,|S_0(\hbar)|\,\bigl(1+O(1/t)+O(\hbar t)+O(\hbar^{1/2}t^2)\bigr),
 \]
-and $0.98\,\kappa\ue^{-\kappa}\le|S_0(\hbar)|\le1.02\,\kappa\ue^{-\kappa}$. Divide.
+and $0.98\,\mu\ue^{-\mu}\le|S_0(\hbar)|\le1.02\,\mu\ue^{-\mu}$. Divide.
 \end{proof}
 
-\begin{remark}[scope]\label{cl:scope}
-Theorem~\ref{cl:main} extends to every $b\in\mathbb Q$, the other rational representatives of the unique cusp of $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$: if $b=\gamma\infty$ with $\gamma\in\Gamma$, then
-$\varphi_b=\varphi_\infty\circ\gamma^{-1}$ up to a constant, the approximation for $b$ is the $\gamma$-transport of the one for $\infty$, and the error for
-$(b,a)$ is a constant phase times the error for $(\infty,a\circ\gamma)$. So take $a_b:=a\circ\gamma^{-1}$, that is $\ue^{-\kappa\cosh d(\gamma i,\cdot)}$ in case
-(i) and $\ue^{-\alpha\Lambda}\ue^{-\kappa\cosh d(\gamma i,\cdot)}$ in case (ii) ($\Lambda$ commutes with isometries); these have finite norms about the base
-point $i$: in case (ii) because $\langle d(i,\cdot)\rangle\le\langle d(\gamma i,\cdot)\rangle+d(i,\gamma i)$, and in case (i) because the reversed-weight norm of
-$a\circ\gamma^{-1}$ about $i$ is that of $a$ with the weight $\ue^{\beta\langle d(p,\cdot)\rangle}$, $p=\gamma^{-1}i$, which Lemma~\ref{cl:amp}(i) covers. Like Schubert's Corollary~1.6, Corollary~\ref{pc:cor16} is stated for every Fuchsian $\Gamma$ and every $b$, with constants that do not depend on $b$
-(in Corollary~\ref{pc:cor16} they may depend on $\Gamma$); by Theorem~\ref{cl:main} no
-statement of that form can have $m(z)^\gamma$ with $\gamma<\tfrac12$, so the exponent $\tfrac12$ is optimal among them (the power of $\hbar$ is not
-claimed optimal). For irrational $b$, and for cusped quotients other than $\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$, the necessity of the factor is not decided
-here; a bound depending on $b$ without that factor is not excluded. The stationary-phase mechanism is not special to $b=\infty$: in the frame where
-$b=\infty$, the top of every $\Gamma$-image of a cusp horocycle is a stationary point of $-\log y$.
-\end{remark}
+\begin{corollary}[rational boundary points]\label{cl:rational}
+Let $b\in\mathbb Q$, let $\gamma\in\Gamma$ with $\gamma\infty=b$, and let $a$ be either amplitude of Theorem~\ref{cl:main}. Then
+$a_b:=a\circ\gamma^{-1}$ has finite norm about the base point $i$ in the same class, and Theorems~\ref{cl:main} and~\ref{cl:necessary}
+hold for the boundary point $b$ and the amplitude $a_b$, at the same points $z$ of $M$.
+\end{corollary}
+\begin{proof}
+The rational points are the other representatives of the unique cusp of $M$. Since $\varphi_b=\varphi_\infty\circ\gamma^{-1}$ up to a
+constant, the approximation for $b$ is the $\gamma$-transport of the one for $\infty$, and $\gamma\in\Gamma$, the error for $(b,a_b)$ is
+a constant phase times the error for $(\infty,a)$ as functions on $M$. Explicitly $a_b=\ue^{-\mu\cosh d(\gamma i,\cdot)}$ in case (i) and
+$a_b=\ue^{-\alpha\Lambda}\ue^{-\mu\cosh d(\gamma i,\cdot)}$ in case (ii), since $\Lambda$ commutes with isometries. These have finite norms
+about $i$: in case (ii) because $\langle d(i,\cdot)\rangle\le\langle d(\gamma i,\cdot)\rangle+d(i,\gamma i)$, and in case (i) because the
+reversed-weight norm of $a\circ\gamma^{-1}$ about $i$ is that of $a$ with the weight $\ue^{\beta\langle d(p,\cdot)\rangle}$, $p=\gamma^{-1}i$, which
+Lemma~\ref{cl:amp}(i) covers.
+\end{proof}
+
+The stationary-phase mechanism is not special to $b=\infty$: in the frame where $b=\infty$, the top of every $\Gamma$-image of a cusp
+horocycle is a stationary point of $-\log y$. For irrational $b$, and for cusped quotients other than the modular surface, see
+Section~\ref{sec:outlook}.

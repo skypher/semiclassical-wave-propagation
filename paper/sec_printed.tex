@@ -10,25 +10,34 @@ then has three stages: factor the amplitude through critically weighted data
 \small
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}@{}}
 \hline
-Stage & Power-weight proof & Original-norm proof\\
+Stage & Power-weight proof (Section~\ref{sec:companion}) & Original-norm proof\\
 \hline
-Data & Weighted analytic amplitude & Factorization through the shifted Poisson semigroup\\[4pt]
-Weight estimate & H\"older interpolation & Transfer over shells\\[4pt]
-Periodization & Weight above exponent $1/2$ & Critical weight with a logarithmic correction\\
+Data & $a$ with $\pwNorm a<\infty$ & $a=\ue^{-\sigma\Lambda_3}\tilde f$ with $\omega\tilde f\in L^2$ (Proposition~\ref{os:data})\\[4pt]
+Weighted bounds & H\"older interpolation between $L^2$ and the weight $X_0^\beta$ & interpolation shell by shell between $L^2$ and the weight $X_0$ (Lemma~\ref{os:transfer})\\[4pt]
+Periodization & weight $X_0^\gamma$, $\gamma>\tfrac12$ (Lemma~\ref{lem:t2}) & weight $\omega=X_0^{1/2}\ell^{c'}$ (Proposition~\ref{os:p1})\\
 \hline
 \end{tabular}
 \end{center}
 
 \subsection{The original-norm class}\label{subsec:pc-weights}
-Fix $c'=\tfrac34$ and put
+Throughout this section $x_0=i$, $d=d(i,\cdot)$, $X_0=\cosh d$, $\tilde\psi=\log X_0\ge0$, $\ell:=\log(2X_0)/\log2=1+\tilde\psi/\log2\ge1$
+and $D=(-\Delta-\tfrac14)^{1/2}$ (Lemma~\ref{lem:base} reduces general base points to $x_0=i$). For $0\le c\le1$ the critical weight is
 \[
-  \omega=X_0^{1/2}\ell^{c'},\qquad \ell=\log(2X_0)/\log2.
+\omega_c:=X_0^{1/2}\ell^{\,c};
 \]
-For $f=\ue^{\alpha\Lambda}a$, the original norm gives $\|\omega f\|\le C_\beta\|a\|_{\mathrm P}$.
+the periodization weight is $\omega=\omega_{c'}$ with $c'=\tfrac34$; Section~\ref{sec:expect} uses any fixed $c'\in(\tfrac12,1)$. The shells are $A_n:=\{n\le\tilde\psi<n+1\}$, $n=0,1,2,\dots$, and
+$1_n$ denotes multiplication by the indicator of $A_n$. Since $1+n\le\ell\le3(1+n)$ on $A_n$,
+\begin{equation}\label{os:shell}
+\ue^{n/2}(1+n)^c\le\omega_c\le3\,\ue^{1/2}\,\ue^{n/2}(1+n)^c\qquad\text{on }A_n .
+\end{equation}
+For $m\ge\tfrac12$ put $\Lambda_m:=(m^2-\tfrac14-\Delta)^{1/2}=(D^2+m^2)^{1/2}$; thus $\Lambda_{1/2}=\Lambda$ and $\Lambda_m\ge\Lambda$.
+
+\noindent For $f=\ue^{\alpha\Lambda}a$ and $\beta>\tfrac12$, the original norm gives $\|\omega f\|\le C_\beta\|a\|_{\mathrm P}$, since
+$\omega\le C_\beta\ue^{\beta\langle d\rangle}$.
 The next proposition explains why the power-weight argument above cannot be applied directly to $a$.
 
 \begin{proposition}[the two amplitude classes and dependence on the radius]\label{pc:classes}
-For $\beta>\tfrac12$, the original and reversed-weight norms are not equivalent. There are amplitudes of finite original norm at a radius $0<\alpha<\pi/2$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and infinite original norm at every smaller radius.
+For $\beta>\tfrac12$, the original and reversed-weight norms are not equivalent. For every $0<\alpha<\pi/2$ there are amplitudes of finite original norm at radius $\alpha$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and infinite original norm at every smaller radius.
 \end{proposition}
 \begin{proof}
 Let $\beta>\tfrac12$ and $0\le\alpha'<\alpha<\pi/2$, and put $h:=\ue^{-\beta\langle d\rangle}\mathbf 1_{B(x_0,1)}$ and $a:=\ue^{-\alpha\Lambda}h$, so that
@@ -38,7 +47,7 @@ radial kernel $k_\tau$ of Lemma~\ref{os:poisson}, and $d(z,w)\in[d(z)-1,d(z)+1]$
   (\ue^{-\tau\Lambda}h)(z)\ge c\,(d(z)+1)^{-3/2}\ue^{-d(z)},
 \]
 with $c>0$ depending on $\tau$ and $\beta$. Since $\langle d\rangle\ge d-1$, for every $\beta'>\tfrac12$ the square of
-$\ue^{\beta'\langle d\rangle}\ue^{-\tau\Lambda}h$ is at least $c'\ue^{(2\beta'-2)d}(d+1)^{-3}$ where $d\ge2$, which is not integrable against the area
+$\ue^{\beta'\langle d\rangle}\ue^{-\tau\Lambda}h$ is at least $c_1\ue^{(2\beta'-2)d}(d+1)^{-3}$ where $d\ge2$, which is not integrable against the area
 element $\sinh\rho\,d\rho\,d\theta$; so this function is not in $L^2(\Hb)$. Two consequences follow.
 With $\tau=\alpha$: the amplitude $a$ of the original-norm class lies in no reversed-weight class with an exponent $\beta'>\tfrac12$, because
 $\norm{\ue^{\alpha''\Lambda}\ue^{\beta'\langle d\rangle}a}\ge\norm{\ue^{\beta'\langle d\rangle}a}$ for $\alpha''\ge0$; in particular the norms
@@ -66,10 +75,10 @@ We use the estimates of Section~\ref{sec:analytic} and Sections~\ref{app:o1st}--
 the constant $C(\Gamma,c')$ of Proposition~\ref{os:p1}, which is invariant under the conjugation of Lemma~\ref{lem:base}. Since
 $a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, $a$ is $C^\infty$ by Lemma~\ref{lem:lift}. Put
 \[
-  m:=3,\qquad\sigma:=\alpha/6,\qquad E:=\ue^{-\sigma\Lambda_m},\qquad\varepsilon:=(\sigma\hbar)^{1/2}/2,\qquad x:=(\sigma/\hbar)^{1/2},
+  m:=3,\qquad\sigma:=\alpha/6,\qquad \mathsf E:=\ue^{-\sigma\Lambda_m},\qquad\varepsilon:=(\sigma\hbar)^{1/2}/2,\qquad x:=(\sigma/\hbar)^{1/2},
 \]
 so that $\sigma\le\tfrac1{12}$, $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=x/2$, $\sigma/\varepsilon=2x$ and $\sigma^3\ge\kappa'\hbar$ with $\kappa':=\kappa/216$. For
-$\mathbf s\in\Sigma_{K+1}(t)$ let $B'_{\mathbf s}:=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})$, so that $b'(\mathbf s)=B'_{\mathbf s}a$ in (iii) of
+$\mathbf s\in\Sigma_{K+1}(t)$ let $B'_{\mathbf s}:=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})$, so that $b'(\mathbf s)=B'_{\mathbf s}a$ in (ii) of
 Proposition~\ref{prop:dd-id}. For $n\ge0$ put
 \[
   F_n:=C_5^{N+K+n+1}(2N)!\,(n+2K+2)!\,\sigma^{-(n+2K+2)}(\sigma\hbar)^{-2N},
@@ -78,25 +87,25 @@ with a constant $C_5\ge1$ fixed in Step~2(a).
 
 \medskip\noindent\emph{Step 1 (the data).} By Proposition~\ref{os:data} with $c=c'$ (here $\sigma m=\alpha/2\le\tfrac12$), there is $\tilde f$ with
 \[
-  a=E\tilde f,\qquad\norm{\pcw\tilde f}\le C\,\pcNorm a .
+  a=\mathsf E\tilde f,\qquad\norm{\pcw\tilde f}\le C\,\pcNorm a .
 \]
 
 \medskip\noindent\emph{Step 2 (derivative, flow and defect estimates).} Each of the following maps is linear on $L^2(\Hb)$, and is bounded
 there and at the weight $\pcXzero$ on functions supported in one shell. Lemma~\ref{os:transfer} then bounds it at the weight $\pcw$.
 Write $C_{\mathrm{tr}}$ for its constant at $c=c'$; it is independent of $K,N,\hbar$ and the integration variables.
 
-\smallskip\noindent(a) \emph{Words.} For a word $Z_J$ of length $n$ let $T_ah:=Z_JB'_{\mathbf s}Eh$. Expand $B'_{\mathbf s}$ as in the proof of
-Lemma~\ref{lem:wb}. Each term is a coefficient times a word of length at most $L$ applied to $Eh$, and by Lemma~\ref{os:words}(b), with $\gamma=1$ and
-$m=3$ (so $2(\gamma+\tfrac12)^2<m^2$), it is bounded at the weight $\pcXzero$ by $2(L+1)L!\,(QC_0/\sigma)^L\norm{\pcXzero h}$. This is the bound of Lemma~\ref{lem:sc}
-with $(2,QC_0,\sigma)$ in place of $(B_\beta,C_3,\alpha)$, so the count in the proof of Lemma~\ref{lem:wb} gives, for a suitable $C_5\ge C_4$,
+\smallskip\noindent(a) \emph{Words.} For a word $Z_S$ of length $n$ let $T_wh:=Z_SB'_{\mathbf s}\mathsf Eh$. Expand $B'_{\mathbf s}$ as in the proof of
+Lemma~\ref{lem:wb}. Each term is a coefficient times a word of length at most $L$ applied to $\mathsf Eh$, and by Lemma~\ref{os:words}(b), with $\gamma=1$ and
+$m=3$ (so $2(\gamma+\tfrac12)^2<m^2$), it is bounded at the weight $\pcXzero$ by $2(L+1)L!\,(QC_6/\sigma)^L\norm{\pcXzero h}$. This is the bound of Lemma~\ref{lem:sc}
+with $(2,QC_6,\sigma)$ in place of $(B_\beta,C_3,\alpha)$, so the count in the proof of Lemma~\ref{lem:wb} gives, for a suitable $C_5\ge C_4$,
 \[
-  \norm{\pcXzero Z_JB'_{\mathbf s}Eu}\le F_n\norm{\pcXzero u},\qquad\norm{Z_JB'_{\mathbf s}Eu}\le F_n\norm u ;
+  \norm{\pcXzero Z_SB'_{\mathbf s}\mathsf Eu}\le F_n\norm{\pcXzero u},\qquad\norm{Z_SB'_{\mathbf s}\mathsf Eu}\le F_n\norm u ;
 \]
 the second bound is the same argument without a weight. Lemma~\ref{os:transfer} with $M_0=M_1=F_n$ gives
 \begin{equation}\label{pc:wbw}
-  \norm{\pcw Z_JB'_{\mathbf s}Eh}\le C_{\mathrm{tr}}\,F_n\,\norm{\pcw h}.
+  \norm{\pcw Z_SB'_{\mathbf s}\mathsf Eh}\le C_{\mathrm{tr}}\,F_n\,\norm{\pcw h}.
 \end{equation}
-In particular every word applied to $a=E\tilde f$ lies in $L^2_{\pcw}$.
+In particular every word applied to $a=\mathsf E\tilde f$ lies in $L^2_{\pcw}$.
 
 \smallskip\noindent(b) \emph{Flow.} For $s',s''\ge0$ with $\hbar|s'-s''|\le\varepsilon$, the map $V_\varepsilon(s',s'')$ has norm $1$ on $L^2$ and, by
 Proposition~\ref{prop:ws}, norm at most $\ue^{G_1/2}$ at the weight $\pcXzero$. So
@@ -106,32 +115,32 @@ Proposition~\ref{prop:ws}, norm at most $\ue^{G_1/2}$ at the weight $\pcXzero$. 
 
 \smallskip\noindent(c) \emph{Defect.} For $0\le t'\le s_1\le t$ let
 \[
-  T_ch:=\bigl(\Delta(t')-\Delta_\varepsilon(t')\bigr)V_\varepsilon(t',s_1)B'_{\mathbf s}Eh .
+  T_dh:=\bigl(\Delta(t')-\Delta_\varepsilon(t')\bigr)V_\varepsilon(t',s_1)B'_{\mathbf s}\mathsf Eh .
 \]
-\emph{Unweighted bound.} By Lemma~\ref{os:words}, $\norm{\ue^{\sigma\Lambda}Eh}\le\norm h$. By Lemma~\ref{lem:wb}(ii), with $\sigma$ in the role of
-$\alpha$ and the radii $a_1:=\tfrac34\sigma<\sigma$, by Proposition~\ref{prop:a0} from $a_1$ to $a_2:=\tfrac12\sigma$ (valid for
-$t\le\tfrac13c_A\varepsilon/\hbar$), and by Lemma~\ref{lem:unw} with $a=a_2$, where $a_2/(8\varepsilon)=x/8$,
+\emph{Unweighted bound.} By Lemma~\ref{os:words}, $\norm{\ue^{\sigma\Lambda}\mathsf Eh}\le\norm h$. By Lemma~\ref{lem:wb}(ii), with $\sigma$ in the role of
+$\alpha$ and the radii $r_1:=\tfrac34\sigma<\sigma$, by Proposition~\ref{prop:a0} from $r_1$ to $r_2:=\tfrac12\sigma$ (valid for
+$t\le\tfrac13c_A\varepsilon/\hbar$), and by Lemma~\ref{lem:unw} with $r=r_2$, where $r_2/(8\varepsilon)=x/8$,
 \[
-  \norm{T_ch}\le M_0\norm h,\qquad M_0:=C\sigma^{-4}\ue^{-x/8}\,C_4^{N+K+1}(2N)!\,(2K+2)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}.
+  \norm{T_dh}\le M_0\norm h,\qquad M_0:=C\sigma^{-4}\ue^{-x/8}\,C_4^{N+K+1}(2N)!\,(2K+2)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}.
 \]
-\emph{Weighted bound.} Let $u$ be supported in one shell and assume $\hbar s_1\le\varepsilon$. By (a), $\pcXzero ZB'_{\mathbf s}Eu\in L^2$ for $Z\in\{1,X,Y,X^2,Y^2\}$, and
-Lemma~\ref{lem:path}(b) with $\gamma=1$ and $b'=B'_{\mathbf s}Eu$ gives
+\emph{Weighted bound.} Let $u$ be supported in one shell and assume $\hbar s_1\le\varepsilon$. By (a), $\pcXzero ZB'_{\mathbf s}\mathsf Eu\in L^2$ for $Z\in\{1,X,Y,X^2,Y^2\}$, and
+Lemma~\ref{lem:path}(b) with $\gamma=1$ and $b'=B'_{\mathbf s}\mathsf Eu$ gives
 \[
-  \norm{\pcXzero T_cu}\le M_1\norm{\pcXzero u},\qquad M_1:=C\varepsilon^{-3}F_2 .
+  \norm{\pcXzero T_du}\le M_1\norm{\pcXzero u},\qquad M_1:=C\varepsilon^{-3}F_2 .
 \]
 Lemma~\ref{os:transfer} requires $M_0\le M_1$; we apply it with $M_0+M_1$ in place of $M_1$. Since $M_0\le C\sigma^{-4}\ue^{-x/8}F_2$,
 \begin{equation}\label{pc:defect}
-  \norm{\pcw T_ch}\le C_{\mathrm{tr}}\bigl(M_0+M_0^{1/4}M_1^{3/4}\bigr)\norm{\pcw h}\le C\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-x/32}\,F_2\,\norm{\pcw h}.
+  \norm{\pcw T_dh}\le C_{\mathrm{tr}}\bigl(M_0+M_0^{1/4}M_1^{3/4}\bigr)\norm{\pcw h}\le C\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-x/32}\,F_2\,\norm{\pcw h}.
 \end{equation}
 
-\medskip\noindent\emph{Step 3 (Duhamel on $M$ for data of bounded support).} Let $h\in L^2$ be supported in $\{\psi\le R_0\}$ for some $R_0$, and let
-$b'_h:=B'_{\mathbf s}Eh$, $g(t'):=V_\varepsilon(t',s_1)b'_h$ for $0\le t'\le s_1$, $w_h:=g(0)$ and $d_h(t'):=T_ch$. Then $\pcXzero h\in L^2$ and, by (a), all
+\medskip\noindent\emph{Step 3 (Duhamel on $M$ for data of bounded support).} Let $h\in L^2$ be supported in $\{\tilde\psi\le R_0\}$ for some $R_0$, and let
+$b'_h:=B'_{\mathbf s}\mathsf Eh$, $g(t'):=V_\varepsilon(t',s_1)b'_h$ for $0\le t'\le s_1$, $w_h:=g(0)$ and $d_h(t'):=T_dh$. Then $\pcXzero h\in L^2$ and, by (a), all
 words applied to $b'_h$ lie in $L^2(\pcXzero^2d\nu)$. The weight $\pcXzero^{3/4}$ satisfies (W1) and (W2) (Lemma~\ref{lem:t2}), and by
 Lemma~\ref{lem:path}(c) with $\gamma=\tfrac34$ the path $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for it. As in the power-weight proof of Theorem~\ref{thm:dd-appx},
 \[
   \mathcal V_{s_1}b'_h=\mathcal V_0w_h-\tfrac{i\hbar}2\int_0^{s_1}\mathcal V_{t'}d_h(t')\,dt' .
 \]
-By Remark~\ref{os:indep} each term may be estimated through the weight $\pcw$. By Proposition~\ref{os:p1}, \eqref{pc:flow} and \eqref{pc:wbw} with $n=0$,
+By Lemma~\ref{os:indep} each term may be estimated through the weight $\pcw$. By Proposition~\ref{os:p1}, \eqref{pc:flow} and \eqref{pc:wbw} with $n=0$,
 \[
   \norm{\mathcal V_0w_h}\le C\norm{\pcw V_\varepsilon(0,s_1)b'_h}\le C\norm{\pcw b'_h}\le C\,F_0\,\norm{\pcw h},
 \]
@@ -149,18 +158,18 @@ Hence $\norm{\mathcal V_{s_1}b'_h}\le C(F_0+R\,F_2)\norm{\pcw h}$ with
 \]
 So $R\le C(\kappa)\,x^{9}\ue^{-x/64}\le C(\kappa)\,x^{-2}$, and $x^{-2}=\hbar/\sigma\le\sigma^2/\kappa'$. Since $F_0\le\sigma^2F_2$,
 \begin{equation}\label{pc:star}
-  \norm{\mathcal V_{s_1}B'_{\mathbf s}Eh}\le C\,\sigma^2F_2\,\norm{\pcw h}.
+  \norm{\mathcal V_{s_1}B'_{\mathbf s}\mathsf Eh}\le C\,\sigma^2F_2\,\norm{\pcw h}.
 \end{equation}
 
-\medskip\noindent\emph{Step 4 (density).} The map $h\mapsto\mathcal V_{s_1}B'_{\mathbf s}Eh$ is linear and bounded from $L^2(\pcw^2d\nu)$ to $L^2(M)$, by
-Proposition~\ref{os:p1} and \eqref{pc:wbw} with $n=0$. The functions of bounded $\psi$-support are dense in $L^2(\pcw^2d\nu)$. So \eqref{pc:star} holds for
+\medskip\noindent\emph{Step 4 (density).} The map $h\mapsto\mathcal V_{s_1}B'_{\mathbf s}\mathsf Eh$ is linear and bounded from $L^2(\pcw^2d\nu)$ to $L^2(M)$, by
+Proposition~\ref{os:p1} and \eqref{pc:wbw} with $n=0$. The functions of bounded $\tilde\psi$-support are dense in $L^2(\pcw^2d\nu)$. So \eqref{pc:star} holds for
 every $h\in L^2(\pcw^2d\nu)$, in particular for $\tilde f$:
 \[
   \norm{\mathcal V_{s_1}b'(\mathbf s)}\le C\,C_5^{N+K+3}(2N)!\,(2K+4)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}\norm{\pcw\tilde f}.
 \]
 
 \medskip\noindent\emph{Step 5 (collecting).} By \eqref{pc:wbw}, every word applied to $a$ lies in $L^2_{\pcw}$, and $\pcw$ satisfies (W1), (W2). So
-Proposition~\ref{prop:dd-id}(iii) bounds the error by $(\hbar/2)^{K+1}$ times the integral of $\norm{\mathcal V_{s_1}b'(\mathbf s)}$ over
+Proposition~\ref{prop:dd-id}(ii) bounds the error by $(\hbar/2)^{K+1}$ times the integral of $\norm{\mathcal V_{s_1}b'(\mathbf s)}$ over
 $\Sigma_{K+1}(t)$. This simplex has volume $t^{K+1}/(K+1)!$. The factorial estimates \eqref{eq:factorial-assembly} apply here as well. Together with $\hbar^{K+1}t^{K+1}\sigma^{-(2K+2)}=(\hbar t/\sigma^2)^{K+1}$, Steps~4 and~1 give the bound of the theorem with $\sigma$ in place of $\alpha$. Since
 $\sigma=\alpha/6$, $(\sigma\hbar)^{-2N}(\hbar t/\sigma^2)^{K+1}=6^{2N+2K+2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$, and the factor is absorbed in $C^{N+K+1}$.
 
@@ -183,9 +192,9 @@ the amplitude only through a representation $a=\ue^{-\sigma\Lambda_3}\tilde f$ a
 $\sigma^3\ge\kappa'\hbar$ and $\pcw\tilde f\in L^2(\Hb)$ they give, for $0\le t\le\delta'(\sigma/\hbar)^{1/2}$ with $\delta'=\min(\tfrac1{64},c_A/6)$,
 \[
   \norm{\Delta^N\big[\cU(t)\big(a\,\ue^{i\varphi_b/\hbar}\big)_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}
-  \le C_1^{N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Big(\frac{\hbar t}{\sigma^2}\Big)^{K+1}\norm{\pcw\tilde f},
+  \le C'^{\,N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Big(\frac{\hbar t}{\sigma^2}\Big)^{K+1}\norm{\pcw\tilde f},
 \]
-with $C_1$ depending on $\Gamma$, $x_0$ and $\kappa'$. We use this with $\sigma=\tfrac1{12}$ and $\kappa':=\kappa/(1728A^3)$; then
+with $C'$ depending on $\Gamma$, $x_0$ and $\kappa'$. We use this with $\sigma=\tfrac1{12}$ and $\kappa':=\kappa/(1728A^3)$; then
 $\sigma^3\ge\kappa'\hbar$, because $\kappa\hbar\le\alpha^3\le A^3$.
 
 \emph{The data.} Put $f:=\ue^{\alpha\Lambda}a$, so that $\norm{\pcw f}\le C_\beta\pcNorm a$ (Section~\ref{subsec:pc-weights}), and
@@ -203,12 +212,6 @@ $\tilde f:=\mathsf Rf_1$ with
   \delta'\Big(\frac{\sigma}{\hbar}\Big)^{1/2}&\ge\delta'(12A)^{-1/2}\Big(\frac{\alpha}{\hbar}\Big)^{1/2}.
 \end{align*}
 So the estimate holds on $(\tfrac12,A]$ with the constants
-$(12A)^2C_1\max(1,C_{\mathrm d}K_{c'}^{\,n}C_\beta)$ and $\delta'(12A)^{-1/2}$; take the larger of the two constants $C$ and the smaller of the
+$(12A)^2C'\max(1,C_{\mathrm d}K_{c'}^{\,n}C_\beta)$ and $\delta'(12A)^{-1/2}$; take the larger of the two constants $C$ and the smaller of the
 two $\delta$.
-
-\emph{The corollaries.} The proofs of Corollaries~\ref{pc:thm13} and~\ref{pc:cor15} use only the form of the bound; for
-Corollary~\ref{pc:cor15}, once $C$ is fixed, decrease $\delta$ so that $\delta\le\kappa^{1/2}/\max(1,C)$. The proof of
-Corollary~\ref{pc:cor16} combines the powers $(\alpha\hbar)^{-2N}$ and $(\alpha\hbar)^{-2N-2}$.
-For $\alpha\le A$ their sum is at most $(1+A^2)(\alpha\hbar)^{-2N-2}$, and
-the factor $1+A^2$ goes into the constant.
 \end{proof}

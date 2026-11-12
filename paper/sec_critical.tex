@@ -1,5 +1,4 @@
-% app_o1_static.tex : the Poisson-smoothed data class at the critical weight (wave-group route).
-% Input from paper.tex; no preamble. Macros below are prefixed \os.
+% Critical-weight estimates for the original-norm class. Input from sec_printed.tex; macros are prefixed \os.
 \newcommand{\osomc}{\omega_c}        % critical weight X_0^{1/2} l^c
 \newcommand{\osomp}{\omega}          % periodization weight X_0^{1/2} l^{c'}
 \newcommand{\osX}{X_0}               % X_0 = cosh d(x_0,\cdot)
@@ -10,44 +9,28 @@
 
 \subsection{Critical-weight multipliers}\label{app:o1st}
 
-To handle the original-norm class we work at exponent $1/2$ with a logarithmic correction.
-The reciprocal square of this weight is summable over every Fuchsian orbit
-(Proposition~\ref{os:p1}). A multiplier theorem at this weight gives a factorization
-$a=\ue^{-\sigma\Lambda_m}\tilde f$ with critically weighted data $\tilde f$
-(Proposition~\ref{os:data}); word bounds and transfer over shells then control the
-derivatives, flow and defect appearing in the remainder.
+To handle the original-norm class we work at the weight $X_0^{1/2}$ with a logarithmic correction, in the notation of
+Section~\ref{subsec:pc-weights}. A multiplier theorem at this weight (Theorem~\ref{os:cw}) gives a factorization
+$a=\ue^{-\sigma\Lambda_m}\tilde f$ with critically weighted data $\tilde f$ (Proposition~\ref{os:data}); word bounds and transfer
+over shells then control the derivatives, flow and defect appearing in the remainder (Section~\ref{subsec:pc-transfer}).
 
-The decisive balance occurs in Theorem~\ref{os:cw}. Passing from an inner shell to an outer one
-costs an exponential factor from $X_0^{1/2}$; finite propagation speed and the multiplier tail
-supply the opposite exponential factor. Their cancellation leaves a polynomial shell kernel.
-The logarithmic exponent $1/2<c<1$ permits its summation. The profiles in Appendix~\ref{app:profiles}
-verify this tail condition for the Poisson semigroup and the change of spectral parameter.
-
-Throughout the critical-weight estimates and the proof below, $x_0=i$, $d=d(i,\cdot)$, $\osX=\cosh d$, $\psi:=\log\osX\ge0$, $\osL:=\log(2\osX)/\log2=1+\psi/\log2\ge1$,
-$\osLam=(-\Delta)^{1/2}$ and $D=(-\Delta-\tfrac14)^{1/2}$. For $0\le c\le1$ the critical weight is
-\[
-\osomc:=\osX^{1/2}\osL^{\,c};
-\]
-for a fixed $c'\in(\tfrac12,1)$ the periodization weight is $\osomp=\omega_{c'}$. We take $c'=\tfrac34$ in the approximation proof. The shells are $A_n:=\{n\le\psi<n+1\}$, $n=0,1,2,\dots$, and
-$1_n$ denotes multiplication by the indicator of $A_n$. Since $1+n\le\osL\le3(1+n)$ on $A_n$,
-\begin{equation}\label{os:shell}
-\ue^{n/2}(1+n)^c\le\osomc\le3\,\ue^{1/2}\,\ue^{n/2}(1+n)^c\qquad\text{on }A_n .
-\end{equation}
-For $m\ge\tfrac12$ put $\Lambda_m:=(m^2-\tfrac14-\Delta)^{1/2}=(D^2+m^2)^{1/2}$; thus $\Lambda_{1/2}=\osLam$ and $\Lambda_m\ge\osLam$.
-
-\subsubsection{Finite propagation speed and the multiplier theorem}
+The multiplier theorem rests on a balance between two exponential factors. Moving mass from a shell $A_n$ to a shell $A_l$
+with $l>n$ costs the factor $\ue^{(l-n)/2}$ of the weight $X_0^{1/2}$. By finite propagation speed, only the part of the
+multiplier with $|r|\ge l-n-1$ contributes, and its tail supplies the factor $\ue^{-(l-n)/2}(1+l-n)^{-3/2}$. What remains is a
+polynomially decaying kernel in $l-n$, and the logarithmic exponent $\tfrac12<c<1$ makes it summable. The profiles in
+Appendix~\ref{app:profiles} verify the tail condition for the Poisson semigroup and for the change of spectral parameter.
 
 \begin{lemma}[finite propagation speed]\label{os:speed}
-Let $f,h\in L^2(\Hb)$ with $\operatorname{supp}f\subset\{\psi\le a\}$ and $\operatorname{supp}h\subset\{\psi\ge b\}$. Then
-$\langle h,\cos(rD)f\rangle=0$ and $\langle f,\cos(rD)h\rangle=0$ for $|r|<b-a$.
+Let $f,h\in L^2(\Hb)$ with $\operatorname{supp}f\subset\{\tilde\psi\le R_1\}$ and $\operatorname{supp}h\subset\{\tilde\psi\ge R_2\}$. Then
+$\langle h,\cos(rD)f\rangle=0$ and $\langle f,\cos(rD)h\rangle=0$ for $|r|<R_2-R_1$.
 \end{lemma}
 \begin{proof}
 For $\lambda>0$ apply Lemma~\ref{lem:wave}(b) to $W_{\lambda,n}$, with $l=\lambda$, and let $n\to\infty$. This gives
 \[
-\norm{\osX^\lambda\cos(rD)f}\le\ue^{(\lambda+1/2)|r|}\norm{\osX^\lambda f}\le\ue^{(\lambda+1/2)|r|+\lambda a}\norm f.
+\norm{\osX^\lambda\cos(rD)f}\le\ue^{(\lambda+1/2)|r|}\norm{\osX^\lambda f}\le\ue^{(\lambda+1/2)|r|+\lambda R_1}\norm f.
 \]
 Hence
-$\norm{1_{\{\psi\ge b\}}\cos(rD)f}\le\ue^{|r|/2}\ue^{-\lambda(b-a-|r|)}\norm f$, which tends to $0$ as $\lambda\to\infty$. The second identity follows
+$\norm{1_{\{\tilde\psi\ge R_2\}}\cos(rD)f}\le\ue^{|r|/2}\ue^{-\lambda(R_2-R_1-|r|)}\norm f$, which tends to $0$ as $\lambda\to\infty$. The second identity follows
 because $\cos(rD)$ is self-adjoint.
 \end{proof}
 
@@ -84,13 +67,12 @@ $p_l\le p_n$. For $l>2n+1$: $\mathsf B(l,n)p_l\le CB(1+n)^{-c}(1+l)^{c-2}$, and 
 So $\sum_l(\sum_n\mathsf B(l,n)a_n)^2\le(C'B)^2\sum_na_n^2=(C'B)^2\norm{\osomc f}^2$.
 \end{proof}
 
-\subsubsection{Poisson and shifted spectral multipliers}
 The cosine-transform representations and tail bounds needed to apply Theorem~\ref{os:cw}
 are given in Lemma~\ref{os:prof}, proved in Appendix~\ref{app:profiles}.
 They give the following two operator bounds: Poisson smoothing preserves the critical weight,
 and the change from $\Lambda$ to $\Lambda_m$ is bounded at that weight.
 
-\begin{corollary}\label{os:cwp}
+\begin{corollary}[Poisson smoothing and the shifted multiplier at the critical weight]\label{os:cwp}
 Let $\tfrac12<c<1$. For $0<\tau\le1$ and $f\in L^2$, $\norm{\osomc\,\ue^{-\tau\osLam}f}\le K_c\norm{\osomc f}$. For $m\ge\tfrac12$,
 $\norm{\osomc(\Lambda_m-\osLam)f}\le K_{m,c}\norm{\osomc f}$.
 \end{corollary}
@@ -101,8 +83,6 @@ Theorem~\ref{os:cw} with $g=g^{1/2}_\tau$ and Lemma~\ref{os:prof}(i),(iv), respe
 \subsection{Factorization and derivative estimates for the data}\label{subsec:pc-data}
 We now factor the Poisson-smoothed amplitude through the shifted semigroup and bound its derivatives at a power weight.
 The next subsection transfers these bounds to the critical weight used for periodization.
-
-\subsubsection{Factorization of the Poisson-smoothed amplitudes}
 
 \begin{proposition}[factorization of the data]\label{os:data}
 Let $\tfrac12<c<1$, $m\ge\tfrac12$ and $0<\sigma<\alpha\le1$ with $\sigma m\le\tfrac12$, and put
@@ -122,16 +102,15 @@ The identity is the bounded functional calculus: $-\sigma\Lambda_m+\sigma(\Lambd
 $\mathsf B:=\Lambda_m-\osLam$ is bounded, and $\ue^{\sigma\mathsf B}=\sum_k\sigma^k\mathsf B^k/k!$ in operator norm. By Corollary~\ref{os:cwp},
 $\norm{\osomc\mathsf B^kf}\le K_{m,c}^k\norm{\osomc f}$, so the partial sums are bounded in the weighted norm by $\ue^{\sigma K_{m,c}}\norm{\osomc f}$, and
 Fatou's lemma gives $\norm{\osomc\ue^{\sigma\mathsf B}f}\le\ue^{K_{m,c}}\norm{\osomc f}$. Then apply Corollary~\ref{os:cwp} to
-$\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=K_c\,\ue^{K_{m,c}}$ works. For the consequence put $f=\ue^{\alpha\osLam}a$, so $a=\ue^{-\alpha\osLam}f$. Since $\psi\le d\le\langle d\rangle+1$ and
+$\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=K_c\,\ue^{K_{m,c}}$ works. For the consequence put $f=\ue^{\alpha\osLam}a$, so $a=\ue^{-\alpha\osLam}f$. Since $\tilde\psi\le d\le\langle d\rangle+1$ and
 $\beta>\tfrac12$, $\osomc\le\ue^{d/2}(1+d/\log2)\le C_\beta\,\ue^{\beta\langle d\rangle}$.
 \end{proof}
 
-\subsubsection{Words at a power weight}
-Write $c_H:=1+4/\ue$, the constant in the profile bound of Lemma~\ref{os:prof}(iii).
+For the derivative bounds write $c_H:=1+4/\ue$, the constant in the profile bound of Lemma~\ref{os:prof}(iii).
 
-\begin{lemma}[the even semigroup at a bounded weight]\label{os:words}
+\begin{lemma}[words of the shifted Poisson semigroup at a bounded weight]\label{os:words}
 Let $m\ge\tfrac12$ and $\rho\ge0$ with $2(\rho+\tfrac12)^2<m^2$, and let $W$ be a bounded weight (Section~\ref{app:ws}) with
-$(X\log W)^2+(Y\log W)^2\le\rho^2$. Put $\mu:=m^2-\tfrac14$, $C_0:=2\ue\,c_H$ and $Q:=4+2\rho$.
+$(X\log W)^2+(Y\log W)^2\le\rho^2$. Put $\mu:=m^2-\tfrac14$, $C_6:=2\ue\,c_H$ and $Q:=4+2\rho$.
 \begin{itemize}
 \item[(a)] For $\tau,s>0$ and $u\in L^2$:
 \[
@@ -141,18 +120,18 @@ $(X\log W)^2+(Y\log W)^2\le\rho^2$. Put $\mu:=m^2-\tfrac14$, $C_0:=2\ue\,c_H$ an
 Hence for $j\ge1$ and $\sigma>0$, $\norm{W(\mu-\Delta)^j\ue^{-\sigma\Lambda_m}u}\le(4jc_H/\sigma)^{2j}\norm{Wu}$.
 \item[(b)] For $0<\sigma\le1$, every word $Z_S$ of length $k$ in $X,Y$, and $h\in L^2$,
 \[
-\norm{WZ_S\,\ue^{-\sigma\Lambda_m}h}\le\sqrt2\,Q^k\,k!\,(C_0/\sigma)^k\,\norm{Wh}.
+\norm{WZ_S\,\ue^{-\sigma\Lambda_m}h}\le\sqrt2\,Q^k\,k!\,(C_6/\sigma)^k\,\norm{Wh}.
 \]
 \end{itemize}
 In particular, let $\gamma\ge0$ with $2(\gamma+\tfrac12)^2<m^2$ and $\osX^\gamma h\in L^2$. Then, with $\rho=\gamma$ in the definition of $Q$,
 \[
-\norm{\osX^\gamma Z_S\,\ue^{-\sigma\Lambda_m}h}\le\sqrt2\,Q^k\,k!\,(C_0/\sigma)^k\,\norm{\osX^\gamma h}.
+\norm{\osX^\gamma Z_S\,\ue^{-\sigma\Lambda_m}h}\le\sqrt2\,Q^k\,k!\,(C_6/\sigma)^k\,\norm{\osX^\gamma h}.
 \]
 Moreover $\norm{\ue^{\sigma\osLam}\ue^{-\sigma\Lambda_m}}\le1$.
 \end{lemma}
 \begin{proof}
-(a) By Lemma~\ref{os:prof}(i), Lemma~\ref{lem:wave}(b) and Lemma~\ref{os:prof}(ii) with $\kappa=\rho+\tfrac12$,
-$\norm{W\ue^{-\tau\Lambda_m}u}\le\int g^m_\tau(r)\ue^{\kappa|r|}dr\,\norm{Wu}\le\sqrt2\norm{Wu}$. The same with $h^m_s$ and Lemma~\ref{os:prof}(iii) gives the second
+(a) By Lemma~\ref{os:prof}(i), Lemma~\ref{lem:wave}(b) and Lemma~\ref{os:prof}(ii) with $\lambda=\rho+\tfrac12$,
+$\norm{W\ue^{-\tau\Lambda_m}u}\le\int g^m_\tau(r)\ue^{\lambda|r|}dr\,\norm{Wu}\le\sqrt2\norm{Wu}$. The same with $h^m_s$ and Lemma~\ref{os:prof}(iii) gives the second
 bound. For the third write $(\mu-\Delta)^j\ue^{-\sigma\Lambda_m}=(\Lambda_m\ue^{-(\sigma/2j)\Lambda_m})^{2j}$.
 
 (b) Let $v_j:=(\mu-\Delta)^j\ue^{-\sigma\Lambda_m}h$. Since $\Lambda_m\ge\osLam$, $v_j\in\operatorname{Dom}(\ue^{\sigma'\osLam})$ for $\sigma'<\sigma$, so $v_j$ is smooth
@@ -174,21 +153,19 @@ and therefore
 \[
 A_{k+1,j}\le\mathsf B_{k+1,j}\le(2k+2\rho)A_{k,j}+(A_{k,j}A_{k,j+1})^{1/2}.
 \]
-We claim $A_{k,j}\le\sqrt2\,Q^k(C_0/\sigma)^{k+2j}(k+2j)!\,\norm{Wh}$ for all $k,j\ge0$. For $k=0$ this is (a), because
+We claim $A_{k,j}\le\sqrt2\,Q^k(C_6/\sigma)^{k+2j}(k+2j)!\,\norm{Wh}$ for all $k,j\ge0$. For $k=0$ this is (a), because
 $(4jc_H/\sigma)^{2j}\le(2\ue c_H/\sigma)^{2j}(2j)!$. If it holds for $k$ and all $j$, then with $n=k+2j$, using $(n!\,(n+2)!)^{1/2}\le\sqrt2\,(n+1)!$,
-$(2k+2\rho)\,n!\le(2+2\rho)(n+1)!$ and $(C_0/\sigma)^n\le(C_0/\sigma)^{n+1}/C_0$,
+$(2k+2\rho)\,n!\le(2+2\rho)(n+1)!$ and $(C_6/\sigma)^n\le(C_6/\sigma)^{n+1}/C_6$,
 \[
-A_{k+1,j}\le\sqrt2\,Q^k(C_0/\sigma)^{n+1}(n+1)!\,\bigl((2+2\rho)/C_0+\sqrt2\bigr)\norm{Wh},
+A_{k+1,j}\le\sqrt2\,Q^k(C_6/\sigma)^{n+1}(n+1)!\,\bigl((2+2\rho)/C_6+\sqrt2\bigr)\norm{Wh},
 \]
-which is the claim for $k+1$, because $C_0\ge1$ and so $(2+2\rho)/C_0+\sqrt2\le Q$. The case $j=0$ is (b). The statement for $\osX^\gamma$ follows with $W=W_{\gamma,n}$ and $n\to\infty$, and the last
+which is the claim for $k+1$, because $C_6\ge1$ and so $(2+2\rho)/C_6+\sqrt2\le Q$. The case $j=0$ is (b). The statement for $\osX^\gamma$ follows with $W=W_{\gamma,n}$ and $n\to\infty$, and the last
 statement from $\Lambda_m\ge\osLam$.
 \end{proof}
 
 \subsection{Transfer and periodization at the critical weight}\label{subsec:pc-transfer}
 The transfer estimate below applies to the derivative, flow and defect maps in the approximation proof.
 Periodization at the same weight then turns these estimates into bounds on the quotient.
-
-\subsubsection{Transfer from a power weight to the critical weight}
 
 \begin{lemma}[transfer over shells]\label{os:transfer}
 Let $0\le c\le1$. Let $T:L^2(\Hb)\to L^2(\Hb)$ be additive, and let $0<M_0\le M_1$ be such that
@@ -215,10 +192,8 @@ $\norm{\osomc Th}^2\le\sum_l\bigl(\sum_n\norm{\osomc1_lT1_nh}\bigr)^2\le M_0^{1/
 sequences.
 \end{proof}
 
-\subsubsection{Periodization at the critical weight}
-
 \begin{proposition}[periodization and transport at the critical weight]\label{os:p1}
-Let $\Gamma$ be any Fuchsian group (cusps allowed), $\tfrac12<c'\le1$, $\osomp=\omega_{c'}$, $t\ge0$, $\hbar>0$, $\varphi=\varphi_\infty=-\log y$, and
+Let $\Gamma$ be any Fuchsian group, $\tfrac12<c'\le1$, $\osomp=\omega_{c'}$, $t\ge0$, $\hbar>0$, $\varphi=\varphi_\infty=-\log y$, and
 $w\in L^2(\Hb)$ with $\osomp w\in L^2(\Hb)$. Then the sum defining $[(S(t)w)\ue^{i\varphi/\hbar}]_\Gamma$ converges absolutely almost everywhere, and
 \[
 \bigl\|[(S(t)w)\ue^{i\varphi/\hbar}]_\Gamma\bigr\|_{L^2(M)}\le C(\Gamma,c')\,\ue^{t/2}(1+t/\log2)^{c'}\,\|\osomp w\|_{L^2(\Hb)}.
@@ -227,31 +202,31 @@ In particular $\osomp$ satisfies \textup{(W1)} and \textup{(W2)} of Section~\ref
 $\osomp(z)/\osomp(\delta_sz)\le\ue^{|s|/2}(1+|s|/\log2)^{c'}\le(2/\log2)\,\ue^{|s|}$.
 \end{proposition}
 \begin{proof}
-\emph{Packing.} Since $\Gamma$ is discrete and $x_0$ has finite stabilizer, the orbit $\Gamma x_0$ has a fixed positive separation $2r_0$ after
-removing stabilizer multiplicity (proper discontinuity). Balls $B(\gamma x_0,r_0)$ are disjoint up to bounded multiplicity, and those with
-$d(z,\gamma x_0)<n+1$ lie in $B(z,n+1+r_0)$. Comparing hyperbolic areas gives $\#\{\gamma:d(z,\gamma x_0)<n+1\}\le C_\Gamma\ue^n$ uniformly in $z\in\Hb$, cusps
-included.
+The proof is that of Lemma~\ref{lem:t2}, with $\osomp$ in place of $\ue^{s\tilde\psi}$; only the first and last steps change.
 
 \emph{Pointwise Cauchy--Schwarz.} Since $\osomp(w)^2\asymp\ue^{d(w,x_0)}\osbr{d(w,x_0)}^{2c'}$ and $d(\gamma z,x_0)=d(z,\gamma^{-1}x_0)$,
-reindexing $\gamma\mapsto\gamma^{-1}$ gives
+reindexing $\gamma\mapsto\gamma^{-1}$ and the counting bound \eqref{eq:count} for the orbit $\Gamma x_0$ give
 \[
 \sum_\gamma\osomp(\gamma z)^{-2}\le C\sum_\gamma\ue^{-d(z,\gamma x_0)}\osbr{d(z,\gamma x_0)}^{-2c'}\le C\sum_{n\ge0}\ue^{n}\ue^{-n}(1+n)^{-2c'}<\infty,
 \]
-since $2c'>1$. By Cauchy--Schwarz, $(\sum_\gamma|f(\gamma z)|)^2\le C\sum_\gamma\osomp(\gamma z)^2|f(\gamma z)|^2$ with $f=(S(t)w)\ue^{i\varphi/\hbar}$.
+uniformly in $z$, since $2c'>1$. Cauchy--Schwarz and unfolding, as in Lemma~\ref{lem:t2}, give
+$\|[f]_\Gamma\|^2_{L^2(M)}\le C\int_\Hb\osomp^2|f|^2\,d\nu$ for $f=(S(t)w)\ue^{i\varphi/\hbar}$, with almost everywhere absolute convergence.
 
-\emph{Unfolding.} Integrating over a fundamental domain (Tonelli; a finite stabilizer changes only the constant) gives
-$\|[f]_\Gamma\|^2_{L^2(M)}\le C\int_\Hb\osomp^2|S(t)w|^2\,d\nu$.
-
-\emph{Transport.} $(S(t)w)(z)=\ue^{-t/2}w(\delta_tz)$, and $d(z,\delta_sz)=|s|$. Since $\psi$ is $1$-Lipschitz, $\osX(z)\le\ue^{|s|}\osX(\delta_sz)$ and
+\emph{Transport.} $(S(t)w)(z)=\ue^{-t/2}w(\delta_tz)$, and $d(z,\delta_sz)=|s|$. Since $\tilde\psi$ is $1$-Lipschitz, $\osX(z)\le\ue^{|s|}\osX(\delta_sz)$ and
 $\osL(z)\le\osL(\delta_sz)+|s|/\log2\le\osL(\delta_sz)(1+|s|/\log2)$; this is the ratio bound. Since $S(t)$ is unitary,
 $\int\osomp^2|S(t)w|^2d\nu\le\ue^{t}(1+t/\log2)^{2c'}\int\osomp^2|w|^2d\nu$. Combining gives the claim.
 \end{proof}
 
-\begin{remark}[the quotient propagator does not depend on the weight]\label{os:indep}
+\begin{lemma}[the quotient propagator does not depend on the weight]\label{os:indep}
 Let $\omega_1,\omega_2$ be two weights satisfying \textup{(W1)}, \textup{(W2)}. For $g\in L^2_{\omega_1}\cap L^2_{\omega_2}$ the element
 \[
  \mathcal V_sg=\ue^{-is/(2\hbar)}\cU(-s)[\ue^{i\varphi/\hbar}S(s)g]_\Gamma\in L^2(M)
 \]
-is the same for both weights, because the periodization is in both cases the same almost everywhere absolutely convergent sum. In particular this applies to $\omega_1=\osX^{\gamma}$ with $\gamma>\tfrac12$ and
+is the same for both weights. In particular this applies to $\omega_1=\osX^{\gamma}$ with $\gamma>\tfrac12$ and
 $\omega_2=\osomp$, and $L^2_{\osX^\gamma}\subset L^2_{\osomp}$.
-\end{remark}
+\end{lemma}
+\begin{proof}
+For both weights the periodization is the same almost everywhere absolutely convergent sum, by \textup{(W1)}.
+The inclusion holds because $\osomp=\osX^{1/2}\osL^{\,c'}\le C_\gamma\osX^\gamma$ for $\gamma>\tfrac12$, since $\osL=1+\tilde\psi/\log2$
+grows like $\log\osX$.
+\end{proof}
