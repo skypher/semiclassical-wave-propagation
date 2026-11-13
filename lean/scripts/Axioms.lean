@@ -2940,3 +2940,4 @@ import Qschubert
 #print axioms Qschubert.lem_wb_w_one
 #print axioms Qschubert.lem_wb_u_one
 #print axioms Qschubert.dd_core_om
+#print axioms Qschubert.window_radius
