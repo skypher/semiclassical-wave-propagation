@@ -272,10 +272,10 @@ pole at $s=1$ with residue $3/\pi$, $|\Phi(\tfrac12+ir)|=1$ (because $\Phi(s)\Ph
 $|\Phi(s)|\le C(1+|\operatorname{Im}s|)^2$ in $\tfrac12\le\operatorname{Re}s\le\tfrac54$, $|\operatorname{Im}s|\ge2$: the Gamma quotient by Stirling's formula \cite[5.11.9]{DLMF},
 $\zeta(2s-1)$ by its polynomial growth in vertical strips, and $1/\zeta(2s)$ by \cite[Theorem~6.7]{MV07}.
 To prove \eqref{ev:R}, use that $\hat g$ is entire and rapidly decreasing on vertical lines. Mellin inversion on $\operatorname{Re}s=\tfrac54$ gives
-\[
-  R_g(y)=\frac1{2\pi i}\int_{(5/4)}\hat g(s)\Big(\sum_{c\ge1}\frac{|(\mathbb Z/c\mathbb Z)^\times|}{c^{2s}}\Big)\Big(\int_{\mathbb R}\frac{y^s\,dx}{(x^2+y^2)^s}\Big)ds
+\begin{multline*}
+  R_g(y)=\frac1{2\pi i}\int_{(5/4)}\hat g(s)\Big(\sum_{c\ge1}\frac{|(\mathbb Z/c\mathbb Z)^\times|}{c^{2s}}\Big)\Big(\int_{\mathbb R}\frac{y^s\,dx}{(x^2+y^2)^s}\Big)ds\\
   =\frac1{2\pi i}\int_{(5/4)}\hat g(s)\,\Phi(s)\,y^{1-s}\,ds ,
-\]
+\end{multline*}
 because $\sum_c|(\mathbb Z/c\mathbb Z)^\times|\,c^{-2s}=\zeta(2s-1)/\zeta(2s)$ and $\int_{\mathbb R}(1+v^2)^{-s}dv=\sqrt\pi\,\Gamma(s-\tfrac12)/\Gamma(s)$. Moving the line to
 $\operatorname{Re}s=\tfrac12$ over the pole at $s=1$ gives \eqref{ev:R}.
 

@@ -227,8 +227,11 @@ by \eqref{cl:der}. Since $\hbar H\ge2$ and $\int(1+\tau^2/c^2)^{-p_\star}d\tau\l
 Hence $\sum_{\ell\ne0}|\hat G(\ell)|\le C\mathcal N_{n,c}/H$, and the sum of these bounds over $(n,c)$ is at most
 $C\ue^{-3t/2}B(v)\le C\ue^{t/2}\hbar^{3/2}B(v)$.
 
-\emph{The term $\ell=0$.} With $\tau=c\sigma$, $\hat G(0)=H\ue^{it/\hbar}c^{2i/\hbar}\int f(\sigma)\ue^{i\theta(\sigma)/\hbar}d\sigma$, where
-$f(\sigma)=\ue^{-t/2}v(Q(c\sigma))$ and $\theta(\sigma)=\log(1+\sigma^2)$. Put $f_1:=\ue^{-t/2}(Yv)(Q(c\sigma))$, $f_2:=\ue^{-t/2}(Xv)(Q(c\sigma))$,
+\emph{The term $\ell=0$.} With $\tau=c\sigma$,
+\[
+\hat G(0)=H\ue^{it/\hbar}c^{2i/\hbar}\int f(\sigma)\ue^{i\theta(\sigma)/\hbar}d\sigma,
+\]
+where $f(\sigma)=\ue^{-t/2}v(Q(c\sigma))$ and $\theta(\sigma)=\log(1+\sigma^2)$. Put $f_1:=\ue^{-t/2}(Yv)(Q(c\sigma))$, $f_2:=\ue^{-t/2}(Xv)(Q(c\sigma))$,
 $f_{11}:=\ue^{-t/2}(Y^2v)(Q(c\sigma))$ and $f_{21}:=\ue^{-t/2}(XYv)(Q(c\sigma))$. Since $\partial_\sigma=c\,\partial_\tau$, \eqref{cl:chain} gives the
 relations \eqref{cl:fprime}, and by \eqref{cl:der}, \eqref{cl:theta} and the definition of $B(v)$ these functions satisfy \eqref{cl:fbd} with
 $p=p_\star$ and $C\mathcal N_{n,c}$ in place of $\mathcal N$. Lemma~\ref{cl:sp} gives
@@ -464,8 +467,14 @@ u^{(0)}(t)_\Gamma(z)=\ue^{-it/(2\hbar)}\bigl(\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi
 \]
 with $S_a(\hbar)$ as in Lemma~\ref{cl:noncancel}, so that $0.99\,\ue^{-\mu}\le|S_a(\hbar)|\le1.01\,\ue^{-\mu}$ with $\mu=20$. Choose $\hbar_1\le\hbar_0$
 such that for $\hbar\le\hbar_1$ the $O$-term is at most $\tfrac12\ue^{t/2}\sqrt{\pi\hbar}\,|S_a(\hbar)|$; then
-$\tfrac12\le|u^{(0)}(t)_\Gamma(z)|/(\ue^{t/2}\sqrt{\pi\hbar}\,|S_a(\hbar)|)\le\tfrac32$. The proof of Theorem~\ref{cl:main} gives
-$\tfrac12\le|E_0(t)(z)|/(\tfrac{\sqrt\pi}2\ue^{t/2}\hbar^{3/2}t|S_0(\hbar)|)\le\tfrac32$ on the range of that theorem. Dividing, and using
+\[
+\frac12\le\frac{|u^{(0)}(t)_\Gamma(z)|}{\ue^{t/2}\sqrt{\pi\hbar}\,|S_a(\hbar)|}\le\frac32 .
+\]
+The proof of Theorem~\ref{cl:main} gives, on the range of that theorem,
+\[
+\frac12\le\frac{|E_0(t)(z)|}{\tfrac{\sqrt\pi}2\ue^{t/2}\hbar^{3/2}t\,|S_0(\hbar)|}\le\frac32 .
+\]
+Dividing, and using
 $0.98\,\mu\ue^{-\mu}\le|S_0(\hbar)|\le1.02\,\mu\ue^{-\mu}$ (Lemma~\ref{cl:noncancel}), gives the claim with
 $c_{\mathrm{rel}}=0.98\mu/(6\cdot1.01)$ and $C_{\mathrm{rel}}=3\cdot1.02\mu/(2\cdot0.99)$.
 \end{proof}

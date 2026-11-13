@@ -17,15 +17,16 @@ multiplication by $\Lambda(r)=(r^2+\tfrac14)^{1/2}$, and the operators are the s
 \]
 The second factor has norm $\le\sup_{\lambda\ge1/2}\lambda\ue^{-\sigma\lambda}\le1/(\ue\sigma)$. It remains to bound the first factor uniformly for $\alpha''\le\tau_0$, and $Y=\mathring Y+\tfrac12$ adds at most $\tfrac12$.
 
-\medskip\noindent\emph{Spectral notation.} We put $x:=r-r'$, $p:=\pi(r+r')/2$ and $q:=\pi x/2$. Since $\sinh\pi r\,\sinh\pi r'=\sinh(p+q)\sinh(p-q)$,
-\[
+\medskip\noindent\emph{Spectral notation.} We put $x:=r-r'$, $p:=\pi(r+r')/2$ and $q:=\pi x/2$. Then
+\begin{gather*}
+\sinh\pi r\,\sinh\pi r'=\sinh(p+q)\sinh(p-q)=\sinh^2p-\sinh^2q,\\
 (w(r)w(r'))^{1/2}=\tfrac{2}{\pi^2}(rr')^{1/2}(\sinh^2p-\sinh^2q)^{1/2}=\tfrac{2}{\pi^2}(rr')^{1/2}(\cosh^2p-\cosh^2q)^{1/2}.
-\]
+\end{gather*}
 
 \medskip\noindent\emph{Mellin product formula.} For $\operatorname{Re}s>|\operatorname{Re}\mu_1|+|\operatorname{Re}\mu_2|$,
-\[
-M_s(\mu_1,\mu_2):=\int_0^\infty \zeta^{s-1}K_{\mu_1}(\zeta)K_{\mu_2}(\zeta)\,d\zeta=2^{s-3}\,\frac{\Gamma\bigl(\tfrac{s+\mu_1+\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s+\mu_1-\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s-\mu_1+\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s-\mu_1-\mu_2}{2}\bigr)}{\Gamma(s)}.
-\]
+\begin{multline*}
+M_s(\mu_1,\mu_2):=\int_0^\infty \zeta^{s-1}K_{\mu_1}(\zeta)K_{\mu_2}(\zeta)\,d\zeta\\=2^{s-3}\,\frac{\Gamma\bigl(\tfrac{s+\mu_1+\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s+\mu_1-\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s-\mu_1+\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s-\mu_1-\mu_2}{2}\bigr)}{\Gamma(s)}.
+\end{multline*}
 \emph{Proof of the formula.} Write $K_{\mu_2}=K_{-\mu_2}$ (\cite[10.27.3]{DLMF}) and use the integral representation
 \cite[10.32.10]{DLMF} for both Bessel factors. The integration in $\zeta$ is
 \[
