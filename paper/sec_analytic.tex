@@ -24,14 +24,14 @@ Constant & Fixed in & Depends on\\
 $C_1$ & Lemma~\ref{lem:fc} & absolute\\
 $B_\beta$; $\rho_*=\tfrac14\log(3/2)$ & Lemma~\ref{lem:fdb} & $\beta$; absolute\\
 $C_2=\max(\ue C_1,1/\rho_*)$ & Lemma~\ref{lem:sc} & absolute\\
-$C_*=4$ & Lemma~\ref{lem:expw} & absolute\\
+$C_*=\tfrac{32}5$ & Lemma~\ref{lem:expw} & absolute\\
 $c_M=1/(4\max(C_2,1))$ & Lemma~\ref{lem:mw} & absolute\\
 $A_1$, $A_2$ & Lemma~\ref{lem:clip} & absolute\\
 $c_A=(1+32A_1A_2)^{-1}$ & Proposition~\ref{prop:a0} & absolute\\
 $\mathcal K_\lambda=8\lambda^2+7\lambda$ & Section~\ref{app:ws} & $\lambda$\\
 $C_W$ & Lemma~\ref{lem:wmoll} & $\rho$, $\mathcal K$\\
 $C_{\mathrm{fl}}=(4\rho+3)C_W^2$; $C_{\mathrm{fl},\lambda}=C_{\mathrm{fl}}(\lambda,\mathcal K_\lambda)$ & Proposition~\ref{prop:ws} & $\rho$, $\mathcal K$; $\lambda$\\
-$C_3\ge1$ & Lemma~\ref{lem:wb} & absolute\\
+$C_3=480\max(C_2,4\ue C_1)^2$ & Lemma~\ref{lem:wb} & absolute\\
 $C_4=20+60(1+4C_1)^2$ & Lemma~\ref{lem:unw} & absolute\\
 $C_{\mathrm{cw}}$ & Theorem~\ref{os:cw} & $c$\\
 $C_\Lambda$; $C_{\Lambda_m}$ & Corollary~\ref{os:cwp} & $c$; $m$, $c$\\
@@ -201,10 +201,12 @@ $(-\Delta)^n=(-X^2-Y^2+Y)^n$ is a sum of $3^n$ words of length at most $2n$ with
 $k\mapsto(k+1)k!(L/\alpha)^k$ is increasing,
 $\norm{\Lambda^{2n}u}=\norm{(-\Delta)^nu}\le3^nB(2n+1)(2n)!(L/\alpha)^{2n}\mathcal N$, and so
 \[
-\sum_{n\ge0}\frac{r^{2n}}{(2n)!}\norm{\Lambda^{2n}u}\le B\mathcal N\sum_{n\ge0}(2n+1)\Bigl(\frac{3}{16}\Bigr)^n\le2B\mathcal N .
+\sum_{n\ge0}\frac{r^{2n}}{(2n)!}\norm{\Lambda^{2n}u}\le B\mathcal N\sum_{n\ge0}(2n+1)\Bigl(\frac{3}{16}\Bigr)^n
+\le2B\mathcal N\sum_{n\ge0}\Bigl(\frac38\Bigr)^n=\frac{16}5B\mathcal N,
 \]
+since $2n+1\le2\cdot2^n$.
 The partial sums of $\sum_n(r\lambda)^{2n}/(2n)!$ increase to $\cosh(r\lambda)$, so monotone convergence in the spectral representation
-of $\Lambda$ gives $\norm{\cosh(r\Lambda)u}\le2B\mathcal N$, and $\ue^{r\lambda}\le2\cosh(r\lambda)$. So $C_*=4$ works.
+of $\Lambda$ gives $\norm{\cosh(r\Lambda)u}\le\tfrac{16}5B\mathcal N$, and $\ue^{r\lambda}\le2\cosh(r\lambda)$. So $C_*=\tfrac{32}5$ works.
 \end{proof}
 
 \begin{lemma}[removing a spatial weight with loss of analytic radius]\label{lem:mw}
@@ -603,7 +605,7 @@ uniformly in $\mathbf s\in\Sigma_{K+1}(t)$:
 \end{lemma}
 
 \begin{proof}
-Put $G:=\max(C_2,4\ue C_1)\ge1$ and $C_3:=160\,G^2$. By Lemma~\ref{lem:expand}(i) with $k=K+1$, $Z_Sa_{\mathbf s}$ is a sum of
+Put $G:=\max(C_2,4\ue C_1)\ge1$ and $C_3:=480\,G^2$. By Lemma~\ref{lem:expand}(i) with $k=K+1$, $Z_Sa_{\mathbf s}$ is a sum of
 $5^N3^{K+1}$ terms $c\,Z_SZ_{S'}a$ with $|c|\le2^N\hbar^{\ell-2N}$, $\ell\le2N$, and words of length $L\le\ell+q$, $q:=n+2K+2$.
 By Lemma~\ref{lem:sc}, $\norm{X_0^\beta Z_SZ_{S'}a}\le B_\beta(L+1)L!(G/\alpha)^L\pwNorm a$, and Lemma~\ref{lem:expand}(ii) bounds
 $(L+1)L!(G/\alpha)^L\hbar^\ell$ by $(4G)^{2N+q}(2N)!\,q!\,\alpha^{-q-2N}$. So each term is at most
