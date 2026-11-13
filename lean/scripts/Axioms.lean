@@ -2888,3 +2888,10 @@ import Qschubert
 #print axioms Qschubert.pcmain_big_unif
 #print axioms Qschubert.pcMainCD_unif
 #print axioms Qschubert.pcmain_unif
+#print axioms Qschubert.ptBound_le_ptBoundN
+#print axioms Qschubert.pccor16_allN
+#print axioms Qschubert.pccor16bg_allN
+#print axioms Qschubert.cor16Rmain_allmultN
+#print axioms Qschubert.cor16Rmain_allbgN
+#print axioms Qschubert.cor16R_multN
+#print axioms Qschubert.cor16R_repN
