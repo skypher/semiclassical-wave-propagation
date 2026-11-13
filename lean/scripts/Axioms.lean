@@ -2868,6 +2868,8 @@ import Qschubert
 #print axioms Qschubert.norm_expLambda_mono
 #print axioms Qschubert.swNormD_mono
 #print axioms Qschubert.thm13R_fixed
+#print axioms Qschubert.thm13Rmain_all
+#print axioms Qschubert.pcthm13_fixed
 #print axioms Qschubert.evTransfer_pc_all
 #print axioms Qschubert.norm_wordAct_le_wordBound
 #print axioms Qschubert.norm_polyAct_bP_two
