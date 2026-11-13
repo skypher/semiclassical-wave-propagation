@@ -99,8 +99,10 @@ so that $a_{\mathbf s}=\mathcal B_{\mathbf s}a$ in (ii) of Proposition~\ref{prop
 with a constant $C_6\ge1$ fixed in Step~1(a).
 
 \medskip\noindent\emph{Step 1 (derivative, flow and defect estimates).} Each of the following maps is linear on $L^2(\Hb)$ and is bounded
-there and at the weight $\pcXzero$ on functions supported in one shell; by the sentence after Lemma~\ref{os:transfer}, the second
-bound gives hypothesis (b) of that lemma, which then bounds the map at the weight $\omega$.
+there and at the weight $\pcXzero$ on functions supported in one shell. The second bound gives hypothesis (b) of
+Lemma~\ref{os:transfer}: if $\norm{\pcXzero Tu}\le\mathcal M_1\norm{\pcXzero u}$ for $u$ supported in $A_n$, then
+$\ue^k\norm{1_kTu}\le\norm{\pcXzero Tu}\le\mathcal M_1\norm{\pcXzero u}\le\mathcal M_1\ue^{n+1}\norm u$, since $\pcXzero\ge\ue^k$ on $A_k$ and
+$\pcXzero<\ue^{n+1}$ on $A_n$. Lemma~\ref{os:transfer} then bounds the map at the weight $\omega$.
 Write $C_{\mathrm{tr}}$ for its constant for $c=c'$ and $C_{\mathrm{sh}}$; it is independent of $K,N,\hbar$ and the integration variables.
 
 \smallskip\noindent(a) \emph{Words.} For a word $Z_S$ of length $n$ let $T_wh:=Z_S\mathcal B_{\mathbf s}\mathsf Qh$. By
@@ -174,7 +176,7 @@ every $h$ with $\omega h\in L^2$, that is, for $\norm{\mathcal V_{s_1}a_{\mathbf
 
 \medskip\noindent\emph{Step 4 (collecting).} By Step~1(a), every word applied to $a$ lies in $L^2_{\omega}$, and $\omega$ satisfies (W1), (W2). So
 Proposition~\ref{prop:dd-id}(ii) bounds the error by $(\hbar/2)^{K+1}$ times the volume $t^{K+1}/(K+1)!$ of $\Sigma_{K+1}(t)$ times the bound
-\eqref{pc:star}. The numbers $F_n\norm{\omega h}$ are those of Lemma~\ref{lem:collect} for $G:=C_6$ and $\mathcal N:=\norm{\omega h}$, and that
+\eqref{pc:star}. The numbers $F_n\norm{\omega h}$ are those of Lemma~\ref{lem:collect} for $G:=C_6$ and $\mathcal H:=\norm{\omega h}$, and that
 lemma with its parameters $\lambda=1$ and $c=\tfrac1{32}$ gives the asserted bound for $t\le\delta'\xi$ with $\delta'\le\tfrac1{64}$.
 
 \medskip\noindent\emph{Time windows.} Steps~1(b), 1(c) and~2 use $\hbar s_1\le\varepsilon$, that is $t\le\xi/2$; Proposition~\ref{prop:a0} uses

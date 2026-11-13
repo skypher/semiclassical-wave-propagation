@@ -36,7 +36,7 @@ $\sum_\gamma\ue^{-\sigma\,d(x_0,\gamma z)}\le\sum_{n\ge0}C\ue^{n+1}\ue^{-\sigma 
 
 \begin{lemma}[weighted periodization and transport]\label{lem:t2}
 For every Fuchsian $\Gamma$, every $\sigma>1/2$, $t\ge0$, every real measurable function $\theta$ on $\Hb$ and every measurable $w$
-with $\ue^{\sigma\tilde\psi}w\in L^2(\Hb)$:
+with $\ue^{\sigma\tilde\psi}w\in L^2(\Hb)$, the periodization of $(S(t)w)\,\ue^{i\theta}$ converges absolutely almost everywhere, and
 \[
 \norm{\bigl[(S(t)w)\,\ue^{i\theta}\bigr]_\Gamma}_{L^2(M)}\le C(\Gamma,\sigma)\,\ue^{\sigma t}\,\norm{\ue^{\sigma\tilde\psi}w}_{L^2(\Hb)},
 \]
@@ -56,7 +56,7 @@ convergence, this gives
 \[
 \norm{[f]_\Gamma}^2_{L^2(M)}\le P_\Gamma(2\sigma)\int_\Hb\ue^{2\sigma d(z,x_0)}|f(z)|^2\,d\nu(z).
 \]
-In particular $\sum_\gamma|f\circ\gamma|$ converges a.e. and in $L^2(M)$. Torsion-freeness is not needed: the fixed sets of elliptic elements are null, so unfolding over a fundamental domain carries no stabilizer factor, and any multiplicity is already counted in the orbit series $P_\Gamma(2\sigma)$.
+In particular $\sum_\gamma|f\circ\gamma|$ converges a.e. and in $L^2(M)$ whenever the right side is finite. Torsion-freeness is not needed: the fixed sets of elliptic elements are null, so unfolding over a fundamental domain carries no stabilizer factor, and any multiplicity is already counted in the orbit series $P_\Gamma(2\sigma)$.
 
 \emph{Transport.} Take $f=(S(t)w)\ue^{i\theta}$, so $|f|=|S(t)w|$.
 Since $(S(t)w)(z)=\ue^{-t/2}w(z_t)$, where $z_t$ is at distance $t$ from $z$, we have
@@ -131,7 +131,7 @@ Let $\varpi\ge1$ be a locally bounded measurable weight on $\Hb$, $L^2_\varpi:=\
 \item[(W1)] $f\mapsto f_\Gamma$ is bounded from $L^2_\varpi$ to $L^2(M)$, the sum converging absolutely a.e.;
 \item[(W2)] $\sup\{\varpi(z)/\varpi(\Omega_sz):|s|\le T,\ z\in\Hb\}<\infty$ for every $T$.
 \end{itemize}
-The proof of Lemma~\ref{lem:t2}, at $t=0$, gives (W1) for $\varpi=X_0^\sigma$, $\sigma>1/2$. Since $d(z,\Omega_sz)=|s|$ and
+Lemma~\ref{lem:t2} at $t=0$ and $\theta=0$ gives (W1) for $\varpi=X_0^\sigma$, $\sigma>1/2$. Since $d(z,\Omega_sz)=|s|$ and
 $\tilde\psi$ is $1$-Lipschitz, (W2) holds for it with the explicit ratio $(X_0(z)/X_0(\Omega_sz))^\sigma\le\ue^{\sigma|s|}$.
 Proposition~\ref{os:p1} verifies (W1) and (W2) for the periodization weight of Section~\ref{sec:printed}. By (W2), $S(s)$ is bounded on $L^2_\varpi$, locally uniformly in $s$; it is strongly continuous there, by density of $C_c(\Hb)$.
 

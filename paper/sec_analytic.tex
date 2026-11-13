@@ -188,25 +188,25 @@ Since $\sum_{|S|=j}j!(k-j)!=k!$, the sum is $\le B_\beta\,k!\sum_j\rho_*^{-j}(\u
 
 \subsection{Multiplication by spatial weights}\label{app:m}
 \begin{lemma}[analytic vectors from word bounds]\label{lem:expw}
-Let $0<\alpha\le1$, $L\ge1$ and $B,\mathcal N\ge0$. Let $u\in L^2(\Hb)$ be such that every word $Z_1\cdots Z_k$, $Z_i\in\{X,Y\}$, $k\ge0$,
+Let $0<\alpha\le1$, $L\ge1$ and $B,\mathcal H\ge0$. Let $u\in L^2(\Hb)$ be such that every word $Z_1\cdots Z_k$, $Z_i\in\{X,Y\}$, $k\ge0$,
 applied to $u$ in the sense of distributions lies in $L^2$, with
 \[
-\norm{Z_1\cdots Z_ku}\le B\,(k+1)\,k!\,(L/\alpha)^k\,\mathcal N .
+\norm{Z_1\cdots Z_ku}\le B\,(k+1)\,k!\,(L/\alpha)^k\,\mathcal H .
 \]
-Then $u\in\operatorname{Dom}(\ue^{r\Lambda})$ and $\norm{\ue^{r\Lambda}u}\le C_*B\mathcal N$ for $r=\alpha/(4L)$, with an absolute constant $C_*$.
+Then $u\in\operatorname{Dom}(\ue^{r\Lambda})$ and $\norm{\ue^{r\Lambda}u}\le C_*B\mathcal H$ for $r=\alpha/(4L)$, with an absolute constant $C_*$.
 \end{lemma}
 \begin{proof}
 $\Delta$ is essentially self-adjoint on $C_c^\infty(\Hb)$, so $u\in\operatorname{Dom}(\Delta^n)$ for every $n$, and
 $(-\Delta)^n=(-X^2-Y^2+Y)^n$ is a sum of $3^n$ words of length at most $2n$ with coefficients $\pm1$. Since
 $k\mapsto(k+1)k!(L/\alpha)^k$ is increasing,
-$\norm{\Lambda^{2n}u}=\norm{(-\Delta)^nu}\le3^nB(2n+1)(2n)!(L/\alpha)^{2n}\mathcal N$, and so
+$\norm{\Lambda^{2n}u}=\norm{(-\Delta)^nu}\le3^nB(2n+1)(2n)!(L/\alpha)^{2n}\mathcal H$, and so
 \[
-\sum_{n\ge0}\frac{r^{2n}}{(2n)!}\norm{\Lambda^{2n}u}\le B\mathcal N\sum_{n\ge0}(2n+1)\Bigl(\frac{3}{16}\Bigr)^n
-\le2B\mathcal N\sum_{n\ge0}\Bigl(\frac38\Bigr)^n=\frac{16}5B\mathcal N,
+\sum_{n\ge0}\frac{r^{2n}}{(2n)!}\norm{\Lambda^{2n}u}\le B\mathcal H\sum_{n\ge0}(2n+1)\Bigl(\frac{3}{16}\Bigr)^n
+\le2B\mathcal H\sum_{n\ge0}\Bigl(\frac38\Bigr)^n=\frac{16}5B\mathcal H,
 \]
 since $2n+1\le2\cdot2^n$.
 The partial sums of $\sum_n(r\lambda)^{2n}/(2n)!$ increase to $\cosh(r\lambda)$, so monotone convergence in the spectral representation
-of $\Lambda$ gives $\norm{\cosh(r\Lambda)u}\le\tfrac{16}5B\mathcal N$, and $\ue^{r\lambda}\le2\cosh(r\lambda)$. So $C_*=\tfrac{32}5$ works.
+of $\Lambda$ gives $\norm{\cosh(r\Lambda)u}\le\tfrac{16}5B\mathcal H$, and $\ue^{r\lambda}\le2\cosh(r\lambda)$. So $C_*=\tfrac{32}5$ works.
 \end{proof}
 
 \begin{lemma}[removing a spatial weight with loss of analytic radius]\label{lem:mw}
@@ -654,13 +654,13 @@ Adding the two terms gives the claim with $C_4=20+60(1+4C_1)^2$. \qedhere
 \begin{lemma}[collecting the remainder bound]\label{lem:collect}
 Let $\kappa>0$, $\lambda\ge0$, $c>0$, $G\ge1$ and $B\ge0$. There is $C>0$, depending only on $\kappa$, $\lambda$, $c$, $G$ and $B$, with the
 following property. Let $0<\hbar\le1$ and $0<\sigma\le1$ with $\sigma^3\ge\kappa\hbar$, put $\varepsilon:=(\sigma\hbar)^{1/2}/2$ and
-$\xi:=(\sigma/\hbar)^{1/2}$, let $0<\delta\le1$ with $2\lambda\delta\le c$, $0\le t\le\delta\xi$, $K,N\in\mathbb N_0$ and $\mathcal N\ge0$, and put
+$\xi:=(\sigma/\hbar)^{1/2}$, let $0<\delta\le1$ with $2\lambda\delta\le c$, $0\le t\le\delta\xi$, $K,N\in\mathbb N_0$ and $\mathcal H\ge0$, and put
 \[
-  F_n:=G^{N+K+n+1}(2N)!\,(n+2K+2)!\,\sigma^{-(n+2K+2)}(\sigma\hbar)^{-2N}\mathcal N\qquad(n\ge0).
+  F_n:=G^{N+K+n+1}(2N)!\,(n+2K+2)!\,\sigma^{-(n+2K+2)}(\sigma\hbar)^{-2N}\mathcal H\qquad(n\ge0).
 \]
 If a number $\mathcal I$ satisfies $\mathcal I\le B\bigl(F_0+\hbar t\,\ue^{\lambda t}\varepsilon^{-3}\sigma^{-4}\ue^{-c\xi}F_2\bigr)$, then
 \[
-  \Bigl(\frac\hbar2\Bigr)^{K+1}\frac{t^{K+1}}{(K+1)!}\,\mathcal I\le C^{N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Bigl(\frac{\hbar t}{\sigma^2}\Bigr)^{K+1}\mathcal N.
+  \Bigl(\frac\hbar2\Bigr)^{K+1}\frac{t^{K+1}}{(K+1)!}\,\mathcal I\le C^{N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Bigl(\frac{\hbar t}{\sigma^2}\Bigr)^{K+1}\mathcal H.
 \]
 \end{lemma}
 
@@ -687,7 +687,7 @@ the first because $(2K+4)!\le4^{K+2}((K+2)!)^2$ by $\binom{2K+4}{K+2}\le4^{K+2}$
 the $2N$ factors by $2N$. With $\sigma^2\sigma^{-(2K+4)}\hbar^{K+1}t^{K+1}=(\hbar t/\sigma^2)^{K+1}$ this gives
 \[
   \Bigl(\frac\hbar2\Bigr)^{K+1}\frac{t^{K+1}}{(K+1)!}\,\mathcal I\le4B(1+C_R)\,G^{N+K+3}\,4^N16^{K+1}\,N^{2N}K!\,(\sigma\hbar)^{-2N}
-  \Bigl(\frac{\hbar t}{\sigma^2}\Bigr)^{K+1}\mathcal N,
+  \Bigl(\frac{\hbar t}{\sigma^2}\Bigr)^{K+1}\mathcal H,
 \]
 and $C:=64\max\bigl(1,4B(1+C_R)\bigr)G^3$ works, since $N+K+3\le3(N+K+1)$ and $4^N16^{K+1}\le64^{N+K+1}$.
 \end{proof}
