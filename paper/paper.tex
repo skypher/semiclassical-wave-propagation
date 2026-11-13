@@ -371,8 +371,8 @@ The factorial control in Theorem~\ref{pc:main} allows the expansion order to gro
 choosing $K$ of order $\alpha^2/(\hbar t)$ gives an exponentially small error.
 
 \begin{corollary}[optimal truncation]\label{pc:cor15}
-Assume the hypotheses of Theorem~\ref{pc:main}, let $C,\delta$ be its constants, and put
-$\delta_1:=\min(\delta,\kappa^{1/2}/\max(1,C))$ and $\rho:=C\hbar t/\alpha^2$; then $\rho\le1$ for $0\le t\le\delta_1(\alpha/\hbar)^{1/2}$.
+Assume the hypotheses of Theorem~\ref{pc:main}, let $C\ge1$ and $\delta>0$ be constants for which its estimate holds
+(enlarging $C$ if necessary), and put $\delta_1:=\min(\delta,\kappa^{1/2}/\max(1,C))$ and $\rho:=C\hbar t/\alpha^2$; then $\rho\le1$ for $0\le t\le\delta_1(\alpha/\hbar)^{1/2}$.
 Let $\theta\in(0,1)$. For all such $t$ and every integer $K$ with $1-\theta\le K\rho\le1-\theta/2$,
 \begin{multline*}
   \norm{\Delta^N\big[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}\\
@@ -400,7 +400,7 @@ Under the hypotheses of Theorem~\ref{pc:main}, for every $z\in M$,
 The error lies in $\operatorname{Dom}(\Delta_M^N)$, its image under $\Delta_M^N$ has a continuous representative, and the
 left side is the value of that representative.
 If the injectivity radius of $M$ is at least $r_0>0$ (Section~\ref{sec:setup}), the factor $m(z)^{1/2}$ may be replaced by
-$1$, with a constant depending also on $r_0$.
+$1$, with the same $\delta$ and a constant $C$ depending also on $r_0$.
 \end{corollary}
 
 \subsection{Corrections and sharpness}\label{subsec:corrections}
