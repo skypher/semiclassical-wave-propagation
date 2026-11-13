@@ -626,6 +626,7 @@ import Qschubert
 #print axioms Qschubert.four_rho_lt_one
 #print axioms Qschubert.hF_eq_inv_coshD
 #print axioms Qschubert.fdb
+#print axioms Qschubert.word_X0_le
 #print axioms Qschubert.abs_mul_exp_sqrt_le
 #print axioms Qschubert.expLambda_neg_eq_J
 #print axioms Qschubert.norm_J_expCut_le

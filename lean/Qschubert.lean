@@ -76,6 +76,7 @@ import Qschubert.LemmaC
 import Qschubert.FdbFun
 import Qschubert.FdbWord
 import Qschubert.FdbBound
+import Qschubert.FdbX0
 import Qschubert.FC0
 import Qschubert.PartialFourier
 import Qschubert.PFIntertwine
