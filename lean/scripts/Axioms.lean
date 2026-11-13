@@ -2895,3 +2895,11 @@ import Qschubert
 #print axioms Qschubert.cor16Rmain_allbgN
 #print axioms Qschubert.cor16R_multN
 #print axioms Qschubert.cor16R_repN
+#print axioms Qschubert.multM_le_of_injRad
+#print axioms Qschubert.bg_bound_le
+#print axioms Qschubert.pccor15_tied
+#print axioms Qschubert.cor15Rmain_tied
+#print axioms Qschubert.cor15R_tied
+#print axioms Qschubert.pcThmCD_exists
+#print axioms Qschubert.rThmCD_exists
+#print axioms Qschubert.xThmCD_exists

@@ -254,3 +254,4 @@ import Qschubert.KLCorRexp
 import Qschubert.KLMainAll
 import Qschubert.KLPcUnif
 import Qschubert.KLPtN
+import Qschubert.KLCor15Tied
