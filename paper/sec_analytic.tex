@@ -443,9 +443,9 @@ $R\to\infty$, since $W$ is bounded.
 \end{proof}
 
 \begin{lemma}[commutator with the wave group]\label{lem:wcomm}
-Let $W\in\mathcal W(\rho,\mathcal K)$. For $u,g$ in the range of a spectral projection $1_{[0,R]}(\Lambda)$, $R<\infty$, and $s\in\mathbb R$,
+Let $W\in\mathcal W(\rho,\mathcal K)$. For $u,g$ in the range of a spectral projection $1_{[0,R]}(\Lambda)$, $R<\infty$, and $s\ge0$,
 \[
-\bigl|\langle u,[\cos(s\Lambda),W^2]g\rangle\bigr|\le\bigl(8\rho|s|+(2\mathcal K+2\rho)s^2\bigr)\ue^{4\rho|s|}\norm{Wu}\norm{Wg}.
+\bigl|\langle u,[\cos(s\Lambda),W^2]g\rangle\bigr|\le\bigl(8\rho s+(2\mathcal K+2\rho)s^2\bigr)\ue^{4\rho s}\norm{Wu}\norm{Wg}.
 \]
 \end{lemma}
 \begin{proof}
@@ -463,8 +463,8 @@ in which no derivative falls on $c(r)g$. Now
 $|Xh|,|Yh|\le2\rho h$ and $|\Delta h|\le|X^2h|+|Y^2h|+|Yh|\le(2\mathcal K+2\rho)h$. By Lemma~\ref{lem:wave}(a),
 $\norm{Wc(r)g}\le\ue^{2\rho|r|}\norm{Wg}$, $\norm{WXq(r)}+\norm{WYq(r)}\le2\ue^{2\rho|r|}\norm{Wu}$, and
 $\norm{Wq(r)}\le|r|\ue^{2\rho|r|}\norm{Wu}$ because $q(r)=\int_0^rc(r')u\,dr'$. So the integrand is at most
-$\bigl((2\mathcal K+2\rho)|s-r|+8\rho\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$. Integrating over $r$ gives the bound
-$\bigl(8\rho|s|+(\mathcal K+\rho)s^2\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$, which is at most the stated bound.
+$\bigl((2\mathcal K+2\rho)(s-r)+8\rho\bigr)\ue^{2\rho s}\norm{Wu}\norm{Wg}$ for $0\le r\le s$. Integrating over $r$ gives the bound
+$\bigl(8\rho s+(\mathcal K+\rho)s^2\bigr)\ue^{2\rho s}\norm{Wu}\norm{Wg}$, which is at most the stated bound.
 \end{proof}
 
 By Fourier inversion, since $j_\varepsilon$ is even,

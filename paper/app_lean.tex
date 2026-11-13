@@ -37,6 +37,11 @@ for each bound on the periodization constant ($P^{\mathrm{cr}}_\Gamma$ is \lean{
 point after $C$ (\lean{pcmain_unif}, \lean{thm14Rmain_unif}, \lean{thm14R_all}). For a single group, with $P=P^{\mathrm{cr}}_\Gamma$,
 Theorem~\ref{pc:main} is \lean{pcmain_all}; Theorem~\ref{ev:mod} and the original-norm part of Corollary~\ref{ev:transfer} use this form.
 In the pointwise statements for positive injectivity radius, $\delta$ is chosen before $r_0$.
+\item \emph{Named constants.} The constants that statements fix or take from other statements have the same values in the
+formal statements: $\rho_*$, $C_2$, $C_*=\tfrac{32}5$, $c_M$, $A_1$, $A_2$, $c_A$, $C_3=480\max(C_2,4\ue C_1)^2$, $c_H$, $C_5$, $Q$, and
+$C'=\ue^{1/2}$ of Corollary~\ref{pc:cor15}. Where a statement only asserts that a constant exists, so does the formal statement, and its proof may
+give a different admissible value; Table~\ref{tab:constants} lists the values of the printed proofs (for instance $C_4$, $C_{\mathrm{fl}}$,
+$\mathcal K_\lambda$, $B_0$, $B_m$).
 \item \emph{The optimal-truncation corollary.} Corollary~\ref{pc:cor15} and its power-weight form are formalized for every pair of
 constants $C\ge1$, $\delta>0$ for which the estimate of their theorem holds on the group at hand (\lean{pccor15_tied},
 \lean{cor15Rmain_tiedG}, \lean{cor15R_tiedA}), with the window $\delta_1=\min(\delta,\kappa^{1/2}/\max(1,C))$, which equals

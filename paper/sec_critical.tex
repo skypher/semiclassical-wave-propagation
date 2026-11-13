@@ -170,10 +170,10 @@ Periodization at the same weight then turns these estimates into bounds on the q
 \begin{lemma}[transfer over shells]\label{os:transfer}
 Let $0\le c\le1$ and $C_{\mathrm{sh}}>0$, and let $\varpi$ be a measurable weight with $\ue^{n/2}(1+n)^c\le\varpi\le C_{\mathrm{sh}}\,\ue^{n/2}(1+n)^c$ on $A_n$ for
 every $n\ge0$; by \eqref{os:shell}, $\varpi=\osomc$ with $C_{\mathrm{sh}}=3\ue^{1/2}$ is an example. Let $T:L^2(\Hb)\to L^2(\Hb)$ be additive, $T(u+v)=Tu+Tv$, and let
-$0<\mathcal M_0\le \mathcal M_1$ be such that
+$0\le\mathcal M_0\le \mathcal M_1$ be such that
 \begin{itemize}
 \item[(a)] $\norm{Tu}\le \mathcal M_0\norm u$ for all $u\in L^2$, and
-\item[(b)] $\norm{\osX\,Tu}\le \mathcal M_1\norm{\osX u}$ for every $u$ supported in one shell $A_n$.
+\item[(b)] $\ue^k\norm{1_kTu}\le\mathcal M_1\ue^{n+1}\norm u$ for all $k,n\ge0$ and every $u$ supported in $A_n$.
 \end{itemize}
 Then for every $h\in L^2$,
 \[
@@ -182,7 +182,7 @@ Then for every $h\in L^2$,
 with a constant $C_{\mathrm{tr}}$ depending only on $c$ and $C_{\mathrm{sh}}$.
 \end{lemma}
 \begin{proof}
-Let $u=1_nh$. By (a), $\norm{1_kTu}\le \mathcal M_0\norm u$. By (b), since $\osX\ge\ue^k$ on $A_k$ and $\osX\le\ue^{n+1}$ on $A_n$,
+Let $u=1_nh$. By (a), $\norm{1_kTu}\le \mathcal M_0\norm u$. By (b),
 $\norm{1_kTu}\le\ue\,\mathcal M_1\ue^{-(k-n)}\norm u$. For $k\ge n$, $\min(x,y)\le x^{1/4}y^{3/4}$ gives
 $\norm{1_kT1_n}\le\ue^{3/4}\mathcal M_0^{1/4}\mathcal M_1^{3/4}\ue^{-3(k-n)/4}$; for $k<n$ we use $\mathcal M_0\le \mathcal M_0^{1/4}\mathcal M_1^{3/4}$. By the bounds for $\varpi$ and $c\le1$,
 $\sup_{A_k}\varpi/\inf_{A_n}\varpi\le C_{\mathrm{sh}}\,\ue^{(k-n)/2}(1+(k-n)_+)$. So with $\theta_n:=\norm{\varpi1_nh}$,
@@ -193,6 +193,9 @@ Since $T$ is additive and bounded, $Th=\sum_nT1_nh$ in $L^2$, and therefore
 $\norm{\varpi Th}^2\le\sum_k\bigl(\sum_n\norm{\varpi1_kT1_nh}\bigr)^2\le \mathcal M_0^{1/2}\mathcal M_1^{3/2}\bigl(\sum_jw_j\bigr)^2\sum_n\theta_n^2$ by Young's inequality for
 sequences.
 \end{proof}
+
+Hypothesis (b) holds if $\norm{\osX\,Tu}\le\mathcal M_1\norm{\osX u}$ for every $u$ supported in one shell, since $\osX\ge\ue^k$ on
+$A_k$ and $\osX\le\ue^{n+1}$ on $A_n$.
 
 \begin{proposition}[periodization and transport at the critical weight]\label{os:p1}
 Let $\Gamma$ be any Fuchsian group and $\tfrac12<c\le1$. Then
