@@ -62,6 +62,7 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 3.5 (`lem:sc`) | L | `lem_sc` |
 | Lemma 3.18 (`lem:wb`) | L | `lem_wb_w`, `lem_wb_u` |
 | Lemma 3.19 (`lem:unw`) | L | `unw_err` |
+| Lemma 3.20 (`lem:collect`) | L | `collect_remainder`; parts `collect_absorb`, `remF_zero_le`, `collect_final` |
 
 ## Section 4 (`sec:companion`): power-weight and reversed-weight approximation
 

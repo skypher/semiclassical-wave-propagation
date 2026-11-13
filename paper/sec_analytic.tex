@@ -1,8 +1,9 @@
 \section{Analytic and weighted propagation estimates}\label{sec:analytic}
 This section supplies the estimates for the comparison with the mollified flow outlined in Section~\ref{subsec:method}:
 weighted propagation (Proposition~\ref{prop:ws}) for the mollified part; analytic propagation (Proposition~\ref{prop:a0}),
-the mollifier defect (Lemma~\ref{lem:unw}) and the weighted bound of Lemma~\ref{lem:path} for the defect part; and the
-derivative estimates of Sections~\ref{subsec:dd-fc}, \ref{app:m} and~\ref{subsec:dd-wb} for the remainder amplitude $a_{\mathbf s}$.
+the mollifier defect (Lemma~\ref{lem:unw}) and the weighted bound of Lemma~\ref{lem:path} for the defect part; the
+derivative estimates of Sections~\ref{subsec:dd-fc}, \ref{app:m} and~\ref{subsec:dd-wb} for the remainder amplitude $a_{\mathbf s}$; and
+Lemma~\ref{lem:collect}, the final count shared by the two approximation proofs.
 
 \medskip\noindent\textbf{Notation.}
 We use $X$, $Y$, $\Delta(s)$, $\Lambda$, $X_0$, $\tilde\psi$ and the power-weight norm $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}$
@@ -511,7 +512,8 @@ $L^2_{X_0^\lambda}$ for $Z\in\mathcal S$, and so is $J_\varepsilon\Delta(s)J_\va
 
 \subsection{Remainder bounds}\label{subsec:dd-wb}
 The remainder proof needs two estimates with different roles: factorial derivative bounds for its
-amplitude, and exponential smallness of the mollifier defect without a spatial weight.
+amplitude, and exponential smallness of the mollifier defect without a spatial weight. Lemma~\ref{lem:collect} then turns a
+bound for the integrand of the remainder into the final estimate; both approximation proofs end with it.
 
 \begin{lemma}[derivative bounds for the remainder amplitude]\label{lem:wb}
 Let $\beta\ge0$, let $a_{\mathbf s}$ be as in Proposition~\ref{prop:dd-id}(ii), and assume $0<\hbar\le1$ and
@@ -587,4 +589,45 @@ $\norm{\ue^{(r/2)\Lambda}\Delta(s)v}\le3(1+4C_1/r)^2\norm{\ue^{r\Lambda}v}$. By 
 $\norm{(1-J_\varepsilon)w}\le20\,r^{-2}\ue^{-r/(8\varepsilon)}\norm{\ue^{(r/2)\Lambda}w}$. Take $w=\Delta(s)v$.
 
 Adding the two terms gives the claim with $C_4=20+60(1+4C_1)^2$. \qedhere
+\end{proof}
+
+\begin{lemma}[collecting the remainder bound]\label{lem:collect}
+Let $\kappa>0$, $\gamma\ge0$, $c>0$, $G\ge1$ and $B\ge0$. There is $C>0$, depending only on $\kappa$, $\gamma$, $c$, $G$ and $B$, with the
+following property. Let $0<\hbar\le1$ and $0<\sigma\le1$ with $\sigma^3\ge\kappa\hbar$, put $\varepsilon:=(\sigma\hbar)^{1/2}/2$ and
+$\xi:=(\sigma/\hbar)^{1/2}$, let $0<\delta\le1$ with $2\gamma\delta\le c$, $0\le t\le\delta\xi$, $K,N\in\mathbb N_0$ and $H\ge0$, and put
+\[
+  F_n:=G^{N+K+n+1}(2N)!\,(n+2K+2)!\,\sigma^{-(n+2K+2)}(\sigma\hbar)^{-2N}H\qquad(n\ge0).
+\]
+If a number $\Phi$ satisfies $\Phi\le B\bigl(F_0+\hbar t\,\ue^{\gamma t}\varepsilon^{-3}\sigma^{-4}\ue^{-c\xi}F_2\bigr)$, then
+\[
+  \Bigl(\frac\hbar2\Bigr)^{K+1}\frac{t^{K+1}}{(K+1)!}\,\Phi\le C^{N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Bigl(\frac{\hbar t}{\sigma^2}\Bigr)^{K+1}H.
+\]
+\end{lemma}
+
+In the applications $\Phi$ bounds $\norm{\mathcal V_{s_1}a_{\mathbf s}}$ on $\Sigma_{K+1}(t)$, whose volume is $t^{K+1}/(K+1)!$, so that by
+Proposition~\ref{prop:dd-id}(ii) the left side bounds the error of the approximation of order $K$. The term $F_0$ comes from the
+mollified flow, and the second term from the mollifier defect: the factor $\ue^{\gamma t}$ is the growth of the periodization bound,
+and $\ue^{-c\xi}$ the analytic smallness of the defect.
+
+\begin{proof}
+\emph{Absorption.} Since $\hbar\xi^2=\sigma$, we have $\varepsilon^{-1}=2\xi/\sigma$, $\hbar t\le\hbar\xi=\sigma/\xi$ (as $\delta\le1$) and
+$\gamma t\le\gamma\delta\xi\le c\xi/2$. Hence
+\[
+  R:=\hbar t\,\ue^{\gamma t}\varepsilon^{-3}\sigma^{-4}\ue^{-c\xi}\le\frac\sigma\xi\cdot\frac{8\xi^3}{\sigma^3}\cdot\sigma^{-4}\ue^{-c\xi/2}
+  =8\xi^2\sigma^{-6}\ue^{-c\xi/2}.
+\]
+Multiplying $\kappa\hbar\le\sigma^3$ by $\xi^2$ gives $\kappa\le\sigma^2\xi^2$, so $\sigma^{-8}\le\xi^8\kappa^{-4}$; and $(c\xi/2)^{10}/10!\le\ue^{c\xi/2}$
+gives $\xi^{10}\ue^{-c\xi/2}\le10!\,(2/c)^{10}$. So $R\le C_R\sigma^2$ with $C_R:=8\kappa^{-4}\,10!\,(2/c)^{10}$.
+
+\emph{Collecting.} Since $G\ge1$ and $(2K+2)!\le(2K+4)!$, $F_0\le\sigma^2F_2$, so $\Phi\le B(1+C_R)\sigma^2F_2$. We use
+\begin{equation}\label{eq:factorial-assembly}
+  \frac{(2K+4)!}{(K+1)!}\le4\cdot32^{K+1}K!,\qquad(2N)!\le4^NN^{2N};
+\end{equation}
+the first because $(2K+4)!\le4^{K+2}((K+2)!)^2$ by $\binom{2K+4}{K+2}\le4^{K+2}$, and $(K+2)^2(K+1)\le8^{K+1}$; the second by bounding each of
+the $2N$ factors by $2N$. With $\sigma^2\sigma^{-(2K+4)}\hbar^{K+1}t^{K+1}=(\hbar t/\sigma^2)^{K+1}$ this gives
+\[
+  \Bigl(\frac\hbar2\Bigr)^{K+1}\frac{t^{K+1}}{(K+1)!}\,\Phi\le4B(1+C_R)\,G^{N+K+3}\,4^N16^{K+1}\,N^{2N}K!\,(\sigma\hbar)^{-2N}
+  \Bigl(\frac{\hbar t}{\sigma^2}\Bigr)^{K+1}H,
+\]
+and $C:=64\max\bigl(1,4B(1+C_R)\bigr)G^3$ works, since $N+K+3\le3(N+K+1)$ and $4^N16^{K+1}\le64^{N+K+1}$.
 \end{proof}

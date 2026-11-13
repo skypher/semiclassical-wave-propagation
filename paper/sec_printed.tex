@@ -164,33 +164,23 @@ and by \textup{(W1)}, the ratio bound and \eqref{pc:defect},
 \[
   \norm{\mathcal V_{t'}\mathfrak d_h(t')}\le P^{1/2}C_{\mathrm{gr}}\ue^{t'}\norm{\varpi \mathfrak d_h(t')}\le C\,\ue^{t'}\varepsilon^{-3}\sigma^{-4}\ue^{-\xi/32}F_2\norm{\varpi h}.
 \]
-Hence $\norm{\mathcal V_{s_1}v_h}\le C(F_0+R\,F_2)\norm{\varpi h}$ with
-\[
-  R:=\hbar t\,\ue^{t}\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-\xi/32}.
-\]
-\emph{Absorption.} Let $t\le\delta'\xi$ with $\delta'\le\tfrac1{64}$, so $\ue^t\le\ue^{\xi/64}$. Since $\sigma^3\ge\kappa'\hbar$ and $\sigma\le1$,
-\[
-  \sigma^{-1}\le \xi/\sqrt{\kappa'},\qquad\varepsilon^{-1}=2\xi/\sigma\le2\xi^2/\sqrt{\kappa'},\qquad\hbar t\le\delta'\sigma/\xi\le\delta'/\xi .
-\]
-So $R\le C\,\xi^{9}\ue^{-\xi/64}\le C\,\xi^{-2}$, and $\xi^{-2}=\hbar/\sigma\le\sigma^2/\kappa'$. Since $F_0\le\sigma^2F_2$,
+Hence
 \begin{equation}\label{pc:star}
-  \norm{\mathcal V_{s_1}\mathcal B_{\mathbf s}\mathsf Qh}\le C\,\sigma^2F_2\,\norm{\varpi h}.
+  \norm{\mathcal V_{s_1}\mathcal B_{\mathbf s}\mathsf Qh}\le C\bigl(F_0+\hbar t\,\ue^{t}\varepsilon^{-3}\sigma^{-4}\ue^{-\xi/32}F_2\bigr)\norm{\varpi h}.
 \end{equation}
 
 \medskip\noindent\emph{Step 3 (density).} The map $h\mapsto\mathcal V_{s_1}\mathcal B_{\mathbf s}\mathsf Qh$ is linear and bounded from $L^2_\varpi$ to $L^2(M)$, by
 \textup{(W1)} and \eqref{pc:wbw} with $n=0$. The functions of bounded $\tilde\psi$-support are dense in $L^2_\varpi$. So \eqref{pc:star} holds for
-every $h$ with $\varpi h\in L^2$, and
-\[
-  \norm{\mathcal V_{s_1}a_{\mathbf s}}\le C\,C_6^{N+K+3}(2N)!\,(2K+4)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}\norm{\varpi h}.
-\]
+every $h$ with $\varpi h\in L^2$, that is, for $\norm{\mathcal V_{s_1}a_{\mathbf s}}$.
 
 \medskip\noindent\emph{Step 4 (collecting).} By Step~1(a), every word applied to $a$ lies in $L^2_{\varpi}$, and $\varpi$ satisfies (W1), (W2). So
-Proposition~\ref{prop:dd-id}(ii) bounds the error by $(\hbar/2)^{K+1}$ times the integral of $\norm{\mathcal V_{s_1}a_{\mathbf s}}$ over
-$\Sigma_{K+1}(t)$. This simplex has volume $t^{K+1}/(K+1)!$, and the factorial estimates \eqref{eq:factorial-assembly} apply. Together with
-$\hbar^{K+1}t^{K+1}\sigma^{-(2K+2)}=(\hbar t/\sigma^2)^{K+1}$, Step~3 gives the asserted bound.
+Proposition~\ref{prop:dd-id}(ii) bounds the error by $(\hbar/2)^{K+1}$ times the volume $t^{K+1}/(K+1)!$ of $\Sigma_{K+1}(t)$ times the bound
+\eqref{pc:star}. The numbers $F_n\norm{\varpi h}$ are those of Lemma~\ref{lem:collect} for $G:=C_6$ and $H:=\norm{\varpi h}$, and that
+lemma with $\gamma:=1$ and $c:=\tfrac1{32}$ gives the asserted bound for $t\le\delta'\xi$ with $\delta'\le\tfrac1{64}$.
 
 \medskip\noindent\emph{Time windows.} Steps~1(b), 1(c) and~2 use $\hbar s_1\le\varepsilon$, that is $t\le\xi/2$; Proposition~\ref{prop:a0} uses
-$t\le\tfrac13c_A\varepsilon/\hbar=c_A\xi/6$; the absorption uses $t\le\xi/64$. So the proof holds for $t\le\delta'\xi$ with $\delta':=\min(\tfrac1{64},c_A/6)$.
+$t\le\tfrac13c_A\varepsilon/\hbar=c_A\xi/6$; Lemma~\ref{lem:collect} uses $\delta'\le\tfrac1{64}$. So the proof holds for $t\le\delta'\xi$ with
+$\delta':=\min(\tfrac1{64},c_A/6)$.
 Since $\sigma\le1$, all radii stay below $\tau_0=1$.
 \end{proof}
 

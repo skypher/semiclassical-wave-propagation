@@ -7,8 +7,8 @@ Throughout, $M=\Gamma\backslash\Hb$ and $d=d(x_0,\cdot)$.
 The proof of Theorem~\ref{thm:dd-appx} and that of Proposition~\ref{pc:core} in Section~\ref{subsec:pc-proof} both bound the
 integrand $\norm{\mathcal V_{s_1}a_{\mathbf s}}_{L^2(M)}$ of Proposition~\ref{prop:dd-id}(ii), with $\varepsilon=(\alpha\hbar)^{1/2}/2$
 and $\xi=(\alpha/\hbar)^{1/2}$ ($\sigma$ in place of $\alpha$ in Proposition~\ref{pc:core}), by a mollified part and a defect
-part as described in Section~\ref{subsec:method}, and then integrate over the simplex. Table~\ref{tab:compare} lists where
-they differ.
+part as described in Section~\ref{subsec:method}, and then integrate over the simplex with Lemma~\ref{lem:collect}.
+Table~\ref{tab:compare} lists where they differ.
 
 \begin{center}
 \small
@@ -106,42 +106,29 @@ Proposition~\ref{prop:a0}, from the radius $r_1$ to $r_2$ (so $(r_1-r_2)/r_1=\tf
 $\norm{\ue^{r_2\Lambda}g(t')}\le\norm{\ue^{r_1\Lambda}a_{\mathbf s}}$.
 Lemma~\ref{lem:unw} with $r=r_2$ gives $\norm{\mathfrak d(t')}\le C_4r_2^{-4}\ue^{-r_2/(8\varepsilon)}\norm{\ue^{r_2\Lambda}g(t')}$, and $r_2/(8\varepsilon)=c_M\xi/8$.
 
-\emph{Combining the factors.} Put
+\emph{Combining the factors.} Let $F_n$ be the numbers of Lemma~\ref{lem:collect} for $G:=C_3/c_M^2$, $\sigma:=\alpha$ and
+$H:=\pwNorm a$. Since $c_M\le1\le C_3$ and $\alpha\le1$, the weighted factor is at most $C\varepsilon^{-3}F_2$ and the unweighted one at
+most $C\alpha^{-4}\ue^{-c_M\xi/8}F_2$. After the H\"older split, using $\varepsilon,\alpha\le1$, the defect part is at most
 \[
-  G:=(C_3/c_M^2)^{N+K+3}(2N)!\,(2K+4)!\,\alpha^{-(2K+4)}(\alpha\hbar)^{-2N}\pwNorm a.
+C\,\hbar t\,\ue^{\lambda t}\,\varepsilon^{-3}\alpha^{-4}\ue^{-c\xi}F_2,\qquad c:=(1-\theta)c_M/8 .
 \]
-Since $c_M\le1\le C_3$ and $\alpha\le1$, the weighted
-factor is at most $C\varepsilon^{-3}G$ and the unweighted one at most $C\alpha^{-4}\ue^{-c_M\xi/8}G$. After the H\"older split, using $\varepsilon,\alpha\le1$,
+
+\medskip\noindent\emph{Step 3 (collecting).} The bound of Step~1 is at most $CF_0$. So for every $\mathbf s\in\Sigma_{K+1}(t)$,
 \[
-\norm{\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)}\le C\,G\,R,\qquad R:=\hbar t\,\ue^{\lambda t}\,\varepsilon^{-3}\,\alpha^{-4}\,\ue^{-(1-\theta)c_M\xi/8}.
+\norm{\mathcal V_{s_1}a_{\mathbf s}}\le B\bigl(F_0+\hbar t\,\ue^{\lambda t}\varepsilon^{-3}\alpha^{-4}\ue^{-c\xi}F_2\bigr),
 \]
-For $t\le\delta\xi$ with $\delta\le(1-\theta)c_M/(16\lambda)$: $\ue^{\lambda t}\le\ue^{(1-\theta)c_M\xi/16}$. Since $\alpha^3\ge\kappa\hbar$ and $\alpha\le1$,
+with $B$ depending only on $\beta$, $\kappa$ and $P$. By Proposition~\ref{prop:dd-id}(ii), the error $\norm E$ is at most $(\hbar/2)^{K+1}$
+times the volume $t^{K+1}/(K+1)!$ of $\Sigma_{K+1}(t)$ times this bound, and Lemma~\ref{lem:collect} with $\gamma:=\lambda$ gives
 \[
-\alpha^{-1}\le \xi/\sqrt\kappa,\qquad\varepsilon^{-1}=2\xi/\alpha\le2\xi^2/\sqrt\kappa,\qquad\hbar t\le\delta\hbar\xi=\delta\alpha/\xi\le\delta/\xi .
+\norm E\le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}\pwNorm a
 \]
-Hence $R\le C(\beta,\kappa)\,\xi^{9}\,\ue^{-(1-\theta)c_M\xi/16}\le C(\beta,\kappa)\,\xi^{-2}$, and $\xi^{-2}=\hbar/\alpha\le\alpha^2/\kappa$. So $R\le C(\beta,\kappa)\alpha^2$, and
-the defect part is at most $C\alpha^2G$.
+for $t\le\delta\xi$ with $\delta\le1$ and $2\lambda\delta\le c$.
 
-
-\medskip\noindent\emph{Step 3 (collecting).}
-
-Integration over $\Sigma_{K+1}(t)$ gives $t^{K+1}/(K+1)!$. We use
-\begin{equation}\label{eq:factorial-assembly}
- \frac{(2K+4)!}{(K+1)!}\le4^{K+2}(K+2)^2(K+1)K!\le64^{K+1}K!,\qquad
- (2N)!\le4^NN^{2N}.
-\end{equation}
-The first bound follows from $\binom{2K+4}{K+2}\le4^{K+2}$; for the second, bound each of the $2N$ factors by $2N$. The smaller factorial $(2K+2)!$ obeys the same bound. Finally,
-$\hbar^{K+1}t^{K+1}\alpha^{-(2K+2)}=(\hbar t/\alpha^2)^{K+1}$, and $\alpha^2G$ carries $\alpha^{-(2K+2)}$.
-
-Hence
-\[
-\norm E\le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}\pwNorm a.
-\]
 \medskip\noindent\emph{Time windows used.}
 
 Weighted propagation and Lemma~\ref{lem:path} require $\hbar s_1\le\varepsilon$, that is $t\le\xi/2$.
 Analytic propagation requires $t\le\tfrac13c_A\varepsilon/\hbar=c_A\xi/6$.
-The transport growth $\ue^{\lambda t}$ is absorbed when $\delta\le(1-\theta)c_M/(16\lambda)$.
+Lemma~\ref{lem:collect} requires $2\lambda\delta\le c$, that is $\delta\le(1-\theta)c_M/(16\lambda)$.
 
 So $\delta:=\min\bigl(\tfrac12,\;c_A/6,\;(1-\theta)c_M/(16\lambda)\bigr)$ works.
 
