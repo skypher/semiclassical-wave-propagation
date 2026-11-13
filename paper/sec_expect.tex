@@ -15,6 +15,7 @@ $\pcNorm a$, respectively $\swNorm a$. Let $K\in\mathbb N_0$ and $0\le t\le\delt
   \psi(t):=\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma,\qquad
   \mathcal E_K:=C^{K+1}K!\,\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\norm a_{\mathcal A} .
 \]
+Then $\norm{\psi(t)-u^{(K)}(t)_\Gamma}_{L^2(M)}\le\mathcal E_K$, and:
 \begin{itemize}
 \item[(i)] For every bounded operator $B$ on $L^2(M)$,
 \[
@@ -25,8 +26,8 @@ $\pcNorm a$, respectively $\swNorm a$. Let $K\in\mathbb N_0$ and $0\le t\le\delt
 \end{itemize}
 \end{corollary}
 \begin{proof}
-The theorem at $N=0$ gives $\norm{\psi(t)-u^{(K)}(t)_\Gamma}\le\mathcal E_K$, and $\norm{\psi(t)}=\norm{\psi(0)}$ since $\cU(t)$ is unitary.
-This is (ii). For (i) write $u=u^{(K)}(t)_\Gamma$ and
+The theorem at $N=0$ gives $\norm{\psi(t)-u^{(K)}(t)_\Gamma}\le\mathcal E_K$, the first assertion, and $\norm{\psi(t)}=\norm{\psi(0)}$
+since $\cU(t)$ is unitary. This gives (ii). For (i) write $u=u^{(K)}(t)_\Gamma$ and
 $\langle B\psi,\psi\rangle-\langle Bu,u\rangle=\langle B(\psi-u),\psi\rangle+\langle Bu,\psi-u\rangle$, and use
 $\norm u\le\norm{\psi(0)}+\mathcal E_K$.
 \end{proof}
