@@ -2925,3 +2925,7 @@ import Qschubert
 #print axioms Qschubert.cor16R_allmultN
 #print axioms Qschubert.cor16R_allbgN
 #print axioms Qschubert.evTransfer_main_unif
+#print axioms Qschubert.remF_zero_le
+#print axioms Qschubert.collect_absorb
+#print axioms Qschubert.collect_final
+#print axioms Qschubert.collect_remainder

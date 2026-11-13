@@ -257,3 +257,4 @@ import Qschubert.KLPtN
 import Qschubert.KLCor15Tied
 import Qschubert.KLThm13All
 import Qschubert.KLUnif
+import Qschubert.KLCollect
