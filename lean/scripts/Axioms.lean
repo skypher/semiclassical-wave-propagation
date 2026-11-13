@@ -2929,3 +2929,14 @@ import Qschubert
 #print axioms Qschubert.collect_absorb
 #print axioms Qschubert.collect_final
 #print axioms Qschubert.collect_remainder
+#print axioms Qschubert.lem_fc_one
+#print axioms Qschubert.lem_wc_one
+#print axioms Qschubert.lem_sc_one
+#print axioms Qschubert.lem_m_weak_one
+#print axioms Qschubert.norm_Rplus_le_one
+#print axioms Qschubert.norm_Rminus_le_one
+#print axioms Qschubert.im_bound_one
+#print axioms Qschubert.prop_a0_eps_one
+#print axioms Qschubert.lem_wb_w_one
+#print axioms Qschubert.lem_wb_u_one
+#print axioms Qschubert.dd_core_om
