@@ -199,8 +199,8 @@ Appendix~\ref{app:lean} states the correspondence with the manuscript and the ex
 \subsection{Setting and notation}\label{sec:setup}
 A Fuchsian group is a discrete subgroup of the orientation-preserving isometry group of $\Hb$. Torsion and cusps are
 allowed: when elliptic points are present, $M=\Gamma\backslash\Hb$ is a hyperbolic orbifold. We use the word \emph{quotient}
-for both surfaces and orbifolds, with the measure induced from a fundamental domain. The injectivity radius of $M$ is at
-least $r_0>0$ if $d(\tilde z,\gamma\tilde z)\ge2r_0$ for all $\tilde z\in\Hb$ and all $\gamma\in\Gamma\setminus\{\mathrm{id}\}$; then
+for both surfaces and orbifolds, with the measure induced from a fundamental domain. We say that $M$ has injectivity radius
+at least $r_0>0$ if $d(\tilde z,\gamma\tilde z)\ge2r_0$ for all $\tilde z\in\Hb$ and all $\gamma\in\Gamma\setminus\{\mathrm{id}\}$; then
 $\Gamma$ has no elliptic elements.
 
 We use the half-plane coordinates of \cite[Section~2]{S}. Let $\Hb=\{x+iy:y>0\}$ with the metric
@@ -209,7 +209,7 @@ spectrum of $-\Delta$ on $L^2(\Hb)$ is $[1/4,\infty)$.
 Put $X=y\partial_x$, $Y=y\partial_y$; then $\Delta=X^2+Y^2-Y$. (Our $Y$ is not the transport generator
 $i(y\partial_y-\tfrac12)$ that \cite{S} denotes by $Y$.) A \emph{word} in $X,Y$ is a finite product of these vector fields; the empty
 word is the identity.
-We first take the boundary point $b=\infty$, with $\varphi=\varphi_b=-\log y$ \cite[(2.1)]{S}, and the amplitude norms below are
+We first take the boundary point $b=\infty$, with $\varphi=\varphi_b=-\log y$ \cite[(2.1)]{S}. The amplitude norms below are
 centred at a base point $x_0\in\Hb$.
 The transport $S(t)a(x,y)=\ue^{-t/2}a(x,\ue^t y)$ is unitary on $L^2(\Hb)$, by the substitution $y\mapsto\ue^{-t}y$.
 On $L^2(M)$, $\Delta$ denotes the Laplacian $\Delta_M$ of $M$, the Friedrichs extension of Section~\ref{sec:remainder};
@@ -219,7 +219,12 @@ The operators used to construct the approximation are
 \[
 \Delta(t):=\ue^{-2t}X^2+Y^2-Y
 \]
-\cite[(2.9)]{S}; their relation to the exact evolution is explained in Section~\ref{subsec:method}.
+\cite[(2.9)]{S}. They come from Schubert's exact factorization of the evolution \cite[Proposition~2.2]{S}: the operator
+$V(t):=\ue^{it/(2\hbar)}S(t)^*\ue^{-i\varphi/\hbar}\cU(t)\ue^{i\varphi/\hbar}$ is unitary on $L^2(\Hb)$, the identity
+$\ue^{-i\varphi/\hbar}\cU(t)\ue^{i\varphi/\hbar}=\ue^{-it/(2\hbar)}S(t)V(t)$ separates the transport $S(t)$ from the dispersive
+part $V(t)$, and formally $i\partial_tV=-\tfrac\hbar2\Delta(t)V$, $V(0)=I$. The approximations defined below correspond to the
+Dyson expansion of $V$ to order $K$. The identity is \eqref{eq:factor} of Section~\ref{subsec:method}, which explains how the
+proof uses it.
 
 For a Fuchsian group $\Gamma$ and $u$ on $\Hb$, the periodization of $u$ is
 $u_\Gamma=[u]_\Gamma:=\sum_{\gamma\in\Gamma}u\circ\gamma^{-1}=\sum_{\gamma\in\Gamma}u\circ\gamma$; the bracket is used for
@@ -292,13 +297,14 @@ In the original class the norm is the weighted norm $\pcNorm a=\norm{\ue^{\beta\
 other two classes it is the analytic norm $\norm{\ue^{\alpha\Lambda}F}$ of $F$. For instance
 $F=\ue^{-\alpha\Lambda}g$ or $f=\ue^{-\beta\langle d\rangle}g$ with $0\ne g\in L^2(\Hb)$ gives a nonzero amplitude of finite norm.
 
-The constants of the theorems depend on the group through two Poincar\'e-type series. With the periodization weight
-$\omega:=X_0^{1/2}\bigl(1+\tilde\psi/\log2\bigr)^{3/4}$ of Section~\ref{subsec:pc-weights}, put
+The constants of the theorems depend on the group and on the base point $x_0$ through two Poincar\'e-type series. With the
+periodization weight $\omega:=X_0^{1/2}\bigl(1+\tilde\psi/\log2\bigr)^{3/4}$, the critical weight of Section~\ref{sec:printed}
+with logarithmic exponent $\tfrac34$, put
 \[
   P^{\mathrm{cr}}_\Gamma:=\sup_{z\in\Hb}\sum_{\gamma\in\Gamma}\omega(\gamma z)^{-2},\qquad
   P_\Gamma(\sigma):=\sup_{z\in\Hb}\sum_{\gamma\in\Gamma}\ue^{-\sigma\,d(x_0,\gamma z)}.
 \]
-Both depend on the base point $x_0$. For every Fuchsian group, $P^{\mathrm{cr}}_\Gamma$ is finite (Proposition~\ref{os:p1}), and so is
+For every Fuchsian group and base point, $P^{\mathrm{cr}}_\Gamma$ is finite (Proposition~\ref{os:p1}), and so is
 $P_\Gamma(\sigma)$ for every $\sigma>1$ (Lemma~\ref{lem:p1}).
 
 An unadorned norm denotes an $L^2$ norm, or the corresponding operator norm when applied to an operator.
@@ -308,7 +314,7 @@ of the mollifier (Section~\ref{sec:analytic}) is fixed once and for all, and con
 
 \paragraph{Notation.} The symbols in the following list, and the operators and norms defined in
 Section~\ref{sec:setup}, keep one meaning throughout. All other letters are local to the section, statement or proof in which they are introduced. The parameter $m$ of the operator $\Lambda_m$ in
-Section~\ref{sec:printed} is unrelated to the multiplicity $m(z)$, and the index set $S$ of a word $Z_S$ is unrelated to the transport
+Sections~\ref{subsec:method} and~\ref{sec:printed} is unrelated to the multiplicity $m(z)$, and the index set $S$ of a word $Z_S$ is unrelated to the transport
 $S(t)$; $\Gamma(s)$ also denotes the Gamma function, and
 $K_\mu$, $I_\mu$ the modified Bessel functions. We use the convention $0^0=1$; in particular $N^{2N}=1$ at $N=0$.
 \begin{center}\small
@@ -318,7 +324,7 @@ a & amplitude & \Gamma,\ M & group, quotient\\
 \beta & spatial decay exponent & X_0,\ \tilde\psi & $\cosh d(x_0,\cdot)$, $\log X_0$\\
 \kappa & constant in $\alpha^3\ge\kappa\hbar$ & K,\ N & expansion order, power of the Laplacian\\
 \delta & constant in $t\le\delta(\alpha/\hbar)^{1/2}$ & \varepsilon,\ \chi & mollification scale, mollifier cutoff\\
-b,\ \varphi_b & boundary point, its phase & \omega,\ \varpi & periodization weight (Section~\ref{subsec:pc-weights}), a general weight\\
+b,\ \varphi_b & boundary point, its phase & \omega,\ \varpi & periodization weight (above), a general weight\\
 x_0 & base point of the weights & m(z),\ H & local multiplicity (Section~\ref{sec:repair}), a height in a cusp
 \end{tabular}
 \end{center}
@@ -329,7 +335,8 @@ order $K$ and the power $N$ of the Laplacian simultaneously.
 
 \begin{theorem}[approximation in the original-norm class]\label{pc:main}\label{pc:allalpha}
 Fix $\beta>\tfrac12$, $\kappa>0$ and $A>0$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$, such that for every
-Fuchsian group $\Gamma$ and every base point $x_0$ with $P^{\mathrm{cr}}_\Gamma\le P$, all $0<\hbar\le1$, all $\alpha\in(0,A]$ with
+Fuchsian group $\Gamma$ and every base point $x_0$ for which the series $P^{\mathrm{cr}}_\Gamma$, taken at $x_0$, is at most
+$P$, all $0<\hbar\le1$, all $\alpha\in(0,A]$ with
 $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$ with $\pcNorm{a}<\infty$, and all
 $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
 \[
@@ -355,39 +362,47 @@ Theorem~\ref{thm:dd14} is proved in Section~\ref{sec:swapped}.
 
 The following corollaries give the leading error, the exponential estimate obtained by choosing $K$, and pointwise
 bounds, for both norms. In them $\beta>\tfrac12$, $\kappa>0$ and $A>0$ are fixed, $\Gamma$ is a Fuchsian group, $x_0$ a base point,
-and $\norm a_{\mathcal A}$ denotes either the original norm $\pcNorm a$ or the reversed-weight norm $\swNorm a$. Their constants
-depend on the data as in Theorems~\ref{pc:main} and~\ref{thm:dd14}: $\delta$ depends only on $\beta$, $\kappa$ and $A$, and $C$ depends on
+and $\norm a_{\mathcal A}$ denotes either the original norm $\pcNorm a$ or the reversed-weight norm $\swNorm a$. Their constants,
+except those of Corollary~\ref{pc:thm13}(ii), depend on the data as in Theorems~\ref{pc:main} and~\ref{thm:dd14}: $\delta$ depends only on $\beta$, $\kappa$ and $A$, and $C$ depends on
 $\Gamma$ and $x_0$ only through an upper bound for $P^{\mathrm{cr}}_\Gamma$, respectively $P_\Gamma(\beta+\tfrac12)$. The corollaries are
 proved in Section~\ref{subsec:pc-cor}.
 
 \begin{corollary}[leading approximation]\label{pc:thm13}
-There are $C,\delta>0$ such that for all $0<\hbar\le1$, all $\alpha\in(0,A]$ with $\alpha^3\ge\kappa\hbar$, all $b\in\partial\Hb$, all $a$
-with $\norm a_{\mathcal A}<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
+\begin{itemize}
+\item[\textup{(i)}] There are $C,\delta>0$ such that for all $0<\hbar\le1$, all $\alpha\in(0,A]$ with $\alpha^3\ge\kappa\hbar$, all
+$b\in\partial\Hb$, all $a$ with $\norm a_{\mathcal A}<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
 \[
   \norm{\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(0)}(t)_\Gamma}_{L^2(M)}\le C\,\frac{\hbar t}{\alpha^2}\,\norm a_{\mathcal A}.
 \]
+\item[\textup{(ii)}] \emph{(Fixed radius.)} Let $\alpha>0$ be fixed. There are $C,\delta>0$, depending on $\Gamma$, $\beta$, $x_0$ and
+$\alpha$, such that for all $0<\hbar\le1$, all $b\in\partial\Hb$ and all $a$ with $\norm a_{\mathcal A}<\infty$ at radius $\alpha$,
+\[
+  \norm{\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(0)}(t)_\Gamma}_{L^2(M)}\le C\hbar t\,\norm a_{\mathcal A},\qquad 0\le t\le\delta\hbar^{-1/2}.
+\]
+\end{itemize}
 \end{corollary}
 
-For fixed $\alpha$ this is an error of order $\hbar t$, and Section~\ref{subsec:corrections} shows that this order is attained.
-Corollary~\ref{thm:main} states the fixed-radius form: for every fixed $\alpha>0$ the error is at most $C\hbar t\norm a_{\mathcal A}$ for
-$0\le t\le\delta\hbar^{-1/2}$, with $C$ and $\delta$ depending on $\alpha$. This corrects the error $C\hbar$ of \cite[Theorem~1.3]{S}.
+For fixed $\alpha$ the error is of order $\hbar t$, and Section~\ref{subsec:corrections} shows that this order is attained. For the
+original norm, part (ii) is \cite[Theorem~1.3]{S} with the error $C\hbar$ corrected to $C\hbar t$, and it holds for every
+$\beta>\tfrac12$, whereas \cite[Theorem~1.3]{S} assumes $\beta>1$ (Appendix~\ref{sec:changes}).
 
 The factorial control in Theorems~\ref{pc:main} and~\ref{thm:dd14} allows the expansion order to grow as $\hbar$ decreases:
 choosing $K$ of order $\alpha^2/(\hbar t)$ gives an exponentially small error.
 
 \begin{corollary}[optimal truncation]\label{pc:cor15}\label{cor:dd15}
 Let $C\ge1$ and $\delta>0$ be constants for which the estimate of Theorem~\ref{pc:main}, respectively Theorem~\ref{thm:dd14}, holds
-on $\Gamma$ with the base point $x_0$; such constants exist, since $C$ in the theorem may be replaced by $\max(C,1)$.
-Put $\delta_1:=\min(\delta,\kappa^{1/2}/C)$ and $\rho:=C\hbar t/\alpha^2$; then $\rho\le1$
-for $0\le t\le\delta_1(\alpha/\hbar)^{1/2}$. Let $\theta\in(0,1)$. For all such $t$, all $\hbar$, $\alpha$, $N$, $b$ and $a$ as in
-that theorem, and every integer $K$ with $1-\theta\le K\rho\le1-\theta/2$,
+on $\Gamma$ with the base point $x_0$, and let $\theta\in(0,1)$. Put $\delta_1:=\min(\delta,\kappa^{1/2}/C)$ and $\rho:=C\hbar t/\alpha^2$.
+For all $0\le t\le\delta_1(\alpha/\hbar)^{1/2}$, all $\hbar$, $\alpha$, $N$, $b$ and $a$ as in that theorem, and every integer $K$
+with $1-\theta\le K\rho\le1-\theta/2$,
 \begin{multline*}
   \norm{\Delta^N\big[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}\\
     \le\ue^{1/2}\theta^{-1/2}C^{N+1}N^{2N}(\alpha\hbar)^{-2N}\ue^{-(1-\theta)\alpha^2/(C\hbar t)}\norm a_{\mathcal A}.
 \end{multline*}
-For $t>0$ the range of $K$ has length $\theta/(2\rho)$, so it contains an integer whenever
-$\rho\le\theta/2$; for $t=0$ it is empty.
 \end{corollary}
+
+Constants $C\ge1$ and $\delta$ as required exist, since $C$ in the theorem may be replaced by $\max(C,1)$. On the window
+$t\le\delta_1(\alpha/\hbar)^{1/2}$ we have $\rho\le1$ (Section~\ref{subsec:pc-cor}). For $t>0$ the range of $K$ has length
+$\theta/(2\rho)$, so it contains an integer whenever $\rho\le\theta/2$; for $t=0$ it is empty.
 
 
 
@@ -465,7 +480,7 @@ Section~\ref{sec:cusp}, where it is also extended to rational boundary points (C
 Two further points of \cite{S} are corrected here. First, the two orders of the weights give norms that are not
 equivalent for $\beta>\tfrac12$ (Proposition~\ref{pc:classes}), contrary to \cite[Proposition~7.1, (7.2)]{S}; this is
 why the original norm needs the separate argument of Section~\ref{sec:printed}. Second, the withdrawal notice names ``a gap
-in the proof of the dispersive estimates''. The dispersive estimates of \cite{S} are its Theorems~4.1 and~4.4, and we locate a
+in the proof of the dispersive estimates''. The dispersive estimates of \cite{S} are its Theorems~4.1 and~4.4, and we identify a
 gap in their proofs: they infer $\norm{\ue^Aa}\le\norm{\ue^Ba}$ from an operator inequality $A\le B$ between non-commuting
 self-adjoint operators. The exponential is not operator monotone; Appendix~\ref{sec:changes} gives a $2\times2$ counterexample
 and locates the steps.
@@ -484,11 +499,12 @@ the leading error tends uniformly to zero throughout that window.
 \paragraph{Escape of mass despite an accurate approximation.}
 On the modular surface $M=\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$, let $\mathfrak F=\{|x|\le\tfrac12,\ |z|\ge1\}$ be the standard fundamental
 domain and, for $H\ge1$, let $M_H\subset M$ be the image of $\{z\in\mathfrak F:y\le H\}$, a compact set; every compact subset of $M$ lies in
-some $M_H$. Fix $0<\alpha\le\tfrac12$ and $\mathfrak h\in C_c^\infty(\Hb)$, $\mathfrak h\ge0$, such that
+some $M_H$. Fix $0<\alpha\le\tfrac12$ and $\mathfrak h\in C_c^\infty(\Hb)$, $\mathfrak h\ge0$, such that $\sum_{n\in\mathbb Z}\mathfrak h(x+n,y)$
+does not depend on $x$; call it
 \[
-  \mathfrak h_0(y):=\sum_{n\in\mathbb Z}\mathfrak h(x+n,y)
+  \mathfrak h_0(y):=\sum_{n\in\mathbb Z}\mathfrak h(x+n,y),
 \]
-does not depend on $x$ and is not identically zero; for instance $\mathfrak h(x,y)=\int_0^1\mathfrak h_1(x+s,y)\,ds$ with $\mathfrak h_1\in C_c^\infty(\Hb)$,
+and assume $\mathfrak h_0\not\equiv0$. For instance $\mathfrak h(x,y)=\int_0^1\mathfrak h_1(x+s,y)\,ds$ with $\mathfrak h_1\in C_c^\infty(\Hb)$,
 $\mathfrak h_1\ge0$, $\mathfrak h_1\not\equiv0$. Let $a:=\ue^{-\alpha\Lambda}\mathfrak h$. Then $\pcNorm a=\norm{\ue^{\beta\langle d\rangle}\mathfrak h}<\infty$ for every $\beta$, so
 $a$ lies in the original-norm class; it does not depend on $\hbar$. Put
 \[
@@ -511,7 +527,7 @@ $\norm{\psi(t)-u^{(K)}(t)_\Gamma}_{L^2(M)}\le C^{K+1}K!\,(\hbar t/\alpha^2)^{K+1
 \]
 \item[(iii)] For every continuous $q$ with compact support in $M$, lifted to a $\Gamma$-invariant function on $\Hb$,
 \[
-  \int_0^\infty\!\!\int_0^1q(z)\,\big|(S(t)a_0)(y)\big|^2\,dx\,\frac{dy}{y^2}\longrightarrow\frac3\pi\int_Mq\,d\nu\cdot\mu_0\qquad(t\to\infty).
+  \int_0^\infty\!\!\int_0^1q(z)\,\big|(S(t)a_0)(y)\big|^2\,dx\,\frac{dy}{y^2}\longrightarrow\frac3\pi\,\mu_0\int_Mq\,d\nu\qquad(t\to\infty).
 \]
 \end{itemize}
 \end{theorem}
@@ -576,7 +592,7 @@ outside the analytic class of Theorem~\ref{pc:main}. Theorem~\ref{ev:mod} gives 
 original-norm amplitudes whose periodization along the cusp is independent of $x$.
 
 \subsection{Method of proof}\label{subsec:method}
-Schubert's exact factorization separates transport from dispersion. On $L^2(\Hb)$ define the unitary operator
+Schubert's exact factorization, recalled in Section~\ref{sec:setup}, separates transport from dispersion:
 \begin{equation}\label{eq:factor}
 V(t):=\ue^{it/(2\hbar)}S(t)^{*}\,\ue^{-i\varphi/\hbar}\,\cU(t)\,\ue^{i\varphi/\hbar},\quad\text{so that}\quad
 \ue^{-i\varphi/\hbar}\,\cU(t)\,\ue^{i\varphi/\hbar}=\ue^{-it/(2\hbar)}S(t)V(t).
@@ -600,8 +616,8 @@ Lemmas~\ref{lem:fc}, \ref{lem:wc}, \ref{lem:sc} and~\ref{lem:wb}), and the integ
 $C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$.
 
 \emph{The periodized flow.} It remains to bound the periodized propagator applied to $a_{\mathbf s}$ in $L^2(M)$, uniformly in $s_1\le t$.
-The periodization estimate used here (Lemma~\ref{lem:t2}) needs a weight $\ue^{\sigma d}$ with $\sigma>\tfrac12$, that is, above the
-critical weight $\ue^{d/2}$, and for transported functions its bound grows like $\ue^{\sigma t}$. It is not known whether the flow
+The periodization estimate used here (Lemma~\ref{lem:t2}) needs a weight $\ue^{\lambda d}$ with $\lambda>\tfrac12$, that is, above the
+critical weight $\ue^{d/2}$, and for transported functions its bound grows like $\ue^{\lambda t}$. It is not known whether the flow
 $V$ preserves weighted analytic norms on such time scales; \cite[Conjecture~1]{S} conjectures this up to times of order $1/\hbar$. As in \cite{S} we compare $V$ with the flow
 $V_\varepsilon$ of the generator mollified at scale $\varepsilon$; the estimate for $V_\varepsilon$ is the step whose proof
 in \cite{S} has the gap (Appendix~\ref{sec:changes}). The mollified flow preserves analytic norms, with a loss of radius, and
@@ -615,7 +631,7 @@ $\varepsilon=(\alpha\hbar)^{1/2}/2$ all requirements are met for $t\le\delta(\al
 $\xi:=(\alpha/\hbar)^{1/2}$. The mollified flow is controlled for times up to a multiple of $\varepsilon/\hbar=\xi/2$, and
 on vectors of radius comparable to $\alpha$ the defect is of size $\ue^{-c\alpha/\varepsilon}=\ue^{-2c\xi}$. Both scales
 are $\xi$, and for $t\le\delta\xi$ with $\delta$ small the gain $\ue^{-2c\xi}$, reduced by the interpolation, still beats
-the growth $\ue^{\sigma t}$ of the periodization bound. This is the origin of the time scale $(\alpha/\hbar)^{1/2}$.
+the growth $\ue^{\lambda t}$ of the periodization bound. This is the origin of the time scale $(\alpha/\hbar)^{1/2}$.
 
 \emph{The original amplitude norm.} An amplitude of the original-norm class is $a=\ue^{-\alpha\Lambda}f$,
 where $f=\ue^{\alpha\Lambda}a$ has the exponential weighted bound $\norm{\ue^{\beta\langle d\rangle}f}=\pcNorm a$.
@@ -645,8 +661,7 @@ Appendix~\ref{sec:g5}.
 
 Sections~\ref{sec:cusp} and~\ref{sec:expect} and Appendix~\ref{sec:g5} are independent of each other and use only the
 following earlier results. Section~\ref{sec:cusp} uses Theorems~\ref{pc:main} and~\ref{thm:dd14}, Lemmas~\ref{lem:count},
-\ref{lem:fdb}, \ref{lem:expw}, \ref{lem:wordphi}, \ref{lem:m2w}, \ref{pc:g43} and~\ref{pc:remcusp}, the word bounds for $X_0$ in
-Section~\ref{subsec:dd-fc}, and Appendices~\ref{app:kernels} and~\ref{app:cusp-aux}. Section~\ref{sec:expect} uses
+\ref{lem:fdb}, \ref{lem:expw}, \ref{lem:wordphi}, \ref{lem:m2w}, \ref{pc:g43} and~\ref{pc:remcusp}, and Appendices~\ref{app:kernels} and~\ref{app:cusp-aux}. Section~\ref{sec:expect} uses
 Theorems~\ref{pc:main} and~\ref{thm:dd14}, Lemma~\ref{os:speed}, Corollary~\ref{os:cwp}, Proposition~\ref{os:p1} and
 Appendix~\ref{app:profiles}. Appendix~\ref{sec:g5} uses Lemmas~\ref{lem:t2}, \ref{lem:base}, \ref{lem:lift}, \ref{lem:sc}
 and~\ref{lem:m2w} and Theorem~\ref{thm:dd14}.
@@ -684,8 +699,9 @@ $K\ge1$. So it does not decide whether the window can be extended.
 On compact surfaces, neither equidistribution in the sense of \cite{Sch05} nor the random wave behaviour of \cite{Ber77,BB79,IR22} is
 known for these states between the Ehrenfest time and $\hbar^{-1/2}$.
 
-On the modular surface, the heuristic in Remark~\ref{ev:time} suggests $2\log(1/\hbar)$ as a candidate transition scale between classical expectation values and escape from fixed compact sets. Establishing such a transition, including the time range on which the classical prediction holds, is open. For general amplitudes of the class the part with
-nonzero Fourier modes in $x$ is not treated. The states of Brooks \cite{Bro22} are not in the class
+On the modular surface, the heuristic in Remark~\ref{ev:time} suggests $2\log(1/\hbar)$ as a candidate transition scale between classical expectation values and escape from fixed compact sets. Establishing such a transition, including the time range on which the classical prediction holds, is open. For general amplitudes of the original-norm class, the part with
+nonzero Fourier modes in $x$ is not treated; Theorem~\ref{ev:mod} assumes that the periodization along the translations does not
+depend on $x$. The states of Brooks \cite{Bro22} are not in the class
 (Section~\ref{subsec:context}); a transfer to them by approximation in $L^2$ would need a bound for the periodized
 approximation of the difference, which Proposition~\ref{os:p1} gives only with the factor $\ue^{t/2}(1+t/\log2)^{c'}$ and a
 weighted norm.

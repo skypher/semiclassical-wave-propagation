@@ -56,7 +56,7 @@ convergence, this gives
 \[
 \norm{[f]_\Gamma}^2_{L^2(M)}\le P_\Gamma(2\sigma)\int_\Hb\ue^{2\sigma d(z,x_0)}|f(z)|^2\,d\nu(z).
 \]
-In particular $\sum_\gamma|f\circ\gamma|$ converges a.e. and in $L^2(M)$ whenever the right side is finite. Torsion-freeness is not needed: the fixed sets of elliptic elements are null, so unfolding over a fundamental domain carries no stabilizer factor, and any multiplicity is already counted in the orbit series $P_\Gamma(2\sigma)$.
+In particular $\sum_\gamma|f\circ\gamma|$ converges almost everywhere and in $L^2(M)$ whenever the right side is finite. Torsion-freeness is not needed: the fixed sets of elliptic elements are null, so unfolding over a fundamental domain carries no stabilizer factor, and any multiplicity is already counted in the orbit series $P_\Gamma(2\sigma)$.
 
 \emph{Transport.} Take $f=(S(t)w)\ue^{i\theta}$, so $|f|=|S(t)w|$.
 Since $(S(t)w)(z)=\ue^{-t/2}w(z_t)$, where $z_t$ is at distance $t$ from $z$, we have
@@ -95,12 +95,6 @@ and $P^{\mathrm{cr}}_\Gamma$ of Section~\ref{sec:setup} do not change when $(\Ga
 \end{itemize}
 \end{lemma}
 
-With $g$ as in (i), $\varphi_b=\varphi_\infty\circ g^{-1}$ by the definition in Section~\ref{sec:setup}. By (ii) and (iii), the
-error norm of
-$(\Gamma,x_0,b,a)$ equals that of $(\Gamma_q,i,\infty,a_q)$. So an estimate proved for base point $i$ and $b=\infty$, with
-constants depending on the group only through quantities invariant under $\Gamma\mapsto\Gamma_q$, $x_0\mapsto i$, holds for every
-$x_0$ and $b$.
-
 \begin{proof}
 (i) The stabilizer of $x_0$ in $\mathrm{PSL}(2,\mathbb R)$ acts simply transitively on $\partial\Hb$, so $g$ exists and is unique up
 to sign in $\mathrm{SL}(2,\mathbb R)$. The phase $\varphi_b$, the transport and
@@ -117,6 +111,12 @@ $d(i,q^{-1}\gamma qz)=d(x_0,\gamma(qz))$, and $z\mapsto qz$ is a bijection of $\
 function of $d(x_0,\cdot)$, so $P^{\mathrm{cr}}_\Gamma$ is a series of this form.
 \end{proof}
 
+With $g$ as in (i), $\varphi_b=\varphi_\infty\circ g^{-1}$ by the definition in Section~\ref{sec:setup}. By (ii) and (iii), the
+error norm of
+$(\Gamma,x_0,b,a)$ equals that of $(\Gamma_q,i,\infty,a_q)$. So an estimate proved for base point $i$ and $b=\infty$, with
+constants depending on the group only through quantities invariant under $\Gamma\mapsto\Gamma_q$, $x_0\mapsto i$, holds for every
+$x_0$ and $b$.
+
 \begin{remark}[the base point of the weight]
 The hypothesis $g\,x_0=x_0$ is used in (iii): it gives $q\,i=x_0$, so the weights and the Poincar\'e series based at $x_0$
 become those based at $i$. An isometry that moved $x_0$ would move the base point of the Poincar\'e series, and when $\Gamma$
@@ -131,12 +131,12 @@ $\cU(t)u_\Gamma=\sum_\gamma(\cU(t)u)\circ\gamma^{-1}$ used in \cite{S} is never 
 
 Let $\varpi\ge1$ be a locally bounded measurable weight on $\Hb$, $L^2_\varpi:=\{f:\varpi f\in L^2(\Hb)\}$, and $\Omega_sz:=x+i\ue^sy$. Assume:
 \begin{itemize}
-\item[(W1)] $f\mapsto f_\Gamma$ is bounded from $L^2_\varpi$ to $L^2(M)$, the sum converging absolutely a.e.;
+\item[(W1)] $f\mapsto f_\Gamma$ is bounded from $L^2_\varpi$ to $L^2(M)$, the sum converging absolutely almost everywhere;
 \item[(W2)] $\sup\{\varpi(z)/\varpi(\Omega_sz):|s|\le T,\ z\in\Hb\}<\infty$ for every $T$.
 \end{itemize}
 Lemma~\ref{lem:t2} at $t=0$ and $\theta=0$ gives (W1) for $\varpi=X_0^\sigma$, $\sigma>1/2$. Since $d(z,\Omega_sz)=|s|$ and
 $\tilde\psi$ is $1$-Lipschitz, (W2) holds for it with the explicit ratio $(X_0(z)/X_0(\Omega_sz))^\sigma\le\ue^{\sigma|s|}$.
-Proposition~\ref{os:p1} verifies (W1) and (W2) for the periodization weight of Section~\ref{sec:printed}. By (W2), $S(s)$ is bounded on $L^2_\varpi$, locally uniformly in $s$; it is strongly continuous there, by density of $C_c(\Hb)$.
+Proposition~\ref{os:p1} verifies (W1) and (W2) for the periodization weight $\omega$ of Section~\ref{sec:setup}. By (W2), $S(s)$ is bounded on $L^2_\varpi$, locally uniformly in $s$; it is strongly continuous there, by density of $C_c(\Hb)$.
 
 Let $\mathcal D_\varpi$ be the set of $g\in L^2_\varpi$ with $Xg,Yg,X^2g,Y^2g\in L^2_\varpi$ (weak derivatives). For $g\in L^2_\varpi$ and $s\in\mathbb R$ put
 \[
@@ -194,11 +194,11 @@ By Lemma~\ref{lem:surf-lap}, $h(s)\in\operatorname{Dom}(\Delta_M)$ and $\Delta_M
 Since $\Delta_\varphi(s)=\Delta(s)-\tfrac{2i}{\hbar}(Y-\tfrac12)-\hbar^{-2}$, we have $-\tfrac{i\hbar}{2}\Delta_\varphi(s)=-c_\hbar\Delta(s)-(Y-\tfrac12)+\tfrac{i}{2\hbar}$. The $(Y-\tfrac12)$ terms cancel, and $\tfrac{i}{2\hbar}$ cancels the derivative of $\ue^{-is/(2\hbar)}$. Thus $\tfrac{d}{ds}\mathcal V_sg(s)=\mathcal V_s(g'(s)-c_\hbar\Delta(s)g(s))$; integrate.\qedhere
 \end{proof}
 
-For $k\ge1$ put $\Sigma_k(t):=\{t>s_1>\cdots>s_k>0\}$.
+For $k\ge1$ put $\Sigma_k(t):=\{t>s_1>\cdots>s_k>0\}$, with points $\mathbf s=(s_1,\dots,s_k)$ and $d\mathbf s:=ds_1\cdots ds_k$.
 \begin{corollary}[Dyson expansion on $M$]\label{cor:surf-dyson}
 If every word in $X,Y$ applied to $a$ lies in $L^2_\varpi$, then with $a^{(K)}(t)=\sum_{k\le K}c_\hbar^kP_k(t)a$,
 \[
-\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c_\hbar^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}\bigl(\Delta(s_1)\cdots\Delta(s_{K+1})a\bigr)\,ds.
+\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c_\hbar^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}\bigl(\Delta(s_1)\cdots\Delta(s_{K+1})a\bigr)\,d\mathbf s.
 \]
 \end{corollary}
 
@@ -215,7 +215,7 @@ and the differentiated remainder used in the approximation proofs.
 \item[\textup{(i)}] \emph{Dyson expansion.} Let $a$ be such that every word in $X,Y$ applied to $a$ lies in $L^2(\Hb)$, and let
 $P_k(t)$ and $a^{(K)}(t)$ be as in Section~\ref{sec:setup}. Then, with $\Sigma_{K+1}(t)$ and $c_\hbar$ as above,
 \[
-a-V(t)^*a^{(K)}(t)=c_\hbar^{K+1}\int_{\Sigma_{K+1}(t)}V(s_1)^*\,\Delta(s_1)\cdots\Delta(s_{K+1})a\,ds .
+a-V(t)^*a^{(K)}(t)=c_\hbar^{K+1}\int_{\Sigma_{K+1}(t)}V(s_1)^*\,\Delta(s_1)\cdots\Delta(s_{K+1})a\,d\mathbf s .
 \]
 \item[\textup{(ii)}] \emph{The error.} Let $E:=\Delta^N\bigl[\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\bigr]$, with $u^{(K)}$ as in
 Section~\ref{sec:setup}. If every word in $X,Y$ applied to $a$ lies in $L^2_\varpi$, for a weight $\varpi$ satisfying \textup{(W1)}
@@ -231,7 +231,8 @@ a_{\mathbf s}:=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a,\qquad\mat
 
 In (ii) all derivatives fall on $a$: the remainder amplitude $a_{\mathbf s}$ is a polynomial in $X,Y$ applied to $a$, and the
 factors $\hbar^{-1}$ from $\Delta_\varphi(s_1)^N$ sit in its coefficients, which depend on $\mathbf s$ and $\hbar$. Every amplitude
-$a$ of Theorem~\ref{thm:dd-appx} satisfies the hypothesis of (i), by Lemma~\ref{lem:sc}.
+$a$ of Theorem~\ref{thm:dd-appx} satisfies the hypothesis of (i), by Lemma~\ref{lem:sc} applied to $a\circ p$, where $p$ is an affine
+isometry with $p(i)=x_0$; such maps commute with $X$, $Y$ and $\Lambda$.
 
 \begin{proof}
 \medskip\noindent\emph{(i).}
@@ -244,25 +245,28 @@ Multiplication of the resulting identity by $\ue^{-i\varphi/\hbar}$ gives (i).
 By definition $u^{(K)}(t)=\ue^{-it/(2\hbar)}\ue^{i\varphi/\hbar}S(t)a^{(K)}(t)$, so $u^{(K)}(t)_\Gamma=\cU(t)\mathcal V_ta^{(K)}(t)$. Since $\cU(t)$
 is unitary on $L^2(M)$ and commutes with $\Delta_M$, $\norm E=\norm{\Delta_M^N(\mathcal V_0a-\mathcal V_ta^{(K)}(t))}$; no commutation of
 $\cU(t)$ with periodization is used. By Corollary~\ref{cor:surf-dyson},
-$\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c_\hbar^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}(\Delta(s_1)\cdots\Delta(s_{K+1})a)\,ds$. By
+$\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c_\hbar^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}(\Delta(s_1)\cdots\Delta(s_{K+1})a)\,d\mathbf s$. By
 Lemma~\ref{lem:surf-lap}, applied $N$ times, $\Delta_M^N\mathcal V_{s_1}g=\mathcal V_{s_1}\Delta_\varphi(s_1)^Ng$. Closedness of $\Delta_M^N$
 and Minkowski's inequality give the bound, with $|c_\hbar|^{K+1}=(\hbar/2)^{K+1}$.
 \end{proof}
 
 The element $\mathcal V_sg$ is defined by the periodization sum; a weight enters only to guarantee, through \textup{(W1)}, that this
-sum converges. The next lemma records that two admissible weights give the same element, and compares the two weights used in
-Section~\ref{sec:printed}.
+sum converges. The next lemma records that the operators $\mathcal V_s$ obtained from two admissible weights agree where both are
+defined, and compares the two weights used in Section~\ref{sec:printed}.
 
 \begin{lemma}[the quotient propagator does not depend on the weight]\label{os:indep}
-Let $\varpi_1,\varpi_2$ be two weights satisfying \textup{(W1)}, \textup{(W2)}. For $g\in L^2_{\varpi_1}\cap L^2_{\varpi_2}$ the element
+Let $\varpi_1,\varpi_2$ be two weights satisfying \textup{(W1)}, \textup{(W2)}, and let $\mathcal V^{(1)}_s$ and $\mathcal V^{(2)}_s$ be the
+operators
 \[
  \mathcal V_sg=\ue^{-is/(2\hbar)}\cU(-s)[\ue^{i\varphi/\hbar}S(s)g]_\Gamma\in L^2(M)
 \]
-is the same for both weights. In particular this applies to $\varpi_1=X_0^{\lambda}$ with $\lambda>\tfrac12$ and to the periodization
+on $L^2_{\varpi_1}$ and on $L^2_{\varpi_2}$, with the periodization given by \textup{(W1)} for the respective weight. Then
+$\mathcal V^{(1)}_sg=\mathcal V^{(2)}_sg$ for every $g\in L^2_{\varpi_1}\cap L^2_{\varpi_2}$. In particular this applies to $\varpi_1=X_0^{\lambda}$ with $\lambda>\tfrac12$ and to the periodization
 weight $\varpi_2=\omega$ of Section~\ref{sec:setup} (Proposition~\ref{os:p1}), and $L^2_{X_0^\lambda}\subset L^2_{\omega}$.
 \end{lemma}
 \begin{proof}
-For both weights the periodization is the same almost everywhere absolutely convergent sum, by \textup{(W1)}.
+For both weights the periodization of $\ue^{i\varphi/\hbar}S(s)g$ is the same almost everywhere absolutely convergent sum, by
+\textup{(W1)} and \textup{(W2)}, so the two elements of $L^2(M)$ coincide.
 The inclusion holds because $\omega=X_0^{1/2}(1+\tilde\psi/\log2)^{3/4}\le C_\lambda X_0^\lambda$ for $\lambda>\tfrac12$, since
 $\tilde\psi=\log X_0$.
 \end{proof}

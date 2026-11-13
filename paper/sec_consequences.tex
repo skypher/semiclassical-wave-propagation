@@ -1,4 +1,4 @@
-\section{Consequences and localized amplitudes}\label{sec:consequences}
+\section{Corollaries, attainment of the order \texorpdfstring{$\hbar t$}{ht}, and localized amplitudes}\label{sec:consequences}
 We first establish the local Sobolev estimate needed for pointwise control, then prove the corollaries of
 Section~\ref{sec:repair} for both norms and note their power-weight analogues. Then we prove
 Proposition~\ref{prop:g5}, and we conclude with Schubert's localized example in the reversed-weight class.
@@ -73,9 +73,10 @@ Sobolev bounds from $L^1(M)$ of \cite[(3.3), (3.4)]{S}, on which \cite[Propositi
 (Appendix~\ref{sec:changes}).
 \end{remark}
 
-\subsection{Truncation and pointwise consequences}\label{subsec:pc-cor}\label{subsec:dd-cor}
+\subsection{Proofs of the corollaries}\label{subsec:pc-cor}\label{subsec:dd-cor}
 \begin{proof}[Proof of Corollary~\ref{pc:thm13}]
-This is Theorem~\ref{pc:main}, respectively Theorem~\ref{thm:dd14}, with $K=N=0$.
+(i) is Theorem~\ref{pc:main}, respectively Theorem~\ref{thm:dd14}, with $K=N=0$. (ii) is (i) with $A=\alpha$ and $\kappa=\alpha^3$, so
+that $\alpha^3\ge\kappa\hbar$ for all $\hbar\le1$; the fixed factors $\alpha^{-2}$ and $\alpha^{1/2}$ are absorbed into $C$ and $\delta$.
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{pc:cor15}]
@@ -119,21 +120,6 @@ $2r_0$-separated, and the counting bound of Lemma~\ref{lem:count} with multiplic
 \end{proof}
 
 
-\begin{corollary}[fixed radius]\label{thm:main}
-Let $\Gamma$, $x_0$, $\beta$ and $\norm a_{\mathcal A}$ be as in Section~\ref{subsec:pc-thm}, and let $\alpha>0$ be fixed. There are constants
-$C,\delta>0$, depending on $\Gamma$, $\beta$, $x_0$ and $\alpha$, such that for all $0<\hbar\le1$, all
-$b\in\partial\Hb$ and all $a$ with $\norm a_{\mathcal A}<\infty$ at radius $\alpha$,
-\[
-  \norm{\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(0)}(t)_\Gamma}_{L^2(M)}\le C\hbar t\,\norm a_{\mathcal A},\qquad 0\le t\le\delta\hbar^{-1/2}.
-\]
-\end{corollary}
-\begin{proof}
-This is Corollary~\ref{pc:thm13} with $A=\alpha$ and $\kappa=\alpha^3$, so that $\alpha^3\ge\kappa\hbar$ for all $\hbar\le1$; the fixed factors
-$\alpha^{-2}$ and $\alpha^{1/2}$ are absorbed into $C$ and $\delta$.
-\end{proof}
-
-For the original norm, Corollary~\ref{thm:main} is \cite[Theorem~1.3]{S} with the error $C\hbar$ corrected to $C\hbar t$, and it holds
-for every $\beta>\tfrac12$, whereas \cite[Theorem~1.3]{S} assumes $\beta>1$ (Appendix~\ref{sec:changes}).
 
 \begin{remark}[the power-weight norm]\label{rem:pw-cor}\label{cor:dd15-appx}\label{cor:dd16-appx}
 The proofs of Corollaries~\ref{pc:cor15} and~\ref{pc:cor16} use only the estimate of the approximation theorem, at $N$ and
@@ -145,7 +131,8 @@ for the reversed-weight norm.
 
 \subsection{The order \texorpdfstring{$\hbar t$}{ht} of the leading error is attained}\label{subsec:g5proof}
 For every amplitude of finite reversed-weight norm, all words in $X,Y$ applied to it lie in $L^2(\Hb)$
-(Lemmas~\ref{lem:m2w} and~\ref{lem:sc}); the same holds for the original norm
+(Lemma~\ref{lem:m2w}, and Lemma~\ref{lem:sc} applied to $a\circ p$ with an affine isometry $p$ taking $i$ to $x_0$, which
+commutes with $X$, $Y$ and $\Lambda$); the same holds for the original norm
 (Lemma~\ref{lem:lift}), using a smaller radius in these lemmas if necessary.
 Thus Proposition~\ref{prop:g5} applies to both classes, and both classes contain nonzero amplitudes
 (Section~\ref{sec:setup}).

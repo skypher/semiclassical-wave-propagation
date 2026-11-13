@@ -13,7 +13,7 @@ and $D=(-\Delta-\tfrac14)^{1/2}$ (Lemma~\ref{lem:base} reduces general base poin
 \[
 \omega_c:=X_0^{1/2}\ell^{\,c};
 \]
-the periodization weight is $\omega=\omega_{c'}$ with $c'=\tfrac34$. Any exponent in $(\tfrac12,1)$ would do (Theorem~\ref{os:cw});
+the periodization weight $\omega$ of Section~\ref{sec:setup} is $\omega_{c'}$ with $c'=\tfrac34$. Any exponent in $(\tfrac12,1)$ would do (Theorem~\ref{os:cw});
 the choice fixes the constant $P^{\mathrm{cr}}_\Gamma$ of Theorem~\ref{pc:main}. The shells are $A_n:=\{n\le\tilde\psi<n+1\}$, $n=0,1,2,\dots$, and
 $1_n$ denotes multiplication by the indicator of $A_n$. Since $1+n\le\ell\le3(1+n)$ on $A_n$,
 \begin{equation}\label{os:shell}
@@ -27,7 +27,7 @@ For $f=\ue^{\alpha\Lambda}a$ and $\beta>\tfrac12$, the original norm gives $\|\o
 $\omega\le C_\beta\ue^{\beta\langle d\rangle}$.
 
 \begin{proposition}[the two amplitude classes and dependence on the radius]\label{pc:classes}
-For $\beta>\tfrac12$, the original and reversed-weight norms are not equivalent. For every $0<\alpha<\pi/2$ there are amplitudes of finite original norm at radius $\alpha$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and infinite original norm, with the same $\beta$, at every smaller radius.
+For $\beta>\tfrac12$, the original and reversed-weight norms are not equivalent. For every $0<\alpha<\pi/2$ there are amplitudes of finite original norm at radius $\alpha$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and whose original norm with the same exponent $\beta$ is infinite at every smaller radius.
 \end{proposition}
 
 The range $\alpha<\pi/2$ is that of the kernel bounds of Lemma~\ref{os:poisson} used in the proof.
@@ -107,10 +107,10 @@ Write $C_{\mathrm{tr}}$ for its constant for $c=c'$ and $C_{\mathrm{sh}}$; it is
 \smallskip\noindent(a) \emph{Words.} For a word $Z_S$ of length $n$ let $T_wh:=Z_S\mathcal B_{\mathbf s}\mathsf Qh$. By
 Lemma~\ref{lem:expand}(i) with $k=K+1$, $Z_S\mathcal B_{\mathbf s}$ is a sum of $5^N3^{K+1}$ terms $c\,Z_{S'}$ with $|c|\le2^N\hbar^{j-2N}$,
 $j\le2N$, and words of length $L\le j+q$, $q:=n+2K+2$. By the estimate of Lemma~\ref{os:words} at the weight $\pcXzero^\lambda$, with
-$\lambda=1$ (so that the number $Q$ there is $6$), $\norm{\pcXzero Z_{S'}\mathsf Qu}\le\sqrt2\,L!\,(6C_5/\sigma)^L\norm{\pcXzero u}\le2(L+1)L!\,(G/\sigma)^L\norm{\pcXzero u}$ with
-$G:=6C_5\ge1$. By Lemma~\ref{lem:expand}(ii), each term is at most
-$2\cdot2^N(4G)^{2N+q}(2N)!\,q!\,\sigma^{-q}(\sigma\hbar)^{-2N}\norm{\pcXzero u}$. Summing over the terms and using
-$2(160G^2)^N(48G^2)^{K+1}(4G)^n\le C_6^{N+K+n+1}$ with $C_6:=\max(C_3,320\,G^2)$ gives
+$\lambda=1$ (so that $4+2\lambda=6$), $\norm{\pcXzero Z_{S'}\mathsf Qu}\le\sqrt2\,L!\,(6C_5/\sigma)^L\norm{\pcXzero u}\le2(L+1)L!\,(G_5/\sigma)^L\norm{\pcXzero u}$ with
+$G_5:=6C_5\ge1$. By Lemma~\ref{lem:expand}(ii) with $G_5$ in place of $G$, each term is at most
+$2\cdot2^N(4G_5)^{2N+q}(2N)!\,q!\,\sigma^{-q}(\sigma\hbar)^{-2N}\norm{\pcXzero u}$. Summing over the terms and using
+$2(160G_5^2)^N(48G_5^2)^{K+1}(4G_5)^n\le C_6^{N+K+n+1}$ with $C_6:=\max(C_3,320\,G_5^2)$ gives
 \[
   \norm{\pcXzero Z_S\mathcal B_{\mathbf s}\mathsf Qu}\le F_n\norm{\pcXzero u},\qquad\norm{Z_S\mathcal B_{\mathbf s}\mathsf Qu}\le F_n\norm u ;
 \]
@@ -176,7 +176,7 @@ every $h$ with $\omega h\in L^2$, that is, for $\norm{\mathcal V_{s_1}a_{\mathbf
 \medskip\noindent\emph{Step 4 (collecting).} By Step~1(a), every word applied to $a$ lies in $L^2_{\omega}$, and $\omega$ satisfies (W1), (W2). So
 Proposition~\ref{prop:dd-id}(ii) bounds the error by $(\hbar/2)^{K+1}$ times the volume $t^{K+1}/(K+1)!$ of $\Sigma_{K+1}(t)$ times the bound
 \eqref{pc:star}. The numbers $F_n\norm{\omega h}$ are those of Lemma~\ref{lem:collect} for $G:=C_6$ and $\mathcal H:=\norm{\omega h}$, and that
-lemma with its parameters $\lambda=1$ and $c=\tfrac1{32}$ gives the asserted bound for $t\le\delta'\xi$ with $\delta'\le\tfrac1{64}$.
+lemma with its parameters $\lambda=1$ and $c_\xi=\tfrac1{32}$ gives the asserted bound for $t\le\delta'\xi$ with $\delta'\le\tfrac1{64}$.
 
 \medskip\noindent\emph{Time windows.} Steps~1(b), 1(c) and~2 use $\hbar s_1\le\varepsilon$, that is $t\le\xi/2$; Proposition~\ref{prop:a0} uses
 $t\le\tfrac13c_A\varepsilon/\hbar=c_A\xi/6$; Lemma~\ref{lem:collect} uses $\delta'\le\tfrac1{64}$. So the proof holds for $t\le\delta'\xi$ with
@@ -198,7 +198,7 @@ $\operatorname{Dom}(\ue^{\alpha\Lambda})\subset\operatorname{Dom}(\ue^{\min(\alp
 Proposition~\ref{os:data} with $c=c'$, $m=3$ and this $\sigma$ (here $\sigma<\alpha\le1$ and $\sigma m=\alpha/2\le\tfrac12$) gives
 $\tilde f:=\mathsf Rf$ with $a=\ue^{-\sigma\Lambda_3}\tilde f$ and $\norm{\omega\tilde f}\le C_{\mathrm d}\norm{\omega f}\le C_{\mathrm d}C_\beta\pcNorm a$.
 Proposition~\ref{pc:core} with $h=\tilde f$, and constants $C',\delta'$, gives the bound of the theorem with $\sigma$ in place of $\alpha$,
-for $t\le\delta'(\sigma/\hbar)^{1/2}$. Lemma~\ref{lem:radius}, with $\sigma$ and $\alpha$ in the roles of $\alpha_0$ and $A$ (so $A/\alpha_0=6$),
+for $t\le\delta'(\sigma/\hbar)^{1/2}$. Lemma~\ref{lem:radius}, with $\sigma$ and $\alpha$ in the roles of $\alpha_0$ and $\alpha_1$ (so $\alpha_1/\alpha_0=6$),
 turns this into the bound of the theorem for $t\le(\delta'/\sqrt6)(\alpha/\hbar)^{1/2}$ with the constant $36C'\max(1,C_{\mathrm d}C_\beta)$.
 So the theorem holds on $(0,\tfrac12]$ with constants that do not depend on $A$.
 
@@ -211,7 +211,7 @@ $\alpha$, $\sigma$ and $m$, gives $\tilde f:=\mathsf Rf_1$ with
   a=\ue^{-\sigma\Lambda_3}\tilde f,\qquad\norm{\omega\tilde f}\le C_{\mathrm d}C_\Lambda^{\,j}C_\beta\,\pcNorm a .
 \]
 Proposition~\ref{pc:core} with $h=\tilde f$, and constants $C',\delta'$ for this $\kappa'$, gives the bound with $\sigma$ in place of $\alpha$ for
-$t\le\delta'(\sigma/\hbar)^{1/2}$. By Lemma~\ref{lem:radius} with $\alpha_0=\sigma=\tfrac1{12}$, the estimate holds on $(\tfrac12,A]$ with the constants $(12A)^2C'\max(1,C_{\mathrm d}C_\Lambda^{\,j}C_\beta)$ and $\delta'(12A)^{-1/2}$. Take the
+$t\le\delta'(\sigma/\hbar)^{1/2}$. By Lemma~\ref{lem:radius} with $\alpha_0=\sigma=\tfrac1{12}$ and $\alpha_1=A$, the estimate holds on $(\tfrac12,A]$ with the constants $(12A)^2C'\max(1,C_{\mathrm d}C_\Lambda^{\,j}C_\beta)$ and $\delta'(12A)^{-1/2}$. Take the
 larger of the two constants $C$ and the smaller of the two $\delta$.
 
 \emph{The constants.} In both ranges $\delta$ is $\delta'/\sqrt6$, respectively $\delta'(12A)^{-1/2}$, where $\delta'$ is the constant of

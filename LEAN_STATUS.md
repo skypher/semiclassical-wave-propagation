@@ -20,7 +20,7 @@ All Lean names are in the namespace `Qschubert`.
 |---|---|---|
 | Theorem 1.1 (`pc:main`) | L | `pcmain_unif`; for one group `pcmain_all`, small-radius stage `pcmain_half` |
 | Theorem 1.2 (`thm:dd14`) | L | `thm14Rmain_unif` (uniform in the group and the base point, every bounded range of radii; from `thm14R_unifX`, `swX_le_swD` and `swNormD_mono`); for a fixed base point `thm14Rmain_all` |
-| Corollary 1.3 (`pc:thm13`) | L | original norm: `pcthm13_unif`; reversed-weight norm: `thm13Rmain_unif` |
+| Corollary 1.3 (`pc:thm13`) | L | (i) original norm: `pcthm13_unif`; reversed-weight norm: `thm13Rmain_unif`; (ii) original norm: `pcthm13_fixed` (from `pcthm13_all`); reversed-weight norm: `thm13R_fixed` (from `thm14Rmain_exp` and `swNormD_mono`) |
 | Corollary 1.4 (`pc:cor15`) | L | original norm: `pccor15_tied`; reversed-weight norm: `cor15Rmain_tiedG`; constants with `C\ge1`: `pcThmCD_exists`, `rThmCDG_exists` |
 | Corollary 1.5 (`pc:cor16`) | L | original norm: `pccor16_unifN`, positive injectivity radius `pccor16bg_unifN`; reversed-weight norm: `cor16Rmain_unifmultN`, positive injectivity radius `cor16Rmain_unifbgN`; local Sobolev step `ptN_of_L2` |
 | Proposition 1.6 (`prop:g5`) | L | `propG5`; the negation of Schubert's bound is `printedThm13_false` |
@@ -60,7 +60,7 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 3.2 (`lem:fc`) | L | `lem_fc_one` |
 | Lemma 3.3 (`lem:wc`) | L | `lem_wc_one` |
 | Lemma 3.4 (`lem:lift`) | L | `allWords_of_exp`, `patch_smooth`, `glue_smooth`, `lift1`, `lift1D` |
-| Lemma 3.5 (`lem:fdb`) | L | `fdb` |
+| Lemma 3.5 (`lem:fdb`) | L | (a) `word_X0_le`; (b) `fdb` |
 | Lemma 3.6 (`lem:sc`) | L | `lem_sc_one` |
 | Lemma 3.20 (`lem:expand`) | L | (i) `bP_inv`; (ii) `sca` |
 | Lemma 3.21 (`lem:wb`) | L | `lem_wb_w_one`, `lem_wb_u_one` |
@@ -97,10 +97,9 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 6.1 (`pc:g43`) | L | (a) `encard_ball_le_orbitMult`, `setLIntegral_ball_le_orbitMult_mul` (there for every group acting isometrically with a fundamental domain); (b) `sobolev_M_mult` |
 | Lemma 6.2 (`pc:remcusp`) | P | bounds for `m(z)` in a cusp; self-checked, not formalized |
 | Remark 6.3 (`rem:g4`) | P |  |
-| Corollary 6.4 (`thm:main`) | L | original norm: `pcthm13_fixed` (from `pcthm13_all`); reversed-weight norm: `thm13R_fixed` (from `thm14Rmain_exp` and `swNormD_mono`) |
-| Remark 6.5 (`rem:pw-cor`) | L | `cor15R_tiedA`, `cor16R_allmultN`; positive injectivity radius: `cor16R_allbgN`; constants with `C\ge1`: `xThmCDA_exists` |
-| Lemma 6.6 (`lem:ex`) | P | not used by the theorems |
-| Corollary 6.7 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.6 (`lem:ex`) and Theorem 1.2 (`thm:dd14`); self-checked, not separately formalized |
+| Remark 6.4 (`rem:pw-cor`) | L | `cor15R_tiedA`, `cor16R_allmultN`; positive injectivity radius: `cor16R_allbgN`; constants with `C\ge1`: `xThmCDA_exists` |
+| Lemma 6.5 (`lem:ex`) | P | not used by the theorems |
+| Corollary 6.6 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.5 (`lem:ex`) and Theorem 1.2 (`thm:dd14`); self-checked, not separately formalized |
 
 ## Section 7 (`sec:cusp`): sharpness of the cusp factor
 
@@ -124,7 +123,7 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Lemma A.3 (`lem:gutzmer`) | P | used only for Lemma 6.6 (`lem:ex`) |
+| Lemma A.3 (`lem:gutzmer`) | P | used only for Lemma 6.5 (`lem:ex`) |
 | Lemma A.4 (`os:poisson`) | P | used only in Proposition 5.2 (`pc:classes`) and Section 7 (`subsec:cl`) |
 | Lemma A.8 (`os:hk`) | P | used only in Section 7 (`subsec:cl`) |
 

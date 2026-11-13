@@ -305,8 +305,8 @@ Lemma~\ref{lem:wordphi} gives $|Z_S(1/\mathfrak m_i)|\le A_\beta c_\beta^{\,j}j!
 depend only on $\beta$. If $q$ is the affine isometry with $q(i)=w_0$, then
 $\mathfrak m_{w_0}=\mathfrak m_i\circ q^{-1}$, and $q$ commutes with $X$ and $Y$; so the same bound holds for $1/\mathfrak m_{w_0}$.
 
-\emph{The other two factors.} Let $\Psi$ be holomorphic in $\operatorname{Re}u>0$. By the expansion in the proof of Lemma~\ref{lem:fdb} and
-$|Z_BX_0|\le2\cdot2^{|B|}X_0$,
+\emph{The other two factors.} Let $\Psi$ be holomorphic in $\operatorname{Re}u>0$. By the expansion in the proof of Lemma~\ref{lem:fdb}(b) and
+Lemma~\ref{lem:fdb}(a),
 \[
 |Z_S\Psi(X_0)|\le2^j\sum_k\stirling jk\,2^kX_0^k\,|\Psi^{(k)}(X_0)| ,
 \]
@@ -328,7 +328,7 @@ the second by the first argument applied to $X_0^\beta$ and composition with $q^
 because the sum has $\binom{j+2}2\le(j+1)2^j$ terms. Since $X_{w_0}\le2\cosh d(w_0,i)\,X_0$, the function $(3X_{w_0}/2)^\beta\ue^{-\mu X_0/2}$ lies in
 $L^2(\Hb)$. Lemma~\ref{lem:expw} (with $\alpha=1$ and $2L$ in the role of $L$) gives the claim with $\alpha_1:=1/(8L)$, which depends only on $\beta$.
 
-\emph{The word bound.} By the bound $|Z_BX_0|\le2\cdot2^{|B|}X_0$ of Section~\ref{subsec:dd-fc}, every word applied to
+\emph{The word bound.} By Lemma~\ref{lem:fdb}(a), every word applied to
 $X_0$ is bounded by $C_SX_0$, and $Z_S\ue^{-\mu X_0}$ is $\ue^{-\mu X_0}$ times a sum of products of at most $|S|$ factors $-\mu Z_{S_l}X_0$. So
 \begin{equation}\label{cl:hwords}
 |Z_S\ue^{-\mu X_0}|\le C_S(1+\mu)^{|S|}X_0^{|S|}\ue^{-\mu X_0},
@@ -360,10 +360,10 @@ Both bounds are uniform in $\alpha\le\tfrac12$.
 \end{proof}
 
 \begin{lemma}[noncancellation of the leading cusp coefficient]\label{cl:noncancel}
-For either amplitude of Lemma~\ref{cl:amp}, with its cases denoted by (i) and (ii), the following holds.
-With $\Delta_\infty=Y^2-Y$ as in Proposition~\ref{prop:g5}, put $S_0(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}(\Delta_\infty a)(n/c+i/c^2)$. In case
-(i) with $\mu=20$, $0.98\,\mu\ue^{-\mu}\le|S_0(\hbar)|\le1.02\,\mu\ue^{-\mu}$ for all $\hbar$, and
-$S_a(\hbar):=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}a(n/c+i/c^2)$ satisfies $0.99\,\ue^{-\mu}\le|S_a(\hbar)|\le1.01\,\ue^{-\mu}$. In case (ii) there are absolute constants $\mu_*\ge1$ and $c_{\mathrm{nc}}>0$ such that $|S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for
+Let $a$ be the amplitude of Lemma~\ref{cl:amp}(i) or of Lemma~\ref{cl:amp}(ii); we refer to these as cases (i) and (ii).
+With $\Delta_\infty=Y^2-Y$ as in Proposition~\ref{prop:g5}, put $\mathfrak S_0(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}(\Delta_\infty a)(n/c+i/c^2)$. In case
+(i) with $\mu=20$, $0.98\,\mu\ue^{-\mu}\le|\mathfrak S_0(\hbar)|\le1.02\,\mu\ue^{-\mu}$ for all $\hbar$, and
+$\mathfrak S_a(\hbar):=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}a(n/c+i/c^2)$ satisfies $0.99\,\ue^{-\mu}\le|\mathfrak S_a(\hbar)|\le1.01\,\ue^{-\mu}$. In case (ii) there are absolute constants $\mu_*\ge1$ and $c_{\mathrm{nc}}>0$ such that $|\mathfrak S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for
 $\mu\ge\mu_*$, $0<\alpha\le\min(\tfrac12,c_{\mathrm{nc}}\mu^{-6})$ and all $\hbar$.
 \end{lemma}
 \begin{proof}
@@ -371,7 +371,7 @@ $Y^2X_0=X_0$ gives $\Delta_\infty a=a[\mu^2(y-X_0)^2-\mu(2X_0-y)]$ in case (i), 
 $X_0=(n^2+c^2+c^{-2})/2$, $X_0-1\ge\max(\tfrac12,(k-2)/2)$ with $k=n^2+c^2$, and $|\Delta_\infty a|\le\mu\ue^{-\mu}\ue^{-\mu(X_0-1)}(\mu X_0^2+2X_0)$. For
 $\mu=20$ and $q=\ue^{-10}<1/20000$: the two points $\pm1+i$ give at most $96q<0.005$; there is no coprime pair with $c\ge1$ and $k\in\{3,4\}$; the rest is
 at most $\sum_{k\ge5}(4k+4)[5(k+1)^2+k+1]q^{k-2}\le5184q^3/(1-8q)<0.01$. So the points other than $i$ contribute at most
-$0.015\,\mu\ue^{-\mu}$ to $S_0(\hbar)$, which gives its two bounds. For $S_a$, $a(i)=\ue^{-\mu}$ and $|a|\le\ue^{-\mu}\ue^{-\mu(X_0-1)}$ at the
+$0.015\,\mu\ue^{-\mu}$ to $\mathfrak S_0(\hbar)$, which gives its two bounds. For $\mathfrak S_a$, $a(i)=\ue^{-\mu}$ and $|a|\le\ue^{-\mu}\ue^{-\mu(X_0-1)}$ at the
 other points, so the same count without the factor $\mu X_0^2+2X_0$ bounds their contribution by $0.01\,\ue^{-\mu}$.
 
 In case (ii) let $h=\ue^{-\mu X_0}$, so that $\Delta_\infty a=\Delta_\infty\ue^{-\alpha\Lambda}h$ and $\Delta_\infty h(i)=-\mu\ue^{-\mu}$. In the rest of the proof $C$ does
@@ -412,23 +412,23 @@ Altogether
 \[
 \sum_{w\in P}|(\Delta_\infty a)(w)|\le C\bigl(\alpha/\mu^2+\mu^3\ue^{-0.098\mu}\bigr)\,\mu\ue^{-\mu},\qquad|(\Delta_\infty a)(i)|\ge(1-C\alpha\mu^5)\,\mu\ue^{-\mu},
 \]
-which gives $|S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for $\mu\ge\mu_*$ and $\alpha\le c_{\mathrm{nc}}\mu^{-6}$.
+which gives $|\mathfrak S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for $\mu\ge\mu_*$ and $\alpha\le c_{\mathrm{nc}}\mu^{-6}$.
 \end{proof}
 
 \subsection{Proof of sharpness}\label{subsec:cl-proof}
 \begin{lemma}[the error at the cusp points]\label{cl:two}
-In either case of Theorem~\ref{cl:main}, with its radius $\alpha$, amplitude $a$ and constant $\delta$, and with $S_0(\hbar)$ as in
+In either case of Theorem~\ref{cl:main}, with its radius $\alpha$, amplitude $a$ and constant $\delta$, and with $\mathfrak S_0(\hbar)$ as in
 Lemma~\ref{cl:noncancel}, the following hold.
 \begin{enumerate}
 \item[(a)] There is $C$ such that for $0<\hbar\le\tfrac12$, $\max(2\log(1/\hbar),1)\le t\le\delta(\alpha/\hbar)^{1/2}$ and
 $z=x+i\ue^t$,
 \[
-\Bigl|\,|E_0(t)(z)|-\tfrac{\sqrt\pi}2\,\ue^{t/2}\hbar^{3/2}t\,|S_0(\hbar)|\,\Bigr|\le C\,\ue^{t/2}\hbar^{3/2}t\,\bigl(t^{-1}+\hbar^{1/2}t^2\bigr).
+\Bigl|\,|E_0(t)(z)|-\tfrac{\sqrt\pi}2\,\ue^{t/2}\hbar^{3/2}t\,|\mathfrak S_0(\hbar)|\,\Bigr|\le C\,\ue^{t/2}\hbar^{3/2}t\,\bigl(t^{-1}+\hbar^{1/2}t^2\bigr).
 \]
 \item[(b)] There are $t_*\ge1$ and $\hbar_0\in(0,\tfrac12]$ such that for $0<\hbar\le\hbar_0$,
 $\max(2\log(1/\hbar),t_*)\le t\le\min(\hbar^{-1/5},\delta(\alpha/\hbar)^{1/2})$ and $z=x+i\ue^t$,
 \[
-\tfrac12\le\frac{|E_0(t)(z)|}{\tfrac{\sqrt\pi}2\,\ue^{t/2}\hbar^{3/2}t\,|S_0(\hbar)|}\le\tfrac32 .
+\tfrac12\le\frac{|E_0(t)(z)|}{\tfrac{\sqrt\pi}2\,\ue^{t/2}\hbar^{3/2}t\,|\mathfrak S_0(\hbar)|}\le\tfrac32 .
 \]
 \end{enumerate}
 \end{lemma}
@@ -440,28 +440,28 @@ case (ii); this suffices, because $B(D_k)$ applies words of length at most $4$ t
 at most $2k\le4$ applied to $a$. We use Lemma~\ref{cl:asym} with $\vartheta^\star=X_0^{-2}$, respectively $\vartheta^\star=\vartheta$. Since
 $P_1(t)a=\int_0^t\Delta(s)a\,ds=\tfrac{1-\ue^{-2t}}2X^2a+t\Delta_\infty a$ and $t\ge1$, we have $B(D_1)\le C\hbar t$, and Lemma~\ref{cl:asym} gives
 \[
-T_1(z)=\ue^{-it/(2\hbar)}\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}\,\tfrac{i\hbar}2\Bigl(tS_0(\hbar)+\tfrac{1-\ue^{-2t}}2S_X(\hbar)\Bigr)
+T_1(z)=\ue^{-it/(2\hbar)}\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}\,\tfrac{i\hbar}2\Bigl(t\mathfrak S_0(\hbar)+\tfrac{1-\ue^{-2t}}2\mathfrak S_X(\hbar)\Bigr)
 +O\bigl(\ue^{t/2}\hbar^{3/2}\hbar t\bigr),
 \]
-where $S_X(\hbar):=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}X^2a(n/c+i/c^2)$ converges absolutely, so that $|S_X(\hbar)|\le C$. $P_2(t)a$ is a
+where $\mathfrak S_X(\hbar):=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}X^2a(n/c+i/c^2)$ converges absolutely, so that $|\mathfrak S_X(\hbar)|\le C$. $P_2(t)a$ is a
 combination of words of length at most $4$ with coefficients bounded by $t^2/2$, so $B(D_2)\le C\hbar^2t^2$ and
 $|T_2(z)|\le C\ue^{t/2}\hbar^{1/2}\hbar^2t^2$. For $E_2$, Theorem~\ref{thm:dd14} in case (i)
 and Theorem~\ref{pc:main} in case (ii), at $K=2$ and $N=0,2$, give $\norm{E_2}\le C(\hbar t/\alpha^2)^3\ampNorm a$ and
 $\norm{\Delta^2E_2}\le C(\alpha\hbar)^{-4}(\hbar t/\alpha^2)^3\ampNorm a$; Lemma~\ref{cl:ssob} with $r=\hbar$, and $m(z)\le5\ue^t$
 (Lemma~\ref{pc:remcusp}(b)), give
 $|E_2(z)|\le C\ue^{t/2}\hbar^{-1}\alpha^{-10}(\hbar t)^3\ampNorm a$. Hence $|E_0(z)|$ differs from
-$\tfrac{\sqrt\pi}2\ue^{t/2}\hbar^{3/2}t|S_0(\hbar)|$ by at most $C\ue^{t/2}\hbar^{3/2}(1+\hbar t+\hbar t^2+\hbar^{1/2}t^3)$, and
+$\tfrac{\sqrt\pi}2\ue^{t/2}\hbar^{3/2}t|\mathfrak S_0(\hbar)|$ by at most $C\ue^{t/2}\hbar^{3/2}(1+\hbar t+\hbar t^2+\hbar^{1/2}t^3)$, and
 $1+\hbar t+\hbar t^2+\hbar^{1/2}t^3\le4t\,(t^{-1}+\hbar^{1/2}t^2)$ for $t\ge1$ and $\hbar\le1$.
 
-(b) Lemma~\ref{cl:noncancel} gives $|S_0(\hbar)|\ge s_0$ for all $\hbar$, with $s_0:=0.98\,\mu\ue^{-\mu}$ in case (i) and
+(b) Lemma~\ref{cl:noncancel} gives $|\mathfrak S_0(\hbar)|\ge s_0$ for all $\hbar$, with $s_0:=0.98\,\mu\ue^{-\mu}$ in case (i) and
 $s_0:=\tfrac12\mu\ue^{-\mu}$ in case (ii). Choose $t_*\ge1$ and $\hbar_0\le\tfrac12$ with $C/t_*\le\tfrac{\sqrt\pi}8s_0$ and
 $C\hbar_0^{1/10}\le\tfrac{\sqrt\pi}8s_0$. On the stated range $\hbar^{1/2}t^2\le\hbar^{1/10}$, so
-$C(t^{-1}+\hbar^{1/2}t^2)\le\tfrac{\sqrt\pi}4s_0\le\tfrac{\sqrt\pi}4|S_0(\hbar)|$, and (a) gives (b).
+$C(t^{-1}+\hbar^{1/2}t^2)\le\tfrac{\sqrt\pi}4s_0\le\tfrac{\sqrt\pi}4|\mathfrak S_0(\hbar)|$, and (a) gives (b).
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{cl:main}]
 Take $t_*$ and $\hbar_0$ from Lemma~\ref{cl:two}(b). By Lemma~\ref{cl:two}(b) and Lemma~\ref{cl:noncancel},
-$|E_0(t)(z)|\ge\tfrac{\sqrt\pi}4\,|S_0(\hbar)|\,\ue^{t/2}\hbar^{3/2}t\ge c_*\,\ue^{t/2}\hbar^{3/2}t$ on the range of the theorem, with
+$|E_0(t)(z)|\ge\tfrac{\sqrt\pi}4\,|\mathfrak S_0(\hbar)|\,\ue^{t/2}\hbar^{3/2}t\ge c_*\,\ue^{t/2}\hbar^{3/2}t$ on the range of the theorem, with
 $c_*:=\tfrac{\sqrt\pi}4\cdot0.98\,\mu\ue^{-\mu}$ in case (i) and $c_*:=\tfrac{\sqrt\pi}4\cdot\tfrac12\mu\ue^{-\mu}$ in case (ii).
 Lemma~\ref{pc:remcusp}(b) gives $m(z)\le5\ue^t$.
 \end{proof}
@@ -483,15 +483,15 @@ $c\,\ue^{(1/2-\max(\sigma,0))\hbar^{-1/5}}\hbar^{p+3/2}$, which tends to infinit
 \begin{proof}[Proof of Proposition~\ref{cl:relative}]
 Lemma~\ref{cl:asym} with $v=a$ and $\vartheta^\star=X_0^{-2}$ gives
 \[
-u^{(0)}(t)_\Gamma(z)=\ue^{-it/(2\hbar)}\bigl(\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}S_a(\hbar)+O(\ue^{t/2}\hbar^{3/2})\bigr),
+u^{(0)}(t)_\Gamma(z)=\ue^{-it/(2\hbar)}\bigl(\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}\mathfrak S_a(\hbar)+O(\ue^{t/2}\hbar^{3/2})\bigr),
 \]
-with $S_a(\hbar)$ as in Lemma~\ref{cl:noncancel}, so that $0.99\,\ue^{-\mu}\le|S_a(\hbar)|\le1.01\,\ue^{-\mu}$ with $\mu=20$. Choose $\hbar_1\le\hbar_0$
-such that for $\hbar\le\hbar_1$ the $O$-term is at most $\tfrac12\ue^{t/2}\sqrt{\pi\hbar}\,|S_a(\hbar)|$; then
+with $\mathfrak S_a(\hbar)$ as in Lemma~\ref{cl:noncancel}, so that $0.99\,\ue^{-\mu}\le|\mathfrak S_a(\hbar)|\le1.01\,\ue^{-\mu}$ with $\mu=20$. Choose $\hbar_1\le\hbar_0$
+such that for $\hbar\le\hbar_1$ the $O$-term is at most $\tfrac12\ue^{t/2}\sqrt{\pi\hbar}\,|\mathfrak S_a(\hbar)|$; then
 \[
-\frac12\le\frac{|u^{(0)}(t)_\Gamma(z)|}{\ue^{t/2}\sqrt{\pi\hbar}\,|S_a(\hbar)|}\le\frac32 .
+\frac12\le\frac{|u^{(0)}(t)_\Gamma(z)|}{\ue^{t/2}\sqrt{\pi\hbar}\,|\mathfrak S_a(\hbar)|}\le\frac32 .
 \]
 On the range of Theorem~\ref{cl:main}, Lemma~\ref{cl:two}(b) holds. Dividing, and using
-$0.98\,\mu\ue^{-\mu}\le|S_0(\hbar)|\le1.02\,\mu\ue^{-\mu}$ (Lemma~\ref{cl:noncancel}), gives the claim with
+$0.98\,\mu\ue^{-\mu}\le|\mathfrak S_0(\hbar)|\le1.02\,\mu\ue^{-\mu}$ (Lemma~\ref{cl:noncancel}), gives the claim with
 $c_{\mathrm{rel}}=0.98\mu/(6\cdot1.01)$ and $C_{\mathrm{rel}}=3\cdot1.02\mu/(2\cdot0.99)$.
 \end{proof}
 

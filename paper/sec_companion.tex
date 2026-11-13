@@ -102,23 +102,23 @@ Lemma~\ref{lem:unw} with $r=r_2$ gives $\norm{\mathfrak d(t')}\le C_4r_2^{-4}\ue
 $\mathcal H:=\pwNorm a$. Since $c_M\le1\le C_3$ and $\alpha\le1$, the weighted factor is at most $C\varepsilon^{-3}F_2$ and the unweighted one at
 most $C\alpha^{-4}\ue^{-c_M\xi/8}F_2$. After the H\"older split, using $\varepsilon,\alpha\le1$, the defect part is at most
 \[
-C\,\hbar t\,\ue^{\lambda t}\,\varepsilon^{-3}\alpha^{-4}\ue^{-c\xi}F_2,\qquad c:=(1-\theta)c_M/8 .
+C\,\hbar t\,\ue^{\lambda t}\,\varepsilon^{-3}\alpha^{-4}\ue^{-c_\xi\xi}F_2,\qquad c_\xi:=(1-\theta)c_M/8 .
 \]
 
 \medskip\noindent\emph{Step 3 (collecting).} The bound of Step~1 is at most $CF_0$. So for every $\mathbf s\in\Sigma_{K+1}(t)$,
 \[
-\norm{\mathcal V_{s_1}a_{\mathbf s}}\le B\bigl(F_0+\hbar t\,\ue^{\lambda t}\varepsilon^{-3}\alpha^{-4}\ue^{-c\xi}F_2\bigr),
+\norm{\mathcal V_{s_1}a_{\mathbf s}}\le B\bigl(F_0+\hbar t\,\ue^{\lambda t}\varepsilon^{-3}\alpha^{-4}\ue^{-c_\xi\xi}F_2\bigr),
 \]
 with $B$ depending only on $\beta$, $\kappa$ and $P$. By Proposition~\ref{prop:dd-id}(ii), the error $\norm E$ is at most $(\hbar/2)^{K+1}$
 times the volume $t^{K+1}/(K+1)!$ of $\Sigma_{K+1}(t)$ times this bound, and Lemma~\ref{lem:collect}, with the exponent $\lambda$ of Step~0 as its parameter $\lambda$, gives
 \[
 \norm E\le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}\pwNorm a
 \]
-for $t\le\delta\xi$ with $\delta\le1$ and $2\lambda\delta\le c$.
+for $t\le\delta\xi$ with $\delta\le1$ and $2\lambda\delta\le c_\xi$.
 
 \medskip\noindent\emph{Time windows used.} Weighted propagation and Lemma~\ref{lem:path} require $\hbar s_1\le\varepsilon$, that is $t\le\xi/2$.
 Analytic propagation requires $t\le\tfrac13c_A\varepsilon/\hbar=c_A\xi/6$.
-Lemma~\ref{lem:collect} requires $2\lambda\delta\le c$, that is $\delta\le(1-\theta)c_M/(16\lambda)$.
+Lemma~\ref{lem:collect} requires $2\lambda\delta\le c_\xi$, that is $\delta\le(1-\theta)c_M/(16\lambda)$.
 
 So $\delta:=\min\bigl(\tfrac12,\;c_A/6,\;(1-\theta)c_M/(16\lambda)\bigr)$ works.
 
@@ -131,7 +131,7 @@ $P_\Gamma(\beta+\tfrac12)$.
 \medskip\noindent\emph{Radii $1<\alpha\le A$.} The power-weight norm increases with the radius, since
 $\ue^{\Lambda}=\ue^{-(\alpha-1)\Lambda}\ue^{\alpha\Lambda}$ and $\ue^{-\tau\Lambda}$ is a contraction for $\tau\ge0$. Apply the case already proved
 at the radius $1$ with $1$ in place of $\kappa$ (then $1\ge\hbar$), and let $\bar C,\bar\delta$ be its constants. Lemma~\ref{lem:radius} with
-$\alpha_0=1$ shows that the bound holds for $1<\alpha\le A$ with $\bar\delta A^{-1/2}$ and $A^2\bar C$; take the smaller of the two values of $\delta$ and the larger of the two values of $C$. Both
+$\alpha_0=1$ and $\alpha_1=A$ shows that the bound holds for $1<\alpha\le A$ with $\bar\delta A^{-1/2}$ and $A^2\bar C$; take the smaller of the two values of $\delta$ and the larger of the two values of $C$. Both
 cases have the stated dependence on $\Gamma$ and $x_0$.
 \end{proof}
 
@@ -148,13 +148,13 @@ $c_0=c_0(\beta)\in(0,1]$.
 $\alpha^3\ge\kappa\hbar$, then $\bar\alpha:=c_0\alpha\le c_0/2$, $\bar\alpha^3\ge c_0^3\kappa\hbar$ and
 $\norm{\ue^{\bar\alpha\Lambda}X_0^\beta a}\le C'\swNorm a$. Apply Theorem~\ref{thm:dd-appx} with $c_0/2$, $c_0^3\kappa$ and $\bar\alpha$
 in place of $A$, $\kappa$ and $\alpha$, and let $C_{\rm pw},\delta_{\rm pw}$ be its constants. Lemma~\ref{lem:radius}, with $\bar\alpha$ and
-$\alpha$ in the roles of $\alpha_0$ and $A$ (so $A/\alpha_0=1/c_0$), shows that the bound holds for $\alpha\le\tfrac12$ with the constants
+$\alpha$ in the roles of $\alpha_0$ and $\alpha_1$ (so $\alpha_1/\alpha_0=1/c_0$), shows that the bound holds for $\alpha\le\tfrac12$ with the constants
 $\delta_{\rm s}:=c_0^{1/2}\delta_{\rm pw}$ and $C_{\rm s}:=C_{\rm pw}\,c_0^{-2}\max(1,C')$.
 
 \emph{Radii $\tfrac12<\alpha\le A$.} The reversed-weight norm increases with the radius: $\ue^{\Lambda/2}=\ue^{-(\alpha-1/2)\Lambda}\ue^{\alpha\Lambda}$,
 and $\ue^{-\tau\Lambda}$ is a contraction for $\tau\ge0$, so the norm of $a$ at the radius $\tfrac12$ is at most $\swNorm a$. Apply the first
 case at the radius $\tfrac12$ with $\tfrac18$ in place of $\kappa$ (then $(\tfrac12)^3\ge\tfrac18\hbar$ for $\hbar\le1$), and let $C_{1/2},\delta_{1/2}$ be its
-constants. Lemma~\ref{lem:radius} with $\alpha_0=\tfrac12$ shows that the bound holds for
+constants. Lemma~\ref{lem:radius} with $\alpha_0=\tfrac12$ and $\alpha_1=A$ shows that the bound holds for
 $\tfrac12<\alpha\le A$ with $\delta_{1/2}(2A)^{-1/2}$ and $(2A)^2C_{1/2}$. Take $\delta:=\min(\delta_{\rm s},\delta_{1/2}(2A)^{-1/2})$ and
 $C:=\max(C_{\rm s},(2A)^2C_{1/2})$.
 

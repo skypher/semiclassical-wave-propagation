@@ -26,6 +26,7 @@ $B_\beta$; $\rho_*=\tfrac14\log(3/2)$ & Lemma~\ref{lem:fdb} & $\beta$; absolute\
 $C_2=\max(\ue C_1,1/\rho_*)$ & Lemma~\ref{lem:sc} & absolute\\
 $C_*=\tfrac{32}5$ & Lemma~\ref{lem:expw} & absolute\\
 $c_M=1/(4\max(C_2,1))$ & Lemma~\ref{lem:mw} & absolute\\
+$c_0$ & Lemma~\ref{lem:m2w} & $\beta$\\
 $A_{\mathrm e}$, $A_{\mathrm o}$ & Lemma~\ref{lem:clip} & absolute\\
 $c_A=(1+32A_{\mathrm e}A_{\mathrm o})^{-1}$ & Proposition~\ref{prop:a0} & absolute\\
 $\mathcal K_\lambda=8\lambda^2+7\lambda$ & Section~\ref{app:ws} & $\lambda$\\
@@ -38,6 +39,7 @@ $C_\Lambda$; $C_{\Lambda_m}$ & Corollary~\ref{os:cwp} & $c$; $m$, $c$\\
 $C_{\mathrm d}=C_\Lambda\,\ue^{C_{\Lambda_m}}$ & Proposition~\ref{os:data} & $m$, $c$\\
 $c_H=1+4/\ue$; $C_5=2\ue\,c_H$ & Lemma~\ref{os:prof}(iii); Lemma~\ref{os:words} & absolute\\
 $C_{\mathrm{tr}}$ & Lemma~\ref{os:transfer} & $c$, $C_{\mathrm{sh}}$\\
+$C_{\mathrm{gr}}=2/\log2$ & Proposition~\ref{pc:core} & absolute\\
 $C_6\ge C_3$ & Proposition~\ref{pc:core}, Step~1(a) & absolute\\
 $B_0$; $B_m$ & Lemma~\ref{os:prof}(iv), (v) & absolute; $m$\\
 \hline
@@ -147,32 +149,36 @@ $d^2=\operatorname{arcosh}(X_0)^2$ is a smooth function of $X_0\ge1$. \qedhere
 The approximations $u^{(K)}$ are always built from this representative.
 
 For an index set $S=\{i_1<\dots<i_k\}$ and letters $Z_i\in\{X,Y\}$ we write $Z_S:=Z_{i_1}\cdots Z_{i_k}$ ($Z_\emptyset:=1$),
-a word of length $|S|$; every word has this form. Weights enter through the following three-dimensional space of functions. Let $\mathfrak A:=\operatorname{span}\{y,\;x,\;(x^2+1)/y\}$.
-\begin{itemize}
-\item $\mathfrak A$ contains $X_0=\tfrac12\bigl((x^2+1)/y+y\bigr)$.
-\item $\mathfrak A$ is invariant under $X$ and $Y$: $Xy=0$, $Xx=y$, $X((x^2+1)/y)=2x$; $Yy=y$, $Yx=0$, $Y((x^2+1)/y)=-(x^2+1)/y$.
-\item In this basis the $\ell^1$-operator norms are $\norm{X}\le2$ and $\norm{Y}\le1$.
-\item Since $X_0\ge y/2$, $X_0\ge|x|$ (because $x^2+y^2+1-2y|x|=(|x|-y)^2+1$), and $X_0\ge(x^2+1)/(2y)$, every $v=c_1y+c_2x+c_3(x^2+1)/y$ satisfies $|v|\le2\norm{c}_1X_0$.
-\item Hence $|Z_BX_0|\le2\cdot2^{|B|}X_0$ for every word $Z_B$.
-\end{itemize}
+a word of length $|S|$; every word has this form. Weights enter through the words of $X_0$ and of its powers.
 
-\begin{lemma}[Faà di Bruno bound]\label{lem:fdb}
-For $\beta\ge0$ and a word $Z_S$ of length $j$:
+\begin{lemma}[words of $X_0$ and of $X_0^{-\beta}$]\label{lem:fdb}
+Let $x_0=i$, and let $Z_S$ be a word of length $j$.
+\begin{itemize}
+\item[\textup{(a)}] $|Z_SX_0|\le2\cdot2^j\,X_0$.
+\item[\textup{(b)}] For $\beta\ge0$,
 \[
 X_0^\beta\,|Z_S(X_0^{-\beta})|\le B_\beta\,j!\,\rho_*^{-j},\qquad \rho_*:=\tfrac14\log(3/2)
 \]
 (any fixed value below $\tfrac12\log(3/2)$ works; $\rho_*$ does not depend on $\beta$), where $B_\beta$ depends only on $\beta$.
+\end{itemize}
 \end{lemma}
 
 \begin{proof}
-For a smooth function $\Psi$ on $(0,\infty)$, expand by induction on $j$: $Z_S\Psi(X_0)=\sum_{\mathcal P}\Psi^{(|\mathcal P|)}(X_0)\prod_{B\in\mathcal P}Z_BX_0$, the sum over the set partitions $\mathcal P$ of $S$, where each block $B$ inherits the order of $S$.
-With $\Psi(u)=u^{-\beta}$, $|\Psi^{(k)}(u)|=(\beta)_ku^{-\beta-k}$, where $(\beta)_k:=\beta(\beta+1)\cdots(\beta+k-1)$. So the bound is $2^j\sum_k\stirling jk(\beta)_k2^k$, with the Stirling numbers of the second kind $\stirling jk$.
+(a) The three-dimensional space $\mathfrak A:=\operatorname{span}\{y,\;x,\;(x^2+1)/y\}$ contains $X_0=\tfrac12\bigl((x^2+1)/y+y\bigr)$,
+whose coefficient vector has $\ell^1$ norm $1$, and it is invariant under $X$ and $Y$: $Xy=0$, $Xx=y$, $X((x^2+1)/y)=2x$; $Yy=y$,
+$Yx=0$, $Y((x^2+1)/y)=-(x^2+1)/y$. In this basis the $\ell^1$-operator norms are $\norm{X}\le2$ and $\norm{Y}\le1$, so the coefficient
+vector $c$ of $Z_SX_0$ has $\norm c_1\le2^j$. Since $X_0\ge y/2$, $X_0\ge|x|$ (because $x^2+y^2+1-2y|x|=(|x|-y)^2+1$), and
+$X_0\ge(x^2+1)/(2y)$, every $v=c_1y+c_2x+c_3(x^2+1)/y$ satisfies $|v|\le2\norm{c}_1X_0$.
+
+(b) For a smooth function $\Psi$ on $(0,\infty)$, expand by induction on $j$: $Z_S\Psi(X_0)=\sum_{\mathcal P}\Psi^{(|\mathcal P|)}(X_0)\prod_{B\in\mathcal P}Z_BX_0$, the sum over the set partitions $\mathcal P$ of $S$, where each block $B$ inherits the order of $S$.
+With $\Psi(u)=u^{-\beta}$, $|\Psi^{(k)}(u)|=(\beta)_ku^{-\beta-k}$, where $(\beta)_k:=\beta(\beta+1)\cdots(\beta+k-1)$, and
+$|Z_BX_0|\le2\cdot2^{|B|}X_0$ by (a). So the bound is $2^j\sum_k\stirling jk(\beta)_k2^k$, with the Stirling numbers of the second kind $\stirling jk$.
 The exponential generating function of $\sum_k\stirling jk(\beta)_k2^k$ is $(3-2\ue^z)^{-\beta}$, which is holomorphic on $|z|<\log(3/2)$.
 Cauchy's estimate on $|z|=\rho<\log(3/2)$ gives the bound $C_{\beta,\rho}\,j!\,\rho^{-j}$. Combined with the factor $2^j$, this gives $\rho_*=\rho/2$. \qedhere
 \end{proof}
 
 \begin{lemma}[weighted Cauchy estimate for words]\label{lem:sc}
-For $\beta\ge0$, a word $Z_1\cdots Z_k$ and $0<\alpha\le1$, with $F:=X_0^\beta a$ and $\norm{\ue^{\alpha\Lambda}F}<\infty$:
+Let $x_0=i$. For $\beta\ge0$, a word $Z_1\cdots Z_k$ and $0<\alpha\le1$, with $F:=X_0^\beta a$ and $\norm{\ue^{\alpha\Lambda}F}<\infty$:
 \[
 \norm{X_0^\beta Z_1\cdots Z_k a}\le B_\beta(k+1)\,k!\,(C_2/\alpha)^k\,\norm{\ue^{\alpha\Lambda}X_0^\beta a},
 \qquad C_2:=\max(\ue C_1,1/\rho_*).
@@ -210,7 +216,7 @@ of $\Lambda$ gives $\norm{\cosh(r\Lambda)u}\le\tfrac{16}5B\mathcal H$, and $\ue^
 \end{proof}
 
 \begin{lemma}[removing a spatial weight with loss of analytic radius]\label{lem:mw}
-Let $\beta\ge0$, let $B_\beta$, $C_2$ be the constants of Lemma~\ref{lem:sc}, and put $c_M:=1/(4\max(C_2,1))$. For
+Let $x_0=i$ and $\beta\ge0$, let $B_\beta$, $C_2$ be the constants of Lemma~\ref{lem:sc}, and put $c_M:=1/(4\max(C_2,1))$. For
 $0<\alpha\le1$ and every $a$ with $\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$,
 \[
 \norm{\ue^{c_M\alpha\Lambda}a}\le C_*B_\beta\,\norm{\ue^{\alpha\Lambda}X_0^\beta a},
@@ -402,7 +408,7 @@ $W_{\lambda,n}\uparrow X_0^\lambda$ as $n\to\infty$,
 and $W_{\lambda,n}\in\mathcal W(\lambda,\mathcal K_\lambda)$ with a constant $\mathcal K_\lambda$ depending only on $\lambda$ ($\mathcal K_\lambda=8\lambda^2+7\lambda$ works).
 Indeed, $(XX_0^{-\lambda})^2+(YX_0^{-\lambda})^2\le\lambda^2X_0^{-2\lambda}$ and, since $X^2X_0=y\le2X_0$ and $Y^2X_0=X_0$,
 $|Z^2X_0^{-\lambda}|\le(\lambda^2+3\lambda)X_0^{-\lambda}$; now differentiate $W_{\lambda,n}=(X_0^{-\lambda}+1/n)^{-1}$ and $W_{\lambda,n}^2$,
-and use $X_0^{-\lambda}\le X_0^{-\lambda}+1/n$. All words applied to $X_0^{-\lambda}$ are bounded (Lemma~\ref{lem:fdb}), hence so are all words applied to $W_{\lambda,n}$.
+and use $X_0^{-\lambda}\le X_0^{-\lambda}+1/n$. All words applied to $X_0^{-\lambda}$ are bounded (Lemma~\ref{lem:fdb}(b)), hence so are all words applied to $W_{\lambda,n}$.
 A bound for all $W_{\lambda,n}$ with a constant independent of $n$ passes to the weight $X_0^\lambda$ by monotone convergence. The
 bounds below are used in this way.
 
@@ -589,7 +595,7 @@ $j\le2N$; and $4^L\le4^{2N+q}$. \qedhere
 \end{proof}
 
 \begin{lemma}[derivative bounds for the remainder amplitude]\label{lem:wb}
-Let $\beta\ge0$, let $a_{\mathbf s}$ be as in Proposition~\ref{prop:dd-id}(ii), and assume $0<\hbar\le1$ and $0<\alpha\le1$. Let $Z_S$ be
+Let $x_0=i$ and $\beta\ge0$, let $a_{\mathbf s}$ be as in Proposition~\ref{prop:dd-id}(ii), and assume $0<\hbar\le1$ and $0<\alpha\le1$. Let $Z_S$ be
 a word in $X,Y$ of length at most $n$ (the empty word is the identity). There is an absolute constant $C_3\ge1$ such that
 uniformly in $\mathbf s\in\Sigma_{K+1}(t)$:
 \begin{itemize}
@@ -655,13 +661,13 @@ Adding the two terms gives the claim with $C_4=20+60(1+4C_1)^2$. \qedhere
 \end{proof}
 
 \begin{lemma}[collecting the remainder bound]\label{lem:collect}
-Let $\kappa>0$, $\lambda\ge0$, $c>0$, $G\ge1$ and $B\ge0$. There is $C>0$, depending only on $\kappa$, $\lambda$, $c$, $G$ and $B$, with the
-following property. Let $0<\hbar\le1$ and $0<\sigma\le1$ with $\sigma^3\ge\kappa\hbar$, put $\varepsilon:=(\sigma\hbar)^{1/2}/2$ and
-$\xi:=(\sigma/\hbar)^{1/2}$, let $0<\delta\le1$ with $2\lambda\delta\le c$, $0\le t\le\delta\xi$, $K,N\in\mathbb N_0$ and $\mathcal H\ge0$, and put
+Let $\kappa>0$, $\lambda\ge0$, $c_\xi>0$, $G\ge1$ and $B\ge0$. There is $C>0$, depending only on $\kappa$, $\lambda$, $c_\xi$, $G$ and
+$B$, with the following property. Let $0<\hbar\le1$ and $0<\sigma\le1$ with $\sigma^3\ge\kappa\hbar$, put $\varepsilon:=(\sigma\hbar)^{1/2}/2$ and
+$\xi:=(\sigma/\hbar)^{1/2}$, let $0<\delta\le1$ with $2\lambda\delta\le c_\xi$, $0\le t\le\delta\xi$, $K,N\in\mathbb N_0$ and $\mathcal H\ge0$, and put
 \[
   F_n:=G^{N+K+n+1}(2N)!\,(n+2K+2)!\,\sigma^{-(n+2K+2)}(\sigma\hbar)^{-2N}\mathcal H\qquad(n\ge0).
 \]
-If a number $\mathcal I$ satisfies $\mathcal I\le B\bigl(F_0+\hbar t\,\ue^{\lambda t}\varepsilon^{-3}\sigma^{-4}\ue^{-c\xi}F_2\bigr)$, then
+If a number $\mathcal I$ satisfies $\mathcal I\le B\bigl(F_0+\hbar t\,\ue^{\lambda t}\varepsilon^{-3}\sigma^{-4}\ue^{-c_\xi\xi}F_2\bigr)$, then
 \[
   \Bigl(\frac\hbar2\Bigr)^{K+1}\frac{t^{K+1}}{(K+1)!}\,\mathcal I\le C^{N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Bigl(\frac{\hbar t}{\sigma^2}\Bigr)^{K+1}\mathcal H.
 \]
@@ -670,17 +676,17 @@ If a number $\mathcal I$ satisfies $\mathcal I\le B\bigl(F_0+\hbar t\,\ue^{\lamb
 In the applications $\mathcal I$ bounds $\norm{\mathcal V_{s_1}a_{\mathbf s}}$ on $\Sigma_{K+1}(t)$, whose volume is $t^{K+1}/(K+1)!$, so that by
 Proposition~\ref{prop:dd-id}(ii) the left side bounds the error of the approximation of order $K$. The term $F_0$ comes from the
 mollified flow, and the second term from the mollifier defect: the factor $\ue^{\lambda t}$ is the growth of the periodization bound,
-and $\ue^{-c\xi}$ the analytic smallness of the defect.
+and $\ue^{-c_\xi\xi}$ the analytic smallness of the defect.
 
 \begin{proof}
 \emph{Absorption.} Since $\hbar\xi^2=\sigma$, we have $\varepsilon^{-1}=2\xi/\sigma$, $\hbar t\le\hbar\xi=\sigma/\xi$ (as $\delta\le1$) and
-$\lambda t\le\lambda\delta\xi\le c\xi/2$. Hence
+$\lambda t\le\lambda\delta\xi\le c_\xi\xi/2$. Hence
 \[
-  R:=\hbar t\,\ue^{\lambda t}\varepsilon^{-3}\sigma^{-4}\ue^{-c\xi}\le\frac\sigma\xi\cdot\frac{8\xi^3}{\sigma^3}\cdot\sigma^{-4}\ue^{-c\xi/2}
-  =8\xi^2\sigma^{-6}\ue^{-c\xi/2}.
+  R:=\hbar t\,\ue^{\lambda t}\varepsilon^{-3}\sigma^{-4}\ue^{-c_\xi\xi}\le\frac\sigma\xi\cdot\frac{8\xi^3}{\sigma^3}\cdot\sigma^{-4}\ue^{-c_\xi\xi/2}
+  =8\xi^2\sigma^{-6}\ue^{-c_\xi\xi/2}.
 \]
-Multiplying $\kappa\hbar\le\sigma^3$ by $\xi^2$ gives $\kappa\le\sigma^2\xi^2$, so $\sigma^{-8}\le\xi^8\kappa^{-4}$; and $(c\xi/2)^{10}/10!\le\ue^{c\xi/2}$
-gives $\xi^{10}\ue^{-c\xi/2}\le10!\,(2/c)^{10}$. So $R\le C_R\sigma^2$ with $C_R:=8\kappa^{-4}\,10!\,(2/c)^{10}$.
+Multiplying $\kappa\hbar\le\sigma^3$ by $\xi^2$ gives $\kappa\le\sigma^2\xi^2$, so $\sigma^{-8}\le\xi^8\kappa^{-4}$; and $(c_\xi\xi/2)^{10}/10!\le\ue^{c_\xi\xi/2}$
+gives $\xi^{10}\ue^{-c_\xi\xi/2}\le10!\,(2/c_\xi)^{10}$. So $R\le C_R\sigma^2$ with $C_R:=8\kappa^{-4}\,10!\,(2/c_\xi)^{10}$.
 
 \emph{Collecting.} Since $G\ge1$ and $(2K+2)!\le(2K+4)!$, $F_0\le\sigma^2F_2$, so $\mathcal I\le B(1+C_R)\sigma^2F_2$. We use
 \begin{equation}\label{eq:factorial-assembly}
@@ -696,26 +702,26 @@ and $C:=64\max\bigl(1,4B(1+C_R)\bigr)G^3$ works, since $N+K+3\le3(N+K+1)$ and $4
 \end{proof}
 
 The proofs of Theorems~\ref{thm:dd-appx}, \ref{thm:dd14} and~\ref{pc:main} prove their estimate at one radius $\alpha_0$ and then pass
-to the radii $\alpha_0\le\alpha\le A$ of the statement. The arithmetic of this step is the following lemma.
+to larger radii $\alpha_0\le\alpha\le\alpha_1$. The arithmetic of this step is the following lemma.
 
 \begin{lemma}[change of radius]\label{lem:radius}
-Let $C\ge0$, $0<\alpha_0\le\alpha\le A$, $\hbar>0$, $t\ge0$, $\delta\ge0$ and $K,N\in\mathbb N_0$.
+Let $C\ge0$, $0<\alpha_0\le\alpha\le\alpha_1$, $\hbar>0$, $t\ge0$, $\delta\ge0$ and $K,N\in\mathbb N_0$.
 \begin{itemize}
-\item[\textup{(i)}] The bound at the radius $\alpha_0$ is at most the bound at $\alpha$ with the constant $C(A/\alpha_0)^2$:
+\item[\textup{(i)}] The bound at the radius $\alpha_0$ is at most the bound at $\alpha$ with the constant $C(\alpha_1/\alpha_0)^2$:
 \begin{multline*}
 C^{N+K+1}N^{2N}K!\,(\alpha_0\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha_0^2}\Bigr)^{K+1}\\
-\le\bigl(C(A/\alpha_0)^2\bigr)^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}.
+\le\bigl(C(\alpha_1/\alpha_0)^2\bigr)^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}.
 \end{multline*}
-\item[\textup{(ii)}] If $t\le\delta(\alpha_0/A)^{1/2}(\alpha/\hbar)^{1/2}$, then $t\le\delta(\alpha_0/\hbar)^{1/2}$.
+\item[\textup{(ii)}] If $t\le\delta(\alpha_0/\alpha_1)^{1/2}(\alpha/\hbar)^{1/2}$, then $t\le\delta(\alpha_0/\hbar)^{1/2}$.
 \end{itemize}
 \end{lemma}
 
 So an estimate of the form of Theorem~\ref{pc:main} with constants $C,\delta$ at the radius $\alpha_0$, for a norm at $\alpha_0$ that is
-at most a constant $B\ge1$ times the norm at $\alpha$, gives the estimate at every radius $\alpha\in[\alpha_0,A]$ with the constants
-$BC(A/\alpha_0)^2$ and $\delta(\alpha_0/A)^{1/2}$.
+at most a constant $B\ge1$ times the norm at $\alpha$, gives the estimate at every radius $\alpha\in[\alpha_0,\alpha_1]$ with the constants
+$BC(\alpha_1/\alpha_0)^2$ and $\delta(\alpha_0/\alpha_1)^{1/2}$.
 
 \begin{proof}
 (i) Since $(\alpha_0\hbar)^{-1}=(\alpha\hbar)^{-1}(\alpha/\alpha_0)$ and $\hbar t/\alpha_0^2=(\hbar t/\alpha^2)(\alpha/\alpha_0)^2$, the left side
-is the right side with $(\alpha/\alpha_0)^{2N+2K+2}$ in place of $(A/\alpha_0)^{2N+2K+2}$, and $\alpha\le A$.
-(ii) $(\alpha_0/A)(\alpha/\hbar)=(\alpha/A)(\alpha_0/\hbar)\le\alpha_0/\hbar$.
+is the right side with $(\alpha/\alpha_0)^{2N+2K+2}$ in place of $(\alpha_1/\alpha_0)^{2N+2K+2}$, and $\alpha\le\alpha_1$.
+(ii) $(\alpha_0/\alpha_1)(\alpha/\hbar)=(\alpha/\alpha_1)(\alpha_0/\hbar)\le\alpha_0/\hbar$.
 \end{proof}

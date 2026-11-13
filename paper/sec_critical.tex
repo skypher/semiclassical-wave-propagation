@@ -110,7 +110,7 @@ For the derivative bounds write $c_H:=1+4/\ue$, the constant in the profile boun
 
 \begin{lemma}[words of the shifted Poisson semigroup at a bounded weight]\label{os:words}
 Let $m\ge\tfrac12$ and $\rho\ge0$ with $2(\rho+\tfrac12)^2<m^2$, and let $W$ be a bounded weight (Section~\ref{app:ws}) with
-$(X\log W)^2+(Y\log W)^2\le\rho^2$. Put $\mu:=m^2-\tfrac14$, $C_5:=2\ue\,c_H$ and $Q:=4+2\rho$.
+$(X\log W)^2+(Y\log W)^2\le\rho^2$. Put $\mu:=m^2-\tfrac14$ and $C_5:=2\ue\,c_H$.
 \begin{itemize}
 \item[(a)] For $\tau,s>0$ and $u\in L^2$:
 \[
@@ -120,12 +120,12 @@ $(X\log W)^2+(Y\log W)^2\le\rho^2$. Put $\mu:=m^2-\tfrac14$, $C_5:=2\ue\,c_H$ an
 Hence for $j\ge1$ and $\sigma>0$, $\norm{W(\mu-\Delta)^j\ue^{-\sigma\Lambda_m}u}\le(4jc_H/\sigma)^{2j}\norm{Wu}$.
 \item[(b)] For $0<\sigma\le1$, every word $Z_S$ of length $k$ in $X,Y$, and $h\in L^2$,
 \[
-\norm{WZ_S\,\ue^{-\sigma\Lambda_m}h}\le\sqrt2\,Q^k\,k!\,(C_5/\sigma)^k\,\norm{Wh}.
+\norm{WZ_S\,\ue^{-\sigma\Lambda_m}h}\le\sqrt2\,(4+2\rho)^k\,k!\,(C_5/\sigma)^k\,\norm{Wh}.
 \]
 \end{itemize}
-In particular, let $\lambda\ge0$ with $2(\lambda+\tfrac12)^2<m^2$ and $\osX^\lambda h\in L^2$. Then, with $\rho=\lambda$ in the definition of $Q$,
+In particular, let $\lambda\ge0$ with $2(\lambda+\tfrac12)^2<m^2$ and $\osX^\lambda h\in L^2$. Then
 \[
-\norm{\osX^\lambda Z_S\,\ue^{-\sigma\Lambda_m}h}\le\sqrt2\,Q^k\,k!\,(C_5/\sigma)^k\,\norm{\osX^\lambda h}.
+\norm{\osX^\lambda Z_S\,\ue^{-\sigma\Lambda_m}h}\le\sqrt2\,(4+2\lambda)^k\,k!\,(C_5/\sigma)^k\,\norm{\osX^\lambda h}.
 \]
 Moreover $\norm{\ue^{\sigma\osLam}\ue^{-\sigma\Lambda_m}}\le1$.
 \end{lemma}
@@ -153,13 +153,13 @@ and therefore
 \[
 \mathsf A_{k+1,j}\le\mathsf B_{k+1,j}\le(2k+2\rho)\mathsf A_{k,j}+(\mathsf A_{k,j}\mathsf A_{k,j+1})^{1/2}.
 \]
-We claim $\mathsf A_{k,j}\le\sqrt2\,Q^k(C_5/\sigma)^{k+2j}(k+2j)!\,\norm{Wh}$ for all $k,j\ge0$. For $k=0$ this is (a), because
+We claim $\mathsf A_{k,j}\le\sqrt2\,(4+2\rho)^k(C_5/\sigma)^{k+2j}(k+2j)!\,\norm{Wh}$ for all $k,j\ge0$. For $k=0$ this is (a), because
 $(4jc_H/\sigma)^{2j}\le(2\ue c_H/\sigma)^{2j}(2j)!$. If it holds for $k$ and all $j$, then with $n=k+2j$, using $(n!\,(n+2)!)^{1/2}\le\sqrt2\,(n+1)!$,
 $(2k+2\rho)\,n!\le(2+2\rho)(n+1)!$ and $(C_5/\sigma)^n\le(C_5/\sigma)^{n+1}/C_5$,
 \[
-\mathsf A_{k+1,j}\le\sqrt2\,Q^k(C_5/\sigma)^{n+1}(n+1)!\,\bigl((2+2\rho)/C_5+\sqrt2\bigr)\norm{Wh},
+\mathsf A_{k+1,j}\le\sqrt2\,(4+2\rho)^k(C_5/\sigma)^{n+1}(n+1)!\,\bigl((2+2\rho)/C_5+\sqrt2\bigr)\norm{Wh},
 \]
-which is the claim for $k+1$, because $C_5\ge1$ and so $(2+2\rho)/C_5+\sqrt2\le Q$. The case $j=0$ is (b). The statement for $\osX^\lambda$ follows with $W=W_{\lambda,n}$ and $n\to\infty$, and the last
+which is the claim for $k+1$, because $C_5\ge1$ and so $(2+2\rho)/C_5+\sqrt2\le4+2\rho$. The case $j=0$ is (b). The statement for $\osX^\lambda$ follows with $W=W_{\lambda,n}$ and $n\to\infty$, and the last
 statement from $\Lambda_m\ge\osLam$.
 \end{proof}
 
@@ -169,7 +169,7 @@ Periodization at the same weight then turns these estimates into bounds on the q
 
 \begin{lemma}[transfer over shells]\label{os:transfer}
 Let $0\le c\le1$ and $C_{\mathrm{sh}}>0$, and let $\varpi$ be a measurable weight with $\ue^{n/2}(1+n)^c\le\varpi\le C_{\mathrm{sh}}\,\ue^{n/2}(1+n)^c$ on $A_n$ for
-every $n\ge0$; by \eqref{os:shell}, $\varpi=\osomc$ with $C_{\mathrm{sh}}=3\ue^{1/2}$ is an example. Let $T:L^2(\Hb)\to L^2(\Hb)$ be additive, $T(u+v)=Tu+Tv$, and let
+every $n\ge0$; by \eqref{os:shell}, $\varpi=\osomc$ with $C_{\mathrm{sh}}=3\ue^{1/2}$ is an example. Let $T:L^2(\Hb)\to L^2(\Hb)$ be additive, $T(u+v)=Tu+Tv$ (linearity is not needed), and let
 $0\le\mathcal M_0\le \mathcal M_1$ be such that
 \begin{itemize}
 \item[(a)] $\norm{Tu}\le \mathcal M_0\norm u$ for all $u\in L^2$, and
