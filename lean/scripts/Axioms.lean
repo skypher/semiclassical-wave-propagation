@@ -2883,3 +2883,8 @@ import Qschubert
 #print axioms Qschubert.cor16Rmain_allmult
 #print axioms Qschubert.cor16Rmain_allbg
 #print axioms Qschubert.evTransfer_main_all
+#print axioms Qschubert.critSup_eq
+#print axioms Qschubert.pcmain_half_unif
+#print axioms Qschubert.pcmain_big_unif
+#print axioms Qschubert.pcMainCD_unif
+#print axioms Qschubert.pcmain_unif
