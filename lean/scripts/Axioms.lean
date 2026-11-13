@@ -2876,3 +2876,10 @@ import Qschubert
 #print axioms Qschubert.cor15Rmain_exp
 #print axioms Qschubert.cor16Rmain_expbg
 #print axioms Qschubert.cor16Rmain_expmult
+#print axioms Qschubert.ddBound_radius
+#print axioms Qschubert.ptBound_radius
+#print axioms Qschubert.thm14Rmain_all
+#print axioms Qschubert.cor15Rmain_all
+#print axioms Qschubert.cor16Rmain_allmult
+#print axioms Qschubert.cor16Rmain_allbg
+#print axioms Qschubert.evTransfer_main_all
