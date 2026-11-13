@@ -18,11 +18,11 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Theorem 1.1 (`pc:main`) | L | (i) `pcmain_all`, small-radius stage `pcmain_half`; (ii) `pcmain_unif` |
+| Theorem 1.1 (`pc:main`) | L | `pcmain_unif`; for one group `pcmain_all`, small-radius stage `pcmain_half` |
 | Theorem 1.2 (`thm:dd14`) | L | `thm14Rmain_all` (every bounded range of radii, from `thm14Rmain_exp` and `swNormD_mono`) |
-| Corollary 1.3 (`pc:thm13`) | L | `pcthm13_all` |
-| Corollary 1.4 (`pc:cor15`) | L | `pccor15_tied`; constants with `C\ge1`: `pcThmCD_exists` |
-| Corollary 1.5 (`pc:cor16`) | L | `pccor16_allN`; positive injectivity radius: `pccor16bg_allN` |
+| Corollary 1.3 (`pc:thm13`) | L | original norm: `pcthm13_all`; reversed-weight norm: `thm13Rmain_all` |
+| Corollary 1.4 (`pc:cor15`) | L | original norm: `pccor15_tied`; reversed-weight norm: `cor15Rmain_tied` (exponent `β+1/2`); constants with `C\ge1`: `pcThmCD_exists`, `rThmCD_exists` |
+| Corollary 1.5 (`pc:cor16`) | L | original norm: `pccor16_allN`, positive injectivity radius `pccor16bg_allN`; reversed-weight norm: `cor16Rmain_allmultN`, positive injectivity radius `cor16Rmain_allbgN` |
 | Proposition 1.6 (`prop:g5`) | L | `propG5`; the negation of Schubert's bound is `printedThm13_false` |
 | Theorem 1.7 (`cl:necessary`) | P | deduced from Theorem 9.1 (`cl:main`); not formalized |
 | Theorem 1.8 (`ev:mod`) | L′ | parts (i), (ii): `evmod`, with the statement `Stmt_evmod`; part (iii) is a cited theorem and is not formalized |
@@ -82,7 +82,7 @@ All Lean names are in the namespace `Qschubert`.
 | Proposition 5.6 (`os:data`) | L | `data_factor`, `omP_le_exp_angle` |
 | Lemma 5.7 (`os:words`) | L | `poissonM_w`, `lamM_w`, `lamM_pow_w`, `words_rec`, `words_w` |
 | Lemma 5.8 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
-| Proposition 5.9 (`os:p1`) | L | `poincare_omP`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
+| Proposition 5.9 (`os:p1`) | L | `poincare_omP`, `perio_weighted_gen` (the field `perio_bd` of `surfW_printed`), `critSup_eq`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
 | Lemma 5.10 (`os:indep`) | L | `surfV_indep` |
 | Proposition 5.11 (`pc:core`) | L | `dd_core_pc` (the bound for the Dyson remainder of Proposition 2.11 (`prop:dd-id`)(ii)), with `SurfW.surf_D4` (the error equals that remainder) |
 
@@ -93,12 +93,10 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 6.1 (`pc:g43`) | L | `sobolev_M_mult` |
 | Remark 6.2 (`pc:remcusp`) | P | two-sided bound for `m(z)` in a cusp; self-checked, not formalized |
 | Remark 6.3 (`rem:g4`) | P |  |
-| Corollary 6.4 (`thm:main`) | L | `thm13R_fixed` (from `thm14Rmain_exp` and `swNormD_mono`) |
-| Corollary 6.5 (`cor:dd15`) | L | `cor15Rmain_tied` (reversed-weight norm, exponent `β+1/2`), `cor15R_tied` (power-weight norm); constants with `C\ge1`: `rThmCD_exists`, `xThmCD_exists` |
-| Corollary 6.6 (`cor:dd16`) | L | `cor16Rmain_allmultN`, `cor16R_multN`; positive injectivity radius: `cor16Rmain_allbgN`, `cor16R_repN` |
-| Remark 6.7 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
-| Lemma 6.8 (`lem:ex`) | P | not used by the theorems |
-| Corollary 6.9 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.8 (`lem:ex`) and Theorem 1.2 (`thm:dd14`); self-checked, not separately formalized |
+| Remark 6.4 (`thm:main`) | L | original norm: `pcthm13_fixed` (from `pcthm13_all`); reversed-weight norm: `thm13R_fixed` (from `thm14Rmain_exp` and `swNormD_mono`) |
+| Remark 6.5 (`rem:pw-cor`) | L | `cor15R_tied`, `cor16R_multN`; positive injectivity radius: `cor16R_repN`; constants with `C\ge1`: `xThmCD_exists` |
+| Lemma 6.6 (`lem:ex`) | P | not used by the theorems |
+| Corollary 6.7 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.6 (`lem:ex`) and Theorem 1.2 (`thm:dd14`); self-checked, not separately formalized |
 
 ## Section 7 (`sec:expect`): expectation values and escape of mass
 
@@ -129,6 +127,6 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Lemma A.3 (`lem:gutzmer`) | P | used only for Lemma 6.8 (`lem:ex`) |
+| Lemma A.3 (`lem:gutzmer`) | P | used only for Lemma 6.6 (`lem:ex`) |
 | Lemma A.4 (`os:poisson`) | P | used only in Proposition 5.2 (`pc:classes`) and Section 9 (`subsec:cl`) |
 | Lemma A.8 (`os:hk`) | P | used only in Section 9 (`subsec:cl`) |

@@ -4,11 +4,11 @@
 % Format of a row:  <statement, with \ref{label}> & <L | L$'$ | P> & <\lean{name}, ...; remark>\\
 
 \multicolumn{3}{@{}l}{\emph{Main approximation results}}\\
-Theorem~\ref{pc:main} & L & (i) \lean{pcmain_all}, small-radius stage \lean{pcmain_half}; (ii) \lean{pcmain_unif}\\
+Theorem~\ref{pc:main} & L & \lean{pcmain_unif}; for one group \lean{pcmain_all}, small-radius stage \lean{pcmain_half}\\
 Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_all} (every bounded range of radii, from \lean{thm14Rmain_exp} and \lean{swNormD_mono})\\
-Corollary~\ref{pc:thm13} & L & \lean{pcthm13_all}\\
-Corollary~\ref{pc:cor15} & L & \lean{pccor15_tied}; constants with $C\ge1$: \lean{pcThmCD_exists}\\
-Corollary~\ref{pc:cor16} & L & \lean{pccor16_allN}; positive injectivity radius: \lean{pccor16bg_allN}\\
+Corollary~\ref{pc:thm13} & L & original norm: \lean{pcthm13_all}; reversed-weight norm: \lean{thm13Rmain_all}\\
+Corollary~\ref{pc:cor15} & L & original norm: \lean{pccor15_tied}; reversed-weight norm: \lean{cor15Rmain_tied} (exponent $\beta+\tfrac12$); constants with $C\ge1$: \lean{pcThmCD_exists}, \lean{rThmCD_exists}\\
+Corollary~\ref{pc:cor16} & L & original norm: \lean{pccor16_allN}, positive injectivity radius \lean{pccor16bg_allN}; reversed-weight norm: \lean{cor16Rmain_allmultN}, positive injectivity radius \lean{cor16Rmain_allbgN}\\
 Proposition~\ref{prop:g5} & L & \lean{propG5}; the negation of Schubert's bound is \lean{printedThm13_false}\\
 Theorem~\ref{cl:necessary} & P & deduced from Theorem~\ref{cl:main}; not formalized\\
 Theorem~\ref{ev:mod} & L$'$ & parts (i), (ii): \lean{evmod}, with the statement \lean{Stmt_evmod}; part (iii) is a cited theorem and is not formalized\\
@@ -52,17 +52,15 @@ Corollary~\ref{os:cwp} & L & \lean{poisson_cw}, \lean{B_cw}\\
 Proposition~\ref{os:data} & L & \lean{data_factor}, \lean{omP_le_exp_angle}\\
 Lemma~\ref{os:words} & L & \lean{poissonM_w}, \lean{lamM_w}, \lean{lamM_pow_w}, \lean{words_rec}, \lean{words_w}\\
 Lemma~\ref{os:transfer} & L & \lean{transfer} (there for the weight $X_0^\beta$ with any $\beta>\tfrac12$; this is the case $\beta=1$)\\
-Proposition~\ref{os:p1} & L & \lean{poincare_omP}, \lean{mS_printed_sharp}, \lean{norm_surfV_printed_le}, \lean{mS_printed_le}\\
+Proposition~\ref{os:p1} & L & \lean{poincare_omP}, \lean{perio_weighted_gen} (the field \lean{perio_bd} of \lean{surfW_printed}), \lean{critSup_eq}, \lean{mS_printed_sharp}, \lean{norm_surfV_printed_le}, \lean{mS_printed_le}\\
 Lemma~\ref{os:indep} & L & \lean{surfV_indep}\\
 Proposition~\ref{pc:core} & L & \lean{dd_core_pc} (the bound for the Dyson remainder of Proposition~\ref{prop:dd-id}(ii)), with \lean{SurfW.surf_D4} (the error equals that remainder)\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:consequences}: consequences and localized amplitudes}}\\
 Lemma~\ref{pc:g43} & L & \lean{sobolev_M_mult}\\
 Remark~\ref{pc:remcusp} & P & two-sided bound for $m(z)$ in a cusp; self-checked, not formalized\\
 Remark~\ref{rem:g4} & P & \\[2pt]
-Corollary~\ref{thm:main} & L & \lean{thm13R_fixed} (from \lean{thm14Rmain_exp} and \lean{swNormD_mono})\\
-Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_tied} (reversed-weight norm, exponent $\beta+\tfrac12$), \lean{cor15R_tied} (power-weight norm); constants with $C\ge1$: \lean{rThmCD_exists}, \lean{xThmCD_exists}\\
-Corollary~\ref{cor:dd16} & L & \lean{cor16Rmain_allmultN}, \lean{cor16R_multN}; positive injectivity radius: \lean{cor16Rmain_allbgN}, \lean{cor16R_repN}\\
-Remark~\ref{rem:amplitude-examples} & P & elementary norm identities and an example; self-checked, not separately formalized\\
+Remark~\ref{thm:main} & L & original norm: \lean{pcthm13_fixed} (from \lean{pcthm13_all}); reversed-weight norm: \lean{thm13R_fixed} (from \lean{thm14Rmain_exp} and \lean{swNormD_mono})\\
+Remark~\ref{rem:pw-cor} & L & \lean{cor15R_tied}, \lean{cor16R_multN}; positive injectivity radius: \lean{cor16R_repN}; constants with $C\ge1$: \lean{xThmCD_exists}\\
 Lemma~\ref{lem:ex} & P & not used by the theorems\\[2pt]
 Corollary~\ref{cor:localized} & P & extracted from the localized-state application of Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}; self-checked, not separately formalized\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:expect}: expectation values and escape of mass}}\\

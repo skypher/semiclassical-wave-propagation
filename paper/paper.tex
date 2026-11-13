@@ -137,8 +137,9 @@ quotients $\Gamma\backslash\Hb$, for arbitrary Fuchsian groups $\Gamma$. Followi
 \emph{Semiclassical wave propagation for large times}, withdrawn in 2011, we prove that his explicit approximations are
 accurate in $L^2$ up to times of order $(\alpha/\hbar)^{1/2}$, where $\alpha$ is the analytic radius of the amplitude; for
 fixed $\alpha$ this is of order $\hbar^{-1/2}$, far beyond the Ehrenfest time. The estimates hold for Schubert's amplitude
-norm and for the variant in which its spatial and analytic weights are applied in the opposite order. They control the
-expansion order and the number of derivatives factorially, and optimal truncation gives exponentially small errors. Two bounds of the preprint need correction: the
+norm and for the variant in which its spatial and analytic weights are applied in the opposite order. Their constants
+grow factorially in the expansion order $K$ and like $N^{2N}$ in the number $N$ of Laplacians, and optimal truncation gives
+exponentially small errors. Two bounds of the preprint need correction: the
 leading error has order $\hbar t$ rather than $\hbar$, and this order is attained on the hyperbolic plane; pointwise estimates need a factor
 $m(z)^{1/2}$ given by a local multiplicity, and the exponent $1/2$ cannot be lowered on the modular surface. For a
 family of analytic states on the modular surface, the mass leaves every compact set for all times between
@@ -209,6 +210,8 @@ Put $X=y\partial_x$, $Y=y\partial_y$; then $\Delta=X^2+Y^2-Y$. (Our $Y$ is not t
 $i(y\partial_y-\tfrac12)$ that \cite{S} denotes by $Y$.)
 The boundary point is $b=\infty$, with $\varphi=\varphi_b=-\log y$ \cite[(2.1)]{S}.
 The transport $S(t)a(x,y)=\ue^{-t/2}a(x,\ue^t y)$ is unitary on $L^2(\Hb)$, by the substitution $y\mapsto\ue^{-t}y$.
+On $L^2(M)$, $\Delta$ denotes the Laplacian $\Delta_M$ of $M$, realized as the Friedrichs extension from periodized test
+functions (Section~\ref{sec:remainder}); $\Delta^N$ and $\operatorname{Dom}(\Delta^N)$ refer to this operator.
 We write $\cU(t)=\ue^{i\hbar t\Delta/2}$ both on $\Hb$ and on $M$; the space is that of the argument.
 The operators used to construct the approximation are
 \[
@@ -286,6 +289,24 @@ Theorem~\ref{thm:dd-appx}; model proof and input to Theorem~\ref{thm:dd14}\\
 \end{tabular}
 \end{table}
 
+The constructions in Table~\ref{tab:classes} describe the classes exactly. The amplitude $a=\ue^{-\alpha\Lambda}f$ has
+$\pcNorm a=\norm{\ue^{\beta\langle d\rangle}f}$, and every amplitude of finite original norm has this form, with
+$f=\ue^{\alpha\Lambda}a$; likewise $\swNorm a=\norm{\ue^{\alpha\Lambda}F}$ for $a=\ue^{-\beta\langle d\rangle}F$, and
+$\pwNorm a=\norm{\ue^{\alpha\Lambda}F}$ for $a=X_0^{-\beta}F$. So $F=\ue^{-\alpha\Lambda}g$ and $f=\ue^{-\beta\langle d\rangle}g$ with
+$0\ne g\in L^2(\Hb)$ give nonzero amplitudes of the reversed-weight and original-norm classes, of norm $\norm g$. As another
+example, $f=\ue^{-cX_0}$ with $c>0$ gives a nonzero amplitude of the original-norm class at every radius and for every $\beta$:
+since $\langle d\rangle\le d$, polar coordinates give
+$\norm{\ue^{\beta\langle d\rangle}\ue^{-cX_0}}^2\le2\pi\int_0^\infty\ue^{2\beta r-2c\cosh r}\sinh r\,dr<\infty$, and
+$\ue^{-\alpha\Lambda}f\ne0$ because the multiplier $\ue^{-\alpha\lambda}$ is positive.
+
+The constants of the theorems depend on the group through two Poincar\'e-type series. With the periodization weight
+$\omega:=X_0^{1/2}\bigl(1+\tilde\psi/\log2\bigr)^{3/4}$ of Section~\ref{subsec:pc-weights}, put
+\[
+  P^{\mathrm{cr}}_\Gamma:=\sup_{z\in\Hb}\sum_{\gamma\in\Gamma}\omega(\gamma z)^{-2},\qquad
+  P_\Gamma(\sigma):=\sup_{z\in\Hb}\sum_{\gamma\in\Gamma}\ue^{-\sigma\,d(x_0,\gamma z)}.
+\]
+Both depend on the base point $x_0$. For every Fuchsian group, $P^{\mathrm{cr}}_\Gamma$ is finite (Proposition~\ref{os:p1}), and so is
+$P_\Gamma(\sigma)$ for every $\sigma>1$ (Lemma~\ref{lem:p1}).
 
 An unadorned norm denotes an $L^2$ norm, or the corresponding operator norm when applied to an operator.
 Amplitudes of finite norm are taken in their smooth representatives (Lemma~\ref{lem:lift}); periodizations are
@@ -313,33 +334,23 @@ Our principal theorem uses Schubert's amplitude norm exactly as defined in \cite
 order $K$ and the number $N$ of Laplacians simultaneously.
 
 \begin{theorem}[approximation in the original-norm class]\label{pc:main}\label{pc:allalpha}
-Let $\Gamma$ be a Fuchsian group, $\beta>\tfrac12$, $\kappa>0$ and $A>0$.
-\begin{itemize}
-\item[\textup{(i)}] There are constants $C,\delta>0$, depending on $\Gamma$, $\beta$, $\kappa$, the base point $x_0$ and $A$,
-such that for all $0<\hbar\le1$, all $\alpha\in(0,A]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$ with
-$\pcNorm{a}<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
+Fix $\beta>\tfrac12$, $\kappa>0$ and $A>0$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$, such that for every
+Fuchsian group $\Gamma$ and every base point $x_0$ with $P^{\mathrm{cr}}_\Gamma\le P$, all $0<\hbar\le1$, all $\alpha\in(0,A]$ with
+$\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$ with $\pcNorm{a}<\infty$, and all
+$0\le t\le\delta(\alpha/\hbar)^{1/2}$,
 \[
   \norm{\Delta^N\big[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}
   \le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\pcNorm{a}.
 \]
-\item[\textup{(ii)}] In \textup{(i)}, $\delta$ can be chosen depending only on $\beta$, $\kappa$ and $A$, and $C$ depending only on $\beta$, $\kappa$,
-$A$ and an upper bound for
-\[
-  P^{\mathrm{cr}}_\Gamma:=\sup_{z\in\Hb}\sum_{\gamma\in\Gamma}\omega(\gamma z)^{-2},\qquad \omega:=X_0^{1/2}\bigl(1+\tilde\psi/\log2\bigr)^{3/4}.
-\]
-\end{itemize}
 \end{theorem}
 
-The weight $\omega$ is the periodization weight of Section~\ref{subsec:pc-weights}, and $P^{\mathrm{cr}}_\Gamma$ is finite for every Fuchsian
-group (proof of Proposition~\ref{os:p1}). The proof is in Sections~\ref{subsec:pc-proof} and~\ref{subsec:pc-all}. For fixed $\alpha>0$ the time window has order
-$\hbar^{-1/2}$. Its dependence on the analytic radius, $\delta(\alpha/\hbar)^{1/2}$, is more favourable than the window
-$\delta\alpha^{3/2}\hbar^{-1/2}$ claimed in \cite[Theorem~1.4]{S}; this matters for the localized amplitudes of
-Section~\ref{subsec:applications}, whose analytic radius tends to zero with $\hbar$. For the reversed-weight norm the
-same estimate holds, uniformly over groups with a common bound for the Poincar\'e series
-\[
-P_\Gamma(\sigma):=\sup_{z\in\Hb}\sum_{\gamma\in\Gamma}\ue^{-\sigma\,d(x_0,\gamma z)},
-\]
-which is finite for every Fuchsian group and every $\sigma>1$ (Lemma~\ref{lem:p1}).
+Since $P^{\mathrm{cr}}_\Gamma$ is finite for every Fuchsian group, the estimate holds on every quotient; $\delta$ does not depend on
+$\Gamma$ or $x_0$, and $C$ depends on them only through $P^{\mathrm{cr}}_\Gamma$. The proof is in Sections~\ref{subsec:pc-proof}
+and~\ref{subsec:pc-all}. For fixed $\alpha>0$ the time window has order $\hbar^{-1/2}$. For $\alpha\le1$ its dependence on the
+analytic radius, $\delta(\alpha/\hbar)^{1/2}$, is more favourable than the window $\delta\alpha^{3/2}\hbar^{-1/2}$ claimed in
+\cite[Theorem~1.4]{S}; this matters for the localized amplitudes of Section~\ref{subsec:applications}, whose analytic radius
+tends to zero with $\hbar$. The reversed-weight norm satisfies the same estimate, with the series $P_\Gamma(\beta+\tfrac12)$ in
+place of $P^{\mathrm{cr}}_\Gamma$.
 
 \begin{theorem}[approximation in the reversed-weight class]\label{thm:dd14}
 Fix $\beta>\tfrac12$, $\kappa>0$ and $A>0$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$,
@@ -353,30 +364,39 @@ with $\swNorm a<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
 
 Since $\beta+\tfrac12>1$, every Fuchsian group satisfies the hypothesis for some $P$; thus $\delta$ does not depend on
 $\Gamma$, and $C$ depends on $\Gamma$ only through $P_\Gamma(\beta+\tfrac12)$. Theorem~\ref{thm:dd14} is proved in
-Section~\ref{sec:swapped}. The following corollaries of Theorem~\ref{pc:main} give the leading error, the
-exponential estimate obtained by choosing $K$, and pointwise bounds. For the reversed-weight norm,
-Corollaries~\ref{thm:main}, \ref{cor:dd15} and~\ref{cor:dd16} in Section~\ref{subsec:pc-cor} give the leading error at a fixed
-radius, optimal truncation and pointwise bounds as consequences of Theorem~\ref{thm:dd14}.
+Section~\ref{sec:swapped}.
+
+The following corollaries give the leading error, the exponential estimate obtained by choosing $K$, and pointwise
+bounds, for both norms. In them $\Gamma$ is a Fuchsian group, $\beta>\tfrac12$, $\kappa>0$ and $A>0$, and $\norm a_{\mathcal A}$ denotes
+either the original norm $\pcNorm a$ or the reversed-weight norm $\swNorm a$. Their constants $C,\delta$ depend on $\Gamma$, $\beta$,
+$\kappa$, $x_0$ and $A$. For the reversed-weight norm, as in Theorem~\ref{thm:dd14}, $\delta$ does not depend on $\Gamma$, and $C$
+depends on $\Gamma$ only through an upper bound for $P_\Gamma(\beta+\tfrac12)$. The corollaries are proved in
+Section~\ref{subsec:pc-cor}.
 
 \begin{corollary}[leading approximation]\label{pc:thm13}
-Under the hypotheses of Theorem~\ref{pc:main}, with $K=N=0$,
+There are $C,\delta>0$ such that for all $0<\hbar\le1$, all $\alpha\in(0,A]$ with $\alpha^3\ge\kappa\hbar$, all $b\in\partial\Hb$, all $a$
+with $\norm a_{\mathcal A}<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
 \[
-  \norm{\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(0)}(t)_\Gamma}_{L^2(M)}\le C\,\frac{\hbar t}{\alpha^2}\,\pcNorm{a},
-  \qquad 0\le t\le\delta(\alpha/\hbar)^{1/2}.
+  \norm{\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(0)}(t)_\Gamma}_{L^2(M)}\le C\,\frac{\hbar t}{\alpha^2}\,\norm a_{\mathcal A}.
 \]
 \end{corollary}
 
 For fixed $\alpha$ this is an error of order $\hbar t$, and Proposition~\ref{prop:g5} shows that this order is attained.
-The factorial control in Theorem~\ref{pc:main} allows the expansion order to grow as $\hbar$ decreases:
+At a fixed radius it gives the error $C\hbar t\norm a_{\mathcal A}$ for $0\le t\le\delta\hbar^{-1/2}$, the corrected form of
+\cite[Theorem~1.3]{S}, for every $\beta>\tfrac12$ (Remark~\ref{thm:main}).
+
+The factorial control in Theorems~\ref{pc:main} and~\ref{thm:dd14} allows the expansion order to grow as $\hbar$ decreases:
 choosing $K$ of order $\alpha^2/(\hbar t)$ gives an exponentially small error.
 
-\begin{corollary}[optimal truncation]\label{pc:cor15}
-Assume the hypotheses of Theorem~\ref{pc:main}, let $C\ge1$ and $\delta>0$ be constants for which its estimate holds
-(enlarging $C$ if necessary), and put $\delta_1:=\min(\delta,\kappa^{1/2}/\max(1,C))$ and $\rho:=C\hbar t/\alpha^2$; then $\rho\le1$ for $0\le t\le\delta_1(\alpha/\hbar)^{1/2}$.
-Let $\theta\in(0,1)$. For all such $t$ and every integer $K$ with $1-\theta\le K\rho\le1-\theta/2$,
+\begin{corollary}[optimal truncation]\label{pc:cor15}\label{cor:dd15}
+Let $C\ge1$ and $\delta>0$ be constants for which the estimate of Theorem~\ref{pc:main} holds on $\Gamma$, for the original norm,
+respectively the estimate of Theorem~\ref{thm:dd14} holds on all groups $\Gamma'$ with $P_{\Gamma'}(\beta+\tfrac12)\le P$, for the
+reversed-weight norm and some $P\ge P_\Gamma(\beta+\tfrac12)$. Put $\delta_1:=\min(\delta,\kappa^{1/2}/C)$ and $\rho:=C\hbar t/\alpha^2$; then $\rho\le1$
+for $0\le t\le\delta_1(\alpha/\hbar)^{1/2}$. Let $\theta\in(0,1)$. For all such $t$, all $\hbar$, $\alpha$, $N$, $b$ and $a$ as in
+that theorem, and every integer $K$ with $1-\theta\le K\rho\le1-\theta/2$,
 \begin{multline*}
   \norm{\Delta^N\big[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}\\
-  \le C'\theta^{-1/2}C^{N+1}N^{2N}(\alpha\hbar)^{-2N}\ue^{-(1-\theta)\alpha^2/(C\hbar t)}\pcNorm{a},
+  \le C'\theta^{-1/2}C^{N+1}N^{2N}(\alpha\hbar)^{-2N}\ue^{-(1-\theta)\alpha^2/(C\hbar t)}\norm a_{\mathcal A},
 \end{multline*}
 with an absolute constant $C'$. For $t>0$ the range of $K$ has length $\theta/(2\rho)$, so it contains an integer whenever
 $\rho\le\theta/2$; for $t=0$ it is empty.
@@ -391,13 +411,14 @@ multiplicity is finite and independent of the lift (Lemma~\ref{pc:g43}).
 It is bounded on quotients of positive injectivity radius and grows like the height deep in an embedded cusp
 (Remark~\ref{pc:remcusp}).
 
-\begin{corollary}[pointwise approximation on an arbitrary quotient]\label{pc:cor16}\label{pc:cor16bg}
-Under the hypotheses of Theorem~\ref{pc:main}, for every $z\in M$,
+\begin{corollary}[pointwise approximation on an arbitrary quotient]\label{pc:cor16}\label{pc:cor16bg}\label{cor:dd16}
+There are $C,\delta>0$ such that for all $0<\hbar\le1$, all $\alpha\in(0,A]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all
+$b\in\partial\Hb$, all $a$ with $\norm a_{\mathcal A}<\infty$, all $0\le t\le\delta(\alpha/\hbar)^{1/2}$ and every $z\in M$,
 \begin{multline*}
   \big|\Delta^N\big[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big](z)\big|\\
-  \le m(z)^{1/2}\,C^{N+K+2}N^{2N}K!\,(\alpha\hbar)^{-2N-2}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\pcNorm{a}.
+  \le m(z)^{1/2}\,C^{N+K+2}N^{2N}K!\,(\alpha\hbar)^{-2N-2}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\norm a_{\mathcal A}.
 \end{multline*}
-The error lies in $\operatorname{Dom}(\Delta_M^N)$, its image under $\Delta_M^N$ has a continuous representative, and the
+The error lies in $\operatorname{Dom}(\Delta^N)$, its image under $\Delta^N$ has a continuous representative, and the
 left side is the value of that representative.
 If the injectivity radius of $M$ is at least $r_0>0$ (Section~\ref{sec:setup}), the factor $m(z)^{1/2}$ may be replaced by
 $1$, with the same $\delta$ and a constant $C$ depending also on $r_0$.
@@ -417,8 +438,7 @@ and $\norm{\Delta_0a}\ge\norm a/4>0$.
 \end{proposition}
 
 Every amplitude of the original-norm or reversed-weight class satisfies the hypothesis (Section~\ref{subsec:g5proof}).
-Hence the order $\hbar t$ of Corollary~\ref{pc:thm13} is attained by every nonzero amplitude of the original-norm class,
-that of Corollary~\ref{thm:main} by every nonzero amplitude of the reversed-weight class, and the bound
+Hence the order $\hbar t$ of Corollary~\ref{pc:thm13} is attained by every nonzero amplitude of either class, and the bound
 $C\hbar\norm a_{\alpha,\beta}$ of \cite[(1.18)]{S} cannot hold on the window $0\le t\le\delta\hbar^{-1/2}$ of \cite[(1.19)]{S}
 for any nonzero amplitude of the original-norm class. Proposition~\ref{prop:g5} is proved in Section~\ref{subsec:g5proof}.
 
@@ -446,8 +466,9 @@ $t\le\hbar^{-1/5}$ lie in the windows of Theorems~\ref{pc:main} and~\ref{thm:dd1
 $m(z)^{1/2}$ in Corollary~\ref{pc:cor16} cannot be dropped, or replaced by $m(z)^\sigma$ with $\sigma<\tfrac12$, in a bound valid
 for every Fuchsian group and every boundary point. No optimality of the power of $\hbar$ is asserted.
 
-What fails is a bound independent of $z$, not the accuracy of the approximation: for the amplitude of
-Theorem~\ref{cl:main}(i), at the points where that theorem bounds the error from below, the approximation itself has size
+What fails is a bound independent of $z$, not the accuracy of the approximation: for the amplitude constructed in
+Section~\ref{sec:cusp} to prove Theorem~\ref{cl:necessary}, at the points where the error is bounded from below there, the
+approximation itself has size
 of order $m(z)^{1/2}\hbar^{1/2}$, and the error is smaller than it by a factor of order $\hbar t$
 (Proposition~\ref{cl:relative}).
 
@@ -475,12 +496,12 @@ the leading error tends uniformly to zero throughout that window.
 \paragraph{Escape of mass despite an accurate approximation.}
 On the modular surface $M=\mathrm{PSL}(2,\mathbb Z)\backslash\Hb$ let $F=\{|x|\le\tfrac12,\ |z|\ge1\}$ be the standard fundamental domain
 and, for $H\ge1$, let $M_H\subset M$ be the image of $\{z\in F:y\le H\}$, a compact set; every compact subset of $M$ lies in
-some $M_H$. Fix $0<\alpha\le\tfrac12$ and $h\in C_c^\infty(\Hb)$, $h\ge0$, such that
+some $M_H$. Fix $0<\alpha\le\tfrac12$ and $\mathfrak h\in C_c^\infty(\Hb)$, $\mathfrak h\ge0$, such that
 \[
-  h_0(y):=\sum_{n\in\mathbb Z}h(x+n,y)
+  \mathfrak h_0(y):=\sum_{n\in\mathbb Z}\mathfrak h(x+n,y)
 \]
-does not depend on $x$ and is not identically zero; for instance $h(x,y)=\int_0^1h_1(x+s,y)\,ds$ with $h_1\in C_c^\infty(\Hb)$,
-$h_1\ge0$, $h_1\not\equiv0$. Let $a:=\ue^{-\alpha\Lambda}h$. Then $\pcNorm a=\norm{\ue^{\beta\langle d\rangle}h}<\infty$ for every $\beta$, so
+does not depend on $x$ and is not identically zero; for instance $\mathfrak h(x,y)=\int_0^1\mathfrak h_1(x+s,y)\,ds$ with $\mathfrak h_1\in C_c^\infty(\Hb)$,
+$\mathfrak h_1\ge0$, $\mathfrak h_1\not\equiv0$. Let $a:=\ue^{-\alpha\Lambda}\mathfrak h$. Then $\pcNorm a=\norm{\ue^{\beta\langle d\rangle}\mathfrak h}<\infty$ for every $\beta$, so
 $a$ lies in the original-norm class; it does not depend on $\hbar$. Put
 \[
   a_0(y):=\int_{\mathbb R}a(x+iy)\,dx,\qquad\mu_0:=\int_0^\infty|a_0(y)|^2\,\frac{dy}{y^2}.
@@ -489,12 +510,12 @@ Section~\ref{subsec:ev-mod} shows that $a\in L^1(\Hb)$, so that $a_0$ is defined
 Corollary~\ref{ev:perio} shows that the periodization of $a$ along the translations $z\mapsto z+n$ is $a_0$.
 
 \begin{theorem}[escape of mass and classical comparison]\label{ev:mod}\label{cor:escape-intro}
-Let $\alpha$, $h$, $a$, $a_0$, $\mu_0$ be as above, $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $x_0=i$, $b=\infty$, $\varphi=-\log y$,
-$\psi(t)=\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma$, and let $C,\delta$ be the constants of Theorem~\ref{pc:main} for $\beta=1$, $\kappa=1$
-and $A=\tfrac12$. Then $0<\mu_0<\infty$, and there is an absolute constant $C_T$ such that, with
+Let $\alpha$, $\mathfrak h$, $a$, $a_0$, $\mu_0$ be as above, $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $x_0=i$, $b=\infty$, $\varphi=-\log y$,
+$\psi(t)=\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma$, and let $C,\delta$ be the constants of Theorem~\ref{pc:main} for $\beta=1$, $\kappa=1$,
+$A=\tfrac12$ and $P=P^{\mathrm{cr}}_\Gamma$. Then $0<\mu_0<\infty$, and there is an absolute constant $C_T$ such that, with
 $T(\hbar):=C_T\log(1/\hbar)\log\log(1/\hbar)$, the following hold.
 \begin{itemize}
-\item[(i)] $\norm{\psi(t)}^2_{L^2(M)}=\norm{\psi(0)}^2_{L^2(M)}=\mu_0+O(\hbar^{n})$ for every $n$, and for $0<\hbar\le\min(1,\alpha^3)$, all $K$ and $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
+\item[(i)] $\norm{\psi(t)}^2_{L^2(M)}=\norm{\psi(0)}^2_{L^2(M)}=\mu_0+O(\hbar^{n})$ for every $n$, and for $0<\hbar\le\alpha^3$, all $K$ and $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
 $\norm{\psi(t)-u^{(K)}(t)_\Gamma}_{L^2(M)}\le C^{K+1}K!\,(\hbar t/\alpha^2)^{K+1}\pcNorm a$.
 \item[(ii)] For every $H\ge1$ and every $K$, as $\hbar\to0$,
 \[
@@ -636,9 +657,9 @@ and proves Theorem~\ref{pc:main}. Section~\ref{sec:consequences} establishes loc
 derives the corollaries, proves Proposition~\ref{prop:g5} and treats localized amplitudes.
 
 Section~\ref{sec:expect} applies the approximation theorem to expectation values and proves Theorem~\ref{ev:mod}.
-Section~\ref{sec:g5} computes the mean of the approximation, which bounds the error from
-below on surfaces of finite area, and
-Section~\ref{sec:cusp} proves Theorem~\ref{cl:necessary}. Section~\ref{sec:outlook} collects the open questions.
+Section~\ref{sec:g5} computes the mean of the approximation. On surfaces of finite area it bounds the error from
+below, but for the amplitudes of the theorems this bound takes effect only at the end of the approximation window
+(Remark~\ref{rem:mean}). Section~\ref{sec:cusp} proves Theorem~\ref{cl:necessary}. Section~\ref{sec:outlook} collects the open questions.
 
 Sections~\ref{sec:expect}--\ref{sec:cusp} are independent of each other and use only the following earlier results.
 Section~\ref{sec:expect} uses Theorems~\ref{pc:main} and~\ref{thm:dd14}, Lemma~\ref{os:speed}, Corollary~\ref{os:cwp},
@@ -761,7 +782,11 @@ $\operatorname{area}(M)^{-1/2}\,\ue^{t/2}|T_K(w)||\mathcal J|-\norm{\psi(0)}$. F
 $\norm{\psi(0)}$ for all $t\ge t_{\mathcal J}:=2\log\bigl(2\operatorname{area}(M)^{1/2}\norm{\psi(0)}/|\mathcal J|\bigr)$. If
 $\alpha\le1$, Corollary~\ref{cor:meanJ}, with its constants $\delta$ and $C$, gives $t_{\mathcal J}\ge\delta(\alpha/\hbar)^{1/2}+2\log\bigl(2\operatorname{area}(M)^{1/2}\norm{\psi(0)}/(C\swNorm a)\bigr)$; so
 for amplitudes with $\norm{\psi(0)}\ge c\swNorm a$, $c>0$ fixed, this lower bound takes effect only after the window of
-Theorem~\ref{thm:dd14}, up to a bounded time. On $\Hb$ itself, and on surfaces of infinite area, the proposition gives no such bound.
+Theorem~\ref{thm:dd14}, up to a bounded time. For $K\ge1$ and $0\le t\le\delta(\alpha/\hbar)^{1/2}$ we have
+$|w|\le t/\hbar\le\delta\hbar^{-3/2}$, since $\alpha,\hbar\le1$, and hence $|T_K(w)|\le(K+1)\max(1,\delta)^K\hbar^{-3K/2}$. With
+Corollary~\ref{cor:meanJ} the lower bound is then positive at a time $t$ of the window only if
+$t\ge\delta(\alpha/\hbar)^{1/2}-3K\log(1/\hbar)-C_K$, with $C_K$ depending on $K$, $c$, $C$, $\delta$ and $\operatorname{area}(M)$. On $\Hb$
+itself, and on surfaces of infinite area, the proposition gives no such bound.
 \end{remark}
 
 \input{sec_cusp_lower}
@@ -774,11 +799,9 @@ time scale $1/\hbar$; according to \cite{S} it would allow one to extend the tim
 An extension by this route also requires analytic and periodization estimates on the longer window.
 Whether the periodized approximation stays accurate beyond
 $\hbar^{-1/2}$ is open. On a surface of finite area, Proposition~\ref{prop:mean} limits the time of validity of each
-approximation $u^{(K)}(t)_\Gamma$ of fixed order $K$ in terms of the mean $\mathcal J$, unless $\mathcal J=0$. For amplitudes with
-$\norm{\psi(0)}\ge c\swNorm a$, $c>0$ fixed, Corollary~\ref{cor:meanJ} shows that this lower bound can take effect only
-after time $\delta(\alpha/\hbar)^{1/2}-O(1)$ for $K=0$ (Remark~\ref{rem:mean}), and only after time
-$\delta(\alpha/\hbar)^{1/2}-O_K(\log(1/\hbar))$ for $K\ge1$, because $|T_K(w)|\le C_K\hbar^{-3K/2}$ on the window. So it does not
-decide whether the window can be extended.
+approximation $u^{(K)}(t)_\Gamma$ of fixed order $K$ in terms of the mean $\mathcal J$, unless $\mathcal J=0$. By
+Remark~\ref{rem:mean}, for amplitudes with $\norm{\psi(0)}\ge c\swNorm a$, $c>0$ fixed, this limit lies at the end of the window, up to a time $O_K(\log(1/\hbar))$, so it does not decide
+whether the window can be extended.
 
 \paragraph{Expectation values.} Evaluating the periodized approximation beyond the Ehrenfest time remains open outside the family of Theorem~\ref{ev:mod}.
 On compact surfaces, neither equidistribution in the sense of \cite{Sch05} nor the random wave behaviour of \cite{Ber77,BB79,IR22} is

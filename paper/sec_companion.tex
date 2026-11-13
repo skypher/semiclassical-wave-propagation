@@ -12,22 +12,22 @@ they differ.
 
 \begin{center}
 \small
-\captionof{table}{The power-weight proof and the original-norm proof. The operator $\Lambda_m$ and the weight $\omega$ are
-defined in Section~\ref{subsec:pc-weights}.}\label{tab:compare}
+\captionof{table}{The power-weight proof and the original-norm proof. The operator $\Lambda_m$ is defined in
+Section~\ref{subsec:pc-weights}, and the weight $\omega$ in Section~\ref{sec:setup}.}\label{tab:compare}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}@{}}
 \hline
 Stage & Power-weight proof (Section~\ref{subsec:dd-thm}) & Original-norm proof (Section~\ref{sec:printed})\\
 \hline
 Data & $a$ with $\pwNorm a<\infty$ & $a=\ue^{-\sigma\Lambda_m}\tilde f$ with $\omega\tilde f\in L^2$ (Proposition~\ref{os:data})\\[4pt]
 Weighted bounds & H\"older interpolation between $L^2$ and the weight $X_0^\beta$ & interpolation shell by shell between $L^2$ and the weight $X_0$ (Lemma~\ref{os:transfer})\\[4pt]
-Periodization & weight $X_0^\lambda$, $\lambda>\tfrac12$ (Lemma~\ref{lem:t2}) & weight $\omega=X_0^{1/2}\ell^{c'}$ (Proposition~\ref{os:p1})\\
+Periodization & weight $X_0^\lambda$, $\lambda>\tfrac12$ (Lemma~\ref{lem:t2}) & weight $\omega=X_0^{1/2}(1+\tilde\psi/\log2)^{3/4}$ (Proposition~\ref{os:p1})\\
 \hline
 \end{tabular}
 \end{center}
 
 \subsection{Approximation with the power weight \texorpdfstring{$X_0^\beta$}{X0}}\label{subsec:dd-thm}
 
-\begin{theorem}[approximation with the power weight $X_0^\beta$]\label{thm:dd-appx}
+\begin{theorem}[approximation in the power-weight class]\label{thm:dd-appx}
 Let $\Gamma$ be a Fuchsian group, $\beta>\tfrac12$, $\kappa>0$ and $\alpha_0\in(0,\pi/4)$.
 \begin{itemize}
 \item[\textup{(i)}] There are $C,\delta>0$ such that for all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all
@@ -42,7 +42,10 @@ $\beta$, $\kappa$, $\alpha_0$ and an upper bound for $P_\Gamma(\beta+\tfrac12)$.
 \end{itemize}
 \end{theorem}
 
-Part (ii) is proved in the last paragraph of the proof; Theorem~\ref{thm:dd14} uses it.
+Part (ii) is proved in the last paragraph of the proof; Theorem~\ref{thm:dd14} uses it. The proof uses only
+$\alpha_0\le1$, since the estimates of Section~\ref{sec:analytic} are applied with $\tau_0=1$; the range $\alpha_0<\pi/4$ is that of the
+formal statement (Appendix~\ref{app:lean}) and suffices for Theorem~\ref{thm:dd14}, whose proof applies it with
+$\alpha_0=c_0/2$.
 
 \begin{proof}
 \medskip\noindent\emph{Step 0 (reductions and parameters).} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters the estimates below only
@@ -54,7 +57,7 @@ through the Poincar\'e series bound at the base point. By Lemma~\ref{lem:lift}, 
 All lemmas are used with $\tau_0=1$. Let $c_M$ be the constant of Lemma~\ref{lem:mw} and $c_A$ that of
 Proposition~\ref{prop:a0}. Put
 \[
-r_0:=c_M\alpha,\qquad r_1:=\tfrac34r_0,\qquad r_2:=\tfrac12r_0,\qquad\varepsilon:=(\alpha\hbar)^{1/2}/2,\qquad \xi:=(\alpha/\hbar)^{1/2},
+r_\alpha:=c_M\alpha,\qquad r_1:=\tfrac34r_\alpha,\qquad r_2:=\tfrac12r_\alpha,\qquad\varepsilon:=(\alpha\hbar)^{1/2}/2,\qquad \xi:=(\alpha/\hbar)^{1/2},
 \]
 so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=\xi/2$ and $\alpha/\varepsilon=2\xi$. Fix $\lambda:=(2\beta+1)/4\in(1/2,\beta)$ and put $\theta:=\lambda/\beta\in(0,1)$.
 
@@ -101,9 +104,9 @@ We estimate the two factors separately.
 \norm{X_0^\beta \mathfrak d(t')}&\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\beta Za_{\mathbf s}}\\
 &\le C\varepsilon^{-3}\,C_3^{N+K+3}(2N)!\,(2K+4)!\,\alpha^{-(2K+4)}(\alpha\hbar)^{-2N}\pwNorm a.
 \end{align*}
-\emph{Unweighted factor.} Lemma~\ref{lem:mw} gives $\norm{\ue^{r_0\Lambda}a}\le C_*B_\beta\pwNorm a$.
-Lemma~\ref{lem:wb}(ii), applied with $r_0$ in the role of $\alpha$ and the radii $r_1<r_0$ (gap $r_0/4$), gives
-$\norm{\ue^{r_1\Lambda}a_{\mathbf s}}\le C_3^{N+K+1}(2N)!(2K+2)!\,r_0^{-(2K+2)}(r_0\hbar)^{-2N}\norm{\ue^{r_0\Lambda}a}$.
+\emph{Unweighted factor.} Lemma~\ref{lem:mw} gives $\norm{\ue^{r_\alpha\Lambda}a}\le C_*B_\beta\pwNorm a$.
+Lemma~\ref{lem:wb}(ii), applied with $r_\alpha$ in the role of $\alpha$ and the radii $r_1<r_\alpha$ (gap $r_\alpha/4$), gives
+$\norm{\ue^{r_1\Lambda}a_{\mathbf s}}\le C_3^{N+K+1}(2N)!(2K+2)!\,r_\alpha^{-(2K+2)}(r_\alpha\hbar)^{-2N}\norm{\ue^{r_\alpha\Lambda}a}$.
 Proposition~\ref{prop:a0}, from the radius $r_1$ to $r_2$ (so $(r_1-r_2)/r_1=\tfrac13$) and for $|t'-s_1|\le t\le\tfrac13c_A\varepsilon/\hbar$, gives
 $\norm{\ue^{r_2\Lambda}g(t')}\le\norm{\ue^{r_1\Lambda}a_{\mathbf s}}$.
 Lemma~\ref{lem:unw} with $r=r_2$ gives $\norm{\mathfrak d(t')}\le C_4r_2^{-4}\ue^{-r_2/(8\varepsilon)}\norm{\ue^{r_2\Lambda}g(t')}$, and $r_2/(8\varepsilon)=c_M\xi/8$.
@@ -172,11 +175,11 @@ $\alpha\le\tfrac12$ with the constants $\delta_{\rm s}$ and $C_{\rm s}:=C_{\rm p
 
 \emph{Radii $\tfrac12<\alpha\le A$.} The reversed-weight norm increases with the radius: $\ue^{\Lambda/2}=\ue^{-(\alpha-1/2)\Lambda}\ue^{\alpha\Lambda}$,
 and $\ue^{-\tau\Lambda}$ is a contraction for $\tau\ge0$, so the norm of $a$ at the radius $\tfrac12$ is at most $\swNorm a$. Apply the first
-case at the radius $\tfrac12$ with $\tfrac18$ in place of $\kappa$ (then $(\tfrac12)^3\ge\tfrac18\hbar$ for $\hbar\le1$), and let $C_1,\delta_1$ be its
-constants. For $t\le\delta_1(2A)^{-1/2}(\alpha/\hbar)^{1/2}$ we have $t\le\delta_1(1/(2\hbar))^{1/2}$, and
+case at the radius $\tfrac12$ with $\tfrac18$ in place of $\kappa$ (then $(\tfrac12)^3\ge\tfrac18\hbar$ for $\hbar\le1$), and let $C_{1/2},\delta_{1/2}$ be its
+constants. For $t\le\delta_{1/2}(2A)^{-1/2}(\alpha/\hbar)^{1/2}$ we have $t\le\delta_{1/2}(1/(2\hbar))^{1/2}$, and
 $(\tfrac12\hbar)^{-2N}(4\hbar t)^{K+1}\le(2A)^{2N+2K+2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$. So the bound holds for
-$\tfrac12<\alpha\le A$ with $\delta_1(2A)^{-1/2}$ and $(2A)^2C_1$. Take $\delta:=\min(\delta_{\rm s},\delta_1(2A)^{-1/2})$ and
-$C:=\max(C_{\rm s},(2A)^2C_1)$.
+$\tfrac12<\alpha\le A$ with $\delta_{1/2}(2A)^{-1/2}$ and $(2A)^2C_{1/2}$. Take $\delta:=\min(\delta_{\rm s},\delta_{1/2}(2A)^{-1/2})$ and
+$C:=\max(C_{\rm s},(2A)^2C_{1/2})$.
 
 In both cases the group enters only through Theorem~\ref{thm:dd-appx}, whose $\delta_{\rm pw}$ does not depend on $\Gamma$ and whose
 $C_{\rm pw}$ depends on $\Gamma$ only through $P_\Gamma(\beta+\tfrac12)$ (part (ii)); so the same holds for $\delta$ and $C$.

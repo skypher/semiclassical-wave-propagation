@@ -15,7 +15,8 @@ this paper takes $\tau_0=1$, so the constants of Table~\ref{tab:constants} that 
 \begin{table}[!htb]
 \centering\small
 \caption{Named constants of Sections~\ref{sec:analytic}--\ref{sec:printed}. ``Absolute'' means independent of all parameters;
-the dependence on the fixed mollifier cutoff $\chi$ is not listed.}\label{tab:constants}
+the dependence on the fixed mollifier cutoff $\chi$ is not listed. The parameters $\rho$, $\mathcal K$ are those of the weight classes
+of Section~\ref{app:ws}, $c$ and $m$ those of Section~\ref{subsec:pc-weights}, and $C_{\mathrm{sh}}$ that of Lemma~\ref{os:transfer}.}\label{tab:constants}
 \begin{tabular}{@{}lll@{}}
 \hline
 Constant & Fixed in & Depends on\\
@@ -205,11 +206,11 @@ extends holomorphically to a neighbourhood of every point of $[0,\infty)$. Near 
 $0$ of $s\mapsto\log\cosh\sqrt s$, which has derivative $\tfrac12$ there. Near a point of $(0,\infty)$ it holds because
 $d=\operatorname{arcosh}(\ue^v)$ is analytic there. On the strip $\{\operatorname{Re}v>\tfrac{17}{10},\ |\operatorname{Im}v|<\tfrac14\}$,
 \begin{gather*}
-\Phi=\exp\beta\bigl(1-\vartheta-(\tilde d+R)^{-1}\bigr),\\
-\vartheta=\log\bigl(1+(1-\ue^{-2v})^{1/2}\bigr),\qquad \tilde d=v+\vartheta,\qquad R=(1+\tilde d^2)^{1/2},
+\Phi=\exp\beta\bigl(1-\varsigma-(\tilde d+R)^{-1}\bigr),\\
+\varsigma=\log\bigl(1+(1-\ue^{-2v})^{1/2}\bigr),\qquad \tilde d=v+\varsigma,\qquad R=(1+\tilde d^2)^{1/2},
 \end{gather*}
-with principal branches: on the real axis $\tilde d=d$ and $v-R+1=1-\vartheta-(\tilde d+R)^{-1}$, because $R^2-\tilde d^2=1$. On the strip
-$\operatorname{Re}(1-\ue^{-2v})>0$, $\operatorname{Re}\vartheta\ge0$, $\operatorname{Re}(1+\tilde d^2)>0$ and $\operatorname{Re}(\tilde d+R)>\tfrac{17}{10}$, so $\Phi$
+with principal branches: on the real axis $\tilde d=d$ and $v-R+1=1-\varsigma-(\tilde d+R)^{-1}$, because $R^2-\tilde d^2=1$. On the strip
+$\operatorname{Re}(1-\ue^{-2v})>0$, $\operatorname{Re}\varsigma\ge0$, $\operatorname{Re}(1+\tilde d^2)>0$ and $\operatorname{Re}(\tilde d+R)>\tfrac{17}{10}$, so $\Phi$
 is holomorphic there with $|\Phi|\le\ue^{2\beta}$. Compactness of $[0,2]$, and Cauchy's estimate on discs of radius $\tfrac15$ around
 the points of $[2,\infty)$, give Step~1.
 
@@ -415,7 +416,8 @@ $|Xh|,|Yh|\le2\rho h$ and $|\Delta h|\le|X^2h|+|Y^2h|+|Yh|\le(2\mathcal K+2\rho)
 $\norm{Wc(r)g}\le\ue^{2\rho|r|}\norm{Wg}$, $\norm{WXq(r)}+\norm{WYq(r)}\le2\ue^{2\rho|r|}\norm{Wu}$, and
 $\norm{Wq(r)}\le|r|\ue^{2\rho|r|}\norm{Wu}$ because $q(r)=\int_0^rc(r')u\,dr'$. So the integrand is at most
 $\bigl((2\mathcal K+2\rho)|s-r|+8\rho\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$. Integrating over $r$ gives the bound
-$\bigl(8\rho|s|+(\mathcal K+\rho)s^2\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$, which implies the claim.
+$\bigl(8\rho|s|+(\mathcal K+\rho)s^2\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$, which is at most the stated bound. The statement keeps the
+weaker form, that of its formal counterpart, which suffices for its applications.
 \end{proof}
 
 By Fourier inversion, since $j_\varepsilon$ is even,

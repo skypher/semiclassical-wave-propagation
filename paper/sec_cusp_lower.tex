@@ -4,13 +4,13 @@ This section proves Theorem~\ref{cl:necessary}. It concerns the pointwise error 
 with time.
 
 Throughout this section $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $M=\Gamma\backslash\Hb$ (cusp at $\infty$ of width $1$), $x_0=i$, $X_0=\cosh d(i,\cdot)$,
-$b=\infty$ and $\varphi=-\log y$. The periodization $[F]_\Gamma$ is that of Section~\ref{sec:setup}, and
+$b=\infty$, $\varphi=-\log y$ and $\vartheta(w):=\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$. The periodization $[F]_\Gamma$ is that of Section~\ref{sec:setup}, and
 $E_K(t):=\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma$. Words $Z_S$ are products of $X$ and $Y$.
 
 \begin{theorem}[lower bound high in the cusp]\label{cl:main}
 Let $\beta>\tfrac12$. There are a radius $\alpha_1=\alpha_1(\beta)\in(0,\tfrac12]$ and absolute constants $\mu_*\ge1$ and $c>0$
 with the following properties. For a fixed radius $\alpha$, let $\delta$ be the constant of Theorem~\ref{thm:dd14} in case (i), and of Theorem~\ref{pc:main} in case (ii), both with
-$A=\tfrac12$ and $\kappa=\alpha^3$.
+$A=\tfrac12$ and $\kappa=\alpha^3$, and with $P=P^{\mathrm{cr}}_\Gamma$ for Theorem~\ref{pc:main}.
 \begin{enumerate}
 \item[(i)] (Reversed-weight class.) Let $\alpha\in(0,\alpha_1]$ and $a=\ue^{-20X_0}$. There are $\hbar_0,c_*,t_*>0$, depending on $\alpha$ and
 $\beta$, such that for $0<\hbar\le\hbar_0$, every $t$ with $\max(2\log(1/\hbar),t_*)\le t\le\min(\hbar^{-1/5},\delta(\alpha/\hbar)^{1/2})$, and
@@ -160,94 +160,94 @@ because $H\ge\hbar^{-2}$ and $H^{-1}\log(4H)\le C\hbar^{1/2}$ for such $H$. Addi
 \end{proof}
 
 \begin{lemma}[cusp asymptotics]\label{cl:asym}
-Let $\vartheta$ be either $X_0^{-2}$ or $\ue^{-d(i,\cdot)}(1+d(i,\cdot))^{-3/2}$, and for $A\in C^4(\Hb)$ put
-$B(A):=\sup_w\vartheta(w)^{-1}\sum_{|S|\le4}|Z_SA(w)|$. There is a $C$ (depending only on the choice of $\vartheta$) such that for every $A$ with
-$B(A)<\infty$, $0<\hbar\le\tfrac12$,
+Let $\vartheta^\star$ be either $X_0^{-2}$ or $\vartheta$, and for $v\in C^4(\Hb)$ put
+$B(v):=\sup_w\vartheta^\star(w)^{-1}\sum_{|S|\le4}|Z_Sv(w)|$. There is a $C$ (depending only on the choice of $\vartheta^\star$) such that for every $v$ with
+$B(v)<\infty$, $0<\hbar\le\tfrac12$,
 $t\ge2\log(1/\hbar)$, $H=\ue^t$ and $z=x+iH$,
 \begin{multline*}
-\Bigl|\bigl[(S(t)A)\ue^{i\varphi/\hbar}\bigr]_\Gamma(z)-\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}\sum_{c\ge1}c^{2i/\hbar}\sum_{n\in\mathbb Z,(n,c)=1}A\Bigl(\frac nc+\frac i{c^2}\Bigr)\Bigr|\\
-\le C\,\ue^{t/2}\hbar^{3/2}B(A),
+\Bigl|\bigl[(S(t)v)\ue^{i\varphi/\hbar}\bigr]_\Gamma(z)-\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}\sum_{c\ge1}c^{2i/\hbar}\sum_{n\in\mathbb Z,(n,c)=1}v\Bigl(\frac nc+\frac i{c^2}\Bigr)\Bigr|\\
+\le C\,\ue^{t/2}\hbar^{3/2}B(v),
 \end{multline*}
 and the double series converges absolutely.
 \end{lemma}
 \begin{proof}
-In this proof $C$ denotes constants that depend only on the choice of $\vartheta$; they do not depend on $A$, $\hbar$, $t$, $x$, on the pair
-$(n,c)$ or on the frequency $\ell$ below. Put $F:=(S(t)A)\ue^{i\varphi/\hbar}$, where $S(t)A=\ue^{-t/2}A\circ \Omega_t$ and $\Omega_t(x,y)=(x,\ue^ty)$. Note that
+In this proof $C$ denotes constants that depend only on the choice of $\vartheta^\star$; they do not depend on $v$, $\hbar$, $t$, $x$, on the pair
+$(n,c)$ or on the frequency $\ell$ below. Put $F:=(S(t)v)\ue^{i\varphi/\hbar}$, where $S(t)v=\ue^{-t/2}v\circ \Omega_t$ and $\Omega_t(x,y)=(x,\ue^ty)$. Note that
 $H=\ue^t\ge\hbar^{-2}\ge4$.
 
 \emph{Cosets.} An element of $\mathrm{PSL}(2,\mathbb Z)$ is a translation $z\mapsto z+k$, or has bottom row $(c,d)$ with $c\ge1$ and acts by
 $w\mapsto n/c-1/(c(cw+d))$ with $nd\equiv1\pmod c$. For fixed $c$ and $n$ coprime to $c$, $d$ runs over $d_n+c\mathbb Z$, and $d=d_n+ck$ corresponds to $w=z+k$. Hence
 $[F]_\Gamma(z)=\sum_kF(z+k)+\sum_{c\ge1}\sum_{(n,c)=1}\sum_{k\in\mathbb Z}G_{n,c}(k)$ with $G_{n,c}(u)=F(\gamma_{n,c}(z+u))$; all sums converge
-absolutely by the bounds below. For the translation part, $|F(z+k)|\le\ue^{-t/2}B(A)\,\vartheta(x+k+iH^2)$ and
-$X_0(x+k+iH^2)\ge\tfrac12H^2\bigl(1+(x+k)^2H^{-4}\bigr)$, so $\sum_k\vartheta(x+k+iH^2)\le C$ for both choices of $\vartheta$ (use
-$\vartheta\le X_0^{-1}$ for the second). So the translation part is at most $C\ue^{-t/2}B(A)\le C\ue^{t/2}\hbar^{3/2}B(A)$, because $\ue^{-t}\le\hbar^2$.
+absolutely by the bounds below. For the translation part, $|F(z+k)|\le\ue^{-t/2}B(v)\,\vartheta^\star(x+k+iH^2)$ and
+$X_0(x+k+iH^2)\ge\tfrac12H^2\bigl(1+(x+k)^2H^{-4}\bigr)$, so $\sum_k\vartheta^\star(x+k+iH^2)\le C$ for both choices of $\vartheta^\star$ (use
+$\vartheta^\star\le X_0^{-1}$ for the second). So the translation part is at most $C\ue^{-t/2}B(v)\le C\ue^{t/2}\hbar^{3/2}B(v)$, because $\ue^{-t}\le\hbar^2$.
 
 \emph{Change of variable.} With $\tau=(c(x+u)+d_n)/H$, the point $\Omega_t\gamma_{n,c}(z+u)$ is
 \[
 Q(\tau)=\frac nc-\frac{\tau}{cH(\tau^2+c^2)}+\frac{i}{\tau^2+c^2},\qquad \varphi(\gamma_{n,c}(z+u))=t+\log(\tau^2+c^2),
 \]
-so $G_{n,c}(u)=g(\tau):=\ue^{-t/2}A(Q(\tau))\,\ue^{i(t+\log(\tau^2+c^2))/\hbar}$ and $du=(H/c)\,d\tau$. With $r_1,r_2$ as in Lemma~\ref{cl:sp}, these functions and all their derivatives are bounded on $\mathbb R$. For every $C^1$ function $\Psi$ on $\Hb$
+so $G_{n,c}(u)=g(\tau):=\ue^{-t/2}v(Q(\tau))\,\ue^{i(t+\log(\tau^2+c^2))/\hbar}$ and $du=(H/c)\,d\tau$. With $r_1,r_2$ as in Lemma~\ref{cl:sp}, these functions and all their derivatives are bounded on $\mathbb R$. For every $C^1$ function $\Psi$ on $\Hb$
 \begin{equation}\label{cl:chain}
 \partial_\tau\bigl[\Psi(Q(\tau))\bigr]=-\frac1c\,r_1\Bigl(\frac\tau c\Bigr)(Y\Psi)(Q(\tau))-\frac1{cH}\,r_2\Bigl(\frac\tau c\Bigr)(X\Psi)(Q(\tau)) .
 \end{equation}
-Applying \eqref{cl:chain} $j$ times, $\partial_\tau^j[A(Q(\tau))]$ is a sum of at most $C_j$ terms, each of which is $c^{-j}$ times a product of
-derivatives of $r_1$ and $r_2$ at $\tau/c$, times a power $H^{-k}$ with $k\ge0$, times $(Z_SA)(Q(\tau))$ for a word with $|S|\le j$. So
+Applying \eqref{cl:chain} $j$ times, $\partial_\tau^j[v(Q(\tau))]$ is a sum of at most $C_j$ terms, each of which is $c^{-j}$ times a product of
+derivatives of $r_1$ and $r_2$ at $\tau/c$, times a power $H^{-k}$ with $k\ge0$, times $(Z_Sv)(Q(\tau))$ for a word with $|S|\le j$. So
 \begin{equation}\label{cl:der}
-|\partial_\tau^j[A(Q(\tau))]|\le C_j\,c^{-j}B(A)\,\vartheta(Q(\tau))\qquad(j\le4).
+|\partial_\tau^j[v(Q(\tau))]|\le C_j\,c^{-j}B(v)\,\vartheta^\star(Q(\tau))\qquad(j\le4).
 \end{equation}
 Write $Q=q_1+iq_2$. Then $X_0(Q)=(q_1^2+1)/(2q_2)+q_2/2\ge\tfrac12(q_1^2+1)(\tau^2+c^2)$, and $|q_1c-n|\le1/(2cH)\le\tfrac12$, so $q_1^2c^2\ge n^2/4$ and
 $X_0(Q(\tau))\ge\tfrac18(n^2+c^2)(1+\tau^2/c^2)$. Hence
 \begin{equation}\label{cl:theta}
-\vartheta(Q(\tau))\le C\,\vartheta_{n,c}\,(1+\tau^2/c^2)^{-p_\vartheta},
+\vartheta^\star(Q(\tau))\le C\,\vartheta^\star_{n,c}\,(1+\tau^2/c^2)^{-p_\star},
 \end{equation}
-where $p_\vartheta=2$, $\vartheta_{n,c}=(n^2+c^2)^{-2}$ for $\vartheta=X_0^{-2}$, and $p_\vartheta=1$,
-$\vartheta_{n,c}=(n^2+c^2)^{-1}(1+\log(n^2+c^2))^{-3/2}$ for the second choice (for which $\vartheta\le X_0^{-1}(1+\log X_0)^{-3/2}$, a decreasing
-function of $X_0$). In both cases $\sum_{(n,c)}\vartheta_{n,c}<\infty$ (for the second, by
-partial summation, since $\#\{(n,c):n^2+c^2\le R\}\le CR$). By \eqref{cl:theta}, $\sum_k|G_{n,c}(k)|\le C\ue^{-t/2}B(A)\vartheta_{n,c}(H+1)$, which gives the
-absolute convergence, and at $\tau=0$ it gives $|A(n/c+i/c^2)|\le CB(A)\vartheta_{n,c}$, so the double series of the lemma converges absolutely.
-We abbreviate $\eta_{n,c}:=\ue^{-t/2}B(A)\,\vartheta_{n,c}$.
+where $p_\star=2$, $\vartheta^\star_{n,c}=(n^2+c^2)^{-2}$ for $\vartheta^\star=X_0^{-2}$, and $p_\star=1$,
+$\vartheta^\star_{n,c}=(n^2+c^2)^{-1}(1+\log(n^2+c^2))^{-3/2}$ for the second choice (for which $\vartheta^\star\le X_0^{-1}(1+\log X_0)^{-3/2}$, a decreasing
+function of $X_0$). In both cases $\sum_{(n,c)}\vartheta^\star_{n,c}<\infty$ (for the second, by
+partial summation, since $\#\{(n,c):n^2+c^2\le R\}\le CR$). By \eqref{cl:theta}, $\sum_k|G_{n,c}(k)|\le C\ue^{-t/2}B(v)\vartheta^\star_{n,c}(H+1)$, which gives the
+absolute convergence, and at $\tau=0$ it gives $|v(n/c+i/c^2)|\le CB(v)\vartheta^\star_{n,c}$, so the double series of the lemma converges absolutely.
+We abbreviate $\eta_{n,c}:=\ue^{-t/2}B(v)\,\vartheta^\star_{n,c}$.
 
 \emph{Poisson summation.} By \eqref{cl:der} and \eqref{cl:theta}, $G_{n,c}$ is $C^4$ and its derivatives up to order $2$ are $O((1+u^2)^{-1})$, so
 $\sum_kG_{n,c}(k)=\sum_\ell\hat G(\ell)$ with
 \[
 \hat G(\ell)=\frac Hc\,\ue^{2\pi i\ell(x+d_n/c)}\int g(\tau)\,\ue^{-2\pi i\ell H\tau/c}\,d\tau .
 \]
-Let $\ell\ne0$, and write the integrand as $u\,\ue^{i\Theta}$ with $u(\tau)=\ue^{-t/2}A(Q(\tau))\ue^{it/\hbar}$ and
+Let $\ell\ne0$, and write the integrand as $u\,\ue^{i\Theta}$ with $u(\tau)=\ue^{-t/2}v(Q(\tau))\ue^{it/\hbar}$ and
 $\Theta(\tau)=\hbar^{-1}\log(\tau^2+c^2)-2\pi\ell H\tau/c$. Then $\Theta'=(\hbar c)^{-1}r_1(\tau/c)-2\pi\ell H/c$, so
 $|\Theta'|\ge2\pi|\ell|H/c-1/(\hbar c)\ge\pi|\ell|H/c$ (as $\hbar H\ge\hbar^{-1}\ge2$), $|\Theta''|\le2/(\hbar c^2)$ and
 $|\Theta'''|\le C/(\hbar c^3)$. Two integrations by parts, without boundary terms, give $\int u\,\ue^{i\Theta}=-\int\bigl((u/\Theta')'/\Theta'\bigr)'\ue^{i\Theta}$, and
 \begin{multline*}
 \Bigl|\Bigl(\frac{(u/\Theta')'}{\Theta'}\Bigr)'\Bigr|\le\frac{|u''|}{|\Theta'|^2}+3\frac{|u'||\Theta''|}{|\Theta'|^3}+\frac{|u||\Theta'''|}{|\Theta'|^3}+3\frac{|u||\Theta''|^2}{|\Theta'|^4}\\
-\le\frac{C}{\ell^2H^2}\Bigl(1+\frac1{\hbar|\ell|H}+\frac1{(\hbar\ell H)^2}\Bigr)\ue^{-t/2}B(A)\,\vartheta(Q(\tau))
+\le\frac{C}{\ell^2H^2}\Bigl(1+\frac1{\hbar|\ell|H}+\frac1{(\hbar\ell H)^2}\Bigr)\ue^{-t/2}B(v)\,\vartheta^\star(Q(\tau))
 \end{multline*}
-by \eqref{cl:der}. Since $\hbar H\ge2$ and $\int(1+\tau^2/c^2)^{-p_\vartheta}d\tau\le Cc$, \eqref{cl:theta} gives
+by \eqref{cl:der}. Since $\hbar H\ge2$ and $\int(1+\tau^2/c^2)^{-p_\star}d\tau\le Cc$, \eqref{cl:theta} gives
 \[
 \Bigl|\int g\,\ue^{-2\pi i\ell H\tau/c}d\tau\Bigr|\le C\eta_{n,c}\,\frac c{\ell^2H^2}.
 \]
 Hence $\sum_{\ell\ne0}|\hat G(\ell)|\le C\eta_{n,c}/H$, and the sum of these bounds over $(n,c)$ is at most
-$C\ue^{-3t/2}B(A)\le C\ue^{t/2}\hbar^{3/2}B(A)$.
+$C\ue^{-3t/2}B(v)\le C\ue^{t/2}\hbar^{3/2}B(v)$.
 
 \emph{The term $\ell=0$.} With $\tau=c\sigma$, $\hat G(0)=H\ue^{it/\hbar}c^{2i/\hbar}\int f(\sigma)\ue^{i\theta(\sigma)/\hbar}d\sigma$, where
-$f(\sigma)=\ue^{-t/2}A(Q(c\sigma))$ and $\theta(\sigma)=\log(1+\sigma^2)$. Put $f_1:=\ue^{-t/2}(YA)(Q(c\sigma))$, $f_2:=\ue^{-t/2}(XA)(Q(c\sigma))$,
-$f_{11}:=\ue^{-t/2}(Y^2A)(Q(c\sigma))$ and $f_{21}:=\ue^{-t/2}(XYA)(Q(c\sigma))$. Since $\partial_\sigma=c\,\partial_\tau$, \eqref{cl:chain} gives the
-relations \eqref{cl:fprime}, and by \eqref{cl:der}, \eqref{cl:theta} and the definition of $B(A)$ these functions satisfy \eqref{cl:fbd} with
-$p=p_\vartheta$ and $C\eta_{n,c}$ in place of $\eta$. Lemma~\ref{cl:sp} gives
+$f(\sigma)=\ue^{-t/2}v(Q(c\sigma))$ and $\theta(\sigma)=\log(1+\sigma^2)$. Put $f_1:=\ue^{-t/2}(Yv)(Q(c\sigma))$, $f_2:=\ue^{-t/2}(Xv)(Q(c\sigma))$,
+$f_{11}:=\ue^{-t/2}(Y^2v)(Q(c\sigma))$ and $f_{21}:=\ue^{-t/2}(XYv)(Q(c\sigma))$. Since $\partial_\sigma=c\,\partial_\tau$, \eqref{cl:chain} gives the
+relations \eqref{cl:fprime}, and by \eqref{cl:der}, \eqref{cl:theta} and the definition of $B(v)$ these functions satisfy \eqref{cl:fbd} with
+$p=p_\star$ and $C\eta_{n,c}$ in place of $\eta$. Lemma~\ref{cl:sp} gives
 \[
 \Bigl|\int f\,\ue^{i\theta/\hbar}d\sigma-\sqrt{\pi\hbar}\,\ue^{i\pi/4}f(0)\Bigr|\le C\hbar^{3/2}\eta_{n,c}.
 \]
 
-\emph{Conclusion.} Since $f(0)=\ue^{-t/2}A(n/c+i/c^2)$ and $H\ue^{-t/2}=\ue^{t/2}$,
+\emph{Conclusion.} Since $f(0)=\ue^{-t/2}v(n/c+i/c^2)$ and $H\ue^{-t/2}=\ue^{t/2}$,
 \[
-\hat G(0)=\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}c^{2i/\hbar}A\Bigl(\frac nc+\frac i{c^2}\Bigr)+O\bigl(\ue^{t/2}\hbar^{3/2}B(A)\vartheta_{n,c}\bigr).
+\hat G(0)=\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}c^{2i/\hbar}v\Bigl(\frac nc+\frac i{c^2}\Bigr)+O\bigl(\ue^{t/2}\hbar^{3/2}B(v)\vartheta^\star_{n,c}\bigr).
 \]
-Summing over $(n,c)$, with $\sum_{(n,c)}\vartheta_{n,c}<\infty$, and adding the bounds for the translation part and for the terms $\nu\ne0$ proves the lemma.
+Summing over $(n,c)$, with $\sum_{(n,c)}\vartheta^\star_{n,c}<\infty$, and adding the bounds for the translation part and for the terms $\ell\ne0$ proves the lemma.
 \end{proof}
 
 \subsection{Kernel bounds and amplitude construction}
 \begin{lemma}[the Poisson kernel off the diagonal]\label{cl:kernel}
-Fix $r_0\in(0,1]$. For $0<\alpha\le\alpha_0<\pi/2$ the kernel $k_\alpha(r)$ of $\ue^{-\alpha\Lambda}$ extends holomorphically to
-$\{r+i\theta:r>3r_0/4,\ |\theta|<r_0/4\}$ with $|\tilde k_\alpha(r+i\theta)|\le C\,\alpha\,\ue^{-r}(1+r)^{-3/2}$. Hence
-$|\partial_r^jk_\alpha(r)|\le C_j\,\alpha\,\ue^{-r}(1+r)^{-3/2}$ for $r\ge r_0$. The constants $C$ and $C_j$ depend only on $r_0$
+Fix $d_0\in(0,1]$. For $0<\alpha\le\alpha_0<\pi/2$ the kernel $k_\alpha(r)$ of $\ue^{-\alpha\Lambda}$ extends holomorphically to
+$\{r+i\theta:r>3d_0/4,\ |\theta|<d_0/4\}$ with $|\tilde k_\alpha(r+i\theta)|\le C\,\alpha\,\ue^{-r}(1+r)^{-3/2}$. Hence
+$|\partial_r^jk_\alpha(r)|\le C_j\,\alpha\,\ue^{-r}(1+r)^{-3/2}$ for $r\ge d_0$. The constants $C$ and $C_j$ depend only on $d_0$
 and $\alpha_0$; in particular the bounds are uniform in $\alpha\le\alpha_0$.
 \end{lemma}
 \begin{proof}
@@ -255,15 +255,14 @@ See Appendix~\ref{app:cusp-aux}.
 \end{proof}
 
 \begin{lemma}[local derivative, packing and kernel estimates]\label{cl:aux}
-Put $\vartheta(w)=\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$.
 \begin{enumerate}
 \item[(a)] \emph{Pointwise bounds for words.} For every word $Z_S$ there is $C_S$ such that, with $k=\lceil|S|/2\rceil+1$,
 $|Z_Sv(w)|\le C_S\sum_{j\le k}\norm{\Delta^jv}_{L^2(\Hb)}$ for all $w\in\Hb$ and $v\in\operatorname{Dom}(\Delta^k)$.
 \item[(b)] \emph{Packing.} If $P\subset\Hb$ has $d(p,p')\ge\sigma_0>0$ for distinct points, then
 $\sum_{p\in P}\ue^{-d(p,w')}(1+d(p,w'))^{-3/2}\le C_{\sigma_0}$ for all $w'\in\Hb$.
 \item[(c)] For $w,w'\in\Hb$, $\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}\le\vartheta(w)\,\ue^{d(i,w')}(1+d(i,w'))^{3/2}$.
-\item[(d)] \emph{Words of the kernel.} For $r_0\in(0,1]$, every word $Z_S$ acting in $w$, $\alpha\le\tfrac12$ and $d(w,w')\ge r_0$,
-$|Z_S^w[k_\alpha(d(w,w'))]|\le C_{S,r_0}\,\alpha\,\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}$.
+\item[(d)] \emph{Words of the kernel.} For $d_0\in(0,1]$, every word $Z_S$ acting in $w$, $\alpha\le\tfrac12$ and $d(w,w')\ge d_0$,
+$|Z_S^w[k_\alpha(d(w,w'))]|\le C_{S,d_0}\,\alpha\,\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -280,7 +279,7 @@ $|Z_Sa(w)|\le C_{S,\mu}\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$ uniformly in $\alpha\le\t
 \end{itemize}
 \end{lemma}
 \begin{proof}
-Write $\vartheta(w):=\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$. We use Lemma~\ref{cl:aux}.
+We use Lemma~\ref{cl:aux}.
 
 (i) Let $d_{w_0}:=d(w_0,\cdot)$, $X_{w_0}:=\cosh d_{w_0}$ and $\mathfrak m_{w_0}:=X_{w_0}^\beta\ue^{-\beta\langle d_{w_0}\rangle}$, so that
 \[
@@ -290,7 +289,7 @@ We bound the words of the three factors; $j$ denotes the length of the word $Z_S
 
 \emph{The first factor.} For $w_0=i$, $\mathfrak m_i=\Phi(\tilde\psi)$ is the function of the proof of Lemma~\ref{lem:m2w}. Steps~1 and~2 of that proof apply
 to $1/\Phi$ in place of $\Phi$: $1/\Phi$ is holomorphic near every point of $[0,\infty)$, and on the strip of Step~1,
-$|1/\Phi|=\exp\beta\operatorname{Re}(\vartheta+(\tilde d+R)^{-1}-1)\le\ue^{\beta}$, because $|1+(1-\ue^{-2v})^{1/2}|\le3$ and $|\tilde d+R|^{-1}\le\tfrac{10}{17}$ there. So there
+$|1/\Phi|=\exp\beta\operatorname{Re}(\varsigma+(\tilde d+R)^{-1}-1)\le\ue^{\beta}$, because $|1+(1-\ue^{-2v})^{1/2}|\le3$ and $|\tilde d+R|^{-1}\le\tfrac{10}{17}$ there. So there
 are $A_\beta,c_\beta\ge1$, depending only on $\beta$, with $|Z_S(1/\mathfrak m_i)|\le A_\beta c_\beta^{\,j}j!$. If $q$ is the affine isometry with $q(i)=w_0$, then
 $\mathfrak m_{w_0}=\mathfrak m_i\circ q^{-1}$, and $q$ commutes with $X$ and $Y$; so the same bound holds for $1/\mathfrak m_{w_0}$.
 
@@ -331,7 +330,7 @@ $\operatorname{supp}\eta_w\subset B(w,\tfrac14)$, and $|Z_S\eta_w|\le C_S$ unifo
 a=a^{\rm n}+a^{\rm f},\qquad a^{\rm n}:=\ue^{-\alpha\Lambda}(h\eta_w),\qquad a^{\rm f}:=\ue^{-\alpha\Lambda}(h(1-\eta_w)).
 \]
 \emph{Far part.} $a^{\rm f}(\tilde w)=\int k_\alpha(d(\tilde w,w'))(1-\eta_w)(w')h(w')\,d\nu(w')$. For $\tilde w\in B(w,\tfrac1{16})$ and $w'$ in the support of
-$1-\eta_w$ we have $d(\tilde w,w')\ge\tfrac1{16}$, so by Lemma~\ref{cl:aux}(d) with $r_0=\tfrac1{16}$ one may differentiate under the integral, and at $\tilde w=w$, by Lemma~\ref{cl:aux}(c),
+$1-\eta_w$ we have $d(\tilde w,w')\ge\tfrac1{16}$, so by Lemma~\ref{cl:aux}(d) with $d_0=\tfrac1{16}$ one may differentiate under the integral, and at $\tilde w=w$, by Lemma~\ref{cl:aux}(c),
 \begin{multline*}
 |Z_Sa^{\rm f}(w)|\le C_S\alpha\int\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}h(w')\,d\nu(w')\\
 \le C_S\alpha\,\vartheta(w)\int\ue^{d(i,w')}(1+d(i,w'))^{3/2}\ue^{-\mu X_0(w')}d\nu(w')=C_{S,\mu}\alpha\,\vartheta(w).
@@ -357,7 +356,6 @@ $S_a(\hbar):=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}a(n/c+i/c^2)$ satisfies $0.99
 $\mu\ge\mu_*$, $0<\alpha\le\min(\tfrac12,c\mu^{-6})$ and all $\hbar$.
 \end{lemma}
 \begin{proof}
-Put $\vartheta(w)=\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$.
 $Y^2X_0=X_0$ gives $A_0=a[\mu^2(y-X_0)^2-\mu(2X_0-y)]$ in case (i), so $A_0(i)=-\mu\ue^{-\mu}$. At the other points $n/c+i/c^2$,
 $X_0=(n^2+c^2+c^{-2})/2$, $X_0-1\ge\max(\tfrac12,(k-2)/2)$ with $k=n^2+c^2$, and $|A_0|\le\mu\ue^{-\mu}\ue^{-\mu(X_0-1)}(\mu X_0^2+2X_0)$. For
 $\mu=20$ and $q=\ue^{-10}<1/20000$: the two points $\pm1+i$ give at most $96q<0.005$; there is no coprime pair with $c\ge1$ and $k\in\{3,4\}$; the rest is
@@ -380,7 +378,7 @@ $n/c+i/c^2$ and $n'/c'+i/c'^2$ have $\cosh d=1+\tfrac12\bigl[(nc'-n'c)^2+(c'/c-c
 $(n,c)=(n',c')$ for coprime pairs with $c,c'\ge1$. So $P\cup\{i\}$ is $0.96$-separated; in particular $d(i,w)\ge0.96$ for $w\in P$. Split
 $h=h_1+h_2$ with $h_1=h\eta^{(1)}$, where $\eta^{(1)}=1$ on $B(i,0.44)$ and $\operatorname{supp}\eta^{(1)}\subset B(i,0.45)$, so that $h_2$ vanishes on $B(i,0.44)$.
 
-For $h_1$ and $w\in P$: the support of $h_1$ has distance at least $0.51$ from $w$, so by Lemma~\ref{cl:aux}(d) with $r_0=\tfrac12$ and Lemma~\ref{cl:aux}(c),
+For $h_1$ and $w\in P$: the support of $h_1$ has distance at least $0.51$ from $w$, so by Lemma~\ref{cl:aux}(d) with $d_0=\tfrac12$ and Lemma~\ref{cl:aux}(c),
 \[
 |(Y^2-Y)\ue^{-\alpha\Lambda}h_1(w)|\le C\alpha\,\vartheta(w)\int_{B(i,0.45)}\ue^{-\mu X_0}d\nu\le C\alpha\,\mu^{-1}\ue^{-\mu}\vartheta(w),
 \]
@@ -418,7 +416,7 @@ With $c_\hbar=i\hbar/2$, the definition of $u^{(K)}$ gives $E_0=T_1+T_2+E_2$, wh
 $T_k=\ue^{-it/(2\hbar)}[(S(t)A_k)\ue^{i\varphi/\hbar}]_\Gamma$, $A_1=c_\hbar P_1(t)a$ and $A_2=c_\hbar^2P_2(t)a$. By Lemma~\ref{cl:amp}, every word
 of length at most $8$ applied to $a$ is bounded by a constant times $X_0^{-2}$ in case (i) and times $\ue^{-d(i,\cdot)}(1+d(i,\cdot))^{-3/2}$ in
 case (ii); this suffices, because $B(A_k)$ applies words of length at most $4$ to $P_k(t)a$, a combination of words of length
-at most $2k\le4$ applied to $a$. We use Lemma~\ref{cl:asym} with this choice of $\vartheta$. Since
+at most $2k\le4$ applied to $a$. We use Lemma~\ref{cl:asym} with $\vartheta^\star=X_0^{-2}$, respectively $\vartheta^\star=\vartheta$. Since
 $P_1(t)a=\int_0^t\Delta(s)a\,ds=\tfrac{1-\ue^{-2t}}2X^2a+t\Delta_0a$ and $t\ge1$, we have $B(A_1)\le C\hbar t$, and Lemma~\ref{cl:asym} gives
 \[
 T_1(z)=\ue^{-it/(2\hbar)}\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}\,\tfrac{i\hbar}2\Bigl(tS_0(\hbar)+\tfrac{1-\ue^{-2t}}2S_X(\hbar)\Bigr)
@@ -460,7 +458,7 @@ $c\,\ue^{(1/2-\max(\sigma,0))\hbar^{-1/5}}\hbar^{p+3/2}$, which tends to infinit
 \subsection{Relative accuracy and rational boundary points}\label{subsec:cl-relative}
 
 \begin{proof}[Proof of Proposition~\ref{cl:relative}]
-Lemma~\ref{cl:asym} with $A=a$ gives
+Lemma~\ref{cl:asym} with $v=a$ and $\vartheta^\star=X_0^{-2}$ gives
 \[
 u^{(0)}(t)_\Gamma(z)=\ue^{-it/(2\hbar)}\bigl(\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}S_a(\hbar)+O(\ue^{t/2}\hbar^{3/2})\bigr),
 \]

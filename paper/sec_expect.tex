@@ -9,8 +9,8 @@ approximation (Lemma~\ref{ev:approxmode}), its initial norm (Lemma~\ref{ev:initi
 
 \subsection{Transfer and cancellation}\label{subsec:ev-transfer}
 \begin{corollary}[expectation values of bounded observables]\label{ev:transfer}
-Assume the hypotheses of Theorem~\ref{pc:main}, respectively of Theorem~\ref{thm:dd14}, and let $\norm a_{\mathcal A}$ denote
-$\pcNorm a$, respectively $\swNorm a$. Let $K\in\mathbb N_0$ and $0\le t\le\delta(\alpha/\hbar)^{1/2}$, and put
+Assume the hypotheses of Theorem~\ref{pc:main}, with $P=P^{\mathrm{cr}}_\Gamma$, respectively of Theorem~\ref{thm:dd14}, let $C,\delta$ be
+the constants of that theorem, and let $\norm a_{\mathcal A}$ denote $\pcNorm a$, respectively $\swNorm a$. Let $K\in\mathbb N_0$ and $0\le t\le\delta(\alpha/\hbar)^{1/2}$, and put
 \[
   \psi(t):=\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma,\qquad
   \mathcal E_K:=C^{K+1}K!\,\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\norm a_{\mathcal A} .
@@ -52,11 +52,11 @@ Theorem~\ref{ev:mod}.
 \subsection{The modular surface}\label{subsec:ev-mod}
 For the remainder of this section we use the notation of Section~\ref{subsec:applications}: $\Gamma=\mathrm{PSL}(2,\mathbb Z)$,
 $M=\Gamma\backslash\Hb$, $x_0=i$, $b=\infty$, $\varphi=-\log y$, the fundamental domain $F$, the compact sets $M_H$, and the data
-$\alpha$, $h$, $h_0$, $a$. For $H\ge1$ let $\mathcal Z_H$ be the image of $\{z\in F:y>H\}=\{|x|\le\tfrac12,\ y>H\}$, the part of the cusp above
+$\alpha$, $\mathfrak h$, $\mathfrak h_0$, $a$. For $H\ge1$ let $\mathcal Z_H$ be the image of $\{z\in F:y>H\}=\{|x|\le\tfrac12,\ y>H\}$, the part of the cusp above
 height $H$. Recall $\operatorname{area}(M)=\pi/3$.
 
 Let $\omega=X_0^{1/2}\ell^{\,c'}$, $c'=\tfrac34$, be the periodization weight of Section~\ref{subsec:pc-weights}.
-Since $h$ has compact support, $\omega h\in L^2(\Hb)$, so $\omega a\in L^2(\Hb)$ by
+Since $\mathfrak h$ has compact support, $\omega \mathfrak h\in L^2(\Hb)$, so $\omega a\in L^2(\Hb)$ by
 Corollary~\ref{os:cwp}. On the line $\operatorname{Im}z=y$ we have $X_0=(x^2+y^2+1)/(2y)\ge\tfrac12\max(y,1/y)$, hence $\ell\ge\max(1,|\log y|/\log2)$ and
 \begin{equation}\label{ev:line}
 \begin{gathered}
@@ -97,7 +97,7 @@ classical prediction holds before that time.
 \end{remark}
 
 \subsection{The zero mode and its Mellin transform}\label{subsec:ev-mellin}
-In Sections~\ref{subsec:ev-mellin}--\ref{subsec:ev-final}, $0<\hbar\le1$ and $t\ge0$, and constants may depend on $\alpha$ and $h$, and
+In Sections~\ref{subsec:ev-mellin}--\ref{subsec:ev-final}, $0<\hbar\le1$ and $t\ge0$, and constants may depend on $\alpha$ and $\mathfrak h$, and
 on the exponent $n$ wherever a statement holds for every positive integer $n$. Norms and inner products of
 functions on $(0,\infty)$ are those of $L^2((0,\infty),dy/y^2)$. For a function $f$ on $(0,\infty)$,
 $\hat f(s):=\int_0^\infty f(y)y^{-s}\,dy/y$ is its Mellin transform. For a function $w$ on $\Hb$ with $w(z+1)=w(z)$ we write
@@ -118,14 +118,14 @@ Let $g_\alpha=g_{\alpha,1/2}$ be the profile of Lemma~\ref{os:prof}, and put
 \mathsf M_\alpha:=\int_{\mathbb R}g_\alpha(r)\ue^{|r|/2}\,dr,\qquad L_\alpha(k):=\int_{\mathbb R}g_\alpha(r)\cosh(kr)\,dr\quad(|\operatorname{Re}k|\le\tfrac12).
 \]
 Then $\mathsf M_\alpha<\infty$, and the function
-$\mathfrak a(s):=L_\alpha(\tfrac12-s)\hat h_0(s)$, defined for $\tfrac14\le\operatorname{Re}s\le1$, is holomorphic in $|\operatorname{Re}s-\tfrac12|<\tfrac14$ and satisfies
+$\mathfrak a(s):=L_\alpha(\tfrac12-s)\hat{\mathfrak \mathfrak h}_0(s)$, defined for $\tfrac14\le\operatorname{Re}s\le1$, is holomorphic in $|\operatorname{Re}s-\tfrac12|<\tfrac14$ and satisfies
 \begin{equation}\label{ev:mellin}
  |\mathfrak a(\sigma+i\rho)|\le \mathsf M_\alpha C_n(1+|\rho|)^{-n}\qquad(\tfrac14\le\sigma\le1)
 \end{equation}
-for every positive integer $n$, with $C_n$ depending on $h$ and $n$.
+for every positive integer $n$, with $C_n$ depending on $\mathfrak h$ and $n$.
 It agrees with $\hat a_0(s)$ for $\tfrac12\le\operatorname{Re}s\le1$ and satisfies
 \[
- \mathfrak a(\tfrac12+i\rho)=\ue^{-\alpha(\rho^2+1/4)^{1/2}}\hat h_0(\tfrac12+i\rho).
+ \mathfrak a(\tfrac12+i\rho)=\ue^{-\alpha(\rho^2+1/4)^{1/2}}\hat{\mathfrak \mathfrak h}_0(\tfrac12+i\rho).
 \]
 Moreover $0<\mu_0<\infty$, and
 \begin{equation}\label{ev:mu0}
@@ -139,44 +139,44 @@ $L_\alpha(i\rho)=\ue^{-\alpha(\rho^2+1/4)^{1/2}}$ for real $\rho$, by Lemma~\ref
 
 \emph{(a) The multiplier identity.} For $0\le\operatorname{Re}w\le\tfrac12$,
 \begin{equation}\label{ev:mult}
-  \int_\Hb y^wa\,d\nu=L_\alpha(w-\tfrac12)\int_\Hb y^wh\,d\nu ,
+  \int_\Hb y^wa\,d\nu=L_\alpha(w-\tfrac12)\int_\Hb y^w\mathfrak \mathfrak h\,d\nu ,
 \end{equation}
-where the left side converges absolutely by \eqref{ev:L1}. To prove this, let $h$ vanish outside $\{\tilde\psi\le R_0\}$, and for
+where the left side converges absolutely by \eqref{ev:L1}. To prove this, let $\mathfrak h$ vanish outside $\{\tilde\psi\le R_0\}$, and for
 an integer $j\ge1$ let $\eta_j$ be the indicator function of the ball $\{\tilde\psi\le R_0+j\}$. Since
 $\ue^{-\alpha\Lambda}=\int g_\alpha(r)\cos(rD)\,dr$ (Lemma~\ref{os:prof}(i)) and $\eta_jy^{\bar w}\in L^2(\Hb)$,
 \[
-  \int_{\{\tilde\psi\le R_0+j\}}y^wa\,d\nu=\langle\eta_jy^{\bar w},a\rangle=\int_{\mathbb R}g_\alpha(r)\,\langle\eta_jy^{\bar w},\cos(rD)h\rangle\,dr .
+  \int_{\{\tilde\psi\le R_0+j\}}y^wa\,d\nu=\langle\eta_jy^{\bar w},a\rangle=\int_{\mathbb R}g_\alpha(r)\,\langle\eta_jy^{\bar w},\cos(rD)\mathfrak h\rangle\,dr .
 \]
-Let $|r|<j$. The function $U(r):=\cos(rD)h$ vanishes outside $\{\tilde\psi\le R_0+|r|\}$ (Lemma~\ref{os:speed}), so
+Let $|r|<j$. The function $U(r):=\cos(rD)\mathfrak h$ vanishes outside $\{\tilde\psi\le R_0+|r|\}$ (Lemma~\ref{os:speed}), so
 $p(r):=\langle\eta_jy^{\bar w},U(r)\rangle=\langle\eta y^{\bar w},U(r)\rangle$ for a function $\eta\in C_c^\infty(\Hb)$ that equals $1$ on $\{\tilde\psi\le R_0+j\}$. Since
-$h$ lies in the domain of $D^2=-\Delta-\tfrac14$, $p$ is twice continuously differentiable, and
+$\mathfrak h$ lies in the domain of $D^2=-\Delta-\tfrac14$, $p$ is twice continuously differentiable, and
 \[
   p''(r)=\langle\eta y^{\bar w},(\Delta+\tfrac14)U(r)\rangle=\langle(\Delta+\tfrac14)(\eta y^{\bar w}),U(r)\rangle=(w-\tfrac12)^2\,p(r)\qquad(|r|<j),
 \]
-because $(\Delta+\tfrac14)y^{\bar w}=(\bar w-\tfrac12)^2y^{\bar w}$ and $\eta=1$ on the support of $U(r)$. With $p(0)=\int_\Hb y^wh\,d\nu$ and $p'(0)=0$ this gives
-$p(r)=\cosh((w-\tfrac12)r)\int_\Hb y^wh\,d\nu$ for $|r|<j$. For $|r|\ge j$ we use $|\langle\eta_jy^{\bar w},\cos(rD)h\rangle|\le\norm{\eta_jy^{\bar w}}\norm h$ and
+because $(\Delta+\tfrac14)y^{\bar w}=(\bar w-\tfrac12)^2y^{\bar w}$ and $\eta=1$ on the support of $U(r)$. With $p(0)=\int_\Hb y^w\mathfrak \mathfrak h\,d\nu$ and $p'(0)=0$ this gives
+$p(r)=\cosh((w-\tfrac12)r)\int_\Hb y^w\mathfrak \mathfrak h\,d\nu$ for $|r|<j$. For $|r|\ge j$ we use $|\langle\eta_jy^{\bar w},\cos(rD)\mathfrak h\rangle|\le\norm{\eta_jy^{\bar w}}\norm \mathfrak h$ and
 \[
   \norm{\eta_jy^{\bar w}}^2\le\int_{\{X_0\le R\}}(1+y)\,d\nu\le2\pi R+\int_0^{2R}2(2Ry)^{1/2}\,\frac{dy}{y}=(2\pi+8)R,\qquad R=\ue^{R_0+j},
 \]
 since $y^{2\operatorname{Re}w}\le1+y$, the ball $\{X_0\le R\}$ has area $2\pi(R-1)$, and on it $y\le2R$ and $x^2\le2Ry$. So the part $|r|\ge j$ of
 the integral is at most $C\ue^{j/2}\int_{|r|\ge j}g_\alpha\,dr\le C'(1+j)^{-3/2}$ by Lemma~\ref{os:prof}(iv). Hence
 \[
-  \int_{\{\tilde\psi\le R_0+j\}}y^wa\,d\nu=\int_{|r|<j}g_\alpha(r)\cosh((w-\tfrac12)r)\,dr\cdot\int_\Hb y^wh\,d\nu+O((1+j)^{-3/2}),
+  \int_{\{\tilde\psi\le R_0+j\}}y^wa\,d\nu=\int_{|r|<j}g_\alpha(r)\cosh((w-\tfrac12)r)\,dr\cdot\int_\Hb y^w\mathfrak \mathfrak h\,d\nu+O((1+j)^{-3/2}),
 \]
 and \eqref{ev:mult} follows as $j\to\infty$, by dominated convergence on both sides ($|\cosh((w-\tfrac12)r)|\le\ue^{|r|/2}$).
 
-\emph{(b) The Mellin transform of $a_0$.} By Fubini's theorem and \eqref{ev:L1}, $\int_\Hb y^wa\,d\nu=\int_0^\infty y^wa_0(y)\,dy/y^2=\hat a_0(1-w)$, and likewise for $h$, whose integral over
-horizontal lines is $h_0$. So \eqref{ev:mult} reads
+\emph{(b) The Mellin transform of $a_0$.} By Fubini's theorem and \eqref{ev:L1}, $\int_\Hb y^wa\,d\nu=\int_0^\infty y^wa_0(y)\,dy/y^2=\hat a_0(1-w)$, and likewise for $\mathfrak h$, whose integral over
+horizontal lines is $\mathfrak h_0$. So \eqref{ev:mult} reads
 \begin{equation}\label{ev:a0hat}
-  \hat a_0(s)=L_\alpha(\tfrac12-s)\,\hat h_0(s)\qquad(\tfrac12\le\operatorname{Re}s\le1),
+  \hat a_0(s)=L_\alpha(\tfrac12-s)\,\hat{\mathfrak \mathfrak h}_0(s)\qquad(\tfrac12\le\operatorname{Re}s\le1),
 \end{equation}
-where the Mellin integral of $a_0$ converges absolutely. Since $h_0\in C_c^\infty((0,\infty))$, $\hat h_0$ is entire and, by integration by parts,
-$|\hat h_0(\sigma+i\rho)|\le C_n(1+|\rho|)^{-n}$ for $\tfrac14\le\sigma\le1$.
+where the Mellin integral of $a_0$ converges absolutely. Since $\mathfrak h_0\in C_c^\infty((0,\infty))$, $\hat{\mathfrak \mathfrak h}_0$ is entire and, by integration by parts,
+$|\hat{\mathfrak \mathfrak h}_0(\sigma+i\rho)|\le C_n(1+|\rho|)^{-n}$ for $\tfrac14\le\sigma\le1$.
 Together with the properties of $L_\alpha$, this proves \eqref{ev:mellin} and the asserted value on the central line.
 
 \emph{(c) The mass $\mu_0$.} By the Cauchy--Schwarz inequality on horizontal lines and \eqref{ev:line},
 $|a_0(y)|^2\le2\pi\int_{\mathbb R}\omega^2|a|^2(x+iy)\,dx$, so $\mu_0\le2\pi\norm{\omega a}^2<\infty$. If $\mu_0=0$, then $a_0=0$ almost everywhere and
-$\hat a_0(\tfrac12)=0$; but $\hat a_0(\tfrac12)=L_\alpha(0)\hat h_0(\tfrac12)=\ue^{-\alpha/2}\int_0^\infty h_0(y)y^{-3/2}dy>0$ by \eqref{ev:a0hat}. So $0<\mu_0<\infty$. By \eqref{ev:L1}
+$\hat a_0(\tfrac12)=0$; but $\hat a_0(\tfrac12)=L_\alpha(0)\hat{\mathfrak \mathfrak h}_0(\tfrac12)=\ue^{-\alpha/2}\int_0^\infty \mathfrak h_0(y)y^{-3/2}dy>0$ by \eqref{ev:a0hat}. So $0<\mu_0<\infty$. By \eqref{ev:L1}
 with $\sigma=\tfrac12$, $y^{-3/2}a_0\in L^1(dy)$, so \eqref{ev:MP} gives \eqref{ev:mu0}.
 
 
@@ -207,7 +207,7 @@ vanishes on $B_P$, and $k_P=1_{B_P}(k_P-k_{P-L})$ is $1_{B_P}$ times a sum of $2
 $|\langle\ue^{-\alpha\Lambda}\Psi,k_P\rangle|\le\norm{1_{B_P}\ue^{-\alpha\Lambda}\Psi}\cdot2L\norm k\to0$.
 
 \emph{Claim B.} Let $\Theta$ be bounded and measurable with $\Theta(z+1)=\Theta(z)$. Then $\int_\Hb a(z+s)\Theta(z)\,d\nu=\int_\Hb a(z)\Theta(z)\,d\nu$ for every real $s$. Indeed,
-$k:=\tau_sh-h\in C_c^\infty(\Hb)$ has $\sum_nk(z+n)=h_0(y)-h_0(y)=0$, and $v:=\ue^{-\alpha\Lambda}k=\tau_sa-a\in L^1(\Hb)$. For $j\ge1$ the function
+$k:=\tau_s\mathfrak \mathfrak h-\mathfrak h\in C_c^\infty(\Hb)$ has $\sum_nk(z+n)=\mathfrak h_0(y)-\mathfrak h_0(y)=0$, and $v:=\ue^{-\alpha\Lambda}k=\tau_sa-a\in L^1(\Hb)$. For $j\ge1$ the function
 $\Theta_j:=\Theta\,1_{\{y\ge1/j\}}$ satisfies the hypotheses of Claim A, because the set $\{0\le x<1,\ y\ge1/j\}$ has finite area; so $\int v\Theta_j\,d\nu=0$, and
 $\int v\Theta\,d\nu=0$ follows by dominated convergence.
 
@@ -249,7 +249,7 @@ residues modulo $c$ that are prime to $c$. The scattering coefficient is the mer
 The functional equation of $\zeta$ gives the second expression.
 
 \begin{lemma}[scattering formula for test functions]\label{ev:scattering}
-For $g\in C_c^\infty((0,\infty))$, the function
+For $g\in C_c^\infty((0,\infty))$, the incomplete Eisenstein series
 $E(z|g)=\sum_{\gamma\in\Gamma_\infty\backslash\Gamma}g(\operatorname{Im}\gamma z)$ is bounded on $M$, and for $y>0$ its zero mode is
 \begin{equation}\label{ev:zero}
  \mathcal F_0[E(\cdot|g)](y)=g(y)+R_g(y),\qquad
@@ -352,8 +352,8 @@ By \eqref{ev:IMP}, $|\Phi(\tfrac12+ir)|=1$, \eqref{ev:ft} and \eqref{ev:mu0},
 \begin{lemma}[initial norm]\label{ev:initialnorm}
 With the notation of Lemma~\ref{ev:approxmode}, for every positive integer $n$, $\|\psi(0)\|^2=\mu_0+O(\hbar^n)$.
 \end{lemma}
-\begin{proof} The Cauchy--Schwarz step in the proof of Proposition~\ref{os:p1} bounds the sum of the moduli:
-$\mathsf A:=\sum_{\gamma\in\Gamma}|a|\circ\gamma$ satisfies $\norm{\mathsf A}_{L^2(M)}\le C\norm{\omega a}$. So
+\begin{proof} Proposition~\ref{os:p1} with $c=\tfrac34$ bounds the sum of the moduli:
+$\mathsf A:=\sum_{\gamma\in\Gamma}|a|\circ\gamma$ satisfies $\norm{\mathsf A}_{L^2(M)}\le(P^{\mathrm{cr}}_\Gamma)^{1/2}\norm{\omega a}$. So
 $\int_\Hb|a|\,|v_0|\,d\nu=\int_M\mathsf A\,|v_0|\,d\nu<\infty$, where $v_0$ is lifted to $\Hb$; unfolding one factor of $|v_0|^2$ is justified, and
 \[
   \norm{\psi(0)}^2=\int_Mv_0\,\overline{v_0}\,d\nu=\int_\Hb a(z)\,y^{-i/\hbar}\,\overline{v_0(z)}\,d\nu=\int_0^\infty f_0\,\overline{\mathcal F_0[v_0]}\,\frac{dy}{y^2}
@@ -384,7 +384,7 @@ There is an absolute constant $C_T>0$ such that, with $T(\hbar)=C_T\log(1/\hbar)
 \[
  \int_0^H|\mathcal O_{f_t}|^2\,\frac{dy}{y^2}\le\frac{C}{\log(1/\hbar)}
 \]
-for $0<\hbar\le\ue^{-\ue}$, $H>0$ and $t\ge T(\hbar)+\log H$. The constant $C$ may depend on $\alpha$ and $h$.
+for $0<\hbar\le\ue^{-\ue}$, $H>0$ and $t\ge T(\hbar)+\log H$. The constant $C$ may depend on $\alpha$ and $\mathfrak h$.
 \end{lemma}
 \begin{proof} There are absolute constants $c_Z\in(0,\tfrac12]$ and $C_\Phi$ such that for $|2r|>3$ and
 $\tfrac12-c_Z/(2\log|2r|)\le\sigma\le\tfrac12$, $\Phi$ is holomorphic in a neighbourhood of $\sigma+ir$ and

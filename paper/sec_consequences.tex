@@ -1,6 +1,6 @@
 \section{Consequences and localized amplitudes}\label{sec:consequences}
 We first establish the local Sobolev estimate needed for pointwise control, then prove the corollaries of
-Section~\ref{sec:repair} and state and prove their analogues for the reversed-weight and power-weight norms. Then we prove
+Section~\ref{sec:repair} for both norms and note their power-weight analogues. Then we prove
 Proposition~\ref{prop:g5}, and we conclude with Schubert's localized example in the reversed-weight class.
 
 \subsection{Local pointwise control}\label{subsec:local-pointwise}
@@ -46,29 +46,32 @@ necessary on the modular surface for a phase attached to the cusp.
 \end{remark}
 
 \begin{remark}[the local Sobolev loss]\label{rem:g4}
-The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient with a cusp (compare Remark~\ref{pc:remcusp}). In a cusp neighbourhood $\{y>H\}/(x\sim x+1)$, take $u_R=f(\log y-R)$ with $0\ne f\in C_c^\infty(\mathbb R)$ and $R$ so large that $u_R$ is supported in $\{y>H\}$. For every integer $j\ge1$,
+The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient with a cusp (compare Remark~\ref{pc:remcusp}). In a cusp neighbourhood $\{y>y_0\}/(x\sim x+1)$, take $u_R=f(\log y-R)$ with $0\ne f\in C_c^\infty(\mathbb R)$ and $R$ so large that $u_R$ is supported in $\{y>y_0\}$. For every integer $j\ge1$,
 \[
 \norm{u_R}_{L^1}\asymp\norm{\Delta^ju_R}_{L^1}\asymp\ue^{-R},\qquad
 \norm{u_R}_{L^2}\asymp\norm{\Delta^ju_R}_{L^2}\asymp\ue^{-R/2},
 \]
-whereas $\sup|u_R|$ is independent of $R$. Thus both the global $L^2$-to-pointwise Sobolev bound and the $L^1$-to-$L^2$ bound used in \cite{S} fail on cusps.
+whereas $\sup|u_R|$ is independent of $R$. Thus on cusps the global $L^2$-to-pointwise Sobolev bound fails, and so do the
+Sobolev bounds from $L^1(M)$ of \cite[(3.3), (3.4)]{S}, on which \cite[Proposition~3.2 and Corollary~3.4]{S} rest
+(Appendix~\ref{sec:changes}).
 \end{remark}
 
 \subsection{Truncation and pointwise consequences}\label{subsec:pc-cor}\label{subsec:dd-cor}
 \begin{proof}[Proof of Corollary~\ref{pc:thm13}]
-This is Theorem~\ref{pc:main} with $K=N=0$.
+For the original norm this is Theorem~\ref{pc:main} with $P=P^{\mathrm{cr}}_\Gamma$ and $K=N=0$; for the reversed-weight norm it is
+Theorem~\ref{thm:dd14} with $K=N=0$.
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{pc:cor15}]
-For $t=0$ the range of $K$ is empty, so let $t>0$. Theorem~\ref{pc:main} bounds the error by
+For $t=0$ the range of $K$ is empty, so let $t>0$. The estimate of the theorem bounds the error by
 \[
-  C^NN^{2N}(\alpha\hbar)^{-2N}\rho^{K+1}K!\,\pcNorm a,
+  C^NN^{2N}(\alpha\hbar)^{-2N}\rho^{K+1}K!\,\norm a_{\mathcal A},
   \qquad \rho=\frac{C\hbar t}{\alpha^2}.
 \]
 The time window $t\le\delta_1(\alpha/\hbar)^{1/2}$, $\alpha^3\ge\kappa\hbar$ and the choice of $\delta_1$ give
 \[
   \frac{\hbar t}{\alpha^2}\le\delta_1\hbar^{1/2}\alpha^{-3/2}
-  \le\delta_1\kappa^{-1/2}\le\frac1{\max(1,C)}.
+  \le\delta_1\kappa^{-1/2}\le\frac1C.
 \]
 Thus $\rho\le1$ and $C^N\rho=C^{N+1}\hbar t/\alpha^2\le C^{N+1}$. In particular $K\ge(1-\theta)/\rho\ge1-\theta>0$, so $K\ge1$ in
 the stated range. Stirling's inequality and $K\rho\le1-\theta/2$ give
@@ -84,12 +87,13 @@ $K\ge(1-\theta)/\rho$, this is at most
   \exp\Bigl(-\frac{(1-\theta)\alpha^2}{C\hbar t}\Bigr).
 \]
 Combining the bounds proves the corollary with
-$C'=\ue^{1/2}$. The same calculation applies to the reversed-weight and power-weight norms (Corollary~\ref{cor:dd15}).
+$C'=\ue^{1/2}$. The calculation uses only the estimate of the theorem, so it applies to both norms.
 Appendix~\ref{sec:changes} compares this range of $K$ with the one stated in \cite{S}.
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{pc:cor16}]
-Let $E$ be the bracket in the statement. By Theorem~\ref{pc:main} at $N$ and at $N+1$, $u:=\Delta^NE$ lies in $\operatorname{Dom}(\Delta_M)$. Apply
+Let $E$ be the bracket in the statement. By Theorem~\ref{pc:main} with $P=P^{\mathrm{cr}}_\Gamma$, respectively Theorem~\ref{thm:dd14},
+at $N$ and at $N+1$, $u:=\Delta^NE$ lies in $\operatorname{Dom}(\Delta_M)$. Apply
 Lemma~\ref{pc:g43} to $u$, and use $N^{2N}\le(\ue/2)^{2N}(2N)!$, $(N+1)^{2N+2}\le54^{N+1}(2N)!$ and, at the end,
 $(2N)!\le4^NN^{2N}$.
 The estimates at $N$ and $N+1$ carry the factors $(\alpha\hbar)^{-2N}$ and
@@ -101,50 +105,34 @@ $2r_0$-separated, and the counting bound of Lemma~\ref{lem:count} with multiplic
 \end{proof}
 
 
-\begin{corollary}[fixed-radius leading approximation]\label{thm:main}
-Let $\Gamma$ be a Fuchsian group, $\beta>1/2$ and $\alpha>0$ be fixed. There are $C,\delta>0$ such that for $0<\hbar\le1$, every $b\in\partial\Hb$ and every $a$ of finite reversed-weight norm,
+\begin{remark}[fixed radius]\label{thm:main}
+Let $\Gamma$, $\beta$ and $\norm a_{\mathcal A}$ be as in Section~\ref{subsec:pc-thm}, and let $\alpha>0$ be fixed. Corollary~\ref{pc:thm13} with $A=\alpha$ and $\kappa=\alpha^3$, so that $\alpha^3\ge\kappa\hbar$ for all
+$\hbar\le1$, gives constants $C,\delta>0$, depending on $\Gamma$, $\beta$, $x_0$ and $\alpha$, such that for all $0<\hbar\le1$, all
+$b\in\partial\Hb$ and all $a$ with $\norm a_{\mathcal A}<\infty$ at radius $\alpha$,
 \[
-\norm{\cU(t)[a\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(0)}(t)_\Gamma}_{L^2(M)}\le C\hbar t\swNorm a,\qquad 0\le t\le\delta\hbar^{-1/2}.
+  \norm{\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(0)}(t)_\Gamma}_{L^2(M)}\le C\hbar t\,\norm a_{\mathcal A},\qquad 0\le t\le\delta\hbar^{-1/2};
 \]
-\end{corollary}
-\begin{proof}
-Apply Theorem~\ref{thm:dd14} with $A=\alpha$, $\kappa=\alpha^3$ (so $\alpha^3\ge\kappa\hbar$ for $\hbar\le1$) and $K=N=0$, and absorb the fixed
-factors $\alpha^{-2}$ and $\alpha^{1/2}$ into $C$ and $\delta$. This is the form of \cite[Theorem~1.3]{S}.
-\end{proof}
+the fixed factors $\alpha^{-2}$ and $\alpha^{1/2}$ are absorbed into $C$ and $\delta$. For the original norm this is
+\cite[Theorem~1.3]{S} with the error $C\hbar$ corrected to $C\hbar t$, and it holds for every $\beta>\tfrac12$, whereas
+\cite[Theorem~1.3]{S} assumes $\beta>1$ (Appendix~\ref{sec:changes}).
+\end{remark}
 
-\begin{corollary}[optimal truncation for the reversed-weight and power-weight norms]\label{cor:dd15}\label{cor:dd15-appx}
-Assume the hypotheses of Theorem~\ref{thm:dd14}, respectively Theorem~\ref{thm:dd-appx}, let $C\ge1$ and $\delta>0$ be
-constants for which the estimate of that theorem holds (of part~\textup{(i)} in the second case; in the first case, $C$ for a
-bound $P$ and the groups with $P_\Gamma(\beta+\tfrac12)\le P$), enlarging $C$ if necessary, and put
-$\delta_1:=\min(\delta,\kappa^{1/2}/\max(1,C))$. Then for $0\le t\le\delta_1(\alpha/\hbar)^{1/2}$ the estimate
-of Corollary~\ref{pc:cor15}, for the same range of $K$, holds with $\swNorm a$, respectively $\pwNorm a$, in place of $\pcNorm a$.
-\end{corollary}
-\begin{proof}
-Apply the calculation in the proof of Corollary~\ref{pc:cor15} to the respective approximation theorem.
-The same absolute constant $C'=\ue^{1/2}$ works.
-\end{proof}
-
-\begin{corollary}[pointwise approximation for the reversed-weight and power-weight norms]\label{cor:dd16}\label{cor:dd16-appx}
-Under the hypotheses of Theorem~\ref{thm:dd14}, respectively Theorem~\ref{thm:dd-appx}(i), the arbitrary-quotient estimate
-of Corollary~\ref{pc:cor16}, including the factor $m(z)^{1/2}$, holds with $\swNorm a$,
-respectively $\pwNorm a$, in place of $\pcNorm a$.
-If $M$ has injectivity radius at least $r_0>0$ (Section~\ref{sec:setup}), this factor may be
-replaced by $1$, with the same $\delta$ and a constant $C$ depending also on $r_0$.
-\end{corollary}
-\begin{proof}
-Apply Lemma~\ref{pc:g43} to $\Delta^NE$ and use the respective approximation theorem at $N$ and $N+1$, as in the proof of
-Corollary~\ref{pc:cor16}; the counting argument there gives the specialization to positive injectivity radius.
-\end{proof}
+\begin{remark}[the power-weight norm]\label{rem:pw-cor}\label{cor:dd15-appx}\label{cor:dd16-appx}
+The proofs of Corollaries~\ref{pc:cor15} and~\ref{pc:cor16} use only the estimate of the approximation theorem, at $N$ and
+$N+1$, and Lemma~\ref{pc:g43}. With Theorem~\ref{thm:dd-appx}(i) in its place they hold for the power-weight norm: under the
+hypotheses of Theorem~\ref{thm:dd-appx}(i), with $\pwNorm a$ in place of $\norm a_{\mathcal A}$ and, in Corollary~\ref{pc:cor15},
+with constants $C\ge1$ and $\delta>0$ for which the estimate of Theorem~\ref{thm:dd-appx}(i) holds; in
+Corollary~\ref{pc:cor16} the constants depend on $\Gamma$, $\beta$, $\kappa$, $x_0$ and $\alpha_0$, and on $r_0$ in its last
+statement.
+\end{remark}
 
 
 \subsection{The order \texorpdfstring{$\hbar t$}{ht} of the leading error is attained}\label{subsec:g5proof}
 For every amplitude of finite reversed-weight norm, all words in $X,Y$ applied to it lie in $L^2(\Hb)$
 (Lemmas~\ref{lem:m2w} and~\ref{lem:sc}); the same holds for the original norm
 (Lemma~\ref{lem:lift}), using a smaller radius in these lemmas if necessary.
-Thus Proposition~\ref{prop:g5} applies to both classes. Nonzero examples are
-$\ue^{-\beta\langle d\rangle}\ue^{-\alpha\Lambda}g$ and
-$\ue^{-\alpha\Lambda}\ue^{-\beta\langle d\rangle}g$, respectively, with $0\ne g\in L^2(\Hb)$;
-the corresponding norm is $\norm g$.
+Thus Proposition~\ref{prop:g5} applies to both classes, and both classes contain nonzero amplitudes
+(Section~\ref{sec:setup}).
 
 
 \begin{proof}[Proof of Proposition~\ref{prop:g5}]
@@ -163,17 +151,6 @@ gauge $a=\ue^{r/2}g$, $\Delta_0$ becomes $\partial_r^2-1/4$, so $-\Delta_0\ge1/4
 
 \subsection{Example amplitudes}\label{subsec:dd-ex}
 
-\begin{remark}[constructing amplitudes]\label{rem:amplitude-examples}
-For $f\in L^2(\Hb)$ with $\ue^{\beta\langle d\rangle}f\in L^2(\Hb)$, the amplitude $a=\ue^{-\alpha\Lambda}f$ has
-$\pcNorm a=\norm{\ue^{\beta\langle d\rangle}f}$, because $\ue^{\alpha\Lambda}\ue^{-\alpha\Lambda}f=f$; conversely, every amplitude of
-finite original norm has this form, with $f=\ue^{\alpha\Lambda}a$, because $a=\ue^{-\alpha\Lambda}\ue^{\alpha\Lambda}a$ for
-$a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$. In the same way, the amplitudes of the reversed-weight class are $a=\ue^{-\beta\langle d\rangle}F$
-with $F\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, and $\swNorm a=\norm{\ue^{\alpha\Lambda}F}$. For example, $f=\ue^{-cX_0}$ with any
-$c>0$ gives a nonzero amplitude of the original-norm class at every analytic radius: since $\langle d\rangle\le d$, polar
-coordinates give $\norm{\ue^{\beta\langle d\rangle}\ue^{-cX_0}}^2\le2\pi\int_0^\infty\ue^{2\beta r-2c\cosh r}\sinh r\,dr$, which is finite
-because $\cosh r\ge\ue^r/2$ and $\sinh r\le\ue^r$, and $\ue^{-\alpha\Lambda}f\ne0$ because the multiplier $\ue^{-\alpha\lambda}$ is
-positive.
-\end{remark}
 
 \begin{lemma}[analytic norm of the localized example]\label{lem:ex}
 Fix $0<r_1<\tfrac12$. There are constants $C_\Upsilon$ and $C_{\mathrm E}$, depending only on $r_1$, such that for $\mu\ge1$ and
@@ -193,8 +170,8 @@ real $z\le\cos1$, so $\Upsilon$ is holomorphic on the complement of $(-\infty,\c
 For $0<\rho<\tfrac12$ let $\Pi_\rho:=\{\operatorname{Re}z\ge\cos2\rho,\ |\arg z|\le2\rho\}$, and fix $r_1<r_1'<r_2<\tfrac12$ depending only on $r_1$.
 Since $\cos2r_2>\cos1$, $\Upsilon$ is holomorphic near $\Pi_{r_2}$. As $|z|\to\infty$ in $\Pi_{r_2}$ we have $\Theta=(\operatorname{arcosh}z)^2$ with
 $\operatorname{arcosh}z=\log(z+(z^2-1)^{1/2})=\log(2z)+O(|z|^{-2})$, hence $\Upsilon=\operatorname{arcosh}z-1+O(1/|\operatorname{arcosh}z|)$;
-so $D_{\Upsilon}:=\sup_{\Pi_{r_2}}|\Upsilon(z)-\log z|<\infty$. There is $c>0$,
-depending only on $r_1',r_2$, such that the disc of radius $c|z|$ about any $z\in \Pi_{r_1'}$ lies in $\Pi_{r_2}$, and Cauchy's estimates for
+so $D_{\Upsilon}:=\sup_{\Pi_{r_2}}|\Upsilon(z)-\log z|<\infty$. There is $c_\Pi>0$,
+depending only on $r_1',r_2$, such that the disc of radius $c_\Pi|z|$ about any $z\in \Pi_{r_1'}$ lies in $\Pi_{r_2}$, and Cauchy's estimates for
 $\Upsilon-\log$ on these discs give
 \[
 |\Upsilon'(z)|\le C'_\Upsilon/|z|,\qquad|\Upsilon''(z)|\le C'_\Upsilon/|z|^2\qquad(z\in \Pi_{r_1'}).

@@ -97,6 +97,8 @@ a=\ue^{-\sigma\Lambda_m}\tilde f,\qquad\norm{\osomc\tilde f}\le C\,\pcNorm a,
 \]
 with $C=C(m,c,\beta)$.
 \end{proposition}
+The condition $\sigma m\le\tfrac12$ is not used in the proof. It is the range of the formal statement
+(Appendix~\ref{app:lean}), and the applications in Section~\ref{subsec:pc-proof} satisfy it.
 \begin{proof}
 The identity is the bounded functional calculus: $-\sigma\Lambda_m+\sigma(\Lambda_m-\osLam)-(\alpha-\sigma)\osLam=-\alpha\osLam$. The operator
 $\mathsf B:=\Lambda_m-\osLam$ is bounded, and $\ue^{\sigma\mathsf B}=\sum_k\sigma^k\mathsf B^k/k!$ in operator norm. By Corollary~\ref{os:cwp},
@@ -137,9 +139,9 @@ bound. For the third write $(\mu-\Delta)^j\ue^{-\sigma\Lambda_m}=(\Lambda_m\ue^{
 (b) Let $v_j:=(\mu-\Delta)^j\ue^{-\sigma\Lambda_m}h$. Since $\Lambda_m\ge\osLam$, $v_j\in\operatorname{Dom}(\ue^{\sigma'\osLam})$ for $\sigma'<\sigma$, so $v_j$ is smooth
 and all words applied to $v_j$ lie in $L^2$ (Lemmas~\ref{lem:wc} and~\ref{lem:lift}). Put
 \[
-A_{k,j}:=\max_{|S|=k}\norm{WZ_Sv_j},\qquad\mathsf B_{k+1,j}:=\max_{|S|=k}\bigl(\norm{WXZ_Sv_j}^2+\norm{WYZ_Sv_j}^2\bigr)^{1/2},
+\mathsf A_{k,j}:=\max_{|S|=k}\norm{WZ_Sv_j},\qquad\mathsf B_{k+1,j}:=\max_{|S|=k}\bigl(\norm{WXZ_Sv_j}^2+\norm{WYZ_Sv_j}^2\bigr)^{1/2},
 \]
-so $A_{k+1,j}\le\mathsf B_{k+1,j}$. Fix $S$ with $|S|=k$ and $w=Z_Sv_j$. Integration by parts gives
+so $\mathsf A_{k+1,j}\le\mathsf B_{k+1,j}$. Fix $S$ with $|S|=k$ and $w=Z_Sv_j$. Integration by parts gives
 \begin{multline*}
 \norm{WXw}^2+\norm{WYw}^2=\mathrm{Re}\langle W^2w,(\mu-\Delta)w\rangle-\mu\norm{Ww}^2\\
 -\mathrm{Re}\langle X(W^2)w,Xw\rangle-\mathrm{Re}\langle Y(W^2)w,Yw\rangle .
@@ -147,17 +149,17 @@ so $A_{k+1,j}\le\mathsf B_{k+1,j}$. Fix $S$ with $|S|=k$ and $w=Z_Sv_j$. Integra
 Since $[\Delta,X]=2XY$ and $[\Delta,Y]=-2X^2$, $[\Delta,Z_S]$ is a sum of $k$ words of length $k+1$ with coefficients $\pm2$, and
 $(\mu-\Delta)w=Z_Sv_{j+1}-[\Delta,Z_S]v_j$. The last two terms are at most $2\rho\norm{Ww}(\norm{WXw}^2+\norm{WYw}^2)^{1/2}$ together. Hence
 \[
-\mathsf B_{k+1,j}^2\le A_{k,j}A_{k,j+1}+(2k+2\rho)A_{k,j}\,\mathsf B_{k+1,j},
+\mathsf B_{k+1,j}^2\le\mathsf A_{k,j}\mathsf A_{k,j+1}+(2k+2\rho)\mathsf A_{k,j}\,\mathsf B_{k+1,j},
 \]
 and therefore
 \[
-A_{k+1,j}\le\mathsf B_{k+1,j}\le(2k+2\rho)A_{k,j}+(A_{k,j}A_{k,j+1})^{1/2}.
+\mathsf A_{k+1,j}\le\mathsf B_{k+1,j}\le(2k+2\rho)\mathsf A_{k,j}+(\mathsf A_{k,j}\mathsf A_{k,j+1})^{1/2}.
 \]
-We claim $A_{k,j}\le\sqrt2\,Q^k(C_5/\sigma)^{k+2j}(k+2j)!\,\norm{Wh}$ for all $k,j\ge0$. For $k=0$ this is (a), because
+We claim $\mathsf A_{k,j}\le\sqrt2\,Q^k(C_5/\sigma)^{k+2j}(k+2j)!\,\norm{Wh}$ for all $k,j\ge0$. For $k=0$ this is (a), because
 $(4jc_H/\sigma)^{2j}\le(2\ue c_H/\sigma)^{2j}(2j)!$. If it holds for $k$ and all $j$, then with $n=k+2j$, using $(n!\,(n+2)!)^{1/2}\le\sqrt2\,(n+1)!$,
 $(2k+2\rho)\,n!\le(2+2\rho)(n+1)!$ and $(C_5/\sigma)^n\le(C_5/\sigma)^{n+1}/C_5$,
 \[
-A_{k+1,j}\le\sqrt2\,Q^k(C_5/\sigma)^{n+1}(n+1)!\,\bigl((2+2\rho)/C_5+\sqrt2\bigr)\norm{Wh},
+\mathsf A_{k+1,j}\le\sqrt2\,Q^k(C_5/\sigma)^{n+1}(n+1)!\,\bigl((2+2\rho)/C_5+\sqrt2\bigr)\norm{Wh},
 \]
 which is the claim for $k+1$, because $C_5\ge1$ and so $(2+2\rho)/C_5+\sqrt2\le Q$. The case $j=0$ is (b). The statement for $\osX^\lambda$ follows with $W=W_{\lambda,n}$ and $n\to\infty$, and the last
 statement from $\Lambda_m\ge\osLam$.
@@ -169,7 +171,8 @@ Periodization at the same weight then turns these estimates into bounds on the q
 
 \begin{lemma}[transfer over shells]\label{os:transfer}
 Let $0\le c\le1$ and $C_{\mathrm{sh}}>0$, and let $\varpi$ be a measurable weight with $\ue^{n/2}(1+n)^c\le\varpi\le C_{\mathrm{sh}}\,\ue^{n/2}(1+n)^c$ on $A_n$ for
-every $n\ge0$; by \eqref{os:shell}, $\varpi=\osomc$ with $C_{\mathrm{sh}}=3\ue^{1/2}$ is an example. Let $T:L^2(\Hb)\to L^2(\Hb)$ be additive, and let
+every $n\ge0$; by \eqref{os:shell}, $\varpi=\osomc$ with $C_{\mathrm{sh}}=3\ue^{1/2}$ is an example. Let $T:L^2(\Hb)\to L^2(\Hb)$ be additive
+(the maps of the applications are linear; the proof uses only additivity), and let
 $0<\mathcal M_0\le \mathcal M_1$ be such that
 \begin{itemize}
 \item[(a)] $\norm{Tu}\le \mathcal M_0\norm u$ for all $u\in L^2$, and
@@ -195,28 +198,41 @@ sequences.
 \end{proof}
 
 \begin{proposition}[periodization and transport at the critical weight]\label{os:p1}
-Let $\Gamma$ be any Fuchsian group, $\tfrac12<c\le1$, $t\ge0$, $\hbar>0$, $\varphi=\varphi_\infty=-\log y$, and
-$w\in L^2(\Hb)$ with $\osomc w\in L^2(\Hb)$. Then the sum defining $[(S(t)w)\ue^{i\varphi/\hbar}]_\Gamma$ converges absolutely almost everywhere, and
+Let $\Gamma$ be any Fuchsian group and $\tfrac12<c\le1$. Then
 \[
-\bigl\|[(S(t)w)\ue^{i\varphi/\hbar}]_\Gamma\bigr\|_{L^2(M)}\le C(\Gamma,c)\,\ue^{t/2}(1+t/\log2)^{c}\,\|\osomc w\|_{L^2(\Hb)}.
+  P^{\mathrm{cr}}_\Gamma(c):=\sup_{z\in\Hb}\sum_{\gamma\in\Gamma}\osomc(\gamma z)^{-2}<\infty ,
+\]
+and $P^{\mathrm{cr}}_\Gamma=P^{\mathrm{cr}}_\Gamma(\tfrac34)$ is the constant of Section~\ref{sec:setup}. For every measurable $f$ on $\Hb$ with
+$\osomc f\in L^2(\Hb)$, the sum $\sum_\gamma|f\circ\gamma|$ is finite almost everywhere, and
+\[
+  \norm{[f]_\Gamma}_{L^2(M)}\le\Bigl\|\sum_{\gamma\in\Gamma}|f\circ\gamma|\Bigr\|_{L^2(M)}\le P^{\mathrm{cr}}_\Gamma(c)^{1/2}\,\norm{\osomc f}_{L^2(\Hb)} .
+\]
+Consequently, for $t\ge0$, $\hbar>0$, $\varphi=\varphi_\infty=-\log y$ and $w\in L^2(\Hb)$ with $\osomc w\in L^2(\Hb)$,
+\[
+\bigl\|[(S(t)w)\ue^{i\varphi/\hbar}]_\Gamma\bigr\|_{L^2(M)}\le P^{\mathrm{cr}}_\Gamma(c)^{1/2}\,\ue^{t/2}(1+t/\log2)^{c}\,\|\osomc w\|_{L^2(\Hb)}.
 \]
 In particular $\osomc$ satisfies \textup{(W1)} and \textup{(W2)} of Section~\ref{subsec:dd-surf}, with
 $\osomc(z)/\osomc(\Omega_sz)\le\ue^{|s|/2}(1+|s|/\log2)^{c}\le(2/\log2)\,\ue^{|s|}$.
 \end{proposition}
 \begin{proof}
-The proof is that of Lemma~\ref{lem:t2}, with $\osomc$ in place of $\ue^{\sigma\tilde\psi}$; only the Cauchy--Schwarz and transport steps change.
+The proof is that of Lemma~\ref{lem:t2}, with $\osomc$ in place of $\ue^{\sigma\tilde\psi}$; only the series and the transport step change.
 
-\emph{Pointwise Cauchy--Schwarz.} Since $\osomc(z')^2\asymp\ue^{d(z',x_0)}(1+d(z',x_0))^{2c}$ for $z'\in\Hb$ and $d(\gamma z,x_0)=d(z,\gamma^{-1}x_0)$,
+\emph{The series.} Since $\osomc(z')^2\asymp\ue^{d(z',x_0)}(1+d(z',x_0))^{2c}$ for $z'\in\Hb$ and $d(\gamma z,x_0)=d(z,\gamma^{-1}x_0)$,
 reindexing $\gamma\mapsto\gamma^{-1}$ and the counting bound of Lemma~\ref{lem:count} for the orbit $\Gamma x_0$ give
 \[
 \sum_\gamma\osomc(\gamma z)^{-2}\le C\sum_\gamma\ue^{-d(z,\gamma x_0)}(1+d(z,\gamma x_0))^{-2c}\le C\sum_{n\ge0}\ue^{n}\ue^{-n}(1+n)^{-2c}<\infty,
 \]
-uniformly in $z$, since $2c>1$. Cauchy--Schwarz and unfolding, as in Lemma~\ref{lem:t2}, give
-$\|[f]_\Gamma\|^2_{L^2(M)}\le C\int_\Hb\osomc^2|f|^2\,d\nu$ for $f=(S(t)w)\ue^{i\varphi/\hbar}$, with almost everywhere absolute convergence.
+uniformly in $z$, since $2c>1$. So $P^{\mathrm{cr}}_\Gamma(c)<\infty$.
+
+\emph{Cauchy--Schwarz and unfolding.} For $z\in\Hb$, the Cauchy--Schwarz inequality gives
+$\bigl(\sum_\gamma|f(\gamma z)|\bigr)^2\le P^{\mathrm{cr}}_\Gamma(c)\sum_\gamma\osomc(\gamma z)^2|f(\gamma z)|^2$. Integrating over a fundamental domain and
+unfolding, as in Lemma~\ref{lem:t2}, gives the bound for $\sum_\gamma|f\circ\gamma|$; in particular this sum is finite almost everywhere,
+and $|[f]_\Gamma|\le\sum_\gamma|f\circ\gamma|$.
 
 \emph{Transport.} $(S(t)w)(z)=\ue^{-t/2}w(\Omega_tz)$, and $d(z,\Omega_sz)=|s|$. Since $\tilde\psi$ is $1$-Lipschitz, $\osX(z)\le\ue^{|s|}\osX(\Omega_sz)$ and
 $\osL(z)\le\osL(\Omega_sz)+|s|/\log2\le\osL(\Omega_sz)(1+|s|/\log2)$; this is the ratio bound. Since $S(t)$ is unitary,
-$\int\osomc^2|S(t)w|^2d\nu\le\ue^{t}(1+t/\log2)^{2c}\int\osomc^2|w|^2d\nu$. Combining gives the claim.
+$\int\osomc^2|S(t)w|^2d\nu\le\ue^{t}(1+t/\log2)^{2c}\int\osomc^2|w|^2d\nu$. The periodization bound for $f=(S(t)w)\ue^{i\varphi/\hbar}$,
+whose modulus is $|S(t)w|$, gives the claim.
 \end{proof}
 
 The element $\mathcal V_sg$ of Section~\ref{subsec:dd-surf} is defined by the periodization sum; a weight enters only to

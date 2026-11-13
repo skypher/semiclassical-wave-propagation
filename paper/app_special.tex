@@ -321,12 +321,12 @@ holomorphic. This gives the bound.
 
 \subsection{Auxiliary estimates for cusp sharpness}\label{app:cusp-aux}
 We prove the off-diagonal kernel bound and the derivative and packing estimates stated in
-Section~\ref{sec:cusp}. Throughout, $x_0=i$, $X_0=\cosh d(i,\cdot)$ and
-$\vartheta(w)=\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$. The kernel $k_\alpha$ is that of
+Section~\ref{sec:cusp}. Throughout, $x_0=i$, $X_0=\cosh d(i,\cdot)$, and $\vartheta$ is the weight of
+Section~\ref{sec:cusp}. The kernel $k_\alpha$ is that of
 Lemma~\ref{os:poisson}.
 
 \begin{proof}[Proof of Lemma~\ref{cl:kernel}]
-By Lemma~\ref{os:hk} with $\theta_0=r_0/4$,
+By Lemma~\ref{os:hk} with $\theta_0=d_0/4$,
 \[
 |\tilde k_\alpha(r+i\theta)|\le C\int_0^\infty\alpha(4\pi)^{-1/2}s^{-3/2}\ue^{-(\alpha^2-\theta^2)/(4s)}p_s(r)\,ds .
 \]
@@ -334,9 +334,9 @@ The computation in the proof of Lemma~\ref{os:poisson}, with $\alpha^2-\theta^2$
 \[
 C\alpha\int_r^\infty\frac{\rho\,K_2\bigl(\sqrt{\rho^2+\alpha^2-\theta^2}/2\bigr)}{\rho^2+\alpha^2-\theta^2}\,\frac{d\rho}{(\cosh\rho-\cosh r)^{1/2}},
 \]
-which converges because $\rho^2+\alpha^2-\theta^2\ge r_0^2/2$. For $r\ge1$ it is bounded as in \textup{(\ref{os:ub})}. For $3r_0/4<r<1$ the factor
-$\rho\,K_2(\cdot)/(\rho^2+\alpha^2-\theta^2)$ is bounded by a constant times $\ue^{-\rho/2}$ on $\rho\ge r$, with a constant depending on $r_0$, and
-$\int_r^\infty\ue^{-\rho/2}(\cosh\rho-\cosh r)^{-1/2}d\rho$ is bounded for these $r$; so the integral is at most $C\alpha$ there, which is the claim. Cauchy estimates on discs of radius $r_0/8$ give the derivative bounds.
+which converges because $\rho^2+\alpha^2-\theta^2\ge d_0^2/2$. For $r\ge1$ it is bounded as in \textup{(\ref{os:ub})}. For $3d_0/4<r<1$ the factor
+$\rho\,K_2(\cdot)/(\rho^2+\alpha^2-\theta^2)$ is bounded by a constant times $\ue^{-\rho/2}$ on $\rho\ge r$, with a constant depending on $d_0$, and
+$\int_r^\infty\ue^{-\rho/2}(\cosh\rho-\cosh r)^{-1/2}d\rho$ is bounded for these $r$; so the integral is at most $C\alpha$ there, which is the claim. Cauchy estimates on discs of radius $d_0/8$ give the derivative bounds.
 \end{proof}
 
 \begin{proof}[Proof of Lemma~\ref{cl:aux}]
@@ -352,8 +352,8 @@ $1+d(i,w)\le(1+d(w,w'))(1+d(i,w'))$.
 \item[(d)] Let $p$ be the affine map with $p(i)=w'$; then
 $\cosh d(w,w')=X_0(p^{-1}w)$, so $Z_S^w\cosh d(w,w')=(Z_SX_0)(p^{-1}w)$. The relations $XX_0=x$, $YX_0=y-X_0$, $Xx=y$, $Yy=y$, $Xy=Yx=0$ and
 $|x|\le X_0$, $y\le2X_0$ give $|Z_SX_0|\le C_SX_0$, hence $|Z_S^w\cosh d(w,w')|\le C_S\cosh d(w,w')$. Write $k_\alpha(r)=\mathsf k_\alpha(\cosh r)$. Since
-$\tfrac{d}{d\cosh r}=(\sinh r)^{-1}\tfrac d{dr}$ and the derivatives of $(\sinh r)^{-1}$ are $O(1/\cosh r)$ on $r\ge r_0$, Lemma~\ref{cl:kernel} gives
-$|\mathsf k_\alpha^{(j)}(\cosh r)|\le C_{j,r_0}\alpha\,\ue^{-r}(1+r)^{-3/2}(\cosh r)^{-j}$ for $r\ge r_0$. By the chain rule $Z_S^w[\mathsf k_\alpha(\cosh d(w,w'))]$ is a sum
+$\tfrac{d}{d\cosh r}=(\sinh r)^{-1}\tfrac d{dr}$ and the derivatives of $(\sinh r)^{-1}$ are $O(1/\cosh r)$ on $r\ge d_0$, Lemma~\ref{cl:kernel} gives
+$|\mathsf k_\alpha^{(j)}(\cosh r)|\le C_{j,d_0}\alpha\,\ue^{-r}(1+r)^{-3/2}(\cosh r)^{-j}$ for $r\ge d_0$. By the chain rule $Z_S^w[\mathsf k_\alpha(\cosh d(w,w'))]$ is a sum
 of terms $\mathsf k_\alpha^{(j)}(\cosh d)\prod_{l\le j}Z_{S_l}^w\cosh d$, which proves the claim.
 \end{enumerate}
 \end{proof}

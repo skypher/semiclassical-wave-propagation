@@ -1,6 +1,6 @@
 % Formalization status. \leanrepo is the public repository; \leancommit is a commit of it.
 \providecommand{\lean}[1]{\texttt{\detokenize{#1}}}
-\providecommand{\leancommit}{\texttt{1d246aa}}
+\providecommand{\leancommit}{\texttt{ae644af}}
 \providecommand{\leanrepo}{\url{https://github.com/skypher/semiclassical-wave-propagation}}
 
 \section{Formalization}\label{app:lean}
@@ -25,20 +25,22 @@ A kernel check certifies the proofs of the formal statements. Whether a formal s
 \item \emph{Boundary points.} The base point $x_0\in\Hb$ is a parameter, and $b=g\,\infty$ with $g\in\mathrm{SL}(2,\mathbb R)$, $g\,x_0=x_0$. Every $b\in\partial\Hb$ arises, and the objects depend on $b$ only (\lean{exists_stab_smul_infty}, \lean{initState_eq_of_stab}, \lean{approxSolB_eq_of_stab}).
 \item \emph{Amplitudes.} An amplitude is a function on $\Hb$ whose class has finite norm. The formal theorems produce its $C^\infty$ representative $a'$, equal to $a$ almost everywhere, before $\hbar,t,K,N,b$ are chosen, and $u^{(K)}$ is built from $a'$. Nonzero amplitudes of finite norm exist in both classes (\lean{printed_class_nonvacuous_beta}, \lean{swappedD_class_nonvacuous}).
 \item \emph{Conclusions.} Each $L^2$ theorem asserts that the two orbit sums converge absolutely almost everywhere and define elements of $L^2(M)$, and then bounds $\norm{\Delta^N[\,\cdot\,]}$, an element of $[0,\infty]$ that equals $\infty$ outside the domain of $\Delta^N$. The pointwise declarations assert that the error lies in the domain of $\Delta^N$ and that $\Delta^NE$ has a continuous representative at every point of $M$.
-\item \emph{The constants of the optimal-truncation corollaries.} Corollaries~\ref{pc:cor15} and~\ref{cor:dd15} are formalized
-for every pair of constants $C\ge1$, $\delta>0$ for which the estimate of their theorem holds (\lean{pccor15_tied},
-\lean{cor15Rmain_tied}, \lean{cor15R_tied}), with the window $\delta_1=\min(\delta,\kappa^{1/2}/\max(1,C))$ and the absolute
-constant $C'=\ue^{1/2}$; such pairs exist by \lean{pcThmCD_exists}, \lean{rThmCD_exists} and \lean{xThmCD_exists}.
+\item \emph{The constants of the optimal-truncation corollary.} Corollary~\ref{pc:cor15} and its power-weight form
+(Remark~\ref{rem:pw-cor}) are formalized for every pair of constants $C\ge1$, $\delta>0$ for which the estimate of their theorem
+holds (\lean{pccor15_tied}, \lean{cor15Rmain_tied}, \lean{cor15R_tied}), with the window $\delta_1=\min(\delta,\kappa^{1/2}/\max(1,C))$,
+which equals $\min(\delta,\kappa^{1/2}/C)$ since $C\ge1$, and the absolute constant $C'=\ue^{1/2}$; such pairs exist by
+\lean{pcThmCD_exists}, \lean{rThmCD_exists} and \lean{xThmCD_exists}.
 \item \emph{Positive injectivity radius.} The pointwise statements \lean{pccor16bg_allN}, \lean{cor16Rmain_allbgN} and
 \lean{cor16R_repN} are derived from the arbitrary-quotient ones with the bound $m(z)\le M(r_0)$ of \lean{multM_le_of_injRad};
 their $\delta$ is chosen before $r_0$.
-\item \emph{Ranges.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$. Theorem~\ref{thm:dd-appx} and the power-weight parts of its
-corollaries keep the range $\alpha_0<\pi/4$ of the formal statements; the paper proof uses only $\alpha_0\le1$, since all estimates
-of Section~\ref{sec:analytic} are applied with $\tau_0=1$. Theorem~\ref{thm:dd14} and its reversed-weight corollaries are stated
-for every range $0<\alpha\le A$. Its formal counterpart \lean{thm14Rmain_all} obtains this range from the radius $\tfrac12$ by the
-monotonicity of the reversed-weight norm in the radius (\lean{swNormD_mono}), as in Section~\ref{sec:swapped}; the pointwise and
-expectation-value counterparts (\lean{cor16Rmain_allmultN}, \lean{cor16Rmain_allbgN}, \lean{evTransfer_main_all}) use the same
-reduction or \lean{thm14Rmain_all}, and \lean{cor15Rmain_tied} takes the theorem's constants.
+\item \emph{Ranges.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$. Theorem~\ref{thm:dd-appx} and Remark~\ref{rem:pw-cor} keep the range
+$\alpha_0<\pi/4$ of the formal statements; the paper proof uses only $\alpha_0\le1$, since all estimates
+of Section~\ref{sec:analytic} are applied with $\tau_0=1$. Theorem~\ref{thm:dd14} and the reversed-weight parts of the corollaries
+are stated for every range $0<\alpha\le A$. Its formal counterpart \lean{thm14Rmain_all} obtains this range from the radius $\tfrac12$ by the
+monotonicity of the reversed-weight norm in the radius (\lean{swNormD_mono}), as in Section~\ref{sec:swapped}; the leading-term, pointwise and
+expectation-value counterparts (\lean{thm13Rmain_all}, \lean{cor16Rmain_allmultN}, \lean{cor16Rmain_allbgN},
+\lean{evTransfer_main_all}) use the same reduction or \lean{thm14Rmain_all}, and \lean{cor15Rmain_tied} takes the theorem's
+constants.
 \item \emph{Proposition~\ref{pc:core}} is stated, as its formal counterpart, for every weight $\varpi$ with the properties of $\omega$
 that its proof uses, and it lists \textup{(W2)} although the growth condition implies it; it is applied only with $\varpi=\omega$.
 \item \emph{Uniformity in the group.} Theorem~\ref{thm:dd-appx}(ii), the uniformity in $\Gamma$, is
@@ -46,11 +48,15 @@ that its proof uses, and it lists \textup{(W2)} although the growth condition im
 Lemma~\ref{lem:lift} (\lean{lift1}), as in the bullet on amplitudes.
 \item \emph{The factor $N^{2N}$ in the pointwise corollaries.} The declarations with suffix \lean{N} restate the pointwise
 corollaries with $N^{2N}$ (\lean{ptBoundN}) from the versions with $(2N)!$, by $(2N)!\le4^NN^{2N}$ (\lean{ptBound_le_ptBoundN}).
-\item \emph{Theorem~\ref{pc:main}(ii)} is \lean{pcmain_unif}; its periodization constant $P^{\mathrm{cr}}_\Gamma$ is \lean{critSup}, and the
-group and the base point are quantified after $C$, as in \lean{thm14R_unifX}.
-\item \emph{The radius ranges of Theorem~\ref{pc:main}.} Theorem~\ref{pc:main}(i) states the bounded-radius result \lean{pcmain_all}; its proof treats $\alpha\le\tfrac12$, the range of
+\item \emph{Theorem~\ref{pc:main}} is \lean{pcmain_unif}; its periodization constant $P^{\mathrm{cr}}_\Gamma$ is \lean{critSup}, and the
+group and the base point are quantified after $C$, as in \lean{thm14R_unifX}. For a single group, with $P=P^{\mathrm{cr}}_\Gamma$, it is
+\lean{pcmain_all}.
+\item \emph{The radius ranges of Theorem~\ref{pc:main}.} Its proof treats $\alpha\le\tfrac12$, the range of
 \lean{pcmain_half}, and $\tfrac12<\alpha\le A$ separately, both through Proposition~\ref{pc:core}, which is \lean{dd_core_pc} with
-\lean{SurfW.surf_D4}. The original-norm leading-term, pointwise and expectation-value corollaries likewise use the all-radius declarations \lean{pcthm13_all}, \lean{pccor16_allN} and \lean{evTransfer_pc_all}; Corollary~\ref{pc:cor15} is \lean{pccor15_tied}, with the constants of Theorem~\ref{pc:main}.
+\lean{SurfW.surf_D4}. The original-norm parts of Corollaries~\ref{pc:thm13} and~\ref{pc:cor16}, Remark~\ref{thm:main} and
+Corollary~\ref{ev:transfer} are \lean{pcthm13_all}, \lean{pccor16_allN}, \lean{pccor16bg_allN}, \lean{pcthm13_fixed} and
+\lean{evTransfer_pc_all}, derived from \lean{pcmain_all}; as stated before Corollary~\ref{pc:thm13}, their constants depend on the group.
+The original-norm part of Corollary~\ref{pc:cor15} is \lean{pccor15_tied}, with the constants of Theorem~\ref{pc:main} on the group.
 \item \emph{Proposition~\ref{os:data}} retains the condition $\sigma m\le\tfrac12$, although its paper proof does not need it:
 this is the range of its formal statement and suffices for its applications.
 \item \emph{Proposition~\ref{prop:mean}.} Its formal statement has every $\hbar>0$ and every real $t$, and no hypothesis on the area:
@@ -81,8 +87,10 @@ including the supporting estimates. The differences in bounds, parameter ranges 
 \paragraph{Assembled counterparts.}
 Corollary~\ref{ev:transfer} is \lean{evTransfer_pc_all} for the original norm and \lean{evTransfer_main_all} for the reversed-weight
 norm; both combine the approximation bound at $N=0$ with the bounded-observable estimate \lean{ev_transfer_core}.
-Corollary~\ref{thm:main} is \lean{thm13R_fixed}, deduced from \lean{thm14Rmain_exp} at $K=N=0$ and the monotonicity of the
-reversed-weight norm in the radius (\lean{swNormD_mono}). The Mellin, scattering, zero-mode, initial-norm and outgoing-mass lemmas of
+The reversed-weight part of Corollary~\ref{pc:thm13} is \lean{thm13Rmain_all}, Theorem~\ref{thm:dd14} at $K=N=0$.
+Remark~\ref{thm:main} is \lean{pcthm13_fixed} for the original norm, deduced from \lean{pcthm13_all}, and \lean{thm13R_fixed} for the
+reversed-weight norm, deduced from \lean{thm14Rmain_exp} at $K=N=0$ and the monotonicity of the reversed-weight norm in the radius
+(\lean{swNormD_mono}). The Mellin, scattering, zero-mode, initial-norm and outgoing-mass lemmas of
 Section~\ref{sec:expect} are ingredients of the formal proof of Theorem~\ref{ev:mod};
 their individual statements do not have separate exact formal counterparts.
 
@@ -98,7 +106,7 @@ which is itself not proved formally.
 The example-amplitude results, Lemmas~\ref{lem:gutzmer} and~\ref{lem:ex} and Corollary~\ref{cor:localized},
 are also outside the formalization and are not used by the approximation theorems.
 
-\begin{table}[tbp]
+\begin{table}[!ht]
 \centering\small
 \caption{Formal counterparts and the principal exceptions.}\label{tab:lean}
 \begin{tabular}{@{}p{0.36\linewidth}p{0.60\linewidth}@{}}
@@ -106,20 +114,19 @@ are also outside the formalization and are not used by the approximation theorem
 Statement & Lean theorem or scope\\
 \hline
 \multicolumn{2}{@{}l}{\emph{Direct counterparts in the reading above}}\\
-Theorem~\ref{pc:main} & (i) \lean{pcmain_all}; (ii) \lean{pcmain_unif}\\
+Theorem~\ref{pc:main} & \lean{pcmain_unif}; for one group \lean{pcmain_all}\\
 Theorem~\ref{thm:dd14} & \lean{thm14Rmain_all}\\
-Corollary~\ref{pc:thm13} & \lean{pcthm13_all}\\
-Corollary~\ref{pc:cor15} & \lean{pccor15_tied}\\
-Corollary~\ref{pc:cor16} & \lean{pccor16_allN}; positive injectivity radius \lean{pccor16bg_allN}\\
+Corollary~\ref{pc:thm13} & \lean{pcthm13_all}, \lean{thm13Rmain_all}\\
+Corollary~\ref{pc:cor15} & \lean{pccor15_tied}, \lean{cor15Rmain_tied}\\
+Corollary~\ref{pc:cor16} & \lean{pccor16_allN}, \lean{cor16Rmain_allmultN}; positive injectivity radius \lean{pccor16bg_allN}, \lean{cor16Rmain_allbgN}\\
 Proposition~\ref{prop:g5} & \lean{propG5}; negation of Schubert's bound \lean{printedThm13_false}\\
 Theorem~\ref{ev:mod}(i),(ii) & \lean{evmod}\\
 Theorem~\ref{thm:dd-appx} & (i) \lean{thm14R_rep}; (ii) \lean{thm14R_unifX}\\
 Theorem~\ref{os:cw} & \lean{cw_abstract}\\
 Lemma~\ref{os:transfer} & \lean{transfer}\\
 Lemma~\ref{pc:g43} & \lean{sobolev_M_mult}\\
-Corollary~\ref{thm:main} & \lean{thm13R_fixed}\\
-Corollary~\ref{cor:dd15} & \lean{cor15Rmain_tied}, \lean{cor15R_tied}\\
-Corollary~\ref{cor:dd16} & \lean{cor16Rmain_allmultN}, \lean{cor16R_multN}; positive injectivity radius \lean{cor16Rmain_allbgN}, \lean{cor16R_repN}\\
+Remark~\ref{thm:main} & \lean{pcthm13_fixed}, \lean{thm13R_fixed}\\
+Remark~\ref{rem:pw-cor} & \lean{cor15R_tied}, \lean{cor16R_multN}; positive injectivity radius \lean{cor16R_repN}\\
 Corollary~\ref{ev:transfer} & \lean{evTransfer_pc_all}, \lean{evTransfer_main_all}\\
 Proposition~\ref{prop:mean} & \lean{meanGrowth}\\
 \hline
