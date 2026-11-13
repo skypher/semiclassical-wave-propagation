@@ -5,10 +5,10 @@
 
 \multicolumn{3}{@{}l}{\emph{Main approximation results}}\\
 Theorem~\ref{pc:main} & L & \lean{pcmain_all}; small-radius stage: \lean{pcmain_half}\\
-Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_exp}\\
+Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_all} (every bounded range of radii, from \lean{thm14Rmain_exp} and \lean{swNormD_mono})\\
 Corollary~\ref{pc:thm13} & L & \lean{pcthm13_all}\\
 Corollary~\ref{pc:cor15} & L & \lean{pccor15_all}\\
-Corollary~\ref{pc:cor16} & L & \lean{pccor16_all}; bounded geometry: \lean{pccor16bg_all}\\
+Corollary~\ref{pc:cor16} & L & \lean{pccor16_all}; positive injectivity radius: \lean{pccor16bg_all}\\
 Proposition~\ref{prop:g5} & L & \lean{propG5}; the negation of Schubert's bound is \lean{printedThm13_false}\\
 Theorem~\ref{cl:necessary} & P & deduced from Theorem~\ref{cl:main}; not formalized\\
 Theorem~\ref{ev:mod} & L$'$ & parts (i), (ii): \lean{evmod}, with the statement \lean{Stmt_evmod}; part (iii) is a cited theorem and is not formalized\\
@@ -60,13 +60,13 @@ Lemma~\ref{pc:g43} & L & \lean{sobolev_M_mult}\\
 Remark~\ref{pc:remcusp} & P & two-sided bound for $m(z)$ in a cusp; self-checked, not formalized\\
 Remark~\ref{rem:g4} & P & \\[2pt]
 Corollary~\ref{thm:main} & L & \lean{thm13R_fixed} (from \lean{thm14Rmain_exp} and \lean{swNormD_mono})\\
-Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_exp} (reversed-weight norm, exponent $\beta+\tfrac12$), \lean{cor15R_rep} (power-weight norm)\\
-Corollary~\ref{cor:dd16} & L & \lean{cor16Rmain_expmult}, \lean{cor16R_mult}; bounded geometry: \lean{cor16Rmain_expbg}, \lean{cor16R_rep}\\
+Corollary~\ref{cor:dd15} & L & \lean{cor15Rmain_all} (reversed-weight norm, exponent $\beta+\tfrac12$), \lean{cor15R_rep} (power-weight norm)\\
+Corollary~\ref{cor:dd16} & L & \lean{cor16Rmain_allmult}, \lean{cor16R_mult}; positive injectivity radius: \lean{cor16Rmain_allbg}, \lean{cor16R_rep}\\
 Remark~\ref{rem:amplitude-examples} & P & elementary norm identities and an example; self-checked, not separately formalized\\
 Lemma~\ref{lem:ex} & P & not used by the theorems\\[2pt]
 Corollary~\ref{cor:localized} & P & extracted from the localized-state application of Lemma~\ref{lem:ex} and Theorem~\ref{thm:dd14}; self-checked, not separately formalized\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:expect}: expectation values and escape of mass}}\\
-Corollary~\ref{ev:transfer} & L & original norm: \lean{evTransfer_pc_all}; reversed-weight norm: \lean{evTransfer_main}\\
+Corollary~\ref{ev:transfer} & L & original norm: \lean{evTransfer_pc_all}; reversed-weight norm: \lean{evTransfer_main_all}\\
 Lemma~\ref{ev:meanlem} & L & \lean{integral_amp_mul_slice_L1}, \lean{integrableOn_amp_mul_slice_L1}, \lean{slice_lintegral_le}\\
 Corollary~\ref{ev:perio} & P & elementary consequence of Lemma~\ref{ev:meanlem}; self-checked, not separately formalized\\
 Lemmas~\ref{ev:mellinlemma}, \ref{ev:scattering}, \ref{ev:approxmode}, \ref{ev:initialnorm}, \ref{ev:outgoing} & P & editorial extractions from the proof of Theorem~\ref{ev:mod}; the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked\\
@@ -75,7 +75,7 @@ Proposition~\ref{prop:mean} & L & \lean{meanGrowth}; \lean{integral_approxSolB},
 Corollary~\ref{cor:meanJ} & P & deduced from Proposition~\ref{prop:mean} and Theorem~\ref{thm:dd14}; self-checked, not formalized\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:cusp}: sharpness of the cusp factor}}\\
 Proposition~\ref{cl:relative} & P & extracted from the relative-error remark; self-checked\\
-Theorem~\ref{cl:main}, Lemmas~\ref{cl:ssob}, \ref{cl:asym}, \ref{cl:kernel}, \ref{cl:amp} & P & \\
+Theorem~\ref{cl:main}, Lemmas~\ref{cl:ssob}, \ref{cl:sp}, \ref{cl:asym}, \ref{cl:kernel}, \ref{cl:amp}, \ref{cl:two} & P & \\
 Lemmas~\ref{cl:aux}, \ref{cl:noncancel} & P & auxiliary estimates and noncancellation separated from the amplitude proof; self-checked, not separately formalized\\[2pt]
 Corollary~\ref{cl:rational} & P & transport of Theorems~\ref{cl:main} and~\ref{cl:necessary} to rational boundary points; self-checked\\
 \multicolumn{3}{@{}l}{\emph{Appendix~\ref{app:special}: special-function and kernel calculations}}\\

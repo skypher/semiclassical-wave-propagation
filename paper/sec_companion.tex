@@ -5,7 +5,7 @@ Throughout, $\Gamma$ and the base point $x_0$ are fixed, $M=\Gamma\backslash\Hb$
 
 \medskip\noindent\emph{The common structure.}
 The proof of Theorem~\ref{thm:dd-appx} and that of Proposition~\ref{pc:core} in Section~\ref{subsec:pc-proof} both bound the
-integrand $\norm{\mathcal V_{s_1}b'(\mathbf s)}_{L^2(M)}$ of Proposition~\ref{prop:dd-id}(ii), with $\varepsilon=(\alpha\hbar)^{1/2}/2$
+integrand $\norm{\mathcal V_{s_1}a_{\mathbf s}}_{L^2(M)}$ of Proposition~\ref{prop:dd-id}(ii), with $\varepsilon=(\alpha\hbar)^{1/2}/2$
 and $\xi=(\alpha/\hbar)^{1/2}$ ($\sigma$ in place of $\alpha$ in Proposition~\ref{pc:core}), by a mollified part and a defect
 part as described in Section~\ref{subsec:method}, and then integrate over the simplex. Table~\ref{tab:compare} lists where
 they differ.
@@ -60,11 +60,11 @@ so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=\xi/2$ and $\alpha/\varepsi
 
 Use Proposition~\ref{prop:dd-id}(ii) with $\varpi=X_0^\lambda$; every word applied to $a$ lies in $L^2_\varpi$ by Lemma~\ref{lem:sc}, since $X_0^\lambda\le X_0^\beta$. For each $\mathbf s=(s_1,\dots,s_{K+1})\in\Sigma_{K+1}(t)$ let
 \[
-g(t'):=V_\varepsilon(t',s_1)\,b',\quad0\le t'\le s_1,\qquad w:=g(0)=V_\varepsilon(s_1)^*b',
+g(t'):=V_\varepsilon(t',s_1)\,a_{\mathbf s},\quad0\le t'\le s_1,\qquad w:=g(0)=V_\varepsilon(s_1)^*a_{\mathbf s},
 \]
-and write, since $g(s_1)=b'$,
+and write, since $g(s_1)=a_{\mathbf s}$,
 \[
- \mathcal V_{s_1}b'=\mathcal V_0w+\bigl(\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)\bigr).
+ \mathcal V_{s_1}a_{\mathbf s}=\mathcal V_0w+\bigl(\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)\bigr).
 \]
 The first term is bounded by weighted propagation of the mollified flow (Step~1). For the second, the Duhamel formula on $M$ (Lemma~\ref{lem:surf-duh})
 expresses the difference through the mollifier defect, whose analytic smallness compensates for the transport growth
@@ -74,7 +74,7 @@ after interpolation (Step~2).
 
 Lemma~\ref{lem:t2} at $t=0$, and Proposition~\ref{prop:ws} at the weight $X_0^\lambda$ (with $\hbar s_1\le\varepsilon$), give
 \[
-\norm{\mathcal V_0w}=\norm{[\ue^{i\varphi/\hbar}V_\varepsilon(s_1)^*b']_\Gamma}\le C\norm{X_0^\lambda V_\varepsilon(0,s_1)b'}\le C\ue^{G_\lambda/2}\norm{X_0^\lambda b'}\le C\norm{X_0^\beta b'},
+\norm{\mathcal V_0w}=\norm{[\ue^{i\varphi/\hbar}V_\varepsilon(s_1)^*a_{\mathbf s}]_\Gamma}\le C\norm{X_0^\lambda V_\varepsilon(0,s_1)a_{\mathbf s}}\le C\ue^{C_{\mathrm{fl},\lambda}/2}\norm{X_0^\lambda a_{\mathbf s}}\le C\norm{X_0^\beta a_{\mathbf s}},
 \]
 using $X_0^\lambda\le X_0^\beta$ (since $X_0\ge1$ and $\lambda\le\beta$).
 By Lemma~\ref{lem:wb}(i) with $n=0$:
@@ -85,7 +85,7 @@ By Lemma~\ref{lem:wb}(i) with $n=0$:
 
 \medskip\noindent\emph{Step 2 (defect part).}
 
-By Lemma~\ref{lem:wb}(i) with $n\le2$, $X_0^\beta Zb'\in L^2$ for every $Z$ in $\mathcal S=\{1,X,Y,X^2,Y^2\}$. Thus Lemma~\ref{lem:path}(c), with the exponent
+By Lemma~\ref{lem:wb}(i) with $n\le2$, $X_0^\beta Za_{\mathbf s}\in L^2$ for every $Z$ in $\mathcal S=\{1,X,Y,X^2,Y^2\}$. Thus Lemma~\ref{lem:path}(c), with the exponent
 $\lambda$, shows that $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for $\varpi=X_0^\lambda$. Since $g'=c_\hbar\,\Delta_\varepsilon(t')g$,
 Duhamel on $M$ gives $\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)=-c_\hbar\int_0^{s_1}\mathcal V_{t'}\mathfrak d(t')\,dt'$, with
 \[
@@ -98,14 +98,14 @@ We estimate the two factors separately.
 
 \emph{Weighted factor.} By Lemma~\ref{lem:path}(b) with the exponent $\beta$, and Lemma~\ref{lem:wb}(i) with $n\le2$ (five words; the bound increases with $n$),
 \begin{align*}
-\norm{X_0^\beta \mathfrak d(t')}&\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\beta Zb'}\\
+\norm{X_0^\beta \mathfrak d(t')}&\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\beta Za_{\mathbf s}}\\
 &\le C\varepsilon^{-3}\,C_3^{N+K+3}(2N)!\,(2K+4)!\,\alpha^{-(2K+4)}(\alpha\hbar)^{-2N}\pwNorm a.
 \end{align*}
 \emph{Unweighted factor.} Lemma~\ref{lem:mw} gives $\norm{\ue^{r_0\Lambda}a}\le C_*B_\beta\pwNorm a$.
 Lemma~\ref{lem:wb}(ii), applied with $r_0$ in the role of $\alpha$ and the radii $r_1<r_0$ (gap $r_0/4$), gives
-$\norm{\ue^{r_1\Lambda}b'}\le C_3^{N+K+1}(2N)!(2K+2)!\,r_0^{-(2K+2)}(r_0\hbar)^{-2N}\norm{\ue^{r_0\Lambda}a}$.
+$\norm{\ue^{r_1\Lambda}a_{\mathbf s}}\le C_3^{N+K+1}(2N)!(2K+2)!\,r_0^{-(2K+2)}(r_0\hbar)^{-2N}\norm{\ue^{r_0\Lambda}a}$.
 Proposition~\ref{prop:a0}, from the radius $r_1$ to $r_2$ (so $(r_1-r_2)/r_1=\tfrac13$) and for $|t'-s_1|\le t\le\tfrac13c_A\varepsilon/\hbar$, gives
-$\norm{\ue^{r_2\Lambda}g(t')}\le\norm{\ue^{r_1\Lambda}b'}$.
+$\norm{\ue^{r_2\Lambda}g(t')}\le\norm{\ue^{r_1\Lambda}a_{\mathbf s}}$.
 Lemma~\ref{lem:unw} with $r=r_2$ gives $\norm{\mathfrak d(t')}\le C_4r_2^{-4}\ue^{-r_2/(8\varepsilon)}\norm{\ue^{r_2\Lambda}g(t')}$, and $r_2/(8\varepsilon)=c_M\xi/8$.
 
 \emph{Combining the factors.} Put
@@ -130,7 +130,7 @@ the defect part is at most $C\alpha^2F$.
 Integration over $\Sigma_{K+1}(t)$ gives $t^{K+1}/(K+1)!$. We use
 \begin{equation}\label{eq:factorial-assembly}
  \frac{(2K+4)!}{(K+1)!}\le4^{K+2}(K+2)^2(K+1)K!\le64^{K+1}K!,\qquad
- (2N)!\le4^NN^{2N},
+ (2N)!\le4^NN^{2N}.
 \end{equation}
 The first bound follows from $\binom{2K+4}{K+2}\le4^{K+2}$; for the second, bound each of the $2N$ factors by $2N$. The smaller factorial $(2K+2)!$ obeys the same bound. Finally,
 $\hbar^{K+1}t^{K+1}\alpha^{-(2K+2)}=(\hbar t/\alpha^2)^{K+1}$, and $\alpha^2F$ carries $\alpha^{-(2K+2)}$.
@@ -156,15 +156,28 @@ this is part~(ii), the uniformity used in Theorem~\ref{thm:dd14}.
 
 \subsection{The reversed-weight class}\label{sec:swapped}
 We now transfer the power-weight estimate to the norm $\swNorm a=\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}$, with spatial
-decay imposed on the amplitude. By Lemma~\ref{lem:m2w}, a finite norm $\swNorm a$ at radius $\alpha$ gives a finite norm with the
+decay imposed on the amplitude, first for radii $\alpha\le\tfrac12$ and then, by the monotonicity of this norm in the radius, for
+every bounded range of radii. By Lemma~\ref{lem:m2w}, a finite norm $\swNorm a$ at radius $\alpha$ gives a finite norm with the
 weight $X_0^\beta=\ue^{\beta\tilde\psi}$ in place of $\ue^{\beta\langle d\rangle}$, at the radius $c_0\alpha$ for a fixed
 $c_0=c_0(\beta)\in(0,1]$.
 
 \begin{proof}[Proof of Theorem~\ref{thm:dd14}]
-Let $c_0$ and $C'$ be the constants $c_0$ and $C$ of Lemma~\ref{lem:m2w}. If $\alpha\le\alpha_0$ and $\alpha^3\ge\kappa\hbar$, then $\bar\alpha:=c_0\alpha\le c_0\alpha_0$,
-$\bar\alpha^3\ge c_0^3\kappa\hbar$ and $\norm{\ue^{\bar\alpha\Lambda}X_0^\beta a}\le C'\swNorm a$. Apply Theorem~\ref{thm:dd-appx} with
-$c_0\alpha_0$, $c_0^3\kappa$ and $\bar\alpha$ in place of $\alpha_0$, $\kappa$ and $\alpha$, and let $C_{\rm pw},\delta_{\rm pw}$ be its constants. Its
-window $t\le\delta_{\rm pw}(\bar\alpha/\hbar)^{1/2}$ is the window $t\le\delta(\alpha/\hbar)^{1/2}$ with $\delta:=c_0^{1/2}\delta_{\rm pw}$, and
-$(\bar\alpha\hbar)^{-2N}(\hbar t/\bar\alpha^2)^{K+1}=c_0^{-2N-2K-2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$. So the bound holds with
-$C:=C_{\rm pw}\,c_0^{-2}\max(1,C')$. The dependence on $\Gamma$ is that of Theorem~\ref{thm:dd-appx}(ii).
+\emph{Radii $0<\alpha\le\tfrac12$.} Let $c_0$ and $C'$ be the constants $c_0$ and $C$ of Lemma~\ref{lem:m2w}. If $\alpha\le\tfrac12$ and
+$\alpha^3\ge\kappa\hbar$, then $\bar\alpha:=c_0\alpha\le c_0/2$, $\bar\alpha^3\ge c_0^3\kappa\hbar$ and
+$\norm{\ue^{\bar\alpha\Lambda}X_0^\beta a}\le C'\swNorm a$. Apply Theorem~\ref{thm:dd-appx} with $c_0/2$, $c_0^3\kappa$ and $\bar\alpha$
+in place of $\alpha_0$, $\kappa$ and $\alpha$, and let $C_{\rm pw},\delta_{\rm pw}$ be its constants. Its
+window $t\le\delta_{\rm pw}(\bar\alpha/\hbar)^{1/2}$ is the window $t\le\delta_{\rm s}(\alpha/\hbar)^{1/2}$ with $\delta_{\rm s}:=c_0^{1/2}\delta_{\rm pw}$, and
+$(\bar\alpha\hbar)^{-2N}(\hbar t/\bar\alpha^2)^{K+1}=c_0^{-2N-2K-2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$. So the bound holds for
+$\alpha\le\tfrac12$ with the constants $\delta_{\rm s}$ and $C_{\rm s}:=C_{\rm pw}\,c_0^{-2}\max(1,C')$.
+
+\emph{Radii $\tfrac12<\alpha\le A$.} The reversed-weight norm increases with the radius: $\ue^{\Lambda/2}=\ue^{-(\alpha-1/2)\Lambda}\ue^{\alpha\Lambda}$,
+and $\ue^{-\tau\Lambda}$ is a contraction for $\tau\ge0$, so the norm of $a$ at the radius $\tfrac12$ is at most $\swNorm a$. Apply the first
+case at the radius $\tfrac12$ with $\tfrac18$ in place of $\kappa$ (then $(\tfrac12)^3\ge\tfrac18\hbar$ for $\hbar\le1$), and let $C_1,\delta_1$ be its
+constants. For $t\le\delta_1(2A)^{-1/2}(\alpha/\hbar)^{1/2}$ we have $t\le\delta_1(1/(2\hbar))^{1/2}$, and
+$(\tfrac12\hbar)^{-2N}(4\hbar t)^{K+1}\le(2A)^{2N+2K+2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$. So the bound holds for
+$\tfrac12<\alpha\le A$ with $\delta_1(2A)^{-1/2}$ and $(2A)^2C_1$. Take $\delta:=\min(\delta_{\rm s},\delta_1(2A)^{-1/2})$ and
+$C:=\max(C_{\rm s},(2A)^2C_1)$.
+
+In both cases the group enters only through Theorem~\ref{thm:dd-appx}, whose $\delta_{\rm pw}$ does not depend on $\Gamma$ and whose
+$C_{\rm pw}$ depends on $\Gamma$ only through $P_\Gamma(\beta+\tfrac12)$ (part (ii)); so the same holds for $\delta$ and $C$.
 \end{proof}

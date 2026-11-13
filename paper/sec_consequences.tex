@@ -1,7 +1,7 @@
 \section{Consequences and localized amplitudes}\label{sec:consequences}
 We first establish the local Sobolev estimate needed for pointwise control, then prove the corollaries of
-Section~\ref{sec:repair} and state and prove their analogues for the reversed-weight and power-weight norms. We conclude
-with Schubert's localized example in the reversed-weight class.
+Section~\ref{sec:repair} and state and prove their analogues for the reversed-weight and power-weight norms. Then we prove
+Proposition~\ref{prop:g5}, and we conclude with Schubert's localized example in the reversed-weight class.
 
 \subsection{Local pointwise control}\label{subsec:local-pointwise}
 \begin{lemma}[local Sobolev inequality on a Fuchsian quotient]\label{pc:g43}
@@ -46,7 +46,7 @@ necessary on the modular surface for a phase attached to the cusp.
 \end{remark}
 
 \begin{remark}[the local Sobolev loss]\label{rem:g4}
-The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient with a cusp. In a cusp neighbourhood $\{y>H\}/(x\sim x+1)$, take $u_R=f(\log y-R)$ with $0\ne f\in C_c^\infty(\mathbb R)$ and $R$ so large that $u_R$ is supported in $\{y>H\}$. For every integer $j\ge1$,
+The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient with a cusp (compare Remark~\ref{pc:remcusp}). In a cusp neighbourhood $\{y>H\}/(x\sim x+1)$, take $u_R=f(\log y-R)$ with $0\ne f\in C_c^\infty(\mathbb R)$ and $R$ so large that $u_R$ is supported in $\{y>H\}$. For every integer $j\ge1$,
 \[
 \norm{u_R}_{L^1}\asymp\norm{\Delta^ju_R}_{L^1}\asymp\ue^{-R},\qquad
 \norm{u_R}_{L^2}\asymp\norm{\Delta^ju_R}_{L^2}\asymp\ue^{-R/2},
@@ -62,25 +62,25 @@ This is Theorem~\ref{pc:main} with $K=N=0$.
 \begin{proof}[Proof of Corollary~\ref{pc:cor15}]
 For $t=0$ the range of $K$ is empty, so let $t>0$. Theorem~\ref{pc:main} bounds the error by
 \[
-  C^NN^{2N}(\alpha\hbar)^{-2N}q^{K+1}K!\,\pcNorm a,
-  \qquad q=\frac{C\hbar t}{\alpha^2}.
+  C^NN^{2N}(\alpha\hbar)^{-2N}\rho^{K+1}K!\,\pcNorm a,
+  \qquad \rho=\frac{C\hbar t}{\alpha^2}.
 \]
 The time window $t\le\delta_1(\alpha/\hbar)^{1/2}$, $\alpha^3\ge\kappa\hbar$ and the choice of $\delta_1$ give
 \[
   \frac{\hbar t}{\alpha^2}\le\delta_1\hbar^{1/2}\alpha^{-3/2}
   \le\delta_1\kappa^{-1/2}\le\frac1{\max(1,C)}.
 \]
-Thus $q\le1$ and $C^Nq=C^{N+1}\hbar t/\alpha^2\le C^{N+1}$. In particular $K\ge(1-\theta)/q\ge1-\theta>0$, so $K\ge1$ in
-the stated range. Stirling's inequality and $Kq\le1-\theta/2$ give
+Thus $\rho\le1$ and $C^N\rho=C^{N+1}\hbar t/\alpha^2\le C^{N+1}$. In particular $K\ge(1-\theta)/\rho\ge1-\theta>0$, so $K\ge1$ in
+the stated range. Stirling's inequality and $K\rho\le1-\theta/2$ give
 \[
-  q^{K+1}K!
-  \le\ue\,q K^{1/2}\ue^{-K}(Kq)^K
-  \le\ue\,q K^{1/2}\ue^{-K\theta/2}\ue^{-K}.
+  \rho^{K+1}K!
+  \le\ue\,\rho\,K^{1/2}\ue^{-K}(K\rho)^K
+  \le\ue\,\rho\,K^{1/2}\ue^{-K\theta/2}\ue^{-K}.
 \]
 Since $K^{1/2}\ue^{-K\theta/2}\le(\ue\theta)^{-1/2}$ and
-$K\ge(1-\theta)/q$, this is at most
+$K\ge(1-\theta)/\rho$, this is at most
 \[
-  \ue^{1/2}\theta^{-1/2}q
+  \ue^{1/2}\theta^{-1/2}\rho
   \exp\Bigl(-\frac{(1-\theta)\alpha^2}{C\hbar t}\Bigr).
 \]
 Combining the bounds proves the corollary with
@@ -94,8 +94,8 @@ Lemma~\ref{pc:g43} to $u$, and use $N^{2N}\le(\ue/2)^{2N}(2N)!$ and $(N+1)^{2N+2
 The estimates at $N$ and $N+1$ carry the factors $(\alpha\hbar)^{-2N}$ and
 $(\alpha\hbar)^{-2N-2}$, respectively. Since $\alpha\hbar\le A$, their sum is at most
 $(1+A^2)(\alpha\hbar)^{-2N-2}$; absorb $1+A^2$ into the constant.
-For the bounded-geometry specialization, $d(\gamma\tilde z,\gamma'\tilde z)=d(\tilde z,\gamma^{-1}\gamma'\tilde z)\ge2r_0$ for
-$\gamma\ne\gamma'$ by the definition after Corollary~\ref{pc:cor16}, so the points $\gamma\tilde z$ are distinct and
+For the specialization to positive injectivity radius, $d(\gamma\tilde z,\gamma'\tilde z)=d(\tilde z,\gamma^{-1}\gamma'\tilde z)\ge2r_0$ for
+$\gamma\ne\gamma'$ by the definition in Section~\ref{sec:setup}, so the points $\gamma\tilde z$ are distinct and
 $2r_0$-separated, and the counting bound of Lemma~\ref{lem:count} with multiplicity $1$ and $R=2$ gives $m(z)\le C(r_0)$. \qedhere
 \end{proof}
 
@@ -107,7 +107,8 @@ Let $\Gamma$ be a Fuchsian group, $\beta>1/2$ and $\alpha>0$ be fixed. There are
 \]
 \end{corollary}
 \begin{proof}
-Fix $\alpha_0\in(0,\pi/4)$. For $0<\alpha\le\alpha_0$, take $K=N=0$ and $\kappa=\alpha^3$ in Theorem~\ref{thm:dd14}, absorbing the fixed factors $\alpha^{-2}$ and $\alpha^{1/2}$ into $C$ and $\delta$. For $\alpha>\alpha_0$, the reversed-weight norm at radius $\alpha_0$ is bounded by that at radius $\alpha$.
+Apply Theorem~\ref{thm:dd14} with $A=\alpha$, $\kappa=\alpha^3$ (so $\alpha^3\ge\kappa\hbar$ for $\hbar\le1$) and $K=N=0$, and absorb the fixed
+factors $\alpha^{-2}$ and $\alpha^{1/2}$ into $C$ and $\delta$. This is the form of \cite[Theorem~1.3]{S}.
 \end{proof}
 
 \begin{corollary}[optimal truncation for the reversed-weight and power-weight norms]\label{cor:dd15}\label{cor:dd15-appx}
@@ -124,14 +125,38 @@ The same absolute constant $C'=\ue^{1/2}$ works.
 Under the hypotheses of Theorem~\ref{thm:dd14}, respectively Theorem~\ref{thm:dd-appx}(i), the arbitrary-quotient estimate
 of Corollary~\ref{pc:cor16}, including the factor $m(z)^{1/2}$, holds with $\swNorm a$,
 respectively $\pwNorm a$, in place of $\pcNorm a$.
-If $M$ has injectivity radius at least $r_0>0$ (in the sense defined after Corollary~\ref{pc:cor16}), this factor may be
+If $M$ has injectivity radius at least $r_0>0$ (Section~\ref{sec:setup}), this factor may be
 replaced by $1$, with a constant depending also on $r_0$.
 \end{corollary}
 \begin{proof}
 Apply Lemma~\ref{pc:g43} to $\Delta^NE$ and use the respective approximation theorem at $N$ and $N+1$, as in the proof of
-Corollary~\ref{pc:cor16}; the counting argument there gives the bounded-geometry specialization.
+Corollary~\ref{pc:cor16}; the counting argument there gives the specialization to positive injectivity radius.
 \end{proof}
 
+
+\subsection{The order \texorpdfstring{$\hbar t$}{ht} of the leading error is attained}\label{subsec:g5proof}
+For every amplitude of finite reversed-weight norm, all words in $X,Y$ applied to it lie in $L^2(\Hb)$
+(Lemmas~\ref{lem:m2w} and~\ref{lem:sc}); the same holds for the original norm
+(Lemma~\ref{lem:lift}), using a smaller radius in these lemmas if necessary.
+Thus Proposition~\ref{prop:g5} applies to both classes. Nonzero examples are
+$\ue^{-\beta\langle d\rangle}\ue^{-\alpha\Lambda}g$ and
+$\ue^{-\alpha\Lambda}\ue^{-\beta\langle d\rangle}g$, respectively, with $0\ne g\in L^2(\Hb)$;
+the corresponding norm is $\norm g$.
+
+
+\begin{proof}[Proof of Proposition~\ref{prop:g5}]
+By \eqref{eq:factor} and unitarity of $\cU$ and $V(t)$, the left side equals $\norm{V(t)a-a}=\norm{a-V(t)^*a}$. The Dyson
+identity (i) of Proposition~\ref{prop:dd-id} at $K=1$, whose hypothesis is the one made on $a$, reads, with $c_\hbar=i\hbar/2$,
+\[a-V(t)^*a=c_\hbar\,V(t)^*P_1(t)a+R,\qquad R=c_\hbar^2\int_{t>s_1>s_2>0}V(s_1)^*\Delta(s_1)\Delta(s_2)a\,ds_1\,ds_2,\]
+and, since $\Delta(s)=\Delta_0+\ue^{-2s}X^2$,
+\[P_1(t)=\int_0^t\Delta(s)\,ds=t\Delta_0+\tfrac{1-\ue^{-2t}}2X^2\]
+and
+\[\norm{\Delta(r)\Delta(s)a}\le B_a:=\norm{\Delta_0^2a}+\norm{\Delta_0X^2a}+\norm{X^2\Delta_0a}+\norm{X^4a}<\infty\qquad(r,s\ge0).\]
+So $\norm R\le\tfrac{\hbar^2t^2}{8}B_a$, and since $V(t)^*$ is unitary,
+\[\bigl|\norm{V(t)a-a}-\tfrac{\hbar t}2\norm{\Delta_0a}\bigr|\le\tfrac\hbar4\norm{X^2a}+\tfrac{\hbar^2t^2}{8}B_a ,\]
+which is $\hbar\,(\tfrac14\norm{X^2a}+\tfrac{\tau^2}8B_a)$ at $t=\tau\,\hbar^{-1/2}$. In the variable $r=\log y$ and after the unitary
+gauge $a=\ue^{r/2}g$, $\Delta_0$ becomes $\partial_r^2-1/4$, so $-\Delta_0\ge1/4$; hence $\norm a\norm{\Delta_0a}\ge\langle a,-\Delta_0a\rangle\ge\norm a^2/4$.
+\end{proof}
 
 \subsection{Example amplitudes}\label{subsec:dd-ex}
 
@@ -140,9 +165,9 @@ For $f\in L^2(\Hb)$ with $\ue^{\beta\langle d\rangle}f\in L^2(\Hb)$, the amplitu
 $\pcNorm a=\norm{\ue^{\beta\langle d\rangle}f}$, because $\ue^{\alpha\Lambda}\ue^{-\alpha\Lambda}f=f$; conversely, every amplitude of
 finite original norm has this form, with $f=\ue^{\alpha\Lambda}a$, because $a=\ue^{-\alpha\Lambda}\ue^{\alpha\Lambda}a$ for
 $a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$. In the same way, the amplitudes of the reversed-weight class are $a=\ue^{-\beta\langle d\rangle}F$
-with $F\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, and $\swNorm a=\norm{\ue^{\alpha\Lambda}F}$. For example, $f=\ue^{-qX_0}$ with any
-$q>0$ gives a nonzero amplitude of the original-norm class at every analytic radius: since $\langle d\rangle\le d$, polar
-coordinates give $\norm{\ue^{\beta\langle d\rangle}\ue^{-qX_0}}^2\le2\pi\int_0^\infty\ue^{2\beta r-2q\cosh r}\sinh r\,dr$, which is finite
+with $F\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, and $\swNorm a=\norm{\ue^{\alpha\Lambda}F}$. For example, $f=\ue^{-cX_0}$ with any
+$c>0$ gives a nonzero amplitude of the original-norm class at every analytic radius: since $\langle d\rangle\le d$, polar
+coordinates give $\norm{\ue^{\beta\langle d\rangle}\ue^{-cX_0}}^2\le2\pi\int_0^\infty\ue^{2\beta r-2c\cosh r}\sinh r\,dr$, which is finite
 because $\cosh r\ge\ue^r/2$ and $\sinh r\le\ue^r$, and $\ue^{-\alpha\Lambda}f\ne0$ because the multiplier $\ue^{-\alpha\lambda}$ is
 positive.
 \end{remark}
@@ -157,36 +182,37 @@ $0<\alpha\le\min(r_1,\mu^{-1/2})$,
 
 \begin{proof}
 We use the notation of Section~\ref{subsec:gutzmer}, with $x_0=i$: $\Xi_R$ is the domain of holomorphic extension and
-$N_\rho(f)$ the $L^2$ norm of $f$ on the orbit $G\exp(i\rho\mathsf h)x_0$.
+$\mathcal G_\rho(f)$ the $L^2$ norm of $f$ on the orbit $G\exp(i\rho\mathsf h)x_0$.
 
 \emph{The function $\Upsilon$.} Let $\Theta(z):=-\arccos(z)^2$ and $\Upsilon(z):=(1+\Theta(z))^{1/2}-1$. The function $\Theta$ is holomorphic on
 $\mathbb C\setminus(-\infty,-1]$ and equals $d^2$ at $z=\cosh d$, so $\langle d\rangle=\Upsilon(X_0)$ on $\Hb$. The number $1+\Theta(z)$ is real and at most $0$ only for
 real $z\le\cos1$, so $\Upsilon$ is holomorphic on the complement of $(-\infty,\cos1]$, real on $(\cos1,\infty)$ and nondecreasing there.
-For $0<\rho<\tfrac12$ let $S_\rho:=\{\operatorname{Re}z\ge\cos2\rho,\ |\arg z|\le2\rho\}$, and fix $r_1<r_1'<r_2<\tfrac12$ depending only on $r_1$.
-Since $\cos2r_2>\cos1$, $\Upsilon$ is holomorphic near $S_{r_2}$. As $|z|\to\infty$ in $S_{r_2}$ we have $\Theta=L^2$ with
-$L=\log(z+(z^2-1)^{1/2})=\log(2z)+O(|z|^{-2})$, hence $\Upsilon=L-1+O(1/|L|)$; so $M_{\Upsilon}:=\sup_{S_{r_2}}|\Upsilon(z)-\log z|<\infty$. There is $c>0$,
-depending only on $r_1',r_2$, such that the disc of radius $c|z|$ about any $z\in S_{r_1'}$ lies in $S_{r_2}$, and Cauchy's estimates for
+For $0<\rho<\tfrac12$ let $\Pi_\rho:=\{\operatorname{Re}z\ge\cos2\rho,\ |\arg z|\le2\rho\}$, and fix $r_1<r_1'<r_2<\tfrac12$ depending only on $r_1$.
+Since $\cos2r_2>\cos1$, $\Upsilon$ is holomorphic near $\Pi_{r_2}$. As $|z|\to\infty$ in $\Pi_{r_2}$ we have $\Theta=(\operatorname{arcosh}z)^2$ with
+$\operatorname{arcosh}z=\log(z+(z^2-1)^{1/2})=\log(2z)+O(|z|^{-2})$, hence $\Upsilon=\operatorname{arcosh}z-1+O(1/|\operatorname{arcosh}z|)$;
+so $D_{\Upsilon}:=\sup_{\Pi_{r_2}}|\Upsilon(z)-\log z|<\infty$. There is $c>0$,
+depending only on $r_1',r_2$, such that the disc of radius $c|z|$ about any $z\in \Pi_{r_1'}$ lies in $\Pi_{r_2}$, and Cauchy's estimates for
 $\Upsilon-\log$ on these discs give
 \[
-|\Upsilon'(z)|\le C'_\Upsilon/|z|,\qquad|\Upsilon''(z)|\le C'_\Upsilon/|z|^2\qquad(z\in S_{r_1'}).
+|\Upsilon'(z)|\le C'_\Upsilon/|z|,\qquad|\Upsilon''(z)|\le C'_\Upsilon/|z|^2\qquad(z\in \Pi_{r_1'}).
 \]
 
-\emph{The orbit norms.} By Lemma~\ref{lem:gutzmer}(b), on the orbit $G\exp(i\rho\mathsf h)x_0$, $\rho\le r_1'$, the extension of $X_0$ takes the
-values $\tilde X_0=cA+isB$ with $c=\cos2\rho$, $s=\sin2\rho$, $A=X_0(gx_0)\ge1$ and $|B|\le A$; these lie in $S_\rho\subset S_{r_1'}$, and so does
+\emph{The orbit norms.} By Lemma~\ref{lem:gutzmer}(a), on the orbit $G\exp(i\rho\mathsf h)x_0$, $\rho\le r_1'$, the extension of $X_0$ takes the
+values $\tilde X_0=cA+isB$ with $c=\cos2\rho$, $s=\sin2\rho$, $A=X_0(gx_0)\ge1$ and $|B|\le A$; these lie in $\Pi_\rho\subset \Pi_{r_1'}$, and so does
 the vertical segment from $cA$ to $\tilde X_0$. So $f:=\ue^{-\mu\langle d\rangle}=\ue^{-\mu \Upsilon(X_0)}$ extends holomorphically to $\Xi_{r_1'}$. Since $\Upsilon'(cA)$ is
 real, Taylor's formula on that segment gives $\operatorname{Re}\Upsilon(\tilde X_0)\ge \Upsilon(cA)-\tfrac12\sup|\Upsilon''|\,s^2B^2\ge \Upsilon(cA)-C'_\Upsilon s^2/(2c^2)$, and
 $\Upsilon(A)-\Upsilon(cA)\le(1-c)A\sup_{[cA,A]}|\Upsilon'|\le C'_\Upsilon(1-c)/c$. With $1-c\le2\rho^2$, $s^2\le4\rho^2$ and $c\ge\cos1>\tfrac12$,
 \[
 \operatorname{Re}\Upsilon(\tilde X_0)\ge\langle d\rangle(gx_0)-C_\Upsilon\rho^2,\qquad C_\Upsilon:=12\,C'_\Upsilon .
 \]
-Hence $|f(g\exp(i\rho\mathsf h)x_0)|\le\ue^{C_\Upsilon\mu\rho^2}f(gx_0)$ and $N_\rho(f)\le\ue^{C_\Upsilon\mu\rho^2}\norm f$ for $\rho\le r_1'$. In particular
-$\sup_{\rho<r_1'}N_\rho(f)<\infty$, and Lemma~\ref{lem:gutzmer}(a), with $R=r_1'$ and $r=\alpha\le r_1$, gives the first inequality.
+Hence $|f(g\exp(i\rho\mathsf h)x_0)|\le\ue^{C_\Upsilon\mu\rho^2}f(gx_0)$ and $\mathcal G_\rho(f)\le\ue^{C_\Upsilon\mu\rho^2}\norm f$ for $\rho\le r_1'$. In particular
+$\sup_{\rho<r_1'}\mathcal G_\rho(f)<\infty$, and Lemma~\ref{lem:gutzmer}(b), with $R=r_1'$ and $r=\alpha\le r_1$, gives the first inequality.
 
-\emph{The $L^2$ norm.} In geodesic polar coordinates $\norm f^2=2\pi\int_0^\infty\ue^{-2\mu\langle\rho\rangle}\sinh\rho\,d\rho$, with
-$\langle\rho\rangle=(1+\rho^2)^{1/2}-1$. For $\rho\le1$, $\langle\rho\rangle\ge\rho^2/(1+\sqrt2)$ and $\sinh\rho\le2\rho$; for $\rho\ge1$,
-$\langle\rho\rangle\ge\rho-1$ and $\sinh\rho\le\ue^\rho$. So for $\mu\ge1$
+\emph{The $L^2$ norm.} In geodesic polar coordinates $\norm f^2=2\pi\int_0^\infty\ue^{-2\mu\langle r\rangle}\sinh r\,dr$, with
+$\langle r\rangle=(1+r^2)^{1/2}-1$. For $r\le1$, $\langle r\rangle\ge r^2/(1+\sqrt2)$ and $\sinh r\le2r$; for $r\ge1$,
+$\langle r\rangle\ge r-1$ and $\sinh r\le\ue^r$. So for $\mu\ge1$
 \[
-\norm f^2\le2\pi\Bigl(\int_0^\infty2\rho\,\ue^{-2\mu\rho^2/(1+\sqrt2)}d\rho+\ue\int_0^\infty\ue^{-(2\mu-1)u}du\Bigr)\le\frac{2\pi(2+\ue)}{\mu},
+\norm f^2\le2\pi\Bigl(\int_0^\infty2r\,\ue^{-2\mu r^2/(1+\sqrt2)}dr+\ue\int_0^\infty\ue^{-(2\mu-1)u}du\Bigr)\le\frac{2\pi(2+\ue)}{\mu},
 \]
 and the second inequality holds with $C_{\mathrm E}:=(\pi\ue)^{1/2}\ue^{C_\Upsilon}(2\pi(2+\ue))^{1/2}$, because $\mu\alpha^2\le1$.
 \end{proof}
@@ -220,8 +246,7 @@ $\alpha_\hbar=\mu^{-1/2}\le r_1$ for a fixed $r_1\in(0,\tfrac12)$. Lemma~\ref{le
 \]
 This is uniformly bounded after decreasing $\hbar_0$. Since
 $\alpha_\hbar^3/\hbar\asymp\hbar^{3\eta/2-1}\to\infty$, we may also ensure
-$\alpha_\hbar^3\ge\hbar$ and $\alpha_\hbar\le\alpha_0$ for a fixed
-$\alpha_0\in(0,\pi/4)$. Theorem~\ref{thm:dd14} with $\kappa=1$ now gives the estimate;
+$\alpha_\hbar^3\ge\hbar$ and $\alpha_\hbar\le1$. Theorem~\ref{thm:dd14} with $\kappa=1$ and $A=1$ now gives the estimate;
 the uniform amplitude-norm bound is absorbed into $C^{N+K+1}$.
 \end{proof}
 

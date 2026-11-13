@@ -59,11 +59,11 @@ Since $h$ has compact support, $\omega h\in L^2(\Hb)$, so $\omega a\in L^2(\Hb)$
 Corollary~\ref{os:cwp}. On the line $\operatorname{Im}z=y$ we have $X_0=(x^2+y^2+1)/(2y)\ge\tfrac12\max(y,1/y)$, hence $\ell\ge\max(1,|\log y|/\log2)$ and
 \begin{equation}\label{ev:line}
 \begin{gathered}
-  \int_{\mathbb R}\omega(x+iy)^{-2}\,dx\le\lambda(y)\int_{\mathbb R}\frac{2y\,dx}{x^2+y^2+1}\le2\pi\min(1,y)\,\lambda(y),\\
-  \lambda(y):=\min\bigl(1,(\log2/|\log y|)^{2c'}\bigr).
+  \int_{\mathbb R}\omega(x+iy)^{-2}\,dx\le\varrho(y)\int_{\mathbb R}\frac{2y\,dx}{x^2+y^2+1}\le2\pi\min(1,y)\,\varrho(y),\\
+  \varrho(y):=\min\bigl(1,(\log2/|\log y|)^{2c'}\bigr).
 \end{gathered}
 \end{equation}
-Since $2c'>1$, $\int_0^\infty y^{2\sigma}\min(1,y)\lambda(y)\,dy/y^2<\infty$ for $0\le\sigma\le\tfrac12$. By the Cauchy--Schwarz inequality,
+Since $2c'>1$, $\int_0^\infty y^{2\sigma}\min(1,y)\varrho(y)\,dy/y^2<\infty$ for $0\le\sigma\le\tfrac12$. By the Cauchy--Schwarz inequality,
 \begin{equation}\label{ev:L1}
   \int_\Hb y^{\sigma}|a|\,d\nu\le\Bigl(\int_\Hb y^{2\sigma}\omega^{-2}\,d\nu\Bigr)^{1/2}\norm{\omega a}<\infty\qquad(0\le\sigma\le\tfrac12).
 \end{equation}
@@ -82,7 +82,7 @@ The following picture is not used in the proofs. First, the terms of the periodi
 about $\ue^{t}$ sheets of the cover. Up to the Ehrenfest time $\log(1/\hbar)$ their phase gradients differ by more than $\hbar$,
 so that they are almost orthogonal one by one; beyond it the phase gradients of many pairs differ by less than $\hbar$, and the
 cancellation of Remark~\ref{ev:cancel} is a property of the sum. Second, in the normalization $b=\infty$ the classically
-transported state lies near height $y\asymp\ue^{-t}$. For a modular element $\gamma$ with lower row $(c,d)$, $c\ne0$,
+transported state lies near height $y\asymp\ue^{-t}$. For a modular element $\gamma$ with bottom row $(c,d)$, $c\ne0$,
 $\operatorname{Im}\gamma z=y/((cx+d)^2+c^2y^2)$, so the part of the state within $O(y)$ of the rational $-d/c$ is mapped to height
 $\asymp\ue^t/c^2$, which is at least $H\ge1$ when $c\lesssim H^{-1/2}\ue^{t/2}$. The periodization sums over all these sheets,
 and beyond the Ehrenfest time the interference between them, which the classical prediction ignores, governs the fine
@@ -114,17 +114,17 @@ and if $\Psi\in L^1(\mathbb R)\cap L^2(\mathbb R)$, then
 \begin{lemma}[Mellin transform of the amplitude]\label{ev:mellinlemma}
 Let $g_\alpha=g_{\alpha,1/2}$ be the profile of Lemma~\ref{os:prof}, and put
 \[
-M_\alpha:=\int_{\mathbb R}g_\alpha(r)\ue^{|r|/2}\,dr,\qquad L_\alpha(k):=\int_{\mathbb R}g_\alpha(r)\cosh(kr)\,dr\quad(|\operatorname{Re}k|\le\tfrac12).
+\mathsf M_\alpha:=\int_{\mathbb R}g_\alpha(r)\ue^{|r|/2}\,dr,\qquad L_\alpha(k):=\int_{\mathbb R}g_\alpha(r)\cosh(kr)\,dr\quad(|\operatorname{Re}k|\le\tfrac12).
 \]
-Then $M_\alpha<\infty$, and the function
-$A(s):=L_\alpha(\tfrac12-s)\hat h_0(s)$, defined for $\tfrac14\le\operatorname{Re}s\le1$, is holomorphic in $|\operatorname{Re}s-\tfrac12|<\tfrac14$ and satisfies
+Then $\mathsf M_\alpha<\infty$, and the function
+$\mathfrak a(s):=L_\alpha(\tfrac12-s)\hat h_0(s)$, defined for $\tfrac14\le\operatorname{Re}s\le1$, is holomorphic in $|\operatorname{Re}s-\tfrac12|<\tfrac14$ and satisfies
 \begin{equation}\label{ev:mellin}
- |A(\sigma+i\rho)|\le M_\alpha C_n(1+|\rho|)^{-n}\qquad(\tfrac14\le\sigma\le1)
+ |\mathfrak a(\sigma+i\rho)|\le \mathsf M_\alpha C_n(1+|\rho|)^{-n}\qquad(\tfrac14\le\sigma\le1)
 \end{equation}
 for every positive integer $n$, with $C_n$ depending on $h$ and $n$.
 It agrees with $\hat a_0(s)$ for $\tfrac12\le\operatorname{Re}s\le1$ and satisfies
 \[
- A(\tfrac12+i\rho)=\ue^{-\alpha(\rho^2+1/4)^{1/2}}\hat h_0(\tfrac12+i\rho).
+ \mathfrak a(\tfrac12+i\rho)=\ue^{-\alpha(\rho^2+1/4)^{1/2}}\hat h_0(\tfrac12+i\rho).
 \]
 Moreover $0<\mu_0<\infty$, and
 \begin{equation}\label{ev:mu0}
@@ -132,7 +132,7 @@ Moreover $0<\mu_0<\infty$, and
 \end{equation}
 \end{lemma}
 \begin{proof}
-By Lemma~\ref{os:prof}(iv), summed over the shells $j\le|r|<j+1$, $M_\alpha<\infty$. Then $|L_\alpha(k)|\le M_\alpha$; $L_\alpha$ is holomorphic in
+By Lemma~\ref{os:prof}(iv), summed over the shells $j\le|r|<j+1$, $\mathsf M_\alpha<\infty$. Then $|L_\alpha(k)|\le \mathsf M_\alpha$; $L_\alpha$ is holomorphic in
 $|\operatorname{Re}k|<\tfrac14$, because there the derivative $r\sinh(kr)$ of the integrand is at most $4\,\ue^{|r|/2}$ in modulus; and
 $L_\alpha(i\rho)=\ue^{-\alpha(\rho^2+1/4)^{1/2}}$ for real $\rho$, by Lemma~\ref{os:prof}(i).
 
@@ -155,9 +155,9 @@ $h$ lies in the domain of $D^2=-\Delta-\tfrac14$, $p$ is twice continuously diff
 because $(\Delta+\tfrac14)y^{\bar w}=(\bar w-\tfrac12)^2y^{\bar w}$ and $\eta=1$ on the support of $U(r)$. With $p(0)=\int_\Hb y^wh\,d\nu$ and $p'(0)=0$ this gives
 $p(r)=\cosh((w-\tfrac12)r)\int_\Hb y^wh\,d\nu$ for $|r|<j$. For $|r|\ge j$ we use $|\langle\eta_jy^{\bar w},\cos(rD)h\rangle|\le\norm{\eta_jy^{\bar w}}\norm h$ and
 \[
-  \norm{\eta_jy^{\bar w}}^2\le\int_{\{X_0\le S\}}(1+y)\,d\nu\le2\pi S+\int_0^{2S}2(2Sy)^{1/2}\,\frac{dy}{y}=(2\pi+8)S,\qquad S=\ue^{R_0+j},
+  \norm{\eta_jy^{\bar w}}^2\le\int_{\{X_0\le R\}}(1+y)\,d\nu\le2\pi R+\int_0^{2R}2(2Ry)^{1/2}\,\frac{dy}{y}=(2\pi+8)R,\qquad R=\ue^{R_0+j},
 \]
-since $y^{2\operatorname{Re}w}\le1+y$, the ball $\{X_0\le S\}$ has area $2\pi(S-1)$, and on it $y\le2S$ and $x^2\le2Sy$. So the part $|r|\ge j$ of
+since $y^{2\operatorname{Re}w}\le1+y$, the ball $\{X_0\le R\}$ has area $2\pi(R-1)$, and on it $y\le2R$ and $x^2\le2Ry$. So the part $|r|\ge j$ of
 the integral is at most $C\ue^{j/2}\int_{|r|\ge j}g_\alpha\,dr\le C'(1+j)^{-3/2}$ by Lemma~\ref{os:prof}(iv). Hence
 \[
   \int_{\{\tilde\psi\le R_0+j\}}y^wa\,d\nu=\int_{|r|<j}g_\alpha(r)\cosh((w-\tfrac12)r)\,dr\cdot\int_\Hb y^wh\,d\nu+O((1+j)^{-3/2}),
@@ -239,8 +239,8 @@ $\int_0^\infty\!\int_0^1\bigl(\sum_na(x+n,y)-a_0(y)\bigr)\Theta\,dx\,dy/y^2=0$ f
 
 
 \subsection{Scattering and the zero mode of the approximation}\label{subsec:ev-scattering}
-Recall that $\Gamma_\infty$ is the group of translations by integers, and write $N_c$ for Euler's function, the number of
-residues modulo $c$ that are prime to $c$ (we avoid the usual letter $\varphi$, which denotes the phase). The scattering coefficient is the meromorphic function
+Recall that $\Gamma_\infty$ is the group of translations by integers, and write $|(\mathbb Z/c\mathbb Z)^\times|$ for the number of
+residues modulo $c$ that are prime to $c$. The scattering coefficient is the meromorphic function
 \begin{equation}\label{ev:Phi}
   \Phi(s):=\sqrt\pi\,\frac{\Gamma(s-\frac12)}{\Gamma(s)}\,\frac{\zeta(2s-1)}{\zeta(2s)}
   =\pi^{2s-1}\,\frac{\Gamma(1-s)}{\Gamma(s)}\,\frac{\zeta(2-2s)}{\zeta(2s)} .
@@ -252,7 +252,7 @@ For $g\in C_c^\infty((0,\infty))$, the function
 $E(z|g)=\sum_{\gamma\in\Gamma_\infty\backslash\Gamma}g(\operatorname{Im}\gamma z)$ is bounded on $M$, and for $y>0$ its zero mode is
 \begin{equation}\label{ev:zero}
  \mathcal F_0[E(\cdot|g)](y)=g(y)+R_g(y),\qquad
- R_g(y):=\sum_{c\ge1}N_c\int_{\mathbb R}g\Bigl(\frac{y}{c^2(x^2+y^2)}\Bigr)dx .
+ R_g(y):=\sum_{c\ge1}|(\mathbb Z/c\mathbb Z)^\times|\int_{\mathbb R}g\Bigl(\frac{y}{c^2(x^2+y^2)}\Bigr)dx .
 \end{equation}
 With $\Phi$ as in \eqref{ev:Phi},
 \begin{equation}\label{ev:R}
@@ -270,16 +270,16 @@ the zero mode \eqref{ev:zero}. For $w\in L^2(M)$, unfolding gives
 \begin{equation}\label{ev:unf}
   \int_Mw\,\overline{E(\cdot|g)}\,d\nu=\int_0^\infty \mathcal F_0[w](y)\,\overline{g(y)}\,\frac{dy}{y^2};
 \end{equation}
-this is justified because $E(\cdot||g|)$ is bounded and $w\in L^1(M)$. The function $\Phi$ is holomorphic in $\operatorname{Re}s\ge\tfrac12$ except for a simple
+this is justified because $E(\cdot\,|\,|g|)$ is bounded and $w\in L^1(M)$. The function $\Phi$ is holomorphic in $\operatorname{Re}s\ge\tfrac12$ except for a simple
 pole at $s=1$ with residue $3/\pi$, $|\Phi(\tfrac12+ir)|=1$ (because $\Phi(s)\Phi(1-s)=1$ and $\overline{\Phi(s)}=\Phi(\bar s)$), and
 $|\Phi(s)|\le C(1+|\operatorname{Im}s|)^2$ in $\tfrac12\le\operatorname{Re}s\le\tfrac54$, $|\operatorname{Im}s|\ge2$: the Gamma quotient by Stirling's formula \cite[5.11.9]{DLMF},
 $\zeta(2s-1)$ by its polynomial growth in vertical strips, and $1/\zeta(2s)$ by \cite[Theorem~6.7]{MV07}.
 To prove \eqref{ev:R}, use that $\hat g$ is entire and rapidly decreasing on vertical lines. Mellin inversion on $\operatorname{Re}s=\tfrac54$ gives
 \[
-  R_g(y)=\frac1{2\pi i}\int_{(5/4)}\hat g(s)\Big(\sum_{c\ge1}\frac{N_c}{c^{2s}}\Big)\Big(\int_{\mathbb R}\frac{y^s\,dx}{(x^2+y^2)^s}\Big)ds
+  R_g(y)=\frac1{2\pi i}\int_{(5/4)}\hat g(s)\Big(\sum_{c\ge1}\frac{|(\mathbb Z/c\mathbb Z)^\times|}{c^{2s}}\Big)\Big(\int_{\mathbb R}\frac{y^s\,dx}{(x^2+y^2)^s}\Big)ds
   =\frac1{2\pi i}\int_{(5/4)}\hat g(s)\,\Phi(s)\,y^{1-s}\,ds ,
 \]
-because $\sum_cN_cc^{-2s}=\zeta(2s-1)/\zeta(2s)$ and $\int_{\mathbb R}(1+v^2)^{-s}dv=\sqrt\pi\,\Gamma(s-\tfrac12)/\Gamma(s)$. Moving the line to
+because $\sum_c|(\mathbb Z/c\mathbb Z)^\times|\,c^{-2s}=\zeta(2s-1)/\zeta(2s)$ and $\int_{\mathbb R}(1+v^2)^{-s}dv=\sqrt\pi\,\Gamma(s-\tfrac12)/\Gamma(s)$. Moving the line to
 $\operatorname{Re}s=\tfrac12$ over the pole at $s=1$ gives \eqref{ev:R}.
 
 
@@ -403,30 +403,30 @@ Let $0<\hbar\le\ue^{-\ue}$ and $\mathsf L:=\log(1/\hbar)$; then $\mathsf L\ge\ue
 \]
 and let $\mathcal Q$ be the rectangle $\tfrac12-\vartheta\le\sigma\le\tfrac12$, $r_-\le r\le r_+$. For $\sigma+ir\in\mathcal Q$ we have $3<1/\hbar\le|2r|\le3/\hbar$, so
 $\mathcal Q$ lies in the region of \eqref{ev:PhiD} and $|\Phi|\le C_\Phi\log^2(3/\hbar)\le4C_\Phi\mathsf L^2$ on $\mathcal Q$. By \eqref{ev:ft} and \eqref{ev:mellin},
-$\hat f_t(\tfrac12+ir)=A_t(\tfrac12+ir)$ for the function
+$\hat f_t(\tfrac12+ir)=\mathfrak a_t(\tfrac12+ir)$ for the function
 \begin{gather*}
-  A_t(s):=\ue^{-it/(2\hbar)}\,\ue^{t(s-1/2)}\,\ue^{it/\hbar}\,A(s+i/\hbar),\\
-  |A_t(\sigma+ir)|\le\ue^{-t(1/2-\sigma)}M_\alpha C_n\bigl(1+|r+\tfrac1\hbar|\bigr)^{-n}\quad(\tfrac14\le\sigma\le\tfrac12),
+  \mathfrak a_t(s):=\ue^{-it/(2\hbar)}\,\ue^{t(s-1/2)}\,\ue^{it/\hbar}\,\mathfrak a(s+i/\hbar),\\
+  |\mathfrak a_t(\sigma+ir)|\le\ue^{-t(1/2-\sigma)}\mathsf M_\alpha C_n\bigl(1+|r+\tfrac1\hbar|\bigr)^{-n}\quad(\tfrac14\le\sigma\le\tfrac12),
 \end{gather*}
 which is holomorphic in $|\operatorname{Re}s-\tfrac12|<\tfrac14$. Write $\mathcal O_{f_t}=\mathcal O'+\mathcal O''$, where $\mathcal O'=I_{\Psi1_J}$ and
 $\mathcal O''=I_{\Psi1_{\mathbb R\setminus J}}$ with $\Psi(r)=\Phi(\tfrac12+ir)\hat f_t(\tfrac12+ir)$.
 
-\emph{The part outside $J$.} For $r\notin J$ we have $|r+\tfrac1\hbar|\ge\tfrac1{2\hbar}$, so by \eqref{ev:IMP} and the bound for $A_t$ with $n=2$,
+\emph{The part outside $J$.} For $r\notin J$ we have $|r+\tfrac1\hbar|\ge\tfrac1{2\hbar}$, so by \eqref{ev:IMP} and the bound for $\mathfrak a_t$ with $n=2$,
 $\int_0^\infty|\mathcal O''|^2dy/y^2=\tfrac1{2\pi}\int_{\mathbb R\setminus J}|\hat f_t(\tfrac12+ir)|^2dr\le C\hbar^2$.
 
-\emph{The part over $J$.} For fixed $y>0$ the function $s\mapsto\Phi(s)A_t(s)y^{1-s}$ is holomorphic in a neighbourhood of $\mathcal Q$. Cauchy's theorem on
+\emph{The part over $J$.} For fixed $y>0$ the function $s\mapsto\Phi(s)\mathfrak a_t(s)y^{1-s}$ is holomorphic in a neighbourhood of $\mathcal Q$. Cauchy's theorem on
 $\mathcal Q$ gives
 \begin{gather*}
-  2\pi\,\mathcal O'(y)=\int_J\Phi A_t(\tfrac12-\vartheta+ir)\,y^{1/2+\vartheta-ir}\,dr+i\bigl(G_-(y)-G_+(y)\bigr),\\
-  G_\pm(y):=\int_{1/2-\vartheta}^{1/2}\Phi A_t(\sigma+ir_\pm)\,y^{1-\sigma-ir_\pm}\,d\sigma .
+  2\pi\,\mathcal O'(y)=\int_J\Phi \mathfrak a_t(\tfrac12-\vartheta+ir)\,y^{1/2+\vartheta-ir}\,dr+i\bigl(G_-(y)-G_+(y)\bigr),\\
+  G_\pm(y):=\int_{1/2-\vartheta}^{1/2}\Phi \mathfrak a_t(\sigma+ir_\pm)\,y^{1-\sigma-ir_\pm}\,d\sigma .
 \end{gather*}
-The first term is $2\pi\,y^\vartheta I_{\Psi_L}(y)$ with $\Psi_L(r):=1_J(r)\,\Phi A_t(\tfrac12-\vartheta+ir)$. By \eqref{ev:IMP} and the bounds for $\Phi$ and $A_t$ (with $n=1$),
+The first term is $2\pi\,y^\vartheta I_{\Psi_L}(y)$ with $\Psi_L(r):=1_J(r)\,\Phi \mathfrak a_t(\tfrac12-\vartheta+ir)$. By \eqref{ev:IMP} and the bounds for $\Phi$ and $\mathfrak a_t$ (with $n=1$),
 \[
-  \int_0^H\bigl|y^\vartheta I_{\Psi_L}\bigr|^2\frac{dy}{y^2}\le\frac{H^{2\vartheta}}{2\pi}\int_J|\Phi A_t(\tfrac12-\vartheta+ir)|^2\,dr
+  \int_0^H\bigl|y^\vartheta I_{\Psi_L}\bigr|^2\frac{dy}{y^2}\le\frac{H^{2\vartheta}}{2\pi}\int_J|\Phi \mathfrak a_t(\tfrac12-\vartheta+ir)|^2\,dr
   \le C\,\mathsf L^4\,\ue^{-2\vartheta(t-\log H)} .
 \]
 On the horizontal sides $|r_\pm+\tfrac1\hbar|=\tfrac1{2\hbar}$, so with $n=3$,
-$|\Phi A_t(\sigma+ir_\pm)\,y^{1-\sigma-ir_\pm}|\le C\mathsf L^2\hbar^3\,y^{1/2}\,\ue^{-(1/2-\sigma)(t-\log y)}$, and for $0<y<\ue^t$
+$|\Phi \mathfrak a_t(\sigma+ir_\pm)\,y^{1-\sigma-ir_\pm}|\le C\mathsf L^2\hbar^3\,y^{1/2}\,\ue^{-(1/2-\sigma)(t-\log y)}$, and for $0<y<\ue^t$
 \[
   |G_\pm(y)|\le C\mathsf L^2\hbar^3\,y^{1/2}\int_0^\vartheta\ue^{-\sigma'(t-\log y)}\,d\sigma'\le C\mathsf L^2\hbar^3\,\frac{y^{1/2}}{t-\log y}.
 \]

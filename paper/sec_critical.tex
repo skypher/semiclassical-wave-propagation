@@ -41,22 +41,22 @@ Let $\tfrac12<c<1$. Let $g\in L^1(\mathbb R)$ be real with
 \]
 and let $\mathsf G:=\int_{\mathbb R}g(r)\cos(rD)\,dr$, a bounded operator on $L^2(\Hb)$. Then for all $f\in L^2(\Hb)$,
 \[
-\norm{\osomc\,\mathsf Gf}\le C_c\,B\,\norm{\osomc f},
+\norm{\osomc\,\mathsf Gf}\le C_{\mathrm{cw}}\,B\,\norm{\osomc f},
 \]
-with $C_c$ depending only on $c$.
+with $C_{\mathrm{cw}}$ depending only on $c$.
 \end{theorem}
 \begin{proof}
-Put $f_n=1_nf$ and $a_n=\norm{\osomc f_n}$, and let $T(k,n):=\max(|k-n|-1,0)$. By Lemma~\ref{os:speed}, for $h$ supported in $A_k$ the function
+Put $f_n=1_nf$ and $\theta_n=\norm{\osomc f_n}$, and let $T(k,n):=\max(|k-n|-1,0)$. By Lemma~\ref{os:speed}, for $h$ supported in $A_k$ the function
 $r\mapsto\langle h,\cos(rD)f_n\rangle$ vanishes on $|r|<T(k,n)$. Hence
 $\norm{1_k\mathsf Gf_n}\le\int_{|r|\ge T(k,n)}|g|\,\norm{f_n}\le B\,\ue^{-T/2}(1+T)^{-3/2}\norm{f_n}$, and by \eqref{os:shell}
 \[
 \begin{gathered}
-\norm{\osomc1_k\mathsf Gf_n}\le\mathsf B(k,n)\,a_n,\\
+\norm{\osomc1_k\mathsf Gf_n}\le\mathsf B(k,n)\,\theta_n,\\
 \mathsf B(k,n):=C\,B\,\Bigl(\frac{1+k}{1+n}\Bigr)^c(1+|k-n|)^{-3/2}\times
 \begin{cases}1,&k\ge n,\\ \ue^{-(n-k)},&k<n.\end{cases}
 \end{gathered}
 \]
-Since $\mathsf Gf=\sum_n\mathsf Gf_n$ in $L^2$, $\norm{\osomc\mathsf Gf}^2\le\sum_k\bigl(\sum_n\mathsf B(k,n)a_n\bigr)^2$. We apply the Schur test on
+Since $\mathsf Gf=\sum_n\mathsf Gf_n$ in $L^2$, $\norm{\osomc\mathsf Gf}^2\le\sum_k\bigl(\sum_n\mathsf B(k,n)\theta_n\bigr)^2$. We apply the Schur test on
 $\mathbb N_0$ with the weights $p_n=(1+n)^{-1/2}$.
 \begin{itemize}
 \item $\sum_n\mathsf B(k,n)p_n\le C'B\,p_k$. For $n\ge k/2$: $((1+k)/(1+n))^c\le2^c$, $p_n\le\sqrt2\,p_k$, and $\sum_j(1+j)^{-3/2}<\infty$. For $n<k/2$:
@@ -64,7 +64,7 @@ $\mathsf B(k,n)p_n\le CB(1+k)^{c-3/2}(1+n)^{-c-1/2}$; the sum over $n$ converges
 \item $\sum_k\mathsf B(k,n)p_k\le C'B\,p_n$. For $k<n$: $((1+k)/(1+n))^cp_k\le p_n$ because $c>\tfrac12$. For $n\le k\le2n+1$: $((1+k)/(1+n))^c\le2^c$ and
 $p_k\le p_n$. For $k>2n+1$: $\mathsf B(k,n)p_k\le CB(1+n)^{-c}(1+k)^{c-2}$, and $\sum_{k>2n+1}(1+k)^{c-2}\le C(1+n)^{c-1}$ because $c<1$.
 \end{itemize}
-So $\sum_k(\sum_n\mathsf B(k,n)a_n)^2\le(C'B)^2\sum_na_n^2=(C'B)^2\norm{\osomc f}^2$.
+So $\sum_k(\sum_n\mathsf B(k,n)\theta_n)^2\le(C'B)^2\sum_n\theta_n^2=(C'B)^2\norm{\osomc f}^2$.
 \end{proof}
 
 The cosine-transform representations and tail bounds needed to apply Theorem~\ref{os:cw}
@@ -73,8 +73,8 @@ They give the following two operator bounds: Poisson smoothing preserves the cri
 and the change from $\Lambda$ to $\Lambda_m$ is bounded at that weight.
 
 \begin{corollary}[Poisson smoothing and the shifted multiplier at the critical weight]\label{os:cwp}
-Let $\tfrac12<c<1$. For $0<\tau\le1$ and $f\in L^2$, $\norm{\osomc\,\ue^{-\tau\osLam}f}\le k_c\norm{\osomc f}$. For $m\ge\tfrac12$,
-$\norm{\osomc(\Lambda_m-\osLam)f}\le k_{m,c}\norm{\osomc f}$.
+Let $\tfrac12<c<1$. For $0<\tau\le1$ and $f\in L^2$, $\norm{\osomc\,\ue^{-\tau\osLam}f}\le C_\Lambda\norm{\osomc f}$. For $m\ge\tfrac12$,
+$\norm{\osomc(\Lambda_m-\osLam)f}\le C_{\Lambda_m}\norm{\osomc f}$.
 \end{corollary}
 \begin{proof}
 Theorem~\ref{os:cw} with $g=g_{\tau,1/2}$ and Lemma~\ref{os:prof}(i),(iv), respectively with $g=G_m$ and Lemma~\ref{os:prof}(v).
@@ -100,9 +100,9 @@ with $C=C(m,c,\beta)$.
 \begin{proof}
 The identity is the bounded functional calculus: $-\sigma\Lambda_m+\sigma(\Lambda_m-\osLam)-(\alpha-\sigma)\osLam=-\alpha\osLam$. The operator
 $\mathsf B:=\Lambda_m-\osLam$ is bounded, and $\ue^{\sigma\mathsf B}=\sum_k\sigma^k\mathsf B^k/k!$ in operator norm. By Corollary~\ref{os:cwp},
-$\norm{\osomc\mathsf B^kf}\le k_{m,c}^k\norm{\osomc f}$, so the partial sums are bounded in the weighted norm by $\ue^{\sigma k_{m,c}}\norm{\osomc f}$, and
-Fatou's lemma gives $\norm{\osomc\ue^{\sigma\mathsf B}f}\le\ue^{k_{m,c}}\norm{\osomc f}$. Then apply Corollary~\ref{os:cwp} to
-$\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=k_c\,\ue^{k_{m,c}}$ works. For the consequence put $f=\ue^{\alpha\osLam}a$, so $a=\ue^{-\alpha\osLam}f$. Since $\tilde\psi\le d\le\langle d\rangle+1$ and
+$\norm{\osomc\mathsf B^kf}\le C_{\Lambda_m}^k\norm{\osomc f}$, so the partial sums are bounded in the weighted norm by $\ue^{\sigma C_{\Lambda_m}}\norm{\osomc f}$, and
+Fatou's lemma gives $\norm{\osomc\ue^{\sigma\mathsf B}f}\le\ue^{C_{\Lambda_m}}\norm{\osomc f}$. Then apply Corollary~\ref{os:cwp} to
+$\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=C_\Lambda\,\ue^{C_{\Lambda_m}}$ works. For the consequence put $f=\ue^{\alpha\osLam}a$, so $a=\ue^{-\alpha\osLam}f$. Since $\tilde\psi\le d\le\langle d\rangle+1$ and
 $\beta>\tfrac12$, $\osomc\le\ue^{d/2}(1+d/\log2)\le C_\beta\,\ue^{\beta\langle d\rangle}$.
 \end{proof}
 
@@ -185,39 +185,43 @@ with a constant $C_{\mathrm{tr}}$ depending only on $c$ and $C_{\mathrm{sh}}$.
 Let $u=1_nh$. By (a), $\norm{1_kTu}\le \mathcal M_0\norm u$. By (b), since $\osX\ge\ue^k$ on $A_k$ and $\osX\le\ue^{n+1}$ on $A_n$,
 $\norm{1_kTu}\le\ue\,\mathcal M_1\ue^{-(k-n)}\norm u$. For $k\ge n$, $\min(x,y)\le x^{1/4}y^{3/4}$ gives
 $\norm{1_kT1_n}\le\ue^{3/4}\mathcal M_0^{1/4}\mathcal M_1^{3/4}\ue^{-3(k-n)/4}$; for $k<n$ we use $\mathcal M_0\le \mathcal M_0^{1/4}\mathcal M_1^{3/4}$. By the bounds for $\varpi$ and $c\le1$,
-$\sup_{A_k}\varpi/\inf_{A_n}\varpi\le C_{\mathrm{sh}}\,\ue^{(k-n)/2}(1+(k-n)_+)$. So with $a_n:=\norm{\varpi1_nh}$,
+$\sup_{A_k}\varpi/\inf_{A_n}\varpi\le C_{\mathrm{sh}}\,\ue^{(k-n)/2}(1+(k-n)_+)$. So with $\theta_n:=\norm{\varpi1_nh}$,
 \[
-\norm{\varpi1_kT1_nh}\le \mathcal M_0^{1/4}\mathcal M_1^{3/4}\,w_{k-n}\,a_n,\qquad w_j:=\begin{cases}C_{\mathrm{sh}}\ue^{3/4}(1+j)\ue^{-j/4},&j\ge0,\\C_{\mathrm{sh}}\ue^{-|j|/2},&j<0.\end{cases}
+\norm{\varpi1_kT1_nh}\le \mathcal M_0^{1/4}\mathcal M_1^{3/4}\,w_{k-n}\,\theta_n,\qquad w_j:=\begin{cases}C_{\mathrm{sh}}\ue^{3/4}(1+j)\ue^{-j/4},&j\ge0,\\C_{\mathrm{sh}}\ue^{-|j|/2},&j<0.\end{cases}
 \]
 Since $T$ is additive and bounded, $Th=\sum_nT1_nh$ in $L^2$, and therefore
-$\norm{\varpi Th}^2\le\sum_k\bigl(\sum_n\norm{\varpi1_kT1_nh}\bigr)^2\le \mathcal M_0^{1/2}\mathcal M_1^{3/2}\bigl(\sum_jw_j\bigr)^2\sum_na_n^2$ by Young's inequality for
+$\norm{\varpi Th}^2\le\sum_k\bigl(\sum_n\norm{\varpi1_kT1_nh}\bigr)^2\le \mathcal M_0^{1/2}\mathcal M_1^{3/2}\bigl(\sum_jw_j\bigr)^2\sum_n\theta_n^2$ by Young's inequality for
 sequences.
 \end{proof}
 
 \begin{proposition}[periodization and transport at the critical weight]\label{os:p1}
-Let $\Gamma$ be any Fuchsian group, $\tfrac12<c'\le1$, $\osomp=\omega_{c'}$, $t\ge0$, $\hbar>0$, $\varphi=\varphi_\infty=-\log y$, and
-$w\in L^2(\Hb)$ with $\osomp w\in L^2(\Hb)$. Then the sum defining $[(S(t)w)\ue^{i\varphi/\hbar}]_\Gamma$ converges absolutely almost everywhere, and
+Let $\Gamma$ be any Fuchsian group, $\tfrac12<c\le1$, $t\ge0$, $\hbar>0$, $\varphi=\varphi_\infty=-\log y$, and
+$w\in L^2(\Hb)$ with $\osomc w\in L^2(\Hb)$. Then the sum defining $[(S(t)w)\ue^{i\varphi/\hbar}]_\Gamma$ converges absolutely almost everywhere, and
 \[
-\bigl\|[(S(t)w)\ue^{i\varphi/\hbar}]_\Gamma\bigr\|_{L^2(M)}\le C(\Gamma,c')\,\ue^{t/2}(1+t/\log2)^{c'}\,\|\osomp w\|_{L^2(\Hb)}.
+\bigl\|[(S(t)w)\ue^{i\varphi/\hbar}]_\Gamma\bigr\|_{L^2(M)}\le C(\Gamma,c)\,\ue^{t/2}(1+t/\log2)^{c}\,\|\osomc w\|_{L^2(\Hb)}.
 \]
-In particular $\osomp$ satisfies \textup{(W1)} and \textup{(W2)} of Section~\ref{subsec:dd-surf}, with
-$\osomp(z)/\osomp(\Omega_sz)\le\ue^{|s|/2}(1+|s|/\log2)^{c'}\le(2/\log2)\,\ue^{|s|}$.
+In particular $\osomc$ satisfies \textup{(W1)} and \textup{(W2)} of Section~\ref{subsec:dd-surf}, with
+$\osomc(z)/\osomc(\Omega_sz)\le\ue^{|s|/2}(1+|s|/\log2)^{c}\le(2/\log2)\,\ue^{|s|}$.
 \end{proposition}
 \begin{proof}
-The proof is that of Lemma~\ref{lem:t2}, with $\osomp$ in place of $\ue^{s\tilde\psi}$; only the first and last steps change.
+The proof is that of Lemma~\ref{lem:t2}, with $\osomc$ in place of $\ue^{\sigma\tilde\psi}$; only the Cauchy--Schwarz and transport steps change.
 
-\emph{Pointwise Cauchy--Schwarz.} Since $\osomp(z')^2\asymp\ue^{d(z',x_0)}(1+d(z',x_0))^{2c'}$ for $z'\in\Hb$ and $d(\gamma z,x_0)=d(z,\gamma^{-1}x_0)$,
+\emph{Pointwise Cauchy--Schwarz.} Since $\osomc(z')^2\asymp\ue^{d(z',x_0)}(1+d(z',x_0))^{2c}$ for $z'\in\Hb$ and $d(\gamma z,x_0)=d(z,\gamma^{-1}x_0)$,
 reindexing $\gamma\mapsto\gamma^{-1}$ and the counting bound of Lemma~\ref{lem:count} for the orbit $\Gamma x_0$ give
 \[
-\sum_\gamma\osomp(\gamma z)^{-2}\le C\sum_\gamma\ue^{-d(z,\gamma x_0)}(1+d(z,\gamma x_0))^{-2c'}\le C\sum_{n\ge0}\ue^{n}\ue^{-n}(1+n)^{-2c'}<\infty,
+\sum_\gamma\osomc(\gamma z)^{-2}\le C\sum_\gamma\ue^{-d(z,\gamma x_0)}(1+d(z,\gamma x_0))^{-2c}\le C\sum_{n\ge0}\ue^{n}\ue^{-n}(1+n)^{-2c}<\infty,
 \]
-uniformly in $z$, since $2c'>1$. Cauchy--Schwarz and unfolding, as in Lemma~\ref{lem:t2}, give
-$\|[f]_\Gamma\|^2_{L^2(M)}\le C\int_\Hb\osomp^2|f|^2\,d\nu$ for $f=(S(t)w)\ue^{i\varphi/\hbar}$, with almost everywhere absolute convergence.
+uniformly in $z$, since $2c>1$. Cauchy--Schwarz and unfolding, as in Lemma~\ref{lem:t2}, give
+$\|[f]_\Gamma\|^2_{L^2(M)}\le C\int_\Hb\osomc^2|f|^2\,d\nu$ for $f=(S(t)w)\ue^{i\varphi/\hbar}$, with almost everywhere absolute convergence.
 
 \emph{Transport.} $(S(t)w)(z)=\ue^{-t/2}w(\Omega_tz)$, and $d(z,\Omega_sz)=|s|$. Since $\tilde\psi$ is $1$-Lipschitz, $\osX(z)\le\ue^{|s|}\osX(\Omega_sz)$ and
 $\osL(z)\le\osL(\Omega_sz)+|s|/\log2\le\osL(\Omega_sz)(1+|s|/\log2)$; this is the ratio bound. Since $S(t)$ is unitary,
-$\int\osomp^2|S(t)w|^2d\nu\le\ue^{t}(1+t/\log2)^{2c'}\int\osomp^2|w|^2d\nu$. Combining gives the claim.
+$\int\osomc^2|S(t)w|^2d\nu\le\ue^{t}(1+t/\log2)^{2c}\int\osomc^2|w|^2d\nu$. Combining gives the claim.
 \end{proof}
+
+The element $\mathcal V_sg$ of Section~\ref{subsec:dd-surf} is defined by the periodization sum; a weight enters only to
+guarantee, through \textup{(W1)}, that this sum converges. The next lemma records that two admissible weights give the same element,
+and compares the two weights used below.
 
 \begin{lemma}[the quotient propagator does not depend on the weight]\label{os:indep}
 Let $\varpi_1,\varpi_2$ be two weights satisfying \textup{(W1)}, \textup{(W2)}. For $g\in L^2_{\varpi_1}\cap L^2_{\varpi_2}$ the element

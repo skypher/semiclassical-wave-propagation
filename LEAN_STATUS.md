@@ -19,10 +19,10 @@ All Lean names are in the namespace `Qschubert`.
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Theorem 1.1 (`pc:main`) | L | `pcmain_all`; small-radius stage: `pcmain_half` |
-| Theorem 1.2 (`thm:dd14`) | L | `thm14Rmain_exp` |
+| Theorem 1.2 (`thm:dd14`) | L | `thm14Rmain_all` (every bounded range of radii, from `thm14Rmain_exp` and `swNormD_mono`) |
 | Corollary 1.3 (`pc:thm13`) | L | `pcthm13_all` |
 | Corollary 1.4 (`pc:cor15`) | L | `pccor15_all` |
-| Corollary 1.5 (`pc:cor16`) | L | `pccor16_all`; bounded geometry: `pccor16bg_all` |
+| Corollary 1.5 (`pc:cor16`) | L | `pccor16_all`; positive injectivity radius: `pccor16bg_all` |
 | Proposition 1.6 (`prop:g5`) | L | `propG5`; the negation of Schubert's bound is `printedThm13_false` |
 | Theorem 1.7 (`cl:necessary`) | P | deduced from Theorem 9.1 (`cl:main`); not formalized |
 | Theorem 1.8 (`ev:mod`) | L′ | parts (i), (ii): `evmod`, with the statement `Stmt_evmod`; part (iii) is a cited theorem and is not formalized |
@@ -94,8 +94,8 @@ All Lean names are in the namespace `Qschubert`.
 | Remark 6.2 (`pc:remcusp`) | P | two-sided bound for `m(z)` in a cusp; self-checked, not formalized |
 | Remark 6.3 (`rem:g4`) | P |  |
 | Corollary 6.4 (`thm:main`) | L | `thm13R_fixed` (from `thm14Rmain_exp` and `swNormD_mono`) |
-| Corollary 6.5 (`cor:dd15`) | L | `cor15Rmain_exp` (reversed-weight norm, exponent `β+1/2`), `cor15R_rep` (power-weight norm) |
-| Corollary 6.6 (`cor:dd16`) | L | `cor16Rmain_expmult`, `cor16R_mult`; bounded geometry: `cor16Rmain_expbg`, `cor16R_rep` |
+| Corollary 6.5 (`cor:dd15`) | L | `cor15Rmain_all` (reversed-weight norm, exponent `β+1/2`), `cor15R_rep` (power-weight norm) |
+| Corollary 6.6 (`cor:dd16`) | L | `cor16Rmain_allmult`, `cor16R_mult`; positive injectivity radius: `cor16Rmain_allbg`, `cor16R_rep` |
 | Remark 6.7 (`rem:amplitude-examples`) | P | elementary norm identities and an example; self-checked, not separately formalized |
 | Lemma 6.8 (`lem:ex`) | P | not used by the theorems |
 | Corollary 6.9 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.8 (`lem:ex`) and Theorem 1.2 (`thm:dd14`); self-checked, not separately formalized |
@@ -104,7 +104,7 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Corollary 7.1 (`ev:transfer`) | L | original norm: `evTransfer_pc_all`; reversed-weight norm: `evTransfer_main` |
+| Corollary 7.1 (`ev:transfer`) | L | original norm: `evTransfer_pc_all`; reversed-weight norm: `evTransfer_main_all` |
 | Lemma 7.14 (`ev:meanlem`) | L | `integral_amp_mul_slice_L1`, `integrableOn_amp_mul_slice_L1`, `slice_lintegral_le` |
 | Corollary 7.17 (`ev:perio`) | P | elementary consequence of Lemma 7.14 (`ev:meanlem`); self-checked, not separately formalized |
 | Lemmas 7.9 (`ev:mellinlemma`), 7.19 (`ev:scattering`), 7.23 (`ev:approxmode`), 7.28 (`ev:initialnorm`), 7.29 (`ev:outgoing`) | P | editorial extractions from the proof of Theorem 1.8 (`ev:mod`); the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked |
@@ -121,9 +121,9 @@ All Lean names are in the namespace `Qschubert`.
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Proposition 9.3 (`cl:relative`) | P | extracted from the relative-error remark; self-checked |
-| Theorem 9.1 (`cl:main`), Lemmas 9.4 (`cl:ssob`), 9.5 (`cl:asym`), 9.14 (`cl:kernel`), 9.16 (`cl:amp`) | P |  |
-| Lemmas 9.15 (`cl:aux`), 9.18 (`cl:noncancel`) | P | auxiliary estimates and noncancellation separated from the amplitude proof; self-checked, not separately formalized |
-| Corollary 9.19 (`cl:rational`) | P | transport of Theorems 9.1 (`cl:main`) and 1.7 (`cl:necessary`) to rational boundary points; self-checked |
+| Theorem 9.1 (`cl:main`), Lemmas 9.4 (`cl:ssob`), 9.5 (`cl:sp`), 9.11 (`cl:asym`), 9.15 (`cl:kernel`), 9.17 (`cl:amp`), 9.20 (`cl:two`) | P |  |
+| Lemmas 9.16 (`cl:aux`), 9.19 (`cl:noncancel`) | P | auxiliary estimates and noncancellation separated from the amplitude proof; self-checked, not separately formalized |
+| Corollary 9.21 (`cl:rational`) | P | transport of Theorems 9.1 (`cl:main`) and 1.7 (`cl:necessary`) to rational boundary points; self-checked |
 
 ## Appendix A (`app:special`): special-function and kernel calculations
 

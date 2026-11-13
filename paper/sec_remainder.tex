@@ -24,47 +24,48 @@ area $2\pi(\cosh\rho-1)$.
 \end{proof}
 
 \begin{lemma}[uniform Poincar\'e series bound]\label{lem:p1}
-For every Fuchsian $\Gamma$ and $s>1$, the Poincar\'e series bound $P_\Gamma(s)=\sup_{z}\sum_{\gamma}\ue^{-s\,d(x_0,\gamma z)}$ of
+For every Fuchsian $\Gamma$ and $\sigma>1$, the Poincar\'e series bound $P_\Gamma(\sigma)=\sup_{z}\sum_{\gamma}\ue^{-\sigma\,d(x_0,\gamma z)}$ of
 Section~\ref{subsec:pc-thm} is finite.
 \end{lemma}
 \begin{proof}
 The orbit $\Gamma x_0$ is a set as in Lemma~\ref{lem:count}, because $\Gamma$ acts properly discontinuously: its distinct points are uniformly
 separated, and each is the image of $x_0$ under as many elements as the order of the finite stabilizer of $x_0$. With
 $d(x_0,\gamma z)=d(z,\gamma^{-1}x_0)$, \eqref{eq:count} gives
-$\sum_\gamma\ue^{-s\,d(x_0,\gamma z)}\le\sum_{n\ge0}C\ue^{n+1}\ue^{-sn}<\infty$, uniformly in $z$, for $s>1$.
+$\sum_\gamma\ue^{-\sigma\,d(x_0,\gamma z)}\le\sum_{n\ge0}C\ue^{n+1}\ue^{-\sigma n}<\infty$, uniformly in $z$, for $\sigma>1$.
 \end{proof}
 
 \begin{lemma}[weighted periodization and transport]\label{lem:t2}
-For every Fuchsian $\Gamma$, every $s>1/2$, $t\ge0$, every real phase $\varphi$ and every measurable $w$ with $\ue^{s\tilde\psi}w\in L^2(\Hb)$:
+For every Fuchsian $\Gamma$, every $\sigma>1/2$, $t\ge0$, every real phase $\varphi$ and every measurable $w$ with $\ue^{\sigma\tilde\psi}w\in L^2(\Hb)$:
 \[
-\norm{\bigl[(S(t)w)\,\ue^{i\varphi/\hbar}\bigr]_\Gamma}_{L^2(M)}\le C(\Gamma,s)\,\ue^{st}\,\norm{\ue^{s\tilde\psi}w}_{L^2(\Hb)},
+\norm{\bigl[(S(t)w)\,\ue^{i\varphi/\hbar}\bigr]_\Gamma}_{L^2(M)}\le C(\Gamma,\sigma)\,\ue^{\sigma t}\,\norm{\ue^{\sigma\tilde\psi}w}_{L^2(\Hb)},
 \]
-with $C(\Gamma,s)=2^sP_\Gamma(2s)^{1/2}$, where $P_\Gamma$ is the Poincar\'e series bound of Lemma~\ref{lem:p1}.
+with $C(\Gamma,\sigma)=2^\sigma P_\Gamma(2\sigma)^{1/2}$, where $P_\Gamma$ is the Poincar\'e series bound of Lemma~\ref{lem:p1}.
 \end{lemma}
 
 \begin{proof}
 \emph{Pointwise Cauchy--Schwarz.} For $f$ on $\Hb$ and $z\in\Hb$:
 \[
-\Bigl|\sum_\gamma f(\gamma z)\Bigr|^2\le\Bigl(\sum_\gamma\ue^{-2sd(\gamma z,x_0)}\Bigr)\Bigl(\sum_\gamma\ue^{2sd(\gamma z,x_0)}|f(\gamma z)|^2\Bigr).
+\Bigl|\sum_\gamma f(\gamma z)\Bigr|^2\le\Bigl(\sum_\gamma\ue^{-2\sigma d(\gamma z,x_0)}\Bigr)\Bigl(\sum_\gamma\ue^{2\sigma d(\gamma z,x_0)}|f(\gamma z)|^2\Bigr).
 \]
-The first factor is $\le P_\Gamma(2s)$ for every $z$, by Lemma~\ref{lem:p1} with exponent $2s>1$ (since $d(\gamma z,x_0)=d(z,\gamma^{-1}x_0)$).
+The first factor is $\le P_\Gamma(2\sigma)$ for every $z$, by Lemma~\ref{lem:p1} with exponent $2\sigma>1$ (since $d(\gamma z,x_0)=d(z,\gamma^{-1}x_0)$).
 
 \emph{Unfolding.} For measurable $g\ge0$ on $\Hb$, $\int_M\sum_\gamma g\circ\gamma\,d\nu=\int_\Hb g\,d\nu$, by Tonelli's theorem over
-a fundamental domain. Applied to the right side of the last display, this gives
+a fundamental domain. Applied to the right side of the last display, first for finite partial sums and then in the limit by monotone
+convergence, this gives
 \[
-\norm{[f]_\Gamma}^2_{L^2(M)}\le P_\Gamma(2s)\int_\Hb\ue^{2sd(z,x_0)}|f(z)|^2\,d\nu(z).
+\norm{[f]_\Gamma}^2_{L^2(M)}\le P_\Gamma(2\sigma)\int_\Hb\ue^{2\sigma d(z,x_0)}|f(z)|^2\,d\nu(z).
 \]
-We prove this first for finite partial sums and then pass to the limit by monotone convergence. In particular $\sum_\gamma|f\circ\gamma|$ converges a.e. and in $L^2(M)$. Torsion-freeness is not needed: the fixed sets of elliptic elements are null, so unfolding over a fundamental domain carries no stabilizer factor, and any multiplicity is already counted in the orbit series $P_\Gamma(2s)$.
+In particular $\sum_\gamma|f\circ\gamma|$ converges a.e. and in $L^2(M)$. Torsion-freeness is not needed: the fixed sets of elliptic elements are null, so unfolding over a fundamental domain carries no stabilizer factor, and any multiplicity is already counted in the orbit series $P_\Gamma(2\sigma)$.
 
 \emph{Transport.} Take $f=(S(t)w)\ue^{i\varphi/\hbar}$, so $|f|=|S(t)w|$.
 Since $(S(t)w)(z)=\ue^{-t/2}w(z_t)$, where $z_t$ is at distance $t$ from $z$, we have
 $d(z,x_0)\le d(z_t,x_0)+t$. Unitarity of $S(t)$ therefore gives
 \[
-  \int\ue^{2sd(z,x_0)}|S(t)w(z)|^2\,d\nu(z)
-  \le\ue^{2st}\int\ue^{2sd(z',x_0)}|w(z')|^2\,d\nu(z').
+  \int\ue^{2\sigma d(z,x_0)}|S(t)w(z)|^2\,d\nu(z)
+  \le\ue^{2\sigma t}\int\ue^{2\sigma d(z',x_0)}|w(z')|^2\,d\nu(z').
 \]
 
-Finally $\ue^{sd(z,x_0)}\le2^s\ue^{s\tilde\psi(z)}$, since $\tilde\psi(z)=\log\cosh d(z,x_0)\ge d(z,x_0)-\log2$. \qedhere
+Finally $\ue^{\sigma d(z,x_0)}\le2^\sigma\ue^{\sigma\tilde\psi(z)}$, since $\tilde\psi(z)=\log\cosh d(z,x_0)\ge d(z,x_0)-\log2$. \qedhere
 \end{proof}
 
 
@@ -82,8 +83,9 @@ $a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, which covers the original-norm cl
 \end{lemma}
 
 \begin{proof}
-
-By Lemma~\ref{lem:wc} at $\alpha''=0$ (with $\tau_0=1$), every word applied to $F$ in the sense of distributions lies in $L^2$. The same holds
+By Lemma~\ref{lem:wc} at $\alpha''=0$ (with $\tau_0=1$), every word applied to $F$ in the sense of distributions lies in $L^2$;
+this forward reference is not circular, since Lemma~\ref{lem:wc} and its proof (with Appendix~\ref{app:fc-proof}) use no
+result of this section. The same holds
 for $F\circ p$ for every affine isometry $p(z)=p_1z+p_2$, $p_1>0$: these commute with $X$, $Y$ and $\Lambda$, so
 $F\circ p\in\operatorname{Dom}(\ue^{\alpha\Lambda})$.
 
@@ -162,7 +164,9 @@ Let $\varpi\ge1$ be a locally bounded measurable weight on $\Hb$, $L^2_\varpi:=\
 \item[(W1)] $f\mapsto f_\Gamma$ is bounded from $L^2_\varpi$ to $L^2(M)$, the sum converging absolutely a.e.;
 \item[(W2)] $\sup\{\varpi(z)/\varpi(\Omega_sz):|s|\le T,\ z\in\Hb\}<\infty$ for every $T$.
 \end{itemize}
-The proof of Lemma~\ref{lem:t2}, at $t=0$, gives (W1) for $\varpi=X_0^\sigma$, $\sigma>1/2$. Proposition~\ref{os:p1} gives it for the periodization weight $\varpi=\omega=X_0^{1/2}\ell^{\,c'}$, $\ell=\log(2X_0)/\log2$, of Section~\ref{sec:printed}. Since $d(z,\Omega_sz)=|s|$ and $\tilde\psi$ is $1$-Lipschitz, (W2) holds with the explicit ratios $(X_0(z)/X_0(\Omega_sz))^\sigma\le\ue^{\sigma|s|}$ and $\omega(z)/\omega(\Omega_sz)\le\ue^{|s|/2}(1+|s|/\log 2)^{c'}$. By (W2), $S(s)$ is bounded on $L^2_\varpi$, locally uniformly in $s$; it is strongly continuous there, by density of $C_c(\Hb)$.
+The proof of Lemma~\ref{lem:t2}, at $t=0$, gives (W1) for $\varpi=X_0^\sigma$, $\sigma>1/2$. Since $d(z,\Omega_sz)=|s|$ and
+$\tilde\psi$ is $1$-Lipschitz, (W2) holds for it with the explicit ratio $(X_0(z)/X_0(\Omega_sz))^\sigma\le\ue^{\sigma|s|}$.
+Proposition~\ref{os:p1} verifies (W1) and (W2) for the periodization weight of Section~\ref{sec:printed}. By (W2), $S(s)$ is bounded on $L^2_\varpi$, locally uniformly in $s$; it is strongly continuous there, by density of $C_c(\Hb)$.
 
 Let $\mathcal D_\varpi$ be the set of $g\in L^2_\varpi$ with $Xg,Yg,X^2g,Y^2g\in L^2_\varpi$ (weak derivatives). For $g\in L^2_\varpi$ and $s\in\mathbb R$ put
 \[
@@ -199,8 +203,8 @@ So $f,Xf,Yf,\Delta f\in L^2_\varpi$ by (W2), and $f\in\operatorname{Dom}(\Delta)
 Take radial $\eta_n=\rho(d(x_0,\cdot)/n)$, with $\rho\in C_c^\infty$, $\rho=1$ near $0$. Then $0\le\eta_n\le1$, $\eta_n\to1$, and $|X\eta_n|+|Y\eta_n|+|\Delta\eta_n|\le C/n$. Since
 \[\Delta(\eta_nf)=\eta_n\Delta f+2(X\eta_n\,Xf+Y\eta_n\,Yf)+(\Delta\eta_n)f,\]
 dominated convergence gives $\eta_nf\to f$ and $\Delta(\eta_nf)\to\Delta f$ in $L^2_\varpi$.
-Fix $n$. Essential self-adjointness gives test functions $F_m\to\eta_nf$ in graph norm. With a fixed $\theta\in C_c^\infty(\Hb)$, $\theta=1$ on $\operatorname{supp}\eta_n$, the test functions $\theta F_m$ converge to $\eta_nf$ in graph norm, since $\norm{\nabla F}^2=\langle F,-\Delta F\rangle$ controls the cross term. Their supports lie in the compact set $\operatorname{supp}\theta$, where $\varpi$ is bounded.
-For a test function $F$, $F_\Gamma\in\operatorname{Dom}(\Delta_M)$ and $\Delta_MF_\Gamma=(\Delta F)_\Gamma$. By (W1) and closedness of $\Delta_M$, first in $m$ and then in $n$, the claim for $f$ follows. The statement for $\mathcal V_s$ follows since $\cU(-s)$ commutes with $\Delta_M$.\qedhere
+Fix $n$. Essential self-adjointness gives test functions $F_j\to\eta_nf$ in graph norm. With a fixed $\theta\in C_c^\infty(\Hb)$, $\theta=1$ on $\operatorname{supp}\eta_n$, the test functions $\theta F_j$ converge to $\eta_nf$ in graph norm, since $\norm{\nabla F}^2=\langle F,-\Delta F\rangle$ controls the cross term. Their supports lie in the compact set $\operatorname{supp}\theta$, where $\varpi$ is bounded.
+For a test function $F$, $F_\Gamma\in\operatorname{Dom}(\Delta_M)$ and $\Delta_MF_\Gamma=(\Delta F)_\Gamma$. By (W1) and closedness of $\Delta_M$, first in $j$ and then in $n$, the claim for $f$ follows. The statement for $\mathcal V_s$ follows since $\cU(-s)$ commutes with $\Delta_M$.\qedhere
 \end{proof}
 
 Recall $c_\hbar=i\hbar/2$ (Section~\ref{sec:setup}).
@@ -233,8 +237,8 @@ $P_k(s)a$ is a finite sum of continuous scalar functions times fixed words appli
 \end{proof}
 
 
-The quotient expansion now gives the differentiated remainder used in the approximation proofs. For later use on the
-universal cover we also record its trivial-group specialization.
+The next proposition records the trivial-group specialization of the quotient expansion, used on the universal cover,
+and the differentiated remainder used in the approximation proofs.
 
 \begin{proposition}[Dyson identity and quotient remainder]\label{prop:dd-id}
 \begin{enumerate}
@@ -248,14 +252,15 @@ Section~\ref{sec:setup}. If every word in $X,Y$ applied to $a$ lies in $L^2_\var
 and \textup{(W2)}, then
 \[
 \begin{gathered}
-\norm{E}_{L^2(M)}\le\Bigl(\frac{\hbar}{2}\Bigr)^{K+1}\int_{\Sigma_{K+1}(t)}\bigl\|\mathcal V_{s_1}b'(\mathbf s)\bigr\|_{L^2(M)}\,d\mathbf s,\\
-b'(\mathbf s):=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a,\qquad\mathbf s=(s_1,\dots,s_{K+1}).
+\norm{E}_{L^2(M)}\le\Bigl(\frac{\hbar}{2}\Bigr)^{K+1}\int_{\Sigma_{K+1}(t)}\bigl\|\mathcal V_{s_1}a_{\mathbf s}\bigr\|_{L^2(M)}\,d\mathbf s,\\
+a_{\mathbf s}:=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a,\qquad\mathbf s=(s_1,\dots,s_{K+1}).
 \end{gathered}
 \]
 \end{enumerate}
 \end{proposition}
 
-In (ii) everything of high order is inside $b'(\mathbf s)$, which is a fixed polynomial in $X,Y$ applied to $a$. Every amplitude
+In (ii) everything of high order is inside the remainder amplitude $a_{\mathbf s}$, a polynomial in $X,Y$, with coefficients
+depending on $\mathbf s$ and $\hbar$, applied to $a$. Every amplitude
 $a$ of Theorem~\ref{thm:dd-appx} satisfies the hypothesis of (i), by Lemma~\ref{lem:sc}.
 
 \begin{proof}

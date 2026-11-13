@@ -10,63 +10,63 @@ are stated in the body of the paper.
 We use the Kontorovich--Lebedev picture of Section~\ref{app:kl}: after Fourier transform in $x$, on the mode $\ue^{ikx}$, $k\ne0$,
 with $z=|k|y$ and the function of $y$ written as $z^{1/2}f(z)$, $f\in L^2(dz/z)$, we have $-\Delta-\tfrac14=-(z\partial_z)^2+z^2$,
 $X=i\,\operatorname{sgn}(k)\,z$ and $Y=z\partial_z+\tfrac12$. Thus $\mathring Y:=Y-\tfrac12=z\partial_z=:D_z$ is skew-adjoint on $L^2(dz/z)$.
-The transform $F(\nu)=\int_0^\infty K_{i\nu}(z)f(z)\,dz/z$, with the density $w(\nu)=\tfrac{2}{\pi^2}\nu\sinh\pi\nu$, makes $\Lambda$ the
-multiplication by $\Lambda(\nu)=(\nu^2+\tfrac14)^{1/2}$, and the operators are the same for every $k$, so bounds are uniform in $k$. The mode $k=0$ has measure zero in the direct integral over $k$ and can be ignored. Put $\sigma:=\alpha'-\alpha''$ and write
+The transform $F(r)=\int_0^\infty K_{ir}(z)f(z)\,dz/z$, with the density $w(r)=\tfrac{2}{\pi^2}r\sinh\pi r$, makes $\Lambda$ the
+multiplication by $\Lambda(r)=(r^2+\tfrac14)^{1/2}$, and the operators are the same for every $k$, so bounds are uniform in $k$. The mode $k=0$ has measure zero in the direct integral over $k$ and can be ignored. Put $\sigma:=\alpha'-\alpha''$ and write
 \[
 \ue^{\alpha''\Lambda}Z\ue^{-\alpha'\Lambda}=\bigl(\ue^{\alpha''\Lambda}Z\ue^{-\alpha''\Lambda}\Lambda^{-1}\bigr)\bigl(\Lambda\ue^{-\sigma\Lambda}\bigr).
 \]
 The second factor has norm $\le\sup_{\lambda\ge1/2}\lambda\ue^{-\sigma\lambda}\le1/(\ue\sigma)$. It remains to bound the first factor uniformly for $\alpha''\le\tau_0$, and $Y=\mathring Y+\tfrac12$ adds at most $\tfrac12$.
 
-\medskip\noindent\emph{Spectral notation.} We put $x:=\nu-\nu'$, $p:=\pi(\nu+\nu')/2$ and $q:=\pi x/2$. Since $\sinh\pi\nu\,\sinh\pi\nu'=\sinh(p+q)\sinh(p-q)$,
+\medskip\noindent\emph{Spectral notation.} We put $x:=r-r'$, $p:=\pi(r+r')/2$ and $q:=\pi x/2$. Since $\sinh\pi r\,\sinh\pi r'=\sinh(p+q)\sinh(p-q)$,
 \[
-(w(\nu)w(\nu'))^{1/2}=\tfrac{2}{\pi^2}(\nu\nu')^{1/2}(\sinh^2p-\sinh^2q)^{1/2}=\tfrac{2}{\pi^2}(\nu\nu')^{1/2}(\cosh^2p-\cosh^2q)^{1/2}.
+(w(r)w(r'))^{1/2}=\tfrac{2}{\pi^2}(rr')^{1/2}(\sinh^2p-\sinh^2q)^{1/2}=\tfrac{2}{\pi^2}(rr')^{1/2}(\cosh^2p-\cosh^2q)^{1/2}.
 \]
 
-\medskip\noindent\emph{Mellin product formula.} For $\operatorname{Re}s>|\operatorname{Re}a|+|\operatorname{Re}b|$,
+\medskip\noindent\emph{Mellin product formula.} For $\operatorname{Re}s>|\operatorname{Re}\mu_1|+|\operatorname{Re}\mu_2|$,
 \[
-M_s(a,b):=\int_0^\infty z^{s-1}K_a(z)K_b(z)\,dz=2^{s-3}\,\frac{\Gamma\bigl(\tfrac{s+a+b}{2}\bigr)\Gamma\bigl(\tfrac{s+a-b}{2}\bigr)\Gamma\bigl(\tfrac{s-a+b}{2}\bigr)\Gamma\bigl(\tfrac{s-a-b}{2}\bigr)}{\Gamma(s)}.
+M_s(\mu_1,\mu_2):=\int_0^\infty z^{s-1}K_{\mu_1}(z)K_{\mu_2}(z)\,dz=2^{s-3}\,\frac{\Gamma\bigl(\tfrac{s+\mu_1+\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s+\mu_1-\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s-\mu_1+\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s-\mu_1-\mu_2}{2}\bigr)}{\Gamma(s)}.
 \]
-\emph{Proof of the formula.} Write $K_b=K_{-b}$ (\cite[10.27.3]{DLMF}) and use the integral representation
+\emph{Proof of the formula.} Write $K_{\mu_2}=K_{-\mu_2}$ (\cite[10.27.3]{DLMF}) and use the integral representation
 \cite[10.32.10]{DLMF} for both Bessel factors. The integration in $z$ is
 \[
-\int z^{m-1}\ue^{-z^2c/4}\,dz=\tfrac12(4/c)^{m/2}\Gamma(m/2),
-\qquad m=s+a-b,\quad c=1/u+1/v.
+\int z^{\ell-1}\ue^{-z^2c/4}\,dz=\tfrac12(4/c)^{\ell/2}\Gamma(\ell/2),
+\qquad \ell=s+\mu_1-\mu_2,\quad c=1/u+1/v.
 \]
-Substitute $u=rt$ and $v=r(1-t)$ in the remaining double integral. The $r$-integral gives
-$\Gamma(\tfrac{s-a+b}{2})$, and the $t$-integral gives the beta function
-$\Gamma(\tfrac{s-a-b}{2})\Gamma(\tfrac{s+a+b}{2})/\Gamma(s)$, yielding the formula above.
-The absolute integrand is the same expression with $a,b$ replaced by $\operatorname{Re}a,\operatorname{Re}b$ (since $|(z/2)^a|=(z/2)^{\operatorname{Re}a}$). For $\operatorname{Re}s>|\operatorname{Re}a|+|\operatorname{Re}b|$ the same computation then gives a finite value with all Gamma arguments of positive real part, so Tonelli justifies every exchange. This covers $a=i\nu$, $b=i\nu'$ at $s=1$, and $b=i\nu'\pm1$ at $s=1+\eta$, $\eta>0$. This proves the formula.
+Substitute $u=R\tau$ and $v=R(1-\tau)$ in the remaining double integral. The $R$-integral gives
+$\Gamma(\tfrac{s-\mu_1+\mu_2}{2})$, and the $\tau$-integral gives the beta function
+$\Gamma(\tfrac{s-\mu_1-\mu_2}{2})\Gamma(\tfrac{s+\mu_1+\mu_2}{2})/\Gamma(s)$, yielding the formula above.
+The absolute integrand is the same expression with $\mu_1,\mu_2$ replaced by $\operatorname{Re}\mu_1,\operatorname{Re}\mu_2$ (since $|(z/2)^{\mu_1}|=(z/2)^{\operatorname{Re}\mu_1}$). For $\operatorname{Re}s>|\operatorname{Re}\mu_1|+|\operatorname{Re}\mu_2|$ the same computation then gives a finite value with all Gamma arguments of positive real part, so Tonelli justifies every exchange. This covers $\mu_1=i r$, $\mu_2=i r'$ at $s=1$, and $\mu_2=i r'\pm1$ at $s=1+\eta$, $\eta>0$. This proves the formula.
 
 \medskip\noindent\emph{(X) Kernel of $z$.}
-Since the measure is $dz/z$, the kernel of multiplication by $z$ is $(w w')^{1/2}M_1(i\nu,i\nu')$. The identity $|\Gamma(\tfrac12+iy)|^2=\pi/\cosh\pi y$ gives
+Since the measure is $dz/z$, the kernel of multiplication by $z$ is $(w w')^{1/2}M_1(ir,ir')$. The identity $|\Gamma(\tfrac12+iy)|^2=\pi/\cosh\pi y$ gives
 \[
-k_1(\nu,\nu')=(ww')^{1/2}\frac{\pi^2}{4\cosh p\cosh q}=\frac{(\nu\nu')^{1/2}(\cosh^2p-\cosh^2q)^{1/2}}{2\cosh p\cosh q},
+k_1(r,r')=(ww')^{1/2}\frac{\pi^2}{4\cosh p\cosh q}=\frac{(rr')^{1/2}(\cosh^2p-\cosh^2q)^{1/2}}{2\cosh p\cosh q},
 \]
-so $|k_1|\le(\nu\nu')^{1/2}/(2\cosh q)$.
+so $|k_1|\le(rr')^{1/2}/(2\cosh q)$.
 The kernel of $\ue^{\alpha''\Lambda}z\ue^{-\alpha''\Lambda}\Lambda^{-1}$ is bounded by
 \[
-\frac{\ue^{\alpha''|x|}(\nu\nu')^{1/2}}{2\cosh(\pi x/2)\,\Lambda(\nu')}.
+\frac{\ue^{\alpha''|x|}(rr')^{1/2}}{2\cosh(\pi x/2)\,\Lambda(r')}.
 \]
-Since $(\nu\nu')^{1/2}\le(\nu+\nu')/2\le\nu'+|x|/2$ and $\Lambda(\nu')\ge\max(\nu',1/2)$, we have
+Since $(rr')^{1/2}\le(r+r')/2\le r'+|x|/2$ and $\Lambda(r')\ge\max(r',1/2)$, we have
 \[
-(\nu\nu')^{1/2}/\Lambda(\nu')\le1+|x|.
+(rr')^{1/2}/\Lambda(r')\le1+|x|.
 \]
 So the kernel is at most $g(x):=(1+|x|)\ue^{\tau_0|x|}/(2\cosh(\pi x/2))$, which is integrable for $\tau_0<\pi/2$. The Schur test gives the bound $\int g$.
 
-\medskip\noindent\emph{(Y) Kernel of $D_z$.} The integral $\int K_{i\nu}K'_{i\nu'}\,dz$ does not converge at $z=0$, so we regularize.
-Let $F,G\in C_c^\infty((0,\infty))$ be the KL transforms of $f,g$ (the core $\mathcal C$).
-On $\mathcal C$, $f(\ue^{-L})$ and $zg'(z)|_{z=\ue^{-L}}$ decay faster than any power of $L$ as $L\to\infty$: they are integrals of smooth compactly supported densities against $\ue^{\pm i\nu L}$-oscillations, plus $O(\ue^{-2L})$. This uses $K_{i\nu}=\tfrac12\pi(I_{-i\nu}-I_{i\nu})/\sin(i\nu\pi)$ (\cite[10.27.4]{DLMF}) with the series of $I_{\pm i\nu}$ (\cite[10.25.2]{DLMF}), and $1/\sin(i\nu\pi)$ is smooth on $\operatorname{supp}F\subset(0,\infty)$.
+\medskip\noindent\emph{(Y) Kernel of $D_z$.} The integral $\int K_{ir}K'_{ir'}\,dz$ does not converge at $z=0$, so we regularize.
+Let $F_f,F_g\in C_c^\infty((0,\infty))$ be the KL transforms of $f,g$ (the core $\mathcal C$).
+On $\mathcal C$, $f(\ue^{-L})$ and $zg'(z)|_{z=\ue^{-L}}$ decay faster than any power of $L$ as $L\to\infty$: they are integrals of smooth compactly supported densities against $\ue^{\pm ir L}$-oscillations, plus $O(\ue^{-2L})$. This uses $K_{ir}=\tfrac12\pi(I_{-i r}-I_{i r})/\sin(i r\pi)$ (\cite[10.27.4]{DLMF}) with the series of $I_{\pm ir}$ (\cite[10.25.2]{DLMF}), and $1/\sin(i r\pi)$ is smooth on $\operatorname{supp}F_f\cup\operatorname{supp}F_g\subset(0,\infty)$.
 Hence $\langle f,D_zg\rangle=\int_0^\infty\bar f g'\,dz=\lim_{\eta\to0^+}\int z^\eta\bar fg'\,dz$, by dominated convergence.
-For $\eta>0$ Fubini applies, and $K'_\nu=-(K_{\nu-1}+K_{\nu+1})/2$ (\cite[10.29.1]{DLMF}, with $\mathcal Z_\nu=\ue^{\nu\pi i}K_\nu$ in DLMF's convention, under which 10.29.1 reads $\mathcal Z_{\nu-1}+\mathcal Z_{\nu+1}=2\mathcal Z'_\nu$ and gives the minus sign for $K$) gives
+For $\eta>0$ Fubini applies, and $K'_\mu=-(K_{\mu-1}+K_{\mu+1})/2$ (\cite[10.29.1]{DLMF}, with $\mathcal Z_\mu=\ue^{\mu\pi i}K_\mu$ in DLMF's convention, under which 10.29.1 reads $\mathcal Z_{\mu-1}+\mathcal Z_{\mu+1}=2\mathcal Z'_\mu$ and gives the minus sign for $K$) gives
 \[
 \begin{gathered}
-\langle f,D_zg\rangle=\lim_{\eta\to0^+}\iint\bar F(\nu)G(\nu')\,w(\nu)w(\nu')\,I_\eta(\nu,\nu')\,d\nu\,d\nu',\\
-I_\eta=-\tfrac12\bigl[M_{1+\eta}(i\nu,i\nu'+1)+M_{1+\eta}(i\nu,i\nu'-1)\bigr].
+\langle f,D_zg\rangle=\lim_{\eta\to0^+}\iint\bar F_f(r)F_g(r')\,w(r)w(r')\,I_\eta(r,r')\,d r\,d r',\\
+I_\eta=-\tfrac12\bigl[M_{1+\eta}(ir,ir'+1)+M_{1+\eta}(ir,ir'-1)\bigr].
 \end{gathered}
 \]
 Both terms are admissible, since $\operatorname{Re}s=1+\eta>0+1$.
-In $M_{1+\eta}(i\nu,i\nu'+1)$ the factor $\Gamma((\eta+ix)/2)=(2/(\eta+ix))\Gamma(1+(\eta+ix)/2)$ is singular, and the other factors are smooth. In $M_{1+\eta}(i\nu,i\nu'-1)$ the singular factor is $\Gamma((\eta-ix)/2)$.
-So $I_\eta=\frac{2}{\eta+ix}A_\eta+\frac{2}{\eta-ix}B_\eta$, where $A_\eta,B_\eta$ are smooth in $(\nu,\nu',\eta)$ on the support.
+In $M_{1+\eta}(ir,ir'+1)$ the factor $\Gamma((\eta+ix)/2)=(2/(\eta+ix))\Gamma(1+(\eta+ix)/2)$ is singular, and the other factors are smooth. In $M_{1+\eta}(ir,ir'-1)$ the singular factor is $\Gamma((\eta-ix)/2)$.
+So $I_\eta=\frac{2}{\eta+ix}A_\eta+\frac{2}{\eta-ix}B_\eta$, where $A_\eta,B_\eta$ are smooth in $(r,r',\eta)$ on the support.
 At $\eta=0$ and $x=0$, the reflection identity $\Gamma(1+w)\Gamma(-w)=-\pi/\sin\pi w$ gives
 \[
 \begin{aligned}
@@ -75,43 +75,43 @@ B_0&=-\tfrac12\cdot\tfrac14\,\Gamma(ip/\pi)\Gamma(1-ip/\pi)=-\tfrac18\cdot\tfrac
 \end{aligned}
 \]
 So $A_0+B_0=0$ on the diagonal.
-The Sokhotski--Plemelj formula gives $\frac{2}{\eta\pm ix}\to\mp2i\,\mathrm{PV}\frac1x+2\pi\delta(x)$. The $\delta$-terms carry $A_0+B_0$ at $x=0$, so they cancel.
+The Sokhotski--Plemelj formula gives $\frac{2}{\eta\pm ix}\to\mp2i\,\mathrm{PV}\frac1x$ plus $2\pi$ times the Dirac measure at $x=0$. The Dirac terms carry $A_0+B_0$ at $x=0$, so they cancel.
 For $x\neq0$ the pointwise limit is $I_0=-\pi^2/(4\sinh p\,\sinh q)$ (same Gamma reflections). Hence, on $\mathcal C\times\mathcal C$,
 \[
-\langle f,D_zg\rangle=\mathrm{PV}\iint\bar F G\,w\,w'\,I_0,
+\langle f,D_zg\rangle=\mathrm{PV}\iint\bar F_fF_g\,w\,w'\,I_0,
 \]
 so the kernel of $D_z$ in the unitary picture is
 \[
-\tilde D(\nu,\nu')=-\frac{(\nu\nu')^{1/2}\rho(\nu,\nu')}{2\sinh q},\qquad
+\tilde D(r,r')=-\frac{(rr')^{1/2}\rho(r,r')}{2\sinh q},\qquad
 \rho:=\Bigl(1-\frac{\sinh^2q}{\sinh^2p}\Bigr)^{1/2}\in[0,1].
 \]
 
 This kernel is real and antisymmetric, as $D_z$ must be.
 
-\medskip\noindent\emph{(Y) bound.} The kernel of $Q:=\ue^{\alpha''\Lambda}D_z\ue^{-\alpha''\Lambda}\Lambda^{-1}$ is $\ue^{\alpha''(\Lambda(\nu)-\Lambda(\nu'))}\tilde D(\nu,\nu')/\Lambda(\nu')$. It is valid on $\mathcal C$, because $\ue^{\pm\alpha''\Lambda}$ and $\Lambda^{-1}$ preserve $\mathcal C$. Split $Q=Q_{\rm far}+Q_{\rm near}$, with $Q_{\rm near}:=Q\cdot\mathbf 1_{|x|\le1}$.
+\medskip\noindent\emph{(Y) bound.} The kernel of $Q:=\ue^{\alpha''\Lambda}D_z\ue^{-\alpha''\Lambda}\Lambda^{-1}$ is $\ue^{\alpha''(\Lambda(r)-\Lambda(r'))}\tilde D(r,r')/\Lambda(r')$. It is valid on $\mathcal C$, because $\ue^{\pm\alpha''\Lambda}$ and $\Lambda^{-1}$ preserve $\mathcal C$. Split $Q=Q_{\rm far}+Q_{\rm near}$, with $Q_{\rm near}:=Q\cdot\mathbf 1_{|x|\le1}$.
 
 \emph{The part $Q_{\rm far}$.} Here $|Q|\le(1+|x|)\ue^{\tau_0|x|}/(2\sinh(\pi|x|/2))$ on $|x|>1$. This is integrable, so the Schur test applies.
 
-\emph{The part $Q_{\rm near}$.} Write $1/(2\sinh(\pi x/2))=1/(\pi x)+r(x)$, with $r$ bounded on $|x|\le1$.
-The $r$-part has a bounded kernel supported in $|x|\le1$, so the Schur test applies.
-In the main part $-a(\nu,\nu')/(\pi(\nu-\nu'))$, put
-\[a(\nu,\nu'):=\ue^{\alpha''(\Lambda(\nu)-\Lambda(\nu'))}(\nu\nu')^{1/2}\rho(\nu,\nu')/\Lambda(\nu').\]
-Then $a(\nu,\nu')=a(\nu',\nu')+[a(\nu,\nu')-a(\nu',\nu')]$, with $a(\nu',\nu')=\nu'/\Lambda(\nu')\in[0,1]$.
+\emph{The part $Q_{\rm near}$.} Write $1/(2\sinh(\pi x/2))=1/(\pi x)+h(x)$, with $h$ bounded on $|x|\le1$.
+The $h$-part has a bounded kernel supported in $|x|\le1$, so the Schur test applies.
+In the main part $-\Theta(r,r')/(\pi(r-r'))$, put
+\[\Theta(r,r'):=\ue^{\alpha''(\Lambda(r)-\Lambda(r'))}(rr')^{1/2}\rho(r,r')/\Lambda(r').\]
+Then $\Theta(r,r')=\Theta(r',r')+[\Theta(r,r')-\Theta(r',r')]$, with $\Theta(r',r')=r'/\Lambda(r')\in[0,1]$.
 The diagonal part is the truncated Hilbert transform $\mathrm{PV}\,\frac{1}{\pi x}\mathbf 1_{|x|\le1}$
-composed with multiplication by $\nu'/\Lambda(\nu')$. This transform is bounded on $L^2(\mathbb R)$:
+composed with multiplication by $r'/\Lambda(r')$. This transform is bounded on $L^2(\mathbb R)$:
 its Fourier multiplier $-\tfrac{2i}{\pi}\operatorname{Si}(|\xi|)\operatorname{sgn}\xi$ has modulus
 at most $(2/\pi)\operatorname{Si}(\pi)<1.2$. Extending functions by zero from $(0,\infty)$ therefore gives the required bound.
-For the off-diagonal remainder, write $s(\nu):=(\nu\nu')^{1/2}/\Lambda(\nu')$ and
-$\vartheta:=\ue^{\alpha''(\Lambda(\nu)-\Lambda(\nu'))}$. Then
+For the off-diagonal remainder, write $s(r):=(rr')^{1/2}/\Lambda(r')$ and
+$\vartheta:=\ue^{\alpha''(\Lambda(r)-\Lambda(r'))}$. Then
 \[
-a(\nu,\nu')-a(\nu',\nu')=(\vartheta-1)s\rho+(\rho-1)s+(s(\nu)-s(\nu')).
+\Theta(r,r')-\Theta(r',r')=(\vartheta-1)s\rho+(\rho-1)s+(s(r)-s(r')).
 \]
 For $|x|\le1$, the first term is controlled by $|\vartheta-1|\le\tau_0\ue^{\tau_0}|x|$ and
 $s\rho\le s\le1+|x|\le2$. For the second, $\sinh|q|/\sinh p\le|q|/p$ when $|q|\le p$ gives
-$1-\rho\le\sinh^2q/\sinh^2p\le|q|/p=|x|/(\nu+\nu')$, and hence
-$(1-\rho)s\le|x|(\nu\nu')^{1/2}/((\nu+\nu')\Lambda(\nu'))\le|x|$.
-Finally, $|s(\nu)-s(\nu')|=|\sqrt\nu-\sqrt{\nu'}|\sqrt{\nu'}/\Lambda(\nu')\le|x|^{1/2}$,
-since $\sqrt{\nu'}/\Lambda(\nu')\le1$.
+$1-\rho\le\sinh^2q/\sinh^2p\le|q|/p=|x|/(r+r')$, and hence
+$(1-\rho)s\le|x|(rr')^{1/2}/((r+r')\Lambda(r'))\le|x|$.
+Finally, $|s(r)-s(r')|=|\sqrt r-\sqrt{r'}|\sqrt{r'}/\Lambda(r')\le|x|^{1/2}$,
+since $\sqrt{r'}/\Lambda(r')\le1$.
 So the remainder kernel is $\le C|x|^{-1/2}$ on $|x|\le1$, which is integrable. The Schur test therefore bounds the remainder.
 Combining the near and far bounds gives $\norm{Q}\le C(\tau_0)$ on $\mathcal C$, so $Q$ extends to a bounded operator. The bound for $\ue^{\alpha''\Lambda}D_z\ue^{-\alpha'\Lambda}$ follows on the dense set $\Lambda\ue^{-\sigma\Lambda}\mathcal C$, and then by closure. \qedhere
 \end{proof}
@@ -123,15 +123,15 @@ We prove the profile bounds used in Corollary~\ref{os:cwp} and Lemma~\ref{os:wor
 The operator $D$ is defined in Section~\ref{app:ws}, and $\Lambda_m$ and the critical weights in Section~\ref{subsec:pc-weights}.
 
 \begin{lemma}[two integrals]\label{os:int}
-For $a,b>0$,
+For $c_1,c_2>0$,
 \[
-\int_0^\infty\ue^{-a^2u^2-b^2/u^2}\,du=\frac{\sqrt\pi}{2a}\,\ue^{-2ab},\qquad\int_0^\infty u^{-2}\,\ue^{-a^2u^2-b^2/u^2}\,du=\frac{\sqrt\pi}{2b}\,\ue^{-2ab}.
+\int_0^\infty\ue^{-c_1^2u^2-c_2^2/u^2}\,du=\frac{\sqrt\pi}{2c_1}\,\ue^{-2c_1c_2},\qquad\int_0^\infty u^{-2}\,\ue^{-c_1^2u^2-c_2^2/u^2}\,du=\frac{\sqrt\pi}{2c_2}\,\ue^{-2c_1c_2}.
 \]
 \end{lemma}
 \begin{proof}
-Let $F(u)$ be the integrand of the first integral. The map $u\mapsto v=au-b/u$ is a bijection of $(0,\infty)$ onto $\mathbb R$ with
-$dv=(a+b/u^2)\,du$ and $a^2u^2+b^2/u^2=v^2+2ab$, so $\int_0^\infty(a+b/u^2)F\,du=\sqrt\pi\,\ue^{-2ab}$. The substitution $u\mapsto b/(au)$
-preserves $F$ and exchanges $a\int F$ with $b\int u^{-2}F$, so the two are equal.
+Let $F(u)$ be the integrand of the first integral. The map $u\mapsto v=c_1u-c_2/u$ is a bijection of $(0,\infty)$ onto $\mathbb R$ with
+$dv=(c_1+c_2/u^2)\,du$ and $c_1^2u^2+c_2^2/u^2=v^2+2c_1c_2$, so $\int_0^\infty(c_1+c_2/u^2)F\,du=\sqrt\pi\,\ue^{-2c_1c_2}$. The substitution $u\mapsto c_2/(c_1u)$
+preserves $F$ and exchanges $c_1\int F$ with $c_2\int u^{-2}F$, so the two are equal.
 \end{proof}
 
 For $m\ge\tfrac12$ and $\tau>0$ define the even positive function
@@ -170,9 +170,9 @@ The second holds because $\lambda|r|\le r^2/(8u^2)+2\lambda^2u^2$ and $\int_{\ma
 All integrands are positive or dominated, so Tonelli and Fubini apply.
 
 (i) The left side is $\frac{\tau}{\sqrt\pi}\int_0^\infty u^{-2}\exp(-(\nu^2+m^2)u^2-\tau^2/(4u^2))\,du$, and Lemma~\ref{os:int} with
-$a=(\nu^2+m^2)^{1/2}$, $b=\tau/2$ gives the value. The operator identity is the spectral calculus of $D$.
+$c_1=(\nu^2+m^2)^{1/2}$, $c_2=\tau/2$ gives the value. The operator identity is the spectral calculus of $D$.
 
-(ii) In the same way, with $a=(m^2-2\lambda^2)^{1/2}>0$, $\int g_{\tau,m}(r)\,\ue^{\lambda|r|}\,dr\le\sqrt2\,\ue^{-\tau a}\le\sqrt2$.
+(ii) In the same way, with $c_1=(m^2-2\lambda^2)^{1/2}>0$, $\int g_{\tau,m}(r)\,\ue^{\lambda|r|}\,dr\le\sqrt2\,\ue^{-\tau c_1}\le\sqrt2$.
 
 (iii) Differentiating under the integral,
 $h_{s,m}(r)=\frac1{2\pi}\int_0^\infty\bigl(\frac{s^2}{2u^5}-\frac1{u^3}\bigr)\exp(-m^2u^2-\frac{r^2+s^2}{4u^2})\,du$. With $x=s^2/u^2$,
@@ -185,7 +185,7 @@ $\Phi(u):=\exp(-u^2/4-\varrho^2/(4u^2))$,
 \int_{|r|\ge T}g_{\tau,1/2}&\le\frac{2\tau}{\pi T}\int_0^\infty u^{-1}\Phi\,du\le\frac{2\tau}{\pi T}\Bigl(\int_0^\infty u^{-2}\Phi\Bigr)^{1/2}\Bigl(\int_0^\infty\Phi\Bigr)^{1/2}\\
 &=\frac{2\tau}{\sqrt\pi\,T}\,\varrho^{-1/2}\ue^{-\varrho/2}\le\frac{2\tau}{\sqrt\pi}\,T^{-3/2}\ue^{-T/2},
 \end{align*}
-by Lemma~\ref{os:int} with $a=\tfrac12$, $b=\varrho/2$. Use this for $T\ge1$ and the mass bound for $T<1$; $B_0=2^{3/2}\ue^{1/2}$ works.
+by Lemma~\ref{os:int} with $c_1=\tfrac12$, $c_2=\varrho/2$. Use this for $T\ge1$ and the mass bound for $T<1$; $B_0=2^{3/2}\ue^{1/2}$ works.
 
 (v) From $\int_0^\infty u^{-2}(1-\ue^{-Au^2})\,du=\sqrt{\pi A}$ (integrate by parts),
 \[
@@ -199,35 +199,35 @@ bound for $T<1$ this gives the tail bound.
 \subsection{A comparison by the Gutzmer identity}\label{subsec:gutzmer}
 This subsection is used only for Lemma~\ref{lem:ex}. Let $G=\mathrm{SL}(2,\mathbb R)$, $\mathsf h=\mathrm{diag}(1,-1)$ and $x_0=i$, so that
 $d(x_0,\exp(t\mathsf h)x_0)=2|t|$. For $0<R\le\pi/4$ let $\Xi_R=G\exp(i(-R,R)\mathsf h)x_0$, a $G$-invariant domain in the complexification
-$G_{\mathbb C}/K_{\mathbb C}$ of $\Hb=G/K$; $\Xi_{\pi/4}$ is the crown \cite[\S7.2]{K}. For a holomorphic function $f$ on $\Xi_R$ and $0\le r<R$ put
+$G_{\mathbb C}/\mathrm{SO}(2,\mathbb C)$ of $\Hb=G/\mathrm{SO}(2)$; $\Xi_{\pi/4}$ is the crown \cite[\S7.2]{K}. For a holomorphic function $f$ on $\Xi_R$ and $0\le r<R$ put
 \[
-N_r(f)^2:=\int_G|f(g\exp(ir\mathsf h)x_0)|^2\,dg ,
+\mathcal G_r(f)^2:=\int_G|f(g\exp(ir\mathsf h)x_0)|^2\,dg ,
 \]
-with the Haar measure normalized so that $N_0(f)=\norm f_{L^2(\Hb)}$.
+with the Haar measure normalized so that $\mathcal G_0(f)=\norm f_{L^2(\Hb)}$.
 
 \begin{lemma}[comparison with the orbit norm]\label{lem:gutzmer}
 Let $0<r<R\le\pi/4$ with $r\le\tfrac12$.
 \begin{itemize}
-\item[(a)] Let $f\in L^2(\Hb)$ extend holomorphically to $\Xi_R$ with $\sup_{0\le\rho<R}N_\rho(f)<\infty$. Then
-$f\in\operatorname{Dom}(\ue^{r\Lambda})$ and $\norm{\ue^{r\Lambda}f}\le(\pi\ue)^{1/2}N_r(f)$.
-\item[(b)] The function $X_0=\cosh d(x_0,\cdot)$ extends holomorphically to $\Xi_{\pi/4}$, and for $g\in G$ its value at
+\item[(a)] The function $X_0=\cosh d(x_0,\cdot)$ extends holomorphically to $\Xi_{\pi/4}$, and for $g\in G$ its value at
 $g\exp(ir\mathsf h)x_0$ is $\cos(2r)\,A+i\sin(2r)\,B$, where $A=X_0(gx_0)\ge1$ and $B$ is real with $B^2\le A^2-1$.
+\item[(b)] Let $f\in L^2(\Hb)$ extend holomorphically to $\Xi_R$ with $\sup_{0\le\rho<R}\mathcal G_\rho(f)<\infty$. Then
+$f\in\operatorname{Dom}(\ue^{r\Lambda})$ and $\norm{\ue^{r\Lambda}f}\le(\pi\ue)^{1/2}\mathcal G_r(f)$.
 \end{itemize}
 \end{lemma}
 \begin{proof}
-(b) Realize $\Hb$ as the sheet $p_0>0$ of the hyperboloid $\{p\in\mathbb R^3:-p_0^2+p_1^2+p_2^2=-1\}$, with $x_0=e_0=(1,0,0)$, the group $G$
-acting through $SO_0(2,1)$, and $G_{\mathbb C}/K_{\mathbb C}$ as the complex quadric given by the same equation. Then $X_0(p)=p_0$ is a linear function,
+(a) Realize $\Hb$ as the sheet $p_0>0$ of the hyperboloid $\{p\in\mathbb R^3:-p_0^2+p_1^2+p_2^2=-1\}$, with $x_0=e_0=(1,0,0)$, the group $G$
+acting through $SO_0(2,1)$, and $G_{\mathbb C}/\mathrm{SO}(2,\mathbb C)$ as the complex quadric given by the same equation. Then $X_0(p)=p_0$ is a linear function,
 $\exp(t\mathsf h)e_0=(\cosh2t,\sinh2t,0)$, and so $\exp(ir\mathsf h)e_0=\cos(2r)\,e_0+i\sin(2r)\,e_1$. Hence
 $X_0(g\exp(ir\mathsf h)x_0)=\cos(2r)\,(ge_0)_0+i\sin(2r)\,(ge_1)_0$. Here $(ge_0)_0=X_0(gx_0)=A$, and $q:=ge_1$ is a real vector with
 $-q_0^2+q_1^2+q_2^2=1$ that is orthogonal to $p:=ge_0$ for the form: $Aq_0=p_1q_1+p_2q_2$. By the Cauchy--Schwarz inequality
 $A^2q_0^2\le(A^2-1)(1+q_0^2)$, that is $q_0^2\le A^2-1$.
 
-(a) In the spectral decomposition of $L^2(\Hb)$ by the Helgason--Fourier transform, $-\Delta$ acts as $\lambda^2+\tfrac14$, $\lambda\ge0$, and
+(b) In the spectral decomposition of $L^2(\Hb)$ by the Helgason--Fourier transform, $-\Delta$ acts as $\lambda^2+\tfrac14$, $\lambda\ge0$, and
 $\Lambda$ as $(\lambda^2+\tfrac14)^{1/2}\le\lambda+\tfrac12$. The Gutzmer identity (\cite[\S7.2, the identity before Theorem~7.2]{K}, where the
-spectral parameter is $2\lambda$) states that for $f$ as in (a) and $r<R$ the number $N_r(f)^2$ is the integral of $|\hat f|^2$ against the
+spectral parameter is $2\lambda$) states that for $f$ as in (b) and $r<R$ the number $\mathcal G_r(f)^2$ is the integral of $|\hat f|^2$ against the
 Plancherel measure with the additional weight $\phi_\lambda(\exp(2ir\mathsf h))$, the value at $\exp(2ir\mathsf h)x_0$ of the holomorphic extension of the
 spherical function $\phi_\lambda$. A radial eigenfunction of $\Delta$ with eigenvalue $-(\lambda^2+\tfrac14)$ that equals $1$ at $x_0$ is the regular
-solution of Legendre's equation in the variable $X_0$, so $\phi_\lambda=P_{-1/2+i\lambda}(X_0)$, a conical function \cite[\S14.20]{DLMF}; by (b),
+solution of Legendre's equation in the variable $X_0$, so $\phi_\lambda=P_{-1/2+i\lambda}(X_0)$, a conical function \cite[\S14.20]{DLMF}; by (a),
 $X_0(\exp(2ir\mathsf h)x_0)=\cos4r$. With $\theta:=4r\in(0,2]$, the Mehler--Dirichlet integral \cite[14.20.9]{DLMF}, with its integration variable replaced by $\theta v$, gives
 \[
 P_{-1/2+i\lambda}(\cos\theta)=\frac2\pi\int_0^1\frac{\cosh(\lambda\theta v)\,\theta}{\sqrt{2(\cos\theta v-\cos\theta)}}\,dv
@@ -240,7 +240,7 @@ $\ue^{2r\Lambda}\le\ue^{r}\ue^{2r\lambda}\le\sqrt{\ue}\,\ue^{2r\lambda}$,
 \[
 \phi_\lambda(\exp(2ir\mathsf h))\ge(\pi\sqrt{\ue})^{-1}\ue^{2r\lambda}\ge(\pi\ue)^{-1}\ue^{2r(\lambda^2+1/4)^{1/2}} ,
 \]
-and integrating against $|\hat f|^2$ gives (a).
+and integrating against $|\hat f|^2$ gives (b).
 \end{proof}
 
 \subsection{Kernels of the Poisson and heat semigroups}\label{app:kernels}
@@ -274,13 +274,13 @@ Insert the formula for $p_s$ into $k_\tau=\int\mu_\tau p_s\,ds$ and interchange 
 \int_0^\infty s^{-3}\ue^{-(\rho^2+\tau^2)/(4s)-s/4}\,ds=2\frac{1/4}{(\rho^2+\tau^2)/4}K_2\Bigl(\frac{\sqrt{\rho^2+\tau^2}}2\Bigr)
 =\frac{2K_2(\sqrt{\rho^2+\tau^2}/2)}{\rho^2+\tau^2},
 \]
-by $\int_0^\infty s^{\nu-1}\ue^{-\beta s-\gamma/s}ds=2(\gamma/\beta)^{\nu/2}K_\nu(2\sqrt{\beta\gamma})$, which follows from
-\cite[10.32.10]{DLMF} by a change of variables, with $\nu=-2$, $\beta=\tfrac14$, $\gamma=(\rho^2+\tau^2)/4$, and $K_{-2}=K_2$. The constant is
+by $\int_0^\infty s^{-3}\ue^{-c_1s-c_2/s}ds=2(c_1/c_2)K_2(2\sqrt{c_1c_2})$ for $c_1,c_2>0$, which follows from
+\cite[10.32.10]{DLMF} by a change of variables and $K_{-2}=K_2$; here $c_1=\tfrac14$ and $c_2=(\rho^2+\tau^2)/4$. The constant is
 $\tfrac{\tau}{2\sqrt\pi}\cdot\sqrt2\cdot(4\pi)^{-3/2}\cdot2=\tfrac{\sqrt2}{8\pi^2}\tau$. This gives the representation.
 
 For the bounds write $\rho=r+v$, so $\cosh\rho-\cosh r=2\sinh(r+v/2)\sinh(v/2)$. For $r\ge1$ the factor
 $K_2(\sqrt{\rho^2+\tau^2}/2)$ is comparable to $\ue^{-\rho/2}\rho^{-1/2}$ uniformly for $\tau\le\tau_0$, the factor $\rho/(\rho^2+\tau^2)$
-is at most $\rho^{-1}\le r^{-1}$, and for $0\le v\le1$ it is at least $((1+\tau_0^2)\,2r)^{-1}$; also $(\cosh\rho-\cosh r)^{-1/2}=(2\sinh(r+v/2)\sinh(v/2))^{-1/2}$ is at most $Ce^{-r/2}(\sinh(v/2))^{-1/2}$ for all $v>0$ and comparable to it for $0<v\le1$. The $v$-integral of
+is at most $\rho^{-1}\le r^{-1}$, and for $0\le v\le1$ it is at least $((1+\tau_0^2)\,2r)^{-1}$; also $(\cosh\rho-\cosh r)^{-1/2}=(2\sinh(r+v/2)\sinh(v/2))^{-1/2}$ is at most $C\ue^{-r/2}(\sinh(v/2))^{-1/2}$ for all $v>0$ and comparable to it for $0<v\le1$. The $v$-integral of
 $\ue^{-v/2}(\sinh(v/2))^{-1/2}$ over $(0,\infty)$ is finite, which gives \eqref{os:ub}; its integral over $(0,1]$ is positive, and restricting to $0\le v\le1$ gives \eqref{os:lb}. For $r\le1$ split the
 integral at $\rho=2$; there $\cosh\rho-\cosh r$ is comparable to $\rho^2-r^2$, and with $v=\sqrt{\rho^2-r^2}$ the main part is
 comparable to $\int_0^{C}(r^2+\tau^2+v^2)^{-2}\,dv\asymp(r^2+\tau^2)^{-3/2}$, while the tail $\rho\ge2$ is bounded by the
@@ -344,16 +344,16 @@ $\int_r^\infty\ue^{-\rho/2}(\cosh\rho-\cosh r)^{-1/2}d\rho$ is bounded for these
 \item[(a)] The affine maps $z\mapsto p_1z+p_2$,
 $p_1>0$, are isometries, commute with $X$ and $Y$ and act transitively, so it suffices to take $w=i$; there the bound is interior elliptic regularity for
 $\Delta$ on $B(i,1)$ and the Sobolev embedding $H^{2k}\subset C^{|S|}$ in dimension two.
-\item[(b)] The counting bound of Lemma~\ref{lem:count}, with $2r_0=\delta_0$ and multiplicity $1$, gives $\#\{p\in P:d(p,w')\le R\}\le C_{\delta_0}\ue^R$
+\item[(b)] The counting bound of Lemma~\ref{lem:count}, with $2r_0=\sigma_0$ and multiplicity $1$, gives $\#\{p\in P:d(p,w')\le R\}\le C_{\sigma_0}\ue^R$
 for all $w'\in\Hb$ and $R\ge0$. Summing over the shells
-$R\le d(p,w')<R+1$, $\sum_{p\in P}\ue^{-d(p,w')}(1+d(p,w'))^{-3/2}\le C_{\delta_0}$ for every $w'\in\Hb$.
+$R\le d(p,w')<R+1$, $\sum_{p\in P}\ue^{-d(p,w')}(1+d(p,w'))^{-3/2}\le C_{\sigma_0}$ for every $w'\in\Hb$.
 \item[(c)] The estimate follows because $d(w,w')\ge d(i,w)-d(i,w')$ and
 $1+d(i,w)\le(1+d(w,w'))(1+d(i,w'))$.
 \item[(d)] Let $p$ be the affine map with $p(i)=w'$; then
 $\cosh d(w,w')=X_0(p^{-1}w)$, so $Z_S^w\cosh d(w,w')=(Z_SX_0)(p^{-1}w)$. The relations $XX_0=x$, $YX_0=y-X_0$, $Xx=y$, $Yy=y$, $Xy=Yx=0$ and
-$|x|\le X_0$, $y\le2X_0$ give $|Z_SX_0|\le C_SX_0$, hence $|Z_S^w\cosh d(w,w')|\le C_S\cosh d(w,w')$. Write $k_\alpha(r)=K_\alpha(\cosh r)$. Since
+$|x|\le X_0$, $y\le2X_0$ give $|Z_SX_0|\le C_SX_0$, hence $|Z_S^w\cosh d(w,w')|\le C_S\cosh d(w,w')$. Write $k_\alpha(r)=\mathsf k_\alpha(\cosh r)$. Since
 $\tfrac{d}{d\cosh r}=(\sinh r)^{-1}\tfrac d{dr}$ and the derivatives of $(\sinh r)^{-1}$ are $O(1/\cosh r)$ on $r\ge r_0$, Lemma~\ref{cl:kernel} gives
-$|K_\alpha^{(j)}(\cosh r)|\le C_{j,r_0}\alpha\,\ue^{-r}(1+r)^{-3/2}(\cosh r)^{-j}$ for $r\ge r_0$. By the chain rule $Z_S^w[K_\alpha(\cosh d(w,w'))]$ is a sum
-of terms $K_\alpha^{(j)}(\cosh d)\prod_{l\le j}Z_{S_l}^w\cosh d$, which proves the claim.
+$|\mathsf k_\alpha^{(j)}(\cosh r)|\le C_{j,r_0}\alpha\,\ue^{-r}(1+r)^{-3/2}(\cosh r)^{-j}$ for $r\ge r_0$. By the chain rule $Z_S^w[\mathsf k_\alpha(\cosh d(w,w'))]$ is a sum
+of terms $\mathsf k_\alpha^{(j)}(\cosh d)\prod_{l\le j}Z_{S_l}^w\cosh d$, which proves the claim.
 \end{enumerate}
 \end{proof}
