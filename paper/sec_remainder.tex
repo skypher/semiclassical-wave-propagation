@@ -88,8 +88,10 @@ $a_q:=a\circ q$ and $\Gamma_q:=q^{-1}\Gamma q$. Then, with $c:=\ue^{-i\log(\oper
 \]
 where the subscript names the boundary point of the construction.
 \item[\textup{(iii)}] The map $f\mapsto f\circ q$ is unitary from $L^2(\Gamma\backslash\Hb)$ to $L^2(\Gamma_q\backslash\Hb)$ and intertwines the
-periodizations over $\Gamma$ and $\Gamma_q$, the Laplacians, the propagators $\cU(t)$ and the operators $\ue^{\alpha\Lambda}$. The reversed-weight and original norms of $a$ with base point $x_0$ equal those of $a_q$
-with base point $i$. For every $s$, $\sup_z\sum_{\gamma\in\Gamma_q}\ue^{-s\,d(i,\gamma z)}=\sup_z\sum_{\gamma\in\Gamma}\ue^{-s\,d(x_0,\gamma z)}$.
+periodizations over $\Gamma$ and $\Gamma_q$, the Laplacians, the propagators $\cU(t)$ and the operators $\ue^{\alpha\Lambda}$. The power-weight, reversed-weight and original norms of $a$ with base point $x_0$ equal those of $a_q$
+with base point $i$. For every function $h:[0,\infty)\to[0,\infty]$,
+$\sup_z\sum_{\gamma\in\Gamma_q}h(d(i,\gamma z))=\sup_z\sum_{\gamma\in\Gamma}h(d(x_0,\gamma z))$; in particular the series $P_\Gamma(\sigma)$
+and $P^{\mathrm{cr}}_\Gamma$ of Section~\ref{sec:setup} do not change when $(\Gamma,x_0)$ is replaced by $(\Gamma_q,i)$.
 \end{itemize}
 \end{lemma}
 
@@ -111,7 +113,8 @@ gives both identities.
 
 (iii) $q$ is an isometry of $\Hb$ with $q\,i=x_0$, so $d(x_0,qz)=d(i,z)$ and the weights $X_0$, $\langle d\rangle$ based at $x_0$ pull
 back to those based at $i$. The spectral functions of $-\Delta$ commute with composition by isometries. For the last identity,
-$d(i,q^{-1}\gamma qz)=d(x_0,\gamma(qz))$.
+$d(i,q^{-1}\gamma qz)=d(x_0,\gamma(qz))$, and $z\mapsto qz$ is a bijection of $\Hb$. The weight $\omega$ of $P^{\mathrm{cr}}_\Gamma$ is a
+function of $d(x_0,\cdot)$, so $P^{\mathrm{cr}}_\Gamma$ is a series of this form.
 \end{proof}
 
 \begin{remark}[the base point of the weight]
@@ -244,4 +247,22 @@ $\cU(t)$ with periodization is used. By Corollary~\ref{cor:surf-dyson},
 $\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c_\hbar^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}(\Delta(s_1)\cdots\Delta(s_{K+1})a)\,ds$. By
 Lemma~\ref{lem:surf-lap}, applied $N$ times, $\Delta_M^N\mathcal V_{s_1}g=\mathcal V_{s_1}\Delta_\varphi(s_1)^Ng$. Closedness of $\Delta_M^N$
 and Minkowski's inequality give the bound, with $|c_\hbar|^{K+1}=(\hbar/2)^{K+1}$.
+\end{proof}
+
+The element $\mathcal V_sg$ is defined by the periodization sum; a weight enters only to guarantee, through \textup{(W1)}, that this
+sum converges. The next lemma records that two admissible weights give the same element, and compares the two weights used in
+Section~\ref{sec:printed}.
+
+\begin{lemma}[the quotient propagator does not depend on the weight]\label{os:indep}
+Let $\varpi_1,\varpi_2$ be two weights satisfying \textup{(W1)}, \textup{(W2)}. For $g\in L^2_{\varpi_1}\cap L^2_{\varpi_2}$ the element
+\[
+ \mathcal V_sg=\ue^{-is/(2\hbar)}\cU(-s)[\ue^{i\varphi/\hbar}S(s)g]_\Gamma\in L^2(M)
+\]
+is the same for both weights. In particular this applies to $\varpi_1=X_0^{\lambda}$ with $\lambda>\tfrac12$ and to the periodization
+weight $\varpi_2=\omega$ of Section~\ref{sec:setup} (Proposition~\ref{os:p1}), and $L^2_{X_0^\lambda}\subset L^2_{\omega}$.
+\end{lemma}
+\begin{proof}
+For both weights the periodization is the same almost everywhere absolutely convergent sum, by \textup{(W1)}.
+The inclusion holds because $\omega=X_0^{1/2}(1+\tilde\psi/\log2)^{3/4}\le C_\lambda X_0^\lambda$ for $\lambda>\tfrac12$, since
+$\tilde\psi=\log X_0$.
 \end{proof}

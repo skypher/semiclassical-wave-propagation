@@ -26,8 +26,8 @@ $B_\beta$; $\rho_*=\tfrac14\log(3/2)$ & Lemma~\ref{lem:fdb} & $\beta$; absolute\
 $C_2=\max(\ue C_1,1/\rho_*)$ & Lemma~\ref{lem:sc} & absolute\\
 $C_*=\tfrac{32}5$ & Lemma~\ref{lem:expw} & absolute\\
 $c_M=1/(4\max(C_2,1))$ & Lemma~\ref{lem:mw} & absolute\\
-$A_1$, $A_2$ & Lemma~\ref{lem:clip} & absolute\\
-$c_A=(1+32A_1A_2)^{-1}$ & Proposition~\ref{prop:a0} & absolute\\
+$A_{\mathrm e}$, $A_{\mathrm o}$ & Lemma~\ref{lem:clip} & absolute\\
+$c_A=(1+32A_{\mathrm e}A_{\mathrm o})^{-1}$ & Proposition~\ref{prop:a0} & absolute\\
 $\mathcal K_\lambda=8\lambda^2+7\lambda$ & Section~\ref{app:ws} & $\lambda$\\
 $C_W$ & Lemma~\ref{lem:wmoll} & $\rho$, $\mathcal K$\\
 $C_{\mathrm{fl}}=(4\rho+3)C_W^2$; $C_{\mathrm{fl},\lambda}=C_{\mathrm{fl}}(\lambda,\mathcal K_\lambda)$ & Proposition~\ref{prop:ws} & $\rho$, $\mathcal K$; $\lambda$\\
@@ -306,16 +306,16 @@ Let $L\ge\tfrac12$ and $\Lambda_{\le L}:=\min(\Lambda,L)$. For real $s$ let $R_s
 operator. Put
 \begin{gather*}
 g_{\mathrm e}(x):=\frac{(1+|x|)\,\ue^{|x|}}{2\cosh(\pi x/2)},\qquad g_{\mathrm o}(x):=\frac{(1+3|x|)\,|x|\,\ue^{|x|}}{2\cosh(\pi x/2)},\\
-A_1:=\int_{\mathbb R}g_{\mathrm e}(x)\,dx,\qquad A_2:=\int_{\mathbb R}g_{\mathrm o}(x)\,dx .
+A_{\mathrm e}:=\int_{\mathbb R}g_{\mathrm e}(x)\,dx,\qquad A_{\mathrm o}:=\int_{\mathbb R}g_{\mathrm o}(x)\,dx .
 \end{gather*}
 For $0\le\tau\le1$, $\varepsilon>0$ and $u\in L^2(\Hb)$,
 \[
-\bigl\|\tfrac12(R_\tau+R_{-\tau})u\bigr\|\le A_1\norm{\Lambda J_\varepsilon u},\qquad
-\bigl\|\tfrac12(R_\tau-R_{-\tau})u\bigr\|\le A_2\,\tau\,\norm{\Lambda_{\le L}J_\varepsilon u},
+\bigl\|\tfrac12(R_\tau+R_{-\tau})u\bigr\|\le A_{\mathrm e}\norm{\Lambda J_\varepsilon u},\qquad
+\bigl\|\tfrac12(R_\tau-R_{-\tau})u\bigr\|\le A_{\mathrm o}\,\tau\,\norm{\Lambda_{\le L}J_\varepsilon u},
 \]
 and consequently
 \[
-\bigl|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle\bigr|\le2A_1A_2\,\tau\,\norm{\Lambda J_\varepsilon u}\,\norm{\Lambda_{\le L}J_\varepsilon u}.
+\bigl|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle\bigr|\le2A_{\mathrm e}A_{\mathrm o}\,\tau\,\norm{\Lambda J_\varepsilon u}\,\norm{\Lambda_{\le L}J_\varepsilon u}.
 \]
 \end{lemma}
 \begin{proof}
@@ -328,13 +328,13 @@ k_1(r,r')\cosh(\tau\theta)\,j_\varepsilon(\Lambda(r'))\qquad\text{and}\qquad k_1
 
 \emph{Even part.} Since $(rr')^{1/2}\le r'+|x|/2$ and $\Lambda(r')\ge\max(r',\tfrac12)$, we have
 $(rr')^{1/2}\le(1+|x|)\Lambda(r')$. By \eqref{eq:zt1} and $\cosh(\tau\theta)\le\ue^{|x|}$, the even part is
-$k_A\circ\Lambda J_\varepsilon$ with a kernel $|k_A(r,r')|\le g_{\mathrm e}(r-r')$, and the Schur test gives $\norm{k_A}\le A_1$.
+$k_A\circ\Lambda J_\varepsilon$ with a kernel $|k_A(r,r')|\le g_{\mathrm e}(r-r')$, and the Schur test gives $\norm{k_A}\le A_{\mathrm e}$.
 
 \emph{Odd part.} Here $|\sinh(\tau\theta)|\le\tau|\theta|\,\ue^{|x|}$, and $\theta=0$ when $\Lambda(r)\ge L$ and
 $\Lambda(r')\ge L$. In the remaining cases $(rr')^{1/2}\le(1+|x|)\,\Lambda_{\le L}(r')$: if $\Lambda(r')\le L$ this is the inequality
 of the even part; if $\Lambda(r')>L\ge\Lambda(r)$, then $\Lambda_{\le L}(r')=L$ and
 $(rr')^{1/2}\le r+|x|/2\le L+|x|L$, because $r\le\Lambda(r)\le L$ and $L\ge\tfrac12$. So the odd part is $k_B\circ\Lambda_{\le L}J_\varepsilon$ with
-$|k_B(r,r')|\le\tau\,|x|\,g_{\mathrm e}(x)\le\tau\,g_{\mathrm o}(x)$, and the Schur test gives $\norm{k_B}\le A_2\tau$.
+$|k_B(r,r')|\le\tau\,|x|\,g_{\mathrm e}(x)\le\tau\,g_{\mathrm o}(x)$, and the Schur test gives $\norm{k_B}\le A_{\mathrm o}\tau$.
 
 \emph{The imaginary part.} With $P=\tfrac12(R_\tau+R_{-\tau})u$ and $Q=\tfrac12(R_\tau-R_{-\tau})u$,
 \[\langle R_{-\tau}u,R_\tau u\rangle=\langle P-Q,P+Q\rangle=\norm P^2-\norm Q^2+2i\,\mathrm{Im}\langle P,Q\rangle,\]
@@ -343,7 +343,7 @@ $|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle|\le2\norm P\norm Q$.
 \end{proof}
 
 \begin{proposition}[analytic propagation for the mollified flow]\label{prop:a0}
-Let $c_A:=(1+32A_1A_2)^{-1}$, with $A_1,A_2$ as in Lemma~\ref{lem:clip}. Let $0<\varepsilon\le1$, $\hbar>0$,
+Let $c_A:=(1+32A_{\mathrm e}A_{\mathrm o})^{-1}$, with $A_{\mathrm e},A_{\mathrm o}$ as in Lemma~\ref{lem:clip}. Let $0<\varepsilon\le1$, $\hbar>0$,
 $0\le\alpha'\le\alpha\le1$ with $\alpha>0$, and $s_0,s_1\ge0$ with
 \[
 |s_1-s_0|\le c_A\,\frac{\alpha-\alpha'}{\alpha}\,\frac{\varepsilon}{\hbar}.
@@ -359,7 +359,7 @@ Indeed $j_\varepsilon(\lambda)\le\int_{|\mu|\le2/\varepsilon}g(\lambda-\mu)\,d\m
 $(4/\varepsilon)\lambda$. If $\lambda>4/\varepsilon$, then $\lambda-\mu>\lambda/2$ on the range of integration, so
 $j_\varepsilon(\lambda)\le\ue^{-\lambda^2/8}$ and $\lambda^2j_\varepsilon(\lambda)^2\le4/\ue$, while $\min(\lambda,L)\ge4/\varepsilon\ge4$.
 
-\emph{The clipped energy.} Fix $L\ge4/\varepsilon$, put $\Lambda_{\le L}=\min(\Lambda,L)$ and $\eta:=32A_1A_2\hbar/\varepsilon$, and let
+\emph{The clipped energy.} Fix $L\ge4/\varepsilon$, put $\Lambda_{\le L}=\min(\Lambda,L)$ and $\eta:=32A_{\mathrm e}A_{\mathrm o}\hbar/\varepsilon$, and let
 $\tau(s):=\alpha\,\ue^{-\eta|s-s_0|}$, $v(s):=V_\varepsilon(s,s_0)a$, $u(s):=\ue^{\tau(s)\Lambda_{\le L}}v(s)$. All operators involved are bounded.
 Since $v'=\tfrac{i\hbar}2\Delta_\varepsilon(s)v$,
 \[
@@ -371,14 +371,14 @@ because $X^*=-X$. Hence, by Lemma~\ref{lem:clip}, $\norm{\Lambda_{\le L}J_\varep
 for $s\ge0$,
 \[
 \begin{aligned}
-\Bigl|\tfrac{d}{ds}\norm u^2-2\tau'\langle u,\Lambda_{\le L}u\rangle\Bigr|&=\hbar(1-\ue^{-2s})\bigl|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle\bigr|\\ &\le2A_1A_2\hbar\,\tau\,\langle u,\Lambda^2J_\varepsilon^2u\rangle\le2\eta\,\tau\,\langle u,\Lambda_{\le L}u\rangle .
+\Bigl|\tfrac{d}{ds}\norm u^2-2\tau'\langle u,\Lambda_{\le L}u\rangle\Bigr|&=\hbar(1-\ue^{-2s})\bigl|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle\bigr|\\ &\le2A_{\mathrm e}A_{\mathrm o}\hbar\,\tau\,\langle u,\Lambda^2J_\varepsilon^2u\rangle\le2\eta\,\tau\,\langle u,\Lambda_{\le L}u\rangle .
 \end{aligned}
 \]
 Since $\tau'=-\eta\tau$ for $s>s_0$ and $\tau'=\eta\tau$ for $s<s_0$, $\norm{u(s)}$ does not increase as $s$ moves away from $s_0$, in
 either direction; all times between $s_0$ and $s_1$ are nonnegative. Therefore
 $\norm{\ue^{\tau(s_1)\Lambda_{\le L}}v(s_1)}\le\norm{\ue^{\alpha\Lambda_{\le L}}a}\le\norm{\ue^{\alpha\Lambda}a}$.
 
-\emph{The radius.} By the hypothesis on $|s_1-s_0|$ and $32A_1A_2c_A\le1$,
+\emph{The radius.} By the hypothesis on $|s_1-s_0|$ and $32A_{\mathrm e}A_{\mathrm o}c_A\le1$,
 $\tau(s_1)\ge\alpha(1-\eta|s_1-s_0|)\ge\alpha'$. So $\norm{\ue^{\alpha'\min(\Lambda,L)}v(s_1)}\le\norm{\ue^{\alpha\Lambda}a}$ for every
 $L\ge4/\varepsilon$, and monotone convergence in the spectral representation of $\Lambda$, as $L\to\infty$, gives the claim.
 \end{proof}
@@ -566,11 +566,11 @@ bound for the integrand of the remainder into the final estimate; both approxima
 \begin{itemize}
 \item[\textup{(i)}] Let $0<\hbar\le1$, $N,k\in\mathbb N_0$ and $s,s_1,\dots,s_k\ge0$. Expanding the products,
 $\Delta_\varphi(s)^N\Delta(s_1)\cdots\Delta(s_k)$ is a sum of $5^N3^k$ terms $c\,Z_S$, where each word $Z_S$ has length
-$|S|=\ell+r$ with $\ell\le2N$ and $r\le2k$, and $|c|\le2^N\hbar^{\ell-2N}$.
-\item[\textup{(ii)}] Let $N,q,\ell,L\in\mathbb N_0$ with $\ell\le2N$ and $L\le\ell+q$, and let $G\ge1$, $0<\alpha\le1$ and
+$|S|=j+r$ with $j\le2N$ and $r\le2k$, and $|c|\le2^N\hbar^{j-2N}$.
+\item[\textup{(ii)}] Let $N,q,j,L\in\mathbb N_0$ with $j\le2N$ and $L\le j+q$, and let $G\ge1$, $0<\alpha\le1$ and
 $0<\hbar\le1$. Then
 \[
-(L+1)\,L!\,(G/\alpha)^L\,\hbar^\ell\le(4G)^{2N+q}\,(2N)!\,q!\,\alpha^{-q-2N}.
+(L+1)\,L!\,(G/\alpha)^L\,\hbar^j\le(4G)^{2N+q}\,(2N)!\,q!\,\alpha^{-q-2N}.
 \]
 \end{itemize}
 \end{lemma}
@@ -579,13 +579,13 @@ $0<\hbar\le1$. Then
 (i) By Section~\ref{subsec:dd-surf}, $\Delta_\varphi(s)=\Delta(s)-2i\hbar^{-1}Y+\hbar^{-2}(-1+i\hbar)$, a sum of five terms: the three
 terms $\ue^{-2s}X^2$, $Y^2$, $-Y$ of $\Delta(s)$, with coefficients of modulus at most $1$ and length at most $2$, the term
 $-2i\hbar^{-1}Y$ of length $1$, and the constant $\hbar^{-2}(-1+i\hbar)$, of modulus at most $2\hbar^{-2}$. For each of the five,
-the coefficient $c$ and the length $\ell'\le2$ satisfy $|c|\hbar^2\le2\hbar^{\ell'}$, since $\hbar\le1$. Choosing one term from each
-factor, the $N$ factors $\Delta_\varphi(s)$ give a coefficient with $|c|\hbar^{2N}\le2^N\hbar^\ell$ and a word of length
-$\ell\le2N$, and the $k$ factors $\Delta(s_j)$ a coefficient of modulus at most $1$ and a word of length $r\le2k$.
+the coefficient $c$ and the length $j'\le2$ satisfy $|c|\hbar^2\le2\hbar^{j'}$, since $\hbar\le1$. Choosing one term from each
+factor, the $N$ factors $\Delta_\varphi(s)$ give a coefficient with $|c|\hbar^{2N}\le2^N\hbar^j$ and a word of length
+$j\le2N$, and the $k$ factors $\Delta(s_1),\dots,\Delta(s_k)$ a coefficient of modulus at most $1$ and a word of length $r\le2k$.
 
-(ii) Since $G/\alpha\ge1$, the left side increases with $L$, so we may take $L=\ell+q$. Then $(L+1)\le2^L$,
-$L!\le2^L\ell!\,q!$, $\ell!\le(2N)!$, $\hbar^\ell\le1$, and $G^L\alpha^{-L}\le G^{2N+q}\alpha^{-2N-q}$ because $G\ge1\ge\alpha$ and
-$\ell\le2N$; and $4^L\le4^{2N+q}$. \qedhere
+(ii) Since $G/\alpha\ge1$, the left side increases with $L$, so we may take $L=j+q$. Then $(L+1)\le2^L$,
+$L!\le2^Lj!\,q!$, $j!\le(2N)!$, $\hbar^j\le1$, and $G^L\alpha^{-L}\le G^{2N+q}\alpha^{-2N-q}$ because $G\ge1\ge\alpha$ and
+$j\le2N$; and $4^L\le4^{2N+q}$. \qedhere
 \end{proof}
 
 \begin{lemma}[derivative bounds for the remainder amplitude]\label{lem:wb}
@@ -606,9 +606,12 @@ uniformly in $\mathbf s\in\Sigma_{K+1}(t)$:
 
 \begin{proof}
 Put $G:=\max(C_2,4\ue C_1)\ge1$ and $C_3:=480\,G^2$. By Lemma~\ref{lem:expand}(i) with $k=K+1$, $Z_Sa_{\mathbf s}$ is a sum of
-$5^N3^{K+1}$ terms $c\,Z_SZ_{S'}a$ with $|c|\le2^N\hbar^{\ell-2N}$, $\ell\le2N$, and words of length $L\le\ell+q$, $q:=n+2K+2$.
-By Lemma~\ref{lem:sc}, $\norm{X_0^\beta Z_SZ_{S'}a}\le B_\beta(L+1)L!(G/\alpha)^L\pwNorm a$, and Lemma~\ref{lem:expand}(ii) bounds
-$(L+1)L!(G/\alpha)^L\hbar^\ell$ by $(4G)^{2N+q}(2N)!\,q!\,\alpha^{-q-2N}$. So each term is at most
+$5^N3^{K+1}$ terms $c\,Z_SZ_{S'}a$ with $|c|\le2^N\hbar^{j-2N}$, $j\le2N$, and words of length $L\le j+q$, $q:=n+2K+2$.
+By Lemma~\ref{lem:sc} and Lemma~\ref{lem:expand}(ii),
+\[
+\hbar^j\norm{X_0^\beta Z_SZ_{S'}a}\le B_\beta(L+1)L!\,(G/\alpha)^L\hbar^j\pwNorm a\le B_\beta(4G)^{2N+q}(2N)!\,q!\,\alpha^{-q-2N}\pwNorm a .
+\]
+So each term is at most
 $B_\beta\,2^N(4G)^{2N+q}(2N)!\,q!\,\alpha^{-q}(\alpha\hbar)^{-2N}\pwNorm a$. Summing over the terms, (i) follows from
 $5^N3^{K+1}2^N(4G)^{2N+n+2K+2}=(160G^2)^N(48G^2)^{K+1}(4G)^n\le C_3^{N+K+n+1}$.
 For (ii) take $n=0$ and use Lemma~\ref{lem:wc} with the gap $r-r'\ge\alpha/4$ in place of Lemma~\ref{lem:sc}: a word of length $L$
@@ -690,4 +693,29 @@ the $2N$ factors by $2N$. With $\sigma^2\sigma^{-(2K+4)}\hbar^{K+1}t^{K+1}=(\hba
   \Bigl(\frac{\hbar t}{\sigma^2}\Bigr)^{K+1}\mathcal H,
 \]
 and $C:=64\max\bigl(1,4B(1+C_R)\bigr)G^3$ works, since $N+K+3\le3(N+K+1)$ and $4^N16^{K+1}\le64^{N+K+1}$.
+\end{proof}
+
+The proofs of Theorems~\ref{thm:dd-appx}, \ref{thm:dd14} and~\ref{pc:main} prove their estimate at one radius $\alpha_0$ and then pass
+to the radii $\alpha_0\le\alpha\le A$ of the statement. The arithmetic of this step is the following lemma.
+
+\begin{lemma}[change of radius]\label{lem:radius}
+Let $C\ge0$, $0<\alpha_0\le\alpha\le A$, $\hbar>0$, $t\ge0$, $\delta\ge0$ and $K,N\in\mathbb N_0$.
+\begin{itemize}
+\item[\textup{(i)}] The bound at the radius $\alpha_0$ is at most the bound at $\alpha$ with the constant $C(A/\alpha_0)^2$:
+\begin{multline*}
+C^{N+K+1}N^{2N}K!\,(\alpha_0\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha_0^2}\Bigr)^{K+1}\\
+\le\bigl(C(A/\alpha_0)^2\bigr)^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}.
+\end{multline*}
+\item[\textup{(ii)}] If $t\le\delta(\alpha_0/A)^{1/2}(\alpha/\hbar)^{1/2}$, then $t\le\delta(\alpha_0/\hbar)^{1/2}$.
+\end{itemize}
+\end{lemma}
+
+So an estimate of the form of Theorem~\ref{pc:main} with constants $C,\delta$ at the radius $\alpha_0$, for a norm at $\alpha_0$ that is
+at most a constant $B\ge1$ times the norm at $\alpha$, gives the estimate at every radius $\alpha\in[\alpha_0,A]$ with the constants
+$BC(A/\alpha_0)^2$ and $\delta(\alpha_0/A)^{1/2}$.
+
+\begin{proof}
+(i) Since $(\alpha_0\hbar)^{-1}=(\alpha\hbar)^{-1}(\alpha/\alpha_0)$ and $\hbar t/\alpha_0^2=(\hbar t/\alpha^2)(\alpha/\alpha_0)^2$, the left side
+is the right side with $(\alpha/\alpha_0)^{2N+2K+2}$ in place of $(A/\alpha_0)^{2N+2K+2}$, and $\alpha\le A$.
+(ii) $(\alpha_0/A)(\alpha/\hbar)=(\alpha/A)(\alpha_0/\hbar)\le\alpha_0/\hbar$.
 \end{proof}

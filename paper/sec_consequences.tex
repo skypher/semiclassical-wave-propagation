@@ -4,31 +4,39 @@ Section~\ref{sec:repair} for both norms and note their power-weight analogues. T
 Proposition~\ref{prop:g5}, and we conclude with Schubert's localized example in the reversed-weight class.
 
 \subsection{Local pointwise control}\label{subsec:local-pointwise}
-\begin{lemma}[local Sobolev inequality on a Fuchsian quotient]\label{pc:g43}
+\begin{lemma}[local multiplicity and local Sobolev inequality]\label{pc:g43}
 The local multiplicity $m(z)$ of Section~\ref{sec:repair} is finite and does not depend on the lift $\tilde z$ of $z$.
-There is an absolute constant $C$ such that every $u\in\operatorname{Dom}(\Delta_M)$ has a continuous representative, and for all $z\in M$,
+\begin{itemize}
+\item[\textup{(a)}] For every $w\in\Hb$, $\#\{\gamma\in\Gamma:\gamma w\in B(\tilde z,1)\}\le m(z)$. Consequently, for every measurable
+$\Gamma$-invariant function $\tilde h\ge0$ on $\Hb$, with $h$ the function it defines on $M$,
+$\int_{B(\tilde z,1)}\tilde h\,d\nu\le m(z)\int_Mh\,d\nu$.
+\item[\textup{(b)}] There is an absolute constant $C$ such that every $u\in\operatorname{Dom}(\Delta_M)$ has a continuous representative, and for
+all $z\in M$,
 \[
   |u(z)|\le C\,m(z)^{1/2}\big(\norm{\Delta u}_{L^2(M)}+\norm{u}_{L^2(M)}\big).
 \]
+\end{itemize}
 \end{lemma}
 \begin{proof}
-\emph{Step 1 (the lift).} Let $\tilde u$ and $\tilde f$ be the $\Gamma$-invariant lifts of $u$ and of $f:=\Delta_Mu$. Then $\Delta\tilde u=\tilde f$ in the
+\emph{The multiplicity and (a).} If $\gamma_0w$ and $\gamma w$ both lie in $B(\tilde z,1)$, then $d(\tilde z,\gamma\gamma_0^{-1}\tilde z)<2$; so
+$\gamma\mapsto\gamma\gamma_0^{-1}$ maps the set counted in (a) injectively into the set counted by $m(z)$. The number $m(z)$ is finite
+because $\Gamma$ acts properly discontinuously, and it does not depend on the lift: for another lift $\gamma_0\tilde z$, the map
+$\gamma\mapsto\gamma_0^{-1}\gamma\gamma_0$ is a bijection of $\Gamma$, and $d(\gamma_0\tilde z,\gamma\gamma_0\tilde z)=d(\tilde z,\gamma_0^{-1}\gamma\gamma_0\tilde z)$.
+For a fundamental domain $\mathfrak F$, unfolding gives $\int_{B(\tilde z,1)}\tilde h\,d\nu=\int_{\mathfrak F}n(w)h(w)\,d\nu(w)$ with
+$n(w):=\#\{\gamma:\gamma w\in B(\tilde z,1)\}\le m(z)$, which is the integral bound.
+
+\emph{(b), the lift.} Let $\tilde u$ and $\tilde f$ be the $\Gamma$-invariant lifts of $u$ and of $f:=\Delta_Mu$. Then $\Delta\tilde u=\tilde f$ in the
 sense of distributions on $\Hb$: for $\phi\in C_c^\infty(\Hb)$, unfolding gives
 $\langle\tilde u,\Delta\phi\rangle_{\Hb}=\langle u,(\Delta\phi)_\Gamma\rangle_M=\langle u,\Delta_M\phi_\Gamma\rangle_M=\langle f,\phi_\Gamma\rangle_M=\langle\tilde f,\phi\rangle_{\Hb}$.
+By (a), applied to $|\tilde u|^2$ and $|\tilde f|^2$, $\int_{B(\tilde z,1)}|\tilde u|^2d\nu\le m(z)\norm u^2_{L^2(M)}$ and
+$\int_{B(\tilde z,1)}|\tilde f|^2d\nu\le m(z)\norm f^2_{L^2(M)}$; in particular $\tilde u$ and $\tilde f$ are locally square integrable.
 
-\emph{Step 2 (counting).} For a $\Gamma$-invariant $\tilde h$ and a fundamental domain $\mathfrak F$,
-$\int_{B(\tilde z,1)}|\tilde h|^2d\nu=\int_{\mathfrak F}n(w)|h(w)|^2d\nu(w)$, where $n(w):=\#\{\gamma:\gamma w\in B(\tilde z,1)\}$. If $\gamma_0w$ and $\gamma w$ both lie in
-$B(\tilde z,1)$, then $d(\tilde z,\gamma\gamma_0^{-1}\tilde z)<2$; hence $n(w)\le m(z)$ and $\int_{B(\tilde z,1)}|\tilde h|^2\le m(z)\norm{h}^2_{L^2(M)}$. In
-particular $\tilde u$ and $\tilde f$ are locally square integrable. The number $m(z)$ is finite because $\Gamma$ acts properly
-discontinuously, and it does not depend on the lift: for another lift $\gamma_0\tilde z$, the map $\gamma\mapsto\gamma_0^{-1}\gamma\gamma_0$ is a
-bijection of $\Gamma$, and $d(\gamma_0\tilde z,\gamma\gamma_0\tilde z)=d(\tilde z,\gamma_0^{-1}\gamma\gamma_0\tilde z)$.
-
-\emph{Step 3 (interior regularity).} Let $v\in L^2(B(\tilde z,1))$ with $\Delta v\in L^2(B(\tilde z,1))$ in the sense of distributions. By interior
+\emph{(b), interior regularity.} Let $v\in L^2(B(\tilde z,1))$ with $\Delta v\in L^2(B(\tilde z,1))$ in the sense of distributions. By interior
 elliptic regularity, uniform in $\tilde z$ by the homogeneity of $\Hb$, $v\in H^2(B(\tilde z,\tfrac12))$ with
 $\norm v_{H^2(B(\tilde z,1/2))}\le C(\norm{\Delta v}_{L^2(B(\tilde z,1))}+\norm v_{L^2(B(\tilde z,1))})$, and since $H^2\subset C^0$ in dimension two, $v$ is
 continuous on $B(\tilde z,\tfrac12)$ with $|v(\tilde z)|\le C\norm v_{H^2(B(\tilde z,1/2))}$.
 
-Apply Step~3 to $v=\tilde u$ and use Step~2 for $\tilde h=\tilde u$ and $\tilde h=\tilde f$. The continuous representative of $\tilde u$ is $\Gamma$-invariant
+Apply this to $v=\tilde u$ and use the two bounds of the lift step. The continuous representative of $\tilde u$ is $\Gamma$-invariant
 and descends to $M$. \qedhere
 \end{proof}
 
@@ -55,7 +63,7 @@ So the pointwise loss $m(z)^{1/2}$ grows like $H^{1/2}$ high in a cusp. Theorem~
 necessary on the modular surface for a phase attached to the cusp.
 
 \begin{remark}[the local Sobolev loss]\label{rem:g4}
-The local multiplicity in Lemma~\ref{pc:g43} cannot be omitted on a quotient with a cusp (compare Lemma~\ref{pc:remcusp}). In a cusp neighbourhood $\{y>y_0\}/(x\sim x+1)$, take $u_R=f(\log y-R)$ with $0\ne f\in C_c^\infty(\mathbb R)$ and $R$ so large that $u_R$ is supported in $\{y>y_0\}$. For every integer $j\ge1$,
+The local multiplicity in Lemma~\ref{pc:g43}(b) cannot be omitted on a quotient with a cusp (compare Lemma~\ref{pc:remcusp}). In a cusp neighbourhood $\{y>y_0\}/(x\sim x+1)$, take $u_R=f(\log y-R)$ with $0\ne f\in C_c^\infty(\mathbb R)$ and $R$ so large that $u_R$ is supported in $\{y>y_0\}$. For every integer $j\ge1$,
 \[
 \norm{u_R}_{L^1}\asymp\norm{\Delta^ju_R}_{L^1}\asymp\ue^{-R},\qquad
 \norm{u_R}_{L^2}\asymp\norm{\Delta^ju_R}_{L^2}\asymp\ue^{-R/2},
@@ -94,14 +102,13 @@ $K\ge(1-\theta)/\rho$, this is at most
   \ue^{1/2}\theta^{-1/2}\rho
   \exp\Bigl(-\frac{(1-\theta)\alpha^2}{C\hbar t}\Bigr).
 \]
-Combining the bounds proves the corollary with
-$C'=\ue^{1/2}$. The calculation uses only the estimate of the theorem, so it applies to both norms.
+Combining the bounds proves the corollary. The calculation uses only the estimate of the theorem, so it applies to both norms.
 Appendix~\ref{sec:changes} compares this range of $K$ with the one stated in \cite{S}.
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{pc:cor16}]
 Let $E$ be the bracket in the statement. By Theorem~\ref{pc:main}, respectively Theorem~\ref{thm:dd14}, at $N$ and at $N+1$, $u:=\Delta^NE$ lies in $\operatorname{Dom}(\Delta_M)$. Apply
-Lemma~\ref{pc:g43} to $u$, and use $N^{2N}\le(\ue/2)^{2N}(2N)!$, $(N+1)^{2N+2}\le54^{N+1}(2N)!$ and, at the end,
+Lemma~\ref{pc:g43}(b) to $u$, and use $N^{2N}\le(\ue/2)^{2N}(2N)!$, $(N+1)^{2N+2}\le54^{N+1}(2N)!$ and, at the end,
 $(2N)!\le4^NN^{2N}$.
 The estimates at $N$ and $N+1$ carry the factors $(\alpha\hbar)^{-2N}$ and
 $(\alpha\hbar)^{-2N-2}$, respectively. Since $\alpha\hbar\le A$, their sum is at most
@@ -112,21 +119,25 @@ $2r_0$-separated, and the counting bound of Lemma~\ref{lem:count} with multiplic
 \end{proof}
 
 
-\begin{remark}[fixed radius]\label{thm:main}
-Let $\Gamma$, $\beta$ and $\norm a_{\mathcal A}$ be as in Section~\ref{subsec:pc-thm}, and let $\alpha>0$ be fixed. Corollary~\ref{pc:thm13} with $A=\alpha$ and $\kappa=\alpha^3$, so that $\alpha^3\ge\kappa\hbar$ for all
-$\hbar\le1$, gives constants $C,\delta>0$, depending on $\Gamma$, $\beta$, $x_0$ and $\alpha$, such that for all $0<\hbar\le1$, all
+\begin{corollary}[fixed radius]\label{thm:main}
+Let $\Gamma$, $x_0$, $\beta$ and $\norm a_{\mathcal A}$ be as in Section~\ref{subsec:pc-thm}, and let $\alpha>0$ be fixed. There are constants
+$C,\delta>0$, depending on $\Gamma$, $\beta$, $x_0$ and $\alpha$, such that for all $0<\hbar\le1$, all
 $b\in\partial\Hb$ and all $a$ with $\norm a_{\mathcal A}<\infty$ at radius $\alpha$,
 \[
-  \norm{\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(0)}(t)_\Gamma}_{L^2(M)}\le C\hbar t\,\norm a_{\mathcal A},\qquad 0\le t\le\delta\hbar^{-1/2};
+  \norm{\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(0)}(t)_\Gamma}_{L^2(M)}\le C\hbar t\,\norm a_{\mathcal A},\qquad 0\le t\le\delta\hbar^{-1/2}.
 \]
-the fixed factors $\alpha^{-2}$ and $\alpha^{1/2}$ are absorbed into $C$ and $\delta$. For the original norm this is
-\cite[Theorem~1.3]{S} with the error $C\hbar$ corrected to $C\hbar t$, and it holds for every $\beta>\tfrac12$, whereas
-\cite[Theorem~1.3]{S} assumes $\beta>1$ (Appendix~\ref{sec:changes}).
-\end{remark}
+\end{corollary}
+\begin{proof}
+This is Corollary~\ref{pc:thm13} with $A=\alpha$ and $\kappa=\alpha^3$, so that $\alpha^3\ge\kappa\hbar$ for all $\hbar\le1$; the fixed factors
+$\alpha^{-2}$ and $\alpha^{1/2}$ are absorbed into $C$ and $\delta$.
+\end{proof}
+
+For the original norm, Corollary~\ref{thm:main} is \cite[Theorem~1.3]{S} with the error $C\hbar$ corrected to $C\hbar t$, and it holds
+for every $\beta>\tfrac12$, whereas \cite[Theorem~1.3]{S} assumes $\beta>1$ (Appendix~\ref{sec:changes}).
 
 \begin{remark}[the power-weight norm]\label{rem:pw-cor}\label{cor:dd15-appx}\label{cor:dd16-appx}
 The proofs of Corollaries~\ref{pc:cor15} and~\ref{pc:cor16} use only the estimate of the approximation theorem, at $N$ and
-$N+1$, and Lemma~\ref{pc:g43}. With Theorem~\ref{thm:dd-appx} in its place they hold for the power-weight norm, with $\pwNorm a$ in
+$N+1$, and Lemma~\ref{pc:g43}(b). With Theorem~\ref{thm:dd-appx} in its place they hold for the power-weight norm, with $\pwNorm a$ in
 place of $\norm a_{\mathcal A}$, under the hypotheses of Theorem~\ref{thm:dd-appx} and with the dependence of the constants stated
 for the reversed-weight norm.
 \end{remark}
@@ -154,7 +165,7 @@ which is $\hbar\,(\tfrac14\norm{X^2a}+\tfrac{\tau^2}8B_a)$ at $t=\tau\,\hbar^{-1
 gauge $a=\ue^{r/2}g$, $\Delta_\infty$ becomes $\partial_r^2-1/4$, so $-\Delta_\infty\ge1/4$; hence $\norm a\norm{\Delta_\infty a}\ge\langle a,-\Delta_\infty a\rangle\ge\norm a^2/4$.
 \end{proof}
 
-\subsection{Example amplitudes}\label{subsec:dd-ex}
+\subsection{Localized amplitudes}\label{subsec:dd-ex}
 
 
 \begin{lemma}[analytic norm of the localized example]\label{lem:ex}
@@ -208,8 +219,8 @@ Fix a Fuchsian group $\Gamma$, a base point $x_0$, $\beta>\tfrac12$ and $0<\eta<
  a_\hbar:=\hbar^{-\eta/2}\ue^{-\hbar^{-\eta}\langle d\rangle},\qquad
  \alpha(\hbar):=(\hbar^{-\eta}-\beta)^{-1/2}.
 \]
-There are $\hbar_0,C,\delta>0$ such that, for $0<\hbar\le\hbar_0$, the reversed-weight norm of
-$a_\hbar$ at radius $\alpha(\hbar)$ is at most $C$. For every $b\in\partial\Hb$, $K,N\in\mathbb N_0$ and
+There are $\hbar_0,C,\delta>0$, depending on $\Gamma$, $x_0$, $\beta$ and $\eta$, such that for $0<\hbar\le\hbar_0$ the reversed-weight
+norm of $a_\hbar$ at radius $\alpha(\hbar)$ is at most $C$, and for every $b\in\partial\Hb$, $K,N\in\mathbb N_0$ and
 $0\le t\le\delta(\alpha(\hbar)/\hbar)^{1/2}$,
 \[
  \norm{\Delta^N\big[\cU(t)[a_\hbar\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}

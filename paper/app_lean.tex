@@ -1,6 +1,6 @@
 % Formalization status. \leanrepo is the public repository; \leancommit is a commit of it.
 \providecommand{\lean}[1]{\texttt{\detokenize{#1}}}
-\providecommand{\leancommit}{\texttt{19ae2a9}}
+\providecommand{\leancommit}{\texttt{40a8a46}}
 \providecommand{\leanrepo}{\url{https://github.com/skypher/semiclassical-wave-propagation}}
 
 \section{Formalization}\label{app:lean}
@@ -24,8 +24,9 @@ A kernel check certifies the proofs of the formal statements. Whether a formal s
 The numbers in names such as \lean{pcthm13_unif}, \lean{thm14Rmain_unif}, \lean{pccor15_tied} and \lean{pccor16_unifN} refer to
 \cite[Theorems~1.3 and~1.4, Corollaries~1.5 and~1.6]{S}, whose corrected forms these declarations state. The prefix \lean{pc} and the
 word \lean{printed} refer to the original norm, \lean{swNormD} and \lean{swapped} to the reversed-weight norm, and \lean{swNormX}
-to the power-weight norm. The lemmas of Section~\ref{sec:analytic} are stated with $\tau_0<\pi/2$ in the earlier modules; their
-instances at $\tau_0=1$, which are the printed statements, carry the suffix \lean{_one}.
+to the power-weight norm. The earlier modules state the lemmas of Section~\ref{sec:analytic} for analytic radii up to any bound below
+$\pi/2$; their instances for radii at most $1$, the range of Section~\ref{sec:analytic}, are the printed statements and carry the
+suffix \lean{_one}.
 \item \emph{Groups and surfaces.} A Fuchsian group is a subgroup $\Gamma\le\mathrm{PGL}(2,\mathbb R)$ that acts properly discontinuously on $\Hb$ and consists of classes of matrices of positive determinant. $M$ is the orbit space with the measure induced from a fundamental domain; no manifold structure on $M$ is used.
 \item \emph{Operators.} $-\Delta$ on $L^2(\Hb)$ and on $L^2(M)$ is the Friedrichs extension from test functions, respectively from periodized test functions; $\Lambda$, $\ue^{\alpha\Lambda}$, $\cU(t)$ and $\Delta^N$ are functions of it by the spectral theorem.
 \item \emph{Boundary points.} The base point $x_0\in\Hb$ is a parameter, and $b=g\,\infty$ with $g\in\mathrm{SL}(2,\mathbb R)$, $g\,x_0=x_0$. Every $b\in\partial\Hb$ arises, and the objects depend on $b$ only (\lean{exists_stab_smul_infty}, \lean{initState_eq_of_stab}, \lean{approxSolB_eq_of_stab}).
@@ -38,14 +39,14 @@ point after $C$ (\lean{pcmain_unif}, \lean{thm14Rmain_unif}, \lean{thm14R_all}).
 Theorem~\ref{pc:main} is \lean{pcmain_all}; Theorem~\ref{ev:mod} and the original-norm part of Corollary~\ref{ev:transfer} use this form.
 In the pointwise statements for positive injectivity radius, $\delta$ is chosen before $r_0$.
 \item \emph{Named constants.} The constants that statements fix or take from other statements have the same values in the
-formal statements: $\rho_*$, $C_2$, $C_*=\tfrac{32}5$, $c_M$, $A_1$, $A_2$, $c_A$, $C_3=480\max(C_2,4\ue C_1)^2$, $c_H$, $C_5$, $Q$, and
-$C'=\ue^{1/2}$ of Corollary~\ref{pc:cor15}. Where a statement only asserts that a constant exists, so does the formal statement, and its proof may
+formal statements: $\rho_*$, $C_2$, $C_*=\tfrac{32}5$, $c_M$, $A_{\mathrm e}$, $A_{\mathrm o}$, $c_A$, $C_3=480\max(C_2,4\ue C_1)^2$, $c_H$, $C_5$, $Q$, and
+the factor $\ue^{1/2}$ of Corollary~\ref{pc:cor15}. Where a statement only asserts that a constant exists, so does the formal statement, and its proof may
 give a different admissible value; Table~\ref{tab:constants} lists the values of the printed proofs (for instance $C_4$, $C_{\mathrm{fl}}$,
 $\mathcal K_\lambda$, $B_0$, $B_m$).
 \item \emph{The optimal-truncation corollary.} Corollary~\ref{pc:cor15} and its power-weight form are formalized for every pair of
 constants $C\ge1$, $\delta>0$ for which the estimate of their theorem holds on the group at hand (\lean{pccor15_tied},
 \lean{cor15Rmain_tiedG}, \lean{cor15R_tiedA}), with the window $\delta_1=\min(\delta,\kappa^{1/2}/\max(1,C))$, which equals
-$\min(\delta,\kappa^{1/2}/C)$, and the absolute constant $C'=\ue^{1/2}$; such pairs exist (\lean{pcThmCD_exists},
+$\min(\delta,\kappa^{1/2}/C)$, and the factor $\ue^{1/2}$; such pairs exist (\lean{pcThmCD_exists},
 \lean{rThmCDG_exists}, \lean{xThmCDA_exists}).
 \item \emph{Ranges.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$. The radius ranges over $0<\alpha\le A$ for every $A$. For the reversed-weight
 and power-weight norms the formal proofs pass from the radius $\tfrac12$ to larger radii by the monotonicity of these norms in the
@@ -73,7 +74,7 @@ $\Gamma=\{\mathrm{id}\}$, $\alpha=\tfrac12$, $\beta=2$, $b=\infty$ and the ampli
 
 \subsection{Correspondence and exclusions}
 The direct counterparts in Table~\ref{tab:lean} use the interpretations above.
-The file \texttt{LEAN\_STATUS.md} in the repository gives the correspondence for every labelled statement,
+The file \texttt{LEAN\_STATUS.md} in the repository gives the correspondence statement by statement,
 including the supporting estimates. The differences in bounds, parameter ranges and conclusions are described below.
 
 \paragraph{Assembled counterparts.}
@@ -81,7 +82,7 @@ Corollary~\ref{ev:transfer} is \lean{evTransfer_pc_all} for the original norm an
 norm; both combine the approximation bound at $N=0$ with the bounded-observable estimate \lean{ev_transfer_core}.
 Corollary~\ref{pc:thm13} is Theorem~\ref{pc:main}, respectively Theorem~\ref{thm:dd14}, at $K=N=0$ (\lean{pcthm13_unif}, \lean{thm13Rmain_unif}). The pointwise
 corollaries use the local Sobolev step \lean{ptN_of_L2}, which applies to every amplitude norm.
-Remark~\ref{thm:main} is \lean{pcthm13_fixed} for the original norm, deduced from \lean{pcthm13_all}, and \lean{thm13R_fixed} for the
+Corollary~\ref{thm:main} is \lean{pcthm13_fixed} for the original norm, deduced from \lean{pcthm13_all}, and \lean{thm13R_fixed} for the
 reversed-weight norm, deduced from \lean{thm14Rmain_exp} at $K=N=0$ and the monotonicity of the reversed-weight norm in the radius
 (\lean{swNormD_mono}). The Mellin, scattering, zero-mode, initial-norm and outgoing-mass lemmas of
 Section~\ref{sec:expect} are ingredients of the formal proof of Theorem~\ref{ev:mod};
@@ -117,8 +118,8 @@ Theorem~\ref{ev:mod}(i),(ii) & \lean{evmod}\\
 Theorem~\ref{thm:dd-appx} & \lean{thm14R_all}\\
 Theorem~\ref{os:cw} & \lean{cw_abstract}\\
 Lemma~\ref{os:transfer} & \lean{transfer}\\
-Lemma~\ref{pc:g43} & \lean{sobolev_M_mult}\\
-Remark~\ref{thm:main} & \lean{pcthm13_fixed}, \lean{thm13R_fixed}\\
+Lemma~\ref{pc:g43} & (a) \lean{encard_ball_le_orbitMult}, \lean{setLIntegral_ball_le_orbitMult_mul}; (b) \lean{sobolev_M_mult}\\
+Corollary~\ref{thm:main} & \lean{pcthm13_fixed}, \lean{thm13R_fixed}\\
 Remark~\ref{rem:pw-cor} & \lean{cor15R_tiedA}, \lean{cor16R_allmultN}; positive injectivity radius \lean{cor16R_allbgN}\\
 Corollary~\ref{ev:transfer} & \lean{evTransfer_pc_all}, \lean{evTransfer_main_unif}\\
 Proposition~\ref{prop:mean} & \lean{meanGrowth}\\

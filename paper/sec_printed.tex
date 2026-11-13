@@ -50,8 +50,7 @@ With $\tau=\alpha-\alpha'$ and $\beta'=\beta$: the original norm of $a$ at $(\al
 $\ue^{\alpha'\Lambda}a=\ue^{-(\alpha-\alpha')\Lambda}h$. So the original norms are not monotone in $\alpha$.
 \end{proof}
 
-For this reason the proof of Theorem~\ref{pc:main} for larger radii compares the data at the critical weight
-(Section~\ref{subsec:pc-all}), rather than using the radius monotonicity available in the reversed-weight class.
+
 
 \input{sec_critical}
 
@@ -92,23 +91,23 @@ so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=\xi/2$ and $\sigma/\varepsi
 \[
   \mathcal B_{\mathbf s}:=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1}),
 \]
-so that $a_{\mathbf s}=\mathcal B_{\mathbf s}a$ in (ii) of Proposition~\ref{prop:dd-id}. For $n\ge0$ put
+so that $a_{\mathbf s}=\mathcal B_{\mathbf s}a$ in (ii) of Proposition~\ref{prop:dd-id}. Let $F_n$, $n\ge0$, be the numbers of Lemma~\ref{lem:collect} for $G:=C_6$, a constant $C_6\ge1$ fixed in Step~1(a), and
+$\mathcal H:=1$:
 \[
-  F_n:=C_6^{N+K+n+1}(2N)!\,(n+2K+2)!\,\sigma^{-(n+2K+2)}(\sigma\hbar)^{-2N},
+  F_n=C_6^{N+K+n+1}(2N)!\,(n+2K+2)!\,\sigma^{-(n+2K+2)}(\sigma\hbar)^{-2N}.
 \]
-with a constant $C_6\ge1$ fixed in Step~1(a).
 
 \medskip\noindent\emph{Step 1 (derivative, flow and defect estimates).} Each of the following maps is linear on $L^2(\Hb)$ and is bounded
-there and at the weight $\pcXzero$ on functions supported in one shell. The second bound gives hypothesis (b) of
+there and at the weight $\pcXzero$ on functions supported in one shell. The bound at the weight $\pcXzero$ gives hypothesis (b) of
 Lemma~\ref{os:transfer}: if $\norm{\pcXzero Tu}\le\mathcal M_1\norm{\pcXzero u}$ for $u$ supported in $A_n$, then
 $\ue^k\norm{1_kTu}\le\norm{\pcXzero Tu}\le\mathcal M_1\norm{\pcXzero u}\le\mathcal M_1\ue^{n+1}\norm u$, since $\pcXzero\ge\ue^k$ on $A_k$ and
 $\pcXzero<\ue^{n+1}$ on $A_n$. Lemma~\ref{os:transfer} then bounds the map at the weight $\omega$.
 Write $C_{\mathrm{tr}}$ for its constant for $c=c'$ and $C_{\mathrm{sh}}$; it is independent of $K,N,\hbar$ and the integration variables.
 
 \smallskip\noindent(a) \emph{Words.} For a word $Z_S$ of length $n$ let $T_wh:=Z_S\mathcal B_{\mathbf s}\mathsf Qh$. By
-Lemma~\ref{lem:expand}(i) with $k=K+1$, $Z_S\mathcal B_{\mathbf s}$ is a sum of $5^N3^{K+1}$ terms $c\,Z_{S'}$ with $|c|\le2^N\hbar^{\ell-2N}$,
-$\ell\le2N$, and words of length $L\le\ell+q$, $q:=n+2K+2$. By Lemma~\ref{os:words}(b) with $\lambda=1$ (so that the number $Q$
-there is $6$), $\norm{\pcXzero Z_{S'}\mathsf Qu}\le\sqrt2\,L!\,(6C_5/\sigma)^L\norm{\pcXzero u}\le2(L+1)L!\,(G/\sigma)^L\norm{\pcXzero u}$ with
+Lemma~\ref{lem:expand}(i) with $k=K+1$, $Z_S\mathcal B_{\mathbf s}$ is a sum of $5^N3^{K+1}$ terms $c\,Z_{S'}$ with $|c|\le2^N\hbar^{j-2N}$,
+$j\le2N$, and words of length $L\le j+q$, $q:=n+2K+2$. By the estimate of Lemma~\ref{os:words} at the weight $\pcXzero^\lambda$, with
+$\lambda=1$ (so that the number $Q$ there is $6$), $\norm{\pcXzero Z_{S'}\mathsf Qu}\le\sqrt2\,L!\,(6C_5/\sigma)^L\norm{\pcXzero u}\le2(L+1)L!\,(G/\sigma)^L\norm{\pcXzero u}$ with
 $G:=6C_5\ge1$. By Lemma~\ref{lem:expand}(ii), each term is at most
 $2\cdot2^N(4G)^{2N+q}(2N)!\,q!\,\sigma^{-q}(\sigma\hbar)^{-2N}\norm{\pcXzero u}$. Summing over the terms and using
 $2(160G^2)^N(48G^2)^{K+1}(4G)^n\le C_6^{N+K+n+1}$ with $C_6:=\max(C_3,320\,G^2)$ gives
@@ -192,17 +191,16 @@ the critical weight, rather than comparing original norms at different radii, wh
 
 \begin{proof}[Proof of Theorem~\ref{pc:main}]
 \emph{Reductions.} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group and the base point enter below only through
-$P^{\mathrm{cr}}_\Gamma$, which is invariant under the conjugation of Lemma~\ref{lem:base}, since the identity of
-Lemma~\ref{lem:base}(iii) holds for every function of the distance in place of $\ue^{-s\,d}$. Since
+$P^{\mathrm{cr}}_\Gamma$, which does not change under this reduction (Lemma~\ref{lem:base}(iii)). Since
 $\operatorname{Dom}(\ue^{\alpha\Lambda})\subset\operatorname{Dom}(\ue^{\min(\alpha,1)\Lambda})$, $a$ is $C^\infty$ by Lemma~\ref{lem:lift}. Put $f:=\ue^{\alpha\Lambda}a$, so that $\norm{\omega f}\le C_\beta\pcNorm a$ (Section~\ref{subsec:pc-weights}).
 
 \emph{Radii $0<\alpha\le\tfrac12$.} Put $\sigma:=\alpha/6$ and $\kappa':=\kappa/216$, so that $\sigma\le\tfrac1{12}$ and $\sigma^3\ge\kappa'\hbar$.
 Proposition~\ref{os:data} with $c=c'$, $m=3$ and this $\sigma$ (here $\sigma<\alpha\le1$ and $\sigma m=\alpha/2\le\tfrac12$) gives
 $\tilde f:=\mathsf Rf$ with $a=\ue^{-\sigma\Lambda_3}\tilde f$ and $\norm{\omega\tilde f}\le C_{\mathrm d}\norm{\omega f}\le C_{\mathrm d}C_\beta\pcNorm a$.
 Proposition~\ref{pc:core} with $h=\tilde f$, and constants $C',\delta'$, gives the bound of the theorem with $\sigma$ in place of $\alpha$,
-for $t\le\delta'(\sigma/\hbar)^{1/2}=(\delta'/\sqrt6)(\alpha/\hbar)^{1/2}$. Since
-$(\sigma\hbar)^{-2N}(\hbar t/\sigma^2)^{K+1}=6^{2N+2K+2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$, the factor goes into $C^{N+K+1}$. So the theorem
-holds on $(0,\tfrac12]$ with constants that do not depend on $A$.
+for $t\le\delta'(\sigma/\hbar)^{1/2}$. Lemma~\ref{lem:radius}, with $\sigma$ and $\alpha$ in the roles of $\alpha_0$ and $A$ (so $A/\alpha_0=6$),
+turns this into the bound of the theorem for $t\le(\delta'/\sqrt6)(\alpha/\hbar)^{1/2}$ with the constant $36C'\max(1,C_{\mathrm d}C_\beta)$.
+So the theorem holds on $(0,\tfrac12]$ with constants that do not depend on $A$.
 
 \emph{Radii $\tfrac12<\alpha\le A$.} Put $\sigma:=\tfrac1{12}$ and $\kappa':=\kappa/(1728A^3)$; then $\sigma^3\ge\kappa'\hbar$, because
 $\kappa\hbar\le\alpha^3\le A^3$. Put $f_1:=\ue^{-(\alpha-1/2)\Lambda}f$, and let $j$ be an integer with $j\ge A$. Since $\ue^{-\tau\Lambda}$ is a
@@ -213,12 +211,7 @@ $\alpha$, $\sigma$ and $m$, gives $\tilde f:=\mathsf Rf_1$ with
   a=\ue^{-\sigma\Lambda_3}\tilde f,\qquad\norm{\omega\tilde f}\le C_{\mathrm d}C_\Lambda^{\,j}C_\beta\,\pcNorm a .
 \]
 Proposition~\ref{pc:core} with $h=\tilde f$, and constants $C',\delta'$ for this $\kappa'$, gives the bound with $\sigma$ in place of $\alpha$ for
-$t\le\delta'(\sigma/\hbar)^{1/2}$. For $\tfrac12<\alpha\le A$,
-\begin{align*}
-  (\sigma\hbar)^{-2N}\Big(\frac{\hbar t}{\sigma^2}\Big)^{K+1}&\le(12A)^{2N+2K+2}(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1},\\
-  \delta'\Big(\frac{\sigma}{\hbar}\Big)^{1/2}&\ge\delta'(12A)^{-1/2}\Big(\frac{\alpha}{\hbar}\Big)^{1/2}.
-\end{align*}
-So the estimate holds on $(\tfrac12,A]$ with the constants $(12A)^2C'\max(1,C_{\mathrm d}C_\Lambda^{\,j}C_\beta)$ and $\delta'(12A)^{-1/2}$. Take the
+$t\le\delta'(\sigma/\hbar)^{1/2}$. By Lemma~\ref{lem:radius} with $\alpha_0=\sigma=\tfrac1{12}$, the estimate holds on $(\tfrac12,A]$ with the constants $(12A)^2C'\max(1,C_{\mathrm d}C_\Lambda^{\,j}C_\beta)$ and $\delta'(12A)^{-1/2}$. Take the
 larger of the two constants $C$ and the smaller of the two $\delta$.
 
 \emph{The constants.} In both ranges $\delta$ is $\delta'/\sqrt6$, respectively $\delta'(12A)^{-1/2}$, where $\delta'$ is the constant of

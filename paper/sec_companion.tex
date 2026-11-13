@@ -37,6 +37,8 @@ Steps~0--3 below prove the estimate for $0<\alpha\le\min(A,1)$, where the estima
 last paragraph extends it to $1<\alpha\le A$.
 
 \begin{proof}
+In Steps~0--3, $C$ denotes constants that depend only on $\beta$, $\kappa$ and $P$.
+
 \medskip\noindent\emph{Step 0 (reductions and parameters).} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters the estimates below only
 through the Poincar\'e series bound at the base point. By Lemma~\ref{lem:lift}, $a$ is $C^\infty$. We write $\varphi=\varphi_\infty$ and
 \[
@@ -128,13 +130,8 @@ $P_\Gamma(\beta+\tfrac12)$.
 
 \medskip\noindent\emph{Radii $1<\alpha\le A$.} The power-weight norm increases with the radius, since
 $\ue^{\Lambda}=\ue^{-(\alpha-1)\Lambda}\ue^{\alpha\Lambda}$ and $\ue^{-\tau\Lambda}$ is a contraction for $\tau\ge0$. Apply the case already proved
-at the radius $1$ with $1$ in place of $\kappa$ (then $1\ge\hbar$), and let $\bar C,\bar\delta$ be its constants. For
-$t\le\bar\delta A^{-1/2}(\alpha/\hbar)^{1/2}$ we have $t\le\bar\delta\hbar^{-1/2}$, and
-\[
-\hbar^{-2N}(\hbar t)^{K+1}\le A^{2N+2K+2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}.
-\]
-So the bound holds for $1<\alpha\le A$ with
-$\bar\delta A^{-1/2}$ and $A^2\bar C$; take the smaller of the two values of $\delta$ and the larger of the two values of $C$. Both
+at the radius $1$ with $1$ in place of $\kappa$ (then $1\ge\hbar$), and let $\bar C,\bar\delta$ be its constants. Lemma~\ref{lem:radius} with
+$\alpha_0=1$ shows that the bound holds for $1<\alpha\le A$ with $\bar\delta A^{-1/2}$ and $A^2\bar C$; take the smaller of the two values of $\delta$ and the larger of the two values of $C$. Both
 cases have the stated dependence on $\Gamma$ and $x_0$.
 \end{proof}
 
@@ -150,16 +147,14 @@ $c_0=c_0(\beta)\in(0,1]$.
 \emph{Radii $0<\alpha\le\tfrac12$.} Let $c_0$ and $C'$ be the constants $c_0$ and $C$ of Lemma~\ref{lem:m2w}. If $\alpha\le\tfrac12$ and
 $\alpha^3\ge\kappa\hbar$, then $\bar\alpha:=c_0\alpha\le c_0/2$, $\bar\alpha^3\ge c_0^3\kappa\hbar$ and
 $\norm{\ue^{\bar\alpha\Lambda}X_0^\beta a}\le C'\swNorm a$. Apply Theorem~\ref{thm:dd-appx} with $c_0/2$, $c_0^3\kappa$ and $\bar\alpha$
-in place of $A$, $\kappa$ and $\alpha$, and let $C_{\rm pw},\delta_{\rm pw}$ be its constants. Its
-window $t\le\delta_{\rm pw}(\bar\alpha/\hbar)^{1/2}$ is the window $t\le\delta_{\rm s}(\alpha/\hbar)^{1/2}$ with $\delta_{\rm s}:=c_0^{1/2}\delta_{\rm pw}$, and
-$(\bar\alpha\hbar)^{-2N}(\hbar t/\bar\alpha^2)^{K+1}=c_0^{-2N-2K-2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$. So the bound holds for
-$\alpha\le\tfrac12$ with the constants $\delta_{\rm s}$ and $C_{\rm s}:=C_{\rm pw}\,c_0^{-2}\max(1,C')$.
+in place of $A$, $\kappa$ and $\alpha$, and let $C_{\rm pw},\delta_{\rm pw}$ be its constants. Lemma~\ref{lem:radius}, with $\bar\alpha$ and
+$\alpha$ in the roles of $\alpha_0$ and $A$ (so $A/\alpha_0=1/c_0$), shows that the bound holds for $\alpha\le\tfrac12$ with the constants
+$\delta_{\rm s}:=c_0^{1/2}\delta_{\rm pw}$ and $C_{\rm s}:=C_{\rm pw}\,c_0^{-2}\max(1,C')$.
 
 \emph{Radii $\tfrac12<\alpha\le A$.} The reversed-weight norm increases with the radius: $\ue^{\Lambda/2}=\ue^{-(\alpha-1/2)\Lambda}\ue^{\alpha\Lambda}$,
 and $\ue^{-\tau\Lambda}$ is a contraction for $\tau\ge0$, so the norm of $a$ at the radius $\tfrac12$ is at most $\swNorm a$. Apply the first
 case at the radius $\tfrac12$ with $\tfrac18$ in place of $\kappa$ (then $(\tfrac12)^3\ge\tfrac18\hbar$ for $\hbar\le1$), and let $C_{1/2},\delta_{1/2}$ be its
-constants. For $t\le\delta_{1/2}(2A)^{-1/2}(\alpha/\hbar)^{1/2}$ we have $t\le\delta_{1/2}(1/(2\hbar))^{1/2}$, and
-$(\tfrac12\hbar)^{-2N}(4\hbar t)^{K+1}\le(2A)^{2N+2K+2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$. So the bound holds for
+constants. Lemma~\ref{lem:radius} with $\alpha_0=\tfrac12$ shows that the bound holds for
 $\tfrac12<\alpha\le A$ with $\delta_{1/2}(2A)^{-1/2}$ and $(2A)^2C_{1/2}$. Take $\delta:=\min(\delta_{\rm s},\delta_{1/2}(2A)^{-1/2})$ and
 $C:=\max(C_{\rm s},(2A)^2C_{1/2})$.
 

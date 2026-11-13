@@ -58,8 +58,8 @@ $\ue^{t/2}\sqrt{\pi\hbar}\cdot\hbar t$; the remainder is controlled by the $L^2$
 \[
 \begin{gathered}
  E_0=T_1+T_2+E_2,\qquad
- T_k:=\ue^{-it/(2\hbar)}\bigl[(S(t)A_k)\ue^{i\varphi/\hbar}\bigr]_\Gamma,\\
- A_k:=\Bigl(\frac{i\hbar}{2}\Bigr)^kP_k(t)a\quad(k=1,2).
+ T_k:=\ue^{-it/(2\hbar)}\bigl[(S(t)D_k)\ue^{i\varphi/\hbar}\bigr]_\Gamma,\\
+ D_k:=\Bigl(\frac{i\hbar}{2}\Bigr)^kP_k(t)a\quad(k=1,2).
 \end{gathered}
 \]
 Lemma~\ref{cl:asym} gives the cusp asymptotic of $T_1$ and a bound for $T_2$; its stationary-phase step is
@@ -72,26 +72,24 @@ their proofs are collected in Appendix~\ref{app:cusp-aux}.
 \subsection{Local control and cusp asymptotics}
 \begin{lemma}[scaled local Sobolev inequality]\label{cl:ssob}
 There is an absolute constant $C$ such that for every Fuchsian group $\Gamma$, $0<r\le1$, $z\in M$ and
-$u\in\operatorname{Dom}(\Delta_M^2)$, taken in its continuous representative (Lemma~\ref{pc:g43}),
+$u\in\operatorname{Dom}(\Delta_M^2)$, taken in its continuous representative (Lemma~\ref{pc:g43}(b)),
 $|u(z)|\le C\,m(z)^{1/2}\bigl(r^{-1}\norm u_{L^2(M)}+r^3\norm{\Delta^2u}_{L^2(M)}\bigr)$.
 \end{lemma}
 \begin{proof}
 Let $\tilde u$ and $\tilde g$ be the $\Gamma$-invariant lifts of $u$ and of $g:=\Delta_M^2u$. For $\phi\in C_c^\infty(\Hb)$ the
 periodization $\phi_\Gamma$ lies in $C_c^\infty(M)$ and $(\Delta^2\phi)_\Gamma=\Delta_M^2\phi_\Gamma$, so unfolding gives
 $\langle\tilde u,\Delta^2\phi\rangle_{\Hb}=\langle u,\Delta_M^2\phi_\Gamma\rangle_M=\langle g,\phi_\Gamma\rangle_M=\langle\tilde g,\phi\rangle_{\Hb}$; that is,
-$\Delta^2\tilde u=\tilde g$ in the sense of distributions. For a $\Gamma$-invariant $\tilde h$ and a fundamental domain $\mathfrak F$,
-$\int_{B(\tilde z,1)}|\tilde h|^2d\nu=\int_{\mathfrak F}n(w)|h(w)|^2d\nu(w)$ with $n(w):=\#\{\gamma:\gamma w\in B(\tilde z,1)\}$. If $\gamma_0w$ and
-$\gamma w$ both lie in $B(\tilde z,1)$, then $d(\tilde z,\gamma\gamma_0^{-1}\tilde z)\le d(\tilde z,\gamma w)+d(\gamma_0w,\tilde z)<2$; hence $n(w)\le m(z)$ and
+$\Delta^2\tilde u=\tilde g$ in the sense of distributions. By Lemma~\ref{pc:g43}(a), applied to $|\tilde u|^2$ and $|\tilde g|^2$,
 \[
-\int_{B(\tilde z,1)}|\tilde h|^2d\nu\le m(z)\norm h_{L^2(M)}^2 .
+\int_{B(\tilde z,1)}|\tilde u|^2d\nu\le m(z)\norm u_{L^2(M)}^2,\qquad\int_{B(\tilde z,1)}|\tilde g|^2d\nu\le m(z)\norm g_{L^2(M)}^2 ;
 \]
-In particular $\tilde u$ and $\Delta^2\tilde u$ are locally square integrable.
+in particular $\tilde u$ and $\Delta^2\tilde u$ are locally square integrable.
 By homogeneity take $\tilde z=i$. In normal coordinates $\xi$ at $i$ put $v(\xi)=\tilde u(\exp_i(r\xi))$ for $|\xi|<1$. Then
 $r^4(\Delta^2\tilde u)(\exp_i(r\xi))=L_r^2v(\xi)$, where $L_r$ is $r^2\Delta$ in these coordinates: a uniformly elliptic operator whose coefficients are
 bounded in $C^\infty$ uniformly for $0<r\le1$. Interior regularity for $L_r^2$ and $H^4\subset L^\infty$ give
 $|v(0)|\le C(\norm v_{L^2(B_1)}+\norm{L_r^2v}_{L^2(B_1)})$. Since $d\nu\asymp r^2d\xi$ on the ball,
-$|\tilde u(i)|\le C(r^{-1}\norm{\tilde u}_{L^2(B(i,r))}+r^3\norm{\Delta^2\tilde u}_{L^2(B(i,r))})$, and $B(\tilde z,r)\subset B(\tilde z,1)$, so this counting bound for
-$\tilde h=\tilde u$ and $\tilde h=\tilde g$ gives the lemma.
+$|\tilde u(i)|\le C(r^{-1}\norm{\tilde u}_{L^2(B(i,r))}+r^3\norm{\Delta^2\tilde u}_{L^2(B(i,r))})$, and $B(\tilde z,r)\subset B(\tilde z,1)$, so the two bounds above
+give the lemma.
 \end{proof}
 
 \begin{lemma}[stationary phase for $\log(1+\sigma^2)$]\label{cl:sp}
@@ -103,7 +101,7 @@ f'=-r_1f_1-H^{-1}r_2f_2,\qquad f_1'=-r_1f_{1,1}-H^{-1}r_2f_{2,1},
 \end{equation}
 and, for all $\sigma$,
 \begin{equation}\label{cl:fbd}
-|f^{(j)}(\sigma)|\le\mathcal N(1+\sigma^2)^{-p}\quad(j\le4),\qquad|f_1(\sigma)|,\ |f_2(\sigma)|,\ |f_{1,1}(\sigma)|,\ |f_{2,1}(\sigma)|\le\mathcal N(1+\sigma^2)^{-p}.
+|f^{(j)}(\sigma)|\le\mathcal N(1+\sigma^2)^{-p}\quad(j\le4),\qquad|g(\sigma)|\le\mathcal N(1+\sigma^2)^{-p}\quad(g=f_1,f_2,f_{1,1},f_{2,1}).
 \end{equation}
 Then, with an absolute constant $C$,
 \[
@@ -111,25 +109,25 @@ Then, with an absolute constant $C$,
 \]
 \end{lemma}
 \begin{proof}
-In this proof $C$ denotes absolute constants. Let $\chi_1$ be a fixed cutoff, $\chi_1=1$ on $[-\tfrac12,\tfrac12]$,
-$\operatorname{supp}\chi_1\subset[-1,1]$, and split $f=\chi_1f+(1-\chi_1)f$.
+In this proof $C$ denotes absolute constants. Let $\eta_1$ be a fixed cutoff, $\eta_1=1$ on $[-\tfrac12,\tfrac12]$,
+$\operatorname{supp}\eta_1\subset[-1,1]$, and split $f=\eta_1f+(1-\eta_1)f$.
 
 \emph{Near part.} On $[-1,1]$, $\theta=s(\sigma)^2$ with $s(\sigma)=\operatorname{sign}(\sigma)(\log(1+\sigma^2))^{1/2}$, a fixed smooth function with $s'>0$ and
-$s'(0)=1$. With the inverse function $\sigma(s)$ put $h(s)=(\chi_1 f)(\sigma(s))\sigma'(s)$; it is $C^4$, supported in $[-1,1]$, and
+$s'(0)=1$. With the inverse function $\sigma(s)$ put $h(s)=(\eta_1 f)(\sigma(s))\sigma'(s)$; it is $C^4$, supported in $[-1,1]$, and
 $\norm h_{C^4}\le C\mathcal N$ by \eqref{cl:fbd}, since the change of variable is fixed. By the Fourier inversion formula and
 $\int\ue^{is^2/\hbar+is\xi}ds=\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{-i\hbar\xi^2/4}$,
 \[
-\int\chi_1 f\,\ue^{i\theta/\hbar}d\sigma=\int h\,\ue^{is^2/\hbar}ds=\sqrt{\pi\hbar}\,\ue^{i\pi/4}\,\frac1{2\pi}\int\hat h(\xi)\,\ue^{-i\hbar\xi^2/4}d\xi ,
+\int\eta_1 f\,\ue^{i\theta/\hbar}d\sigma=\int h\,\ue^{is^2/\hbar}ds=\sqrt{\pi\hbar}\,\ue^{i\pi/4}\,\frac1{2\pi}\int\hat h(\xi)\,\ue^{-i\hbar\xi^2/4}d\xi ,
 \]
 and $\frac1{2\pi}\int\hat h=h(0)=f(0)$. Since $|\ue^{-i\hbar\xi^2/4}-1|\le\hbar\xi^2/4$ and
 $(1+\xi^2)^2|\hat h(\xi)|\le\norm{(1-\partial_s^2)^2h}_{L^1}\le8\norm h_{C^4}$,
 \[
-\Bigl|\int\chi_1 f\,\ue^{i\theta/\hbar}d\sigma-\sqrt{\pi\hbar}\,\ue^{i\pi/4}f(0)\Bigr|\le\sqrt{\pi\hbar}\,\frac\hbar{8\pi}\int\xi^2|\hat h(\xi)|\,d\xi\le C\hbar^{3/2}\mathcal N.
+\Bigl|\int\eta_1 f\,\ue^{i\theta/\hbar}d\sigma-\sqrt{\pi\hbar}\,\ue^{i\pi/4}f(0)\Bigr|\le\sqrt{\pi\hbar}\,\frac\hbar{8\pi}\int\xi^2|\hat h(\xi)|\,d\xi\le C\hbar^{3/2}\mathcal N.
 \]
 
-\emph{Far part.} Let $\chi_H(\sigma)=\chi_1(\sigma/(2H))$, so that $\chi_H=1$ on $|\sigma|\le H$, $\chi_H=0$ on $|\sigma|\ge2H$ and
-$|\chi_H^{(k)}|\le CH^{-k}$, and put $\chi_*=(1-\chi_1)\chi_H$. By \eqref{cl:fbd}, $\int|(1-\chi_1)(1-\chi_H)f|\le C\mathcal N\int_{|\sigma|\ge H}\sigma^{-2p}d\sigma\le C\mathcal N/H$.
-It remains to bound $\int\chi_* f\,\ue^{i\theta/\hbar}d\sigma$. On $|\sigma|\ge\tfrac12$ put $\rho:=1/\theta'=(1+\sigma^2)/(2\sigma)$; then
+\emph{Far part.} Let $\eta_H(\sigma)=\eta_1(\sigma/(2H))$, so that $\eta_H=1$ on $|\sigma|\le H$, $\eta_H=0$ on $|\sigma|\ge2H$ and
+$|\eta_H^{(k)}|\le CH^{-k}$, and put $\eta_*=(1-\eta_1)\eta_H$. By \eqref{cl:fbd}, $\int|(1-\eta_1)(1-\eta_H)f|\le C\mathcal N\int_{|\sigma|\ge H}\sigma^{-2p}d\sigma\le C\mathcal N/H$.
+It remains to bound $\int\eta_* f\,\ue^{i\theta/\hbar}d\sigma$. On $|\sigma|\ge\tfrac12$ put $\rho:=1/\theta'=(1+\sigma^2)/(2\sigma)$; then
 \begin{equation}\label{cl:rho}
 |\rho|\le C(1+|\sigma|),\qquad|\rho'|\le C,\qquad|\rho''|\le C(1+|\sigma|)^{-3},
 \end{equation}
@@ -139,26 +137,26 @@ and for every $C^1$ function $v$ with compact support in $\{|\sigma|\ge\tfrac12\
 \end{equation}
 The cutoff satisfies
 \begin{equation}\label{cl:omega}
-|\chi_*'\rho|\le C,\qquad|(\chi_*'\rho)'\rho|\le C\ \text{on }\tfrac12\le|\sigma|\le1,\qquad|(\chi_*'\rho)'\rho|\le C\ \text{on }H\le|\sigma|\le2H,
+|\eta_*'\rho|\le C,\qquad|(\eta_*'\rho)'\rho|\le C\ \text{on }\tfrac12\le|\sigma|\le1,\qquad|(\eta_*'\rho)'\rho|\le C\ \text{on }H\le|\sigma|\le2H,
 \end{equation}
-and $\chi_*'$ vanishes elsewhere (on $[H,2H]$ use $|\chi_H'|\le C/H$, $|\chi_H''|\le C/H^2$ and $|\rho|\le CH$). By \eqref{cl:fprime},
+and $\eta_*'$ vanishes elsewhere (on $[H,2H]$ use $|\eta_H'|\le C/H$, $|\eta_H''|\le C/H^2$ and $|\rho|\le CH$). By \eqref{cl:fprime},
 $f'\rho=-f_1-H^{-1}r_2\rho f_2$, so
 \[
-(\chi_* f\rho)'=W-H^{-1}\chi_* r_2\rho f_2,\qquad W:=\chi_*'\rho f+\chi_*\rho'f-\chi_* f_1 .
+(\eta_* f\rho)'=W-H^{-1}\eta_* r_2\rho f_2,\qquad W:=\eta_*'\rho f+\eta_*\rho'f-\eta_* f_1 .
 \]
 The last term is integrated directly: by \eqref{cl:fbd} and \eqref{cl:rho},
 \[
-\int|H^{-1}\chi_* r_2\rho f_2|\,d\sigma\le C\mathcal N H^{-1}\int_{|\sigma|\le2H}(1+|\sigma|)^{1-2p}d\sigma\le C\mathcal N H^{-1}\log(4H).
+\int|H^{-1}\eta_* r_2\rho f_2|\,d\sigma\le C\mathcal N H^{-1}\int_{|\sigma|\le2H}(1+|\sigma|)^{1-2p}d\sigma\le C\mathcal N H^{-1}\log(4H).
 \]
 The function $W$ is $C^1$ with compact support in $\{|\sigma|\ge\tfrac12\}$, and we apply \eqref{cl:ibp} once more, to $v=W$, where
 \[
-(W\rho)'=(\chi_*'\rho)'\rho f+\chi_*'\rho\,(f'\rho)+\chi_*'\rho\,\rho'f+\chi_*\rho''\rho f+\chi_*\rho'(f'\rho)-\chi_*'\rho f_1-\chi_*\,(f_1'\rho)+W\rho' .
+(W\rho)'=(\eta_*'\rho)'\rho f+\eta_*'\rho\,(f'\rho)+\eta_*'\rho\,\rho'f+\eta_*\rho''\rho f+\eta_*\rho'(f'\rho)-\eta_*'\rho f_1-\eta_*\,(f_1'\rho)+W\rho' .
 \]
-On the support of $\chi_*$ we have $|\sigma|\le2H$, hence $H^{-1}|\rho|\le C$ and, by \eqref{cl:fprime},
+On the support of $\eta_*$ we have $|\sigma|\le2H$, hence $H^{-1}|\rho|\le C$ and, by \eqref{cl:fprime},
 $|f'\rho|+|f_1'\rho|\le C\mathcal N(1+\sigma^2)^{-p}$. With \eqref{cl:fbd}, \eqref{cl:rho} and \eqref{cl:omega} (and $|\rho''\rho|\le C$, $|W|\le C\mathcal N(1+\sigma^2)^{-p}$) every term of $(W\rho)'$ is
 bounded by $C\mathcal N(1+\sigma^2)^{-p}$. So $\int|(W\rho)'|\le C\mathcal N$, and altogether
 \[
-\Bigl|\int(1-\chi_1)f\,\ue^{i\theta/\hbar}d\sigma\Bigr|\le C\mathcal N\bigl(H^{-1}+\hbar\,H^{-1}\log(4H)+\hbar^2\bigr)\le C\hbar^{3/2}\mathcal N,
+\Bigl|\int(1-\eta_1)f\,\ue^{i\theta/\hbar}d\sigma\Bigr|\le C\mathcal N\bigl(H^{-1}+\hbar\,H^{-1}\log(4H)+\hbar^2\bigr)\le C\hbar^{3/2}\mathcal N,
 \]
 because $H\ge\hbar^{-2}$ and $H^{-1}\log(4H)\le C\hbar^{1/2}$ for such $H$. Adding the near part gives the claim.
 \end{proof}
@@ -250,7 +248,11 @@ $p=p_\star$ and $C\mathcal N_{n,c}$ in place of $\mathcal N$. Lemma~\ref{cl:sp} 
 Summing over $(n,c)$, with $\sum_{(n,c)}\vartheta^\star_{n,c}<\infty$, and adding the bounds for the translation part and for the terms $\ell\ne0$ proves the lemma.
 \end{proof}
 
-\subsection{Kernel bounds and amplitude construction}
+\subsection{Kernel bounds and amplitude construction}\label{subsec:cl-kernels}
+\emph{Cutoffs.} Fix a radial $\eta\in C_c^\infty(B(i,\tfrac14))$ with $\eta=1$ on $B(i,\tfrac18)$, and for $w\in\Hb$ put
+$\eta_w:=\eta\circ p_w^{-1}$, where $p_w$ is the affine map taking $i$ to $w$. Then $\eta_w=1$ on $B(w,\tfrac18)$,
+$\operatorname{supp}\eta_w\subset B(w,\tfrac14)$, and $|Z_S\eta_w|\le C_S$ uniformly in $w$ for every word $Z_S$, since $X$ and $Y$ commute with
+$p_w$. The proofs of Lemmas~\ref{cl:amp} and~\ref{cl:noncancel} use these cutoffs.
 \begin{lemma}[the Poisson kernel off the diagonal]\label{cl:kernel}
 Fix $d_0\in(0,1]$. For $0<\alpha\le\alpha_0<\pi/2$ the kernel $k_\alpha(r)$ of $\ue^{-\alpha\Lambda}$ extends holomorphically to
 $\{r+i\theta:r>3d_0/4,\ |\theta|<d_0/4\}$ with $|\tilde k_\alpha(r+i\theta)|\le C\,\alpha\,\ue^{-r}(1+r)^{-3/2}$. Hence
@@ -333,9 +335,8 @@ $X_0$ is bounded by $C_SX_0$, and $Z_S\ue^{-\mu X_0}$ is $\ue^{-\mu X_0}$ times 
 \end{equation}
 with $C_S$ independent of $\mu$; this is the word bound.
 
-(ii) The norm is the definition: $\ue^{\alpha\Lambda}a=h:=\ue^{-\mu X_0}$. Fix a radial $\eta\in C_c^\infty(B(i,\tfrac14))$ with $\eta=1$ on $B(i,\tfrac18)$, and for
-$w\in\Hb$ put $\eta_w:=\eta\circ p_w^{-1}$ with $p_w$ the affine map taking $i$ to $w$. Then $\eta_w=1$ on $B(w,\tfrac18)$,
-$\operatorname{supp}\eta_w\subset B(w,\tfrac14)$, and $|Z_S\eta_w|\le C_S$ uniformly in $w$, since $X$ and $Y$ commute with $p_w$. Fix $w$ and split
+(ii) The norm is the definition: $\ue^{\alpha\Lambda}a=h:=\ue^{-\mu X_0}$. Fix $w$ and split, with the cutoff $\eta_w$ of
+Section~\ref{subsec:cl-kernels},
 \[
 a=a^{\rm n}+a^{\rm f},\qquad a^{\rm n}:=\ue^{-\alpha\Lambda}(h\eta_w),\qquad a^{\rm f}:=\ue^{-\alpha\Lambda}(h(1-\eta_w)).
 \]
@@ -360,26 +361,26 @@ Both bounds are uniform in $\alpha\le\tfrac12$.
 
 \begin{lemma}[noncancellation of the leading cusp coefficient]\label{cl:noncancel}
 For either amplitude of Lemma~\ref{cl:amp}, with its cases denoted by (i) and (ii), the following holds.
-Put $A_0=\Delta_\infty a$, with $\Delta_\infty=Y^2-Y$ as in Proposition~\ref{prop:g5}, and $S_0(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}A_0(n/c+i/c^2)$. In case
+With $\Delta_\infty=Y^2-Y$ as in Proposition~\ref{prop:g5}, put $S_0(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}(\Delta_\infty a)(n/c+i/c^2)$. In case
 (i) with $\mu=20$, $0.98\,\mu\ue^{-\mu}\le|S_0(\hbar)|\le1.02\,\mu\ue^{-\mu}$ for all $\hbar$, and
 $S_a(\hbar):=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}a(n/c+i/c^2)$ satisfies $0.99\,\ue^{-\mu}\le|S_a(\hbar)|\le1.01\,\ue^{-\mu}$. In case (ii) there are absolute constants $\mu_*\ge1$ and $c_{\mathrm{nc}}>0$ such that $|S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for
 $\mu\ge\mu_*$, $0<\alpha\le\min(\tfrac12,c_{\mathrm{nc}}\mu^{-6})$ and all $\hbar$.
 \end{lemma}
 \begin{proof}
-$Y^2X_0=X_0$ gives $A_0=a[\mu^2(y-X_0)^2-\mu(2X_0-y)]$ in case (i), so $A_0(i)=-\mu\ue^{-\mu}$. At the other points $n/c+i/c^2$,
-$X_0=(n^2+c^2+c^{-2})/2$, $X_0-1\ge\max(\tfrac12,(k-2)/2)$ with $k=n^2+c^2$, and $|A_0|\le\mu\ue^{-\mu}\ue^{-\mu(X_0-1)}(\mu X_0^2+2X_0)$. For
+$Y^2X_0=X_0$ gives $\Delta_\infty a=a[\mu^2(y-X_0)^2-\mu(2X_0-y)]$ in case (i), so $(\Delta_\infty a)(i)=-\mu\ue^{-\mu}$. At the other points $n/c+i/c^2$,
+$X_0=(n^2+c^2+c^{-2})/2$, $X_0-1\ge\max(\tfrac12,(k-2)/2)$ with $k=n^2+c^2$, and $|\Delta_\infty a|\le\mu\ue^{-\mu}\ue^{-\mu(X_0-1)}(\mu X_0^2+2X_0)$. For
 $\mu=20$ and $q=\ue^{-10}<1/20000$: the two points $\pm1+i$ give at most $96q<0.005$; there is no coprime pair with $c\ge1$ and $k\in\{3,4\}$; the rest is
 at most $\sum_{k\ge5}(4k+4)[5(k+1)^2+k+1]q^{k-2}\le5184q^3/(1-8q)<0.01$. So the points other than $i$ contribute at most
 $0.015\,\mu\ue^{-\mu}$ to $S_0(\hbar)$, which gives its two bounds. For $S_a$, $a(i)=\ue^{-\mu}$ and $|a|\le\ue^{-\mu}\ue^{-\mu(X_0-1)}$ at the
 other points, so the same count without the factor $\mu X_0^2+2X_0$ bounds their contribution by $0.01\,\ue^{-\mu}$.
 
-In case (ii) let $h=\ue^{-\mu X_0}$, so that $A_0=\Delta_\infty\ue^{-\alpha\Lambda}h$ and $\Delta_\infty h(i)=-\mu\ue^{-\mu}$. In the rest of the proof $C$ does
+In case (ii) let $h=\ue^{-\mu X_0}$, so that $\Delta_\infty a=\Delta_\infty\ue^{-\alpha\Lambda}h$ and $\Delta_\infty h(i)=-\mu\ue^{-\mu}$. In the rest of the proof $C$ does
 not depend on $\mu\ge1$ or on $\alpha\le\tfrac12$.
 
 \emph{The point $i$.} By Lemma~\ref{cl:aux}(a) with $k=2$, $|\ue^{-\alpha\lambda}-1|\le\alpha\lambda$ in the spectral representation of $\Lambda$, $\Lambda\le(1-\Delta)^{1/2}$,
 \eqref{cl:hwords} and $d\nu=dX_0\,d\theta$ in geodesic polar coordinates,
 \begin{multline*}
-|A_0(i)+\mu\ue^{-\mu}|\le C\sum_{j\le2}\norm{\Delta^j(\ue^{-\alpha\Lambda}-1)h}\le C\alpha\norm{(1-\Delta)^3h}\\
+|(\Delta_\infty a)(i)+\mu\ue^{-\mu}|\le C\sum_{j\le2}\norm{\Delta^j(\ue^{-\alpha\Lambda}-1)h}\le C\alpha\norm{(1-\Delta)^3h}\\
 \le C\alpha(1+\mu)^6\Bigl(\int_1^\infty v^{12}\ue^{-2\mu v}dv\Bigr)^{1/2}\le C\alpha\mu^6\ue^{-\mu}.
 \end{multline*}
 
@@ -394,9 +395,7 @@ For $h_1$ and $w\in P$: the support of $h_1$ has distance at least $0.51$ from $
 \]
 and $\sum_{w\in P}\vartheta(w)\le C$ by Lemma~\ref{cl:aux}(b). So $h_1$ contributes at most $C\alpha\mu^{-1}\ue^{-\mu}$ to the sum over $P$.
 
-For $h_2$ and $w\in P$ split $h_2=h_2\eta_w+h_2(1-\eta_w)$. Here $\eta_w:=\eta\circ p_w^{-1}$ for a fixed radial $\eta\in C_c^\infty(B(i,\tfrac14))$
-with $\eta=1$ on $B(i,\tfrac18)$, and $p_w$ is the affine map taking $i$ to $w$. So $\eta_w=1$ on $B(w,\tfrac18)$,
-$\operatorname{supp}\eta_w\subset B(w,\tfrac14)$, and $|Z_S\eta_w|\le C_S$ uniformly in $w$, since $X$ and $Y$ commute with $p_w$. By
+For $h_2$ and $w\in P$ split $h_2=h_2\eta_w+h_2(1-\eta_w)$, with the cutoffs $\eta_w$ of Section~\ref{subsec:cl-kernels}. By
 Lemma~\ref{cl:aux}(d) with $d_0=\tfrac1{16}$, the far parts are bounded by
 $C\alpha\int\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}|h_2(w')|\,d\nu(w')$; summing over $w\in P$ under the integral with Lemma~\ref{cl:aux}(b) gives at most
 $C\alpha\int|h_2|\,d\nu\le C\alpha\mu^{-1}\ue^{-\mu\cosh0.44}$. For the near parts, $B(w,\tfrac14)$ does not meet $B(i,0.45)$, so $h_2=h$ there, and
@@ -411,7 +410,7 @@ by the counting bound of Lemma~\ref{lem:count}. So $h_2$ contributes at most $C\
 
 Altogether
 \[
-\sum_{w\in P}|A_0(w)|\le C\bigl(\alpha/\mu^2+\mu^3\ue^{-0.098\mu}\bigr)\,\mu\ue^{-\mu},\qquad|A_0(i)|\ge(1-C\alpha\mu^5)\,\mu\ue^{-\mu},
+\sum_{w\in P}|(\Delta_\infty a)(w)|\le C\bigl(\alpha/\mu^2+\mu^3\ue^{-0.098\mu}\bigr)\,\mu\ue^{-\mu},\qquad|(\Delta_\infty a)(i)|\ge(1-C\alpha\mu^5)\,\mu\ue^{-\mu},
 \]
 which gives $|S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for $\mu\ge\mu_*$ and $\alpha\le c_{\mathrm{nc}}\mu^{-6}$.
 \end{proof}
@@ -435,17 +434,17 @@ $\max(2\log(1/\hbar),t_*)\le t\le\min(\hbar^{-1/5},\delta(\alpha/\hbar)^{1/2})$ 
 \end{lemma}
 \begin{proof}
 (a) With $c_\hbar=i\hbar/2$, the definition of $u^{(K)}$ gives $E_0=T_1+T_2+E_2$, where
-$T_k=\ue^{-it/(2\hbar)}[(S(t)A_k)\ue^{i\varphi/\hbar}]_\Gamma$, $A_1=c_\hbar P_1(t)a$ and $A_2=c_\hbar^2P_2(t)a$. By Lemma~\ref{cl:amp}, every word
+$T_k=\ue^{-it/(2\hbar)}[(S(t)D_k)\ue^{i\varphi/\hbar}]_\Gamma$, $D_1=c_\hbar P_1(t)a$ and $D_2=c_\hbar^2P_2(t)a$. By Lemma~\ref{cl:amp}, every word
 of length at most $8$ applied to $a$ is bounded by a constant times $X_0^{-2}$ in case (i) and times $\ue^{-d(i,\cdot)}(1+d(i,\cdot))^{-3/2}$ in
-case (ii); this suffices, because $B(A_k)$ applies words of length at most $4$ to $P_k(t)a$, a combination of words of length
+case (ii); this suffices, because $B(D_k)$ applies words of length at most $4$ to $P_k(t)a$, a combination of words of length
 at most $2k\le4$ applied to $a$. We use Lemma~\ref{cl:asym} with $\vartheta^\star=X_0^{-2}$, respectively $\vartheta^\star=\vartheta$. Since
-$P_1(t)a=\int_0^t\Delta(s)a\,ds=\tfrac{1-\ue^{-2t}}2X^2a+t\Delta_\infty a$ and $t\ge1$, we have $B(A_1)\le C\hbar t$, and Lemma~\ref{cl:asym} gives
+$P_1(t)a=\int_0^t\Delta(s)a\,ds=\tfrac{1-\ue^{-2t}}2X^2a+t\Delta_\infty a$ and $t\ge1$, we have $B(D_1)\le C\hbar t$, and Lemma~\ref{cl:asym} gives
 \[
 T_1(z)=\ue^{-it/(2\hbar)}\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}\,\tfrac{i\hbar}2\Bigl(tS_0(\hbar)+\tfrac{1-\ue^{-2t}}2S_X(\hbar)\Bigr)
 +O\bigl(\ue^{t/2}\hbar^{3/2}\hbar t\bigr),
 \]
 where $S_X(\hbar):=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}X^2a(n/c+i/c^2)$ converges absolutely, so that $|S_X(\hbar)|\le C$. $P_2(t)a$ is a
-combination of words of length at most $4$ with coefficients bounded by $t^2/2$, so $B(A_2)\le C\hbar^2t^2$ and
+combination of words of length at most $4$ with coefficients bounded by $t^2/2$, so $B(D_2)\le C\hbar^2t^2$ and
 $|T_2(z)|\le C\ue^{t/2}\hbar^{1/2}\hbar^2t^2$. For $E_2$, Theorem~\ref{thm:dd14} in case (i)
 and Theorem~\ref{pc:main} in case (ii), at $K=2$ and $N=0,2$, give $\norm{E_2}\le C(\hbar t/\alpha^2)^3\ampNorm a$ and
 $\norm{\Delta^2E_2}\le C(\alpha\hbar)^{-4}(\hbar t/\alpha^2)^3\ampNorm a$; Lemma~\ref{cl:ssob} with $r=\hbar$, and $m(z)\le5\ue^t$

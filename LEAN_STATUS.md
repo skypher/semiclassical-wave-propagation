@@ -34,11 +34,12 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 2.1 (`lem:count`) | P | elementary area count; its orbit case, used for Lemma 2.3 (`lem:p1`) and Proposition 5.9 (`os:p1`), is `exists_orbit_count` |
 | Lemma 2.3 (`lem:p1`) | L | `poincareSup_lt_top` |
 | Lemma 2.4 (`lem:t2`) | L | `lem_t2` |
-| Lemma 2.5 (`lem:base`) | L | `exists_stab_smul_infty`, `initState_mul`, `approxSolB_mul`, `expLambda_iso`, `poincareSup_conj_move` |
+| Lemma 2.5 (`lem:base`) | L | `exists_stab_smul_infty`, `initState_mul`, `approxSolB_mul`, `expLambda_iso`, `poincareSup_conj_move`, `iSup_tsum_conj_move` |
 | Lemma 2.7 (`lem:surf-lap`) | L | `SurfW.surf_lap` |
 | Lemma 2.8 (`lem:surf-duh`) | L | `SurfW.surf_duhamel` |
 | Corollary 2.9 (`cor:surf-dyson`) | L | `SurfW.surf_dyson` |
 | Proposition 2.10 (`prop:dd-id`) | L | `dd_D12_simplex`, `SurfW.surf_D4`, `SurfW.surf_D4_bound` |
+| Lemma 2.11 (`os:indep`) | L | `surfV_indep` |
 
 ## Section 3 (`sec:analytic`): analytic and weighted propagation estimates
 
@@ -65,6 +66,7 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 3.21 (`lem:wb`) | L | `lem_wb_w_one`, `lem_wb_u_one` |
 | Lemma 3.22 (`lem:unw`) | L | `unw_err` |
 | Lemma 3.23 (`lem:collect`) | L | `collect_remainder`; parts `collect_absorb`, `remF_zero_le`, `collect_final` |
+| Lemma 3.25 (`lem:radius`) | L | (i) `ddBound_radius`; (ii) `window_radius` |
 
 ## Section 4 (`sec:companion`): power-weight and reversed-weight approximation
 
@@ -86,17 +88,16 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 5.7 (`os:words`) | L | `poissonM_w`, `lamM_w`, `lamM_pow_w`, `words_rec`, `words_w` |
 | Lemma 5.8 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
 | Proposition 5.9 (`os:p1`) | L | `poincare_omP`, `perio_weighted_gen` (the field `perio_bd` of `surfW_printed`), `critSup_eq`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
-| Lemma 5.10 (`os:indep`) | L | `surfV_indep` |
-| Proposition 5.11 (`pc:core`) | L | `dd_core_om` (the bound for the Dyson remainder of Proposition 2.10 (`prop:dd-id`)(ii); the instance of `dd_core_pc` for the weight `\omega`), with `SurfW.surf_D4` (the error equals that remainder) |
+| Proposition 5.10 (`pc:core`) | L | `dd_core_om` (the bound for the Dyson remainder of Proposition 2.10 (`prop:dd-id`)(ii); the instance of `dd_core_pc` for the weight `\omega`), with `SurfW.surf_D4` (the error equals that remainder) |
 
 ## Section 6 (`sec:consequences`): consequences and localized amplitudes
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Lemma 6.1 (`pc:g43`) | L | `sobolev_M_mult` |
+| Lemma 6.1 (`pc:g43`) | L | (a) `encard_ball_le_orbitMult`, `setLIntegral_ball_le_orbitMult_mul` (there for every group acting isometrically with a fundamental domain); (b) `sobolev_M_mult` |
 | Lemma 6.2 (`pc:remcusp`) | P | bounds for `m(z)` in a cusp; self-checked, not formalized |
 | Remark 6.3 (`rem:g4`) | P |  |
-| Remark 6.4 (`thm:main`) | L | original norm: `pcthm13_fixed` (from `pcthm13_all`); reversed-weight norm: `thm13R_fixed` (from `thm14Rmain_exp` and `swNormD_mono`) |
+| Corollary 6.4 (`thm:main`) | L | original norm: `pcthm13_fixed` (from `pcthm13_all`); reversed-weight norm: `thm13R_fixed` (from `thm14Rmain_exp` and `swNormD_mono`) |
 | Remark 6.5 (`rem:pw-cor`) | L | `cor15R_tiedA`, `cor16R_allmultN`; positive injectivity radius: `cor16R_allbgN`; constants with `C\ge1`: `xThmCDA_exists` |
 | Lemma 6.6 (`lem:ex`) | P | not used by the theorems |
 | Corollary 6.7 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.6 (`lem:ex`) and Theorem 1.2 (`thm:dd14`); self-checked, not separately formalized |
