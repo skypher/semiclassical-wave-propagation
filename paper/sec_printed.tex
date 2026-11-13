@@ -13,7 +13,8 @@ and $D=(-\Delta-\tfrac14)^{1/2}$ (Lemma~\ref{lem:base} reduces general base poin
 \[
 \omega_c:=X_0^{1/2}\ell^{\,c};
 \]
-the periodization weight is $\omega=\omega_{c'}$ with $c'=\tfrac34$. The shells are $A_n:=\{n\le\tilde\psi<n+1\}$, $n=0,1,2,\dots$, and
+the periodization weight is $\omega=\omega_{c'}$ with $c'=\tfrac34$. Any exponent in $(\tfrac12,1)$ would do (Theorem~\ref{os:cw});
+the choice fixes the constant $P^{\mathrm{cr}}_\Gamma$ of Theorem~\ref{pc:main}. The shells are $A_n:=\{n\le\tilde\psi<n+1\}$, $n=0,1,2,\dots$, and
 $1_n$ denotes multiplication by the indicator of $A_n$. Since $1+n\le\ell\le3(1+n)$ on $A_n$,
 \begin{equation}\label{os:shell}
 \ue^{n/2}(1+n)^c\le\omega_c\le3\,\ue^{1/2}\,\ue^{n/2}(1+n)^c\qquad\text{on }A_n .
@@ -26,7 +27,8 @@ For $f=\ue^{\alpha\Lambda}a$ and $\beta>\tfrac12$, the original norm gives $\|\o
 $\omega\le C_\beta\ue^{\beta\langle d\rangle}$.
 
 \begin{proposition}[the two amplitude classes and dependence on the radius]\label{pc:classes}
-For $\beta>\tfrac12$, the original and reversed-weight norms are not equivalent. For every $0<\alpha<\pi/2$ there are amplitudes of finite original norm at radius $\alpha$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and infinite original norm, with the same $\beta$, at every smaller radius.
+For $\beta>\tfrac12$, the original and reversed-weight norms are not equivalent. For every $0<\alpha<\pi/2$, the range of the kernel
+bounds of Lemma~\ref{os:poisson}, there are amplitudes of finite original norm at radius $\alpha$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and infinite original norm, with the same $\beta$, at every smaller radius.
 \end{proposition}
 \begin{proof}
 Let $\beta>\tfrac12$ and $0\le\alpha'<\alpha<\pi/2$, and put $h:=\ue^{-\beta\langle d\rangle}\mathbf 1_{B(x_0,1)}$ and $a:=\ue^{-\alpha\Lambda}h$, so that
@@ -77,8 +79,8 @@ and put $a:=\ue^{-\sigma\Lambda_m}h$. Then for $0\le t\le\delta'(\sigma/\hbar)^{
 \end{proposition}
 
 The condition $m>3/\sqrt2$ is the hypothesis $2(\lambda+\tfrac12)^2<m^2$ of Lemma~\ref{os:words} at $\lambda=1$, which
-Step~1(a) of the proof uses. Condition \textup{(W2)} follows from the growth bound in the display, with the supremum in
-\textup{(W2)} at most $C_{\mathrm{gr}}\ue^{T}$; it is listed because the formal statement lists it (Appendix~\ref{app:lean}).
+Step~1(a) of the proof uses. Condition \textup{(W2)}, which Proposition~\ref{prop:dd-id}(ii) requires, also follows from the growth
+bound in the display, with the supremum in \textup{(W2)} at most $C_{\mathrm{gr}}\ue^{T}$.
 
 \begin{proof}
 The proof has the structure of Section~\ref{sec:companion} (Table~\ref{tab:compare}). Step~1 supplies the word, flow and

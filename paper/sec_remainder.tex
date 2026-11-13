@@ -35,9 +35,10 @@ $\sum_\gamma\ue^{-\sigma\,d(x_0,\gamma z)}\le\sum_{n\ge0}C\ue^{n+1}\ue^{-\sigma 
 \end{proof}
 
 \begin{lemma}[weighted periodization and transport]\label{lem:t2}
-For every Fuchsian $\Gamma$, every $\sigma>1/2$, $t\ge0$, every real phase $\varphi$ and every measurable $w$ with $\ue^{\sigma\tilde\psi}w\in L^2(\Hb)$:
+For every Fuchsian $\Gamma$, every $\sigma>1/2$, $t\ge0$, every real measurable function $\theta$ on $\Hb$ and every measurable $w$
+with $\ue^{\sigma\tilde\psi}w\in L^2(\Hb)$:
 \[
-\norm{\bigl[(S(t)w)\,\ue^{i\varphi/\hbar}\bigr]_\Gamma}_{L^2(M)}\le C(\Gamma,\sigma)\,\ue^{\sigma t}\,\norm{\ue^{\sigma\tilde\psi}w}_{L^2(\Hb)},
+\norm{\bigl[(S(t)w)\,\ue^{i\theta}\bigr]_\Gamma}_{L^2(M)}\le C(\Gamma,\sigma)\,\ue^{\sigma t}\,\norm{\ue^{\sigma\tilde\psi}w}_{L^2(\Hb)},
 \]
 with $C(\Gamma,\sigma)=2^\sigma P_\Gamma(2\sigma)^{1/2}$, where $P_\Gamma$ is the Poincar\'e series bound of Lemma~\ref{lem:p1}.
 \end{lemma}
@@ -57,7 +58,7 @@ convergence, this gives
 \]
 In particular $\sum_\gamma|f\circ\gamma|$ converges a.e. and in $L^2(M)$. Torsion-freeness is not needed: the fixed sets of elliptic elements are null, so unfolding over a fundamental domain carries no stabilizer factor, and any multiplicity is already counted in the orbit series $P_\Gamma(2\sigma)$.
 
-\emph{Transport.} Take $f=(S(t)w)\ue^{i\varphi/\hbar}$, so $|f|=|S(t)w|$.
+\emph{Transport.} Take $f=(S(t)w)\ue^{i\theta}$, so $|f|=|S(t)w|$.
 Since $(S(t)w)(z)=\ue^{-t/2}w(z_t)$, where $z_t$ is at distance $t$ from $z$, we have
 $d(z,x_0)\le d(z_t,x_0)+t$. Unitarity of $S(t)$ therefore gives
 \[
@@ -123,8 +124,8 @@ $a_q:=a\circ q$ and $\Gamma_q:=q^{-1}\Gamma q$. Then, with $c:=\ue^{-i\log(\oper
 (a\,\ue^{i\varphi_b/\hbar})\circ q=c\,a_q\,\ue^{i\varphi_\infty/\hbar},\qquad u^{(K)}_b(t)[a]\circ q=c\,u^{(K)}_\infty(t)[a_q],
 \]
 where the subscript names the boundary point of the construction.
-\item[\textup{(iii)}] The map $f\mapsto f\circ q$ is unitary from $L^2(\Gamma\backslash\Hb)$ to $L^2(\Gamma_q\backslash\Hb)$, intertwines the periodizations over $\Gamma$ and
-$\Gamma_q$, and commutes with $\Delta$, $\cU(t)$ and $\ue^{\alpha\Lambda}$. The reversed-weight and original norms of $a$ with base point $x_0$ equal those of $a_q$
+\item[\textup{(iii)}] The map $f\mapsto f\circ q$ is unitary from $L^2(\Gamma\backslash\Hb)$ to $L^2(\Gamma_q\backslash\Hb)$ and intertwines the
+periodizations over $\Gamma$ and $\Gamma_q$, the Laplacians, the propagators $\cU(t)$ and the operators $\ue^{\alpha\Lambda}$. The reversed-weight and original norms of $a$ with base point $x_0$ equal those of $a_q$
 with base point $i$. For every $s$, $\sup_z\sum_{\gamma\in\Gamma_q}\ue^{-s\,d(i,\gamma z)}=\sup_z\sum_{\gamma\in\Gamma}\ue^{-s\,d(x_0,\gamma z)}$.
 \end{itemize}
 Consequently the error norm of $(\Gamma,x_0,b,a)$ equals that of $(\Gamma_q,i,\infty,a_q)$, and an estimate proved for base point $i$ and

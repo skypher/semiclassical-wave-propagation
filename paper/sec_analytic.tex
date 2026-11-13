@@ -241,12 +241,12 @@ $V_\varepsilon(s_1,s_0)$ on $L^2(\Hb)$, $s_0,s_1\ge0$, norm differentiable in bo
 All estimates below are stated for $V_\varepsilon(s_1,s_0)$; this contains $V_\varepsilon(t)$ and $V_\varepsilon(t)^*$.
 
 \medskip\noindent\textbf{The Kontorovich--Lebedev picture.}
-Fourier transform in $x$; on the mode $\ue^{ikx}$, $k\ne0$, put $z=|k|y$ and write the function of $y$ as $z^{1/2}f(z)$. Then
-$L^2(dx\,dy/y^2)$ becomes $L^2(dz/z)$ in $f$, $-\Delta$ becomes $-(z\partial_z)^2+z^2+\tfrac14$, and $X$ becomes multiplication by
-$i\operatorname{sgn}(k)\,z$; on the mode $k=0$, $X=0$. The Kontorovich--Lebedev transform $F(r)=\int_0^\infty K_{ir}(z)f(z)\,dz/z$, with Parseval
-$\int|f|^2dz/z=\int|F|^2w(r)\,dr$, $w(r)=\tfrac2{\pi^2}r\sinh(\pi r)$ (\cite[eqs.~(1.1)--(1.3)]{Y}, applied to $f(z)/z$), diagonalizes
+Fourier transform in $x$; on the mode $\ue^{ikx}$, $k\ne0$, put $\zeta=|k|y$ and write the function of $y$ as $\zeta^{1/2}f(\zeta)$. Then
+$L^2(dx\,dy/y^2)$ becomes $L^2(d\zeta/\zeta)$ in $f$, $-\Delta$ becomes $-(\zeta\partial_\zeta)^2+\zeta^2+\tfrac14$, and $X$ becomes multiplication by
+$i\operatorname{sgn}(k)\,\zeta$; on the mode $k=0$, $X=0$. The Kontorovich--Lebedev transform $F(r)=\int_0^\infty K_{ir}(\zeta)f(\zeta)\,d\zeta/\zeta$, with Parseval
+$\int|f|^2d\zeta/\zeta=\int|F|^2w(r)\,dr$, $w(r)=\tfrac2{\pi^2}r\sinh(\pi r)$ (\cite[eqs.~(1.1)--(1.3)]{Y}, applied to $f(\zeta)/\zeta$), diagonalizes
 $-\Delta=r^2+\tfrac14$. So $\Lambda$ acts as multiplication by $\Lambda(r)=(r^2+\tfrac14)^{1/2}$, and
-$|\Lambda(r)-\Lambda(r')|\le|r-r'|$. In the unitary picture $F\mapsto w^{1/2}F$, multiplication by $z$ has the kernel
+$|\Lambda(r)-\Lambda(r')|\le|r-r'|$. In the unitary picture $F\mapsto w^{1/2}F$, multiplication by $\zeta$ has the kernel
 $k_1(r,r')$ computed in step (X) of the proof of Lemma~\ref{lem:fc}, and
 \begin{equation}\label{eq:zt1}
 0\le k_1(r,r')\le\frac{(rr')^{1/2}}{2\cosh(\pi(r-r')/2)} .
@@ -416,8 +416,7 @@ $|Xh|,|Yh|\le2\rho h$ and $|\Delta h|\le|X^2h|+|Y^2h|+|Yh|\le(2\mathcal K+2\rho)
 $\norm{Wc(r)g}\le\ue^{2\rho|r|}\norm{Wg}$, $\norm{WXq(r)}+\norm{WYq(r)}\le2\ue^{2\rho|r|}\norm{Wu}$, and
 $\norm{Wq(r)}\le|r|\ue^{2\rho|r|}\norm{Wu}$ because $q(r)=\int_0^rc(r')u\,dr'$. So the integrand is at most
 $\bigl((2\mathcal K+2\rho)|s-r|+8\rho\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$. Integrating over $r$ gives the bound
-$\bigl(8\rho|s|+(\mathcal K+\rho)s^2\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$, which is at most the stated bound. The statement keeps the
-weaker form, that of its formal counterpart, which suffices for its applications.
+$\bigl(8\rho|s|+(\mathcal K+\rho)s^2\bigr)\ue^{2\rho|s|}\norm{Wu}\norm{Wg}$, which is at most the stated bound.
 \end{proof}
 
 By Fourier inversion, since $j_\varepsilon$ is even,

@@ -92,18 +92,18 @@ $d(z,z+n)=2\operatorname{arcsinh}(|n|/(2H))<2$ if and only if $|n|<2H\sinh1$. So
 
 \begin{lemma}[stationary phase for $\log(1+\sigma^2)$]\label{cl:sp}
 Put $\theta(\sigma):=\log(1+\sigma^2)$, $r_1:=\theta'$, that is $r_1(\sigma)=2\sigma/(1+\sigma^2)$, and $r_2(\sigma):=(1-\sigma^2)/(1+\sigma^2)$.
-Let $p\in\{1,2\}$, $0<\hbar\le\tfrac12$, $H\ge\hbar^{-2}$ and $\eta\ge0$. Let $f\in C^4(\mathbb R)$, $f_1\in C^1(\mathbb R)$ and
+Let $p\in\{1,2\}$, $0<\hbar\le\tfrac12$, $H\ge\hbar^{-2}$ and $\mathcal N\ge0$. Let $f\in C^4(\mathbb R)$, $f_1\in C^1(\mathbb R)$ and
 $f_2,f_{11},f_{21}\in C(\mathbb R)$ satisfy
 \begin{equation}\label{cl:fprime}
 f'=-r_1f_1-H^{-1}r_2f_2,\qquad f_1'=-r_1f_{11}-H^{-1}r_2f_{21},
 \end{equation}
 and, for all $\sigma$,
 \begin{equation}\label{cl:fbd}
-|f^{(j)}(\sigma)|\le\eta(1+\sigma^2)^{-p}\quad(j\le4),\qquad|f_1(\sigma)|,\ |f_2(\sigma)|,\ |f_{11}(\sigma)|,\ |f_{21}(\sigma)|\le\eta(1+\sigma^2)^{-p}.
+|f^{(j)}(\sigma)|\le\mathcal N(1+\sigma^2)^{-p}\quad(j\le4),\qquad|f_1(\sigma)|,\ |f_2(\sigma)|,\ |f_{11}(\sigma)|,\ |f_{21}(\sigma)|\le\mathcal N(1+\sigma^2)^{-p}.
 \end{equation}
 Then, with an absolute constant $C$,
 \[
-\Bigl|\int_{\mathbb R}f(\sigma)\,\ue^{i\theta(\sigma)/\hbar}\,d\sigma-\sqrt{\pi\hbar}\,\ue^{i\pi/4}f(0)\Bigr|\le C\hbar^{3/2}\eta .
+\Bigl|\int_{\mathbb R}f(\sigma)\,\ue^{i\theta(\sigma)/\hbar}\,d\sigma-\sqrt{\pi\hbar}\,\ue^{i\pi/4}f(0)\Bigr|\le C\hbar^{3/2}\mathcal N .
 \]
 \end{lemma}
 \begin{proof}
@@ -112,7 +112,7 @@ $\operatorname{supp}\chi_1\subset[-1,1]$, and split $f=\chi_1f+(1-\chi_1)f$.
 
 \emph{Near part.} On $[-1,1]$, $\theta=s(\sigma)^2$ with $s(\sigma)=\operatorname{sign}(\sigma)(\log(1+\sigma^2))^{1/2}$, a fixed smooth function with $s'>0$ and
 $s'(0)=1$. With the inverse function $\sigma(s)$ put $h(s)=(\chi_1 f)(\sigma(s))\sigma'(s)$; it is $C^4$, supported in $[-1,1]$, and
-$\norm h_{C^4}\le C\eta$ by \eqref{cl:fbd}, since the change of variable is fixed. By the Fourier inversion formula and
+$\norm h_{C^4}\le C\mathcal N$ by \eqref{cl:fbd}, since the change of variable is fixed. By the Fourier inversion formula and
 $\int\ue^{is^2/\hbar+is\xi}ds=\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{-i\hbar\xi^2/4}$,
 \[
 \int\chi_1 f\,\ue^{i\theta/\hbar}d\sigma=\int h\,\ue^{is^2/\hbar}ds=\sqrt{\pi\hbar}\,\ue^{i\pi/4}\,\frac1{2\pi}\int\hat h(\xi)\,\ue^{-i\hbar\xi^2/4}d\xi ,
@@ -120,11 +120,11 @@ $\int\ue^{is^2/\hbar+is\xi}ds=\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{-i\hbar\xi^2/4}$
 and $\frac1{2\pi}\int\hat h=h(0)=f(0)$. Since $|\ue^{-i\hbar\xi^2/4}-1|\le\hbar\xi^2/4$ and
 $(1+\xi^2)^2|\hat h(\xi)|\le\norm{(1-\partial_s^2)^2h}_{L^1}\le8\norm h_{C^4}$,
 \[
-\Bigl|\int\chi_1 f\,\ue^{i\theta/\hbar}d\sigma-\sqrt{\pi\hbar}\,\ue^{i\pi/4}f(0)\Bigr|\le\sqrt{\pi\hbar}\,\frac\hbar{8\pi}\int\xi^2|\hat h(\xi)|\,d\xi\le C\hbar^{3/2}\eta.
+\Bigl|\int\chi_1 f\,\ue^{i\theta/\hbar}d\sigma-\sqrt{\pi\hbar}\,\ue^{i\pi/4}f(0)\Bigr|\le\sqrt{\pi\hbar}\,\frac\hbar{8\pi}\int\xi^2|\hat h(\xi)|\,d\xi\le C\hbar^{3/2}\mathcal N.
 \]
 
 \emph{Far part.} Let $\chi_H(\sigma)=\chi_1(\sigma/(2H))$, so that $\chi_H=1$ on $|\sigma|\le H$, $\chi_H=0$ on $|\sigma|\ge2H$ and
-$|\chi_H^{(k)}|\le CH^{-k}$, and put $\chi_*=(1-\chi_1)\chi_H$. By \eqref{cl:fbd}, $\int|(1-\chi_1)(1-\chi_H)f|\le C\eta\int_{|\sigma|\ge H}\sigma^{-2p}d\sigma\le C\eta/H$.
+$|\chi_H^{(k)}|\le CH^{-k}$, and put $\chi_*=(1-\chi_1)\chi_H$. By \eqref{cl:fbd}, $\int|(1-\chi_1)(1-\chi_H)f|\le C\mathcal N\int_{|\sigma|\ge H}\sigma^{-2p}d\sigma\le C\mathcal N/H$.
 It remains to bound $\int\chi_* f\,\ue^{i\theta/\hbar}d\sigma$. On $|\sigma|\ge\tfrac12$ put $\rho:=1/\theta'=(1+\sigma^2)/(2\sigma)$; then
 \begin{equation}\label{cl:rho}
 |\rho|\le C(1+|\sigma|),\qquad|\rho'|\le C,\qquad|\rho''|\le C(1+|\sigma|)^{-3},
@@ -144,17 +144,17 @@ $f'\rho=-f_1-H^{-1}r_2\rho f_2$, so
 \]
 The last term is integrated directly: by \eqref{cl:fbd} and \eqref{cl:rho},
 \[
-\int|H^{-1}\chi_* r_2\rho f_2|\,d\sigma\le C\eta H^{-1}\int_{|\sigma|\le2H}(1+|\sigma|)^{1-2p}d\sigma\le C\eta H^{-1}\log(4H).
+\int|H^{-1}\chi_* r_2\rho f_2|\,d\sigma\le C\mathcal N H^{-1}\int_{|\sigma|\le2H}(1+|\sigma|)^{1-2p}d\sigma\le C\mathcal N H^{-1}\log(4H).
 \]
 The function $W$ is $C^1$ with compact support in $\{|\sigma|\ge\tfrac12\}$, and we apply \eqref{cl:ibp} once more, to $v=W$, where
 \[
 (W\rho)'=(\chi_*'\rho)'\rho f+\chi_*'\rho\,(f'\rho)+\chi_*'\rho\,\rho'f+\chi_*\rho''\rho f+\chi_*\rho'(f'\rho)-\chi_*'\rho f_1-\chi_*\,(f_1'\rho)+W\rho' .
 \]
 On the support of $\chi_*$ we have $|\sigma|\le2H$, hence $H^{-1}|\rho|\le C$ and, by \eqref{cl:fprime},
-$|f'\rho|+|f_1'\rho|\le C\eta(1+\sigma^2)^{-p}$. With \eqref{cl:fbd}, \eqref{cl:rho} and \eqref{cl:omega} (and $|\rho''\rho|\le C$, $|W|\le C\eta(1+\sigma^2)^{-p}$) every term of $(W\rho)'$ is
-bounded by $C\eta(1+\sigma^2)^{-p}$. So $\int|(W\rho)'|\le C\eta$, and altogether
+$|f'\rho|+|f_1'\rho|\le C\mathcal N(1+\sigma^2)^{-p}$. With \eqref{cl:fbd}, \eqref{cl:rho} and \eqref{cl:omega} (and $|\rho''\rho|\le C$, $|W|\le C\mathcal N(1+\sigma^2)^{-p}$) every term of $(W\rho)'$ is
+bounded by $C\mathcal N(1+\sigma^2)^{-p}$. So $\int|(W\rho)'|\le C\mathcal N$, and altogether
 \[
-\Bigl|\int(1-\chi_1)f\,\ue^{i\theta/\hbar}d\sigma\Bigr|\le C\eta\bigl(H^{-1}+\hbar\,H^{-1}\log(4H)+\hbar^2\bigr)\le C\hbar^{3/2}\eta,
+\Bigl|\int(1-\chi_1)f\,\ue^{i\theta/\hbar}d\sigma\Bigr|\le C\mathcal N\bigl(H^{-1}+\hbar\,H^{-1}\log(4H)+\hbar^2\bigr)\le C\hbar^{3/2}\mathcal N,
 \]
 because $H\ge\hbar^{-2}$ and $H^{-1}\log(4H)\le C\hbar^{1/2}$ for such $H$. Adding the near part gives the claim.
 \end{proof}
@@ -205,7 +205,7 @@ $\vartheta^\star_{n,c}=(n^2+c^2)^{-1}(1+\log(n^2+c^2))^{-3/2}$ for the second ch
 function of $X_0$). In both cases $\sum_{(n,c)}\vartheta^\star_{n,c}<\infty$ (for the second, by
 partial summation, since $\#\{(n,c):n^2+c^2\le R\}\le CR$). By \eqref{cl:theta}, $\sum_k|G_{n,c}(k)|\le C\ue^{-t/2}B(v)\vartheta^\star_{n,c}(H+1)$, which gives the
 absolute convergence, and at $\tau=0$ it gives $|v(n/c+i/c^2)|\le CB(v)\vartheta^\star_{n,c}$, so the double series of the lemma converges absolutely.
-We abbreviate $\eta_{n,c}:=\ue^{-t/2}B(v)\,\vartheta^\star_{n,c}$.
+We abbreviate $\mathcal N_{n,c}:=\ue^{-t/2}B(v)\,\vartheta^\star_{n,c}$.
 
 \emph{Poisson summation.} By \eqref{cl:der} and \eqref{cl:theta}, $G_{n,c}$ is $C^4$ and its derivatives up to order $2$ are $O((1+u^2)^{-1})$, so
 $\sum_kG_{n,c}(k)=\sum_\ell\hat G(\ell)$ with
@@ -222,18 +222,18 @@ $|\Theta'''|\le C/(\hbar c^3)$. Two integrations by parts, without boundary term
 \end{multline*}
 by \eqref{cl:der}. Since $\hbar H\ge2$ and $\int(1+\tau^2/c^2)^{-p_\star}d\tau\le Cc$, \eqref{cl:theta} gives
 \[
-\Bigl|\int g\,\ue^{-2\pi i\ell H\tau/c}d\tau\Bigr|\le C\eta_{n,c}\,\frac c{\ell^2H^2}.
+\Bigl|\int g\,\ue^{-2\pi i\ell H\tau/c}d\tau\Bigr|\le C\mathcal N_{n,c}\,\frac c{\ell^2H^2}.
 \]
-Hence $\sum_{\ell\ne0}|\hat G(\ell)|\le C\eta_{n,c}/H$, and the sum of these bounds over $(n,c)$ is at most
+Hence $\sum_{\ell\ne0}|\hat G(\ell)|\le C\mathcal N_{n,c}/H$, and the sum of these bounds over $(n,c)$ is at most
 $C\ue^{-3t/2}B(v)\le C\ue^{t/2}\hbar^{3/2}B(v)$.
 
 \emph{The term $\ell=0$.} With $\tau=c\sigma$, $\hat G(0)=H\ue^{it/\hbar}c^{2i/\hbar}\int f(\sigma)\ue^{i\theta(\sigma)/\hbar}d\sigma$, where
 $f(\sigma)=\ue^{-t/2}v(Q(c\sigma))$ and $\theta(\sigma)=\log(1+\sigma^2)$. Put $f_1:=\ue^{-t/2}(Yv)(Q(c\sigma))$, $f_2:=\ue^{-t/2}(Xv)(Q(c\sigma))$,
 $f_{11}:=\ue^{-t/2}(Y^2v)(Q(c\sigma))$ and $f_{21}:=\ue^{-t/2}(XYv)(Q(c\sigma))$. Since $\partial_\sigma=c\,\partial_\tau$, \eqref{cl:chain} gives the
 relations \eqref{cl:fprime}, and by \eqref{cl:der}, \eqref{cl:theta} and the definition of $B(v)$ these functions satisfy \eqref{cl:fbd} with
-$p=p_\star$ and $C\eta_{n,c}$ in place of $\eta$. Lemma~\ref{cl:sp} gives
+$p=p_\star$ and $C\mathcal N_{n,c}$ in place of $\mathcal N$. Lemma~\ref{cl:sp} gives
 \[
-\Bigl|\int f\,\ue^{i\theta/\hbar}d\sigma-\sqrt{\pi\hbar}\,\ue^{i\pi/4}f(0)\Bigr|\le C\hbar^{3/2}\eta_{n,c}.
+\Bigl|\int f\,\ue^{i\theta/\hbar}d\sigma-\sqrt{\pi\hbar}\,\ue^{i\pi/4}f(0)\Bigr|\le C\hbar^{3/2}\mathcal N_{n,c}.
 \]
 
 \emph{Conclusion.} Since $f(0)=\ue^{-t/2}v(n/c+i/c^2)$ and $H\ue^{-t/2}=\ue^{t/2}$,

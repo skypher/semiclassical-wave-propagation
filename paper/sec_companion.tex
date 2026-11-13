@@ -1,7 +1,7 @@
 \section{Approximation for power-weight and reversed-weight amplitudes}\label{sec:companion}
 
 We prove the approximation with the power-weight norm $\pwNorm a$ and transfer it to the reversed-weight norm $\swNorm a$, which gives Theorem~\ref{thm:dd14}. These arguments exhibit the common remainder estimate and the balance between analytic smallness and weighted transport growth. Section~\ref{sec:printed} then treats the original norm, which requires additional critical-weight estimates.
-Throughout, $\Gamma$ and the base point $x_0$ are fixed, $M=\Gamma\backslash\Hb$, and $d=d(x_0,\cdot)$.
+Throughout, $M=\Gamma\backslash\Hb$ and $d=d(x_0,\cdot)$.
 
 \medskip\noindent\emph{The common structure.}
 The proof of Theorem~\ref{thm:dd-appx} and that of Proposition~\ref{pc:core} in Section~\ref{subsec:pc-proof} both bound the
@@ -28,24 +28,19 @@ Periodization & weight $X_0^\lambda$, $\lambda>\tfrac12$ (Lemma~\ref{lem:t2}) & 
 \subsection{Approximation with the power weight \texorpdfstring{$X_0^\beta$}{X0}}\label{subsec:dd-thm}
 
 \begin{theorem}[approximation in the power-weight class]\label{thm:dd-appx}
-Let $\Gamma$ be a Fuchsian group, $\beta>\tfrac12$, $\kappa>0$ and $\alpha_0\in(0,\pi/4)$.
-\begin{itemize}
-\item[\textup{(i)}] There are $C,\delta>0$ such that for all $0<\hbar\le1$, all $\alpha\in(0,\alpha_0]$ with $\alpha^3\ge\kappa\hbar$, all
-$K,N\in\mathbb N_0$, every $b\in\partial\Hb$, every $a$ with $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$, and all
+Fix $\beta>\tfrac12$, $\kappa>0$ and $A>0$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$, such that for every
+Fuchsian group $\Gamma$ and every base point $x_0$ with $P_\Gamma(\beta+\tfrac12)\le P$, all $0<\hbar\le1$, all $\alpha\in(0,A]$ with
+$\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$ with $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$, and all
 $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
 \begin{multline*}
 \norm{\Delta^N\bigl[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\bigr]}_{L^2(M)}\\
 \le C^{N+K+1}\,N^{2N}\,K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}\pwNorm a .
 \end{multline*}
-\item[\textup{(ii)}] In \textup{(i)}, $\delta$ can be chosen depending only on $\beta$, $\kappa$ and $\alpha_0$, and $C$ depending only on
-$\beta$, $\kappa$, $\alpha_0$ and an upper bound for $P_\Gamma(\beta+\tfrac12)$.
-\end{itemize}
 \end{theorem}
 
-Part (ii) is proved in the last paragraph of the proof; Theorem~\ref{thm:dd14} uses it. The proof uses only
-$\alpha_0\le1$, since the estimates of Section~\ref{sec:analytic} are applied with $\tau_0=1$; the range $\alpha_0<\pi/4$ is that of the
-formal statement (Appendix~\ref{app:lean}) and suffices for Theorem~\ref{thm:dd14}, whose proof applies it with
-$\alpha_0=c_0/2$.
+The constant $\delta$ depends only on $\beta$, $\kappa$ and $A$, and $C$ depends on $\Gamma$ and $x_0$ only through $P$; the proof of
+Theorem~\ref{thm:dd14} uses this. Steps~0--3 below prove the estimate for $0<\alpha\le\min(A,1)$, where the estimates of
+Section~\ref{sec:analytic} apply with $\tau_0=1$; the last paragraph extends it to $1<\alpha\le A$.
 
 \begin{proof}
 \medskip\noindent\emph{Step 0 (reductions and parameters).} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters the estimates below only
@@ -113,19 +108,19 @@ Lemma~\ref{lem:unw} with $r=r_2$ gives $\norm{\mathfrak d(t')}\le C_4r_2^{-4}\ue
 
 \emph{Combining the factors.} Put
 \[
-  F:=(C_3/c_M^2)^{N+K+3}(2N)!\,(2K+4)!\,\alpha^{-(2K+4)}(\alpha\hbar)^{-2N}\pwNorm a.
+  G:=(C_3/c_M^2)^{N+K+3}(2N)!\,(2K+4)!\,\alpha^{-(2K+4)}(\alpha\hbar)^{-2N}\pwNorm a.
 \]
 Since $c_M\le1\le C_3$ and $\alpha\le1$, the weighted
-factor is at most $C\varepsilon^{-3}F$ and the unweighted one at most $C\alpha^{-4}\ue^{-c_M\xi/8}F$. After the H\"older split, using $\varepsilon,\alpha\le1$,
+factor is at most $C\varepsilon^{-3}G$ and the unweighted one at most $C\alpha^{-4}\ue^{-c_M\xi/8}G$. After the H\"older split, using $\varepsilon,\alpha\le1$,
 \[
-\norm{\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)}\le C\,F\,R,\qquad R:=\hbar t\,\ue^{\lambda t}\,\varepsilon^{-3}\,\alpha^{-4}\,\ue^{-(1-\theta)c_M\xi/8}.
+\norm{\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)}\le C\,G\,R,\qquad R:=\hbar t\,\ue^{\lambda t}\,\varepsilon^{-3}\,\alpha^{-4}\,\ue^{-(1-\theta)c_M\xi/8}.
 \]
 For $t\le\delta\xi$ with $\delta\le(1-\theta)c_M/(16\lambda)$: $\ue^{\lambda t}\le\ue^{(1-\theta)c_M\xi/16}$. Since $\alpha^3\ge\kappa\hbar$ and $\alpha\le1$,
 \[
 \alpha^{-1}\le \xi/\sqrt\kappa,\qquad\varepsilon^{-1}=2\xi/\alpha\le2\xi^2/\sqrt\kappa,\qquad\hbar t\le\delta\hbar\xi=\delta\alpha/\xi\le\delta/\xi .
 \]
 Hence $R\le C(\beta,\kappa)\,\xi^{9}\,\ue^{-(1-\theta)c_M\xi/16}\le C(\beta,\kappa)\,\xi^{-2}$, and $\xi^{-2}=\hbar/\alpha\le\alpha^2/\kappa$. So $R\le C(\beta,\kappa)\alpha^2$, and
-the defect part is at most $C\alpha^2F$.
+the defect part is at most $C\alpha^2G$.
 
 
 \medskip\noindent\emph{Step 3 (collecting).}
@@ -136,7 +131,7 @@ Integration over $\Sigma_{K+1}(t)$ gives $t^{K+1}/(K+1)!$. We use
  (2N)!\le4^NN^{2N}.
 \end{equation}
 The first bound follows from $\binom{2K+4}{K+2}\le4^{K+2}$; for the second, bound each of the $2N$ factors by $2N$. The smaller factorial $(2K+2)!$ obeys the same bound. Finally,
-$\hbar^{K+1}t^{K+1}\alpha^{-(2K+2)}=(\hbar t/\alpha^2)^{K+1}$, and $\alpha^2F$ carries $\alpha^{-(2K+2)}$.
+$\hbar^{K+1}t^{K+1}\alpha^{-(2K+2)}=(\hbar t/\alpha^2)^{K+1}$, and $\alpha^2G$ carries $\alpha^{-(2K+2)}$.
 
 Hence
 \[
@@ -150,14 +145,23 @@ The transport growth $\ue^{\lambda t}$ is absorbed when $\delta\le(1-\theta)c_M/
 
 So $\delta:=\min\bigl(\tfrac12,\;c_A/6,\;(1-\theta)c_M/(16\lambda)\bigr)$ works.
 
-\medskip\noindent\emph{Dependence on $\Gamma$.} The group enters only through Lemma~\ref{lem:t2}, used in Steps~1 and~2 with exponent $\lambda$, whose
+\medskip\noindent\emph{Dependence on $\Gamma$ and $x_0$.} The reduction of Step~0 preserves $P_\Gamma(\beta+\tfrac12)$
+(Lemma~\ref{lem:base}(iii)). The group enters only through Lemma~\ref{lem:t2}, used in Steps~1 and~2 with exponent $\lambda$, whose
 constant $C(\Gamma,\lambda)=2^\lambda P_\Gamma(2\lambda)^{1/2}$ depends on $\Gamma$ only through the Poincar\'e series bound $P_\Gamma(2\lambda)$, $2\lambda=\beta+\tfrac12$.
-All other inputs are estimates on $\Hb$. So $\delta$ does not depend on $\Gamma$, and $C$ depends on $\Gamma$ only through $P_\Gamma(\beta+\tfrac12)$;
-this is part~(ii), the uniformity used in Theorem~\ref{thm:dd14}.
+All other inputs are estimates on $\Hb$. So $\delta$ does not depend on $\Gamma$ or $x_0$, and $C$ depends on them only through
+$P_\Gamma(\beta+\tfrac12)$.
+
+\medskip\noindent\emph{Radii $1<\alpha\le A$.} The power-weight norm increases with the radius, since
+$\ue^{\Lambda}=\ue^{-(\alpha-1)\Lambda}\ue^{\alpha\Lambda}$ and $\ue^{-\tau\Lambda}$ is a contraction for $\tau\ge0$. Apply the case already proved
+at the radius $1$ with $1$ in place of $\kappa$ (then $1\ge\hbar$), and let $C_1,\delta_1$ be its constants. For
+$t\le\delta_1A^{-1/2}(\alpha/\hbar)^{1/2}$ we have $t\le\delta_1\hbar^{-1/2}$, and
+$\hbar^{-2N}(\hbar t)^{K+1}\le A^{2N+2K+2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$. So the bound holds for $1<\alpha\le A$ with
+$\delta_1A^{-1/2}$ and $A^2C_1$; take the smaller of the two values of $\delta$ and the larger of the two values of $C$. Both
+cases have the stated dependence on $\Gamma$ and $x_0$.
 \end{proof}
 
 
-\subsection{The reversed-weight class}\label{sec:swapped}
+\subsection{Proof of Theorem~\texorpdfstring{\ref{thm:dd14}}{1.2}}\label{sec:swapped}
 We now transfer the power-weight estimate to the norm $\swNorm a=\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}$, with spatial
 decay imposed on the amplitude, first for radii $\alpha\le\tfrac12$ and then, by the monotonicity of this norm in the radius, for
 every bounded range of radii. By Lemma~\ref{lem:m2w}, a finite norm $\swNorm a$ at radius $\alpha$ gives a finite norm with the
@@ -168,7 +172,7 @@ $c_0=c_0(\beta)\in(0,1]$.
 \emph{Radii $0<\alpha\le\tfrac12$.} Let $c_0$ and $C'$ be the constants $c_0$ and $C$ of Lemma~\ref{lem:m2w}. If $\alpha\le\tfrac12$ and
 $\alpha^3\ge\kappa\hbar$, then $\bar\alpha:=c_0\alpha\le c_0/2$, $\bar\alpha^3\ge c_0^3\kappa\hbar$ and
 $\norm{\ue^{\bar\alpha\Lambda}X_0^\beta a}\le C'\swNorm a$. Apply Theorem~\ref{thm:dd-appx} with $c_0/2$, $c_0^3\kappa$ and $\bar\alpha$
-in place of $\alpha_0$, $\kappa$ and $\alpha$, and let $C_{\rm pw},\delta_{\rm pw}$ be its constants. Its
+in place of $A$, $\kappa$ and $\alpha$, and let $C_{\rm pw},\delta_{\rm pw}$ be its constants. Its
 window $t\le\delta_{\rm pw}(\bar\alpha/\hbar)^{1/2}$ is the window $t\le\delta_{\rm s}(\alpha/\hbar)^{1/2}$ with $\delta_{\rm s}:=c_0^{1/2}\delta_{\rm pw}$, and
 $(\bar\alpha\hbar)^{-2N}(\hbar t/\bar\alpha^2)^{K+1}=c_0^{-2N-2K-2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$. So the bound holds for
 $\alpha\le\tfrac12$ with the constants $\delta_{\rm s}$ and $C_{\rm s}:=C_{\rm pw}\,c_0^{-2}\max(1,C')$.
@@ -181,6 +185,7 @@ $(\tfrac12\hbar)^{-2N}(4\hbar t)^{K+1}\le(2A)^{2N+2K+2}(\alpha\hbar)^{-2N}(\hbar
 $\tfrac12<\alpha\le A$ with $\delta_{1/2}(2A)^{-1/2}$ and $(2A)^2C_{1/2}$. Take $\delta:=\min(\delta_{\rm s},\delta_{1/2}(2A)^{-1/2})$ and
 $C:=\max(C_{\rm s},(2A)^2C_{1/2})$.
 
-In both cases the group enters only through Theorem~\ref{thm:dd-appx}, whose $\delta_{\rm pw}$ does not depend on $\Gamma$ and whose
-$C_{\rm pw}$ depends on $\Gamma$ only through $P_\Gamma(\beta+\tfrac12)$ (part (ii)); so the same holds for $\delta$ and $C$.
+In both cases the group and the base point enter only through Theorem~\ref{thm:dd-appx}, whose $\delta_{\rm pw}$ does not depend
+on them and whose $C_{\rm pw}$ depends on them only through $P_\Gamma(\beta+\tfrac12)$; Lemma~\ref{lem:m2w} holds for every base
+point with the same constants. So the same holds for $\delta$ and $C$.
 \end{proof}

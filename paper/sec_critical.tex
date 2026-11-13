@@ -51,20 +51,20 @@ $r\mapsto\langle h,\cos(rD)f_n\rangle$ vanishes on $|r|<T(k,n)$. Hence
 $\norm{1_k\mathsf Gf_n}\le\int_{|r|\ge T(k,n)}|g|\,\norm{f_n}\le B\,\ue^{-T/2}(1+T)^{-3/2}\norm{f_n}$, and by \eqref{os:shell}
 \[
 \begin{gathered}
-\norm{\osomc1_k\mathsf Gf_n}\le\mathsf B(k,n)\,\theta_n,\\
-\mathsf B(k,n):=C\,B\,\Bigl(\frac{1+k}{1+n}\Bigr)^c(1+|k-n|)^{-3/2}\times
+\norm{\osomc1_k\mathsf Gf_n}\le\mathsf K(k,n)\,\theta_n,\\
+\mathsf K(k,n):=C\,B\,\Bigl(\frac{1+k}{1+n}\Bigr)^c(1+|k-n|)^{-3/2}\times
 \begin{cases}1,&k\ge n,\\ \ue^{-(n-k)},&k<n.\end{cases}
 \end{gathered}
 \]
-Since $\mathsf Gf=\sum_n\mathsf Gf_n$ in $L^2$, $\norm{\osomc\mathsf Gf}^2\le\sum_k\bigl(\sum_n\mathsf B(k,n)\theta_n\bigr)^2$. We apply the Schur test on
+Since $\mathsf Gf=\sum_n\mathsf Gf_n$ in $L^2$, $\norm{\osomc\mathsf Gf}^2\le\sum_k\bigl(\sum_n\mathsf K(k,n)\theta_n\bigr)^2$. We apply the Schur test on
 $\mathbb N_0$ with the weights $p_n=(1+n)^{-1/2}$.
 \begin{itemize}
-\item $\sum_n\mathsf B(k,n)p_n\le C'B\,p_k$. For $n\ge k/2$: $((1+k)/(1+n))^c\le2^c$, $p_n\le\sqrt2\,p_k$, and $\sum_j(1+j)^{-3/2}<\infty$. For $n<k/2$:
-$\mathsf B(k,n)p_n\le CB(1+k)^{c-3/2}(1+n)^{-c-1/2}$; the sum over $n$ converges because $c>\tfrac12$, and $(1+k)^{c-3/2}\le p_k$ because $c<1$.
-\item $\sum_k\mathsf B(k,n)p_k\le C'B\,p_n$. For $k<n$: $((1+k)/(1+n))^cp_k\le p_n$ because $c>\tfrac12$. For $n\le k\le2n+1$: $((1+k)/(1+n))^c\le2^c$ and
-$p_k\le p_n$. For $k>2n+1$: $\mathsf B(k,n)p_k\le CB(1+n)^{-c}(1+k)^{c-2}$, and $\sum_{k>2n+1}(1+k)^{c-2}\le C(1+n)^{c-1}$ because $c<1$.
+\item $\sum_n\mathsf K(k,n)p_n\le C'B\,p_k$. For $n\ge k/2$: $((1+k)/(1+n))^c\le2^c$, $p_n\le\sqrt2\,p_k$, and $\sum_j(1+j)^{-3/2}<\infty$. For $n<k/2$:
+$\mathsf K(k,n)p_n\le CB(1+k)^{c-3/2}(1+n)^{-c-1/2}$; the sum over $n$ converges because $c>\tfrac12$, and $(1+k)^{c-3/2}\le p_k$ because $c<1$.
+\item $\sum_k\mathsf K(k,n)p_k\le C'B\,p_n$. For $k<n$: $((1+k)/(1+n))^cp_k\le p_n$ because $c>\tfrac12$. For $n\le k\le2n+1$: $((1+k)/(1+n))^c\le2^c$ and
+$p_k\le p_n$. For $k>2n+1$: $\mathsf K(k,n)p_k\le CB(1+n)^{-c}(1+k)^{c-2}$, and $\sum_{k>2n+1}(1+k)^{c-2}\le C(1+n)^{c-1}$ because $c<1$.
 \end{itemize}
-So $\sum_k(\sum_n\mathsf B(k,n)\theta_n)^2\le(C'B)^2\sum_n\theta_n^2=(C'B)^2\norm{\osomc f}^2$.
+So $\sum_k(\sum_n\mathsf K(k,n)\theta_n)^2\le(C'B)^2\sum_n\theta_n^2=(C'B)^2\norm{\osomc f}^2$.
 \end{proof}
 
 The cosine-transform representations and tail bounds needed to apply Theorem~\ref{os:cw}
@@ -97,13 +97,11 @@ a=\ue^{-\sigma\Lambda_m}\tilde f,\qquad\norm{\osomc\tilde f}\le C\,\pcNorm a,
 \]
 with $C=C(m,c,\beta)$.
 \end{proposition}
-The condition $\sigma m\le\tfrac12$ is not used in the proof. It is the range of the formal statement
-(Appendix~\ref{app:lean}), and the applications in Section~\ref{subsec:pc-proof} satisfy it.
 \begin{proof}
 The identity is the bounded functional calculus: $-\sigma\Lambda_m+\sigma(\Lambda_m-\osLam)-(\alpha-\sigma)\osLam=-\alpha\osLam$. The operator
-$\mathsf B:=\Lambda_m-\osLam$ is bounded, and $\ue^{\sigma\mathsf B}=\sum_k\sigma^k\mathsf B^k/k!$ in operator norm. By Corollary~\ref{os:cwp},
-$\norm{\osomc\mathsf B^kf}\le C_{\Lambda_m}^k\norm{\osomc f}$, so the partial sums are bounded in the weighted norm by $\ue^{\sigma C_{\Lambda_m}}\norm{\osomc f}$, and
-Fatou's lemma gives $\norm{\osomc\ue^{\sigma\mathsf B}f}\le\ue^{C_{\Lambda_m}}\norm{\osomc f}$. Then apply Corollary~\ref{os:cwp} to
+$\mathsf S:=\Lambda_m-\osLam$ is bounded, and $\ue^{\sigma\mathsf S}=\sum_k\sigma^k\mathsf S^k/k!$ in operator norm. By Corollary~\ref{os:cwp},
+$\norm{\osomc\mathsf S^kf}\le C_{\Lambda_m}^k\norm{\osomc f}$, so the partial sums are bounded in the weighted norm by $\ue^{\sigma C_{\Lambda_m}}\norm{\osomc f}$, and
+Fatou's lemma gives $\norm{\osomc\ue^{\sigma\mathsf S}f}\le\ue^{C_{\Lambda_m}}\norm{\osomc f}$. Then apply Corollary~\ref{os:cwp} to
 $\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=C_\Lambda\,\ue^{C_{\Lambda_m}}$ works. For the consequence put $f=\ue^{\alpha\osLam}a$, so $a=\ue^{-\alpha\osLam}f$. Since $\tilde\psi\le d\le\langle d\rangle+1$ and
 $\beta>\tfrac12$, $\osomc\le\ue^{d/2}(1+d/\log2)\le C_\beta\,\ue^{\beta\langle d\rangle}$.
 \end{proof}
@@ -171,8 +169,7 @@ Periodization at the same weight then turns these estimates into bounds on the q
 
 \begin{lemma}[transfer over shells]\label{os:transfer}
 Let $0\le c\le1$ and $C_{\mathrm{sh}}>0$, and let $\varpi$ be a measurable weight with $\ue^{n/2}(1+n)^c\le\varpi\le C_{\mathrm{sh}}\,\ue^{n/2}(1+n)^c$ on $A_n$ for
-every $n\ge0$; by \eqref{os:shell}, $\varpi=\osomc$ with $C_{\mathrm{sh}}=3\ue^{1/2}$ is an example. Let $T:L^2(\Hb)\to L^2(\Hb)$ be additive
-(the maps of the applications are linear; the proof uses only additivity), and let
+every $n\ge0$; by \eqref{os:shell}, $\varpi=\osomc$ with $C_{\mathrm{sh}}=3\ue^{1/2}$ is an example. Let $T:L^2(\Hb)\to L^2(\Hb)$ be additive, for example linear, and let
 $0<\mathcal M_0\le \mathcal M_1$ be such that
 \begin{itemize}
 \item[(a)] $\norm{Tu}\le \mathcal M_0\norm u$ for all $u\in L^2$, and

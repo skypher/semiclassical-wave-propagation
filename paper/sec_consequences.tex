@@ -16,8 +16,8 @@ There is an absolute constant $C$ such that every $u\in\operatorname{Dom}(\Delta
 sense of distributions on $\Hb$: for $\phi\in C_c^\infty(\Hb)$, unfolding gives
 $\langle\tilde u,\Delta\phi\rangle_{\Hb}=\langle u,(\Delta\phi)_\Gamma\rangle_M=\langle u,\Delta_M\phi_\Gamma\rangle_M=\langle f,\phi_\Gamma\rangle_M=\langle\tilde f,\phi\rangle_{\Hb}$.
 
-\emph{Step 2 (counting).} For a $\Gamma$-invariant $\tilde h$ and a fundamental domain $F$,
-$\int_{B(\tilde z,1)}|\tilde h|^2d\nu=\int_Fn(w)|h(w)|^2d\nu(w)$, where $n(w):=\#\{\gamma:\gamma w\in B(\tilde z,1)\}$. If $\gamma_0w$ and $\gamma w$ both lie in
+\emph{Step 2 (counting).} For a $\Gamma$-invariant $\tilde h$ and a fundamental domain $\mathfrak F$,
+$\int_{B(\tilde z,1)}|\tilde h|^2d\nu=\int_{\mathfrak F}n(w)|h(w)|^2d\nu(w)$, where $n(w):=\#\{\gamma:\gamma w\in B(\tilde z,1)\}$. If $\gamma_0w$ and $\gamma w$ both lie in
 $B(\tilde z,1)$, then $d(\tilde z,\gamma\gamma_0^{-1}\tilde z)<2$; hence $n(w)\le m(z)$ and $\int_{B(\tilde z,1)}|\tilde h|^2\le m(z)\norm{h}^2_{L^2(M)}$. In
 particular $\tilde u$ and $\tilde f$ are locally square integrable. The number $m(z)$ is finite because $\Gamma$ acts properly
 discontinuously, and it does not depend on the lift: for another lift $\gamma_0\tilde z$, the map $\gamma\mapsto\gamma_0^{-1}\gamma\gamma_0$ is a
@@ -58,8 +58,7 @@ Sobolev bounds from $L^1(M)$ of \cite[(3.3), (3.4)]{S}, on which \cite[Propositi
 
 \subsection{Truncation and pointwise consequences}\label{subsec:pc-cor}\label{subsec:dd-cor}
 \begin{proof}[Proof of Corollary~\ref{pc:thm13}]
-For the original norm this is Theorem~\ref{pc:main} with $P=P^{\mathrm{cr}}_\Gamma$ and $K=N=0$; for the reversed-weight norm it is
-Theorem~\ref{thm:dd14} with $K=N=0$.
+This is Theorem~\ref{pc:main}, respectively Theorem~\ref{thm:dd14}, with $K=N=0$.
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{pc:cor15}]
@@ -92,8 +91,7 @@ Appendix~\ref{sec:changes} compares this range of $K$ with the one stated in \ci
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{pc:cor16}]
-Let $E$ be the bracket in the statement. By Theorem~\ref{pc:main} with $P=P^{\mathrm{cr}}_\Gamma$, respectively Theorem~\ref{thm:dd14},
-at $N$ and at $N+1$, $u:=\Delta^NE$ lies in $\operatorname{Dom}(\Delta_M)$. Apply
+Let $E$ be the bracket in the statement. By Theorem~\ref{pc:main}, respectively Theorem~\ref{thm:dd14}, at $N$ and at $N+1$, $u:=\Delta^NE$ lies in $\operatorname{Dom}(\Delta_M)$. Apply
 Lemma~\ref{pc:g43} to $u$, and use $N^{2N}\le(\ue/2)^{2N}(2N)!$, $(N+1)^{2N+2}\le54^{N+1}(2N)!$ and, at the end,
 $(2N)!\le4^NN^{2N}$.
 The estimates at $N$ and $N+1$ carry the factors $(\alpha\hbar)^{-2N}$ and
@@ -119,11 +117,9 @@ the fixed factors $\alpha^{-2}$ and $\alpha^{1/2}$ are absorbed into $C$ and $\d
 
 \begin{remark}[the power-weight norm]\label{rem:pw-cor}\label{cor:dd15-appx}\label{cor:dd16-appx}
 The proofs of Corollaries~\ref{pc:cor15} and~\ref{pc:cor16} use only the estimate of the approximation theorem, at $N$ and
-$N+1$, and Lemma~\ref{pc:g43}. With Theorem~\ref{thm:dd-appx}(i) in its place they hold for the power-weight norm: under the
-hypotheses of Theorem~\ref{thm:dd-appx}(i), with $\pwNorm a$ in place of $\norm a_{\mathcal A}$ and, in Corollary~\ref{pc:cor15},
-with constants $C\ge1$ and $\delta>0$ for which the estimate of Theorem~\ref{thm:dd-appx}(i) holds; in
-Corollary~\ref{pc:cor16} the constants depend on $\Gamma$, $\beta$, $\kappa$, $x_0$ and $\alpha_0$, and on $r_0$ in its last
-statement.
+$N+1$, and Lemma~\ref{pc:g43}. With Theorem~\ref{thm:dd-appx} in its place they hold for the power-weight norm, with $\pwNorm a$ in
+place of $\norm a_{\mathcal A}$, under the hypotheses of Theorem~\ref{thm:dd-appx} and with the dependence of the constants stated
+for the reversed-weight norm.
 \end{remark}
 
 

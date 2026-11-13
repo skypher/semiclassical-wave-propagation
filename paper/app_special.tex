@@ -8,9 +8,9 @@ are stated in the body of the paper.
 \begin{proof}[Proof of Lemma~\ref{lem:fc}]
 \medskip\noindent\emph{Reduction.}
 We use the Kontorovich--Lebedev picture of Section~\ref{app:kl}: after Fourier transform in $x$, on the mode $\ue^{ikx}$, $k\ne0$,
-with $z=|k|y$ and the function of $y$ written as $z^{1/2}f(z)$, $f\in L^2(dz/z)$, we have $-\Delta-\tfrac14=-(z\partial_z)^2+z^2$,
-$X=i\,\operatorname{sgn}(k)\,z$ and $Y=z\partial_z+\tfrac12$. Thus $\mathring Y:=Y-\tfrac12=z\partial_z=:D_z$ is skew-adjoint on $L^2(dz/z)$.
-The transform $F(r)=\int_0^\infty K_{ir}(z)f(z)\,dz/z$, with the density $w(r)=\tfrac{2}{\pi^2}r\sinh\pi r$, makes $\Lambda$ the
+with $\zeta=|k|y$ and the function of $y$ written as $\zeta^{1/2}f(\zeta)$, $f\in L^2(d\zeta/\zeta)$, we have $-\Delta-\tfrac14=-(\zeta\partial_\zeta)^2+\zeta^2$,
+$X=i\,\operatorname{sgn}(k)\,\zeta$ and $Y=\zeta\partial_\zeta+\tfrac12$. Thus $\mathring Y:=Y-\tfrac12=\zeta\partial_\zeta=:D_\zeta$ is skew-adjoint on $L^2(d\zeta/\zeta)$.
+The transform $F(r)=\int_0^\infty K_{ir}(\zeta)f(\zeta)\,d\zeta/\zeta$, with the density $w(r)=\tfrac{2}{\pi^2}r\sinh\pi r$, makes $\Lambda$ the
 multiplication by $\Lambda(r)=(r^2+\tfrac14)^{1/2}$, and the operators are the same for every $k$, so bounds are uniform in $k$. The mode $k=0$ has measure zero in the direct integral over $k$ and can be ignored. Put $\sigma:=\alpha'-\alpha''$ and write
 \[
 \ue^{\alpha''\Lambda}Z\ue^{-\alpha'\Lambda}=\bigl(\ue^{\alpha''\Lambda}Z\ue^{-\alpha''\Lambda}\Lambda^{-1}\bigr)\bigl(\Lambda\ue^{-\sigma\Lambda}\bigr).
@@ -24,26 +24,26 @@ The second factor has norm $\le\sup_{\lambda\ge1/2}\lambda\ue^{-\sigma\lambda}\l
 
 \medskip\noindent\emph{Mellin product formula.} For $\operatorname{Re}s>|\operatorname{Re}\mu_1|+|\operatorname{Re}\mu_2|$,
 \[
-M_s(\mu_1,\mu_2):=\int_0^\infty z^{s-1}K_{\mu_1}(z)K_{\mu_2}(z)\,dz=2^{s-3}\,\frac{\Gamma\bigl(\tfrac{s+\mu_1+\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s+\mu_1-\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s-\mu_1+\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s-\mu_1-\mu_2}{2}\bigr)}{\Gamma(s)}.
+M_s(\mu_1,\mu_2):=\int_0^\infty \zeta^{s-1}K_{\mu_1}(\zeta)K_{\mu_2}(\zeta)\,d\zeta=2^{s-3}\,\frac{\Gamma\bigl(\tfrac{s+\mu_1+\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s+\mu_1-\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s-\mu_1+\mu_2}{2}\bigr)\Gamma\bigl(\tfrac{s-\mu_1-\mu_2}{2}\bigr)}{\Gamma(s)}.
 \]
 \emph{Proof of the formula.} Write $K_{\mu_2}=K_{-\mu_2}$ (\cite[10.27.3]{DLMF}) and use the integral representation
-\cite[10.32.10]{DLMF} for both Bessel factors. The integration in $z$ is
+\cite[10.32.10]{DLMF} for both Bessel factors. The integration in $\zeta$ is
 \[
-\int z^{\ell-1}\ue^{-z^2c/4}\,dz=\tfrac12(4/c)^{\ell/2}\Gamma(\ell/2),
+\int \zeta^{\ell-1}\ue^{-\zeta^2c/4}\,d\zeta=\tfrac12(4/c)^{\ell/2}\Gamma(\ell/2),
 \qquad \ell=s+\mu_1-\mu_2,\quad c=1/u+1/v.
 \]
 Substitute $u=R\tau$ and $v=R(1-\tau)$ in the remaining double integral. The $R$-integral gives
 $\Gamma(\tfrac{s-\mu_1+\mu_2}{2})$, and the $\tau$-integral gives the beta function
 $\Gamma(\tfrac{s-\mu_1-\mu_2}{2})\Gamma(\tfrac{s+\mu_1+\mu_2}{2})/\Gamma(s)$, yielding the formula above.
-The absolute integrand is the same expression with $\mu_1,\mu_2$ replaced by $\operatorname{Re}\mu_1,\operatorname{Re}\mu_2$ (since $|(z/2)^{\mu_1}|=(z/2)^{\operatorname{Re}\mu_1}$). For $\operatorname{Re}s>|\operatorname{Re}\mu_1|+|\operatorname{Re}\mu_2|$ the same computation then gives a finite value with all Gamma arguments of positive real part, so Tonelli justifies every exchange. This covers $\mu_1=i r$, $\mu_2=i r'$ at $s=1$, and $\mu_2=i r'\pm1$ at $s=1+\eta$, $\eta>0$. This proves the formula.
+The absolute integrand is the same expression with $\mu_1,\mu_2$ replaced by $\operatorname{Re}\mu_1,\operatorname{Re}\mu_2$ (since $|(\zeta/2)^{\mu_1}|=(\zeta/2)^{\operatorname{Re}\mu_1}$). For $\operatorname{Re}s>|\operatorname{Re}\mu_1|+|\operatorname{Re}\mu_2|$ the same computation then gives a finite value with all Gamma arguments of positive real part, so Tonelli justifies every exchange. This covers $\mu_1=i r$, $\mu_2=i r'$ at $s=1$, and $\mu_2=i r'\pm1$ at $s=1+\eta$, $\eta>0$. This proves the formula.
 
-\medskip\noindent\emph{(X) Kernel of $z$.}
-Since the measure is $dz/z$, the kernel of multiplication by $z$ is $(w w')^{1/2}M_1(ir,ir')$. The identity $|\Gamma(\tfrac12+iy)|^2=\pi/\cosh\pi y$ gives
+\medskip\noindent\emph{(X) Kernel of $\zeta$.}
+Since the measure is $d\zeta/\zeta$, the kernel of multiplication by $\zeta$ is $(w w')^{1/2}M_1(ir,ir')$. The identity $|\Gamma(\tfrac12+iy)|^2=\pi/\cosh\pi y$ gives
 \[
 k_1(r,r')=(ww')^{1/2}\frac{\pi^2}{4\cosh p\cosh q}=\frac{(rr')^{1/2}(\cosh^2p-\cosh^2q)^{1/2}}{2\cosh p\cosh q},
 \]
 so $|k_1|\le(rr')^{1/2}/(2\cosh q)$.
-The kernel of $\ue^{\alpha''\Lambda}z\ue^{-\alpha''\Lambda}\Lambda^{-1}$ is bounded by
+The kernel of $\ue^{\alpha''\Lambda}\zeta\ue^{-\alpha''\Lambda}\Lambda^{-1}$ is bounded by
 \[
 \frac{\ue^{\alpha''|x|}(rr')^{1/2}}{2\cosh(\pi x/2)\,\Lambda(r')}.
 \]
@@ -53,10 +53,10 @@ Since $(rr')^{1/2}\le(r+r')/2\le r'+|x|/2$ and $\Lambda(r')\ge\max(r',1/2)$, we 
 \]
 So the kernel is at most $g(x):=(1+|x|)\ue^{\tau_0|x|}/(2\cosh(\pi x/2))$, which is integrable for $\tau_0<\pi/2$. The Schur test gives the bound $\int g$.
 
-\medskip\noindent\emph{(Y) Kernel of $D_z$.} The integral $\int K_{ir}K'_{ir'}\,dz$ does not converge at $z=0$, so we regularize.
+\medskip\noindent\emph{(Y) Kernel of $D_\zeta$.} The integral $\int K_{ir}K'_{ir'}\,d\zeta$ does not converge at $\zeta=0$, so we regularize.
 Let $F_f,F_g\in C_c^\infty((0,\infty))$ be the KL transforms of $f,g$ (the core $\mathcal C$).
-On $\mathcal C$, $f(\ue^{-L})$ and $zg'(z)|_{z=\ue^{-L}}$ decay faster than any power of $L$ as $L\to\infty$: they are integrals of smooth compactly supported densities against $\ue^{\pm ir L}$-oscillations, plus $O(\ue^{-2L})$. This uses $K_{ir}=\tfrac12\pi(I_{-i r}-I_{i r})/\sin(i r\pi)$ (\cite[10.27.4]{DLMF}) with the series of $I_{\pm ir}$ (\cite[10.25.2]{DLMF}), and $1/\sin(i r\pi)$ is smooth on $\operatorname{supp}F_f\cup\operatorname{supp}F_g\subset(0,\infty)$.
-Hence $\langle f,D_zg\rangle=\int_0^\infty\bar f g'\,dz=\lim_{\eta\to0^+}\int z^\eta\bar fg'\,dz$, by dominated convergence.
+On $\mathcal C$, $f(\ue^{-L})$ and $\zeta g'(\zeta)|_{\zeta=\ue^{-L}}$ decay faster than any power of $L$ as $L\to\infty$: they are integrals of smooth compactly supported densities against $\ue^{\pm ir L}$-oscillations, plus $O(\ue^{-2L})$. This uses $K_{ir}=\tfrac12\pi(I_{-i r}-I_{i r})/\sin(i r\pi)$ (\cite[10.27.4]{DLMF}) with the series of $I_{\pm ir}$ (\cite[10.25.2]{DLMF}), and $1/\sin(i r\pi)$ is smooth on $\operatorname{supp}F_f\cup\operatorname{supp}F_g\subset(0,\infty)$.
+Hence $\langle f,D_zg\rangle=\int_0^\infty\bar f g'\,d\zeta=\lim_{\eta\to0^+}\int \zeta^\eta\bar fg'\,d\zeta$, by dominated convergence.
 For $\eta>0$ Fubini applies, and $K'_\mu=-(K_{\mu-1}+K_{\mu+1})/2$ (\cite[10.29.1]{DLMF}, with $\mathcal Z_\mu=\ue^{\mu\pi i}K_\mu$ in DLMF's convention, under which 10.29.1 reads $\mathcal Z_{\mu-1}+\mathcal Z_{\mu+1}=2\mathcal Z'_\mu$ and gives the minus sign for $K$) gives
 \[
 \begin{gathered}
@@ -80,15 +80,15 @@ For $x\neq0$ the pointwise limit is $I_0=-\pi^2/(4\sinh p\,\sinh q)$ (same Gamma
 \[
 \langle f,D_zg\rangle=\mathrm{PV}\iint\bar F_fF_g\,w\,w'\,I_0,
 \]
-so the kernel of $D_z$ in the unitary picture is
+so the kernel of $D_\zeta$ in the unitary picture is
 \[
 \tilde D(r,r')=-\frac{(rr')^{1/2}\rho(r,r')}{2\sinh q},\qquad
 \rho:=\Bigl(1-\frac{\sinh^2q}{\sinh^2p}\Bigr)^{1/2}\in[0,1].
 \]
 
-This kernel is real and antisymmetric, as $D_z$ must be.
+This kernel is real and antisymmetric, as $D_\zeta$ must be.
 
-\medskip\noindent\emph{(Y) bound.} The kernel of $Q:=\ue^{\alpha''\Lambda}D_z\ue^{-\alpha''\Lambda}\Lambda^{-1}$ is $\ue^{\alpha''(\Lambda(r)-\Lambda(r'))}\tilde D(r,r')/\Lambda(r')$. It is valid on $\mathcal C$, because $\ue^{\pm\alpha''\Lambda}$ and $\Lambda^{-1}$ preserve $\mathcal C$. Split $Q=Q_{\rm far}+Q_{\rm near}$, with $Q_{\rm near}:=Q\cdot\mathbf 1_{|x|\le1}$.
+\medskip\noindent\emph{(Y) bound.} The kernel of $Q:=\ue^{\alpha''\Lambda}D_\zeta\ue^{-\alpha''\Lambda}\Lambda^{-1}$ is $\ue^{\alpha''(\Lambda(r)-\Lambda(r'))}\tilde D(r,r')/\Lambda(r')$. It is valid on $\mathcal C$, because $\ue^{\pm\alpha''\Lambda}$ and $\Lambda^{-1}$ preserve $\mathcal C$. Split $Q=Q_{\rm far}+Q_{\rm near}$, with $Q_{\rm near}:=Q\cdot\mathbf 1_{|x|\le1}$.
 
 \emph{The part $Q_{\rm far}$.} Here $|Q|\le(1+|x|)\ue^{\tau_0|x|}/(2\sinh(\pi|x|/2))$ on $|x|>1$. This is integrable, so the Schur test applies.
 
@@ -113,7 +113,7 @@ $(1-\rho)s\le|x|(rr')^{1/2}/((r+r')\Lambda(r'))\le|x|$.
 Finally, $|s(r)-s(r')|=|\sqrt r-\sqrt{r'}|\sqrt{r'}/\Lambda(r')\le|x|^{1/2}$,
 since $\sqrt{r'}/\Lambda(r')\le1$.
 So the remainder kernel is $\le C|x|^{-1/2}$ on $|x|\le1$, which is integrable. The Schur test therefore bounds the remainder.
-Combining the near and far bounds gives $\norm{Q}\le C(\tau_0)$ on $\mathcal C$, so $Q$ extends to a bounded operator. The bound for $\ue^{\alpha''\Lambda}D_z\ue^{-\alpha'\Lambda}$ follows on the dense set $\Lambda\ue^{-\sigma\Lambda}\mathcal C$, and then by closure. \qedhere
+Combining the near and far bounds gives $\norm{Q}\le C(\tau_0)$ on $\mathcal C$, so $Q$ extends to a bounded operator. The bound for $\ue^{\alpha''\Lambda}D_\zeta\ue^{-\alpha'\Lambda}$ follows on the dense set $\Lambda\ue^{-\sigma\Lambda}\mathcal C$, and then by closure. \qedhere
 \end{proof}
 
 

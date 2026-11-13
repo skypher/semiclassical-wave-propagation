@@ -19,12 +19,12 @@ All Lean names are in the namespace `Qschubert`.
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Theorem 1.1 (`pc:main`) | L | `pcmain_unif`; for one group `pcmain_all`, small-radius stage `pcmain_half` |
-| Theorem 1.2 (`thm:dd14`) | L | `thm14Rmain_all` (every bounded range of radii, from `thm14Rmain_exp` and `swNormD_mono`) |
-| Corollary 1.3 (`pc:thm13`) | L | original norm: `pcthm13_all`; reversed-weight norm: `thm13Rmain_all` |
-| Corollary 1.4 (`pc:cor15`) | L | original norm: `pccor15_tied`; reversed-weight norm: `cor15Rmain_tied` (exponent `β+1/2`); constants with `C\ge1`: `pcThmCD_exists`, `rThmCD_exists` |
-| Corollary 1.5 (`pc:cor16`) | L | original norm: `pccor16_allN`, positive injectivity radius `pccor16bg_allN`; reversed-weight norm: `cor16Rmain_allmultN`, positive injectivity radius `cor16Rmain_allbgN` |
+| Theorem 1.2 (`thm:dd14`) | L | `thm14Rmain_unif` (uniform in the group and the base point, every bounded range of radii; from `thm14R_unifX`, `swX_le_swD` and `swNormD_mono`); for a fixed base point `thm14Rmain_all` |
+| Corollary 1.3 (`pc:thm13`) | L | original norm: `pcthm13_unif`; reversed-weight norm: `thm13Rmain_unif` |
+| Corollary 1.4 (`pc:cor15`) | L | original norm: `pccor15_tied`; reversed-weight norm: `cor15Rmain_tiedG`; constants with `C\ge1`: `pcThmCD_exists`, `rThmCDG_exists` |
+| Corollary 1.5 (`pc:cor16`) | L | original norm: `pccor16_unifN`, positive injectivity radius `pccor16bg_unifN`; reversed-weight norm: `cor16Rmain_unifmultN`, positive injectivity radius `cor16Rmain_unifbgN`; local Sobolev step `ptN_of_L2` |
 | Proposition 1.6 (`prop:g5`) | L | `propG5`; the negation of Schubert's bound is `printedThm13_false` |
-| Theorem 1.7 (`cl:necessary`) | P | deduced from Theorem 9.1 (`cl:main`); not formalized |
+| Theorem 1.7 (`cl:necessary`) | P | deduced from Theorem 7.1 (`cl:main`); not formalized |
 | Theorem 1.8 (`ev:mod`) | L′ | parts (i), (ii): `evmod`, with the statement `Stmt_evmod`; part (iii) is a cited theorem and is not formalized |
 
 ## Section 2 (`sec:remainder`): periodization and the exact remainder
@@ -67,7 +67,7 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Theorem 4.1 (`thm:dd-appx`) | L | (i) `thm14R_rep`; (ii), the uniformity over groups: `thm14R_unifX`, stated for smooth amplitudes and radii up to 1 |
+| Theorem 4.1 (`thm:dd-appx`) | L | `thm14R_all` (from `thm14R_unifX`, `lift1` and `swNormX_mono`) |
 
 ## Section 5 (`sec:printed`): original-norm approximation and critical weights
 
@@ -94,39 +94,39 @@ All Lean names are in the namespace `Qschubert`.
 | Remark 6.2 (`pc:remcusp`) | P | two-sided bound for `m(z)` in a cusp; self-checked, not formalized |
 | Remark 6.3 (`rem:g4`) | P |  |
 | Remark 6.4 (`thm:main`) | L | original norm: `pcthm13_fixed` (from `pcthm13_all`); reversed-weight norm: `thm13R_fixed` (from `thm14Rmain_exp` and `swNormD_mono`) |
-| Remark 6.5 (`rem:pw-cor`) | L | `cor15R_tied`, `cor16R_multN`; positive injectivity radius: `cor16R_repN`; constants with `C\ge1`: `xThmCD_exists` |
+| Remark 6.5 (`rem:pw-cor`) | L | `cor15R_tiedA`, `cor16R_allmultN`; positive injectivity radius: `cor16R_allbgN`; constants with `C\ge1`: `xThmCDA_exists` |
 | Lemma 6.6 (`lem:ex`) | P | not used by the theorems |
 | Corollary 6.7 (`cor:localized`) | P | extracted from the localized-state application of Lemma 6.6 (`lem:ex`) and Theorem 1.2 (`thm:dd14`); self-checked, not separately formalized |
 
-## Section 7 (`sec:expect`): expectation values and escape of mass
+## Section 7 (`sec:cusp`): sharpness of the cusp factor
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Corollary 7.1 (`ev:transfer`) | L | original norm: `evTransfer_pc_all`; reversed-weight norm: `evTransfer_main_all` |
-| Lemma 7.14 (`ev:meanlem`) | L | `integral_amp_mul_slice_L1`, `integrableOn_amp_mul_slice_L1`, `slice_lintegral_le` |
-| Corollary 7.17 (`ev:perio`) | P | elementary consequence of Lemma 7.14 (`ev:meanlem`); self-checked, not separately formalized |
-| Lemmas 7.9 (`ev:mellinlemma`), 7.19 (`ev:scattering`), 7.23 (`ev:approxmode`), 7.28 (`ev:initialnorm`), 7.29 (`ev:outgoing`) | P | editorial extractions from the proof of Theorem 1.8 (`ev:mod`); the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked |
+| Proposition 7.3 (`cl:relative`) | P | extracted from the relative-error remark; self-checked |
+| Theorem 7.1 (`cl:main`), Lemmas 7.4 (`cl:ssob`), 7.5 (`cl:sp`), 7.11 (`cl:asym`), 7.15 (`cl:kernel`), 7.17 (`cl:amp`), 7.20 (`cl:two`) | P |  |
+| Lemmas 7.16 (`cl:aux`), 7.19 (`cl:noncancel`) | P | auxiliary estimates and noncancellation separated from the amplitude proof; self-checked, not separately formalized |
+| Corollary 7.21 (`cl:rational`) | P | transport of Theorems 7.1 (`cl:main`) and 1.7 (`cl:necessary`) to rational boundary points; self-checked |
 
-## Section 8 (`sec:g5`): lower bounds for the approximation error
-
-| Statement | Status | Lean theorem; difference |
-|---|---|---|
-| Proposition 8.1 (`prop:mean`) | L | `meanGrowth`; `integral_approxSolB`, `J_vecX`, `J_vecY`, `chP_dysT`, `swapped_setup`, `enorm_integral_le_perio` |
-| Corollary 8.2 (`cor:meanJ`) | P | deduced from Proposition 8.1 (`prop:mean`) and Theorem 1.2 (`thm:dd14`); self-checked, not formalized |
-
-## Section 9 (`sec:cusp`): sharpness of the cusp factor
+## Section 8 (`sec:expect`): expectation values and escape of mass
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
-| Proposition 9.3 (`cl:relative`) | P | extracted from the relative-error remark; self-checked |
-| Theorem 9.1 (`cl:main`), Lemmas 9.4 (`cl:ssob`), 9.5 (`cl:sp`), 9.11 (`cl:asym`), 9.15 (`cl:kernel`), 9.17 (`cl:amp`), 9.20 (`cl:two`) | P |  |
-| Lemmas 9.16 (`cl:aux`), 9.19 (`cl:noncancel`) | P | auxiliary estimates and noncancellation separated from the amplitude proof; self-checked, not separately formalized |
-| Corollary 9.21 (`cl:rational`) | P | transport of Theorems 9.1 (`cl:main`) and 1.7 (`cl:necessary`) to rational boundary points; self-checked |
+| Corollary 8.1 (`ev:transfer`) | L | original norm: `evTransfer_pc_all`; reversed-weight norm: `evTransfer_main_unif` |
+| Lemma 8.14 (`ev:meanlem`) | L | `integral_amp_mul_slice_L1`, `integrableOn_amp_mul_slice_L1`, `slice_lintegral_le` |
+| Corollary 8.17 (`ev:perio`) | P | elementary consequence of Lemma 8.14 (`ev:meanlem`); self-checked, not separately formalized |
+| Lemmas 8.9 (`ev:mellinlemma`), 8.19 (`ev:scattering`), 8.23 (`ev:approxmode`), 8.28 (`ev:initialnorm`), 8.29 (`ev:outgoing`) | P | editorial extractions from the proof of Theorem 1.8 (`ev:mod`); the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked |
+
+## Section 9 (`sec:g5`): the mean of the approximation
+
+| Statement | Status | Lean theorem; difference |
+|---|---|---|
+| Proposition 9.1 (`prop:mean`) | L | `meanGrowth`; `integral_approxSolB`, `J_vecX`, `J_vecY`, `chP_dysT`, `swapped_setup`, `enorm_integral_le_perio` |
+| Corollary 9.2 (`cor:meanJ`) | P | deduced from Proposition 9.1 (`prop:mean`) and Theorem 1.2 (`thm:dd14`); self-checked, not formalized |
 
 ## Appendix A (`app:special`): special-function and kernel calculations
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Lemma A.3 (`lem:gutzmer`) | P | used only for Lemma 6.6 (`lem:ex`) |
-| Lemma A.4 (`os:poisson`) | P | used only in Proposition 5.2 (`pc:classes`) and Section 9 (`subsec:cl`) |
-| Lemma A.8 (`os:hk`) | P | used only in Section 9 (`subsec:cl`) |
+| Lemma A.4 (`os:poisson`) | P | used only in Proposition 5.2 (`pc:classes`) and Section 7 (`subsec:cl`) |
+| Lemma A.8 (`os:hk`) | P | used only in Section 7 (`subsec:cl`) |

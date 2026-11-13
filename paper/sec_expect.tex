@@ -51,8 +51,8 @@ Theorem~\ref{ev:mod}.
 
 \subsection{The modular surface}\label{subsec:ev-mod}
 For the remainder of this section we use the notation of Section~\ref{subsec:applications}: $\Gamma=\mathrm{PSL}(2,\mathbb Z)$,
-$M=\Gamma\backslash\Hb$, $x_0=i$, $b=\infty$, $\varphi=-\log y$, the fundamental domain $F$, the compact sets $M_H$, and the data
-$\alpha$, $\mathfrak h$, $\mathfrak h_0$, $a$. For $H\ge1$ let $\mathcal Z_H$ be the image of $\{z\in F:y>H\}=\{|x|\le\tfrac12,\ y>H\}$, the part of the cusp above
+$M=\Gamma\backslash\Hb$, $x_0=i$, $b=\infty$, $\varphi=-\log y$, the fundamental domain $\mathfrak F$, the compact sets $M_H$, and the data
+$\alpha$, $\mathfrak h$, $\mathfrak h_0$, $a$. For $H\ge1$ let $\mathcal Z_H$ be the image of $\{z\in\mathfrak F:y>H\}=\{|x|\le\tfrac12,\ y>H\}$, the part of the cusp above
 height $H$. Recall $\operatorname{area}(M)=\pi/3$.
 
 Let $\omega=X_0^{1/2}\ell^{\,c'}$, $c'=\tfrac34$, be the periodization weight of Section~\ref{subsec:pc-weights}.
@@ -79,16 +79,12 @@ function of $\operatorname{Im}\gamma z$, and the proof below
 evaluates its zero Fourier mode by means of the scattering coefficient \eqref{ev:Phi}.
 
 \begin{remark}[heuristics]\label{ev:time}
-The following picture is not used in the proofs. First, the terms of the periodization that contribute at a point come from
+The following picture is not used in the proofs. The terms of the periodization that contribute at a point come from
 about $\ue^{t}$ sheets of the cover. Up to the Ehrenfest time $\log(1/\hbar)$ their phase gradients differ by more than $\hbar$,
-so that they are almost orthogonal one by one; beyond it the phase gradients of many pairs differ by less than $\hbar$, and the
-cancellation of Remark~\ref{ev:cancel} is a property of the sum. Second, in the normalization $b=\infty$ the classically
-transported state lies near height $y\asymp\ue^{-t}$. For a modular element $\gamma$ with bottom row $(c,d)$, $c\ne0$,
-$\operatorname{Im}\gamma z=y/((cx+d)^2+c^2y^2)$, so the part of the state within $O(y)$ of the rational $-d/c$ is mapped to height
-$\asymp\ue^t/c^2$, which is at least $H\ge1$ when $c\lesssim H^{-1/2}\ue^{t/2}$. The periodization sums over all these sheets,
-and beyond the Ehrenfest time the interference between them, which the classical prediction ignores, governs the fine
-behaviour; this is compatible with Brooks's result \cite{Bro22}, but the heuristic does not compare the mass or phase of the
-contributing sheets. Third, for $r>0$ and a continuous choice of the argument, the scattering coefficient $\Phi$ of
+so that they are almost orthogonal one by one; beyond it the phase gradients of many pairs differ by less than $\hbar$, the
+cancellation of Remark~\ref{ev:cancel} is a property of the whole sum, and the interference between the sheets, which the
+classical prediction ignores, governs the behaviour. This is compatible with Brooks's result \cite{Bro22}. For $r>0$ and a
+continuous choice of the argument, the scattering coefficient $\Phi$ of
 \eqref{ev:Phi} satisfies $-\tfrac{d}{dr}\arg\Phi(\tfrac12+ir)=2\log(r/\pi)+4\operatorname{Re}\tfrac{\zeta'}{\zeta}(1+2ir)+O(r^{-2})$. This is the
 time delay of a wave packet at $r=1/\hbar$, and its first term is twice the Ehrenfest time $\log(1/\hbar)$, up to a constant. The
 bound for $\zeta'/\zeta$ on the line $\operatorname{Re}s=1$ that the classical zero-free region gives \cite[Theorem~6.7]{MV07} is of the same order $\log r$
@@ -264,7 +260,7 @@ On the line $\operatorname{Re}s=\tfrac12$, $|\Phi(s)|=1$.
 \end{lemma}
 \begin{proof} The
 cosets in $\Gamma_\infty\backslash\Gamma$ are the identity and the classes of the matrices with bottom row $(c,d)$, $c\ge1$, $\gcd(c,d)=1$, and
-$\operatorname{Im}\gamma z=y/|cz+d|^2$. If $g$ vanishes outside $[y_1,y_2]$, a term with bottom row $(c,d)$ is nonzero at $z\in F$ only if
+$\operatorname{Im}\gamma z=y/|cz+d|^2$. If $g$ vanishes outside $[y_1,y_2]$, a term with bottom row $(c,d)$ is nonzero at $z\in\mathfrak F$ only if
 $c^2y\le1/y_1$ and $|cx+d|^2\le y/y_1\le1/(c^2y_1^2)$; so the number of nonzero terms is bounded on $F$, and $E(\cdot|g)$ is a bounded, $\Gamma$-invariant
 measurable function. In particular $E(\cdot|g)\in L^2(M)$. The substitution $d=d_0+cn$ gives
 the zero mode \eqref{ev:zero}. For $w\in L^2(M)$, unfolding gives
@@ -334,7 +330,7 @@ rapidly decreasing. By \eqref{ev:R}, Fubini's theorem (recall $\int_0^\infty|f_t
 \end{align*}
 With \eqref{ev:unf} for $w=v_t$ and \eqref{ev:pair} this gives
 $\int_0^\infty\bigl(\mathcal F_0[v_t]-f_t-\tfrac3\pi\hat f_t(1)-\mathcal O_{f_t}\bigr)\overline g\,dy/y^2=0$ for all $g\in C_c^\infty((0,\infty))$. The four functions are locally
-integrable on $(0,\infty)$ (for $\mathcal F_0[v_t]$: a set $\{0\le x\le1,\ y_1\le y\le y_2\}$ is covered by finitely many $\Gamma$-translates of $F$, and
+integrable on $(0,\infty)$ (for $\mathcal F_0[v_t]$: a set $\{0\le x\le1,\ y_1\le y\le y_2\}$ is covered by finitely many $\Gamma$-translates of $\mathfrak F$, and
 $v_t\in L^1(M)$). Hence
 \begin{equation}\label{ev:c0}
   \mathcal F_0[v_t](y)=f_t(y)+\frac3\pi\hat f_t(1)+\mathcal O_{f_t}(y)\qquad\text{for almost every }y>0 .
