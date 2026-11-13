@@ -50,7 +50,7 @@ corollaries with $N^{2N}$ (\lean{ptBoundN}) from the versions with $(2N)!$, by $
 group and the base point are quantified after $C$, as in \lean{thm14R_unifX}.
 \item \emph{The radius ranges of Theorem~\ref{pc:main}.} Theorem~\ref{pc:main}(i) states the bounded-radius result \lean{pcmain_all}; its proof treats $\alpha\le\tfrac12$, the range of
 \lean{pcmain_half}, and $\tfrac12<\alpha\le A$ separately, both through Proposition~\ref{pc:core}, which is \lean{dd_core_pc} with
-\lean{SurfW.surf_D4}. The original-norm corollaries likewise use the declarations with suffix \lean{all}.
+\lean{SurfW.surf_D4}. The original-norm leading-term, pointwise and expectation-value corollaries likewise use the all-radius declarations \lean{pcthm13_all}, \lean{pccor16_allN} and \lean{evTransfer_pc_all}; Corollary~\ref{pc:cor15} is \lean{pccor15_tied}, with the constants of Theorem~\ref{pc:main}.
 \item \emph{Proposition~\ref{os:data}} retains the condition $\sigma m\le\tfrac12$, although its paper proof does not need it:
 this is the range of its formal statement and suffices for its applications.
 \item \emph{Proposition~\ref{prop:mean}.} Its formal statement has every $\hbar>0$ and every real $t$, and no hypothesis on the area:
