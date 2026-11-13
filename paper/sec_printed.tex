@@ -197,11 +197,13 @@ the data come directly from Proposition~\ref{os:data}; for larger $\alpha$ we fi
 the critical weight, rather than comparing original norms at different radii, which are not monotone (Proposition~\ref{pc:classes}).
 
 \begin{proof}[Proof of Theorem~\ref{pc:main}]
-\emph{Reductions.} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters below only through the constant $C(\Gamma,c')$
-of Proposition~\ref{os:p1}, which is invariant under the conjugation of Lemma~\ref{lem:base}. Since
+\emph{Reductions.} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group and the base point enter below only through
+$P^{\mathrm{cr}}_\Gamma$, which is invariant under the conjugation of Lemma~\ref{lem:base}, since the identity of
+Lemma~\ref{lem:base}(iii) holds for every function of the distance in place of $\ue^{-s\,d}$. Since
 $\operatorname{Dom}(\ue^{\alpha\Lambda})\subset\operatorname{Dom}(\ue^{\min(\alpha,1)\Lambda})$, $a$ is $C^\infty$ by Lemma~\ref{lem:lift}. The weight $\omega=\omega_{c'}$,
 $c'=\tfrac34$, is continuous and at least $1$, and by \eqref{os:shell} and Proposition~\ref{os:p1} it satisfies the hypotheses of
-Proposition~\ref{pc:core} with $c=c'$, $C_{\mathrm{sh}}=3\ue^{1/2}$, $C_{\mathrm{gr}}=2/\log2$ and $P=C(\Gamma,c')^2$; we use that proposition with these values and
+Proposition~\ref{pc:core} with $c=c'$, $C_{\mathrm{sh}}=3\ue^{1/2}$, $C_{\mathrm{gr}}=2/\log2$ and $P=P^{\mathrm{cr}}_\Gamma$ (the Cauchy--Schwarz
+and unfolding steps of the proof of Proposition~\ref{os:p1} give $\norm{f_\Gamma}^2\le P^{\mathrm{cr}}_\Gamma\norm{\omega f}^2$); we use that proposition with these values and
 $m=3$. Put $f:=\ue^{\alpha\Lambda}a$, so that $\norm{\omega f}\le C_\beta\pcNorm a$ (Section~\ref{subsec:pc-weights}).
 
 \emph{Radii $0<\alpha\le\tfrac12$.} Put $\sigma:=\alpha/6$ and $\kappa':=\kappa/216$, so that $\sigma\le\tfrac1{12}$ and $\sigma^3\ge\kappa'\hbar$.
@@ -227,5 +229,10 @@ $t\le\delta'(\sigma/\hbar)^{1/2}$. For $\tfrac12<\alpha\le A$,
   \delta'\Big(\frac{\sigma}{\hbar}\Big)^{1/2}&\ge\delta'(12A)^{-1/2}\Big(\frac{\alpha}{\hbar}\Big)^{1/2}.
 \end{align*}
 So the estimate holds on $(\tfrac12,A]$ with the constants $(12A)^2C'\max(1,C_{\mathrm d}C_\Lambda^{\,j}C_\beta)$ and $\delta'(12A)^{-1/2}$. Take the
-larger of the two constants $C$ and the smaller of the two $\delta$.
+larger of the two constants $C$ and the smaller of the two $\delta$. This proves (i).
+
+\emph{Part (ii).} In both ranges $\delta$ is $\delta'/\sqrt6$, respectively $\delta'(12A)^{-1/2}$, where $\delta'$ is the constant of
+Proposition~\ref{pc:core} for $\kappa'=\kappa/216$, respectively $\kappa'=\kappa/(1728A^3)$; it does not depend on $P$, hence not on the group.
+The constant $C'$ of that proposition depends on the group only through $P$, and a group with $P^{\mathrm{cr}}_\Gamma\le Q$ satisfies
+\textup{(W1)} with $P=Q$; the other constants $C_{\mathrm d}$, $C_\Lambda^{\,j}$, $C_\beta$ and $12A$ do not involve the group or the base point. This proves (ii).
 \end{proof}

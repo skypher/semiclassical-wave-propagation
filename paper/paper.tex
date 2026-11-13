@@ -313,17 +313,25 @@ Our principal theorem uses Schubert's amplitude norm exactly as defined in \cite
 order $K$ and the number $N$ of Laplacians simultaneously.
 
 \begin{theorem}[approximation in the original-norm class]\label{pc:main}\label{pc:allalpha}
-Let $\Gamma$ be a Fuchsian group, $\beta>\tfrac12$, $\kappa>0$ and $A>0$. There are constants $C,\delta>0$, depending on $\Gamma$, $\beta$,
-$\kappa$, the base point $x_0$ and $A$,
+Let $\Gamma$ be a Fuchsian group, $\beta>\tfrac12$, $\kappa>0$ and $A>0$.
+\begin{itemize}
+\item[\textup{(i)}] There are constants $C,\delta>0$, depending on $\Gamma$, $\beta$, $\kappa$, the base point $x_0$ and $A$,
 such that for all $0<\hbar\le1$, all $\alpha\in(0,A]$ with $\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$ with
 $\pcNorm{a}<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
 \[
   \norm{\Delta^N\big[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}
   \le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\pcNorm{a}.
 \]
+\item[\textup{(ii)}] In \textup{(i)}, $\delta$ can be chosen depending only on $\beta$, $\kappa$ and $A$, and $C$ depending only on $\beta$, $\kappa$,
+$A$ and an upper bound for
+\[
+  P^{\mathrm{cr}}_\Gamma:=\sup_{z\in\Hb}\sum_{\gamma\in\Gamma}\omega(\gamma z)^{-2},\qquad \omega:=X_0^{1/2}\bigl(1+\tilde\psi/\log2\bigr)^{3/4}.
+\]
+\end{itemize}
 \end{theorem}
 
-The proof is in Sections~\ref{subsec:pc-proof} and~\ref{subsec:pc-all}. For fixed $\alpha>0$ the time window has order
+The weight $\omega$ is the periodization weight of Section~\ref{subsec:pc-weights}, and $P^{\mathrm{cr}}_\Gamma$ is finite for every Fuchsian
+group (proof of Proposition~\ref{os:p1}). The proof is in Sections~\ref{subsec:pc-proof} and~\ref{subsec:pc-all}. For fixed $\alpha>0$ the time window has order
 $\hbar^{-1/2}$. Its dependence on the analytic radius, $\delta(\alpha/\hbar)^{1/2}$, is more favourable than the window
 $\delta\alpha^{3/2}\hbar^{-1/2}$ claimed in \cite[Theorem~1.4]{S}; this matters for the localized amplitudes of
 Section~\ref{subsec:applications}, whose analytic radius tends to zero with $\hbar$. For the reversed-weight norm the
@@ -387,16 +395,13 @@ It is bounded on quotients of positive injectivity radius and grows like the hei
 Under the hypotheses of Theorem~\ref{pc:main}, for every $z\in M$,
 \begin{multline*}
   \big|\Delta^N\big[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big](z)\big|\\
-  \le m(z)^{1/2}\,C^{N+K+2}(2N)!\,K!\,(\alpha\hbar)^{-2N-2}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\pcNorm{a}.
+  \le m(z)^{1/2}\,C^{N+K+2}N^{2N}K!\,(\alpha\hbar)^{-2N-2}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\pcNorm{a}.
 \end{multline*}
 The error lies in $\operatorname{Dom}(\Delta_M^N)$, its image under $\Delta_M^N$ has a continuous representative, and the
 left side is the value of that representative.
 If the injectivity radius of $M$ is at least $r_0>0$ (Section~\ref{sec:setup}), the factor $m(z)^{1/2}$ may be replaced by
 $1$, with a constant depending also on $r_0$.
 \end{corollary}
-
-Corollary~\ref{pc:cor16} carries $(2N)!$ where Theorem~\ref{pc:main} carries $N^{2N}$; the two agree up to a factor $C^N$, since
-$(2N)!\le4^NN^{2N}$ and $N^{2N}\le(\ue/2)^{2N}(2N)!$.
 
 \subsection{Corrections and sharpness}\label{subsec:corrections}
 Two bounds of \cite{S} need correction. The first is the leading error bound $C\hbar\norm a_{\alpha,\beta}$ of
