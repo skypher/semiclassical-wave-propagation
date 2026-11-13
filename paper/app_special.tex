@@ -56,11 +56,11 @@ So the kernel is at most $g(x):=(1+|x|)\ue^{\tau_0|x|}/(2\cosh(\pi x/2))$, which
 \medskip\noindent\emph{(Y) Kernel of $D_\zeta$.} The integral $\int K_{ir}K'_{ir'}\,d\zeta$ does not converge at $\zeta=0$, so we regularize.
 Let $F_f,F_g\in C_c^\infty((0,\infty))$ be the KL transforms of $f,g$ (the core $\mathcal C$).
 On $\mathcal C$, $f(\ue^{-L})$ and $\zeta g'(\zeta)|_{\zeta=\ue^{-L}}$ decay faster than any power of $L$ as $L\to\infty$: they are integrals of smooth compactly supported densities against $\ue^{\pm ir L}$-oscillations, plus $O(\ue^{-2L})$. This uses $K_{ir}=\tfrac12\pi(I_{-i r}-I_{i r})/\sin(i r\pi)$ (\cite[10.27.4]{DLMF}) with the series of $I_{\pm ir}$ (\cite[10.25.2]{DLMF}), and $1/\sin(i r\pi)$ is smooth on $\operatorname{supp}F_f\cup\operatorname{supp}F_g\subset(0,\infty)$.
-Hence $\langle f,D_zg\rangle=\int_0^\infty\bar f g'\,d\zeta=\lim_{\eta\to0^+}\int \zeta^\eta\bar fg'\,d\zeta$, by dominated convergence.
+Hence $\langle f,D_\zeta g\rangle=\int_0^\infty\bar f g'\,d\zeta=\lim_{\eta\to0^+}\int \zeta^\eta\bar fg'\,d\zeta$, by dominated convergence.
 For $\eta>0$ Fubini applies, and $K'_\mu=-(K_{\mu-1}+K_{\mu+1})/2$ (\cite[10.29.1]{DLMF}, with $\mathcal Z_\mu=\ue^{\mu\pi i}K_\mu$ in DLMF's convention, under which 10.29.1 reads $\mathcal Z_{\mu-1}+\mathcal Z_{\mu+1}=2\mathcal Z'_\mu$ and gives the minus sign for $K$) gives
 \[
 \begin{gathered}
-\langle f,D_zg\rangle=\lim_{\eta\to0^+}\iint\bar F_f(r)F_g(r')\,w(r)w(r')\,I_\eta(r,r')\,d r\,d r',\\
+\langle f,D_\zeta g\rangle=\lim_{\eta\to0^+}\iint\bar F_f(r)F_g(r')\,w(r)w(r')\,I_\eta(r,r')\,d r\,d r',\\
 I_\eta=-\tfrac12\bigl[M_{1+\eta}(ir,ir'+1)+M_{1+\eta}(ir,ir'-1)\bigr].
 \end{gathered}
 \]
@@ -78,7 +78,7 @@ So $A_0+B_0=0$ on the diagonal.
 The Sokhotski--Plemelj formula gives $\frac{2}{\eta\pm ix}\to\mp2i\,\mathrm{PV}\frac1x$ plus $2\pi$ times the Dirac measure at $x=0$. The Dirac terms carry $A_0+B_0$ at $x=0$, so they cancel.
 For $x\neq0$ the pointwise limit is $I_0=-\pi^2/(4\sinh p\,\sinh q)$ (same Gamma reflections). Hence, on $\mathcal C\times\mathcal C$,
 \[
-\langle f,D_zg\rangle=\mathrm{PV}\iint\bar F_fF_g\,w\,w'\,I_0,
+\langle f,D_\zeta g\rangle=\mathrm{PV}\iint\bar F_fF_g\,w\,w'\,I_0,
 \]
 so the kernel of $D_\zeta$ in the unitary picture is
 \[
