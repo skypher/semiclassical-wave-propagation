@@ -10,8 +10,7 @@ We use $X$, $Y$, $\Delta(s)$, $\Lambda$, $X_0$, $\tilde\psi$ and the power-weigh
 of Section~\ref{sec:setup}.
 The two-time mollified propagator $V_\varepsilon(s_1,s_0)=V_\varepsilon(s_1)V_\varepsilon(s_0)^*$ is defined in
 Section~\ref{app:kl}. Table~\ref{tab:constants} lists the named constants of Sections~\ref{sec:analytic}--\ref{sec:printed}
-and where they are fixed. Several lemmas carry a parameter $\tau_0<\pi/2$ that bounds the analytic radii; every application in
-this paper takes $\tau_0=1$, so the constants of Table~\ref{tab:constants} that depend on $\tau_0$ are absolute there.
+and where they are fixed. The analytic radii in this section are at most $1$.
 
 \begin{table}[!htb]
 \centering\small
@@ -22,23 +21,24 @@ of Section~\ref{app:ws}, $c$ and $m$ those of Section~\ref{subsec:pc-weights}, a
 \hline
 Constant & Fixed in & Depends on\\
 \hline
-$C_1$ & Lemma~\ref{lem:fc} & $\tau_0$\\
+$C_1$ & Lemma~\ref{lem:fc} & absolute\\
 $B_\beta$; $\rho_*=\tfrac14\log(3/2)$ & Lemma~\ref{lem:fdb} & $\beta$; absolute\\
-$C_2=\max(\ue C_1,\tau_0/\rho_*)$ & Lemma~\ref{lem:sc} & $\tau_0$\\
+$C_2=\max(\ue C_1,1/\rho_*)$ & Lemma~\ref{lem:sc} & absolute\\
 $C_*=4$ & Lemma~\ref{lem:expw} & absolute\\
-$c_M=1/(4\max(C_2,1))$ & Lemma~\ref{lem:mw} & $\tau_0$\\
-$A_1$, $A_2$ & Lemma~\ref{lem:clip} & $\tau_0$\\
-$c_A=(1+32A_1A_2)^{-1}$ & Proposition~\ref{prop:a0} & $\tau_0$\\
+$c_M=1/(4\max(C_2,1))$ & Lemma~\ref{lem:mw} & absolute\\
+$A_1$, $A_2$ & Lemma~\ref{lem:clip} & absolute\\
+$c_A=(1+32A_1A_2)^{-1}$ & Proposition~\ref{prop:a0} & absolute\\
 $\mathcal K_\lambda=8\lambda^2+7\lambda$ & Section~\ref{app:ws} & $\lambda$\\
 $C_W$ & Lemma~\ref{lem:wmoll} & $\rho$, $\mathcal K$\\
 $C_{\mathrm{fl}}=(4\rho+3)C_W^2$; $C_{\mathrm{fl},\lambda}=C_{\mathrm{fl}}(\lambda,\mathcal K_\lambda)$ & Proposition~\ref{prop:ws} & $\rho$, $\mathcal K$; $\lambda$\\
-$C_3\ge1$ & Lemma~\ref{lem:wb} & $\tau_0$\\
-$C_4=20+60(1+4C_1)^2$ & Lemma~\ref{lem:unw} & absolute ($\tau_0=1$)\\
+$C_3\ge1$ & Lemma~\ref{lem:wb} & absolute\\
+$C_4=20+60(1+4C_1)^2$ & Lemma~\ref{lem:unw} & absolute\\
+$C_{\mathrm{cw}}$ & Theorem~\ref{os:cw} & $c$\\
 $C_\Lambda$; $C_{\Lambda_m}$ & Corollary~\ref{os:cwp} & $c$; $m$, $c$\\
 $C_{\mathrm d}=C_\Lambda\,\ue^{C_{\Lambda_m}}$ & Proposition~\ref{os:data} & $m$, $c$\\
 $c_H=1+4/\ue$; $C_5=2\ue\,c_H$ & Lemma~\ref{os:prof}(iii); Lemma~\ref{os:words} & absolute\\
 $C_{\mathrm{tr}}$ & Lemma~\ref{os:transfer} & $c$, $C_{\mathrm{sh}}$\\
-$C_6\ge C_3$ & Proposition~\ref{pc:core}, Step~1(a) & absolute ($\tau_0=1$)\\
+$C_6\ge C_3$ & Proposition~\ref{pc:core}, Step~1(a) & absolute\\
 $B_0$; $B_m$ & Lemma~\ref{os:prof}(iv), (v) & absolute; $m$\\
 \hline
 \end{tabular}
@@ -86,11 +86,11 @@ $\operatorname{Dom}(\Delta)$, and $\Delta_\varepsilon(t)-\Delta_\varepsilon(t')=
 
 \subsection{Cauchy estimates for derivatives}\label{subsec:dd-fc}
 
-We first control a single vector field with a loss of analytic radius, iterate the estimate for words,
-and then include the power weight by the Leibniz rule.
+We first control a single vector field with a loss of analytic radius, iterate the estimate for words and deduce the
+smoothness of the amplitudes, and then include the power weight by the Leibniz rule.
 
 \begin{lemma}[first-order Cauchy estimate]\label{lem:fc}
-For $\tau_0<\pi/2$ there is $C_1=C_1(\tau_0)$ such that for $Z\in\{X,Y\}$ and $0\le\alpha''<\alpha'\le\tau_0$,
+There is an absolute constant $C_1$ such that for $Z\in\{X,Y\}$ and $0\le\alpha''<\alpha'\le1$,
 \[
 \norm{\ue^{\alpha''\Lambda}Z\,\ue^{-\alpha'\Lambda}}_{L^2(\Hb)}\le\frac{C_1}{\alpha'-\alpha''}.
 \]
@@ -101,7 +101,7 @@ The Kontorovich--Lebedev kernel calculation is given in Appendix~\ref{app:fc-pro
 \end{proof}
 
 \begin{lemma}[Cauchy estimate for words]\label{lem:wc}
-For a word $Z_1\cdots Z_k$ with $Z_i\in\{X,Y\}$, and $0\le\alpha''<\alpha\le\tau_0<\pi/2$:
+For a word $Z_1\cdots Z_k$ with $Z_i\in\{X,Y\}$, and $0\le\alpha''<\alpha\le1$:
 \[
 \norm{\ue^{\alpha''\Lambda}Z_1\cdots Z_k\ue^{-\alpha\Lambda}}\le\Bigl(\frac{C_1k}{\alpha-\alpha''}\Bigr)^k\le\Bigl(\frac{\ue C_1}{\alpha-\alpha''}\Bigr)^k k!.
 \]
@@ -111,6 +111,40 @@ For a word $Z_1\cdots Z_k$ with $Z_i\in\{X,Y\}$, and $0\le\alpha''<\alpha\le\tau
 Take equally spaced radii $\alpha''=r_0<r_1<\cdots<r_k=\alpha$, and insert $\ue^{-r_i\Lambda}\ue^{r_i\Lambda}$.
 Each factor $\ue^{r_{i-1}\Lambda}Z_i\ue^{-r_i\Lambda}$ is bounded by $C_1k/(\alpha-\alpha'')$ (Lemma~\ref{lem:fc}). The bound of Lemma~\ref{lem:fc} is proved on the spectral core of Appendix~\ref{app:fc-proof} and extends to the product by closure, since each $\ue^{r_i\Lambda}$ is closed. Finally $k^k\le\ue^k k!$. \qedhere
 \end{proof}
+
+\begin{lemma}[regularity]\label{lem:lift}
+Let $0<\alpha\le1$ and $F\in\operatorname{Dom}(\ue^{\alpha\Lambda})$. Then $F$ has a $C^\infty$ representative, and every word in
+$X,Y$ applied to it lies in $L^2(\Hb)$. Consequently every $a$ with $\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$, or with $\beta\ge0$ and
+$\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}<\infty$, has a $C^\infty$ representative, and so has every
+$a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, which covers the original-norm class.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:wc} at $\alpha''=0$, every word applied to $F$ in the sense of distributions lies in $L^2$. The same holds
+for $F\circ p$ for every affine isometry $p(z)=p_1z+p_2$, $p_1>0$: these commute with $X$, $Y$ and $\Lambda$, so
+$F\circ p\in\operatorname{Dom}(\ue^{\alpha\Lambda})$.
+
+Let $w\in L^2$ be such that all words applied to $w$ lie in $L^2$, and let $c\in C_c^\infty(\Hb)$ be real. With the Euclidean
+Laplacian $\Delta_{\mathrm E}=\partial_x^2+\partial_y^2=y^{-2}(X^2+Y^2-Y)$,
+\[
+\Delta_{\mathrm E}(cw)=(\Delta_{\mathrm E}c)\,w+2y^{-2}\bigl((Xc)(Xw)+(Yc)(Yw)\bigr)+c\,y^{-2}(X^2+Y^2-Y)w,
+\]
+a finite sum of terms $c'w'$ of the same kind. So $\Delta_{\mathrm E}^n(cw)\in L^2(\mathbb R^2)$ for every $n$; on $\operatorname{supp}c$
+the measures $dx\,dy$ and $d\nu$ are comparable.
+
+Hence $|\xi|^{2n}\widehat{cw}\in L^2(\mathbb R^2)$ for every $n$, all moments of $\widehat{cw}$ are integrable, and $cw$ has a
+$C^\infty$ representative.
+
+Take $c=1$ near $i$. This gives a $C^\infty$ representative of $F\circ p$ near $i$ for every $p$, that is, of $F$ near
+every point. Two continuous representatives on an open set coincide, so they glue to a $C^\infty$ representative of $F$, which is unique.
+
+For the consequences take $F=X_0^\beta a$, $F=\ue^{\beta\langle d\rangle}a$, respectively $F=a$. The functions $X_0^{-\beta}$ and
+$\ue^{-\beta\langle d\rangle}$ are smooth and positive; for the second, $\langle d\rangle$ is a smooth function of $d^2$, and
+$d^2=\operatorname{arcosh}(X_0)^2$ is a smooth function of $X_0\ge1$. \qedhere
+
+\end{proof}
+
+The approximations $u^{(K)}$ are always built from this representative.
 
 For an index set $S=\{i_1<\dots<i_k\}$ and letters $Z_i\in\{X,Y\}$ we write $Z_S:=Z_{i_1}\cdots Z_{i_k}$ ($Z_\emptyset:=1$),
 a word of length $|S|$; every word has this form. Weights enter through the following three-dimensional space of functions. Let $\mathfrak A:=\operatorname{span}\{y,\;x,\;(x^2+1)/y\}$.
@@ -138,10 +172,10 @@ Cauchy's estimate on $|z|=\rho<\log(3/2)$ gives the bound $C_{\beta,\rho}\,j!\,\
 \end{proof}
 
 \begin{lemma}[weighted Cauchy estimate for words]\label{lem:sc}
-For $\beta\ge0$, a word $Z_1\cdots Z_k$ and $0<\alpha\le\tau_0<\pi/2$, with $F:=X_0^\beta a$ and $\norm{\ue^{\alpha\Lambda}F}<\infty$:
+For $\beta\ge0$, a word $Z_1\cdots Z_k$ and $0<\alpha\le1$, with $F:=X_0^\beta a$ and $\norm{\ue^{\alpha\Lambda}F}<\infty$:
 \[
 \norm{X_0^\beta Z_1\cdots Z_k a}\le B_\beta(k+1)\,k!\,(C_2/\alpha)^k\,\norm{\ue^{\alpha\Lambda}X_0^\beta a},
-\qquad C_2:=\max(\ue C_1,\tau_0/\rho_*).
+\qquad C_2:=\max(\ue C_1,1/\rho_*).
 \]
 \end{lemma}
 
@@ -174,8 +208,8 @@ of $\Lambda$ gives $\norm{\cosh(r\Lambda)u}\le2B\mathcal N$, and $\ue^{r\lambda}
 \end{proof}
 
 \begin{lemma}[removing a spatial weight with loss of analytic radius]\label{lem:mw}
-Let $\beta\ge0$ and $\tau_0<\pi/2$, let $B_\beta$, $C_2$ be the constants of Lemma~\ref{lem:sc}, and put $c_M:=1/(4\max(C_2,1))$. For
-$0<\alpha\le\min(1,\tau_0)$ and every $a$ with $\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$,
+Let $\beta\ge0$, let $B_\beta$, $C_2$ be the constants of Lemma~\ref{lem:sc}, and put $c_M:=1/(4\max(C_2,1))$. For
+$0<\alpha\le1$ and every $a$ with $\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$,
 \[
 \norm{\ue^{c_M\alpha\Lambda}a}\le C_*B_\beta\,\norm{\ue^{\alpha\Lambda}X_0^\beta a},
 \]
@@ -185,6 +219,24 @@ with $C_*$ the constant of Lemma~\ref{lem:expw}.
 By Lemma~\ref{lem:sc} and $X_0\ge1$, every word satisfies
 $\norm{Z_1\cdots Z_ka}\le\norm{X_0^\beta Z_1\cdots Z_ka}\le B_\beta(k+1)k!(C_2/\alpha)^k\norm{\ue^{\alpha\Lambda}X_0^\beta a}$.
 Apply Lemma~\ref{lem:expw} with $L=\max(C_2,1)$.
+\end{proof}
+
+\begin{lemma}[words of a function of $\tilde\psi$]\label{lem:wordphi}
+Let $x_0=i$, $A\ge0$ and $\rho\ge0$, and let $\Phi$ be a real function that is $C^\infty$ near every point of $[0,\infty)$ and
+satisfies $|\Phi^{(k)}(v)|\le A\,k!\,\rho^k$ for all $k\ge0$ and $v\ge0$. Then $\Phi(\tilde\psi)$ is $C^\infty$ on $\Hb$, and
+$|Z_S\Phi(\tilde\psi)|\le A\,c^j\,j!$ for every word $Z_S$ of length $j$, with $c=4+3\rho$.
+\end{lemma}
+\begin{proof}
+The function $\tilde\psi=\log X_0$ is smooth with values in $[0,\infty)$, so $\Phi(\tilde\psi)$ is smooth. Put $\xi:=x/X_0$ and $\upsilon:=y/X_0$, so
+$|\xi|\le1$, $0<\upsilon\le2$, $X\tilde\psi=\xi$ and $Y\tilde\psi=\upsilon-1$. The polynomials in $(\xi,\upsilon)$ are stable under $X$ and $Y$:
+$X\xi=\upsilon-\xi^2$, $X\upsilon=-\xi\upsilon$, $Y\xi=\xi-\xi\upsilon$, $Y\upsilon=2\upsilon-\upsilon^2$. For
+$Q=\sum c_{ab}\xi^a\upsilon^b$ let $\norm Q_*:=\sum|c_{ab}|2^b$, so $|Q|\le\norm Q_*$ pointwise. The four formulas give
+$\norm{ZQ}_*\le4(\deg Q)\norm Q_*$, and $\norm{(Z\tilde\psi)Q}_*\le3\norm Q_*$. By induction on $j$,
+$Z_S\Phi(\tilde\psi)=\sum_{k=0}^j\Phi^{(k)}(\tilde\psi)\,Q_{S,k}(\xi,\upsilon)$ with polynomials of degree at most $j$ satisfying
+$Q_{ZS,k}=(Z\tilde\psi)Q_{S,k-1}+ZQ_{S,k}$. With $q_{j,k}:=\max_{|S|=j}\norm{Q_{S,k}}_*$ this gives
+$q_{j+1,k}\le3q_{j,k-1}+4j\,q_{j,k}$, and then $T_j:=\sum_kk!\,\rho^kq_{j,k}$ satisfies
+$T_{j+1}\le(3\rho(j+1)+4j)T_j\le c\,(j+1)\,T_j$, so $T_j\le c^jj!$. By the hypothesis on $\Phi$,
+$|Z_S\Phi(\tilde\psi)|\le A\,T_j$.
 \end{proof}
 
 \begin{lemma}[comparison of the spatial weights]\label{lem:m2w}
@@ -215,17 +267,10 @@ $\operatorname{Re}(1-\ue^{-2v})>0$, $\operatorname{Re}\varsigma\ge0$, $\operator
 is holomorphic there with $|\Phi|\le\ue^{2\beta}$. Compactness of $[0,2]$, and Cauchy's estimate on discs of radius $\tfrac15$ around
 the points of $[2,\infty)$, give Step~1.
 
-\emph{Step 2: $|Z_S\mathfrak m|\le A\,c^j\,j!$ for every word $Z_S$ of length $j$, with $c=4+3/r_\beta$.} Put $\xi:=x/X_0$ and $\upsilon:=y/X_0$, so
-$|\xi|\le1$, $0<\upsilon\le2$, $X\tilde\psi=\xi$ and $Y\tilde\psi=\upsilon-1$. The polynomials in $(\xi,\upsilon)$ are stable under $X$ and $Y$:
-$X\xi=\upsilon-\xi^2$, $X\upsilon=-\xi\upsilon$, $Y\xi=\xi-\xi\upsilon$, $Y\upsilon=2\upsilon-\upsilon^2$. For
-$Q=\sum c_{ab}\xi^a\upsilon^b$ let $\norm Q_*:=\sum|c_{ab}|2^b$, so $|Q|\le\norm Q_*$ pointwise. The four formulas give
-$\norm{ZQ}_*\le4(\deg Q)\norm Q_*$, and $\norm{(Z\tilde\psi)Q}_*\le3\norm Q_*$. By induction on $j$,
-$Z_S\Phi(\tilde\psi)=\sum_{k=0}^j\Phi^{(k)}(\tilde\psi)\,Q_{S,k}(\xi,\upsilon)$ with polynomials of degree at most $j$ satisfying
-$Q_{ZS,k}=(Z\tilde\psi)Q_{S,k-1}+ZQ_{S,k}$. With $q_{j,k}:=\max_{|S|=j}\norm{Q_{S,k}}_*$ this gives
-$q_{j+1,k}\le3q_{j,k-1}+4j\,q_{j,k}$, and then $T_j:=\sum_kk!\,r_\beta^{-k}q_{j,k}$ satisfies
-$T_{j+1}\le(3(j+1)/r_\beta+4j)T_j\le c\,(j+1)\,T_j$, so $T_j\le c^jj!$. By Step~1, $|Z_S\mathfrak m|\le A\,T_j$.
+\emph{Step 2: $|Z_S\mathfrak m|\le A\,c^j\,j!$ for every word $Z_S$ of length $j$, with $c=4+3/r_\beta$.} This is
+Lemma~\ref{lem:wordphi} with $\rho=1/r_\beta$, by Step~1.
 
-\emph{Step 3.} By the Leibniz rule for words, Step~2 and Lemma~\ref{lem:wc} at $\alpha''=0$ (with $\tau_0=1$), for a word of length $j$,
+\emph{Step 3.} By the Leibniz rule for words, Step~2 and Lemma~\ref{lem:wc} at $\alpha''=0$, for a word of length $j$,
 \[
 \begin{aligned}
 \norm{Z_S(\mathfrak mF)}&\le\sum_{S'\subseteq S}A\,c^{|S'|}|S'|!\,\Bigl(\frac{\ue C_1}{\alpha}\Bigr)^{j-|S'|}(j-|S'|)!\,\norm{\ue^{\alpha\Lambda}F}
@@ -255,13 +300,13 @@ $k_1(r,r')$ computed in step (X) of the proof of Lemma~\ref{lem:fc}, and
 The operators are the same for every $k$, so all bounds are uniform in $k$.
 
 \begin{lemma}[clipped conjugation of $XJ_\varepsilon$]\label{lem:clip}
-Let $\tau_0<\pi/2$, $L\ge\tfrac12$ and $\Lambda_{\le L}:=\min(\Lambda,L)$. For real $s$ let $R_s:=\ue^{s\Lambda_{\le L}}XJ_\varepsilon\ue^{-s\Lambda_{\le L}}$, a bounded
+Let $L\ge\tfrac12$ and $\Lambda_{\le L}:=\min(\Lambda,L)$. For real $s$ let $R_s:=\ue^{s\Lambda_{\le L}}XJ_\varepsilon\ue^{-s\Lambda_{\le L}}$, a bounded
 operator. Put
 \begin{gather*}
-g_{\mathrm e}(x):=\frac{(1+|x|)\,\ue^{\tau_0|x|}}{2\cosh(\pi x/2)},\qquad g_{\mathrm o}(x):=\frac{(1+3|x|)\,|x|\,\ue^{\tau_0|x|}}{2\cosh(\pi x/2)},\\
+g_{\mathrm e}(x):=\frac{(1+|x|)\,\ue^{|x|}}{2\cosh(\pi x/2)},\qquad g_{\mathrm o}(x):=\frac{(1+3|x|)\,|x|\,\ue^{|x|}}{2\cosh(\pi x/2)},\\
 A_1:=\int_{\mathbb R}g_{\mathrm e}(x)\,dx,\qquad A_2:=\int_{\mathbb R}g_{\mathrm o}(x)\,dx .
 \end{gather*}
-For $0\le\tau\le\tau_0$, $\varepsilon>0$ and $u\in L^2(\Hb)$,
+For $0\le\tau\le1$, $\varepsilon>0$ and $u\in L^2(\Hb)$,
 \[
 \bigl\|\tfrac12(R_\tau+R_{-\tau})u\bigr\|\le A_1\norm{\Lambda J_\varepsilon u},\qquad
 \bigl\|\tfrac12(R_\tau-R_{-\tau})u\bigr\|\le A_2\,\tau\,\norm{\Lambda_{\le L}J_\varepsilon u},
@@ -280,10 +325,10 @@ k_1(r,r')\cosh(\tau\theta)\,j_\varepsilon(\Lambda(r'))\qquad\text{and}\qquad k_1
 \]
 
 \emph{Even part.} Since $(rr')^{1/2}\le r'+|x|/2$ and $\Lambda(r')\ge\max(r',\tfrac12)$, we have
-$(rr')^{1/2}\le(1+|x|)\Lambda(r')$. By \eqref{eq:zt1} and $\cosh(\tau\theta)\le\ue^{\tau_0|x|}$, the even part is
+$(rr')^{1/2}\le(1+|x|)\Lambda(r')$. By \eqref{eq:zt1} and $\cosh(\tau\theta)\le\ue^{|x|}$, the even part is
 $k_A\circ\Lambda J_\varepsilon$ with a kernel $|k_A(r,r')|\le g_{\mathrm e}(r-r')$, and the Schur test gives $\norm{k_A}\le A_1$.
 
-\emph{Odd part.} Here $|\sinh(\tau\theta)|\le\tau|\theta|\,\ue^{\tau_0|x|}$, and $\theta=0$ when $\Lambda(r)\ge L$ and
+\emph{Odd part.} Here $|\sinh(\tau\theta)|\le\tau|\theta|\,\ue^{|x|}$, and $\theta=0$ when $\Lambda(r)\ge L$ and
 $\Lambda(r')\ge L$. In the remaining cases $(rr')^{1/2}\le(1+|x|)\,\Lambda_{\le L}(r')$: if $\Lambda(r')\le L$ this is the inequality
 of the even part; if $\Lambda(r')>L\ge\Lambda(r)$, then $\Lambda_{\le L}(r')=L$ and
 $(rr')^{1/2}\le r+|x|/2\le L+|x|L$, because $r\le\Lambda(r)\le L$ and $L\ge\tfrac12$. So the odd part is $k_B\circ\Lambda_{\le L}J_\varepsilon$ with
@@ -296,8 +341,8 @@ $|\mathrm{Im}\langle R_{-\tau}u,R_\tau u\rangle|\le2\norm P\norm Q$.
 \end{proof}
 
 \begin{proposition}[analytic propagation for the mollified flow]\label{prop:a0}
-Let $\tau_0<\pi/2$ and $c_A:=(1+32A_1A_2)^{-1}$, with $A_1,A_2$ as in Lemma~\ref{lem:clip}. Let $0<\varepsilon\le1$, $\hbar>0$,
-$0\le\alpha'\le\alpha\le\tau_0$ with $\alpha>0$, and $s_0,s_1\ge0$ with
+Let $c_A:=(1+32A_1A_2)^{-1}$, with $A_1,A_2$ as in Lemma~\ref{lem:clip}. Let $0<\varepsilon\le1$, $\hbar>0$,
+$0\le\alpha'\le\alpha\le1$ with $\alpha>0$, and $s_0,s_1\ge0$ with
 \[
 |s_1-s_0|\le c_A\,\frac{\alpha-\alpha'}{\alpha}\,\frac{\varepsilon}{\hbar}.
 \]
@@ -515,17 +560,42 @@ The remainder proof needs two estimates with different roles: factorial derivati
 amplitude, and exponential smallness of the mollifier defect without a spatial weight. Lemma~\ref{lem:collect} then turns a
 bound for the integrand of the remainder into the final estimate; both approximation proofs end with it.
 
-\begin{lemma}[derivative bounds for the remainder amplitude]\label{lem:wb}
-Let $\beta\ge0$, let $a_{\mathbf s}$ be as in Proposition~\ref{prop:dd-id}(ii), and assume $0<\hbar\le1$ and
-$0<\alpha\le\alpha_0\le\min(1,\tau_0)$. Let $Z_S$ be a word in $X,Y$ of length at most $n$ (the empty word is the identity).
-There is a constant $C_3\ge1$, depending only on $\tau_0$, such that uniformly in $\mathbf s\in\Sigma_{K+1}(t)$:
+\begin{lemma}[expansion of the remainder operator]\label{lem:expand}
 \begin{itemize}
-\item[\textup{(i)}]
+\item[\textup{(i)}] Let $0<\hbar\le1$, $N,k\in\mathbb N_0$ and $s,s_1,\dots,s_k\ge0$. Expanding the products,
+$\Delta_\varphi(s)^N\Delta(s_1)\cdots\Delta(s_k)$ is a sum of $5^N3^k$ terms $c\,Z_S$, where each word $Z_S$ has length
+$|S|=\ell+r$ with $\ell\le2N$ and $r\le2k$, and $|c|\le2^N\hbar^{\ell-2N}$.
+\item[\textup{(ii)}] Let $N,q,\ell,L\in\mathbb N_0$ with $\ell\le2N$ and $L\le\ell+q$, and let $G\ge1$, $0<\alpha\le1$ and
+$0<\hbar\le1$. Then
 \[
-\norm{X_0^\beta Z_Sa_{\mathbf s}}\le B_\beta C_3^{N+K+n+1}(2N)!\,(n+2K+2)!\,\alpha^{-(n+2K+2)}(\alpha\hbar)^{-2N}\pwNorm a ,
+(L+1)\,L!\,(G/\alpha)^L\,\hbar^\ell\le(4G)^{2N+q}\,(2N)!\,q!\,\alpha^{-q-2N}.
 \]
-with $B_\beta$ the constant of Lemma~\ref{lem:fdb};
-\item[\textup{(ii)}] for $0\le r'<r\le\alpha_0$ with $r-r'\ge\alpha/4$:
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+(i) By Section~\ref{subsec:dd-surf}, $\Delta_\varphi(s)=\Delta(s)-2i\hbar^{-1}Y+\hbar^{-2}(-1+i\hbar)$, a sum of five terms: the three
+terms $\ue^{-2s}X^2$, $Y^2$, $-Y$ of $\Delta(s)$, with coefficients of modulus at most $1$ and length at most $2$, the term
+$-2i\hbar^{-1}Y$ of length $1$, and the constant $\hbar^{-2}(-1+i\hbar)$, of modulus at most $2\hbar^{-2}$. For each of the five,
+the coefficient $c$ and the length $\ell'\le2$ satisfy $|c|\hbar^2\le2\hbar^{\ell'}$, since $\hbar\le1$. Choosing one term from each
+factor, the $N$ factors $\Delta_\varphi(s)$ give a coefficient with $|c|\hbar^{2N}\le2^N\hbar^\ell$ and a word of length
+$\ell\le2N$, and the $k$ factors $\Delta(s_j)$ a coefficient of modulus at most $1$ and a word of length $r\le2k$.
+
+(ii) Since $G/\alpha\ge1$, the left side increases with $L$, so we may take $L=\ell+q$. Then $(L+1)\le2^L$,
+$L!\le2^L\ell!\,q!$, $\ell!\le(2N)!$, $\hbar^\ell\le1$, and $G^L\alpha^{-L}\le G^{2N+q}\alpha^{-2N-q}$ because $G\ge1\ge\alpha$ and
+$\ell\le2N$; and $4^L\le4^{2N+q}$. \qedhere
+\end{proof}
+
+\begin{lemma}[derivative bounds for the remainder amplitude]\label{lem:wb}
+Let $\beta\ge0$, let $a_{\mathbf s}$ be as in Proposition~\ref{prop:dd-id}(ii), and assume $0<\hbar\le1$ and $0<\alpha\le1$. Let $Z_S$ be
+a word in $X,Y$ of length at most $n$ (the empty word is the identity). There is an absolute constant $C_3\ge1$ such that
+uniformly in $\mathbf s\in\Sigma_{K+1}(t)$:
+\begin{itemize}
+\item[\textup{(i)}] with $B_\beta$ the constant of Lemma~\ref{lem:fdb},
+\[
+\norm{X_0^\beta Z_Sa_{\mathbf s}}\le B_\beta C_3^{N+K+n+1}(2N)!\,(n+2K+2)!\,\alpha^{-(n+2K+2)}(\alpha\hbar)^{-2N}\pwNorm a ;
+\]
+\item[\textup{(ii)}] for $0\le r'<r\le1$ with $r-r'\ge\alpha/4$:
 \[
 \norm{\ue^{r'\Lambda}a_{\mathbf s}}\le C_3^{N+K+1}(2N)!\,(2K+2)!\,\alpha^{-(2K+2)}(\alpha\hbar)^{-2N}\norm{\ue^{r\Lambda}a}.
 \]
@@ -533,26 +603,14 @@ with $B_\beta$ the constant of Lemma~\ref{lem:fdb};
 \end{lemma}
 
 \begin{proof}
-Expand $a_{\mathbf s}$ by choosing one term from each factor. Each $\Delta(s_j)$ contributes $\ue^{-2s_j}X^2$, $Y^2$ or $-Y$,
-with coefficients of modulus at most $1$ and length at most $2$. Each $\Delta_\varphi(s_1)$ contributes
-$\hbar^{-2}(-1+i\hbar)$ (length $0$, coefficient of modulus at most $2\hbar^{-2}$), $-2i\hbar^{-1}Y$
-(length $1$, coefficient of modulus $2\hbar^{-1}$), or one of the three terms of length at most $2$ with coefficient
-of modulus at most $1$.
-Suppose $n_0,n_1,n_2$ of the $N$ $\Delta_\varphi$-factors choose these three kinds. The coefficient is $\le2^{n_0+n_1}\hbar^{-2n_0-n_1}$, and the word length is $\le L:=n+p+2K+2$, with $p:=n_1+2n_2\le2N$.
-Since $2n_0+n_1=2N-p$, the coefficient is $\le2^N\hbar^{-2N+p}$.
-By Lemma~\ref{lem:sc}, and since $k\mapsto(k+1)k!(C_2/\alpha)^k$ is increasing, each term is $\le B_\beta(L+1)L!(C_2/\alpha)^L\pwNorm a$.
-Use $L!\le2^Lp!(n+2K+2)!$, and then
-\[
-\begin{aligned}
-\hbar^{-2N+p}p!(C_2/\alpha)^p&=\hbar^{-2N}p!(C_2\hbar/\alpha)^p\\
-&\le\hbar^{-2N}(2N)!\max(1,C_2\hbar/\alpha)^{2N}\le(2N)!\,C_2^{2N}(\alpha\hbar)^{-2N},
-\end{aligned}
-\]
-using $\alpha,\hbar\le1\le C_2$.
-Summed over all choices, the factors $2^{n_0+n_1}$ give at most $7^N3^{K+1}$: each $\Delta_\varphi$-factor has two choices
-that carry the factor $2$ (lengths $0$ and $1$) and three that carry the factor $1$, so it contributes $2+2+1+1+1=7$, and each
-$\Delta(s_j)$ has three choices. Collecting the powers of $2$ and $7$ into $C_3$ gives (i).
-Part (ii) follows from the same count, using Lemma~\ref{lem:wc} (gap $\ge\alpha/4$) in place of Lemma~\ref{lem:sc}, and $n=0$. \qedhere
+Put $G:=\max(C_2,4\ue C_1)\ge1$ and $C_3:=160\,G^2$. By Lemma~\ref{lem:expand}(i) with $k=K+1$, $Z_Sa_{\mathbf s}$ is a sum of
+$5^N3^{K+1}$ terms $c\,Z_SZ_{S'}a$ with $|c|\le2^N\hbar^{\ell-2N}$, $\ell\le2N$, and words of length $L\le\ell+q$, $q:=n+2K+2$.
+By Lemma~\ref{lem:sc}, $\norm{X_0^\beta Z_SZ_{S'}a}\le B_\beta(L+1)L!(G/\alpha)^L\pwNorm a$, and Lemma~\ref{lem:expand}(ii) bounds
+$(L+1)L!(G/\alpha)^L\hbar^\ell$ by $(4G)^{2N+q}(2N)!\,q!\,\alpha^{-q-2N}$. So each term is at most
+$B_\beta\,2^N(4G)^{2N+q}(2N)!\,q!\,\alpha^{-q}(\alpha\hbar)^{-2N}\pwNorm a$. Summing over the terms, (i) follows from
+$5^N3^{K+1}2^N(4G)^{2N+n+2K+2}=(160G^2)^N(48G^2)^{K+1}(4G)^n\le C_3^{N+K+n+1}$.
+For (ii) take $n=0$ and use Lemma~\ref{lem:wc} with the gap $r-r'\ge\alpha/4$ in place of Lemma~\ref{lem:sc}: a word of length $L$
+satisfies $\norm{\ue^{r'\Lambda}Z\ue^{-r\Lambda}}\le(4\ue C_1/\alpha)^LL!\le(L+1)L!(G/\alpha)^L$. \qedhere
 \end{proof}
 
 \begin{lemma}[analytic mollifier defect]\label{lem:unw}
@@ -584,7 +642,7 @@ If $\lambda>1/(2\varepsilon)$, then $1-j_\varepsilon\le1$ and $(1+\lambda^2)\ue^
 \end{aligned}
 \]
 
-\emph{Second term.} By Lemma~\ref{lem:wc} with $\tau_0=1$ (words of length $1$ and $2$, radii $r/2<r$),
+\emph{Second term.} By Lemma~\ref{lem:wc} (words of length $1$ and $2$, radii $r/2<r$),
 $\norm{\ue^{(r/2)\Lambda}\Delta(s)v}\le3(1+4C_1/r)^2\norm{\ue^{r\Lambda}v}$. By the symbol bound with $r/2$ in place of $r$,
 $\norm{(1-J_\varepsilon)w}\le20\,r^{-2}\ue^{-r/(8\varepsilon)}\norm{\ue^{(r/2)\Lambda}w}$. Take $w=\Delta(s)v$.
 
@@ -592,42 +650,42 @@ Adding the two terms gives the claim with $C_4=20+60(1+4C_1)^2$. \qedhere
 \end{proof}
 
 \begin{lemma}[collecting the remainder bound]\label{lem:collect}
-Let $\kappa>0$, $\gamma\ge0$, $c>0$, $G\ge1$ and $B\ge0$. There is $C>0$, depending only on $\kappa$, $\gamma$, $c$, $G$ and $B$, with the
+Let $\kappa>0$, $\lambda\ge0$, $c>0$, $G\ge1$ and $B\ge0$. There is $C>0$, depending only on $\kappa$, $\lambda$, $c$, $G$ and $B$, with the
 following property. Let $0<\hbar\le1$ and $0<\sigma\le1$ with $\sigma^3\ge\kappa\hbar$, put $\varepsilon:=(\sigma\hbar)^{1/2}/2$ and
-$\xi:=(\sigma/\hbar)^{1/2}$, let $0<\delta\le1$ with $2\gamma\delta\le c$, $0\le t\le\delta\xi$, $K,N\in\mathbb N_0$ and $H\ge0$, and put
+$\xi:=(\sigma/\hbar)^{1/2}$, let $0<\delta\le1$ with $2\lambda\delta\le c$, $0\le t\le\delta\xi$, $K,N\in\mathbb N_0$ and $\mathcal N\ge0$, and put
 \[
-  F_n:=G^{N+K+n+1}(2N)!\,(n+2K+2)!\,\sigma^{-(n+2K+2)}(\sigma\hbar)^{-2N}H\qquad(n\ge0).
+  F_n:=G^{N+K+n+1}(2N)!\,(n+2K+2)!\,\sigma^{-(n+2K+2)}(\sigma\hbar)^{-2N}\mathcal N\qquad(n\ge0).
 \]
-If a number $\Phi$ satisfies $\Phi\le B\bigl(F_0+\hbar t\,\ue^{\gamma t}\varepsilon^{-3}\sigma^{-4}\ue^{-c\xi}F_2\bigr)$, then
+If a number $\mathcal I$ satisfies $\mathcal I\le B\bigl(F_0+\hbar t\,\ue^{\lambda t}\varepsilon^{-3}\sigma^{-4}\ue^{-c\xi}F_2\bigr)$, then
 \[
-  \Bigl(\frac\hbar2\Bigr)^{K+1}\frac{t^{K+1}}{(K+1)!}\,\Phi\le C^{N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Bigl(\frac{\hbar t}{\sigma^2}\Bigr)^{K+1}H.
+  \Bigl(\frac\hbar2\Bigr)^{K+1}\frac{t^{K+1}}{(K+1)!}\,\mathcal I\le C^{N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Bigl(\frac{\hbar t}{\sigma^2}\Bigr)^{K+1}\mathcal N.
 \]
 \end{lemma}
 
-In the applications $\Phi$ bounds $\norm{\mathcal V_{s_1}a_{\mathbf s}}$ on $\Sigma_{K+1}(t)$, whose volume is $t^{K+1}/(K+1)!$, so that by
+In the applications $\mathcal I$ bounds $\norm{\mathcal V_{s_1}a_{\mathbf s}}$ on $\Sigma_{K+1}(t)$, whose volume is $t^{K+1}/(K+1)!$, so that by
 Proposition~\ref{prop:dd-id}(ii) the left side bounds the error of the approximation of order $K$. The term $F_0$ comes from the
-mollified flow, and the second term from the mollifier defect: the factor $\ue^{\gamma t}$ is the growth of the periodization bound,
+mollified flow, and the second term from the mollifier defect: the factor $\ue^{\lambda t}$ is the growth of the periodization bound,
 and $\ue^{-c\xi}$ the analytic smallness of the defect.
 
 \begin{proof}
 \emph{Absorption.} Since $\hbar\xi^2=\sigma$, we have $\varepsilon^{-1}=2\xi/\sigma$, $\hbar t\le\hbar\xi=\sigma/\xi$ (as $\delta\le1$) and
-$\gamma t\le\gamma\delta\xi\le c\xi/2$. Hence
+$\lambda t\le\lambda\delta\xi\le c\xi/2$. Hence
 \[
-  R:=\hbar t\,\ue^{\gamma t}\varepsilon^{-3}\sigma^{-4}\ue^{-c\xi}\le\frac\sigma\xi\cdot\frac{8\xi^3}{\sigma^3}\cdot\sigma^{-4}\ue^{-c\xi/2}
+  R:=\hbar t\,\ue^{\lambda t}\varepsilon^{-3}\sigma^{-4}\ue^{-c\xi}\le\frac\sigma\xi\cdot\frac{8\xi^3}{\sigma^3}\cdot\sigma^{-4}\ue^{-c\xi/2}
   =8\xi^2\sigma^{-6}\ue^{-c\xi/2}.
 \]
 Multiplying $\kappa\hbar\le\sigma^3$ by $\xi^2$ gives $\kappa\le\sigma^2\xi^2$, so $\sigma^{-8}\le\xi^8\kappa^{-4}$; and $(c\xi/2)^{10}/10!\le\ue^{c\xi/2}$
 gives $\xi^{10}\ue^{-c\xi/2}\le10!\,(2/c)^{10}$. So $R\le C_R\sigma^2$ with $C_R:=8\kappa^{-4}\,10!\,(2/c)^{10}$.
 
-\emph{Collecting.} Since $G\ge1$ and $(2K+2)!\le(2K+4)!$, $F_0\le\sigma^2F_2$, so $\Phi\le B(1+C_R)\sigma^2F_2$. We use
+\emph{Collecting.} Since $G\ge1$ and $(2K+2)!\le(2K+4)!$, $F_0\le\sigma^2F_2$, so $\mathcal I\le B(1+C_R)\sigma^2F_2$. We use
 \begin{equation}\label{eq:factorial-assembly}
   \frac{(2K+4)!}{(K+1)!}\le4\cdot32^{K+1}K!,\qquad(2N)!\le4^NN^{2N};
 \end{equation}
 the first because $(2K+4)!\le4^{K+2}((K+2)!)^2$ by $\binom{2K+4}{K+2}\le4^{K+2}$, and $(K+2)^2(K+1)\le8^{K+1}$; the second by bounding each of
 the $2N$ factors by $2N$. With $\sigma^2\sigma^{-(2K+4)}\hbar^{K+1}t^{K+1}=(\hbar t/\sigma^2)^{K+1}$ this gives
 \[
-  \Bigl(\frac\hbar2\Bigr)^{K+1}\frac{t^{K+1}}{(K+1)!}\,\Phi\le4B(1+C_R)\,G^{N+K+3}\,4^N16^{K+1}\,N^{2N}K!\,(\sigma\hbar)^{-2N}
-  \Bigl(\frac{\hbar t}{\sigma^2}\Bigr)^{K+1}H,
+  \Bigl(\frac\hbar2\Bigr)^{K+1}\frac{t^{K+1}}{(K+1)!}\,\mathcal I\le4B(1+C_R)\,G^{N+K+3}\,4^N16^{K+1}\,N^{2N}K!\,(\sigma\hbar)^{-2N}
+  \Bigl(\frac{\hbar t}{\sigma^2}\Bigr)^{K+1}\mathcal N,
 \]
 and $C:=64\max\bigl(1,4B(1+C_R)\bigr)G^3$ works, since $N+K+3\le3(N+K+1)$ and $4^N16^{K+1}\le64^{N+K+1}$.
 \end{proof}

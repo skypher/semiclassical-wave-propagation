@@ -34,35 +34,37 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 2.1 (`lem:count`) | P | elementary area count; its orbit case, used for Lemma 2.3 (`lem:p1`) and Proposition 5.9 (`os:p1`), is `exists_orbit_count` |
 | Lemma 2.3 (`lem:p1`) | L | `poincareSup_lt_top` |
 | Lemma 2.4 (`lem:t2`) | L | `lem_t2` |
-| Lemma 2.5 (`lem:lift`) | L | `allWords_of_exp`, `patch_smooth`, `glue_smooth`, `lift1`, `lift1D` |
-| Lemma 2.6 (`lem:base`) | L | `exists_stab_smul_infty`, `initState_mul`, `approxSolB_mul`, `expLambda_iso`, `poincareSup_conj_move` |
-| Lemma 2.8 (`lem:surf-lap`) | L | `SurfW.surf_lap` |
-| Lemma 2.9 (`lem:surf-duh`) | L | `SurfW.surf_duhamel` |
-| Corollary 2.10 (`cor:surf-dyson`) | L | `SurfW.surf_dyson` |
-| Proposition 2.11 (`prop:dd-id`) | L | `dd_D12_simplex`, `SurfW.surf_D4`, `SurfW.surf_D4_bound` |
+| Lemma 2.5 (`lem:base`) | L | `exists_stab_smul_infty`, `initState_mul`, `approxSolB_mul`, `expLambda_iso`, `poincareSup_conj_move` |
+| Lemma 2.7 (`lem:surf-lap`) | L | `SurfW.surf_lap` |
+| Lemma 2.8 (`lem:surf-duh`) | L | `SurfW.surf_duhamel` |
+| Corollary 2.9 (`cor:surf-dyson`) | L | `SurfW.surf_dyson` |
+| Proposition 2.10 (`prop:dd-id`) | L | `dd_D12_simplex`, `SurfW.surf_D4`, `SurfW.surf_D4_bound` |
 
 ## Section 3 (`sec:analytic`): analytic and weighted propagation estimates
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Lemma 3.1 (`lem:ell`) | L | `inner_X_left`, `inner_Y_left`, `elliptic_identity`, `elliptic_estimate` |
-| Lemma 3.10 (`lem:clip`) | L | `norm_Rplus_le`, `norm_Rminus_le`, `im_bound` |
-| Proposition 3.11 (`prop:a0`) | L | `prop_a0_eps` |
-| Lemma 3.6 (`lem:expw`) | L | `exp_of_words` |
-| Lemma 3.7 (`lem:mw`) | L | `lem_m_weak` |
-| Lemma 3.8 (`lem:m2w`) | L | `swX_le_swD` |
-| Lemma 3.12 (`lem:wave`) | L | `wave_weight`, `wave_Bx'`, `wave_By'`; `wave_weightD` |
-| Lemma 3.13 (`lem:wcomm`) | L | `comm_wave` |
-| Lemma 3.15 (`lem:wmoll`) | L | `w_J`, `w_Bx`, `w_By`, `w_JS`, `w_XX`, `w_YY`, `w_comm` |
-| Proposition 3.16 (`prop:ws`) | L | `ws0_trunc`, `ws0_cosh` |
-| Lemma 3.17 (`lem:path`) | L | `WOps.pathG_eq`, `norm_pathH_le`, `norm_xInt_le`, `xInt_chart`, `path_duhamel` |
-| Lemma 3.2 (`lem:fc`) | L | `lem_fc` |
-| Lemma 3.3 (`lem:wc`) | L | `lem_wc` |
-| Lemma 3.4 (`lem:fdb`) | L | `fdb` |
-| Lemma 3.5 (`lem:sc`) | L | `lem_sc` |
-| Lemma 3.18 (`lem:wb`) | L | `lem_wb_w`, `lem_wb_u` |
-| Lemma 3.19 (`lem:unw`) | L | `unw_err` |
-| Lemma 3.20 (`lem:collect`) | L | `collect_remainder`; parts `collect_absorb`, `remF_zero_le`, `collect_final` |
+| Lemma 3.12 (`lem:clip`) | L | `norm_Rplus_le_one`, `norm_Rminus_le_one`, `im_bound_one` |
+| Proposition 3.13 (`prop:a0`) | L | `prop_a0_eps_one` |
+| Lemma 3.7 (`lem:expw`) | L | `exp_of_words` |
+| Lemma 3.8 (`lem:mw`) | L | `lem_m_weak_one` |
+| Lemma 3.9 (`lem:wordphi`) | L | `wb_comp` |
+| Lemma 3.10 (`lem:m2w`) | L | `swX_le_swD` |
+| Lemma 3.14 (`lem:wave`) | L | `wave_weight`, `wave_Bx'`, `wave_By'`; `wave_weightD` |
+| Lemma 3.15 (`lem:wcomm`) | L | `comm_wave` |
+| Lemma 3.17 (`lem:wmoll`) | L | `w_J`, `w_Bx`, `w_By`, `w_JS`, `w_XX`, `w_YY`, `w_comm` |
+| Proposition 3.18 (`prop:ws`) | L | `ws0_trunc`, `ws0_cosh` |
+| Lemma 3.19 (`lem:path`) | L | `WOps.pathG_eq`, `norm_pathH_le`, `norm_xInt_le`, `xInt_chart`, `path_duhamel` |
+| Lemma 3.2 (`lem:fc`) | L | `lem_fc_one` |
+| Lemma 3.3 (`lem:wc`) | L | `lem_wc_one` |
+| Lemma 3.4 (`lem:lift`) | L | `allWords_of_exp`, `patch_smooth`, `glue_smooth`, `lift1`, `lift1D` |
+| Lemma 3.5 (`lem:fdb`) | L | `fdb` |
+| Lemma 3.6 (`lem:sc`) | L | `lem_sc_one` |
+| Lemma 3.20 (`lem:expand`) | L | (i) `bP_inv`; (ii) `sca` |
+| Lemma 3.21 (`lem:wb`) | L | `lem_wb_w_one`, `lem_wb_u_one` |
+| Lemma 3.22 (`lem:unw`) | L | `unw_err` |
+| Lemma 3.23 (`lem:collect`) | L | `collect_remainder`; parts `collect_absorb`, `remF_zero_le`, `collect_final` |
 
 ## Section 4 (`sec:companion`): power-weight and reversed-weight approximation
 
@@ -85,14 +87,14 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 5.8 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
 | Proposition 5.9 (`os:p1`) | L | `poincare_omP`, `perio_weighted_gen` (the field `perio_bd` of `surfW_printed`), `critSup_eq`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
 | Lemma 5.10 (`os:indep`) | L | `surfV_indep` |
-| Proposition 5.11 (`pc:core`) | L | `dd_core_pc` (the bound for the Dyson remainder of Proposition 2.11 (`prop:dd-id`)(ii)), with `SurfW.surf_D4` (the error equals that remainder) |
+| Proposition 5.11 (`pc:core`) | L | `dd_core_om` (the bound for the Dyson remainder of Proposition 2.10 (`prop:dd-id`)(ii); the instance of `dd_core_pc` for the weight `\omega`), with `SurfW.surf_D4` (the error equals that remainder) |
 
 ## Section 6 (`sec:consequences`): consequences and localized amplitudes
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Lemma 6.1 (`pc:g43`) | L | `sobolev_M_mult` |
-| Remark 6.2 (`pc:remcusp`) | P | two-sided bound for `m(z)` in a cusp; self-checked, not formalized |
+| Lemma 6.2 (`pc:remcusp`) | P | bounds for `m(z)` in a cusp; self-checked, not formalized |
 | Remark 6.3 (`rem:g4`) | P |  |
 | Remark 6.4 (`thm:main`) | L | original norm: `pcthm13_fixed` (from `pcthm13_all`); reversed-weight norm: `thm13R_fixed` (from `thm14Rmain_exp` and `swNormD_mono`) |
 | Remark 6.5 (`rem:pw-cor`) | L | `cor15R_tiedA`, `cor16R_allmultN`; positive injectivity radius: `cor16R_allbgN`; constants with `C\ge1`: `xThmCDA_exists` |
@@ -117,13 +119,6 @@ All Lean names are in the namespace `Qschubert`.
 | Corollary 8.17 (`ev:perio`) | P | elementary consequence of Lemma 8.14 (`ev:meanlem`); self-checked, not separately formalized |
 | Lemmas 8.9 (`ev:mellinlemma`), 8.19 (`ev:scattering`), 8.23 (`ev:approxmode`), 8.28 (`ev:initialnorm`), 8.29 (`ev:outgoing`) | P | editorial extractions from the proof of Theorem 1.8 (`ev:mod`); the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked |
 
-## Section 9 (`sec:g5`): the mean of the approximation
-
-| Statement | Status | Lean theorem; difference |
-|---|---|---|
-| Proposition 9.1 (`prop:mean`) | L | `meanGrowth`; `integral_approxSolB`, `J_vecX`, `J_vecY`, `chP_dysT`, `swapped_setup`, `enorm_integral_le_perio` |
-| Corollary 9.2 (`cor:meanJ`) | P | deduced from Proposition 9.1 (`prop:mean`) and Theorem 1.2 (`thm:dd14`); self-checked, not formalized |
-
 ## Appendix A (`app:special`): special-function and kernel calculations
 
 | Statement | Status | Lean theorem; difference |
@@ -131,3 +126,10 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma A.3 (`lem:gutzmer`) | P | used only for Lemma 6.6 (`lem:ex`) |
 | Lemma A.4 (`os:poisson`) | P | used only in Proposition 5.2 (`pc:classes`) and Section 7 (`subsec:cl`) |
 | Lemma A.8 (`os:hk`) | P | used only in Section 7 (`subsec:cl`) |
+
+## Appendix B (`sec:g5`): the mean of the approximation
+
+| Statement | Status | Lean theorem; difference |
+|---|---|---|
+| Proposition B.1 (`prop:mean`) | L | `meanGrowth`; `integral_approxSolB`, `J_vecX`, `J_vecY`, `chP_dysT`, `swapped_setup`, `enorm_integral_le_perio` |
+| Corollary B.2 (`cor:meanJ`) | P | deduced from Proposition B.1 (`prop:mean`) and Theorem 1.2 (`thm:dd14`); self-checked, not formalized |

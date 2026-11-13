@@ -27,9 +27,11 @@ For $f=\ue^{\alpha\Lambda}a$ and $\beta>\tfrac12$, the original norm gives $\|\o
 $\omega\le C_\beta\ue^{\beta\langle d\rangle}$.
 
 \begin{proposition}[the two amplitude classes and dependence on the radius]\label{pc:classes}
-For $\beta>\tfrac12$, the original and reversed-weight norms are not equivalent. For every $0<\alpha<\pi/2$, the range of the kernel
-bounds of Lemma~\ref{os:poisson}, there are amplitudes of finite original norm at radius $\alpha$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and infinite original norm, with the same $\beta$, at every smaller radius.
+For $\beta>\tfrac12$, the original and reversed-weight norms are not equivalent. For every $0<\alpha<\pi/2$ there are amplitudes of finite original norm at radius $\alpha$ that have infinite reversed-weight norm at every radius and every decay exponent greater than $1/2$, and infinite original norm, with the same $\beta$, at every smaller radius.
 \end{proposition}
+
+The range $\alpha<\pi/2$ is that of the kernel bounds of Lemma~\ref{os:poisson} used in the proof.
+
 \begin{proof}
 Let $\beta>\tfrac12$ and $0\le\alpha'<\alpha<\pi/2$, and put $h:=\ue^{-\beta\langle d\rangle}\mathbf 1_{B(x_0,1)}$ and $a:=\ue^{-\alpha\Lambda}h$, so that
 $\pcNorm a=\norm{\mathbf 1_{B(x_0,1)}}<\infty$ at $(\alpha,\beta)$. For $0<\tau<\pi/2$ the function $\ue^{-\tau\Lambda}h$ is the convolution of $h$ with the
@@ -54,45 +56,37 @@ For this reason the proof of Theorem~\ref{pc:main} for larger radii compares the
 \input{sec_critical}
 
 \subsection{The remainder for critically weighted data}\label{subsec:pc-proof}
-The proof of Theorem~\ref{pc:main} uses the amplitude only through a representation $a=\ue^{-\sigma\Lambda_m}h$ with
-critically weighted data $h$. The following proposition bounds the error in terms of the weighted norm of $h$;
-Section~\ref{subsec:pc-all} then constructs $h$ from $a$ for every bounded range of radii. The proposition is applied only
-with $\varpi=\omega$.
+The proof of Theorem~\ref{pc:main} uses the amplitude only through a representation $a=\ue^{-\sigma\Lambda_3}h$ with
+critically weighted data $h$. The following proposition bounds the error in terms of $\norm{\omega h}$;
+Section~\ref{subsec:pc-all} then constructs $h$ from $a$ for every bounded range of radii.
 
 \begin{proposition}[the remainder for critically weighted data]\label{pc:core}
-Let $0\le c\le1$, $C_{\mathrm{sh}}>0$, $C_{\mathrm{gr}}\ge0$, $m>3/\sqrt2$ and $\kappa'>0$. There is $\delta'>0$, and for every
-$P<\infty$ there is $C'$, with the following property. Let $\Gamma$ be a Fuchsian group, $x_0=i$ and $b=\infty$, and let $\varpi\ge1$
-be a continuous weight that satisfies \textup{(W1)} with $\norm{f_\Gamma}^2_{L^2(M)}\le P\norm{\varpi f}^2$ for $f\in L^2_\varpi$, and
-\textup{(W2)}, and such that
-\[
-\begin{gathered}
-  \ue^{n/2}(1+n)^c\le\varpi\le C_{\mathrm{sh}}\,\ue^{n/2}(1+n)^c\quad\text{on }A_n\ (n\ge0),\\
-  \varpi(z)\le C_{\mathrm{gr}}\,\ue^{|s|}\varpi(\Omega_sz)\quad(s\in\mathbb R,\ z\in\Hb).
-\end{gathered}
-\]
-Let $0<\hbar\le1$ and $0<\sigma\le1$ with $\sigma^3\ge\kappa'\hbar$, let $K,N\in\mathbb N_0$, let $h\in L^2(\Hb)$ with $\varpi h\in L^2(\Hb)$,
-and put $a:=\ue^{-\sigma\Lambda_m}h$. Then for $0\le t\le\delta'(\sigma/\hbar)^{1/2}$,
+Let $\kappa'>0$. There is $\delta'>0$, and for every $P<\infty$ there is $C'$, with the following property. Let $\Gamma$ be a Fuchsian
+group with $P^{\mathrm{cr}}_\Gamma\le P$, $x_0=i$ and $b=\infty$. Let $0<\hbar\le1$ and $0<\sigma\le1$ with $\sigma^3\ge\kappa'\hbar$, let
+$K,N\in\mathbb N_0$, let $h\in L^2(\Hb)$ with $\omega h\in L^2(\Hb)$, and put $a:=\ue^{-\sigma\Lambda_3}h$. Then for
+$0\le t\le\delta'(\sigma/\hbar)^{1/2}$,
 \[
   \norm{\Delta^N\big[\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}
-  \le C'^{\,N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Big(\frac{\hbar t}{\sigma^2}\Big)^{K+1}\norm{\varpi h}.
+  \le C'^{\,N+K+1}N^{2N}K!\,(\sigma\hbar)^{-2N}\Big(\frac{\hbar t}{\sigma^2}\Big)^{K+1}\norm{\omega h}.
 \]
 \end{proposition}
 
-The condition $m>3/\sqrt2$ is the hypothesis $2(\lambda+\tfrac12)^2<m^2$ of Lemma~\ref{os:words} at $\lambda=1$, which
-Step~1(a) of the proof uses. Condition \textup{(W2)}, which Proposition~\ref{prop:dd-id}(ii) requires, also follows from the growth
-bound in the display, with the supremum in \textup{(W2)} at most $C_{\mathrm{gr}}\ue^{T}$.
+The proof uses the following properties of $\omega=\omega_{c'}$, $c'=\tfrac34$. It is continuous and at least $1$; by \eqref{os:shell},
+$\ue^{n/2}(1+n)^{c'}\le\omega\le C_{\mathrm{sh}}\ue^{n/2}(1+n)^{c'}$ on $A_n$ with $C_{\mathrm{sh}}:=3\ue^{1/2}$; and by Proposition~\ref{os:p1}, it
+satisfies \textup{(W1)} with $\norm{f_\Gamma}^2_{L^2(M)}\le P^{\mathrm{cr}}_\Gamma\norm{\omega f}^2$, and \textup{(W2)} with the ratio bound
+$\omega(z)\le C_{\mathrm{gr}}\ue^{|s|}\omega(\Omega_sz)$, $C_{\mathrm{gr}}:=2/\log2$. The exponent $m=3$ of $\Lambda_m$ satisfies the hypothesis
+$2(\lambda+\tfrac12)^2<m^2$ of Lemma~\ref{os:words} at $\lambda=1$, which Step~1(a) of the proof uses.
 
 \begin{proof}
 The proof has the structure of Section~\ref{sec:companion} (Table~\ref{tab:compare}). Step~1 supplies the word, flow and
-defect bounds at the weight $\varpi$, with the shell transfer of Lemma~\ref{os:transfer} in place of H\"older's inequality;
+defect bounds at the weight $\omega$, with the shell transfer of Lemma~\ref{os:transfer} in place of H\"older's inequality;
 Step~2 bounds the mollified part and the defect part for data of bounded support; Step~3 removes that restriction by
-density. All lemmas are used with $\tau_0=1$. In this proof $C$ denotes constants that depend only on
-$c$, $C_{\mathrm{sh}}$, $C_{\mathrm{gr}}$, $m$, $\kappa'$ and $P$.
+density. In this proof $C$ denotes constants that depend only on $\kappa'$ and $P$.
 
 \medskip\noindent\emph{Step 0 (parameters).} By Lemma~\ref{os:words}, $\norm{\ue^{\sigma\Lambda}a}\le\norm h$, so $a$ is $C^\infty$ by
 Lemma~\ref{lem:lift}, and $u^{(K)}$ is built from this representative. Put
 \[
-  \mathsf Q:=\ue^{-\sigma\Lambda_m},\qquad\varepsilon:=(\sigma\hbar)^{1/2}/2,\qquad \xi:=(\sigma/\hbar)^{1/2},
+  \mathsf Q:=\ue^{-\sigma\Lambda_3},\qquad\varepsilon:=(\sigma\hbar)^{1/2}/2,\qquad \xi:=(\sigma/\hbar)^{1/2},
 \]
 so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=\xi/2$ and $\sigma/\varepsilon=2\xi$. For $\mathbf s\in\Sigma_{K+1}(t)$ let
 \[
@@ -105,26 +99,29 @@ so that $a_{\mathbf s}=\mathcal B_{\mathbf s}a$ in (ii) of Proposition~\ref{prop
 with a constant $C_6\ge1$ fixed in Step~1(a).
 
 \medskip\noindent\emph{Step 1 (derivative, flow and defect estimates).} Each of the following maps is linear on $L^2(\Hb)$ and is bounded
-there and at the weight $\pcXzero$ on functions supported in one shell. Lemma~\ref{os:transfer} then bounds it at the weight $\varpi$.
-Write $C_{\mathrm{tr}}$ for its constant for $c$ and $C_{\mathrm{sh}}$; it is independent of $K,N,\hbar$ and the integration variables.
+there and at the weight $\pcXzero$ on functions supported in one shell. Lemma~\ref{os:transfer} then bounds it at the weight $\omega$.
+Write $C_{\mathrm{tr}}$ for its constant for $c=c'$ and $C_{\mathrm{sh}}$; it is independent of $K,N,\hbar$ and the integration variables.
 
-\smallskip\noindent(a) \emph{Words.} For a word $Z_S$ of length $n$ let $T_wh:=Z_S\mathcal B_{\mathbf s}\mathsf Qh$. Expand $\mathcal B_{\mathbf s}$ as in the proof of
-Lemma~\ref{lem:wb}. Each term is a coefficient times a word of length at most $L$ applied to $\mathsf Qh$, and by Lemma~\ref{os:words}(b), with $\lambda=1$
-(so $2(\lambda+\tfrac12)^2<m^2$), it is bounded at the weight $\pcXzero$ by $2(L+1)L!\,(6C_5/\sigma)^L\norm{\pcXzero h}$. This is the bound of Lemma~\ref{lem:sc}
-with $(2,6C_5,\sigma)$ in place of $(B_\beta,C_2,\alpha)$, so the count in the proof of Lemma~\ref{lem:wb} gives, for a suitable $C_6\ge C_3$,
+\smallskip\noindent(a) \emph{Words.} For a word $Z_S$ of length $n$ let $T_wh:=Z_S\mathcal B_{\mathbf s}\mathsf Qh$. By
+Lemma~\ref{lem:expand}(i) with $k=K+1$, $Z_S\mathcal B_{\mathbf s}$ is a sum of $5^N3^{K+1}$ terms $c\,Z_{S'}$ with $|c|\le2^N\hbar^{\ell-2N}$,
+$\ell\le2N$, and words of length $L\le\ell+q$, $q:=n+2K+2$. By Lemma~\ref{os:words}(b) with $\lambda=1$ (so that the number $Q$
+there is $6$), $\norm{\pcXzero Z_{S'}\mathsf Qu}\le\sqrt2\,L!\,(6C_5/\sigma)^L\norm{\pcXzero u}\le2(L+1)L!\,(G/\sigma)^L\norm{\pcXzero u}$ with
+$G:=6C_5\ge1$. By Lemma~\ref{lem:expand}(ii), each term is at most
+$2\cdot2^N(4G)^{2N+q}(2N)!\,q!\,\sigma^{-q}(\sigma\hbar)^{-2N}\norm{\pcXzero u}$. Summing over the terms and using
+$2(160G^2)^N(48G^2)^{K+1}(4G)^n\le C_6^{N+K+n+1}$ with $C_6:=\max(C_3,320\,G^2)$ gives
 \[
   \norm{\pcXzero Z_S\mathcal B_{\mathbf s}\mathsf Qu}\le F_n\norm{\pcXzero u},\qquad\norm{Z_S\mathcal B_{\mathbf s}\mathsf Qu}\le F_n\norm u ;
 \]
 the second bound is the same argument without a weight. Lemma~\ref{os:transfer} with $\mathcal M_0=\mathcal M_1=F_n$ gives
 \begin{equation}\label{pc:wbw}
-  \norm{\varpi Z_S\mathcal B_{\mathbf s}\mathsf Qh}\le C_{\mathrm{tr}}\,F_n\,\norm{\varpi h}.
+  \norm{\omega Z_S\mathcal B_{\mathbf s}\mathsf Qh}\le C_{\mathrm{tr}}\,F_n\,\norm{\omega h}.
 \end{equation}
-The same argument without the factor $\mathcal B_{\mathbf s}$ shows that every word applied to $a=\mathsf Qh$ lies in $L^2_{\varpi}$.
+The same argument without the factor $\mathcal B_{\mathbf s}$ shows that every word applied to $a=\mathsf Qh$ lies in $L^2_{\omega}$.
 
 \smallskip\noindent(b) \emph{Flow.} For $s',s''\ge0$ with $\hbar|s'-s''|\le\varepsilon$, the map $V_\varepsilon(s',s'')$ has norm $1$ on $L^2$ and, by
 Proposition~\ref{prop:ws}, norm at most $\ue^{C_{\mathrm{fl},1}/2}$ at the weight $\pcXzero$. So
 \begin{equation}\label{pc:flow}
-  \norm{\varpi V_\varepsilon(s',s'')h}\le C_{\mathrm{tr}}\ue^{C_{\mathrm{fl},1}/2}\norm{\varpi h}.
+  \norm{\omega V_\varepsilon(s',s'')h}\le C_{\mathrm{tr}}\ue^{C_{\mathrm{fl},1}/2}\norm{\omega h}.
 \end{equation}
 
 \smallskip\noindent(c) \emph{Defect.} For $0\le t'\le s_1\le t$ let
@@ -144,44 +141,45 @@ Lemma~\ref{lem:path}(b) with $\lambda=1$ and $v=\mathcal B_{\mathbf s}\mathsf Qu
 \]
 Lemma~\ref{os:transfer} requires $\mathcal M_0\le \mathcal M_1$; we apply it with $\mathcal M_0+\mathcal M_1$ in place of $\mathcal M_1$. Since $\mathcal M_0\le C\sigma^{-4}\ue^{-\xi/8}F_2$,
 \begin{equation}\label{pc:defect}
-  \norm{\varpi T_dh}\le C_{\mathrm{tr}}\bigl(\mathcal M_0+\mathcal M_0^{1/4}\mathcal M_1^{3/4}\bigr)\norm{\varpi h}\le C\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-\xi/32}\,F_2\,\norm{\varpi h}.
+  \norm{\omega T_dh}\le C_{\mathrm{tr}}\bigl(\mathcal M_0+\mathcal M_0^{1/4}\mathcal M_1^{3/4}\bigr)\norm{\omega h}\le C\,\varepsilon^{-3}\sigma^{-4}\,\ue^{-\xi/32}\,F_2\,\norm{\omega h}.
 \end{equation}
 
 \medskip\noindent\emph{Step 2 (Duhamel on $M$ for data of bounded support).} Let $h\in L^2$ be supported in $\{\tilde\psi\le R_0\}$ for some $R_0$, and let
 $v_h:=\mathcal B_{\mathbf s}\mathsf Qh$, $g(t'):=V_\varepsilon(t',s_1)v_h$ for $0\le t'\le s_1$, $w_h:=g(0)$ and $\mathfrak d_h(t'):=T_dh$. Then $\pcXzero h\in L^2$ and, by (a), all
 words applied to $v_h$ lie in $L^2_{\pcXzero}$. The weight $\pcXzero^{3/4}$ satisfies (W1) and (W2) (Lemma~\ref{lem:t2}), and by
-Lemma~\ref{lem:path}(c) with $\lambda=\tfrac34$ the path $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for it. As in the power-weight proof of Theorem~\ref{thm:dd-appx},
+Lemma~\ref{lem:path}(c) with $\lambda=\tfrac34$ the path $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for it. Since
+$g'=c_\hbar\Delta_\varepsilon(t')g$ and $g(s_1)=v_h$, Lemma~\ref{lem:surf-duh} gives
 \[
   \mathcal V_{s_1}v_h=\mathcal V_0w_h-\tfrac{i\hbar}2\int_0^{s_1}\mathcal V_{t'}\mathfrak d_h(t')\,dt' .
 \]
-On $A_n$ we have $\pcXzero\ge\ue^n$, so $\varpi\le C_{\mathrm{sh}}\ue^{n/2}(1+n)^c\le C\pcXzero^{3/4}$ and $L^2_{\pcXzero^{3/4}}\subset L^2_\varpi$. By Lemma~\ref{os:indep}
-each term may therefore be estimated through the weight $\varpi$. Since $S(t')$ is unitary, the ratio bound for $\varpi$ gives
-$\norm{\varpi S(t')g}\le C_{\mathrm{gr}}\ue^{t'}\norm{\varpi g}$. So, by \textup{(W1)} for $\varpi$, \eqref{pc:flow} and \eqref{pc:wbw} with $n=0$,
+On $A_n$ we have $\pcXzero\ge\ue^n$, so $\omega\le C_{\mathrm{sh}}\ue^{n/2}(1+n)^{c'}\le C\pcXzero^{3/4}$ and $L^2_{\pcXzero^{3/4}}\subset L^2_\omega$. By Lemma~\ref{os:indep}
+each term may therefore be estimated through the weight $\omega$. Since $S(t')$ is unitary, the ratio bound for $\omega$ gives
+$\norm{\omega S(t')g}\le C_{\mathrm{gr}}\ue^{t'}\norm{\omega g}$. So, by \textup{(W1)} for $\omega$, \eqref{pc:flow} and \eqref{pc:wbw} with $n=0$,
 \[
-  \norm{\mathcal V_0w_h}\le P^{1/2}\norm{\varpi V_\varepsilon(0,s_1)v_h}\le C\norm{\varpi v_h}\le C\,F_0\,\norm{\varpi h},
+  \norm{\mathcal V_0w_h}\le P^{1/2}\norm{\omega V_\varepsilon(0,s_1)v_h}\le C\norm{\omega v_h}\le C\,F_0\,\norm{\omega h},
 \]
 and by \textup{(W1)}, the ratio bound and \eqref{pc:defect},
 \[
-  \norm{\mathcal V_{t'}\mathfrak d_h(t')}\le P^{1/2}C_{\mathrm{gr}}\ue^{t'}\norm{\varpi \mathfrak d_h(t')}\le C\,\ue^{t'}\varepsilon^{-3}\sigma^{-4}\ue^{-\xi/32}F_2\norm{\varpi h}.
+  \norm{\mathcal V_{t'}\mathfrak d_h(t')}\le P^{1/2}C_{\mathrm{gr}}\ue^{t'}\norm{\omega \mathfrak d_h(t')}\le C\,\ue^{t'}\varepsilon^{-3}\sigma^{-4}\ue^{-\xi/32}F_2\norm{\omega h}.
 \]
 Hence
 \begin{equation}\label{pc:star}
-  \norm{\mathcal V_{s_1}\mathcal B_{\mathbf s}\mathsf Qh}\le C\bigl(F_0+\hbar t\,\ue^{t}\varepsilon^{-3}\sigma^{-4}\ue^{-\xi/32}F_2\bigr)\norm{\varpi h}.
+  \norm{\mathcal V_{s_1}\mathcal B_{\mathbf s}\mathsf Qh}\le C\bigl(F_0+\hbar t\,\ue^{t}\varepsilon^{-3}\sigma^{-4}\ue^{-\xi/32}F_2\bigr)\norm{\omega h}.
 \end{equation}
 
-\medskip\noindent\emph{Step 3 (density).} The map $h\mapsto\mathcal V_{s_1}\mathcal B_{\mathbf s}\mathsf Qh$ is linear and bounded from $L^2_\varpi$ to $L^2(M)$, by
-\textup{(W1)} and \eqref{pc:wbw} with $n=0$. The functions of bounded $\tilde\psi$-support are dense in $L^2_\varpi$. So \eqref{pc:star} holds for
-every $h$ with $\varpi h\in L^2$, that is, for $\norm{\mathcal V_{s_1}a_{\mathbf s}}$.
+\medskip\noindent\emph{Step 3 (density).} The map $h\mapsto\mathcal V_{s_1}\mathcal B_{\mathbf s}\mathsf Qh$ is linear and bounded from $L^2_\omega$ to $L^2(M)$, by
+\textup{(W1)} and \eqref{pc:wbw} with $n=0$. The functions of bounded $\tilde\psi$-support are dense in $L^2_\omega$. So \eqref{pc:star} holds for
+every $h$ with $\omega h\in L^2$, that is, for $\norm{\mathcal V_{s_1}a_{\mathbf s}}$.
 
-\medskip\noindent\emph{Step 4 (collecting).} By Step~1(a), every word applied to $a$ lies in $L^2_{\varpi}$, and $\varpi$ satisfies (W1), (W2). So
+\medskip\noindent\emph{Step 4 (collecting).} By Step~1(a), every word applied to $a$ lies in $L^2_{\omega}$, and $\omega$ satisfies (W1), (W2). So
 Proposition~\ref{prop:dd-id}(ii) bounds the error by $(\hbar/2)^{K+1}$ times the volume $t^{K+1}/(K+1)!$ of $\Sigma_{K+1}(t)$ times the bound
-\eqref{pc:star}. The numbers $F_n\norm{\varpi h}$ are those of Lemma~\ref{lem:collect} for $G:=C_6$ and $H:=\norm{\varpi h}$, and that
-lemma with $\gamma:=1$ and $c:=\tfrac1{32}$ gives the asserted bound for $t\le\delta'\xi$ with $\delta'\le\tfrac1{64}$.
+\eqref{pc:star}. The numbers $F_n\norm{\omega h}$ are those of Lemma~\ref{lem:collect} for $G:=C_6$ and $\mathcal N:=\norm{\omega h}$, and that
+lemma with its parameters $\lambda=1$ and $c=\tfrac1{32}$ gives the asserted bound for $t\le\delta'\xi$ with $\delta'\le\tfrac1{64}$.
 
 \medskip\noindent\emph{Time windows.} Steps~1(b), 1(c) and~2 use $\hbar s_1\le\varepsilon$, that is $t\le\xi/2$; Proposition~\ref{prop:a0} uses
 $t\le\tfrac13c_A\varepsilon/\hbar=c_A\xi/6$; Lemma~\ref{lem:collect} uses $\delta'\le\tfrac1{64}$. So the proof holds for $t\le\delta'\xi$ with
 $\delta':=\min(\tfrac1{64},c_A/6)$.
-Since $\sigma\le1$, all radii stay below $\tau_0=1$.
+Since $\sigma\le1$, all radii are at most $1$, as Section~\ref{sec:analytic} requires.
 \end{proof}
 
 \subsection{Proof of Theorem~\texorpdfstring{\ref{pc:main}}{1.1}}\label{subsec:pc-all}
@@ -193,11 +191,7 @@ the critical weight, rather than comparing original norms at different radii, wh
 \emph{Reductions.} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group and the base point enter below only through
 $P^{\mathrm{cr}}_\Gamma$, which is invariant under the conjugation of Lemma~\ref{lem:base}, since the identity of
 Lemma~\ref{lem:base}(iii) holds for every function of the distance in place of $\ue^{-s\,d}$. Since
-$\operatorname{Dom}(\ue^{\alpha\Lambda})\subset\operatorname{Dom}(\ue^{\min(\alpha,1)\Lambda})$, $a$ is $C^\infty$ by Lemma~\ref{lem:lift}. The weight $\omega=\omega_{c'}$,
-$c'=\tfrac34$, is continuous and at least $1$, and by \eqref{os:shell} and Proposition~\ref{os:p1} it satisfies the hypotheses of
-Proposition~\ref{pc:core} with $c=c'$, $C_{\mathrm{sh}}=3\ue^{1/2}$, $C_{\mathrm{gr}}=2/\log2$ and $P=P^{\mathrm{cr}}_\Gamma$ (by
-Proposition~\ref{os:p1} with $c=c'$, $\norm{f_\Gamma}^2\le P^{\mathrm{cr}}_\Gamma\norm{\omega f}^2$); we use that proposition with these values and
-$m=3$. Put $f:=\ue^{\alpha\Lambda}a$, so that $\norm{\omega f}\le C_\beta\pcNorm a$ (Section~\ref{subsec:pc-weights}).
+$\operatorname{Dom}(\ue^{\alpha\Lambda})\subset\operatorname{Dom}(\ue^{\min(\alpha,1)\Lambda})$, $a$ is $C^\infty$ by Lemma~\ref{lem:lift}. Put $f:=\ue^{\alpha\Lambda}a$, so that $\norm{\omega f}\le C_\beta\pcNorm a$ (Section~\ref{subsec:pc-weights}).
 
 \emph{Radii $0<\alpha\le\tfrac12$.} Put $\sigma:=\alpha/6$ and $\kappa':=\kappa/216$, so that $\sigma\le\tfrac1{12}$ and $\sigma^3\ge\kappa'\hbar$.
 Proposition~\ref{os:data} with $c=c'$, $m=3$ and this $\sigma$ (here $\sigma<\alpha\le1$ and $\sigma m=\alpha/2\le\tfrac12$) gives
@@ -226,7 +220,6 @@ larger of the two constants $C$ and the smaller of the two $\delta$.
 
 \emph{The constants.} In both ranges $\delta$ is $\delta'/\sqrt6$, respectively $\delta'(12A)^{-1/2}$, where $\delta'$ is the constant of
 Proposition~\ref{pc:core} for $\kappa'=\kappa/216$, respectively $\kappa'=\kappa/(1728A^3)$; it does not depend on $P$, hence not on the group or the base point.
-The constant $C'$ of that proposition depends on the group only through $P$, and a group and base point with
-$P^{\mathrm{cr}}_\Gamma\le P$ satisfy \textup{(W1)} with this $P$; the other constants $C_{\mathrm d}$, $C_\Lambda^{\,j}$, $C_\beta$ and $12A$ do not
+The constant $C'$ of that proposition depends on the group only through the bound $P$ for $P^{\mathrm{cr}}_\Gamma$; the other constants $C_{\mathrm d}$, $C_\Lambda^{\,j}$, $C_\beta$ and $12A$ do not
 involve the group or the base point. This proves the theorem.
 \end{proof}

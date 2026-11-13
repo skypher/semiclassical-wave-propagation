@@ -28,19 +28,13 @@ Periodization & weight $X_0^\lambda$, $\lambda>\tfrac12$ (Lemma~\ref{lem:t2}) & 
 \subsection{Approximation with the power weight \texorpdfstring{$X_0^\beta$}{X0}}\label{subsec:dd-thm}
 
 \begin{theorem}[approximation in the power-weight class]\label{thm:dd-appx}
-Fix $\beta>\tfrac12$, $\kappa>0$ and $A>0$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$, such that for every
-Fuchsian group $\Gamma$ and every base point $x_0$ with $P_\Gamma(\beta+\tfrac12)\le P$, all $0<\hbar\le1$, all $\alpha\in(0,A]$ with
-$\alpha^3\ge\kappa\hbar$, all $K,N\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$ with $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$, and all
-$0\le t\le\delta(\alpha/\hbar)^{1/2}$,
-\begin{multline*}
-\norm{\Delta^N\bigl[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\bigr]}_{L^2(M)}\\
-\le C^{N+K+1}\,N^{2N}\,K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}\pwNorm a .
-\end{multline*}
+Fix $\beta>\tfrac12$, $\kappa>0$ and $A>0$. The statement of Theorem~\ref{pc:main} holds, with constants $\delta$ and $C$ of its
+own, when $\pcNorm a$ is replaced by $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}$ and the series $P^{\mathrm{cr}}_\Gamma$ by
+$P_\Gamma(\beta+\tfrac12)$.
 \end{theorem}
 
-The constant $\delta$ depends only on $\beta$, $\kappa$ and $A$, and $C$ depends on $\Gamma$ and $x_0$ only through $P$; the proof of
-Theorem~\ref{thm:dd14} uses this. Steps~0--3 below prove the estimate for $0<\alpha\le\min(A,1)$, where the estimates of
-Section~\ref{sec:analytic} apply with $\tau_0=1$; the last paragraph extends it to $1<\alpha\le A$.
+Steps~0--3 below prove the estimate for $0<\alpha\le\min(A,1)$, where the estimates of Section~\ref{sec:analytic} apply; the
+last paragraph extends it to $1<\alpha\le A$.
 
 \begin{proof}
 \medskip\noindent\emph{Step 0 (reductions and parameters).} By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the group enters the estimates below only
@@ -49,7 +43,7 @@ through the Poincar\'e series bound at the base point. By Lemma~\ref{lem:lift}, 
  E:=\Delta^N\bigl[\cU(t)[a\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\bigr].
 \]
 
-All lemmas are used with $\tau_0=1$. Let $c_M$ be the constant of Lemma~\ref{lem:mw} and $c_A$ that of
+Let $c_M$ be the constant of Lemma~\ref{lem:mw} and $c_A$ that of
 Proposition~\ref{prop:a0}. Put
 \[
 r_\alpha:=c_M\alpha,\qquad r_1:=\tfrac34r_\alpha,\qquad r_2:=\tfrac12r_\alpha,\qquad\varepsilon:=(\alpha\hbar)^{1/2}/2,\qquad \xi:=(\alpha/\hbar)^{1/2},
@@ -68,9 +62,7 @@ The first term is bounded by weighted propagation of the mollified flow (Step~1)
 expresses the difference through the mollifier defect, whose analytic smallness compensates for the transport growth
 after interpolation (Step~2).
 
-\medskip\noindent\emph{Step 1 (mollified part).}
-
-Lemma~\ref{lem:t2} at $t=0$, and Proposition~\ref{prop:ws} at the weight $X_0^\lambda$ (with $\hbar s_1\le\varepsilon$), give
+\medskip\noindent\emph{Step 1 (mollified part).} Lemma~\ref{lem:t2} at $t=0$, and Proposition~\ref{prop:ws} at the weight $X_0^\lambda$ (with $\hbar s_1\le\varepsilon$), give
 \[
 \norm{\mathcal V_0w}=\norm{[\ue^{i\varphi/\hbar}V_\varepsilon(s_1)^*a_{\mathbf s}]_\Gamma}\le C\norm{X_0^\lambda V_\varepsilon(0,s_1)a_{\mathbf s}}\le C\ue^{C_{\mathrm{fl},\lambda}/2}\norm{X_0^\lambda a_{\mathbf s}}\le C\norm{X_0^\beta a_{\mathbf s}},
 \]
@@ -81,9 +73,7 @@ By Lemma~\ref{lem:wb}(i) with $n=0$:
 \]
 
 
-\medskip\noindent\emph{Step 2 (defect part).}
-
-By Lemma~\ref{lem:wb}(i) with $n\le2$, $X_0^\beta Za_{\mathbf s}\in L^2$ for every $Z$ in $\mathcal S=\{1,X,Y,X^2,Y^2\}$. Thus Lemma~\ref{lem:path}(c), with the exponent
+\medskip\noindent\emph{Step 2 (defect part).} By Lemma~\ref{lem:wb}(i) with $n\le2$, $X_0^\beta Za_{\mathbf s}\in L^2$ for every $Z$ in $\mathcal S=\{1,X,Y,X^2,Y^2\}$. Thus Lemma~\ref{lem:path}(c), with the exponent
 $\lambda$, shows that $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for $\varpi=X_0^\lambda$. Since $g'=c_\hbar\,\Delta_\varepsilon(t')g$,
 Duhamel on $M$ gives $\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)=-c_\hbar\int_0^{s_1}\mathcal V_{t'}\mathfrak d(t')\,dt'$, with
 \[
@@ -107,7 +97,7 @@ $\norm{\ue^{r_2\Lambda}g(t')}\le\norm{\ue^{r_1\Lambda}a_{\mathbf s}}$.
 Lemma~\ref{lem:unw} with $r=r_2$ gives $\norm{\mathfrak d(t')}\le C_4r_2^{-4}\ue^{-r_2/(8\varepsilon)}\norm{\ue^{r_2\Lambda}g(t')}$, and $r_2/(8\varepsilon)=c_M\xi/8$.
 
 \emph{Combining the factors.} Let $F_n$ be the numbers of Lemma~\ref{lem:collect} for $G:=C_3/c_M^2$, $\sigma:=\alpha$ and
-$H:=\pwNorm a$. Since $c_M\le1\le C_3$ and $\alpha\le1$, the weighted factor is at most $C\varepsilon^{-3}F_2$ and the unweighted one at
+$\mathcal N:=\pwNorm a$. Since $c_M\le1\le C_3$ and $\alpha\le1$, the weighted factor is at most $C\varepsilon^{-3}F_2$ and the unweighted one at
 most $C\alpha^{-4}\ue^{-c_M\xi/8}F_2$. After the H\"older split, using $\varepsilon,\alpha\le1$, the defect part is at most
 \[
 C\,\hbar t\,\ue^{\lambda t}\,\varepsilon^{-3}\alpha^{-4}\ue^{-c\xi}F_2,\qquad c:=(1-\theta)c_M/8 .
@@ -118,15 +108,13 @@ C\,\hbar t\,\ue^{\lambda t}\,\varepsilon^{-3}\alpha^{-4}\ue^{-c\xi}F_2,\qquad c:
 \norm{\mathcal V_{s_1}a_{\mathbf s}}\le B\bigl(F_0+\hbar t\,\ue^{\lambda t}\varepsilon^{-3}\alpha^{-4}\ue^{-c\xi}F_2\bigr),
 \]
 with $B$ depending only on $\beta$, $\kappa$ and $P$. By Proposition~\ref{prop:dd-id}(ii), the error $\norm E$ is at most $(\hbar/2)^{K+1}$
-times the volume $t^{K+1}/(K+1)!$ of $\Sigma_{K+1}(t)$ times this bound, and Lemma~\ref{lem:collect} with $\gamma:=\lambda$ gives
+times the volume $t^{K+1}/(K+1)!$ of $\Sigma_{K+1}(t)$ times this bound, and Lemma~\ref{lem:collect}, with the exponent $\lambda$ of Step~0 as its parameter $\lambda$, gives
 \[
 \norm E\le C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Bigl(\frac{\hbar t}{\alpha^2}\Bigr)^{K+1}\pwNorm a
 \]
 for $t\le\delta\xi$ with $\delta\le1$ and $2\lambda\delta\le c$.
 
-\medskip\noindent\emph{Time windows used.}
-
-Weighted propagation and Lemma~\ref{lem:path} require $\hbar s_1\le\varepsilon$, that is $t\le\xi/2$.
+\medskip\noindent\emph{Time windows used.} Weighted propagation and Lemma~\ref{lem:path} require $\hbar s_1\le\varepsilon$, that is $t\le\xi/2$.
 Analytic propagation requires $t\le\tfrac13c_A\varepsilon/\hbar=c_A\xi/6$.
 Lemma~\ref{lem:collect} requires $2\lambda\delta\le c$, that is $\delta\le(1-\theta)c_M/(16\lambda)$.
 
@@ -140,13 +128,13 @@ $P_\Gamma(\beta+\tfrac12)$.
 
 \medskip\noindent\emph{Radii $1<\alpha\le A$.} The power-weight norm increases with the radius, since
 $\ue^{\Lambda}=\ue^{-(\alpha-1)\Lambda}\ue^{\alpha\Lambda}$ and $\ue^{-\tau\Lambda}$ is a contraction for $\tau\ge0$. Apply the case already proved
-at the radius $1$ with $1$ in place of $\kappa$ (then $1\ge\hbar$), and let $C_1,\delta_1$ be its constants. For
-$t\le\delta_1A^{-1/2}(\alpha/\hbar)^{1/2}$ we have $t\le\delta_1\hbar^{-1/2}$, and
+at the radius $1$ with $1$ in place of $\kappa$ (then $1\ge\hbar$), and let $\bar C,\bar\delta$ be its constants. For
+$t\le\bar\delta A^{-1/2}(\alpha/\hbar)^{1/2}$ we have $t\le\bar\delta\hbar^{-1/2}$, and
 \[
 \hbar^{-2N}(\hbar t)^{K+1}\le A^{2N+2K+2}(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}.
 \]
 So the bound holds for $1<\alpha\le A$ with
-$\delta_1A^{-1/2}$ and $A^2C_1$; take the smaller of the two values of $\delta$ and the larger of the two values of $C$. Both
+$\bar\delta A^{-1/2}$ and $A^2\bar C$; take the smaller of the two values of $\delta$ and the larger of the two values of $C$. Both
 cases have the stated dependence on $\Gamma$ and $x_0$.
 \end{proof}
 

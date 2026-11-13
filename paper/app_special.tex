@@ -15,7 +15,7 @@ multiplication by $\Lambda(r)=(r^2+\tfrac14)^{1/2}$, and the operators are the s
 \[
 \ue^{\alpha''\Lambda}Z\ue^{-\alpha'\Lambda}=\bigl(\ue^{\alpha''\Lambda}Z\ue^{-\alpha''\Lambda}\Lambda^{-1}\bigr)\bigl(\Lambda\ue^{-\sigma\Lambda}\bigr).
 \]
-The second factor has norm $\le\sup_{\lambda\ge1/2}\lambda\ue^{-\sigma\lambda}\le1/(\ue\sigma)$. It remains to bound the first factor uniformly for $\alpha''\le\tau_0$, and $Y=\mathring Y+\tfrac12$ adds at most $\tfrac12$.
+The second factor has norm $\le\sup_{\lambda\ge1/2}\lambda\ue^{-\sigma\lambda}\le1/(\ue\sigma)$. It remains to bound the first factor uniformly for $\alpha''\le1$, and $Y=\mathring Y+\tfrac12$ adds at most $\tfrac12$.
 
 \medskip\noindent\emph{Spectral notation.} We put $x:=r-r'$, $p:=\pi(r+r')/2$ and $q:=\pi x/2$. Then
 \begin{gather*}
@@ -52,7 +52,7 @@ Since $(rr')^{1/2}\le(r+r')/2\le r'+|x|/2$ and $\Lambda(r')\ge\max(r',1/2)$, we 
 \[
 (rr')^{1/2}/\Lambda(r')\le1+|x|.
 \]
-So the kernel is at most $g(x):=(1+|x|)\ue^{\tau_0|x|}/(2\cosh(\pi x/2))$, which is integrable for $\tau_0<\pi/2$. The Schur test gives the bound $\int g$.
+So the kernel is at most $g(x):=(1+|x|)\ue^{|x|}/(2\cosh(\pi x/2))$, which is integrable because $1<\pi/2$. The Schur test gives the bound $\int g$.
 
 \medskip\noindent\emph{(Y) Kernel of $D_\zeta$.} The integral $\int K_{ir}K'_{ir'}\,d\zeta$ does not converge at $\zeta=0$, so we regularize.
 Let $F_f,F_g\in C_c^\infty((0,\infty))$ be the KL transforms of $f,g$ (the core $\mathcal C$).
@@ -91,7 +91,7 @@ This kernel is real and antisymmetric, as $D_\zeta$ must be.
 
 \medskip\noindent\emph{(Y) bound.} The kernel of $Q:=\ue^{\alpha''\Lambda}D_\zeta\ue^{-\alpha''\Lambda}\Lambda^{-1}$ is $\ue^{\alpha''(\Lambda(r)-\Lambda(r'))}\tilde D(r,r')/\Lambda(r')$. It is valid on $\mathcal C$, because $\ue^{\pm\alpha''\Lambda}$ and $\Lambda^{-1}$ preserve $\mathcal C$. Split $Q=Q_{\rm far}+Q_{\rm near}$, with $Q_{\rm near}:=Q\cdot\mathbf 1_{|x|\le1}$.
 
-\emph{The part $Q_{\rm far}$.} Here $|Q|\le(1+|x|)\ue^{\tau_0|x|}/(2\sinh(\pi|x|/2))$ on $|x|>1$. This is integrable, so the Schur test applies.
+\emph{The part $Q_{\rm far}$.} Here $|Q|\le(1+|x|)\ue^{|x|}/(2\sinh(\pi|x|/2))$ on $|x|>1$. This is integrable, so the Schur test applies.
 
 \emph{The part $Q_{\rm near}$.} Write $1/(2\sinh(\pi x/2))=1/(\pi x)+h(x)$, with $h$ bounded on $|x|\le1$.
 The $h$-part has a bounded kernel supported in $|x|\le1$, so the Schur test applies.
@@ -107,14 +107,14 @@ $\vartheta:=\ue^{\alpha''(\Lambda(r)-\Lambda(r'))}$. Then
 \[
 \Theta(r,r')-\Theta(r',r')=(\vartheta-1)s\rho+(\rho-1)s+(s(r)-s(r')).
 \]
-For $|x|\le1$, the first term is controlled by $|\vartheta-1|\le\tau_0\ue^{\tau_0}|x|$ and
+For $|x|\le1$, the first term is controlled by $|\vartheta-1|\le\ue|x|$ and
 $s\rho\le s\le1+|x|\le2$. For the second, $\sinh|q|/\sinh p\le|q|/p$ when $|q|\le p$ gives
 $1-\rho\le\sinh^2q/\sinh^2p\le|q|/p=|x|/(r+r')$, and hence
 $(1-\rho)s\le|x|(rr')^{1/2}/((r+r')\Lambda(r'))\le|x|$.
 Finally, $|s(r)-s(r')|=|\sqrt r-\sqrt{r'}|\sqrt{r'}/\Lambda(r')\le|x|^{1/2}$,
 since $\sqrt{r'}/\Lambda(r')\le1$.
 So the remainder kernel is $\le C|x|^{-1/2}$ on $|x|\le1$, which is integrable. The Schur test therefore bounds the remainder.
-Combining the near and far bounds gives $\norm{Q}\le C(\tau_0)$ on $\mathcal C$, so $Q$ extends to a bounded operator. The bound for $\ue^{\alpha''\Lambda}D_\zeta\ue^{-\alpha'\Lambda}$ follows on the dense set $\Lambda\ue^{-\sigma\Lambda}\mathcal C$, and then by closure. \qedhere
+Combining the near and far bounds gives $\norm{Q}\le C$ on $\mathcal C$, so $Q$ extends to a bounded operator. The bound for $\ue^{\alpha''\Lambda}D_\zeta\ue^{-\alpha'\Lambda}$ follows on the dense set $\Lambda\ue^{-\sigma\Lambda}\mathcal C$, and then by closure. \qedhere
 \end{proof}
 
 

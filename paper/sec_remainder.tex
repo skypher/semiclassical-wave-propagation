@@ -1,6 +1,6 @@
 \section{Periodization and the exact remainder}\label{sec:remainder}
 The approximation error will be expressed through a Duhamel formula on the quotient. We first bound the periodization
-map, fix the representatives and isometric reductions, and then derive the exact remainder on the quotient.
+map, reduce to the base point $i$ and the boundary point $\infty$, and then derive the exact remainder on the quotient.
 The analytic estimates needed to bound that remainder are developed in Section~\ref{sec:analytic} and Sections~\ref{app:o1st}--\ref{subsec:pc-transfer};
 local pointwise control is established with the consequences in Section~\ref{sec:consequences}.
 
@@ -25,7 +25,7 @@ area $2\pi(\cosh\rho-1)$.
 
 \begin{lemma}[uniform Poincar\'e series bound]\label{lem:p1}
 For every Fuchsian $\Gamma$ and $\sigma>1$, the Poincar\'e series bound $P_\Gamma(\sigma)=\sup_{z}\sum_{\gamma}\ue^{-\sigma\,d(x_0,\gamma z)}$ of
-Section~\ref{subsec:pc-thm} is finite.
+Section~\ref{sec:setup} is finite.
 \end{lemma}
 \begin{proof}
 The orbit $\Gamma x_0$ is a set as in Lemma~\ref{lem:count}, because $\Gamma$ acts properly discontinuously: its distinct points are uniformly
@@ -71,52 +71,15 @@ Finally $\ue^{\sigma d(z,x_0)}\le2^\sigma\ue^{\sigma\tilde\psi(z)}$, since $\til
 
 
 
-\subsection{Regularity and the base point}\label{subsec:dd-base}
+\subsection{The base point}\label{subsec:dd-base}
 
-The theorems are stated for amplitudes of finite norm and for every boundary point $b$. The next two lemmas reduce them to
-$C^\infty$ amplitudes, the base point $i$ and $b=\infty$.
-
-\begin{lemma}[regularity]\label{lem:lift}
-Let $0<\alpha\le1$ and $F\in\operatorname{Dom}(\ue^{\alpha\Lambda})$. Then $F$ has a $C^\infty$ representative, and every word in
-$X,Y$ applied to it lies in $L^2(\Hb)$. Consequently every $a$ with $\norm{\ue^{\alpha\Lambda}X_0^\beta a}<\infty$, or with $\beta\ge0$ and
-$\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}<\infty$, has a $C^\infty$ representative, and so has every
-$a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$, which covers the original-norm class.
-\end{lemma}
-
-\begin{proof}
-By Lemma~\ref{lem:wc} at $\alpha''=0$ (with $\tau_0=1$), every word applied to $F$ in the sense of distributions lies in $L^2$;
-this forward reference is not circular, since Lemma~\ref{lem:wc} and its proof (with Appendix~\ref{app:fc-proof}) use no
-result of this section. The same holds
-for $F\circ p$ for every affine isometry $p(z)=p_1z+p_2$, $p_1>0$: these commute with $X$, $Y$ and $\Lambda$, so
-$F\circ p\in\operatorname{Dom}(\ue^{\alpha\Lambda})$.
-
-Let $w\in L^2$ be such that all words applied to $w$ lie in $L^2$, and let $c\in C_c^\infty(\Hb)$ be real. With the Euclidean
-Laplacian $\Delta_{\mathrm E}=\partial_x^2+\partial_y^2=y^{-2}(X^2+Y^2-Y)$,
-\[
-\Delta_{\mathrm E}(cw)=(\Delta_{\mathrm E}c)\,w+2y^{-2}\bigl((Xc)(Xw)+(Yc)(Yw)\bigr)+c\,y^{-2}(X^2+Y^2-Y)w,
-\]
-a finite sum of terms $c'w'$ of the same kind. So $\Delta_{\mathrm E}^n(cw)\in L^2(\mathbb R^2)$ for every $n$; on $\operatorname{supp}c$
-the measures $dx\,dy$ and $d\nu$ are comparable.
-
-Hence $|\xi|^{2n}\widehat{cw}\in L^2(\mathbb R^2)$ for every $n$, all moments of $\widehat{cw}$ are integrable, and $cw$ has a
-$C^\infty$ representative.
-
-Take $c=1$ near $i$. This gives a $C^\infty$ representative of $F\circ p$ near $i$ for every $p$, that is, of $F$ near
-every point. Two continuous representatives on an open set coincide, so they glue to a $C^\infty$ representative of $F$, which is unique.
-
-For the consequences take $F=X_0^\beta a$, $F=\ue^{\beta\langle d\rangle}a$, respectively $F=a$. The functions $X_0^{-\beta}$ and
-$\ue^{-\beta\langle d\rangle}$ are smooth and positive; for the second, $\langle d\rangle$ is a smooth function of $d^2$, and
-$d^2=\operatorname{arcosh}(X_0)^2$ is a smooth function of $X_0\ge1$. \qedhere
-
-\end{proof}
-
-The approximations $u^{(K)}$ are always built from this representative.
+The theorems are stated for every base point $x_0$ and every boundary point $b$. The next lemma reduces them to the base
+point $i$ and $b=\infty$.
 
 \begin{lemma}[base point]\label{lem:base}
 Let $x_0\in\Hb$ and $b\in\partial\Hb$.
 \begin{itemize}
-\item[\textup{(i)}] There is $g\in\mathrm{SL}(2,\mathbb R)$ with $g\,x_0=x_0$ and $g\,\infty=b$, unique up to sign. By the definition in Section~\ref{sec:setup},
-$\varphi_b=\varphi_\infty\circ g^{-1}$. The construction of \cite[(1.20)--(1.29)]{S} is covariant under isometries: the initial state and
+\item[\textup{(i)}] There is $g\in\mathrm{SL}(2,\mathbb R)$ with $g\,x_0=x_0$ and $g\,\infty=b$, unique up to sign. The construction of \cite[(1.20)--(1.29)]{S} is covariant under isometries: the initial state and
 the approximations for $b$ are $v\mapsto v\circ g^{-1}$ applied to those for $\infty$ with the amplitude $a\circ g$.
 \item[\textup{(ii)}] Let $p(z)=(\operatorname{Im}x_0)\,z+\operatorname{Re}x_0$ and $q:=g\,p$, so $q\,i=x_0$ and $q\,\infty=b$. For an amplitude $a$ put
 $a_q:=a\circ q$ and $\Gamma_q:=q^{-1}\Gamma q$. Then, with $c:=\ue^{-i\log(\operatorname{Im}x_0)/\hbar}$,
@@ -128,10 +91,13 @@ where the subscript names the boundary point of the construction.
 periodizations over $\Gamma$ and $\Gamma_q$, the Laplacians, the propagators $\cU(t)$ and the operators $\ue^{\alpha\Lambda}$. The reversed-weight and original norms of $a$ with base point $x_0$ equal those of $a_q$
 with base point $i$. For every $s$, $\sup_z\sum_{\gamma\in\Gamma_q}\ue^{-s\,d(i,\gamma z)}=\sup_z\sum_{\gamma\in\Gamma}\ue^{-s\,d(x_0,\gamma z)}$.
 \end{itemize}
-Consequently the error norm of $(\Gamma,x_0,b,a)$ equals that of $(\Gamma_q,i,\infty,a_q)$, and an estimate proved for base point $i$ and
-$b=\infty$, with constants depending on the group only through quantities invariant under $\Gamma\mapsto\Gamma_q$, $x_0\mapsto i$, holds
-for every $x_0$ and $b$.
 \end{lemma}
+
+With $g$ as in (i), $\varphi_b=\varphi_\infty\circ g^{-1}$ by the definition in Section~\ref{sec:setup}. By (ii) and (iii), the
+error norm of
+$(\Gamma,x_0,b,a)$ equals that of $(\Gamma_q,i,\infty,a_q)$. So an estimate proved for base point $i$ and $b=\infty$, with
+constants depending on the group only through quantities invariant under $\Gamma\mapsto\Gamma_q$, $x_0\mapsto i$, holds for every
+$x_0$ and $b$.
 
 \begin{proof}
 (i) The stabilizer of $x_0$ in $\mathrm{PSL}(2,\mathbb R)$ acts simply transitively on $\partial\Hb$, so $g$ exists and is unique up

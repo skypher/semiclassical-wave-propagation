@@ -1,0 +1,106 @@
+% Appendix: the mean of the approximation (an aside; formerly a section of the main text).
+\section{The mean of the approximation}\label{sec:g5}\label{subsec:mean}
+The integral of $u^{(K)}(t)$ over $\Hb$ has a closed form (Proposition~\ref{prop:mean}). On a surface of finite area this
+gives a lower bound for the error in terms of the mean $\mathcal J$ of the initial state. Corollary~\ref{cor:meanJ} shows that
+$\mathcal J$ is exponentially small, and Remark~\ref{rem:mean} compares the two; Section~\ref{sec:outlook} states the
+consequence for the time of validity. For $w\in\mathbb C$ let
+$T_K(w):=\sum_{k=0}^{K}w^k/k!$.
+
+\begin{proposition}[the mean of the approximation]\label{prop:mean}
+Let $\beta>\tfrac12$, $0<\alpha\le1$ and let $a$ have finite reversed-weight norm $\swNorm a<\infty$.
+Let $b\in\partial\Hb$, $\hbar>0$, $K\in\mathbb N_0$ and $t\ge0$. Then $a\,\ue^{i\varphi_b/\hbar}$ and $u^{(K)}(t)$ are integrable
+over $\Hb$, and
+\[
+  \int_{\Hb}u^{(K)}(t)\,d\nu=\ue^{-w}\,T_K(w)\,\mathcal J,\qquad w:=-\frac t2-\frac{it}{2\hbar},\qquad
+  \mathcal J:=\int_{\Hb}a\,\ue^{i\varphi_b/\hbar}\,d\nu .
+\]
+Consequently, for every Fuchsian group $\Gamma$ with $\operatorname{area}(M)<\infty$, with $\psi(0):=[a\,\ue^{i\varphi_b/\hbar}]_\Gamma$,
+\[
+  \ue^{t/2}\,|T_K(w)|\,|\mathcal J|\le\operatorname{area}(M)^{1/2}\Bigl(\norm{\cU(t)\psi(0)-u^{(K)}(t)_\Gamma}_{L^2(M)}+\norm{\psi(0)}_{L^2(M)}\Bigr).
+\]
+\end{proposition}
+\begin{proof}
+By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: with $q$ as there, $q$ is an isometry, and both
+$a\,\ue^{i\varphi_b/\hbar}$ and $u^{(K)}_b(t)[a]$ are carried to the corresponding functions for $\infty$ and $a\circ q$, times the same
+constant of modulus $1$; the norm of $a\circ q$ with base point $i$ is that of $a$ with base point $x_0$. Write $\Theta:=\ue^{i\varphi/\hbar}=y^{-i/\hbar}$ and $\mathcal J(g):=\int_{\Hb}g\,\Theta\,d\nu$ for $g\in L^1(\Hb)$.
+
+\emph{Step 1 (the words of $a$ are integrable).} The amplitude $a$ is $C^\infty$ (Lemma~\ref{lem:lift}). By Lemma~\ref{lem:m2w} and
+Lemma~\ref{lem:sc}, $X_0^\beta Z_Sa\in L^2(\Hb)$ for every word $Z_S$ in $X,Y$. Since $2\beta>1$, $X_0^{-\beta}\in L^2(\Hb)$. So
+$Z_Sa\in L^1(\Hb)$ by the Cauchy--Schwarz inequality.
+
+\emph{Step 2 (two integrations by parts).} Let $g$ be $C^\infty$ with $g$, $Xg$, $Yg$ in $L^1(\Hb)$. Then
+\[
+  \mathcal J(Xg)=0,\qquad \mathcal J(Yg)=\Bigl(1+\frac i\hbar\Bigr)\mathcal J(g).
+\]
+For the first identity let $\sigma_s(x+iy):=x+sy+iy$. This shear preserves $\nu$ and $y$, and
+$\tfrac{d}{ds}(g\circ\sigma_s)=(Xg)\circ\sigma_s$. So $g\circ\sigma_1-g=\int_0^1(Xg)\circ\sigma_s\,ds$ pointwise. Multiply by $\Theta$ and
+integrate over $\Hb$; the order of integration may be exchanged, because $\int_{\Hb}|(Xg)\circ\sigma_s|\,d\nu=\norm{Xg}_{L^1}$ for
+every $s$. Since $\mathcal J(h\circ\sigma_s)=\mathcal J(h)$ for $h\in L^1$, this gives $0=\mathcal J(g\circ\sigma_1)-\mathcal J(g)=\mathcal J(Xg)$. For the second identity let
+$\Omega_s(x+iy):=x+i\ue^sy$. Then $(\Omega_s)_*\nu=\ue^s\nu$, $\Theta\circ\Omega_s=\ue^{-is/\hbar}\Theta$ and
+$\tfrac{d}{ds}(g\circ\Omega_s)=(Yg)\circ\Omega_s$, so that $\mathcal J(h\circ\Omega_s)=\ue^{\varrho s}\mathcal J(h)$ for $h\in L^1$, with $\varrho:=1+i/\hbar$. In
+the same way
+\[
+  (\ue^{\varrho}-1)\mathcal J(g)=\mathcal J(g\circ\Omega_1)-\mathcal J(g)=\int_0^1\mathcal J\bigl((Yg)\circ\Omega_s\bigr)ds=\mathcal J(Yg)\,\frac{\ue^{\varrho}-1}{\varrho},
+\]
+and $\ue^\varrho\ne1$ because $|\ue^\varrho|=\ue$.
+
+\emph{Step 3 (the Dyson terms).} By Steps~1 and~2, $\mathcal J(Z_Sa)=\varrho^k\mathcal J(a)$ if $Z_S=Y^k$, and $\mathcal J(Z_Sa)=0$ if the word $Z_S$ contains $X$. So for every finite linear combination $g$ of words of $a$,
+\[
+  \mathcal J(\Delta(s)g)=\lambda_\hbar\mathcal J(g),\qquad\lambda_\hbar:=\varrho^2-\varrho=\frac i\hbar-\frac1{\hbar^2},
+\]
+because $\Delta(s)=\ue^{-2s}X^2+Y^2-Y$. The function $P_k(t)a$ is such a combination, with coefficients that are continuous in
+$t$, and $P_{k+1}(t)a=\int_0^t\Delta(s)P_k(s)a\,ds$. By induction on $k$, $\mathcal J(P_k(t)a)=(\lambda_\hbar t)^k\mathcal J(a)/k!$. Since
+$\tfrac{i\hbar}2\lambda_\hbar t=w$,
+\[
+  \mathcal J\bigl(a^{(K)}(t)\bigr)=\sum_{k=0}^{K}\Bigl(\frac{i\hbar}2\Bigr)^k\frac{(\lambda_\hbar t)^k}{k!}\mathcal J(a)=T_K(w)\,\mathcal J(a).
+\]
+
+\emph{Step 4 (the transport).} By definition $u^{(K)}(t)=\ue^{-it/(2\hbar)}\ue^{-t/2}\bigl(a^{(K)}(t)\circ\Omega_t\bigr)\Theta$. So
+$u^{(K)}(t)$ is integrable, and by Step~2
+\[
+  \int_{\Hb}u^{(K)}(t)\,d\nu=\ue^{-it/(2\hbar)-t/2}\,\ue^{\varrho t}\,\mathcal J\bigl(a^{(K)}(t)\bigr)=\ue^{-w}\,T_K(w)\,\mathcal J(a).
+\]
+
+\emph{Step 5 (the surface).} Let $u\in L^1(\Hb)$ be such that $\sum_\gamma|u(\gamma z)|<\infty$ for almost every $z$ and
+$u_\Gamma\in L^2(M)$. Unfolding gives $\int_{\Hb}u\,d\nu=\int_Mu_\Gamma\,d\nu$, hence
+$|\int_{\Hb}u\,d\nu|\le\operatorname{area}(M)^{1/2}\norm{u_\Gamma}_{L^2(M)}$. For $u=u^{(K)}(t)$ the first hypothesis holds by Step~4. The function
+$a^{(K)}(t)$ is a finite combination of words applied to $a$, so $X_0^\beta a^{(K)}(t)\in L^2(\Hb)$ by Step~1, and the other two
+hypotheses follow from Lemma~\ref{lem:t2} with $\sigma=\beta$, $w=a^{(K)}(t)$ and $\theta=\varphi/\hbar$. Finally
+$\norm{u^{(K)}(t)_\Gamma}\le\norm{\cU(t)\psi(0)-u^{(K)}(t)_\Gamma}+\norm{\psi(0)}$, because $\cU(t)$ is unitary on $L^2(M)$, and
+$|\ue^{-w}|=\ue^{t/2}$.
+\end{proof}
+
+\begin{corollary}[size of the mean]\label{cor:meanJ}
+Let $\beta>\tfrac12$ and $0<\alpha\le1$, and let $\delta$ be the constant of
+Theorem~\ref{thm:dd14} for $\beta$, $\kappa=\alpha^3$ and $A=\alpha$. There is $C$ such that for every $b\in\partial\Hb$, every
+$0<\hbar\le1$ and every $a$ with $\swNorm a<\infty$ at radius $\alpha$, the number $\mathcal J$ of Proposition~\ref{prop:mean} satisfies
+\[
+  |\mathcal J|\le C\,\ue^{-\delta(\alpha/\hbar)^{1/2}/2}\,\swNorm a .
+\]
+\end{corollary}
+\begin{proof}
+The number $\mathcal J$ is an integral over $\Hb$ and does not depend on any group; the modular group serves only as an
+auxiliary quotient of finite area. Take $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, so $\operatorname{area}(M)=\pi/3$, and $t:=\delta(\alpha/\hbar)^{1/2}$. Proposition~\ref{prop:mean}
+with $K=0$, where $T_0=1$, gives
+$\ue^{t/2}|\mathcal J|\le(\pi/3)^{1/2}\bigl(\norm{\cU(t)\psi(0)-u^{(0)}(t)_\Gamma}+\norm{\psi(0)}\bigr)$. The hypotheses of
+Theorem~\ref{thm:dd14} hold with $\kappa=\alpha^3$, since $\hbar\le1$, and at $K=N=0$ it bounds the first norm by
+$C'\hbar t\alpha^{-2}\swNorm a=C'\delta\hbar^{1/2}\alpha^{-3/2}\swNorm a\le C'\delta\alpha^{-3/2}\swNorm a$. For the second,
+Lemma~\ref{lem:t2} at $t=0$ with $\sigma=\beta$, the inequality $\norm g\le\norm{\ue^{r\Lambda}g}$ for $r\ge0$ (the spectrum of $\Lambda$ lies in
+$[\tfrac12,\infty)$) and Lemma~\ref{lem:m2w} give
+$\norm{\psi(0)}\le C(\Gamma,\beta)\norm{X_0^\beta a}\le C(\Gamma,\beta)\norm{\ue^{c_0\alpha\Lambda}X_0^\beta a}\le C''\swNorm a$. Multiply by
+$\ue^{-t/2}$.
+\end{proof}
+
+\begin{remark}[the time of validity on a surface of finite area]\label{rem:mean}
+On a surface of finite area the solution $\cU(t)\psi(0)$ has the norm $\norm{\psi(0)}$ at all times, and by
+Proposition~\ref{prop:mean} the error of the approximation of order $K$ is at least
+$\operatorname{area}(M)^{-1/2}\,\ue^{t/2}|T_K(w)||\mathcal J|-\norm{\psi(0)}$. For $K=0$, where $T_0=1$, and $\mathcal J\ne0$ the error is at least
+$\norm{\psi(0)}$ for all $t\ge t_{\mathcal J}:=2\log\bigl(2\operatorname{area}(M)^{1/2}\norm{\psi(0)}/|\mathcal J|\bigr)$. If
+$\alpha\le1$, Corollary~\ref{cor:meanJ}, with its constants $\delta$ and $C$, gives $t_{\mathcal J}\ge\delta(\alpha/\hbar)^{1/2}+2\log\bigl(2\operatorname{area}(M)^{1/2}\norm{\psi(0)}/(C\swNorm a)\bigr)$; so
+for amplitudes with $\norm{\psi(0)}\ge c\swNorm a$, $c>0$ fixed, this lower bound takes effect only after the window of
+Theorem~\ref{thm:dd14}, up to a bounded time. For $K\ge1$ and $0\le t\le\delta(\alpha/\hbar)^{1/2}$ we have
+$|w|\le t/\hbar\le\delta\hbar^{-3/2}$, since $\alpha,\hbar\le1$, and hence $|T_K(w)|\le(K+1)\max(1,\delta)^K\hbar^{-3K/2}$. With
+Corollary~\ref{cor:meanJ} the lower bound is then positive at a time $t$ of the window only if
+$t\ge\delta(\alpha/\hbar)^{1/2}-3K\log(1/\hbar)-C_K$, with $C_K$ depending on $K$, $c$, $C$, $\delta$ and $\operatorname{area}(M)$. On $\Hb$
+itself, and on surfaces of infinite area, the proposition gives no such bound.
+\end{remark}

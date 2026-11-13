@@ -1,6 +1,6 @@
 % Formalization status. \leanrepo is the public repository; \leancommit is a commit of it.
 \providecommand{\lean}[1]{\texttt{\detokenize{#1}}}
-\providecommand{\leancommit}{\texttt{d3a03d4}}
+\providecommand{\leancommit}{\texttt{19ae2a9}}
 \providecommand{\leanrepo}{\url{https://github.com/skypher/semiclassical-wave-propagation}}
 
 \section{Formalization}\label{app:lean}
@@ -20,6 +20,12 @@ A kernel check certifies the proofs of the formal statements. Whether a formal s
 
 \subsection{Interpretation of the formal statements}\label{subsec:lean-reading}
 \begin{itemize}
+\item \emph{Names.} The identifiers keep the working names of the development and do not follow the numbering of this paper.
+The numbers in names such as \lean{pcthm13_unif}, \lean{thm14Rmain_unif}, \lean{pccor15_tied} and \lean{pccor16_unifN} refer to
+\cite[Theorems~1.3 and~1.4, Corollaries~1.5 and~1.6]{S}, whose corrected forms these declarations state. The prefix \lean{pc} and the
+word \lean{printed} refer to the original norm, \lean{swNormD} and \lean{swapped} to the reversed-weight norm, and \lean{swNormX}
+to the power-weight norm. The lemmas of Section~\ref{sec:analytic} are stated with $\tau_0<\pi/2$ in the earlier modules; their
+instances at $\tau_0=1$, which are the printed statements, carry the suffix \lean{_one}.
 \item \emph{Groups and surfaces.} A Fuchsian group is a subgroup $\Gamma\le\mathrm{PGL}(2,\mathbb R)$ that acts properly discontinuously on $\Hb$ and consists of classes of matrices of positive determinant. $M$ is the orbit space with the measure induced from a fundamental domain; no manifold structure on $M$ is used.
 \item \emph{Operators.} $-\Delta$ on $L^2(\Hb)$ and on $L^2(M)$ is the Friedrichs extension from test functions, respectively from periodized test functions; $\Lambda$, $\ue^{\alpha\Lambda}$, $\cU(t)$ and $\Delta^N$ are functions of it by the spectral theorem.
 \item \emph{Boundary points.} The base point $x_0\in\Hb$ is a parameter, and $b=g\,\infty$ with $g\in\mathrm{SL}(2,\mathbb R)$, $g\,x_0=x_0$. Every $b\in\partial\Hb$ arises, and the objects depend on $b$ only (\lean{exists_stab_smul_infty}, \lean{initState_eq_of_stab}, \lean{approxSolB_eq_of_stab}).
@@ -39,7 +45,7 @@ $\min(\delta,\kappa^{1/2}/C)$, and the absolute constant $C'=\ue^{1/2}$; such pa
 \item \emph{Ranges.} $0<\hbar\le1$; $N^{2N}=1$ at $N=0$. The radius ranges over $0<\alpha\le A$ for every $A$. For the reversed-weight
 and power-weight norms the formal proofs pass from the radius $\tfrac12$ to larger radii by the monotonicity of these norms in the
 radius (\lean{swNormD_mono}, \lean{swNormX_mono}); for the original norm both ranges go through Proposition~\ref{pc:core}, which is
-\lean{dd_core_pc} with \lean{SurfW.surf_D4}, as in Section~\ref{subsec:pc-all}.
+\lean{dd_core_om} (the instance of \lean{dd_core_pc} for the weight $\omega$) with \lean{SurfW.surf_D4}, as in Section~\ref{subsec:pc-all}.
 \item \emph{Proposition~\ref{prop:mean}.} Its formal statement has every $\hbar>0$ and every real $t$, and no hypothesis on the area:
 its inequality is one in $[0,\infty]$ with $0\cdot\infty=0$.
 \end{itemize}
@@ -47,8 +53,8 @@ its inequality is one in $[0,\infty]$ with $0\cdot\infty=0$.
 \subsection{Proposition~\texorpdfstring{\ref{prop:g5}}{1.6} and the counterexample}\label{rem:g5-lean}
 Proposition~\ref{prop:g5} is \lean{propG5}. On the trivial group the periodization is an isometry, and the error is read in
 $L^2(\{\mathrm{id}\}\backslash\Hb)=L^2(\Hb)$. The formal statement takes $b=\infty$, an amplitude $a$ with nonzero $L^2$ class $[a]$ all of whose
-words lie in $L^2(\Hb)$, and $\Delta_0=Y^2-Y$. It asserts $\norm{[a]}\le4\norm{\Delta_0[a]}$, and, for every $\tau>0$, a constant $C$ with
-$\bigl|\norm{u^{(0)}(t)-\cU(t)(a\ue^{i\varphi/\hbar})}-\tfrac\tau2\sqrt\hbar\,\norm{\Delta_0[a]}\bigr|\le C\hbar$ at $t=\tau\hbar^{-1/2}$, for every $\hbar>0$.
+words lie in $L^2(\Hb)$, and $\Delta_\infty=Y^2-Y$. It asserts $\norm{[a]}\le4\norm{\Delta_\infty[a]}$, and, for every $\tau>0$, a constant $C$ with
+$\bigl|\norm{u^{(0)}(t)-\cU(t)(a\ue^{i\varphi/\hbar})}-\tfrac\tau2\sqrt\hbar\,\norm{\Delta_\infty[a]}\bigr|\le C\hbar$ at $t=\tau\hbar^{-1/2}$, for every $\hbar>0$.
 Its proof follows the proof in Section~\ref{subsec:g5proof}. It uses the Dyson expansion on the trivial quotient
 (Corollary~\ref{cor:surf-dyson}, whose universal-cover form is Proposition~\ref{prop:dd-id}(i)) at $K=0$ and $K=1$. It bounds the
 second-order term by the norms of the words of $a$ of length at most four.
@@ -80,7 +86,7 @@ their individual statements do not have separate exact formal counterparts.
 The classical comparison in Theorem~\ref{ev:mod}(iii) uses the cited equidistribution theorem for closed horocycles;
 only parts (i),(ii) are covered by \lean{evmod}, whose statement is \lean{Stmt_evmod}.
 The amplitude-class comparison (Proposition~\ref{pc:classes}), the bound on the mean (Corollary~\ref{cor:meanJ}) and the cusp
-sharpness argument of Section~\ref{sec:cusp}, including Theorem~\ref{cl:necessary}, Corollary~\ref{cl:rational}, Remarks~\ref{pc:remcusp} and~\ref{rem:g4}
+sharpness argument of Section~\ref{sec:cusp}, including Theorem~\ref{cl:necessary}, Corollary~\ref{cl:rational}, Lemma~\ref{pc:remcusp}, Remark~\ref{rem:g4}
 and the kernel Lemmas~\ref{os:poisson} and~\ref{os:hk}, have no formal proofs.
 For cusp sharpness the development contains only implications from a formal statement of Theorem~\ref{cl:main}(ii),
 which is itself not proved formally.
@@ -91,7 +97,7 @@ are also outside the formalization and are not used by the approximation theorem
 \begin{table}[!ht]
 \centering\small
 \caption{Formal counterparts and the principal exceptions.}\label{tab:lean}
-\begin{tabular}{@{}p{0.36\linewidth}p{0.60\linewidth}@{}}
+\begin{tabular}{@{}>{\raggedright\arraybackslash\hyphenpenalty=10000}p{0.36\linewidth}>{\raggedright\arraybackslash\hyphenpenalty=10000}p{0.60\linewidth}@{}}
 \hline
 Statement & Lean theorem or scope\\
 \hline

@@ -8,9 +8,9 @@ $b=\infty$, $\varphi=-\log y$ and $\vartheta(w):=\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$
 $E_K(t):=\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma$. Words $Z_S$ are products of $X$ and $Y$.
 
 \begin{theorem}[lower bound high in the cusp]\label{cl:main}
-Let $\beta>\tfrac12$. There are a radius $\alpha_1=\alpha_1(\beta)\in(0,\tfrac12]$ and absolute constants $\mu_*\ge1$ and $c>0$
+Let $\beta>\tfrac12$. There are a radius $\alpha_1=\alpha_1(\beta)\in(0,\tfrac12]$ and absolute constants $\mu_*\ge1$ and $c_\alpha>0$
 with the following properties. For a fixed radius $\alpha$, let $\delta$ be the constant of Theorem~\ref{thm:dd14} in case (i), and of Theorem~\ref{pc:main} in case (ii), both with
-$A=\tfrac12$ and $\kappa=\alpha^3$, and with $P=P^{\mathrm{cr}}_\Gamma$ for Theorem~\ref{pc:main}.
+$A=\tfrac12$ and $\kappa=\alpha^3$.
 \begin{enumerate}
 \item[(i)] (Reversed-weight class.) Let $\alpha\in(0,\alpha_1]$ and $a=\ue^{-20X_0}$. There are $\hbar_0,c_*,t_*>0$, depending on $\alpha$ and
 $\beta$, such that for $0<\hbar\le\hbar_0$, every $t$ with $\max(2\log(1/\hbar),t_*)\le t\le\min(\hbar^{-1/5},\delta(\alpha/\hbar)^{1/2})$, and
@@ -18,21 +18,21 @@ every $z=x+i\ue^t$,
 \[
 |E_0(t)(z)|\ge c_*\,\ue^{t/2}\hbar^{3/2}t .
 \]
-\item[(ii)] (Original-norm class.) Let $\mu\ge\mu_*$, $0<\alpha\le\alpha_*(\mu):=\min(\tfrac12,c\mu^{-6})$ and $a=\ue^{-\alpha\Lambda}\ue^{-\mu X_0}$.
+\item[(ii)] (Original-norm class.) Let $\mu\ge\mu_*$, $0<\alpha\le\alpha_*(\mu):=\min(\tfrac12,c_\alpha\mu^{-6})$ and $a=\ue^{-\alpha\Lambda}\ue^{-\mu X_0}$.
 Then the conclusion of (i) holds, with constants depending also on $\mu$.
 \end{enumerate}
 At the points $z=x+i\ue^t$ of (i) and (ii), $m(z)\le5\ue^t$.
 \end{theorem}
 
-The radius $\alpha_1$ is that of Lemma~\ref{cl:amp}(i), and $\mu_*$ and $c$ are the constants of Lemma~\ref{cl:noncancel}. The
+The radius $\alpha_1$ is that of Lemma~\ref{cl:amp}(i), and $\mu_*$ and $c_\alpha$ are the constants of Lemma~\ref{cl:noncancel}. The
 value $\mu=20$ in (i) is fixed so that the explicit count in Lemma~\ref{cl:noncancel} shows that the leading cusp coefficient does
 not cancel; in (ii) the same is achieved by taking $\mu$ large and $\alpha$ small.
 In the rest of this section $\ampNorm a:=\swNorm a$ in case (i) and $\ampNorm a:=\pcNorm a$ in case (ii), so that the common estimates
 cover both amplitude classes. Theorem~\ref{cl:necessary} is deduced from Theorem~\ref{cl:main} in Section~\ref{subsec:cl-proof}.
 
 \begin{remark}[comparison with Schubert's pointwise bound]\label{cl:reading}
-\cite[Corollary~1.6]{S}, that is \cite[(1.34)]{S} at $N=K=0$, states the bound $C(\alpha\hbar)^{-8}\norm a_{\alpha,\beta}$ for every
-Fuchsian $\Gamma$ and every $b$, with $C$ independent of $\hbar$ and $z$ and without a cusp factor. At $t=20\log(1/\hbar)$ the lower
+The pointwise bound of \cite[Corollary~1.6]{S}, that is \cite[(1.34)]{S} at $N=K=0$, is $C(\alpha\hbar)^{-8}\norm a_{\alpha,\beta}$,
+stated for every Fuchsian $\Gamma$ and every $b$, with $C$ independent of $\hbar$ and $z$ and without a cusp factor. At $t=20\log(1/\hbar)$ the lower
 bound of Theorem~\ref{cl:main}(ii) exceeds this bound for small $\hbar$; this is the case $p=8$ of Theorem~\ref{cl:necessary}(i),
 where $t_8(\hbar)=20\log(1/\hbar)$.
 \end{remark}
@@ -71,12 +71,9 @@ their proofs are collected in Appendix~\ref{app:cusp-aux}.
 
 \subsection{Local control and cusp asymptotics}
 \begin{lemma}[scaled local Sobolev inequality]\label{cl:ssob}
-\begin{itemize}
-\item[\textup{(a)}] There is an absolute constant $C$ such that for every Fuchsian group $\Gamma$, $0<r\le1$, $z\in M$ and
+There is an absolute constant $C$ such that for every Fuchsian group $\Gamma$, $0<r\le1$, $z\in M$ and
 $u\in\operatorname{Dom}(\Delta_M^2)$, taken in its continuous representative (Lemma~\ref{pc:g43}),
 $|u(z)|\le C\,m(z)^{1/2}\bigl(r^{-1}\norm u_{L^2(M)}+r^3\norm{\Delta^2u}_{L^2(M)}\bigr)$.
-\item[\textup{(b)}] For $\Gamma=\mathrm{PSL}(2,\mathbb Z)$ and $z=x+iH$ with $H\ge4$, $m(z)\le5H$ (compare Remark~\ref{pc:remcusp}).
-\end{itemize}
 \end{lemma}
 \begin{proof}
 Steps~1 and~2 of the proof of Lemma~\ref{pc:g43}, applied to $u$ and to $\Delta_Mu$, show that the lift $\tilde u$ and
@@ -86,20 +83,19 @@ $r^4(\Delta^2\tilde u)(\exp_i(r\xi))=L_r^2v(\xi)$, where $L_r$ is $r^2\Delta$ in
 bounded in $C^\infty$ uniformly for $0<r\le1$. Interior regularity for $L_r^2$ and $H^4\subset L^\infty$ give
 $|v(0)|\le C(\norm v_{L^2(B_1)}+\norm{L_r^2v}_{L^2(B_1)})$. Since $d\nu\asymp r^2d\xi$ on the ball,
 $|\tilde u(i)|\le C(r^{-1}\norm{\tilde u}_{L^2(B(i,r))}+r^3\norm{\Delta^2\tilde u}_{L^2(B(i,r))})$, and $B(\tilde z,r)\subset B(\tilde z,1)$, so the unfolding step of
-Lemma~\ref{pc:g43} applies. This proves (a). For (b): if $\gamma\notin\Gamma_\infty$ then $\operatorname{Im}\gamma z\le1/H$ and $d(z,\gamma z)\ge2\log H\ge2$; and
-$d(z,z+n)=2\operatorname{arcsinh}(|n|/(2H))<2$ if and only if $|n|<2H\sinh1$. So $m(z)\le4H\sinh1+1\le5H$ for $H\ge4$.
+Lemma~\ref{pc:g43} applies.
 \end{proof}
 
 \begin{lemma}[stationary phase for $\log(1+\sigma^2)$]\label{cl:sp}
 Put $\theta(\sigma):=\log(1+\sigma^2)$, $r_1:=\theta'$, that is $r_1(\sigma)=2\sigma/(1+\sigma^2)$, and $r_2(\sigma):=(1-\sigma^2)/(1+\sigma^2)$.
 Let $p\in\{1,2\}$, $0<\hbar\le\tfrac12$, $H\ge\hbar^{-2}$ and $\mathcal N\ge0$. Let $f\in C^4(\mathbb R)$, $f_1\in C^1(\mathbb R)$ and
-$f_2,f_{11},f_{21}\in C(\mathbb R)$ satisfy
+$f_2,f_{1,1},f_{2,1}\in C(\mathbb R)$ satisfy
 \begin{equation}\label{cl:fprime}
-f'=-r_1f_1-H^{-1}r_2f_2,\qquad f_1'=-r_1f_{11}-H^{-1}r_2f_{21},
+f'=-r_1f_1-H^{-1}r_2f_2,\qquad f_1'=-r_1f_{1,1}-H^{-1}r_2f_{2,1},
 \end{equation}
 and, for all $\sigma$,
 \begin{equation}\label{cl:fbd}
-|f^{(j)}(\sigma)|\le\mathcal N(1+\sigma^2)^{-p}\quad(j\le4),\qquad|f_1(\sigma)|,\ |f_2(\sigma)|,\ |f_{11}(\sigma)|,\ |f_{21}(\sigma)|\le\mathcal N(1+\sigma^2)^{-p}.
+|f^{(j)}(\sigma)|\le\mathcal N(1+\sigma^2)^{-p}\quad(j\le4),\qquad|f_1(\sigma)|,\ |f_2(\sigma)|,\ |f_{1,1}(\sigma)|,\ |f_{2,1}(\sigma)|\le\mathcal N(1+\sigma^2)^{-p}.
 \end{equation}
 Then, with an absolute constant $C$,
 \[
@@ -232,7 +228,7 @@ $C\ue^{-3t/2}B(v)\le C\ue^{t/2}\hbar^{3/2}B(v)$.
 \hat G(0)=H\ue^{it/\hbar}c^{2i/\hbar}\int f(\sigma)\ue^{i\theta(\sigma)/\hbar}d\sigma,
 \]
 where $f(\sigma)=\ue^{-t/2}v(Q(c\sigma))$ and $\theta(\sigma)=\log(1+\sigma^2)$. Put $f_1:=\ue^{-t/2}(Yv)(Q(c\sigma))$, $f_2:=\ue^{-t/2}(Xv)(Q(c\sigma))$,
-$f_{11}:=\ue^{-t/2}(Y^2v)(Q(c\sigma))$ and $f_{21}:=\ue^{-t/2}(XYv)(Q(c\sigma))$. Since $\partial_\sigma=c\,\partial_\tau$, \eqref{cl:chain} gives the
+$f_{1,1}:=\ue^{-t/2}(Y^2v)(Q(c\sigma))$ and $f_{2,1}:=\ue^{-t/2}(XYv)(Q(c\sigma))$. Since $\partial_\sigma=c\,\partial_\tau$, \eqref{cl:chain} gives the
 relations \eqref{cl:fprime}, and by \eqref{cl:der}, \eqref{cl:theta} and the definition of $B(v)$ these functions satisfy \eqref{cl:fbd} with
 $p=p_\star$ and $C\mathcal N_{n,c}$ in place of $\mathcal N$. Lemma~\ref{cl:sp} gives
 \[
@@ -278,7 +274,7 @@ See Appendix~\ref{app:cusp-aux}.
 $\ue^{\beta\langle d(w_0,\cdot)\rangle}\ue^{-\mu X_0}$ lies in $\operatorname{Dom}(\ue^{\alpha_1\Lambda})$; in particular $a=\ue^{-\mu X_0}$ has finite reversed-weight norm
 $\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}$ for every $\alpha\le\alpha_1$. Moreover $|Z_Sa|\le C_{S,\mu}X_0^{|S|}\ue^{-\mu X_0}$.
 \item[\textup{(ii)}] $a=\ue^{-\alpha\Lambda}\ue^{-\mu X_0}$ has $\pcNorm a=\norm{\ue^{\beta\langle d\rangle}\ue^{-\mu X_0}}<\infty$, and
-$|Z_Sa(w)|\le C_{S,\mu}\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$ uniformly in $\alpha\le\tfrac12$.
+$|Z_Sa(w)|\le C_{S,\mu}\vartheta(w)$ uniformly in $\alpha\le\tfrac12$.
 \end{itemize}
 \end{lemma}
 \begin{proof}
@@ -290,10 +286,13 @@ We use Lemma~\ref{cl:aux}.
 \]
 We bound the words of the three factors; $j$ denotes the length of the word $Z_S$.
 
-\emph{The first factor.} For $w_0=i$, $\mathfrak m_i=\Phi(\tilde\psi)$ is the function of the proof of Lemma~\ref{lem:m2w}. Steps~1 and~2 of that proof apply
-to $1/\Phi$ in place of $\Phi$: $1/\Phi$ is holomorphic near every point of $[0,\infty)$, and on the strip of Step~1,
-$|1/\Phi|=\exp\beta\operatorname{Re}(\varsigma+(\tilde d+R)^{-1}-1)\le\ue^{\beta}$, because $|1+(1-\ue^{-2v})^{1/2}|\le3$ and $|\tilde d+R|^{-1}\le\tfrac{10}{17}$ there. So there
-are $A_\beta,c_\beta\ge1$, depending only on $\beta$, with $|Z_S(1/\mathfrak m_i)|\le A_\beta c_\beta^{\,j}j!$. If $q$ is the affine isometry with $q(i)=w_0$, then
+\emph{The first factor.} For $w_0=i$, $\mathfrak m_i=\Phi(\tilde\psi)$ with $\Phi$ the function of the proof of Lemma~\ref{lem:m2w}.
+Since $\Phi$ is an exponential, $1/\Phi$ extends holomorphically wherever $\Phi$ does: to a neighbourhood of every point of $[0,\infty)$
+and to the strip of Step~1 of that proof, where $|1/\Phi|=\exp\beta\operatorname{Re}(\varsigma+(\tilde d+R)^{-1}-1)\le\ue^{\beta}$,
+because $|1+(1-\ue^{-2v})^{1/2}|\le3$ and $|\tilde d+R|^{-1}\le\tfrac{10}{17}$ there. Compactness of $[0,2]$ and Cauchy's estimate on
+discs of radius $\tfrac15$ around the points of $[2,\infty)$ give $|(1/\Phi)^{(k)}|\le A_\beta k!\,\rho_\beta^k$ on $[0,\infty)$, and
+Lemma~\ref{lem:wordphi} gives $|Z_S(1/\mathfrak m_i)|\le A_\beta c_\beta^{\,j}j!$ with $c_\beta:=4+3\rho_\beta$; here $A_\beta,\rho_\beta\ge1$
+depend only on $\beta$. If $q$ is the affine isometry with $q(i)=w_0$, then
 $\mathfrak m_{w_0}=\mathfrak m_i\circ q^{-1}$, and $q$ commutes with $X$ and $Y$; so the same bound holds for $1/\mathfrak m_{w_0}$.
 
 \emph{The other two factors.} Let $\Psi$ be holomorphic in $\operatorname{Re}u>0$. By the expansion in the proof of Lemma~\ref{lem:fdb} and
@@ -353,10 +352,10 @@ Both bounds are uniform in $\alpha\le\tfrac12$.
 
 \begin{lemma}[noncancellation of the leading cusp coefficient]\label{cl:noncancel}
 For either amplitude of Lemma~\ref{cl:amp}, with its cases denoted by (i) and (ii), the following holds.
-Put $A_0=\Delta_0a$, with $\Delta_0=Y^2-Y$ as in Proposition~\ref{prop:g5}, and $S_0(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}A_0(n/c+i/c^2)$. In case
+Put $A_0=\Delta_\infty a$, with $\Delta_\infty=Y^2-Y$ as in Proposition~\ref{prop:g5}, and $S_0(\hbar)=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}A_0(n/c+i/c^2)$. In case
 (i) with $\mu=20$, $0.98\,\mu\ue^{-\mu}\le|S_0(\hbar)|\le1.02\,\mu\ue^{-\mu}$ for all $\hbar$, and
-$S_a(\hbar):=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}a(n/c+i/c^2)$ satisfies $0.99\,\ue^{-\mu}\le|S_a(\hbar)|\le1.01\,\ue^{-\mu}$. In case (ii) there are absolute constants $\mu_*\ge1$ and $c>0$ such that $|S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for
-$\mu\ge\mu_*$, $0<\alpha\le\min(\tfrac12,c\mu^{-6})$ and all $\hbar$.
+$S_a(\hbar):=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}a(n/c+i/c^2)$ satisfies $0.99\,\ue^{-\mu}\le|S_a(\hbar)|\le1.01\,\ue^{-\mu}$. In case (ii) there are absolute constants $\mu_*\ge1$ and $c_\alpha>0$ such that $|S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for
+$\mu\ge\mu_*$, $0<\alpha\le\min(\tfrac12,c_\alpha\mu^{-6})$ and all $\hbar$.
 \end{lemma}
 \begin{proof}
 $Y^2X_0=X_0$ gives $A_0=a[\mu^2(y-X_0)^2-\mu(2X_0-y)]$ in case (i), so $A_0(i)=-\mu\ue^{-\mu}$. At the other points $n/c+i/c^2$,
@@ -366,7 +365,7 @@ at most $\sum_{k\ge5}(4k+4)[5(k+1)^2+k+1]q^{k-2}\le5184q^3/(1-8q)<0.01$. So the 
 $0.015\,\mu\ue^{-\mu}$ to $S_0(\hbar)$, which gives its two bounds. For $S_a$, $a(i)=\ue^{-\mu}$ and $|a|\le\ue^{-\mu}\ue^{-\mu(X_0-1)}$ at the
 other points, so the same count without the factor $\mu X_0^2+2X_0$ bounds their contribution by $0.01\,\ue^{-\mu}$.
 
-In case (ii) let $h=\ue^{-\mu X_0}$, so that $A_0=\Delta_0\ue^{-\alpha\Lambda}h$ and $\Delta_0h(i)=-\mu\ue^{-\mu}$. In the rest of the proof $C$ does
+In case (ii) let $h=\ue^{-\mu X_0}$, so that $A_0=\Delta_\infty\ue^{-\alpha\Lambda}h$ and $\Delta_\infty h(i)=-\mu\ue^{-\mu}$. In the rest of the proof $C$ does
 not depend on $\mu\ge1$ or on $\alpha\le\tfrac12$.
 
 \emph{The point $i$.} By Lemma~\ref{cl:aux}(a) with $k=2$, $|\ue^{-\alpha\lambda}-1|\le\alpha\lambda$ in the spectral representation of $\Lambda$, $\Lambda\le(1-\Delta)^{1/2}$,
@@ -387,7 +386,9 @@ For $h_1$ and $w\in P$: the support of $h_1$ has distance at least $0.51$ from $
 \]
 and $\sum_{w\in P}\vartheta(w)\le C$ by Lemma~\ref{cl:aux}(b). So $h_1$ contributes at most $C\alpha\mu^{-1}\ue^{-\mu}$ to the sum over $P$.
 
-For $h_2$ and $w\in P$ use the split in the proof of Lemma~\ref{cl:amp}(ii), $h_2=h_2\eta_w+h_2(1-\eta_w)$. The far parts are bounded there by
+For $h_2$ and $w\in P$ split $h_2=h_2\eta_w+h_2(1-\eta_w)$ with the cutoffs $\eta_w$ of the proof of Lemma~\ref{cl:amp}(ii): $\eta_w=1$ on
+$B(w,\tfrac18)$, $\operatorname{supp}\eta_w\subset B(w,\tfrac14)$, and every word applied to $\eta_w$ is bounded uniformly in $w$. By
+Lemma~\ref{cl:aux}(d) with $d_0=\tfrac1{16}$, the far parts are bounded by
 $C\alpha\int\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}|h_2(w')|\,d\nu(w')$; summing over $w\in P$ under the integral with Lemma~\ref{cl:aux}(b) gives at most
 $C\alpha\int|h_2|\,d\nu\le C\alpha\mu^{-1}\ue^{-\mu\cosh0.44}$. For the near parts, $B(w,\tfrac14)$ does not meet $B(i,0.45)$, so $h_2=h$ there, and
 by Lemma~\ref{cl:aux}(a) with $k=2$ and \eqref{cl:hwords}, as in the proof of Lemma~\ref{cl:amp}(ii),
@@ -402,7 +403,7 @@ Altogether
 \[
 \sum_{w\in P}|A_0(w)|\le C\bigl(\alpha/\mu^2+\mu^3\ue^{-0.098\mu}\bigr)\,\mu\ue^{-\mu},\qquad|A_0(i)|\ge(1-C\alpha\mu^5)\,\mu\ue^{-\mu},
 \]
-which gives $|S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for $\mu\ge\mu_*$ and $\alpha\le c\mu^{-6}$.
+which gives $|S_0(\hbar)|\ge\tfrac12\mu\ue^{-\mu}$ for $\mu\ge\mu_*$ and $\alpha\le c_\alpha\mu^{-6}$.
 \end{proof}
 
 \subsection{Proof of sharpness}\label{subsec:cl-proof}
@@ -420,7 +421,7 @@ $T_k=\ue^{-it/(2\hbar)}[(S(t)A_k)\ue^{i\varphi/\hbar}]_\Gamma$, $A_1=c_\hbar P_1
 of length at most $8$ applied to $a$ is bounded by a constant times $X_0^{-2}$ in case (i) and times $\ue^{-d(i,\cdot)}(1+d(i,\cdot))^{-3/2}$ in
 case (ii); this suffices, because $B(A_k)$ applies words of length at most $4$ to $P_k(t)a$, a combination of words of length
 at most $2k\le4$ applied to $a$. We use Lemma~\ref{cl:asym} with $\vartheta^\star=X_0^{-2}$, respectively $\vartheta^\star=\vartheta$. Since
-$P_1(t)a=\int_0^t\Delta(s)a\,ds=\tfrac{1-\ue^{-2t}}2X^2a+t\Delta_0a$ and $t\ge1$, we have $B(A_1)\le C\hbar t$, and Lemma~\ref{cl:asym} gives
+$P_1(t)a=\int_0^t\Delta(s)a\,ds=\tfrac{1-\ue^{-2t}}2X^2a+t\Delta_\infty a$ and $t\ge1$, we have $B(A_1)\le C\hbar t$, and Lemma~\ref{cl:asym} gives
 \[
 T_1(z)=\ue^{-it/(2\hbar)}\ue^{t/2}\sqrt{\pi\hbar}\,\ue^{i\pi/4}\ue^{it/\hbar}\,\tfrac{i\hbar}2\Bigl(tS_0(\hbar)+\tfrac{1-\ue^{-2t}}2S_X(\hbar)\Bigr)
 +O\bigl(\ue^{t/2}\hbar^{3/2}\hbar t\bigr),
@@ -429,7 +430,8 @@ where $S_X(\hbar):=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}X^2a(n/c+i/c^2)$ conver
 combination of words of length at most $4$ with coefficients bounded by $t^2/2$, so $B(A_2)\le C\hbar^2t^2$ and
 $|T_2(z)|\le C\ue^{t/2}\hbar^{1/2}\hbar^2t^2$. For $E_2$, Theorem~\ref{thm:dd14} in case (i)
 and Theorem~\ref{pc:main} in case (ii), at $K=2$ and $N=0,2$, give $\norm{E_2}\le C(\hbar t/\alpha^2)^3\ampNorm a$ and
-$\norm{\Delta^2E_2}\le C(\alpha\hbar)^{-4}(\hbar t/\alpha^2)^3\ampNorm a$; Lemma~\ref{cl:ssob} with $r=\hbar$, and $m(z)\le5\ue^t$, give
+$\norm{\Delta^2E_2}\le C(\alpha\hbar)^{-4}(\hbar t/\alpha^2)^3\ampNorm a$; Lemma~\ref{cl:ssob} with $r=\hbar$, and $m(z)\le5\ue^t$
+(Lemma~\ref{pc:remcusp}(b)), give
 $|E_2(z)|\le C\ue^{t/2}\hbar^{-1}\alpha^{-10}(\hbar t)^3\ampNorm a$. Hence $|E_0(z)|$ differs from
 $\tfrac{\sqrt\pi}2\ue^{t/2}\hbar^{3/2}t|S_0(\hbar)|$ by at most $C\ue^{t/2}\hbar^{3/2}(1+\hbar t+\hbar t^2+\hbar^{1/2}t^3)$, and
 $1+\hbar t+\hbar t^2+\hbar^{1/2}t^3\le4t\,(t^{-1}+\hbar^{1/2}t^2)$ for $t\ge1$ and $\hbar\le1$.
@@ -443,7 +445,7 @@ $\hbar^{1/2}t^2\le\hbar^{1/10}$, so $C(t^{-1}+\hbar^{1/2}t^2)\le\tfrac{\sqrt\pi}
 \[
 \tfrac12\le\frac{|E_0(t)(z)|}{\tfrac{\sqrt\pi}2\,\ue^{t/2}\hbar^{3/2}t\,|S_0(\hbar)|}\le\tfrac32 .
 \]
-In particular $|E_0(t)(z)|\ge\tfrac{\sqrt\pi}4s_0\,\ue^{t/2}\hbar^{3/2}t$. Lemma~\ref{cl:ssob}(b) gives $m(z)\le5\ue^t$.
+In particular $|E_0(t)(z)|\ge\tfrac{\sqrt\pi}4s_0\,\ue^{t/2}\hbar^{3/2}t$. Lemma~\ref{pc:remcusp}(b) gives $m(z)\le5\ue^t$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{cl:necessary}]

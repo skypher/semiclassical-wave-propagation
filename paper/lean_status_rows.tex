@@ -16,7 +16,6 @@ Theorem~\ref{ev:mod} & L$'$ & parts (i), (ii): \lean{evmod}, with the statement 
 Lemma~\ref{lem:count} & P & elementary area count; its orbit case, used for Lemma~\ref{lem:p1} and Proposition~\ref{os:p1}, is \lean{exists_orbit_count}\\
 Lemma~\ref{lem:p1} & L & \lean{poincareSup_lt_top}\\
 Lemma~\ref{lem:t2} & L & \lean{lem_t2}\\
-Lemma~\ref{lem:lift} & L & \lean{allWords_of_exp}, \lean{patch_smooth}, \lean{glue_smooth}, \lean{lift1}, \lean{lift1D}\\
 Lemma~\ref{lem:base} & L & \lean{exists_stab_smul_infty}, \lean{initState_mul}, \lean{approxSolB_mul}, \lean{expLambda_iso}, \lean{poincareSup_conj_move}\\
 Lemma~\ref{lem:surf-lap} & L & \lean{SurfW.surf_lap}\\
 Lemma~\ref{lem:surf-duh} & L & \lean{SurfW.surf_duhamel}\\
@@ -24,21 +23,24 @@ Corollary~\ref{cor:surf-dyson} & L & \lean{SurfW.surf_dyson}\\
 Proposition~\ref{prop:dd-id} & L & \lean{dd_D12_simplex}, \lean{SurfW.surf_D4}, \lean{SurfW.surf_D4_bound}\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:analytic}: analytic and weighted propagation estimates}}\\
 Lemma~\ref{lem:ell} & L & \lean{inner_X_left}, \lean{inner_Y_left}, \lean{elliptic_identity}, \lean{elliptic_estimate}\\
-Lemma~\ref{lem:clip} & L & \lean{norm_Rplus_le}, \lean{norm_Rminus_le}, \lean{im_bound}\\
-Proposition~\ref{prop:a0} & L & \lean{prop_a0_eps}\\
+Lemma~\ref{lem:clip} & L & \lean{norm_Rplus_le_one}, \lean{norm_Rminus_le_one}, \lean{im_bound_one}\\
+Proposition~\ref{prop:a0} & L & \lean{prop_a0_eps_one}\\
 Lemma~\ref{lem:expw} & L & \lean{exp_of_words}\\
-Lemma~\ref{lem:mw} & L & \lean{lem_m_weak}\\
+Lemma~\ref{lem:mw} & L & \lean{lem_m_weak_one}\\
+Lemma~\ref{lem:wordphi} & L & \lean{wb_comp}\\
 Lemma~\ref{lem:m2w} & L & \lean{swX_le_swD}\\
 Lemma~\ref{lem:wave} & L & \lean{wave_weight}, \lean{wave_Bx'}, \lean{wave_By'}; \lean{wave_weightD}\\
 Lemma~\ref{lem:wcomm} & L & \lean{comm_wave}\\
 Lemma~\ref{lem:wmoll} & L & \lean{w_J}, \lean{w_Bx}, \lean{w_By}, \lean{w_JS}, \lean{w_XX}, \lean{w_YY}, \lean{w_comm}\\
 Proposition~\ref{prop:ws} & L & \lean{ws0_trunc}, \lean{ws0_cosh}\\
 Lemma~\ref{lem:path} & L & \lean{WOps.pathG_eq}, \lean{norm_pathH_le}, \lean{norm_xInt_le}, \lean{xInt_chart}, \lean{path_duhamel}\\[2pt]
-Lemma~\ref{lem:fc} & L & \lean{lem_fc}\\
-Lemma~\ref{lem:wc} & L & \lean{lem_wc}\\
+Lemma~\ref{lem:fc} & L & \lean{lem_fc_one}\\
+Lemma~\ref{lem:wc} & L & \lean{lem_wc_one}\\
+Lemma~\ref{lem:lift} & L & \lean{allWords_of_exp}, \lean{patch_smooth}, \lean{glue_smooth}, \lean{lift1}, \lean{lift1D}\\
 Lemma~\ref{lem:fdb} & L & \lean{fdb}\\
-Lemma~\ref{lem:sc} & L & \lean{lem_sc}\\
-Lemma~\ref{lem:wb} & L & \lean{lem_wb_w}, \lean{lem_wb_u}\\
+Lemma~\ref{lem:sc} & L & \lean{lem_sc_one}\\
+Lemma~\ref{lem:expand} & L & (i) \lean{bP_inv}; (ii) \lean{sca}\\
+Lemma~\ref{lem:wb} & L & \lean{lem_wb_w_one}, \lean{lem_wb_u_one}\\
 Lemma~\ref{lem:unw} & L & \lean{unw_err}\\
 Lemma~\ref{lem:collect} & L & \lean{collect_remainder}; parts \lean{collect_absorb}, \lean{remF_zero_le}, \lean{collect_final}\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:companion}: power-weight and reversed-weight approximation}}\\
@@ -55,10 +57,10 @@ Lemma~\ref{os:words} & L & \lean{poissonM_w}, \lean{lamM_w}, \lean{lamM_pow_w}, 
 Lemma~\ref{os:transfer} & L & \lean{transfer} (there for the weight $X_0^\beta$ with any $\beta>\tfrac12$; this is the case $\beta=1$)\\
 Proposition~\ref{os:p1} & L & \lean{poincare_omP}, \lean{perio_weighted_gen} (the field \lean{perio_bd} of \lean{surfW_printed}), \lean{critSup_eq}, \lean{mS_printed_sharp}, \lean{norm_surfV_printed_le}, \lean{mS_printed_le}\\
 Lemma~\ref{os:indep} & L & \lean{surfV_indep}\\
-Proposition~\ref{pc:core} & L & \lean{dd_core_pc} (the bound for the Dyson remainder of Proposition~\ref{prop:dd-id}(ii)), with \lean{SurfW.surf_D4} (the error equals that remainder)\\
+Proposition~\ref{pc:core} & L & \lean{dd_core_om} (the bound for the Dyson remainder of Proposition~\ref{prop:dd-id}(ii); the instance of \lean{dd_core_pc} for the weight $\omega$), with \lean{SurfW.surf_D4} (the error equals that remainder)\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:consequences}: consequences and localized amplitudes}}\\
 Lemma~\ref{pc:g43} & L & \lean{sobolev_M_mult}\\
-Remark~\ref{pc:remcusp} & P & two-sided bound for $m(z)$ in a cusp; self-checked, not formalized\\
+Lemma~\ref{pc:remcusp} & P & bounds for $m(z)$ in a cusp; self-checked, not formalized\\
 Remark~\ref{rem:g4} & P & \\[2pt]
 Remark~\ref{thm:main} & L & original norm: \lean{pcthm13_fixed} (from \lean{pcthm13_all}); reversed-weight norm: \lean{thm13R_fixed} (from \lean{thm14Rmain_exp} and \lean{swNormD_mono})\\
 Remark~\ref{rem:pw-cor} & L & \lean{cor15R_tiedA}, \lean{cor16R_allmultN}; positive injectivity radius: \lean{cor16R_allbgN}; constants with $C\ge1$: \lean{xThmCDA_exists}\\
@@ -74,10 +76,10 @@ Corollary~\ref{ev:transfer} & L & original norm: \lean{evTransfer_pc_all}; rever
 Lemma~\ref{ev:meanlem} & L & \lean{integral_amp_mul_slice_L1}, \lean{integrableOn_amp_mul_slice_L1}, \lean{slice_lintegral_le}\\
 Corollary~\ref{ev:perio} & P & elementary consequence of Lemma~\ref{ev:meanlem}; self-checked, not separately formalized\\
 Lemmas~\ref{ev:mellinlemma}, \ref{ev:scattering}, \ref{ev:approxmode}, \ref{ev:initialnorm}, \ref{ev:outgoing} & P & editorial extractions from the proof of Theorem~\ref{ev:mod}; the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked\\
-\multicolumn{3}{@{}l}{\emph{Section~\ref{sec:g5}: the mean of the approximation}}\\
-Proposition~\ref{prop:mean} & L & \lean{meanGrowth}; \lean{integral_approxSolB}, \lean{J_vecX}, \lean{J_vecY}, \lean{chP_dysT}, \lean{swapped_setup}, \lean{enorm_integral_le_perio}\\
-Corollary~\ref{cor:meanJ} & P & deduced from Proposition~\ref{prop:mean} and Theorem~\ref{thm:dd14}; self-checked, not formalized\\
 \multicolumn{3}{@{}l}{\emph{Appendix~\ref{app:special}: special-function and kernel calculations}}\\
 Lemma~\ref{lem:gutzmer} & P & used only for Lemma~\ref{lem:ex}\\
 Lemma~\ref{os:poisson} & P & used only in Proposition~\ref{pc:classes} and Section~\ref{subsec:cl}\\
 Lemma~\ref{os:hk} & P & used only in Section~\ref{subsec:cl}\\
+\multicolumn{3}{@{}l}{\emph{Appendix~\ref{sec:g5}: the mean of the approximation}}\\
+Proposition~\ref{prop:mean} & L & \lean{meanGrowth}; \lean{integral_approxSolB}, \lean{J_vecX}, \lean{J_vecY}, \lean{chP_dysT}, \lean{swapped_setup}, \lean{enorm_integral_le_perio}\\
+Corollary~\ref{cor:meanJ} & P & deduced from Proposition~\ref{prop:mean} and Theorem~\ref{thm:dd14}; self-checked, not formalized\\

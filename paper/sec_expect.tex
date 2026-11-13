@@ -114,14 +114,14 @@ Let $g_\alpha=g_{\alpha,1/2}$ be the profile of Lemma~\ref{os:prof}, and put
 \mathsf M_\alpha:=\int_{\mathbb R}g_\alpha(r)\ue^{|r|/2}\,dr,\qquad L_\alpha(k):=\int_{\mathbb R}g_\alpha(r)\cosh(kr)\,dr\quad(|\operatorname{Re}k|\le\tfrac12).
 \]
 Then $\mathsf M_\alpha<\infty$, and the function
-$\mathfrak a(s):=L_\alpha(\tfrac12-s)\hat{\mathfrak \mathfrak h}_0(s)$, defined for $\tfrac14\le\operatorname{Re}s\le1$, is holomorphic in $|\operatorname{Re}s-\tfrac12|<\tfrac14$ and satisfies
+$\mathfrak a(s):=L_\alpha(\tfrac12-s)\hat{\mathfrak h}_0(s)$, defined for $\tfrac14\le\operatorname{Re}s\le1$, is holomorphic in $|\operatorname{Re}s-\tfrac12|<\tfrac14$ and satisfies
 \begin{equation}\label{ev:mellin}
  |\mathfrak a(\sigma+i\rho)|\le \mathsf M_\alpha C_n(1+|\rho|)^{-n}\qquad(\tfrac14\le\sigma\le1)
 \end{equation}
 for every positive integer $n$, with $C_n$ depending on $\mathfrak h$ and $n$.
 It agrees with $\hat a_0(s)$ for $\tfrac12\le\operatorname{Re}s\le1$ and satisfies
 \[
- \mathfrak a(\tfrac12+i\rho)=\ue^{-\alpha(\rho^2+1/4)^{1/2}}\hat{\mathfrak \mathfrak h}_0(\tfrac12+i\rho).
+ \mathfrak a(\tfrac12+i\rho)=\ue^{-\alpha(\rho^2+1/4)^{1/2}}\hat{\mathfrak h}_0(\tfrac12+i\rho).
 \]
 Moreover $0<\mu_0<\infty$, and
 \begin{equation}\label{ev:mu0}
@@ -135,7 +135,7 @@ $L_\alpha(i\rho)=\ue^{-\alpha(\rho^2+1/4)^{1/2}}$ for real $\rho$, by Lemma~\ref
 
 \emph{(a) The multiplier identity.} For $0\le\operatorname{Re}w\le\tfrac12$,
 \begin{equation}\label{ev:mult}
-  \int_\Hb y^wa\,d\nu=L_\alpha(w-\tfrac12)\int_\Hb y^w\mathfrak \mathfrak h\,d\nu ,
+  \int_\Hb y^wa\,d\nu=L_\alpha(w-\tfrac12)\int_\Hb y^w\mathfrak h\,d\nu ,
 \end{equation}
 where the left side converges absolutely by \eqref{ev:L1}. To prove this, let $\mathfrak h$ vanish outside $\{\tilde\psi\le R_0\}$, and for
 an integer $j\ge1$ let $\eta_j$ be the indicator function of the ball $\{\tilde\psi\le R_0+j\}$. Since
@@ -149,30 +149,30 @@ $\mathfrak h$ lies in the domain of $D^2=-\Delta-\tfrac14$, $p$ is twice continu
 \[
   p''(r)=\langle\eta y^{\bar w},(\Delta+\tfrac14)U(r)\rangle=\langle(\Delta+\tfrac14)(\eta y^{\bar w}),U(r)\rangle=(w-\tfrac12)^2\,p(r)\qquad(|r|<j),
 \]
-because $(\Delta+\tfrac14)y^{\bar w}=(\bar w-\tfrac12)^2y^{\bar w}$ and $\eta=1$ on the support of $U(r)$. With $p(0)=\int_\Hb y^w\mathfrak \mathfrak h\,d\nu$ and $p'(0)=0$ this gives
-$p(r)=\cosh((w-\tfrac12)r)\int_\Hb y^w\mathfrak \mathfrak h\,d\nu$ for $|r|<j$. For $|r|\ge j$ we use $|\langle\eta_jy^{\bar w},\cos(rD)\mathfrak h\rangle|\le\norm{\eta_jy^{\bar w}}\norm \mathfrak h$ and
+because $(\Delta+\tfrac14)y^{\bar w}=(\bar w-\tfrac12)^2y^{\bar w}$ and $\eta=1$ on the support of $U(r)$. With $p(0)=\int_\Hb y^w\mathfrak h\,d\nu$ and $p'(0)=0$ this gives
+$p(r)=\cosh((w-\tfrac12)r)\int_\Hb y^w\mathfrak h\,d\nu$ for $|r|<j$. For $|r|\ge j$ we use $|\langle\eta_jy^{\bar w},\cos(rD)\mathfrak h\rangle|\le\norm{\eta_jy^{\bar w}}\norm{\mathfrak h}$ and
 \[
   \norm{\eta_jy^{\bar w}}^2\le\int_{\{X_0\le R\}}(1+y)\,d\nu\le2\pi R+\int_0^{2R}2(2Ry)^{1/2}\,\frac{dy}{y}=(2\pi+8)R,\qquad R=\ue^{R_0+j},
 \]
 since $y^{2\operatorname{Re}w}\le1+y$, the ball $\{X_0\le R\}$ has area $2\pi(R-1)$, and on it $y\le2R$ and $x^2\le2Ry$. So the part $|r|\ge j$ of
 the integral is at most $C\ue^{j/2}\int_{|r|\ge j}g_\alpha\,dr\le C'(1+j)^{-3/2}$ by Lemma~\ref{os:prof}(iv). Hence
 \[
-  \int_{\{\tilde\psi\le R_0+j\}}y^wa\,d\nu=\int_{|r|<j}g_\alpha(r)\cosh((w-\tfrac12)r)\,dr\cdot\int_\Hb y^w\mathfrak \mathfrak h\,d\nu+O((1+j)^{-3/2}),
+  \int_{\{\tilde\psi\le R_0+j\}}y^wa\,d\nu=\int_{|r|<j}g_\alpha(r)\cosh((w-\tfrac12)r)\,dr\cdot\int_\Hb y^w\mathfrak h\,d\nu+O((1+j)^{-3/2}),
 \]
 and \eqref{ev:mult} follows as $j\to\infty$, by dominated convergence on both sides ($|\cosh((w-\tfrac12)r)|\le\ue^{|r|/2}$).
 
 \emph{(b) The Mellin transform of $a_0$.} By Fubini's theorem and \eqref{ev:L1}, $\int_\Hb y^wa\,d\nu=\int_0^\infty y^wa_0(y)\,dy/y^2=\hat a_0(1-w)$, and likewise for $\mathfrak h$, whose integral over
 horizontal lines is $\mathfrak h_0$. So \eqref{ev:mult} reads
 \begin{equation}\label{ev:a0hat}
-  \hat a_0(s)=L_\alpha(\tfrac12-s)\,\hat{\mathfrak \mathfrak h}_0(s)\qquad(\tfrac12\le\operatorname{Re}s\le1),
+  \hat a_0(s)=L_\alpha(\tfrac12-s)\,\hat{\mathfrak h}_0(s)\qquad(\tfrac12\le\operatorname{Re}s\le1),
 \end{equation}
-where the Mellin integral of $a_0$ converges absolutely. Since $\mathfrak h_0\in C_c^\infty((0,\infty))$, $\hat{\mathfrak \mathfrak h}_0$ is entire and, by integration by parts,
-$|\hat{\mathfrak \mathfrak h}_0(\sigma+i\rho)|\le C_n(1+|\rho|)^{-n}$ for $\tfrac14\le\sigma\le1$.
+where the Mellin integral of $a_0$ converges absolutely. Since $\mathfrak h_0\in C_c^\infty((0,\infty))$, $\hat{\mathfrak h}_0$ is entire and, by integration by parts,
+$|\hat{\mathfrak h}_0(\sigma+i\rho)|\le C_n(1+|\rho|)^{-n}$ for $\tfrac14\le\sigma\le1$.
 Together with the properties of $L_\alpha$, this proves \eqref{ev:mellin} and the asserted value on the central line.
 
 \emph{(c) The mass $\mu_0$.} By the Cauchy--Schwarz inequality on horizontal lines and \eqref{ev:line},
 $|a_0(y)|^2\le2\pi\int_{\mathbb R}\omega^2|a|^2(x+iy)\,dx$, so $\mu_0\le2\pi\norm{\omega a}^2<\infty$. If $\mu_0=0$, then $a_0=0$ almost everywhere and
-$\hat a_0(\tfrac12)=0$; but $\hat a_0(\tfrac12)=L_\alpha(0)\hat{\mathfrak \mathfrak h}_0(\tfrac12)=\ue^{-\alpha/2}\int_0^\infty \mathfrak h_0(y)y^{-3/2}dy>0$ by \eqref{ev:a0hat}. So $0<\mu_0<\infty$. By \eqref{ev:L1}
+$\hat a_0(\tfrac12)=0$; but $\hat a_0(\tfrac12)=L_\alpha(0)\hat{\mathfrak h}_0(\tfrac12)=\ue^{-\alpha/2}\int_0^\infty \mathfrak h_0(y)y^{-3/2}dy>0$ by \eqref{ev:a0hat}. So $0<\mu_0<\infty$. By \eqref{ev:L1}
 with $\sigma=\tfrac12$, $y^{-3/2}a_0\in L^1(dy)$, so \eqref{ev:MP} gives \eqref{ev:mu0}.
 
 
@@ -203,7 +203,7 @@ vanishes on $B_P$, and $k_P=1_{B_P}(k_P-k_{P-L})$ is $1_{B_P}$ times a sum of $2
 $|\langle\ue^{-\alpha\Lambda}\Psi,k_P\rangle|\le\norm{1_{B_P}\ue^{-\alpha\Lambda}\Psi}\cdot2L\norm k\to0$.
 
 \emph{Claim B.} Let $\Theta$ be bounded and measurable with $\Theta(z+1)=\Theta(z)$. Then $\int_\Hb a(z+s)\Theta(z)\,d\nu=\int_\Hb a(z)\Theta(z)\,d\nu$ for every real $s$. Indeed,
-$k:=\tau_s\mathfrak \mathfrak h-\mathfrak h\in C_c^\infty(\Hb)$ has $\sum_nk(z+n)=\mathfrak h_0(y)-\mathfrak h_0(y)=0$, and $v:=\ue^{-\alpha\Lambda}k=\tau_sa-a\in L^1(\Hb)$. For $j\ge1$ the function
+$k:=\tau_s\mathfrak h-\mathfrak h\in C_c^\infty(\Hb)$ has $\sum_nk(z+n)=\mathfrak h_0(y)-\mathfrak h_0(y)=0$, and $v:=\ue^{-\alpha\Lambda}k=\tau_sa-a\in L^1(\Hb)$. For $j\ge1$ the function
 $\Theta_j:=\Theta\,1_{\{y\ge1/j\}}$ satisfies the hypotheses of Claim A, because the set $\{0\le x<1,\ y\ge1/j\}$ has finite area; so $\int v\Theta_j\,d\nu=0$, and
 $\int v\Theta\,d\nu=0$ follows by dominated convergence.
 
