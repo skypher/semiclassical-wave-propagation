@@ -302,7 +302,11 @@ for almost every $y>0$, with $\|f_t\|^2=\|\mathcal O_{f_t}\|^2=\mu_0$ in $L^2(dy
  \qquad(\tfrac12\le\operatorname{Re}s\le1).
 \end{equation}
 \end{lemma}
-\begin{proof} By definition $f_t=\ue^{-it/(2\hbar)}\,(S(t)a_0)\,y^{-i/\hbar}$,
+\begin{proof} We compute the zero mode of $v_t$ weakly, by pairing $v_t$ with the incomplete Eisenstein series $E(\cdot|g)$ of
+Lemma~\ref{ev:scattering}. Unfolding and Lemma~\ref{ev:meanlem} reduce the pairing to an integral of $f_t$ against the zero mode
+$g+R_g$ of $E(\cdot|g)$; the term $g$ gives the transported profile $f_t$, and $R_g$ gives the constant and the outgoing term.
+
+By definition $f_t=\ue^{-it/(2\hbar)}\,(S(t)a_0)\,y^{-i/\hbar}$,
 so that $f_t(y)=\int_{\mathbb R}u^{(0)}(t)(x+iy)\,dx$ for $u^{(0)}(t)=\ue^{-it/(2\hbar)}(S(t)a)\ue^{i\varphi/\hbar}$. Then
 \[
   \int_0^\infty|f_t|^2\,\frac{dy}{y^2}=\mu_0,\qquad\int_0^\infty|f_t|\,\frac{dy}{y^2}=\ue^{t/2}\int_0^\infty|a_0|\,\frac{dy}{y^2}<\infty,

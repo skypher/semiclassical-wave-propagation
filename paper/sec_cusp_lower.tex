@@ -24,9 +24,12 @@ Then the conclusion of (i) holds, with constants depending also on $\mu$.
 At the points $z=x+i\ue^t$ of (i) and (ii), $m(z)\le5\ue^t$.
 \end{theorem}
 
-The radius $\alpha_1$ is that of Lemma~\ref{cl:amp}(i), and $\mu_*$ and $c_{\mathrm{nc}}$ are the constants of Lemma~\ref{cl:noncancel}. The
-value $\mu=20$ in (i) is fixed so that the explicit count in Lemma~\ref{cl:noncancel} shows that the leading cusp coefficient does
-not cancel; in (ii) the same is achieved by taking $\mu$ large and $\alpha$ small.
+The radius $\alpha_1$ is that of Lemma~\ref{cl:amp}(i), and $\mu_*$ and $c_{\mathrm{nc}}$ are the constants of Lemma~\ref{cl:noncancel}.
+Both cases need an amplitude whose leading cusp coefficient does not cancel: in the sum over the points $n/c+i/c^2$ of
+Figure~\ref{fig:cusp}(b), the term of the point $i$ must dominate (Lemma~\ref{cl:noncancel}). For $\ue^{-\mu X_0}$ the other points are
+smaller by at least a factor $\ue^{-\mu/2}$, up to powers of $\mu$, so any large $\mu$ serves. In (i) we fix $\mu=20$, for which the count in the
+proof of Lemma~\ref{cl:noncancel} is short and explicit; the bound it gives for the other points only improves as $\mu$ grows. In (ii) the Poisson smoothing changes
+the term of the point $i$ by a relative amount at most of order $\alpha\mu^5$, so $\mu$ is taken large and then $\alpha$ small in terms of $\mu$.
 In the rest of this section $\ampNorm a:=\swNorm a$ in case (i) and $\ampNorm a:=\pcNorm a$ in case (ii), so that the common estimates
 cover both amplitude classes. Theorem~\ref{cl:necessary} is deduced from Theorem~\ref{cl:main} in Section~\ref{subsec:cl-proof}.
 
@@ -331,7 +334,9 @@ $|Z_Ia(w)|\le C_{I,\mu}\vartheta(w)$ uniformly in $\alpha\le\tfrac12$.
 \end{itemize}
 \end{lemma}
 \begin{proof}
-We use Lemma~\ref{cl:aux}.
+Part (i) bounds every word applied to the weighted amplitude by a factorial of Cauchy type and then applies the converse
+of the Cauchy estimates, Lemma~\ref{lem:expw}. Part (ii) splits $\ue^{-\mu X_0}$ into a part near the point of evaluation, whose Poisson smoothing is
+controlled by local Sobolev bounds, and a far part, controlled by the decay of the Poisson kernel (Lemma~\ref{cl:aux}).
 
 (i) Let $d_{w_0}:=d(w_0,\cdot)$, $X_{w_0}:=\cosh d_{w_0}$ and $\mathfrak m_{w_0}:=X_{w_0}^\beta\ue^{-\beta\langle d_{w_0}\rangle}$, so that
 \[
@@ -410,6 +415,10 @@ $\mathfrak S_a(\hbar):=\sum_{c\ge1}c^{2i/\hbar}\sum_{(n,c)=1}a(n/c+i/c^2)$ satis
 $\mu\ge\mu_*$, $0<\alpha\le\min(\tfrac12,c_{\mathrm{nc}}\mu^{-6})$ and all $\hbar$.
 \end{lemma}
 \begin{proof}
+The term of the point $i$ is about $-\mu\ue^{-\mu}$. Every other point $n/c+i/c^2$ lies at distance at least $0.96$ from $i$, where
+$\ue^{-\mu X_0}$ is smaller by a factor that decays exponentially in $\mu$; so for large $\mu$ the other points cannot cancel the
+term of $i$. In case (i) we count explicitly at $\mu=20$; in case (ii) we also bound the change caused by the Poisson smoothing.
+
 $Y^2X_0=X_0$ gives $\Delta_\infty a=a[\mu^2(y-X_0)^2-\mu(2X_0-y)]$ in case (i), so $(\Delta_\infty a)(i)=-\mu\ue^{-\mu}$. At the other points $n/c+i/c^2$,
 $X_0=(n^2+c^2+c^{-2})/2$, $X_0-1\ge\max(\tfrac12,(k-2)/2)$ with $k=n^2+c^2$, and $|\Delta_\infty a|\le\mu\ue^{-\mu}\ue^{-\mu(X_0-1)}(\mu X_0^2+2X_0)$. For
 $\mu=20$ and $q=\ue^{-10}<1/20000$: the two points $\pm1+i$ give at most $96q<0.005$; there is no coprime pair with $c\ge1$ and $k\in\{3,4\}$; the rest is
