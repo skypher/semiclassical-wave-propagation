@@ -118,7 +118,7 @@ All Lean names are in the namespace `Qschubert`.
 |---|---|---|
 | Corollary 8.1 (`ev:transfer`) | L | original norm: `evTransfer_pc_all`; reversed-weight norm: `evTransfer_main_unif` |
 | Lemma 8.14 (`ev:meanlem`) | L | `integral_amp_mul_slice_L1`, `integrableOn_amp_mul_slice_L1`, `slice_lintegral_le` |
-| Corollary 8.17 (`ev:perio`) | P | elementary consequence of Lemma 8.14 (`ev:meanlem`); self-checked, not separately formalized |
+| Corollary 8.17 (`ev:perio`) | P | step of the proof of Lemma 8.14 (`ev:meanlem`); self-checked, not separately formalized |
 | Lemmas 8.9 (`ev:mellinlemma`), 8.19 (`ev:scattering`), 8.23 (`ev:approxmode`), 8.28 (`ev:initialnorm`), 8.29 (`ev:outgoing`) | P | editorial extractions from the proof of Theorem 1.8 (`ev:mod`); the formal proof groups these arguments differently; no separate exact statement match claimed; self-checked |
 
 ## Appendix A (`app:special`): special-function and kernel calculations

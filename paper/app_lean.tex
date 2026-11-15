@@ -87,7 +87,9 @@ Corollary~\ref{pc:thm13}(ii) is \lean{pcthm13_fixed} for the original norm, dedu
 reversed-weight norm, deduced from \lean{thm14Rmain_exp} at $K=N=0$ and the monotonicity of the reversed-weight norm in the radius
 (\lean{swNormD_mono}). The Mellin, scattering, zero-mode, initial-norm and outgoing-mass lemmas of
 Section~\ref{sec:expect} are ingredients of the formal proof of Theorem~\ref{ev:mod};
-their individual statements do not have separate exact formal counterparts.
+their individual statements do not have separate exact formal counterparts. The formal proof of Lemma~\ref{ev:meanlem} does not use
+the Poisson kernel, which is not formalized; it obtains the identity from the invariance of $\ue^{-\alpha\Lambda}$ under translations and
+finite propagation speed.
 
 \paragraph{Results without formal proofs.}
 The classical comparison in Theorem~\ref{ev:mod}(iii) uses the cited equidistribution theorem for closed horocycles;

@@ -191,47 +191,38 @@ Moreover, for every measurable $G\ge0$ on $\Hb$ with $G(z+1)=G(z)$,
 \end{equation}
 \end{lemma}
 \begin{proof}
-Write $(\tau_sf)(z):=f(z+s)$ for real $s$. The operators $\tau_s$ are unitary on $L^2(\Hb)$ and commute with $\Delta$, hence with $\ue^{-\alpha\Lambda}$,
-which is self-adjoint.
-
-\emph{Claim A.} Let $k\in C_c^\infty(\Hb)$ with $\sum_{n\in\mathbb Z}k(z+n)=0$ for all $z$, let $v:=\ue^{-\alpha\Lambda}k$, and let $\Theta$ be measurable with $\Theta(z+1)=\Theta(z)$,
-$\Theta\,1_{\{0\le x<1\}}\in L^2(\Hb)$ and $v\Theta\in L^1(\Hb)$. Then $\int_\Hb v\Theta\,d\nu=0$. Indeed, with $\Psi:=\overline{\Theta}\,1_{\{0\le x<1\}}$ the integral of $v\Theta$ over the strip
-$\{n\le x<n+1\}$ is $\langle\Psi,\tau_nv\rangle$, so $\int_\Hb v\Theta\,d\nu=\lim_P\sum_{|n|\le P}\langle\Psi,\tau_nv\rangle=\lim_P\langle\ue^{-\alpha\Lambda}\Psi,k_P\rangle$ with
-$k_P:=\sum_{|n|\le P}\tau_nk$. Let $k$ vanish outside $\{|x|\le R\}$ and fix an integer $L>2R$. Where $|x|<P-R$, all nonzero terms of
-$\sum_{n\in\mathbb Z}k(z+n)$ have $|n|\le P$, so $k_P=0$ there. Hence for $P>L$ the function $k_P$ vanishes outside $B_P:=\{|x|\ge P-R\}$, the function $k_{P-L}$
-vanishes on $B_P$, and $k_P=1_{B_P}(k_P-k_{P-L})$ is $1_{B_P}$ times a sum of $2L$ translates of $k$. So
-$|\langle\ue^{-\alpha\Lambda}\Psi,k_P\rangle|\le\norm{1_{B_P}\ue^{-\alpha\Lambda}\Psi}\cdot2L\norm k\to0$.
-
-\emph{Claim B.} Let $\Theta$ be bounded and measurable with $\Theta(z+1)=\Theta(z)$. Then $\int_\Hb a(z+s)\Theta(z)\,d\nu=\int_\Hb a(z)\Theta(z)\,d\nu$ for every real $s$. Indeed,
-$k:=\tau_s\mathfrak h-\mathfrak h\in C_c^\infty(\Hb)$ has $\sum_nk(z+n)=\mathfrak h_0(y)-\mathfrak h_0(y)=0$, and $v:=\ue^{-\alpha\Lambda}k=\tau_sa-a\in L^1(\Hb)$. For $j\ge1$ the function
-$\Theta_j:=\Theta\,1_{\{y\ge1/j\}}$ satisfies the hypotheses of Claim A, because the set $\{0\le x<1,\ y\ge1/j\}$ has finite area; so $\int v\Theta_j\,d\nu=0$, and
-$\int v\Theta\,d\nu=0$ follows by dominated convergence.
-
-\emph{Bounded $\Theta$.} By Claim B and the invariance of $\nu$, $\int_\Hb a(z)\Theta(z-s)\,d\nu=\int_\Hb a\Theta\,d\nu$ for all $s$. Integrating over $0\le s\le1$ and using
-$\int_0^1\Theta(z-s)\,ds=\mathcal F_0[\Theta](\operatorname{Im}z)$ gives $\int_\Hb a\Theta\,d\nu=\int_\Hb a(z)\,\mathcal F_0[\Theta](\operatorname{Im}z)\,d\nu$, which is \eqref{ev:meaneq} by Fubini's theorem.
-
-\emph{The inequality.} Let $G$ be bounded first, and let $\sigma(y):=\overline{a_0(y)}/|a_0(y)|$ where $a_0(y)\ne0$ and $\sigma(y):=0$ elsewhere. Apply
-\eqref{ev:meaneq} to the bounded function $\Theta(z)=G(z)\sigma(\operatorname{Im}z)$: since $\mathcal F_0[\Theta]=\sigma\,\mathcal F_0[G]$,
+\emph{The kernel.} Let $k_\alpha$ be the radial kernel of $\ue^{-\alpha\Lambda}$ (Appendix~\ref{app:kernels}). By the integral formula of
+Lemma~\ref{os:poisson}, $k_\alpha>0$; by \eqref{os:small} and \eqref{os:ub} (with $\tau_0=\tfrac12$), $k_\alpha$ is bounded and
+$\int_\Hb k_\alpha(d(z,w))\,d\nu(w)=2\pi\int_0^\infty k_\alpha(r)\sinh r\,dr<\infty$. Put
 \[
-  \int_0^\infty|a_0|\,\mathcal F_0[G]\,\frac{dy}{y^2}=\int_\Hb a(z)G(z)\sigma(\operatorname{Im}z)\,d\nu\le\int_\Hb|a|\,G\,d\nu .
+  \tilde a(z):=\int_\Hb k_\alpha(d(z,w))\,\mathfrak h(w)\,d\nu(w).
 \]
-For general $G\ge0$ apply this to $\min(G,j)$ and let $j\to\infty$ (monotone convergence).
+Since $\ue^{-\alpha\Lambda}=\int_0^\infty\mu_\alpha(s)\ue^{s\Delta}ds$ and $\ue^{s\Delta}$ has the kernel $p_s$, Tonelli's theorem ($\mathfrak h\ge0$) gives
+$a=\tilde a$ almost everywhere. As $\mathfrak h\ge0$ is continuous and not identically zero, $0<\tilde a(z)<\infty$ for every $z$.
 
-\emph{General $\Theta$.} By \eqref{ev:meanineq} with $G=|\Theta|$, the function $|a_0(y)|\int_0^1|\Theta(x+iy)|\,dx$ is integrable for $dy/y^2$. Apply \eqref{ev:meaneq} to
-$\Theta_j:=\Theta\,1_{\{|\Theta|\le j\}}$ and let $j\to\infty$: on the left by dominated convergence with the bound $|a\Theta|$, on the right by dominated convergence
-with the bound $|a_0(y)|\int_0^1|\Theta(x+iy)|\,dx$.
+\emph{The periodization.} Translations are isometries, so $\tilde a(z+n)=\int_\Hb k_\alpha(d(z,w))\,\mathfrak h(w+n)\,d\nu(w)$, and by Tonelli's theorem
+\[
+  \sum_{n\in\mathbb Z}\tilde a(z+n)=\int_\Hb k_\alpha(d(z,w))\,\mathfrak h_0(\operatorname{Im}w)\,d\nu(w)\le\sup\mathfrak h_0\int_\Hb k_\alpha(d(z,w))\,d\nu(w).
+\]
+The right side does not change when $z$ is replaced by $z+s$, $s\in\mathbb R$ (substitute $w\mapsto w+s$), so it is a finite positive
+function $\tilde a_0(y)$ of $y=\operatorname{Im}z$ alone. Integrating over $0\le x\le1$ gives $\int_{\mathbb R}\tilde a(x+iy)\,dx=\tilde a_0(y)$. Since
+$a=\tilde a$ almost everywhere, Fubini's theorem gives $a_0=\tilde a_0$ and $\sum_na(x+n,y)=\tilde a_0(y)$ almost everywhere. In particular
+$a_0>0$ almost everywhere, and Corollary~\ref{ev:perio} below holds.
+
+\emph{Integrals against periodic functions.} Let $\Theta$ be as in the lemma. Since $a=\tilde a>0$ almost everywhere, periodicity and Tonelli's theorem give
+\[
+  \int_\Hb|a\Theta|\,d\nu=\int_0^\infty\!\!\int_0^1\sum_na(x+n,y)\,|\Theta(x+iy)|\,dx\,\frac{dy}{y^2}=\int_0^\infty a_0(y)\,\mathcal F_0[|\Theta|](y)\,\frac{dy}{y^2}.
+\]
+The left side is finite and $a_0>0$ almost everywhere, so $\mathcal F_0[|\Theta|](y)<\infty$ for almost every $y$, and $a_0\,\mathcal F_0[\Theta]$ is
+integrable for $dy/y^2$. The same computation with Fubini's theorem in place of Tonelli's gives \eqref{ev:meaneq}, and with $G$ in place
+of $|\Theta|$ it gives \eqref{ev:meanineq}, with equality.
 \end{proof}
 
 \begin{corollary}[periodization along the translations]\label{ev:perio}
 $\sum_{n\in\mathbb Z}a(x+n,y)=a_0(y)$ for almost every $(x,y)$.
 \end{corollary}
 \begin{proof}
-For bounded measurable $\Theta$ with $\Theta(z+1)=\Theta(z)$,
-\[
-\int_\Hb a\Theta\,d\nu=\int_0^\infty\!\int_0^1\Bigl(\sum_na(x+n,y)\Bigr)\Theta\,dx\,\frac{dy}{y^2},
-\]
-where the sum converges absolutely almost everywhere because $a\in L^1(\Hb)$. So Lemma~\ref{ev:meanlem} shows that
-$\int_0^\infty\!\int_0^1\bigl(\sum_na(x+n,y)-a_0(y)\bigr)\Theta\,dx\,dy/y^2=0$ for all such $\Theta$, and hence $\sum_na(x+n,y)=a_0(y)$ almost everywhere.
+This is the second step of the proof of Lemma~\ref{ev:meanlem}.
 \end{proof}
 
 
