@@ -312,4 +312,99 @@ theorem data_factor {c : ℝ} (hc1 : 1 / 2 < c) (hc2 : c < 1) {m : ℝ} (hm : 1 
           rw [← mul_pow]
           exact pow_le_pow_left₀ (by positivity) (mul_le_mul_of_nonneg_right h1 hKp.le) 2
 
+/-! ### Every `σ ≥ 0`: splitting `e^{σB} = (e^{(σ/n)B})^n` -/
+
+/-- The symbol identity `e^{σB} = (e^{(σ/n)B})^n`. -/
+lemma GQ_eq_pow (σ m : ℝ) {n : ℕ} (hn : n ≠ 0) : GQ σ m = GQ (σ / n) m ^ n := by
+  funext x
+  have hn' : (n : ℝ) ≠ 0 := Nat.cast_ne_zero.2 hn
+  have e : Real.exp (σ * rB m x) = Real.exp (σ / n * rB m x) ^ n := by
+    rw [← Real.exp_nat_mul]; congr 1; field_simp
+  simp only [GQ, Pi.pow_apply, e, Complex.ofReal_pow]
+
+/-- Iterating a bound at the critical weight. -/
+lemma omC_pow_bound {c : ℝ} {T : L2H' →L[ℂ] L2H'} {A : ℝ≥0∞}
+    (hT : ∀ f : L2H', ∫⁻ z : UpperHalfPlane, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖T f z‖ ^ 2)
+      ≤ A * ∫⁻ z : UpperHalfPlane, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖f z‖ ^ 2)) (n : ℕ) (f : L2H') :
+    ∫⁻ z : UpperHalfPlane, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖(T ^ n) f z‖ ^ 2)
+      ≤ A ^ n * ∫⁻ z : UpperHalfPlane, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖f z‖ ^ 2) := by
+  induction n with
+  | zero => simp
+  | succ n ih =>
+    rw [pow_succ', ContinuousLinearMap.mul_apply]
+    calc _ ≤ A * ∫⁻ z : UpperHalfPlane, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖(T ^ n) f z‖ ^ 2) := hT _
+      _ ≤ A * (A ^ n * ∫⁻ z : UpperHalfPlane, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖f z‖ ^ 2)) := by gcongr
+      _ = A ^ (n + 1) * ∫⁻ z : UpperHalfPlane, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖f z‖ ^ 2) := by
+          rw [← mul_assoc, pow_succ']
+
+/-- **`e^{σ(Λ_m - Λ)}` at the critical weight, for every `σ ≥ 0`.** -/
+theorem Q_cw_all {c : ℝ} (hc1 : 1 / 2 < c) (hc2 : c < 1) {m : ℝ} (hm : 1 / 2 ≤ m) : ∃ K : ℝ, 0 < K ∧ ∀ σ : ℝ, 0 ≤ σ →
+    ∀ f : L2H', ∫⁻ z : UpperHalfPlane, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖specE.integral (GQ σ m) f z‖ ^ 2)
+      ≤ ENNReal.ofReal (Real.exp (σ * K) ^ 2) * ∫⁻ z : UpperHalfPlane, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖f z‖ ^ 2) := by
+  obtain ⟨K, hK, hQ⟩ := Q_cw hc1 hc2 hm
+  refine ⟨K, hK, fun σ hσ f => ?_⟩
+  have hσm0 : 0 ≤ 2 * σ * m := by have := mul_nonneg hσ (show (0 : ℝ) ≤ m by linarith); linarith
+  obtain ⟨n, hn⟩ := exists_nat_gt (2 * σ * m)
+  have hn0 : n ≠ 0 := by
+    rintro rfl
+    rw [Nat.cast_zero] at hn
+    linarith
+  have hnpos : (0 : ℝ) < n := by exact_mod_cast Nat.pos_of_ne_zero hn0
+  have hσn : 0 ≤ σ / n := div_nonneg hσ hnpos.le
+  have hσnm : σ / n * m ≤ 1 / 2 := by
+    rw [div_mul_eq_mul_div, div_le_iff₀ hnpos]; linarith
+  have e : specE.integral (GQ σ m) = (specE.integral (GQ (σ / n) m)) ^ n := by
+    rw [GQ_eq_pow σ m hn0, spec_pow (GQ_mem hσn hm)]
+  rw [e]
+  refine (omC_pow_bound (fun g => hQ (σ / n) hσn hσnm g) n f).trans (le_of_eq ?_)
+  rw [← ENNReal.ofReal_pow (by positivity)]
+  congr 2
+  rw [← pow_mul, mul_comm 2 n, pow_mul, ← Real.exp_nat_mul]
+  congr 2
+  field_simp
+
+/-- **The data of the printed class, without a bound on `σ m`.** For `0 < σ < α ≤ 1`:
+`f̃ = e^{σ(Λ_m - Λ)} e^{-(α-σ)Λ} f` satisfies `e^{-σΛ_m} f̃ = e^{-αΛ} f`, and `‖ω f̃‖ ≤ C ‖ω f‖` at the critical weight. -/
+theorem data_factor_all {c : ℝ} (hc1 : 1 / 2 < c) (hc2 : c < 1) {m : ℝ} (hm : 1 / 2 ≤ m) : ∃ Cd : ℝ, 0 < Cd ∧ ∀ (σ α : ℝ), 0 < σ →
+    σ < α → α ≤ 1 → ∀ f : L2H',
+    vE m σ (specE.integral (GQ σ m) (specE.integral (GW 0 (α - σ)) f)) 0 = specE.integral (GW 0 α) f
+    ∧ ∫⁻ z : UpperHalfPlane, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖specE.integral (GQ σ m) (specE.integral (GW 0 (α - σ)) f) z‖ ^ 2)
+      ≤ ENNReal.ofReal (Cd ^ 2) * ∫⁻ z : UpperHalfPlane, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖f z‖ ^ 2) := by
+  obtain ⟨K, hK, hQ⟩ := Q_cw_all hc1 hc2 hm
+  obtain ⟨Kp, hKp, hP⟩ := poisson_cw hc1 hc2
+  refine ⟨Real.exp K * Kp, by positivity, fun σ α hσ hσα hα1 f => ⟨?_, ?_⟩⟩
+  · have hη0 : 0 < α - σ := by linarith
+    have hα : 0 < α := by linarith
+    unfold vE
+    have e1 : specE.integral (GWM m 0 σ) (specE.integral (GQ σ m) (specE.integral (GW 0 (α - σ)) f))
+        = specE.integral (GWM m 0 σ * (GQ σ m * GW 0 (α - σ))) f := by
+      rw [specE.integral_mul (GWM_mem m 0 hσ) (mul_mem_B (GQ_mem hσ.le hm) (GW_mem 0 hη0)),
+        specE.integral_mul (GQ_mem hσ.le hm) (GW_mem 0 hη0)]
+      rfl
+    rw [e1]
+    have e2 := integral_congr_nonneg (mul_mem_B (GWM_mem m 0 hσ) (mul_mem_B (GQ_mem hσ.le hm) (GW_mem 0 hη0))) (GW_mem 0 hα)
+      (fun s hs => by
+        show ((rWM m 0 σ s : ℝ) : ℂ) * (((Real.exp (σ * rB m s) : ℝ) : ℂ) * ((rW 0 (α - σ) s : ℝ) : ℂ)) = ((rW 0 α s : ℝ) : ℂ)
+        unfold rWM rW rB
+        simp only [hs, ite_true, mul_zero, pow_zero, one_mul]
+        rw [← Complex.ofReal_mul, ← Complex.ofReal_mul, ← Real.exp_add, ← Real.exp_add]
+        congr 2
+        ring)
+    exact congrArg (fun T : L2H' →L[ℂ] L2H' => T f) e2
+  · have hη0 : 0 < α - σ := by linarith
+    have hη : α - σ ≤ 1 := by linarith
+    have hσ1 : σ ≤ 1 := by linarith
+    calc _ ≤ ENNReal.ofReal (Real.exp (σ * K) ^ 2) * ∫⁻ z : UpperHalfPlane, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖specE.integral (GW 0 (α - σ)) f z‖ ^ 2) :=
+          hQ σ hσ.le _
+      _ ≤ ENNReal.ofReal (Real.exp (σ * K) ^ 2) * (ENNReal.ofReal (Kp ^ 2) * ∫⁻ z : UpperHalfPlane, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖f z‖ ^ 2)) := by
+          gcongr
+          exact hP (α - σ) hη0 hη f
+      _ ≤ _ := by
+          rw [← mul_assoc, ← ENNReal.ofReal_mul (by positivity)]
+          gcongr
+          have h1 : Real.exp (σ * K) ≤ Real.exp K := Real.exp_le_exp.2 (by nlinarith)
+          have h0 := Real.exp_pos (σ * K)
+          rw [← mul_pow]
+          exact pow_le_pow_left₀ (by positivity) (mul_le_mul_of_nonneg_right h1 hKp.le) 2
+
 end Qschubert

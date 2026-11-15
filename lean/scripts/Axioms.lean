@@ -2348,6 +2348,8 @@ import Qschubert
 #print axioms Qschubert.tendsto_spec_PQ
 #print axioms Qschubert.Q_cw
 #print axioms Qschubert.data_factor
+#print axioms Qschubert.data_factor_all
+#print axioms Qschubert.Q_cw_all
 #print axioms Qschubert.wb_w_gen
 #print axioms Qschubert.exists_chart_of_lint
 #print axioms Qschubert.chart_of_trunc

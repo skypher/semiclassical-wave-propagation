@@ -339,14 +339,14 @@ lemma kP_bound {L τ τ₀ ν ν' : ℝ} (hτ : |τ| ≤ τ₀) (hν : 0 < ν) (
     _ ≤ 1 * gK τ₀ (ν - ν') := by linarith
 
 /-- The majorant of the odd part. -/
-noncomputable def gQ (τ x : ℝ) : ℝ := (1 + 3 * |x|) * |x| * Real.exp (τ * |x|) / (2 * Real.cosh (Real.pi * (x / 2)))
+noncomputable def gQ (τ x : ℝ) : ℝ := (1 + |x|) * |x| * Real.exp (τ * |x|) / (2 * Real.cosh (Real.pi * (x / 2)))
 
 lemma gQ_nonneg (τ x : ℝ) : 0 ≤ gQ τ x := by
   unfold gQ; have := Real.cosh_pos (Real.pi * (x / 2)); positivity
 
 lemma continuous_gQ (τ : ℝ) : Continuous (gQ τ) := by
   unfold gQ
-  exact (by fun_prop : Continuous fun x : ℝ => (1 + 3 * |x|) * |x| * Real.exp (τ * |x|)).div (by fun_prop)
+  exact (by fun_prop : Continuous fun x : ℝ => (1 + |x|) * |x| * Real.exp (τ * |x|)).div (by fun_prop)
     (fun x => by have := Real.cosh_pos (Real.pi * (x / 2)); positivity)
 
 lemma integrable_gQ {τ : ℝ} (hτ : τ < Real.pi / 2) : Integrable (gQ τ) := by
@@ -364,14 +364,14 @@ lemma integrable_gQ {τ : ℝ} (hτ : τ < Real.pi / 2) : Integrable (gQ τ) := 
   unfold gQ gK
   rw [he]
   have hE := Real.exp_pos (τ₁ * |x|)
-  have hkey : (1 + 3 * |x|) * |x| * (Real.exp (τ₁ * |x|) * Real.exp (-((τ₁ - τ) * |x|)))
+  have hkey : (1 + |x|) * |x| * (Real.exp (τ₁ * |x|) * Real.exp (-((τ₁ - τ) * |x|)))
       ≤ 3 * (1 / (Real.exp 1 * (τ₁ - τ))) * ((1 + |x|) * Real.exp (τ₁ * |x|)) := by
-    have hf : (1 + 3 * |x|) ≤ 3 * (1 + |x|) := by linarith
-    calc (1 + 3 * |x|) * |x| * (Real.exp (τ₁ * |x|) * Real.exp (-((τ₁ - τ) * |x|)))
-        = (1 + 3 * |x|) * Real.exp (τ₁ * |x|) * (|x| * Real.exp (-((τ₁ - τ) * |x|))) := by ring
+    have hf : (1 + |x|) ≤ 3 * (1 + |x|) := by linarith
+    calc (1 + |x|) * |x| * (Real.exp (τ₁ * |x|) * Real.exp (-((τ₁ - τ) * |x|)))
+        = (1 + |x|) * Real.exp (τ₁ * |x|) * (|x| * Real.exp (-((τ₁ - τ) * |x|))) := by ring
       _ ≤ (3 * (1 + |x|)) * Real.exp (τ₁ * |x|) * (1 / (Real.exp 1 * (τ₁ - τ))) := by gcongr
       _ = _ := by ring
-  calc (1 + 3 * |x|) * |x| * (Real.exp (τ₁ * |x|) * Real.exp (-((τ₁ - τ) * |x|))) / (2 * Real.cosh (Real.pi * (x / 2)))
+  calc (1 + |x|) * |x| * (Real.exp (τ₁ * |x|) * Real.exp (-((τ₁ - τ) * |x|))) / (2 * Real.cosh (Real.pi * (x / 2)))
       ≤ 3 * (1 / (Real.exp 1 * (τ₁ - τ))) * ((1 + |x|) * Real.exp (τ₁ * |x|)) / (2 * Real.cosh (Real.pi * (x / 2))) := by
         gcongr
     _ = _ := by ring
@@ -413,7 +413,7 @@ lemma kQ_bound {L τ τ₀ ν ν' : ℝ} (hL : 1 / 2 ≤ L) (hτ0 : 0 ≤ τ) (h
     rw [e, abs_zero, mul_zero]
     exact mul_nonneg hτ0 (gQ_nonneg _ _)
   -- the frequency bound on the support of `sinh`
-  have hfreq : Real.sqrt (ν * ν') ≤ (1 + 3 * |x|) * ellN L ν' := by
+  have hfreq : Real.sqrt (ν * ν') ≤ (1 + |x|) * ellN L ν' := by
     have h2 : Real.sqrt (ν * ν') ≤ ν' + |x| / 2 := by
       rw [Real.sqrt_le_left (by positivity)]
       nlinarith [sq_nonneg (ν - ν'), le_abs_self x, abs_nonneg x, neg_abs_le x, sq_abs x, hν, hν']
@@ -422,19 +422,20 @@ lemma kQ_bound {L τ τ₀ ν ν' : ℝ} (hL : 1 / 2 ≤ L) (hτ0 : 0 ≤ τ) (h
     rcases le_or_gt (LamK ν') L with hc | hc
     · have e : ellN L ν' = LamK ν' := min_eq_left hc
       rw [e] at hℓ' ⊢
-      nlinarith
+      nlinarith [mul_nonneg hx0 (sub_nonneg.2 hℓ')]
     · have e : ellN L ν' = L := min_eq_right hc.le
       have hΛ : LamK ν < L := by
         by_contra hcon
         apply hδ0
         rw [hδ, e, ellN, min_eq_right (not_lt.1 hcon), sub_self]
-      have hd : LamK ν' ≤ LamK ν + |x| := by
-        have := abs_LamK_sub_le ν ν'
-        have h' := le_abs_self (LamK ν' - LamK ν)
-        rw [abs_sub_comm] at h'
-        linarith
+      -- the bound through `ν`: `√(νν') ≤ ν + |x|/2`, and `ν ≤ Λ(ν) < L`
+      have h2' : Real.sqrt (ν * ν') ≤ ν + |x| / 2 := by
+        rw [Real.sqrt_le_left (by positivity)]
+        have h0 : 0 ≤ ν - ν' + |x| := by linarith [neg_abs_le x]
+        nlinarith [mul_nonneg hν.le h0, sq_nonneg |x|, sq_abs x]
+      have hle := le_LamK ν; rw [abs_of_pos hν] at hle
       rw [e]
-      nlinarith
+      nlinarith [mul_nonneg hx0 (sub_nonneg.2 hL)]
   have hsn : |Real.sinh (τ * δ)| ≤ τ * |x| * Real.exp (τ₀ * |x|) := by
     have h := abs_sinh_le (τ * δ)
     have h1 : |τ * δ| ≤ τ * |x| := by
@@ -453,7 +454,7 @@ lemma kQ_bound {L τ τ₀ ν ν' : ℝ} (hL : 1 / 2 ≤ L) (hτ0 : 0 ≤ τ) (h
       = (Real.sqrt (klW ν) * Real.sqrt (klW ν') * kerM1 ν ν') * |Real.sinh (τ * δ)| / ellN L ν' := by ring
     _ ≤ (Real.sqrt (ν * ν') / (2 * Real.cosh (Real.pi * (x / 2)))) * (τ * |x| * Real.exp (τ₀ * |x|)) / ellN L ν' := by
         gcongr
-    _ ≤ ((1 + 3 * |x|) * ellN L ν' / (2 * Real.cosh (Real.pi * (x / 2)))) * (τ * |x| * Real.exp (τ₀ * |x|)) / ellN L ν' := by
+    _ ≤ ((1 + |x|) * ellN L ν' / (2 * Real.cosh (Real.pi * (x / 2)))) * (τ * |x| * Real.exp (τ₀ * |x|)) / ellN L ν' := by
         gcongr
     _ = τ * gQ τ₀ x := by unfold gQ; field_simp
 
