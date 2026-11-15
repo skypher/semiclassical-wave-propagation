@@ -761,8 +761,9 @@ where $B_\beta$ is the constant of Lemma~\ref{lem:fdb}.
 
 In (i) there is no time window, no spatial weight and no condition $\alpha^3\ge\kappa\hbar$. In (ii), for a fixed order $K$ and a
 fixed radius $\alpha$, the factor $\ue^{\lambda t}$ keeps the bound small only up to times of order $\log(1/\hbar)$; in particular (ii)
-does not give the leading-order bound of Corollary~\ref{pc:thm13} on its window. (If $K$ grows like $\alpha^2/(\hbar t)$, the factor
-$(4C_3)^{K+1}K!\,(\hbar t/\alpha^2)^{K+1}$ is exponentially small and can absorb $\ue^{\lambda t}$ at some longer times.) The factor appears because the remainder amplitude $a_{\mathbf s}$ is periodized
+does not give the leading-order bound of Corollary~\ref{pc:thm13} on its window. If $K$ grows like $\alpha^2/(\hbar t)$, the factor
+$(4C_3)^{K+1}K!\,(\hbar t/\alpha^2)^{K+1}$ is exponentially small and absorbs $\ue^{\lambda t}$ up to times of order $\alpha\hbar^{-1/2}$
+(Corollary~\ref{cor:cover-trunc}). The factor appears because the remainder amplitude $a_{\mathbf s}$ is periodized
 after transport over the time $s_1$. Periodizing at time $0$ instead requires running the dispersive flow back over the time $s_1$
 in a weighted space, which is not known for the flow $V$. Sections~\ref{sec:companion} and~\ref{sec:printed} run the mollified flow
 instead and pay for the replacement with the analytic smallness of the defect; this step produces the time window and the
@@ -804,3 +805,48 @@ empty word,
 \end{align*}
 which is \eqref{eq:cover-integrand}.
 \end{proof}
+
+Letting the order $K$ grow as in Corollary~\ref{pc:cor15} turns Proposition~\ref{prop:cover}(ii) into an exponentially small bound.
+
+\begin{corollary}[optimal truncation without the mollifier]\label{cor:cover-trunc}
+In the situation of Proposition~\textup{\ref{prop:cover}(ii)}, let $t>0$, $\theta\in(0,1)$ and $\rho:=4C_3\hbar t/\alpha^2$, and let
+$K$ be an integer with $1-\theta\le K\rho\le1-\theta/2$. Then
+\begin{multline*}
+\norm{\Delta^N\big[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}\\
+\le2^\lambda P_\Gamma(2\lambda)^{1/2}B_\beta\,\ue^{1/2}\theta^{-1/2}\rho\,(4C_3)^NN^{2N}(\alpha\hbar)^{-2N}
+\exp\Bigl(\lambda t-\frac{(1-\theta)\alpha^2}{4C_3\hbar t}\Bigr)\pwNorm a .
+\end{multline*}
+If moreover $t\le\bigl((1-\theta)/(8C_3\lambda)\bigr)^{1/2}\alpha\hbar^{-1/2}$, the exponential is at most
+\[
+\exp\Bigl(-\frac{(1-\theta)\alpha^2}{8C_3\hbar t}\Bigr).
+\]
+\end{corollary}
+
+\begin{proof}
+The right side of Proposition~\ref{prop:cover}(ii) equals
+\[
+2^\lambda P_\Gamma(2\lambda)^{1/2}B_\beta\,\ue^{\lambda t}(4C_3)^NN^{2N}(\alpha\hbar)^{-2N}K!\,\rho^{K+1}\pwNorm a .
+\]
+Since $K\rho\ge1-\theta>0$, $K\ge1$.
+Stirling's inequality $K!\le\ue K^{1/2}(K/\ue)^K$ and $K\rho\le1-\theta/2\le\ue^{-\theta/2}$ give
+$K!\,\rho^{K+1}\le\ue\rho K^{1/2}\ue^{-K\theta/2}\ue^{-K}$. Since $K^{1/2}\ue^{-K\theta/2}\le(\ue\theta)^{-1/2}$ and $K\ge(1-\theta)/\rho$,
+\[
+K!\,\rho^{K+1}\le\ue^{1/2}\theta^{-1/2}\rho\,\ue^{-(1-\theta)/\rho},\qquad\frac{1-\theta}\rho=\frac{(1-\theta)\alpha^2}{4C_3\hbar t},
+\]
+which proves the bound. Under the additional condition $\lambda t^2\le(1-\theta)\alpha^2/(8C_3\hbar)$, that is
+$\lambda t\le(1-\theta)\alpha^2/(8C_3\hbar t)$, the exponent is at most $-(1-\theta)\alpha^2/(8C_3\hbar t)$.
+\end{proof}
+
+For a fixed radius $\alpha$, Corollary~\ref{cor:cover-trunc} gives an exponentially small error on a window $t\le c\,\alpha\hbar^{-1/2}$, of the
+same order in $\hbar$ as the window of Corollary~\ref{pc:cor15}, for the power-weight norm (Remark~\ref{rem:pw-cor}) with other constants,
+and by Lemma~\ref{lem:m2w} for the reversed-weight norm at a smaller radius. The proofs of Sections~\ref{sec:companion}
+and~\ref{sec:printed} are needed for what it does not give:
+\begin{itemize}
+\item the bounds for each fixed order $K$, in particular the leading error $C\hbar t$ of Corollary~\ref{pc:thm13} for
+$t\le\delta\hbar^{-1/2}$;
+\item the window $\delta(\alpha/\hbar)^{1/2}$, larger than $\alpha\hbar^{-1/2}$ by a factor of order $\alpha^{-1/2}$, which matters for radii
+that shrink with $\hbar$ (Corollary~\ref{cor:localized});
+\item Schubert's original norm. The proof of Proposition~\ref{pc:classes} gives amplitudes of finite original norm with
+$\ue^{\beta'\langle d\rangle}a\notin L^2(\Hb)$ for every $\beta'>\tfrac12$; since $X_0^{\beta'}\ge2^{-\beta'}\ue^{\beta'd}\ge2^{-\beta'}\ue^{\beta'\langle d\rangle}$
+and $\norm{\ue^{\alpha\Lambda}F}\ge\norm F$, their power-weight norm is infinite for every exponent above $\tfrac12$.
+\end{itemize}
