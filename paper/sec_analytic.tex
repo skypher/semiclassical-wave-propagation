@@ -18,6 +18,7 @@ Section~\ref{subsec:cover} combines the remainder bounds with the exact remainde
 is needed: on $\Hb$ at all times, and on a quotient up to a factor $\ue^{\lambda t}$ (Proposition~\ref{prop:cover}).
 In the proofs of Sections~\ref{sec:companion} and~\ref{sec:printed}, the mollified part of the error uses weighted propagation, and
 the defect part uses analytic propagation, the defect bound of Lemma~\ref{lem:unw} and the weighted bound of Lemma~\ref{lem:path}.
+Section~\ref{subsec:simplest} shows, for $K=N=0$, where each of these estimates enters.
 
 \medskip\noindent\textbf{Notation.}
 We use $X$, $Y$, $\Delta(s)$, $\Lambda$, $X_0$, $\tilde\psi$ and the power-weight norm $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}$
@@ -31,6 +32,10 @@ where they are used.
 
 
 \subsection{The mollifier and elliptic regularity}
+The mollified generator $\Delta_\varepsilon(t)$ replaces $\Delta(t)$ by a bounded operator that cuts off frequencies above order
+$1/\varepsilon$. Lemma~\ref{lem:ell} collects routine facts about $X$, $Y$ and $\Delta_\varepsilon(t)$ that are used throughout; in
+particular, the mollified flow is a unitary propagator (Section~\ref{app:kl}).
+
 Let $J_\varepsilon:=j_\varepsilon(\Lambda)$ with $j_\varepsilon:=g*\chi(\varepsilon\,\cdot)$, where $g$ is the unit Gaussian and, as in
 \cite[(4.20)--(4.21)]{S}, $\chi\in C_c^\infty(\mathbb R)$ has $\operatorname{supp}\chi\subset[-2,2]$ and $\chi=1$ on $[-1,1]$; in
 addition $\chi$ is real, even and $0\le\chi\le1$, so $0\le j_\varepsilon\le1$. (In the notation of \cite{S},

@@ -405,7 +405,11 @@ with $1-\theta\le K\rho\le1-\theta/2$,
 
 Constants $C\ge1$ and $\delta$ as required exist, since $C$ in the theorem may be replaced by $\max(C,1)$. On the window
 $t\le\delta_1(\alpha/\hbar)^{1/2}$ we have $\rho\le1$ (Section~\ref{subsec:pc-cor}). For $t>0$ the range of $K$ has length
-$\theta/(2\rho)$, so it contains an integer whenever $\rho\le\theta/2$.
+$\theta/(2\rho)$, so it contains an integer whenever $\rho\le\theta/2$. On the window,
+$\alpha^2/(\hbar t)\ge\alpha^{3/2}/(\delta_1\hbar^{1/2})$. So for $N=0$, fixed $\alpha$ and $\theta$, and $\hbar$ so small that
+$C\delta_1\hbar^{1/2}\alpha^{-3/2}\le\theta/2$, every $0<t\le\delta_1(\alpha/\hbar)^{1/2}$ admits such a $K$, and the error is at most
+$\ue^{1/2}\theta^{-1/2}C\exp\bigl(-(1-\theta)\alpha^{3/2}/(C\delta_1\hbar^{1/2})\bigr)\norm a_{\mathcal A}$: exponentially small in
+$\hbar^{-1/2}$ on the whole window.
 
 
 
@@ -467,6 +471,9 @@ all $z\in M$.
 \end{theorem}
 
 Part (i) says that a bound uniform in $z$ fails at times of order $\log(1/\hbar)$, a multiple of the Ehrenfest time.
+The times $t_p(\hbar)$ come from the lower bound of Theorem~\ref{cl:main}: at the points $z=x+i\ue^t$, high in the cusp, the error is
+at least a constant times $\ue^{t/2}\hbar^{3/2}t$, and at $t=t_p(\hbar)$ this is $\hbar^{-p-1/2}t$, which exceeds every bound $C\hbar^{-p}$
+for small $\hbar$.
 Since $\alpha$ is fixed, it also excludes a prefactor $(\alpha\hbar)^{-p}$; the case $p=8$ concerns the prefactor
 $(\alpha\hbar)^{-8}$ of \cite[Corollary~1.6]{S} (Remark~\ref{cl:reading}). For small $\hbar$ the times $t_p(\hbar)$ and
 $t\le\hbar^{-1/5}$ lie in the windows of Theorems~\ref{pc:main} and~\ref{thm:dd14}. So the factor
@@ -692,11 +699,8 @@ mollified generator $\Delta_\varepsilon(s)$ is exponentially small, of size
 $\ue^{-r/(8\varepsilon)}$, on vectors of analytic radius $r$ (Lemma~\ref{lem:unw}); with the
 weight $X_0^\beta$ the bound we use is a power of $\varepsilon^{-1}$ (Lemma~\ref{lem:path}). Interpolation gives smallness at an
 intermediate weight, still above the critical one, and this pays for the growth of the periodization bound. With
-$\varepsilon=(\alpha\hbar)^{1/2}/2$ all requirements are met for $t\le\delta(\alpha/\hbar)^{1/2}$. Indeed, put
-$\xi:=(\alpha/\hbar)^{1/2}$. The mollified flow is controlled for times up to a multiple of $\varepsilon/\hbar=\xi/2$, and
-on vectors of radius comparable to $\alpha$ the defect is of size $\ue^{-c\alpha/\varepsilon}=\ue^{-2c\xi}$. Both scales
-are $\xi$, and for $t\le\delta\xi$ with $\delta$ small the gain $\ue^{-2c\xi}$, reduced by the interpolation, still beats
-the growth $\ue^{\lambda t}$ of the periodization bound. This is the origin of the time scale $(\alpha/\hbar)^{1/2}$.
+$\varepsilon=(\alpha\hbar)^{1/2}/2$ all requirements are met for $t\le\delta(\alpha/\hbar)^{1/2}$. Section~\ref{subsec:simplest}
+carries this out for $K=N=0$ and shows where the time scale $(\alpha/\hbar)^{1/2}$ comes from.
 
 \emph{The original amplitude norm.} An amplitude of the original-norm class is $a=\ue^{-\alpha\Lambda}f$,
 where $f=\ue^{\alpha\Lambda}a$ has the exponential weighted bound $\norm{\ue^{\beta\langle d\rangle}f}=\pcNorm a$.
@@ -709,13 +713,103 @@ and defect maps of the proof are interpolated between unweighted $L^2$ and a pow
 multiplier theorem proved using finite propagation speed (Theorem~\ref{os:cw}); periodization is controlled at the same weight
 by Proposition~\ref{os:p1}. These estimates yield Theorem~\ref{pc:main}.
 
+\subsection{The argument in the simplest case}\label{subsec:simplest}
+We follow the proof of Theorem~\ref{thm:dd-appx}, the power-weight form of the approximation theorems, for $K=N=0$. This
+subsection is a guide: each step is proved where it is cited, and the general case changes the count of derivatives, not the
+steps. Let $x_0=i$, $b=\infty$, $\beta>\tfrac12$, $0<\alpha\le1$ with $\alpha^3\ge\kappa\hbar$, and
+$\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}$. Put $\lambda:=(2\beta+1)/4\in(\tfrac12,\beta)$ and $\theta:=\lambda/\beta$. We write
+$A\lesssim B$ if $A\le CB$ with $C$ depending only on $\beta$, $\kappa$ and an upper bound for $P_\Gamma(\beta+\tfrac12)$.
+
+\emph{Step 1: the exact remainder.} For $K=N=0$ the error $E(t):=\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma-u^{(0)}(t)_\Gamma$ satisfies
+\[
+  \norm{E(t)}_{L^2(M)}\le\frac\hbar2\int_0^t\norm{\mathcal V_s\Delta(s)a}_{L^2(M)}\,ds
+\]
+(Proposition~\ref{prop:dd-id}(ii)). Here $\mathcal V_sg=\ue^{-is/(2\hbar)}\cU(-s)[\ue^{i\varphi/\hbar}S(s)g]_\Gamma$ is the periodized
+dispersive evolution of Section~\ref{subsec:dd-surf}, the rigorous form of $[\ue^{i\varphi/\hbar}V(s)^*g]_\Gamma$; since $\cU(-s)$ is unitary,
+$\norm{\mathcal V_sg}=\norm{[\ue^{i\varphi/\hbar}S(s)g]_\Gamma}$. The operator $\Delta(s)$ costs two derivatives, and the Cauchy estimates
+price them: for every word $Z_I$ of length $n\le2$ and every $s\ge0$,
+\[
+  \norm{X_0^\beta Z_I\Delta(s)a}\lesssim\alpha^{-2-n}\pwNorm a
+\]
+(Lemma~\ref{lem:wb}(i)).
+
+\emph{Step 2: the hyperbolic plane.} For $\Gamma=\{\mathrm{id}\}$ nothing is periodized and $S(s)$ is unitary, so
+$\norm{\mathcal V_s\Delta(s)a}=\norm{\Delta(s)a}\lesssim\alpha^{-2}\norm{\ue^{\alpha\Lambda}a}$ by Lemma~\ref{lem:wb}(ii). Hence
+$\norm{E(t)}\lesssim(\hbar t/\alpha^2)\norm{\ue^{\alpha\Lambda}a}$ for every $t\ge0$ (Proposition~\ref{prop:cover}(i)): on the universal cover
+the approximation is accurate as long as $\hbar t$ is small compared with $\alpha^2$. The window of the theorems is the price of
+periodization.
+
+\emph{Step 3: periodizing directly.} On a quotient, periodizing a transported function costs a growing factor: for $w$ with
+$X_0^\lambda w\in L^2(\Hb)$,
+\[
+  \norm{[\ue^{i\varphi/\hbar}S(s)w]_\Gamma}_{L^2(M)}\lesssim\ue^{\lambda s}\norm{X_0^\lambda w}
+\]
+(Lemma~\ref{lem:t2}); the orbit sum converges because the weight is above the critical one, $\lambda>\tfrac12$. Inserted in Step~1,
+this gives $\norm{E(t)}\lesssim\ue^{\lambda t}(\hbar t/\alpha^2)\pwNorm a$ (Proposition~\ref{prop:cover}(ii)), which for fixed $\alpha$ is
+small only up to times of order $\log(1/\hbar)$.
+
+\emph{Step 4: periodizing at time $0$.} To avoid the factor $\ue^{\lambda s}$, we run the dispersive flow back to time $0$ before
+periodizing. The flow $V$ is not known to preserve the weight $X_0^\lambda$, so we use the mollified flow, at a scale
+$0<\varepsilon\le\tfrac12$ chosen in Step~5. Let $t\le\min(1,c_A/3)\,\varepsilon/\hbar$, the range in which Propositions~\ref{prop:ws} and~\ref{prop:a0} are used below. For
+$0\le s\le t$ let
+\[
+  g(t'):=V_\varepsilon(t',s)\,\Delta(s)a,\qquad0\le t'\le s,
+\]
+so that $g(s)=\Delta(s)a$, and split
+\[
+  \mathcal V_s\Delta(s)a=\mathcal V_0g(0)+\bigl(\mathcal V_sg(s)-\mathcal V_0g(0)\bigr).
+\]
+The first term is periodized without transport. Since $\hbar s\le\varepsilon$, the mollified flow changes the weighted norm by at most a
+constant factor (Proposition~\ref{prop:ws}), so Lemma~\ref{lem:t2} at time $0$ and Step~1 give
+\[
+  \norm{\mathcal V_0g(0)}\lesssim\norm{X_0^\lambda g(0)}\lesssim\norm{X_0^\lambda\Delta(s)a}\lesssim\alpha^{-2}\pwNorm a .
+\]
+For the second term, Duhamel's formula on $M$ (Lemma~\ref{lem:surf-duh}, with $g'=c_\hbar\Delta_\varepsilon(t')g$) gives
+\[
+  \mathcal V_sg(s)-\mathcal V_0g(0)=-c_\hbar\int_0^s\mathcal V_{t'}\mathfrak d(t')\,dt',\qquad
+  \mathfrak d(t'):=\bigl(\Delta(t')-\Delta_\varepsilon(t')\bigr)g(t').
+\]
+Here the defect $\mathfrak d(t')$ is periodized after transport over the time $t'$, and Lemma~\ref{lem:t2} charges
+$\ue^{\lambda t'}\norm{X_0^\lambda\mathfrak d(t')}$. The defect is small enough to pay this. By H\"older's inequality,
+$\norm{X_0^\lambda\mathfrak d}\le\norm{X_0^\beta\mathfrak d}^\theta\norm{\mathfrak d}^{1-\theta}$. With the weight $X_0^\beta$ the defect is only
+polynomially large: $\norm{X_0^\beta\mathfrak d(t')}\lesssim\varepsilon^{-3}\alpha^{-4}\pwNorm a$ (Lemma~\ref{lem:path}(b) and Step~1).
+Without a weight it is exponentially small. The symbol $1-j_\varepsilon$ of the mollifier is exponentially small at frequencies below
+$1/(2\varepsilon)$, and at higher frequencies a function of analytic radius $r$ has spectral weight at most $\ue^{-r/(2\varepsilon)}$
+relative to its analytic norm (Lemma~\ref{lem:unw}); the mollified flow keeps an analytic norm, with a fixed fraction of the radius,
+on this range of times (Proposition~\ref{prop:a0}). With Lemmas~\ref{lem:wb}(ii) and~\ref{lem:mw} this gives
+$\norm{\mathfrak d(t')}\lesssim\alpha^{-6}\ue^{-c\alpha/\varepsilon}\pwNorm a$ for an absolute constant $c>0$. Together,
+\[
+  \norm{\mathcal V_sg(s)-\mathcal V_0g(0)}\lesssim\hbar s\,\ue^{\lambda s}\,\varepsilon^{-3}\alpha^{-6}\,\ue^{-(1-\theta)c\alpha/\varepsilon}\,\pwNorm a .
+\]
+
+\emph{Step 5: the balance of scales.} Choose $\varepsilon:=(\alpha\hbar)^{1/2}/2$ and put $\xi:=(\alpha/\hbar)^{1/2}$, so that
+$\varepsilon/\hbar=\xi/2$ and $\alpha/\varepsilon=2\xi$. The mollified flow is then controlled for times up to a fixed multiple of $\xi$,
+and the defect gain is $\ue^{-2(1-\theta)c\xi}$: both scales are $\xi$. Since $\alpha^3\ge\kappa\hbar$, the factors $\alpha^{-1}\le\kappa^{-1/2}\xi$
+and $\varepsilon^{-1}=2\xi/\alpha$ are bounded by powers of $\xi$, and so is $\hbar s\le\xi$ for $s\le\xi$. Let $\delta>0$ satisfy
+$\delta\le\tfrac12\min(1,c_A/3)$ and $\lambda\delta\le(1-\theta)c$. For $s\le t\le\delta\xi$ the bound of Step~4 is then at most a power of
+$\xi$ times $\ue^{-(1-\theta)c\xi}$, which is bounded. So $\norm{\mathcal V_s\Delta(s)a}\lesssim\alpha^{-2}\pwNorm a$, and Step~1 gives
+\[
+  \norm{E(t)}_{L^2(M)}\lesssim\frac{\hbar t}{\alpha^2}\,\pwNorm a,\qquad0\le t\le\delta(\alpha/\hbar)^{1/2}.
+\]
+This is the case $K=N=0$, $\alpha\le1$ of Theorem~\ref{thm:dd-appx}; Lemma~\ref{lem:base} reduces general $x_0$ and $b$ to this
+case. The time scale $(\alpha/\hbar)^{1/2}$ is where two effects balance: the time $\varepsilon/\hbar$ over which the mollified flow is
+controlled, and the analytic smallness $\ue^{-c\alpha/\varepsilon}$ of the defect.
+
+\emph{The general case.} For general $K$ and $N$ the integrand of Proposition~\ref{prop:dd-id}(ii) is $\mathcal V_{s_1}a_{\mathbf s}$ with
+$a_{\mathbf s}=\Delta_\varphi(s_1)^N\Delta(s_1)\cdots\Delta(s_{K+1})a$, integrated over a simplex of volume $t^{K+1}/(K+1)!$. Steps~4
+and~5 are unchanged; the factor $\alpha^{-2}$ becomes the factorial bound of Lemma~\ref{lem:wb}, and Lemma~\ref{lem:collect} collects the
+result. An amplitude of the original-norm class need not have finite power-weight norm for any exponent above $\tfrac12$
+(Section~\ref{subsec:cover}), and Section~\ref{sec:printed} runs the same steps at the critical weight $\omega$ (Table~\ref{tab:compare}).
+
 \subsection{Organization}
 Sections~\ref{sec:remainder}--\ref{sec:consequences} prove the approximation results.
 The quotient remainder of Section~\ref{sec:remainder} and the analytic estimates of Section~\ref{sec:analytic}
 are their common inputs. Section~\ref{sec:companion} gives the model argument for the power-weight class and its
 reversed-weight consequence, Theorem~\ref{thm:dd14}. Section~\ref{sec:printed} adds the critical-weight estimates needed for the original norm
 and proves Theorem~\ref{pc:main}. Section~\ref{sec:consequences} establishes local pointwise control,
-derives the corollaries, proves Proposition~\ref{prop:g5} and treats localized amplitudes.
+derives the corollaries, proves Proposition~\ref{prop:g5} and treats localized amplitudes. A reader who wants the argument before
+the estimates can read Section~\ref{subsec:simplest} and then Section~\ref{sec:companion}, and look up in
+Sections~\ref{sec:remainder} and~\ref{sec:analytic} only the statements cited there.
 
 Section~\ref{sec:cusp} proves Theorem~\ref{cl:necessary}, and Section~\ref{sec:expect} applies the approximation theorem to
 expectation values and proves Theorem~\ref{ev:mod}. Section~\ref{sec:outlook} collects the open questions.
