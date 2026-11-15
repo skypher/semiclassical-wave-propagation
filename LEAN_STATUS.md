@@ -46,7 +46,7 @@ All Lean names are in the namespace `Qschubert`.
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Lemma 3.1 (`lem:ell`) | L | `inner_X_left`, `inner_Y_left`, `elliptic_identity`, `elliptic_estimate` |
-| Lemma 3.12 (`lem:clip`) | L | `norm_Rplus_le_one`, `norm_Rminus_le_one`, `im_bound_one` |
+| Lemma 3.12 (`lem:clip`) | L | `norm_Rplus_le_one`, `norm_Rminus_le_one`, `im_bound_clip_one` |
 | Proposition 3.13 (`prop:a0`) | L | `prop_a0_eps_one` |
 | Lemma 3.7 (`lem:expw`) | L | `exp_of_words` |
 | Lemma 3.8 (`lem:mw`) | L | `lem_m_weak_one` |
