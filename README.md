@@ -17,12 +17,14 @@ the cusp height. Schubert's files are not part of this repository.
 
 - `paper/`: LaTeX source of the manuscript (`paper.tex` with its input files). The approximation proofs
   proceed from the quotient remainder and analytic estimates through the power-weight model and reversed-weight
-  consequence to Schubert's original norm. Consequences and localized states are followed by the modular-surface
-  escape application, then the leading-error and cusp-factor sharpness arguments. The escape and sharpness
-  arguments use the approximation theorem independently. The introduction maps the amplitude classes and radius
-  ranges to their results and explains why the original norm requires a separate argument. Three appendices
-  contain special-function, kernel and auxiliary cusp calculations, the detailed comparison with Schubert's preprint,
-  and formalization documentation, in that order. The introduction states a compact escape consequence beside the
+  consequence to Schubert's original norm. Consequences, the leading-error sharpness argument and localized states
+  are followed by the cusp-factor sharpness argument and the modular-surface escape application. The escape and
+  sharpness arguments use the approximation theorem independently. The introduction maps the amplitude classes and radius
+  ranges to their results and explains why the original norm requires a separate argument. Five appendices
+  contain special-function, kernel and auxiliary cusp calculations, the mean of the approximation, the detailed
+  comparison with Schubert's preprint, formalization documentation, and the table of named constants, in that order.
+  Three figures show the time scales of the results, the transport along the unstable manifold, and the cusp
+  geometry of the sharpness argument; the proofs of Sections 3 to 5 open with the idea of the argument. The introduction states a compact escape consequence beside the
   approximation results and applications. Detailed cosine-transform profile calculations are in the first appendix;
   the critical-weight mechanism and its operator consequences remain in the main text.
   Build from `paper/` with `pdflatex paper.tex` (run it three times).

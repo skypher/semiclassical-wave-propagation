@@ -1,50 +1,32 @@
 \section{Analytic and weighted propagation estimates}\label{sec:analytic}
-This section supplies the estimates for the comparison with the mollified flow outlined in Section~\ref{subsec:method}:
-weighted propagation (Proposition~\ref{prop:ws}) for the mollified part; analytic propagation (Proposition~\ref{prop:a0}),
-the mollifier defect (Lemma~\ref{lem:unw}) and the weighted bound of Lemma~\ref{lem:path} for the defect part; the
-derivative estimates of Sections~\ref{subsec:dd-fc}, \ref{app:m} and~\ref{subsec:dd-wb} for the remainder amplitude $a_{\mathbf s}$; and
-Lemma~\ref{lem:collect}, the final count shared by the two approximation proofs.
+This section supplies the estimates on $\Hb$ for the comparison with the mollified flow outlined in Section~\ref{subsec:method}.
+They are of three kinds.
+\begin{itemize}
+\item \emph{Cauchy estimates} (Sections~\ref{subsec:dd-fc} and~\ref{app:m}) bound words in $X,Y$ applied to an amplitude of analytic
+radius $\alpha$, in the way Cauchy's inequalities bound the derivatives of a holomorphic function: a word of length $k$ costs at
+most $k!\,(C/r)^k$, where $r$ is the loss of analytic radius. Conversely, bounds of this form for all words give analyticity at a
+smaller radius, and this lets spatial weights be moved in and out of analytic norms.
+\item \emph{Propagation estimates} (Sections~\ref{app:kl} and~\ref{app:ws}) show that the mollified flow $V_\varepsilon$ preserves
+analytic norms, with a loss of radius (Proposition~\ref{prop:a0}), and power-weighted norms (Proposition~\ref{prop:ws}), in both cases
+for times of order $\varepsilon/\hbar$. Both are energy estimates in which the mollifier limits the rate of change to order
+$\hbar/\varepsilon$: the weighted norm grows at most at this rate, and the analytic radius shrinks at this relative rate.
+\item \emph{Remainder bounds} (Section~\ref{subsec:dd-wb}) control the remainder amplitude $a_{\mathbf s}$ and the mollifier defect,
+and Lemma~\ref{lem:collect} performs the final count shared by the two approximation proofs.
+\end{itemize}
+In the proofs of Sections~\ref{sec:companion} and~\ref{sec:printed}, the mollified part of the error uses weighted propagation, and
+the defect part uses analytic propagation, the defect bound of Lemma~\ref{lem:unw} and the weighted bound of Lemma~\ref{lem:path}.
 
 \medskip\noindent\textbf{Notation.}
 We use $X$, $Y$, $\Delta(s)$, $\Lambda$, $X_0$, $\tilde\psi$ and the power-weight norm $\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}$
 of Section~\ref{sec:setup}.
 The two-time mollified propagator $V_\varepsilon(s_1,s_0)=V_\varepsilon(s_1)V_\varepsilon(s_0)^*$ is defined in
-Section~\ref{app:kl}. Table~\ref{tab:constants} lists the named constants of Sections~\ref{sec:analytic}--\ref{sec:printed}
-and where they are fixed. The analytic radii in this section are at most $1$.
+Section~\ref{app:kl}. The analytic radii in this section are at most $1$. Named constants such as $C_1$, $c_A$ or $C_3$ are fixed
+once, in the statement or proof where they first occur. Their explicit values matter only for the formalization
+(Appendix~\ref{app:lean}); Table~\ref{tab:constants} in Appendix~\ref{app:constants} lists them with the places where they are fixed.
+On a first reading each of them may be treated as a positive constant with the stated dependence; the few inequalities
+between them that the proofs use, such as $c_M\le1\le C_3$, are stated where they are used.
 
-\begin{table}[!htb]
-\centering\small
-\caption{Named constants of Sections~\ref{sec:analytic}--\ref{sec:printed}. ``Absolute'' means independent of all parameters;
-the dependence on the fixed mollifier cutoff $\chi$ is not listed. The parameters $\rho$, $\mathcal K$ are those of the weight classes
-of Section~\ref{app:ws}, $c$ and $m$ those of Section~\ref{subsec:pc-weights}, and $C_{\mathrm{sh}}$ that of Lemma~\ref{os:transfer}.}\label{tab:constants}
-\begin{tabular}{@{}lll@{}}
-\hline
-Constant & Fixed in & Depends on\\
-\hline
-$C_1$ & Lemma~\ref{lem:fc} & absolute\\
-$B_\beta$; $\rho_*=\tfrac14\log(3/2)$ & Lemma~\ref{lem:fdb} & $\beta$; absolute\\
-$C_2=\max(\ue C_1,1/\rho_*)$ & Lemma~\ref{lem:sc} & absolute\\
-$C_*=\tfrac{32}5$ & Lemma~\ref{lem:expw} & absolute\\
-$c_M=1/(4\max(C_2,1))$ & Lemma~\ref{lem:mw} & absolute\\
-$c_0$ & Lemma~\ref{lem:m2w} & $\beta$\\
-$A_{\mathrm e}$, $A_{\mathrm o}$ & Lemma~\ref{lem:clip} & absolute\\
-$c_A=(1+32A_{\mathrm e}A_{\mathrm o})^{-1}$ & Proposition~\ref{prop:a0} & absolute\\
-$\mathcal K_\lambda=8\lambda^2+7\lambda$ & Section~\ref{app:ws} & $\lambda$\\
-$C_W$ & Lemma~\ref{lem:wmoll} & $\rho$, $\mathcal K$\\
-$C_{\mathrm{fl}}=(4\rho+3)C_W^2$; $C_{\mathrm{fl},\lambda}=C_{\mathrm{fl}}(\lambda,\mathcal K_\lambda)$ & Proposition~\ref{prop:ws} & $\rho$, $\mathcal K$; $\lambda$\\
-$C_3=480\max(C_2,4\ue C_1)^2$ & Lemma~\ref{lem:wb} & absolute\\
-$C_4=20+60(1+4C_1)^2$ & Lemma~\ref{lem:unw} & absolute\\
-$C_{\mathrm{cw}}$ & Theorem~\ref{os:cw} & $c$\\
-$C_\Lambda$; $C_{\Lambda_m}$ & Corollary~\ref{os:cwp} & $c$; $m$, $c$\\
-$C_{\mathrm d}=C_\Lambda\,\ue^{C_{\Lambda_m}}$ & Proposition~\ref{os:data} & $m$, $c$\\
-$c_H=1+4/\ue$; $C_5=2\ue\,c_H$ & Lemma~\ref{os:prof}(iii); Lemma~\ref{os:words} & absolute\\
-$C_{\mathrm{tr}}$ & Lemma~\ref{os:transfer} & $c$, $C_{\mathrm{sh}}$\\
-$C_{\mathrm{gr}}=2/\log2$ & Proposition~\ref{pc:core} & absolute\\
-$C_6\ge C_3$ & Proposition~\ref{pc:core}, Step~1(a) & absolute\\
-$B_0$; $B_m$ & Lemma~\ref{os:prof}(iv), (v) & absolute; $m$\\
-\hline
-\end{tabular}
-\end{table}
+
 
 \subsection{The mollifier and elliptic regularity}
 Let $J_\varepsilon:=j_\varepsilon(\Lambda)$ with $j_\varepsilon:=g*\chi(\varepsilon\,\cdot)$, where $g$ is the unit Gaussian and, as in
@@ -193,6 +175,10 @@ Since $\sum_{|S|=j}j!(k-j)!=k!$, the sum is $\le B_\beta\,k!\sum_j\rho_*^{-j}(\u
 \end{proof}
 
 \subsection{Multiplication by spatial weights}\label{app:m}
+Lemma~\ref{lem:expw} is the converse of the Cauchy estimates, as for power series: bounds of Cauchy type for all words give
+analyticity at a smaller radius. With it, a spatial weight can be removed from or added to an analytic norm at the cost of a
+fixed fraction of the radius (Lemmas~\ref{lem:mw} and~\ref{lem:m2w}).
+
 \begin{lemma}[analytic vectors from word bounds]\label{lem:expw}
 Let $0<\alpha\le1$, $L\ge1$ and $B,\mathcal H\ge0$. Let $u\in L^2(\Hb)$ be such that every word $Z_1\cdots Z_k$, $Z_i\in\{X,Y\}$, $k\ge0$,
 applied to $u$ in the sense of distributions lies in $L^2$, with
@@ -307,6 +293,16 @@ $k_1(r,r')$ computed in step (X) of the proof of Lemma~\ref{lem:fc}, and
 \end{equation}
 The operators are the same for every $k$, so all bounds are uniform in $k$.
 
+The proof of Proposition~\ref{prop:a0} below is an energy estimate with an analytic radius that shrinks in time, as in proofs of
+the abstract Cauchy--Kovalevskaya theorem. Conjugating the mollified generator by $\ue^{\tau\Lambda}$ produces a part that is not
+self-adjoint, of the order of $\tau\Lambda^2J_\varepsilon^2$. Since $\lambda^2j_\varepsilon(\lambda)^2\le(32/\varepsilon)\min(\lambda,L)$ for
+every clipping level $L\ge4/\varepsilon$,
+its contribution to the derivative of the energy is at most a constant times $(\hbar/\varepsilon)\,\tau\langle u,\Lambda_{\le L}u\rangle$,
+and a radius that decreases at the relative rate $C\hbar/\varepsilon$ absorbs it.
+The next lemma is the kernel estimate behind this step: it splits the conjugate of $XJ_\varepsilon$ into an even part, bounded by
+$\Lambda J_\varepsilon$, and an odd part, which carries the factor $\tau$. Clipping $\Lambda$ at the level $L$ keeps every operator in
+the argument bounded.
+
 \begin{lemma}[clipped conjugation of $XJ_\varepsilon$]\label{lem:clip}
 Let $L\ge\tfrac12$ and $\Lambda_{\le L}:=\min(\Lambda,L)$. For real $s$ let $R_s:=\ue^{s\Lambda_{\le L}}XJ_\varepsilon\ue^{-s\Lambda_{\le L}}$, a bounded
 operator. Put
@@ -393,6 +389,12 @@ $L\ge4/\varepsilon$, and monotone convergence in the spectral representation of 
 In this subsection the base point is $x_0=i$ (Lemma~\ref{lem:base} reduces the general case to it), $X_0=\cosh d(i,\cdot)$, and
 $D:=(-\Delta-\tfrac14)^{1/2}$, so that $\Lambda=(D^2+\tfrac14)^{1/2}$. Explicitly $X_0=(x^2+y^2+1)/(2y)$, $XX_0=x$, $YX_0=y-X_0$, and
 $(XX_0)^2+(YX_0)^2=X_0^2-1$.
+
+Weighted bounds for the mollifier come from the wave group: $J_\varepsilon$ is an average of $\cos(s\Lambda)$ with a weight
+concentrated on times $|s|$ of order $\varepsilon$ (the formula before \eqref{eq:hmom} below), and a weighted energy estimate for
+the wave equation (Lemma~\ref{lem:wave}) shows that $\cos(s\Lambda)$ changes a weighted norm by at most a factor $\ue^{2\rho|s|}$;
+Lemma~\ref{lem:wcomm} bounds the commutator of $\cos(s\Lambda)$ with the weight. Each derivative of $J_\varepsilon u$ then costs a factor $\varepsilon^{-1}$ (Lemma~\ref{lem:wmoll}), and
+Proposition~\ref{prop:ws} is a Gr\"onwall estimate.
 
 \medskip\noindent\textbf{Bounded weights.} A \emph{bounded weight} is a smooth function $W>0$ on $\Hb$ such that $Z_SW$ is bounded
 for every word $Z_S$ in $X,Y$, the empty word included. For $\rho,\mathcal K\ge0$ let $\mathcal W(\rho,\mathcal K)$ be the set of bounded weights
@@ -565,7 +567,9 @@ $L^2_{X_0^\lambda}$ for $Z\in\mathcal S$, and so is $J_\varepsilon\Delta(s)J_\va
 
 \subsection{Remainder bounds}\label{subsec:dd-wb}
 The remainder proof needs two estimates with different roles: factorial derivative bounds for its
-amplitude, and exponential smallness of the mollifier defect without a spatial weight. Lemma~\ref{lem:collect} then turns a
+amplitude, and exponential smallness of the mollifier defect without a spatial weight. The defect is exponentially
+small in $r/\varepsilon$: the symbol $1-j_\varepsilon$ is exponentially small at frequencies below $1/(2\varepsilon)$, and at higher
+frequencies a vector of analytic radius $r$ has spectral weight at most $\ue^{-r/(2\varepsilon)}$ relative to its analytic norm. Lemma~\ref{lem:collect} then turns a
 bound for the integrand of the remainder into the final estimate; both approximation proofs end with it.
 
 \begin{lemma}[expansion of the remainder operator]\label{lem:expand}

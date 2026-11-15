@@ -3,12 +3,23 @@
 We prove the approximation with the power-weight norm $\pwNorm a$ and transfer it to the reversed-weight norm $\swNorm a$, which gives Theorem~\ref{thm:dd14}. These arguments exhibit the common remainder estimate and the balance between analytic smallness and weighted transport growth. Section~\ref{sec:printed} then treats the original norm, which requires additional critical-weight estimates.
 Throughout, $M=\Gamma\backslash\Hb$ and $d=d(x_0,\cdot)$.
 
+\medskip\noindent\emph{Idea of the proof.}
+By Proposition~\ref{prop:dd-id}(ii) the error is bounded by an integral over the simplex $\Sigma_{K+1}(t)$ of
+$\norm{\mathcal V_{s_1}a_{\mathbf s}}_{L^2(M)}$, the norm of a periodized dispersive evolution of the remainder amplitude over the time
+$s_1$. The unmollified flow is not known to preserve the weights that periodization needs, so we run the mollified flow
+$V_\varepsilon$ instead, from $s_1$ back to $0$, and account for the replacement by Duhamel's formula on $M$. This splits the integrand
+into two parts. The \emph{mollified part} is periodized at time $0$, where periodization costs no growth, and is bounded by weighted
+propagation of $V_\varepsilon$ (Proposition~\ref{prop:ws}). The \emph{defect part} is periodized at intermediate times $t'\le s_1$ and pays
+the growth $\ue^{\lambda t'}$ of Lemma~\ref{lem:t2}, with $\tfrac12<\lambda<\beta$. Analyticity pays for it. Without a weight the
+defect is exponentially small, of size $\ue^{-c\alpha/\varepsilon}$ (Proposition~\ref{prop:a0} and Lemma~\ref{lem:unw}); with the
+weight $X_0^\beta$ it is only polynomially large in $\varepsilon^{-1}$ (Lemma~\ref{lem:path}); and H\"older's inequality gives a bound
+at the weight $X_0^\lambda$ that is still exponentially small. The choice $\varepsilon=(\alpha\hbar)^{1/2}/2$ makes $\alpha/\varepsilon=2\xi$
+with $\xi=(\alpha/\hbar)^{1/2}$, so this gain beats $\ue^{\lambda t}$ for $t\le\delta\xi$, and Lemma~\ref{lem:collect} integrates over
+the simplex.
+
 \medskip\noindent\emph{The common structure.}
-The proof of Theorem~\ref{thm:dd-appx} and that of Proposition~\ref{pc:core} in Section~\ref{subsec:pc-proof} both bound the
-integrand $\norm{\mathcal V_{s_1}a_{\mathbf s}}_{L^2(M)}$ of Proposition~\ref{prop:dd-id}(ii), with $\varepsilon=(\alpha\hbar)^{1/2}/2$
-and $\xi=(\alpha/\hbar)^{1/2}$ ($\sigma$ in place of $\alpha$ in Proposition~\ref{pc:core}), by a mollified part and a defect
-part as described in Section~\ref{subsec:method}, and then integrate over the simplex with Lemma~\ref{lem:collect}.
-Table~\ref{tab:compare} lists where they differ.
+The proof of Theorem~\ref{thm:dd-appx} and that of Proposition~\ref{pc:core} in Section~\ref{subsec:pc-proof} both follow this
+plan, with $\sigma$ in place of $\alpha$ in Proposition~\ref{pc:core}. Table~\ref{tab:compare} lists where they differ.
 
 \begin{center}
 \small

@@ -15,6 +15,7 @@
   headsep=21pt
 ]{geometry}
 \usepackage{xcolor}
+\usepackage{tikz}
 \usepackage[
   breaklinks=false,
   linktocpage=true
@@ -330,8 +331,12 @@ x_0 & base point of the weights & m(z),\ H & local multiplicity (Section~\ref{se
 \end{center}
 
 \subsection{Main results}\label{sec:repair}\label{subsec:pc-thm}
-Our principal theorem uses Schubert's amplitude norm exactly as defined in \cite[Def.~1.1]{S} and controls the expansion
-order $K$ and the power $N$ of the Laplacian simultaneously.
+In words, the main estimate is the following. For an amplitude of analytic radius $\alpha$, the periodized approximation of
+order $K$ has $L^2$ error of size $(\hbar t/\alpha^2)^{K+1}$ times the amplitude norm, up to a constant depending on $K$, for all
+$t\le\delta(\alpha/\hbar)^{1/2}$; for fixed $\alpha$ the ratio $\hbar t/\alpha^2$ is at most of order $\hbar^{1/2}$ on this whole window.
+The remaining factors of the theorem record how the constants grow with $K$ and with the power $N$ of the Laplacian. Our
+principal theorem uses Schubert's amplitude norm exactly as defined in \cite[Def.~1.1]{S} and controls $K$ and $N$
+simultaneously.
 
 \begin{theorem}[approximation in the original-norm class]\label{pc:main}\label{pc:allalpha}
 Fix $\beta>\tfrac12$, $\kappa>0$ and $A>0$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$, such that for every
@@ -542,7 +547,36 @@ $\langle q\,\psi(t),\psi(t)\rangle\le\sup q\int_{M_H}|\psi(t)|^2\,d\nu$ tends to
 classical prediction tends to a positive limit. The lower endpoint $T(\hbar)+\log H$ is a sufficient escape time; we do not
 claim that escape fails at earlier times. The factor $\log\log(1/\hbar)$ in $T(\hbar)$ comes from the width of the classical
 zero-free region of the Riemann zeta function (see the paragraph before Lemma~\ref{ev:outgoing}).
-Theorem~\ref{ev:mod} is proved in Section~\ref{sec:expect}.
+Theorem~\ref{ev:mod} is proved in Section~\ref{sec:expect}. Figure~\ref{fig:times} places the time scales of the results side by side.
+
+\begin{figure}[tb]
+\centering\footnotesize
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \draw[->] (0,0) -- (12.4,0) node[right] {$t$};
+  \foreach \x/\lab in {0/{$0$},2/{$\log(1/\hbar)$},4/{$t_p(\hbar)$},6.2/{$T(\hbar)$},9/{$\delta(\alpha/\hbar)^{1/2}$},11.6/{$1/\hbar$}}
+    \draw (\x,0.07) -- (\x,-0.07) node[below] {\lab};
+  % accurate approximation and the open range
+  \draw[line width=2pt] (0,0.55) -- (9,0.55);
+  \draw[line width=1pt,dashed] (9,0.55) -- (11.6,0.55);
+  \node[above] at (4.5,0.6) {accurate $L^2$ approximation (Theorems~\ref{pc:main} and~\ref{thm:dd14})};
+  \node[above] at (10.3,0.6) {open};
+  % Ehrenfest-time methods and escape of mass
+  \draw[line width=1pt] (0,1.35) -- (2,1.35);
+  \node[above right] at (0,1.4) {Ehrenfest-time estimates};
+  \draw[line width=2pt] (6.2,1.35) -- (9,1.35);
+  \node[above] at (7.6,1.4) {escape of mass (Theorem~\ref{ev:mod})};
+  % failure of uniform pointwise bounds
+  \draw[densely dotted] (4,0.07) -- (4,2.15);
+  \fill (4,2.15) circle (1.5pt);
+  \node[above] at (4,2.2) {no pointwise bound $C\hbar^{-p}$ uniform in $z$ (Theorem~\ref{cl:necessary}(i))};
+\end{tikzpicture}
+\caption{Time scales for fixed $\alpha$ and small $\hbar$, not to scale. Ehrenfest-time estimates are those of
+\cite{CR97,HJ00,BGP99,BR02}. The approximation of Theorems~\ref{pc:main} and~\ref{thm:dd14} is accurate up to
+$\delta(\alpha/\hbar)^{1/2}$; times up to $1/\hbar$ are the subject of \cite[Conjecture~1]{S}. At the times
+$t_p(\hbar)=(2p+4)\log(1/\hbar)$, $p\ge0$, the error on the modular surface admits no bound $C\hbar^{-p}\norm a_{\mathcal A}$ uniform in
+the point $z$. The mass in the compact set $M_H$ tends to $0$ as $\hbar\to0$, uniformly for $T(\hbar)+\log H\le t\le\delta(\alpha/\hbar)^{1/2}$,
+where $T(\hbar)=C_T\log(1/\hbar)\log\log(1/\hbar)$. For fixed $p$, $H$ and $\alpha$ the times are ordered as shown once $\hbar$ is small.}\label{fig:times}
+\end{figure}
 
 \subsection{Context and related work}\label{subsec:context}
 Estimates up to the Ehrenfest time for coherent states were obtained by Combescure and Robert \cite{CR97} and
@@ -601,7 +635,34 @@ Formally, $V$ is the propagator of $i\partial_tV=-\tfrac{\hbar}{2}\Delta(t)V$, $
 $\Delta(t)=S(t)^*\Delta S(t)$ is the operator $\Delta(t)=\ue^{-2t}X^2+Y^2-Y$ of Section~\ref{sec:setup} \cite[Proposition~2.2]{S}, and the approximation
 $u^{(K)}$ corresponds to its Dyson expansion to order $K$. We use this evolution only through the Duhamel formulas of
 Section~\ref{subsec:dd-surf}, which are proved there for amplitudes whose derivatives by every word in $X,Y$ lie in a
-weighted $L^2$ space.
+weighted $L^2$ space. Figure~\ref{fig:transport} shows the transport $S(t)$.
+
+\begin{figure}[tb]
+\centering\footnotesize
+\begin{tikzpicture}[x=1.6cm,y=1.6cm]
+  \foreach \x in {-2,-1.5,...,2}
+    \draw[gray!55,->,>=stealth] (\x,1.95) -- (\x,0.03);
+  \foreach \y in {0.2703,0.5406,1.0811,1.6216}
+    \draw[gray!70,dashed] (-2.2,\y) -- (2.2,\y);
+  \node[right] at (2.2,1.6216) {$\varphi=\mathrm{const}$};
+  \draw (-2.3,0) -- (2.3,0) node[right] {$\mathbb R$};
+  \node at (0,2.15) {$b=\infty$};
+  \fill[gray!35] (0,1.0811) circle (0.4108);
+  \draw (0,1.0811) circle (0.4108);
+  \fill (0,1) circle (1pt) node[left,inner sep=2pt] {$i$};
+  \node[right,fill=white,inner sep=1.5pt] at (0.45,1.0811) {$\operatorname{supp}a$};
+  \fill[gray!35] (0,0.2703) ellipse (0.4108 and 0.1027);
+  \draw (0,0.2703) ellipse (0.4108 and 0.1027);
+  \node[right,fill=white,inner sep=1.5pt] at (0.45,0.2703) {$\operatorname{supp}S(t)a$};
+  \draw[->,thick,>=stealth] (0,0.65) -- (0,0.39) node[midway,left,fill=white,inner sep=1.5pt,xshift=-2pt] {$S(t)$};
+\end{tikzpicture}
+\caption{The transport for $b=\infty$, drawn for an amplitude supported in the disc of hyperbolic radius $0.4$ about $x_0=i$, and
+$t=\log4$. The phase $\varphi=-\log y$ is constant on the horizontal lines, the horocycles centred at $\infty$. The vertical lines are the
+geodesics from $\infty$, along which the state moves at unit speed: $S(t)a(x,y)=\ue^{-t/2}a(x,\ue^ty)$, so $\operatorname{supp}S(t)a$ is
+the image of $\operatorname{supp}a$ under $(x,y)\mapsto(x,\ue^{-t}y)$. This map multiplies hyperbolic lengths along the horocycles
+by $\ue^t$: this is the expansion along the unstable manifold. In \eqref{eq:factor} the dispersive factor $V(t)$ acts
+on the amplitude before the transport; its Dyson expansion gives the corrections $P_k(t)a$ in $u^{(K)}(t)$.}\label{fig:transport}
+\end{figure}
 
 \emph{An exact remainder.} We write the remainder of the Dyson expansion with the unitary propagator on the outside
 (Proposition~\ref{prop:dd-id}). Let $\Delta_\varphi(s)$ be the Laplacian conjugated by the phase and the transport
@@ -659,12 +720,11 @@ whatever the method of proof; Remark~\ref{rem:mean} shows that for the amplitude
 the end of the approximation window, so it does not limit the window (Section~\ref{sec:outlook}). No other part uses
 Appendix~\ref{sec:g5}.
 
-Sections~\ref{sec:cusp} and~\ref{sec:expect} and Appendix~\ref{sec:g5} are independent of each other and use only the
-following earlier results. Section~\ref{sec:cusp} uses Theorems~\ref{pc:main} and~\ref{thm:dd14}, Lemmas~\ref{lem:count},
-\ref{lem:fdb}, \ref{lem:expw}, \ref{lem:wordphi}, \ref{lem:m2w}, \ref{pc:g43} and~\ref{pc:remcusp}, and Appendices~\ref{app:kernels} and~\ref{app:cusp-aux}. Section~\ref{sec:expect} uses
-Theorems~\ref{pc:main} and~\ref{thm:dd14}, Lemma~\ref{os:speed}, Corollary~\ref{os:cwp}, Proposition~\ref{os:p1} and
-Appendix~\ref{app:profiles}. Appendix~\ref{sec:g5} uses Lemmas~\ref{lem:t2}, \ref{lem:base}, \ref{lem:lift}, \ref{lem:sc}
-and~\ref{lem:m2w} and Theorem~\ref{thm:dd14}.
+Sections~\ref{sec:cusp} and~\ref{sec:expect} and Appendix~\ref{sec:g5} are independent of each other, and each can be read
+after Section~\ref{sec:intro} with a few earlier results. Besides Theorems~\ref{pc:main} and~\ref{thm:dd14}, Section~\ref{sec:cusp}
+uses lemmas of Sections~\ref{sec:remainder}, \ref{sec:analytic} and~\ref{sec:consequences} and Appendices~\ref{app:kernels}
+and~\ref{app:cusp-aux}, and Section~\ref{sec:expect} uses results of Section~\ref{sec:printed} and Appendix~\ref{app:profiles}.
+Appendix~\ref{sec:g5} uses Theorem~\ref{thm:dd14} and lemmas of Sections~\ref{sec:remainder} and~\ref{sec:analytic}.
 
 Appendix~\ref{app:special} supplies the auxiliary special-function and kernel calculations: Appendix~\ref{app:fc-proof}
 proves Lemma~\ref{lem:fc}, Appendix~\ref{app:profiles} gives the profiles used in Sections~\ref{sec:printed}
@@ -729,6 +789,7 @@ is lost there is the explicit operator $\Delta(t)=\ue^{-2t}X^2+Y^2-Y$, on which 
 \input{app_mean}
 \input{app_comparison}
 \input{app_lean}
+\input{app_constants}
 
 \clearpage
 \section*{Acknowledgments}\addcontentsline{toc}{section}{Acknowledgments}

@@ -52,7 +52,45 @@ it is not a general relative-error theorem. Its proof is in Section~\ref{subsec:
 Dyson term $\ue^{-it/(2\hbar)}(S(t)\,\tfrac{i\hbar}2P_1(t)a)\ue^{i\varphi/\hbar}$. At height $H=\ue^t$ in the cusp the sum
 over $\Gamma$ concentrates, by stationary phase, at the tops $n/c+i/(c^2H)$ of the horocycles $\gamma(\mathbb R+iH)$, whose
 images under $\Omega_t:(x,y)\mapsto(x,\ue^ty)$ are the points $n/c+i/c^2$ ($c\ge1$, $\gcd(n,c)=1$), and its size is
-$\ue^{t/2}\sqrt{\pi\hbar}\cdot\hbar t$; the remainder is controlled by the $L^2$ theorem.
+$\ue^{t/2}\sqrt{\pi\hbar}\cdot\hbar t$; the remainder is controlled by the $L^2$ theorem. Figure~\ref{fig:cusp} shows the geometry.
+
+\begin{figure}[tb]
+\centering\footnotesize
+\begin{tikzpicture}[x=2.6cm,y=2.6cm]
+  \begin{scope}
+    \clip (-1.1,-0.08) rectangle (1.1,0.75);
+    \draw (-1.1,0) -- (1.1,0);
+    \foreach \nn/\cc in {-1/1,0/1,1/1,-1/2,1/2,-1/3,1/3,-2/3,2/3,-1/4,1/4,-3/4,3/4}{
+      \pgfmathsetmacro{\rr}{1/(4*\cc*\cc)}
+      \pgfmathsetmacro{\xx}{\nn/\cc}
+      \draw (\xx,\rr) circle (\rr);
+      \fill (\xx,2*\rr) circle (0.9pt);
+    }
+  \end{scope}
+  \node[below] at (0,-0.1) {(a) the circles $\gamma(\mathbb R+iH)$ and their tops, $H=2$};
+  \draw[->,>=stealth] (1.14,0.45) -- (1.36,0.45) node[midway,above] {$\Omega_t$};
+  \begin{scope}[xshift=2.5*2.6cm]
+    \draw (-1.1,0) -- (1.1,0);
+    \fill[gray!35] (0,1) circle (0.12);
+    \foreach \nn/\cc in {-1/1,0/1,1/1,-1/2,1/2,-1/3,1/3,-2/3,2/3,-1/4,1/4,-3/4,3/4}{
+      \pgfmathsetmacro{\yy}{1/(\cc*\cc)}
+      \pgfmathsetmacro{\xx}{\nn/\cc}
+      \fill (\xx,\yy) circle (0.9pt);
+    }
+    \node[above right] at (0.06,1.04) {$i$};
+    \node[right] at (1.04,1) {$c=1$};
+    \node[right] at (0.54,0.25) {$c=2$};
+    \node[below] at (0,-0.1) {(b) the points $n/c+i/c^2$};
+  \end{scope}
+\end{tikzpicture}
+\caption{The geometry of Section~\ref{sec:cusp}, drawn for $H=2$, $c\le4$ and $|n/c|\le1$. (a) For $\gamma\in\mathrm{PSL}(2,\mathbb Z)$
+that is not a translation, $\gamma(\mathbb R+iH)$ is the circle tangent to $\mathbb R$ at $\gamma(\infty)=n/c$, $(n,c)=1$, $c\ge1$, with
+Euclidean diameter $1/(c^2H)$; the dots are its tops $n/c+i/(c^2H)$. At the point $z=x+iH$ the periodization sum concentrates, by
+stationary phase, at these tops. (b) The transported amplitude $S(t)v=\ue^{-t/2}v\circ\Omega_t$ is evaluated through
+$\Omega_t:(x,y)\mapsto(x,\ue^ty)$, which for $H=\ue^t$ sends the tops to the points $n/c+i/c^2$ of Lemma~\ref{cl:asym}. The amplitude of
+Theorem~\ref{cl:main}(i) is concentrated near $i$ (shaded); Lemma~\ref{cl:noncancel} shows that in the leading coefficient the term of
+the point $i$ is not cancelled by the other points.}\label{fig:cusp}
+\end{figure}
 
 \medskip\noindent\emph{Plan of the proof.} The proof starts from the decomposition
 \[

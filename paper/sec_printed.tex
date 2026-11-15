@@ -1,7 +1,21 @@
 \section{Approximation for the original amplitude norm}\label{sec:dd}\label{sec:printed}
-The original norm imposes spatial decay on the data before Poisson smoothing. Proposition~\ref{pc:classes}
-explains why the power-weight argument cannot be applied directly. The proof of Theorem~\ref{pc:main}
-then has three stages: factor the amplitude through critically weighted data and bound its derivatives at a power
+The original norm imposes spatial decay on the data before Poisson smoothing.
+
+\medskip\noindent\emph{Why a separate argument is needed.} The proof of Section~\ref{sec:companion} needs the amplitude in a space
+$L^2_{X_0^\lambda}$ with $\lambda>\tfrac12$, so that periodization is bounded (Lemma~\ref{lem:t2}). The original norm gives such decay only
+for $f=\ue^{\alpha\Lambda}a$, and Poisson smoothing destroys it: the proof of Proposition~\ref{pc:classes} gives amplitudes of finite
+original norm with $\ue^{\beta'\langle d\rangle}a\notin L^2(\Hb)$ for every $\beta'>\tfrac12$. What survives is the critical
+weight $\omega_c=X_0^{1/2}\ell^{\,c}$ defined below, a logarithmic correction of $X_0^{1/2}$. The exponent $c$ has room on both sides:
+$c>\tfrac12$ makes the orbit series $\sum_\gamma\omega_c(\gamma z)^{-2}$ converge, so that periodization is bounded at this weight
+(Proposition~\ref{os:p1}), and $c<1$ is what the multiplier theorem (Theorem~\ref{os:cw}) needs to show that Poisson smoothing preserves
+the weight. The argument of Section~\ref{sec:companion} is then run at the weight $\omega=\omega_{3/4}$, with two changes. H\"older's
+inequality between $L^2$ and $L^2_{X_0^\beta}$ is replaced by a transfer over the shells $\{n\le\tilde\psi<n+1\}$
+(Lemma~\ref{os:transfer}), which interpolates between unweighted bounds and bounds at the weight $X_0$. And the amplitude is written as
+$a=\ue^{-\sigma\Lambda_m}\tilde f$ with critically weighted data $\tilde f$ (Proposition~\ref{os:data}): unlike $\ue^{-\sigma\Lambda}$, the
+shifted semigroup $\ue^{-\sigma\Lambda_m}$ with $m=3$ preserves the weight $X_0$ (Lemma~\ref{os:words}), which the derivative bounds at
+that weight need.
+
+The proof of Theorem~\ref{pc:main} has three stages: factor the amplitude through critically weighted data and bound its derivatives at a power
 weight (Sections~\ref{app:o1st} and~\ref{subsec:pc-data}); transfer the derivative, propagation and defect bounds to the
 critical weight (Section~\ref{subsec:pc-transfer}); and apply quotient Duhamel and integrate the exact remainder, for data in
 this form (Proposition~\ref{pc:core}, Section~\ref{subsec:pc-proof}). Section~\ref{subsec:pc-all} assembles the proof for every bounded range of
