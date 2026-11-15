@@ -52,7 +52,7 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 3.9 (`lem:wordphi`) | L | `wb_comp` |
 | Lemma 3.10 (`lem:m2w`) | L | `swX_le_swD` |
 | Lemma 3.14 (`lem:wave`) | L | `wave_weight`, `wave_Bx'`, `wave_By'`; `wave_weightD` |
-| Lemma 3.15 (`lem:wcomm`) | L | `comm_wave` |
+| Lemma 3.15 (`lem:wcomm`) | L | `comm_wave_sharp` |
 | Lemma 3.17 (`lem:wmoll`) | L | `w_J`, `w_Bx`, `w_By`, `w_JS`, `w_XX`, `w_YY`, `w_comm` |
 | Proposition 3.18 (`prop:ws`) | L | `ws0_trunc`, `ws0_cosh` |
 | Lemma 3.19 (`lem:path`) | L | `WOps.pathG_eq`, `norm_pathH_le`, `norm_xInt_le`, `xInt_chart`, `path_duhamel` |
