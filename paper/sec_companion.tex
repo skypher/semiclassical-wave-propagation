@@ -58,18 +58,19 @@ through the Poincar\'e series bound at the base point. By Lemma~\ref{lem:lift}, 
  E:=\Delta^N\bigl[\cU(t)[a\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\bigr].
 \]
 
-Let $c_M$ be the constant of Lemma~\ref{lem:mw} and $c_A$ that of
-Proposition~\ref{prop:a0}. Put
+The mollification scale and the time scale are those of Section~\ref{subsec:simplest}:
 \[
-r_\alpha:=c_M\alpha,\qquad r_1:=\tfrac34r_\alpha,\qquad r_2:=\tfrac12r_\alpha,\qquad\varepsilon:=(\alpha\hbar)^{1/2}/2,\qquad \xi:=(\alpha/\hbar)^{1/2},
+\varepsilon:=(\alpha\hbar)^{1/2}/2,\qquad \xi:=(\alpha/\hbar)^{1/2},
 \]
-so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=\xi/2$ and $\alpha/\varepsilon=2\xi$. Fix $\lambda:=(2\beta+1)/4\in(1/2,\beta)$ and put $\theta:=\lambda/\beta\in(0,1)$.
-All bounds below are expressed through the numbers $F_n$ of Lemma~\ref{lem:collect} for $G:=C_3/c_M^2$, $\sigma:=\alpha$ and
-$\mathcal H:=\pwNorm a$:
+so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=\xi/2$ and $\alpha/\varepsilon=2\xi$. Periodization uses the weight $X_0^\lambda$ with
+$\lambda:=(2\beta+1)/4\in(1/2,\beta)$, and we put $\theta:=\lambda/\beta\in(0,1)$.
+The remainder amplitude $a_{\mathbf s}$ costs factorials: a word of length $n$ applied to it is bounded by $B_\beta F_n$, where $F_n$
+are the numbers of Lemma~\ref{lem:collect} for $\sigma:=\alpha$, $\mathcal H:=\pwNorm a$ and $G:=C_3/c_M^2$, with $c_M$ the constant of
+Lemma~\ref{lem:mw}:
 \[
 F_n=G^{N+K+n+1}(2N)!\,(n+2K+2)!\,\alpha^{-(n+2K+2)}(\alpha\hbar)^{-2N}\pwNorm a .
 \]
-Since $c_M\le1\le C_3$, we have $G\ge C_3\ge1$; so $F_n$ increases with $n$, and Lemma~\ref{lem:wb}(i) gives
+Precisely, since $c_M\le1\le C_3$, we have $G\ge C_3\ge1$; so $F_n$ increases with $n$, and Lemma~\ref{lem:wb}(i) gives
 \begin{equation}\label{dd:words}
 \norm{X_0^\beta Z_Ia_{\mathbf s}}\le B_\beta F_n\qquad\text{for every word $Z_I$ of length at most $n$ and every $\mathbf s\in\Sigma_{K+1}(t)$.}
 \end{equation}
@@ -109,7 +110,8 @@ The weighted factor is only polynomially large in $\varepsilon^{-1}$; the unweig
 \[
 \norm{X_0^\beta \mathfrak d(t')}\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\beta Za_{\mathbf s}}\le C\varepsilon^{-3}F_2 .
 \]
-\emph{Unweighted factor.} For $|t'-s_1|\le t\le\tfrac13c_A\varepsilon/\hbar$,
+\emph{Unweighted factor.} Here we spend analytic radius: put $r_\alpha:=c_M\alpha$, $r_1:=\tfrac34r_\alpha$ and $r_2:=\tfrac12r_\alpha$.
+Let $c_A$ be the constant of Proposition~\ref{prop:a0}. For $|t'-s_1|\le t\le\tfrac13c_A\varepsilon/\hbar$,
 \begin{align*}
 \norm{\mathfrak d(t')}&\le C_4r_2^{-4}\ue^{-r_2/(8\varepsilon)}\norm{\ue^{r_2\Lambda}g(t')}
 \le C\alpha^{-4}\ue^{-c_M\xi/8}\norm{\ue^{r_1\Lambda}a_{\mathbf s}}\\
