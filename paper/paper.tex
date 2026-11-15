@@ -171,8 +171,9 @@ amplitudes; Dyson expansion.
 Semiclassical approximations describe the solutions of the Schr\"odinger equation
 $i\hbar\,\partial_t\psi=-\tfrac{\hbar^2}{2}\Delta\psi$ for small $\hbar$ through the geodesic flow. How long do they stay
 accurate when the flow is chaotic? For hyperbolic flows, coherent-state and Egorov estimates control the approximation up to
-the Ehrenfest time $T\sim\lambda^{-1}\log(1/\hbar)$, where $\lambda$ is a Lyapunov exponent \cite{CR97,HJ00,BGP99,BR02}: the time
-at which the expansion $\ue^{\lambda t}$ of the flow magnifies the scale $\hbar$ to order one. In numerical studies of the
+the Ehrenfest time $T\sim\lambda_{\mathrm L}^{-1}\log(1/\hbar)$, where $\lambda_{\mathrm L}$ is a Lyapunov exponent
+\cite{CR97,HJ00,BGP99,BR02}: the logarithmic time on which the exponential stretching by the flow magnifies semiclassical scales to
+macroscopic size. In numerical studies of the
 stadium billiard, however, Tomsovic and Heller \cite{TH91,TH93} found semiclassical approximations that remain accurate well
 beyond the Ehrenfest time. The obstacle to a proof, as Schubert \cite{S} describes it, is that the approximation is then a
 sum of oscillating terms whose number grows exponentially with time, and the error terms are of the same nature.
@@ -201,7 +202,7 @@ in detail.
 The time scale $(\alpha/\hbar)^{1/2}$ comes from a balance of two effects. On the universal cover the approximation is accurate
 for as long as $\hbar t$ is small compared with $\alpha^2$; the window is the price of passing to the quotient. The transport
 stretches the state by the factor $\ue^s$ along the unstable horocycles, and periodizing the state transported for a time $s$
-costs a factor $\ue^{\lambda s}$ with $\lambda>\tfrac12$. We avoid this cost by running the dispersive flow back to time $0$ before
+costs a factor $\ue^{\lambda s}$, where $\lambda>\tfrac12$ is the exponent of the spatial weight used for periodization. We avoid this cost by running the dispersive flow back to time $0$ before
 periodizing. That flow is not known to preserve the spatial weights that periodization needs, so we use the flow mollified at
 a scale $\varepsilon$, which preserves them for times up to order $\varepsilon/\hbar$. The price is a mollification error, which
 for amplitudes of analytic radius $\alpha$ is of size $\ue^{-c\alpha/\varepsilon}$ and has to pay the factor $\ue^{\lambda s}$. Both
