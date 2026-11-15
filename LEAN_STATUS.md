@@ -67,6 +67,7 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 3.22 (`lem:unw`) | L | `unw_err` |
 | Lemma 3.23 (`lem:collect`) | L | `collect_remainder`; parts `collect_absorb`, `remF_zero_le`, `collect_final` |
 | Lemma 3.25 (`lem:radius`) | L | (i) `ddBound_radius`; (ii) `window_radius` |
+| Proposition 3.26 (`prop:cover`) | P | estimate without the mollifier; not used by the theorems; self-checked, not formalized |
 
 ## Section 4 (`sec:companion`): power-weight and reversed-weight approximation
 

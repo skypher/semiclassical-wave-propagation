@@ -474,7 +474,7 @@ Since $\alpha$ is fixed, it also excludes a prefactor $(\alpha\hbar)^{-p}$; the 
 $(\alpha\hbar)^{-8}$ of \cite[Corollary~1.6]{S} (Remark~\ref{cl:reading}). For small $\hbar$ the times $t_p(\hbar)$ and
 $t\le\hbar^{-1/5}$ lie in the windows of Theorems~\ref{pc:main} and~\ref{thm:dd14}. So the factor
 $m(z)^{1/2}$ in Corollary~\ref{pc:cor16} cannot be dropped, or replaced by $m(z)^\sigma$ with $\sigma<\tfrac12$, in a bound valid
-for every Fuchsian group and every boundary point. No optimality of the power of $\hbar$ is asserted.
+for every Fuchsian group and every boundary point.
 
 What fails is a bound independent of $z$, not the accuracy of the approximation: for one of the amplitudes constructed in
 Section~\ref{sec:cusp}, the approximation is larger than the error by a factor of order $(\hbar t)^{-1}$ at the points where
@@ -545,8 +545,8 @@ cylinder, transported by the geodesic flow and projected to $M$; part (iii) is a
 long closed horocycles \cite{Zag81,Sar81}. Its limit $\tfrac3\pi\mu_0\int_Mq\,d\nu$ is positive for
 $q\ge0$, $q\not\equiv0$. So for such $q$, supported in some $M_H$, the quantum expectation
 $\langle q\,\psi(t),\psi(t)\rangle\le\sup q\int_{M_H}|\psi(t)|^2\,d\nu$ tends to $0$ on this range of times, while the
-classical prediction tends to a positive limit. The lower endpoint $T(\hbar)+\log H$ is a sufficient escape time; we do not
-claim that escape fails at earlier times. The factor $\log\log(1/\hbar)$ in $T(\hbar)$ comes from the width of the classical
+classical prediction tends to a positive limit. The lower endpoint $T(\hbar)+\log H$ is a sufficient escape time;
+Section~\ref{sec:outlook} discusses where the transition occurs. The factor $\log\log(1/\hbar)$ in $T(\hbar)$ comes from the width of the classical
 zero-free region of the Riemann zeta function (see the paragraph before Lemma~\ref{ev:outgoing}).
 Theorem~\ref{ev:mod} is proved in Section~\ref{sec:expect}. Figure~\ref{fig:times} places the time scales of the results side by side.
 
@@ -675,11 +675,16 @@ periodized propagator applied to $a_{\mathbf s}$. No resummation of the series i
 $\alpha$ bounds a word of length $k$ in $X,Y$ applied to $a$, in the weighted $L^2$ norm, by $C^kk!\,\alpha^{-k}$ times the
 amplitude norm (Cauchy estimates,
 Lemmas~\ref{lem:fc}, \ref{lem:wc}, \ref{lem:sc} and~\ref{lem:wb}), and the integration over the simplex then gives the factor
-$C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$.
+$C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$. On $\Hb$ itself the propagator in this integral is unitary, so this
+already proves the estimate for every $t\ge0$, with the unweighted analytic norm $\norm{\ue^{\alpha\Lambda}a}$
+(Proposition~\ref{prop:cover}(i)). The time window of the theorems comes from the quotient.
 
-\emph{The periodized flow.} It remains to bound the periodized propagator applied to $a_{\mathbf s}$ in $L^2(M)$, uniformly in $s_1\le t$.
+\emph{The periodized flow.} On $M$ the periodized propagator applied to $a_{\mathbf s}$ must be bounded in $L^2(M)$, uniformly in $s_1\le t$.
 The periodization estimate used here (Lemma~\ref{lem:t2}) needs a weight $\ue^{\lambda d}$ with $\lambda>\tfrac12$, that is, above the
-critical weight $\ue^{d/2}$, and for transported functions its bound grows like $\ue^{\lambda t}$. It is not known whether the flow
+critical weight $\ue^{d/2}$, and for transported functions its bound grows like $\ue^{\lambda t}$. Applied directly, it gives the
+estimate with an extra factor $\ue^{\lambda t}$ (Proposition~\ref{prop:cover}(ii)), which is small only up to times of order
+$\log(1/\hbar)$. To avoid this growth one periodizes at time $0$, after running the dispersive flow back over the time $s_1$, and this
+needs a weighted bound for the flow. It is not known whether the flow
 $V$ preserves weighted analytic norms on such time scales; \cite[Conjecture~1]{S} conjectures this up to times of order $1/\hbar$. As in \cite{S} we compare $V$ with the flow
 $V_\varepsilon$ of the generator mollified at scale $\varepsilon$; the estimate for $V_\varepsilon$ is the step whose proof
 in \cite{S} has the gap (Appendix~\ref{sec:changes}). The mollified flow preserves analytic norms, with a loss of radius, and
@@ -819,7 +824,7 @@ Codex revised the exposition, proof guides and section hierarchy, made the inter
 and wrote the statements of the localized-state consequence and of the sharper pointwise prefactor $(\alpha\hbar)^{-2N-2}$.
 Claude Opus~5.5 also wrote referee reports on the presentation and carried out the resulting revisions of notation,
 wording, organization and statements, with the corresponding formal statements and proofs; in this work it added the bound
-on the mean and formalized the attainment of the order $\hbar t$.
+on the mean and the estimate without the mollifier (Proposition~\ref{prop:cover}), and formalized the attainment of the order $\hbar t$.
 These AI checks do not constitute external peer review. The detailed contribution history
 is retained in the repository revisions.
 

@@ -4,6 +4,8 @@ We prove the approximation with the power-weight norm $\pwNorm a$ and transfer i
 Throughout, $M=\Gamma\backslash\Hb$ and $d=d(x_0,\cdot)$.
 
 \medskip\noindent\emph{Idea of the proof.}
+Proposition~\ref{prop:cover}(ii) gives the estimate up to a factor $\ue^{\lambda t}$, which comes from periodizing the remainder after
+transport over the time $s_1$; the proof below removes this factor.
 By Proposition~\ref{prop:dd-id}(ii) the error is bounded by an integral over the simplex $\Sigma_{K+1}(t)$ of
 $\norm{\mathcal V_{s_1}a_{\mathbf s}}_{L^2(M)}$, the norm of a periodized dispersive evolution of the remainder amplitude over the time
 $s_1$. The unmollified flow is not known to preserve the weights that periodization needs, so we run the mollified flow
@@ -62,6 +64,15 @@ Proposition~\ref{prop:a0}. Put
 r_\alpha:=c_M\alpha,\qquad r_1:=\tfrac34r_\alpha,\qquad r_2:=\tfrac12r_\alpha,\qquad\varepsilon:=(\alpha\hbar)^{1/2}/2,\qquad \xi:=(\alpha/\hbar)^{1/2},
 \]
 so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=\xi/2$ and $\alpha/\varepsilon=2\xi$. Fix $\lambda:=(2\beta+1)/4\in(1/2,\beta)$ and put $\theta:=\lambda/\beta\in(0,1)$.
+All bounds below are expressed through the numbers $F_n$ of Lemma~\ref{lem:collect} for $G:=C_3/c_M^2$, $\sigma:=\alpha$ and
+$\mathcal H:=\pwNorm a$:
+\[
+F_n=G^{N+K+n+1}(2N)!\,(n+2K+2)!\,\alpha^{-(n+2K+2)}(\alpha\hbar)^{-2N}\pwNorm a .
+\]
+Since $c_M\le1\le C_3$, we have $G\ge C_3\ge1$; so $F_n$ increases with $n$, and Lemma~\ref{lem:wb}(i) gives
+\begin{equation}\label{dd:words}
+\norm{X_0^\beta Z_Ia_{\mathbf s}}\le B_\beta F_n\qquad\text{for every word $Z_I$ of length at most $n$ and every $\mathbf s\in\Sigma_{K+1}(t)$.}
+\end{equation}
 
 Use Proposition~\ref{prop:dd-id}(ii) with $\varpi=X_0^\lambda$; every word applied to $a$ lies in $L^2_\varpi$ by Lemma~\ref{lem:sc}, since $X_0^\lambda\le X_0^\beta$. For each $\mathbf s=(s_1,\dots,s_{K+1})\in\Sigma_{K+1}(t)$ let
 \[
@@ -75,18 +86,15 @@ The first term is bounded by weighted propagation of the mollified flow (Step~1)
 expresses the difference through the mollifier defect, whose analytic smallness compensates for the transport growth
 after interpolation (Step~2).
 
-\medskip\noindent\emph{Step 1 (mollified part).} Lemma~\ref{lem:t2} at $t=0$, and Proposition~\ref{prop:ws} at the weight $X_0^\lambda$ (with $\hbar s_1\le\varepsilon$), give
+\medskip\noindent\emph{Step 1 (mollified part).} By Lemma~\ref{lem:t2} at time $0$, Proposition~\ref{prop:ws} at the weight $X_0^\lambda$
+(here $\hbar s_1\le\varepsilon$), the inequality $X_0^\lambda\le X_0^\beta$ (as $X_0\ge1$ and $\lambda\le\beta$) and \eqref{dd:words} with $n=0$,
 \[
-\norm{\mathcal V_0w}=\norm{[\ue^{i\varphi/\hbar}V_\varepsilon(s_1)^*a_{\mathbf s}]_\Gamma}\le C\norm{X_0^\lambda V_\varepsilon(0,s_1)a_{\mathbf s}}\le C\ue^{C_{\mathrm{fl},\lambda}/2}\norm{X_0^\lambda a_{\mathbf s}}\le C\norm{X_0^\beta a_{\mathbf s}},
-\]
-using $X_0^\lambda\le X_0^\beta$ (since $X_0\ge1$ and $\lambda\le\beta$).
-By Lemma~\ref{lem:wb}(i) with $n=0$:
-\[
-\norm{\mathcal V_0w}\le C\,C_3^{N+K+1}(2N)!\,(2K+2)!\,\alpha^{-(2K+2)}(\alpha\hbar)^{-2N}\pwNorm a.
+\norm{\mathcal V_0w}=\norm{[\ue^{i\varphi/\hbar}V_\varepsilon(0,s_1)a_{\mathbf s}]_\Gamma}\le C\norm{X_0^\lambda V_\varepsilon(0,s_1)a_{\mathbf s}}
+\le C\norm{X_0^\lambda a_{\mathbf s}}\le C\norm{X_0^\beta a_{\mathbf s}}\le CF_0 .
 \]
 
-
-\medskip\noindent\emph{Step 2 (defect part).} By Lemma~\ref{lem:wb}(i) with $n\le2$, $X_0^\beta Za_{\mathbf s}\in L^2$ for every $Z$ in $\mathcal S=\{1,X,Y,X^2,Y^2\}$. Thus Lemma~\ref{lem:path}(c), with the exponent
+\medskip\noindent\emph{Step 2 (defect part).} Let $\mathcal S:=\{1,X,Y,X^2,Y^2\}$. By \eqref{dd:words} with $n\le2$,
+$X_0^\beta Za_{\mathbf s}\in L^2$ for every $Z\in\mathcal S$. Thus Lemma~\ref{lem:path}(c), with the exponent
 $\lambda$, shows that $g$ satisfies the hypotheses of Lemma~\ref{lem:surf-duh} for $\varpi=X_0^\lambda$. Since $g'=c_\hbar\,\Delta_\varepsilon(t')g$,
 Duhamel on $M$ gives $\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)=-c_\hbar\int_0^{s_1}\mathcal V_{t'}\mathfrak d(t')\,dt'$, with
 \[
@@ -95,28 +103,32 @@ Duhamel on $M$ gives $\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)=-c_\hbar\int_0^{s_
 By the unitarity of $\cU(t')$ on $M$ and Lemma~\ref{lem:t2} (exponent $\lambda$),
 \[\norm{\mathcal V_{t'}\mathfrak d(t')}=\norm{[\ue^{i\varphi/\hbar}S(t')\mathfrak d(t')]_\Gamma}\le C\ue^{\lambda t'}\norm{X_0^\lambda \mathfrak d(t')}.\]
 H\"older's inequality gives $\norm{X_0^\lambda\mathfrak d}\le\norm{X_0^\beta\mathfrak d}^\theta\norm{\mathfrak d}^{1-\theta}$, since $X_0^\lambda=(X_0^\beta)^\theta$.
-We estimate the two factors separately.
+The weighted factor is only polynomially large in $\varepsilon^{-1}$; the unweighted factor is exponentially small.
 
-\emph{Weighted factor.} By Lemma~\ref{lem:path}(b) with the exponent $\beta$, and Lemma~\ref{lem:wb}(i) with $n\le2$ (five words; the bound increases with $n$),
-\begin{align*}
-\norm{X_0^\beta \mathfrak d(t')}&\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\beta Za_{\mathbf s}}\\
-&\le C\varepsilon^{-3}\,C_3^{N+K+3}(2N)!\,(2K+4)!\,\alpha^{-(2K+4)}(\alpha\hbar)^{-2N}\pwNorm a.
-\end{align*}
-\emph{Unweighted factor.} Lemma~\ref{lem:mw} gives $\norm{\ue^{r_\alpha\Lambda}a}\le C_*B_\beta\pwNorm a$.
-Lemma~\ref{lem:wb}(ii), applied with $r_\alpha$ in the role of $\alpha$ and the radii $r_1<r_\alpha$ (gap $r_\alpha/4$), gives
-$\norm{\ue^{r_1\Lambda}a_{\mathbf s}}\le C_3^{N+K+1}(2N)!(2K+2)!\,r_\alpha^{-(2K+2)}(r_\alpha\hbar)^{-2N}\norm{\ue^{r_\alpha\Lambda}a}$.
-Proposition~\ref{prop:a0}, from the radius $r_1$ to $r_2$ (so $(r_1-r_2)/r_1=\tfrac13$) and for $|t'-s_1|\le t\le\tfrac13c_A\varepsilon/\hbar$, gives
-$\norm{\ue^{r_2\Lambda}g(t')}\le\norm{\ue^{r_1\Lambda}a_{\mathbf s}}$.
-Lemma~\ref{lem:unw} with $r=r_2$ gives $\norm{\mathfrak d(t')}\le C_4r_2^{-4}\ue^{-r_2/(8\varepsilon)}\norm{\ue^{r_2\Lambda}g(t')}$, and $r_2/(8\varepsilon)=c_M\xi/8$.
-
-\emph{Combining the factors.} Let $F_n$ be the numbers of Lemma~\ref{lem:collect} for $G:=C_3/c_M^2$, $\sigma:=\alpha$ and
-$\mathcal H:=\pwNorm a$. Since $c_M\le1\le C_3$ and $\alpha\le1$, the weighted factor is at most $C\varepsilon^{-3}F_2$ and the unweighted one at
-most $C\alpha^{-4}\ue^{-c_M\xi/8}F_2$. After the H\"older split, using $\varepsilon,\alpha\le1$, the defect part is at most
+\emph{Weighted factor.} By Lemma~\ref{lem:path}(b) with the exponent $\beta$, and \eqref{dd:words} with $n\le2$,
 \[
-C\,\hbar t\,\ue^{\lambda t}\,\varepsilon^{-3}\alpha^{-4}\ue^{-c_\xi\xi}F_2,\qquad c_\xi:=(1-\theta)c_M/8 .
+\norm{X_0^\beta \mathfrak d(t')}\le C\varepsilon^{-3}\sum_{Z\in\mathcal S}\norm{X_0^\beta Za_{\mathbf s}}\le C\varepsilon^{-3}F_2 .
+\]
+\emph{Unweighted factor.} For $|t'-s_1|\le t\le\tfrac13c_A\varepsilon/\hbar$,
+\begin{align*}
+\norm{\mathfrak d(t')}&\le C_4r_2^{-4}\ue^{-r_2/(8\varepsilon)}\norm{\ue^{r_2\Lambda}g(t')}
+\le C\alpha^{-4}\ue^{-c_M\xi/8}\norm{\ue^{r_1\Lambda}a_{\mathbf s}}\\
+&\le C\alpha^{-4}\ue^{-c_M\xi/8}\,G^{N+K+1}(2N)!\,(2K+2)!\,\alpha^{-(2K+2)}(\alpha\hbar)^{-2N}\norm{\ue^{r_\alpha\Lambda}a}\\
+&\le C\alpha^{-4}\ue^{-c_M\xi/8}F_0 .
+\end{align*}
+The first inequality is Lemma~\ref{lem:unw} with $r=r_2$. The second is Proposition~\ref{prop:a0} from the radius $r_1$ to $r_2$, since
+$(r_1-r_2)/r_1=\tfrac13$, together with $r_2/(8\varepsilon)=c_M\xi/8$. The third is Lemma~\ref{lem:wb}(ii) with $r_\alpha$ in the role of
+$\alpha$, $r=r_\alpha$ and $r'=r_1$, rewritten with $r_\alpha=c_M\alpha$ and $C_3c_M^{-2}=G$. The fourth is Lemma~\ref{lem:mw}:
+$\norm{\ue^{r_\alpha\Lambda}a}\le C_*B_\beta\pwNorm a$.
+
+\emph{Combining the factors.} Since $F_0\le F_2$ and $\varepsilon,\alpha\le1$, the H\"older split gives
+$\norm{X_0^\lambda\mathfrak d(t')}\le C\varepsilon^{-3}\alpha^{-4}\ue^{-c_\xi\xi}F_2$ with $c_\xi:=(1-\theta)c_M/8$, and integrating over
+$t'\in[0,s_1]$ bounds the defect part by
+\[
+C\,\hbar t\,\ue^{\lambda t}\,\varepsilon^{-3}\alpha^{-4}\ue^{-c_\xi\xi}F_2 .
 \]
 
-\medskip\noindent\emph{Step 3 (collecting).} The bound of Step~1 is at most $CF_0$. So for every $\mathbf s\in\Sigma_{K+1}(t)$,
+\medskip\noindent\emph{Step 3 (collecting).} By Steps~1 and~2, for every $\mathbf s\in\Sigma_{K+1}(t)$,
 \[
 \norm{\mathcal V_{s_1}a_{\mathbf s}}\le B\bigl(F_0+\hbar t\,\ue^{\lambda t}\varepsilon^{-3}\alpha^{-4}\ue^{-c_\xi\xi}F_2\bigr),
 \]
@@ -133,11 +145,10 @@ Lemma~\ref{lem:collect} requires $2\lambda\delta\le c_\xi$, that is $\delta\le(1
 
 So $\delta:=\min\bigl(\tfrac12,\;c_A/6,\;(1-\theta)c_M/(16\lambda)\bigr)$ works.
 
-\medskip\noindent\emph{Dependence on $\Gamma$ and $x_0$.} The reduction of Step~0 preserves $P_\Gamma(\beta+\tfrac12)$
-(Lemma~\ref{lem:base}(iii)). The group enters only through Lemma~\ref{lem:t2}, used in Steps~1 and~2 with exponent $\lambda$, whose
-constant $C(\Gamma,\lambda)=2^\lambda P_\Gamma(2\lambda)^{1/2}$ depends on $\Gamma$ only through the Poincar\'e series bound $P_\Gamma(2\lambda)$, $2\lambda=\beta+\tfrac12$.
-All other inputs are estimates on $\Hb$. So $\delta$ does not depend on $\Gamma$ or $x_0$, and $C$ depends on them only through
-$P_\Gamma(\beta+\tfrac12)$.
+\medskip\noindent\emph{Dependence on $\Gamma$ and $x_0$.} The group enters only through the constant $2^\lambda P_\Gamma(2\lambda)^{1/2}$ of
+Lemma~\ref{lem:t2} in Steps~1 and~2, with $2\lambda=\beta+\tfrac12$, and the reduction of Step~0 preserves $P_\Gamma(\beta+\tfrac12)$
+(Lemma~\ref{lem:base}(iii)); all other inputs are estimates on $\Hb$. Hence $\delta$ does not depend on $\Gamma$ or $x_0$, and $C$
+depends on them only through $P_\Gamma(\beta+\tfrac12)$.
 
 \medskip\noindent\emph{Radii $1<\alpha\le A$.} The power-weight norm increases with the radius, since
 $\ue^{\Lambda}=\ue^{-(\alpha-1)\Lambda}\ue^{\alpha\Lambda}$ and $\ue^{-\tau\Lambda}$ is a contraction for $\tau\ge0$. Apply the case already proved

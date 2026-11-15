@@ -144,12 +144,15 @@ Proposition~\ref{prop:ws}, norm at most $\ue^{C_{\mathrm{fl},1}/2}$ at the weigh
 \[
   T_dh:=\bigl(\Delta(t')-\Delta_\varepsilon(t')\bigr)V_\varepsilon(t',s_1)\mathcal B_{\mathbf s}\mathsf Qh .
 \]
-\emph{Unweighted bound.} By Lemma~\ref{os:words}, $\norm{\ue^{\sigma\Lambda}\mathsf Qh}\le\norm h$. By Lemma~\ref{lem:wb}(ii), with $\sigma$ in the role of
-$\alpha$ and the radii $r_1:=\tfrac34\sigma<\sigma$, by Proposition~\ref{prop:a0} from $r_1$ to $r_2:=\tfrac12\sigma$ (valid for
-$t\le\tfrac13c_A\varepsilon/\hbar$), and by Lemma~\ref{lem:unw} with $r=r_2$, where $r_2/(8\varepsilon)=\xi/8$,
-\[
-  \norm{T_dh}\le \mathcal M_0\norm h,\qquad \mathcal M_0:=C\sigma^{-4}\ue^{-\xi/8}\,C_3^{N+K+1}(2N)!\,(2K+2)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}.
-\]
+\emph{Unweighted bound.} Put $r_1:=\tfrac34\sigma$, $r_2:=\tfrac12\sigma$ and
+$\mathcal M_0:=C\sigma^{-4}\ue^{-\xi/8}\,C_3^{N+K+1}(2N)!\,(2K+2)!\,\sigma^{-(2K+2)}(\sigma\hbar)^{-2N}$. For $t\le\tfrac13c_A\varepsilon/\hbar$,
+\begin{align*}
+  \norm{T_dh}&\le C_4r_2^{-4}\ue^{-\xi/8}\norm{\ue^{r_2\Lambda}V_\varepsilon(t',s_1)\mathcal B_{\mathbf s}\mathsf Qh}
+  \le C\sigma^{-4}\ue^{-\xi/8}\norm{\ue^{r_1\Lambda}\mathcal B_{\mathbf s}\mathsf Qh}\\
+  &\le\mathcal M_0\norm{\ue^{\sigma\Lambda}\mathsf Qh}\le\mathcal M_0\norm h,
+\end{align*}
+by Lemma~\ref{lem:unw} with $r=r_2$ (note $r_2/(8\varepsilon)=\xi/8$), Proposition~\ref{prop:a0} from the radius $r_1$ to $r_2$,
+Lemma~\ref{lem:wb}(ii) for the amplitude $\mathsf Qh$ with $\sigma$ in the role of $\alpha$, $r=\sigma$ and $r'=r_1$, and Lemma~\ref{os:words}.
 \emph{Weighted bound.} Let $u$ be supported in one shell and assume $\hbar s_1\le\varepsilon$. By (a), $\pcXzero Z\mathcal B_{\mathbf s}\mathsf Qu\in L^2$ for $Z\in\{1,X,Y,X^2,Y^2\}$, and
 Lemma~\ref{lem:path}(b) with $\lambda=1$ and $v=\mathcal B_{\mathbf s}\mathsf Qu$ gives
 \[
@@ -228,8 +231,7 @@ Proposition~\ref{pc:core} with $h=\tilde f$, and constants $C',\delta'$ for this
 $t\le\delta'(\sigma/\hbar)^{1/2}$. By Lemma~\ref{lem:radius} with $\alpha_0=\sigma=\tfrac1{12}$ and $\alpha_1=A$, the estimate holds on $(\tfrac12,A]$ with the constants $(12A)^2C'\max(1,C_{\mathrm d}C_\Lambda^{\,j}C_\beta)$ and $\delta'(12A)^{-1/2}$. Take the
 larger of the two constants $C$ and the smaller of the two $\delta$.
 
-\emph{The constants.} In both ranges $\delta$ is $\delta'/\sqrt6$, respectively $\delta'(12A)^{-1/2}$, where $\delta'$ is the constant of
-Proposition~\ref{pc:core} for $\kappa'=\kappa/216$, respectively $\kappa'=\kappa/(1728A^3)$; it does not depend on $P$, hence not on the group or the base point.
-The constant $C'$ of that proposition depends on the group only through the bound $P$ for $P^{\mathrm{cr}}_\Gamma$; the other constants $C_{\mathrm d}$, $C_\Lambda^{\,j}$, $C_\beta$ and $12A$ do not
-involve the group or the base point. This proves the theorem.
+\emph{The constants.} The group and the base point enter only through Proposition~\ref{pc:core}, whose $\delta'$ does not depend
+on $P$ and whose $C'$ depends on them only through $P$; the factors $C_{\mathrm d}$, $C_\Lambda^{\,j}$, $C_\beta$ and $12A$ do not involve
+them. This proves the theorem.
 \end{proof}

@@ -14,6 +14,8 @@ $\hbar/\varepsilon$: the weighted norm grows at most at this rate, and the analy
 \item \emph{Remainder bounds} (Section~\ref{subsec:dd-wb}) control the remainder amplitude $a_{\mathbf s}$ and the mollifier defect,
 and Lemma~\ref{lem:collect} performs the final count shared by the two approximation proofs.
 \end{itemize}
+Section~\ref{subsec:cover} combines the remainder bounds with the exact remainder of Section~\ref{sec:remainder} where no mollifier
+is needed: on $\Hb$ at all times, and on a quotient up to a factor $\ue^{\lambda t}$ (Proposition~\ref{prop:cover}).
 In the proofs of Sections~\ref{sec:companion} and~\ref{sec:printed}, the mollified part of the error uses weighted propagation, and
 the defect part uses analytic propagation, the defect bound of Lemma~\ref{lem:unw} and the weighted bound of Lemma~\ref{lem:path}.
 
@@ -731,4 +733,72 @@ $BC(\alpha_1/\alpha_0)^2$ and $\delta(\alpha_0/\alpha_1)^{1/2}$.
 (i) Since $(\alpha_0\hbar)^{-1}=(\alpha\hbar)^{-1}(\alpha/\alpha_0)$ and $\hbar t/\alpha_0^2=(\hbar t/\alpha^2)(\alpha/\alpha_0)^2$, the left side
 is the right side with $(\alpha/\alpha_0)^{2N+2K+2}$ in place of $(\alpha_1/\alpha_0)^{2N+2K+2}$, and $\alpha\le\alpha_1$.
 (ii) $(\alpha_0/\alpha_1)(\alpha/\hbar)=(\alpha/\alpha_1)(\alpha_0/\hbar)\le\alpha_0/\hbar$.
+\end{proof}
+
+\subsection{The estimate without the mollifier}\label{subsec:cover}
+The exact remainder of Proposition~\ref{prop:dd-id} and the derivative bounds of Lemma~\ref{lem:wb} already prove the approximation
+estimate wherever periodization costs nothing: on $\Hb$ itself, at all times. On a quotient they prove it up to a factor
+$\ue^{\lambda t}$, the growth of the periodization bound of Lemma~\ref{lem:t2}. Sections~\ref{sec:companion} and~\ref{sec:printed}
+remove this factor on the window $t\le\delta(\alpha/\hbar)^{1/2}$.
+
+\begin{proposition}[the estimate without the mollifier]\label{prop:cover}
+Let $C_3$ be the constant of Lemma~\ref{lem:wb}. Let $0<\hbar\le1$, $0<\alpha\le1$, $K,N\in\mathbb N_0$, $t\ge0$, let $x_0\in\Hb$ be a
+base point and $b\in\partial\Hb$.
+\begin{itemize}
+\item[\textup{(i)}] \emph{(The hyperbolic plane.)} Let $\Gamma=\{\mathrm{id}\}$. For every $a\in\operatorname{Dom}(\ue^{\alpha\Lambda})$,
+\begin{multline*}
+\norm{\Delta^N\big[\cU(t)(a\,\ue^{i\varphi_b/\hbar})-u^{(K)}(t)\big]}_{L^2(\Hb)}\\
+\le(4C_3)^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\norm{\ue^{\alpha\Lambda}a}.
+\end{multline*}
+\item[\textup{(ii)}] \emph{(A quotient.)} Let $\Gamma$ be a Fuchsian group and $\tfrac12<\lambda\le\beta$. For every $a$ with $\pwNorm a<\infty$,
+\begin{multline*}
+\norm{\Delta^N\big[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big]}_{L^2(M)}\\
+\le2^\lambda P_\Gamma(2\lambda)^{1/2}B_\beta\,\ue^{\lambda t}\,(4C_3)^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\pwNorm a,
+\end{multline*}
+where $B_\beta$ is the constant of Lemma~\ref{lem:fdb}.
+\end{itemize}
+\end{proposition}
+
+In (i) there is no time window, no spatial weight and no condition $\alpha^3\ge\kappa\hbar$. In (ii) the factor $\ue^{\lambda t}$ keeps
+the bound small only up to times of order $\log(1/\hbar)$. It appears because the remainder amplitude $a_{\mathbf s}$ is periodized
+after transport over the time $s_1$. Periodizing at time $0$ instead requires running the dispersive flow back over the time $s_1$
+in a weighted space, which is not known for the flow $V$. Sections~\ref{sec:companion} and~\ref{sec:printed} run the mollified flow
+instead and pay for the replacement with the analytic smallness of the defect; this step produces the time window and the
+condition $\alpha^3\ge\kappa\hbar$ (Lemma~\ref{lem:collect}).
+
+\begin{proof}
+By Lemma~\ref{lem:base} we may take $x_0=i$ and $b=\infty$: the error norm, the norms $\norm{\ue^{\alpha\Lambda}a}$ and $\pwNorm a$, and
+the series $P_\Gamma(2\lambda)$ do not change under the reduction, and the trivial group stays trivial. By Lemma~\ref{lem:lift}, $a$ is
+$C^\infty$, and every word in $X,Y$ applied to $a$ lies in $L^2(\Hb)$; in case (ii) it lies in $L^2_{X_0^\lambda}$, by
+Lemma~\ref{lem:sc} and $X_0^\lambda\le X_0^\beta$.
+
+Suppose that for some $\mathcal H\ge0$
+\begin{equation}\label{eq:cover-integrand}
+\norm{\mathcal V_{s_1}a_{\mathbf s}}_{L^2(M)}\le C_3^{N+K+1}(2N)!\,(2K+2)!\,\alpha^{-(2K+2)}(\alpha\hbar)^{-2N}\mathcal H\qquad(\mathbf s\in\Sigma_{K+1}(t)).
+\end{equation}
+Proposition~\ref{prop:dd-id}(ii) bounds the error by $(\hbar/2)^{K+1}$ times the volume $t^{K+1}/(K+1)!$ of $\Sigma_{K+1}(t)$ times this
+bound. By \eqref{eq:factorial-assembly}, $(2N)!\le4^NN^{2N}$; and $(2K+2)!\le4^{K+1}((K+1)!)^2$, since $\binom{2K+2}{K+1}\le4^{K+1}$, and
+$(K+1)!\le2^KK!$. Hence
+\begin{align*}
+\Bigl(\frac\hbar2\Bigr)^{K+1}\frac{t^{K+1}}{(K+1)!}\,(2N)!\,(2K+2)!&\le2^{-(K+1)}4^{K+1}2^K\,4^NN^{2N}K!\,(\hbar t)^{K+1}\\
+&\le4^{N+K+1}N^{2N}K!\,(\hbar t)^{K+1},
+\end{align*}
+and the error is at most $(4C_3)^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}\mathcal H$. It remains to prove
+\eqref{eq:cover-integrand}.
+
+(i) The weight $\varpi=1$ satisfies \textup{(W1)} and \textup{(W2)} for the trivial group, whose periodization is the identity. Then
+$\mathcal V_sg=\ue^{-is/(2\hbar)}\cU(-s)\bigl(\ue^{i\varphi/\hbar}S(s)g\bigr)$ is a product of unitary operators of $L^2(\Hb)$, so
+$\norm{\mathcal V_{s_1}a_{\mathbf s}}=\norm{a_{\mathbf s}}$, and Lemma~\ref{lem:wb}(ii) with $r=\alpha$ and $r'=0$ gives
+\eqref{eq:cover-integrand} with $\mathcal H=\norm{\ue^{\alpha\Lambda}a}$.
+
+(ii) Take $\varpi=X_0^\lambda$, which satisfies \textup{(W1)} and \textup{(W2)} (Section~\ref{subsec:dd-surf}), and put
+$\mathcal H:=2^\lambda P_\Gamma(2\lambda)^{1/2}B_\beta\,\ue^{\lambda t}\pwNorm a$. By the definition of $\mathcal V_s$, Lemma~\ref{lem:t2}
+with $\sigma=\lambda$ and $\theta=\varphi/\hbar$, the inequality $X_0^\lambda\le X_0^\beta$, $s_1\le t$, and Lemma~\ref{lem:wb}(i) with the
+empty word,
+\begin{align*}
+\norm{\mathcal V_{s_1}a_{\mathbf s}}=\norm{[\ue^{i\varphi/\hbar}S(s_1)a_{\mathbf s}]_\Gamma}
+&\le2^\lambda P_\Gamma(2\lambda)^{1/2}\ue^{\lambda t}\norm{X_0^\beta a_{\mathbf s}}\\
+&\le C_3^{N+K+1}(2N)!\,(2K+2)!\,\alpha^{-(2K+2)}(\alpha\hbar)^{-2N}\mathcal H,
+\end{align*}
+which is \eqref{eq:cover-integrand}.
 \end{proof}
