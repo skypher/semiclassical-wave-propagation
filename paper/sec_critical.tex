@@ -106,11 +106,10 @@ $\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=C_\Lambda\,\ue^{C_{\Lambda_\et
 $\beta>\tfrac12$, $\osomc\le\ue^{d/2}(1+d/\log2)\le C_\beta\,\ue^{\beta\langle d\rangle}$.
 \end{proof}
 
-For the derivative bounds write $c_H:=1+4/\ue$, the constant in the profile bound of Lemma~\ref{os:prof}(iii).
-
 \begin{lemma}[words of the shifted Poisson semigroup at a bounded weight]\label{os:words}
 Let $\eta\ge\tfrac12$ and $\rho\ge0$ with $2(\rho+\tfrac12)^2<\eta^2$, and let $W$ be a bounded weight (Section~\ref{app:ws}) with
-$(X\log W)^2+(Y\log W)^2\le\rho^2$. Put $\mu:=\eta^2-\tfrac14$ and $C_5:=2\ue\,c_H$.
+$(X\log W)^2+(Y\log W)^2\le\rho^2$. Put $\mu:=\eta^2-\tfrac14$, and let $c_H$ be the constant of Lemma~\ref{os:prof}(iii). There is an
+absolute constant $C_5\ge1$ such that the following hold.
 \begin{itemize}
 \item[(a)] For $\tau,s>0$ and $u\in L^2$:
 \[
@@ -153,8 +152,8 @@ and therefore
 \[
 \mathsf A_{k+1,j}\le\mathsf B_{k+1,j}\le(2k+2\rho)\mathsf A_{k,j}+(\mathsf A_{k,j}\mathsf A_{k,j+1})^{1/2}.
 \]
-We claim $\mathsf A_{k,j}\le\sqrt2\,(4+2\rho)^k(C_5/\sigma)^{k+2j}(k+2j)!\,\norm{Wh}$ for all $k,j\ge0$. For $k=0$ this is (a), because
-$(4jc_H/\sigma)^{2j}\le(2\ue c_H/\sigma)^{2j}(2j)!$. If it holds for $k$ and all $j$, then with $n=k+2j$, using $(n!\,(n+2)!)^{1/2}\le\sqrt2\,(n+1)!$,
+Put $C_5:=2\ue\,c_H$, so that $C_5\ge1$. We claim that
+$\mathsf A_{k,j}\le\sqrt2\,(4+2\rho)^k(C_5/\sigma)^{k+2j}(k+2j)!\,\norm{Wh}$ for all $k,j\ge0$. For $k=0$ this is (a), because $(4jc_H/\sigma)^{2j}\le(2\ue c_H/\sigma)^{2j}(2j)!$. If it holds for $k$ and all $j$, then with $n=k+2j$, using $(n!\,(n+2)!)^{1/2}\le\sqrt2\,(n+1)!$,
 $(2k+2\rho)\,n!\le(2+2\rho)(n+1)!$ and $(C_5/\sigma)^n\le(C_5/\sigma)^{n+1}/C_5$,
 \[
 \mathsf A_{k+1,j}\le\sqrt2\,(4+2\rho)^k(C_5/\sigma)^{n+1}(n+1)!\,\bigl((2+2\rho)/C_5+\sqrt2\bigr)\norm{Wh},

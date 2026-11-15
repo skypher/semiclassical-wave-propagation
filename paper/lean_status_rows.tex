@@ -21,13 +21,12 @@ Lemma~\ref{lem:surf-lap} & L & \lean{SurfW.surf_lap}\\
 Lemma~\ref{lem:surf-duh} & L & \lean{SurfW.surf_duhamel}\\
 Corollary~\ref{cor:surf-dyson} & L & \lean{SurfW.surf_dyson}\\
 Proposition~\ref{prop:dd-id} & L & \lean{dd_D12_simplex}, \lean{SurfW.surf_D4}, \lean{SurfW.surf_D4_bound}\\
-Lemma~\ref{os:indep} & L & \lean{surfV_indep}\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:analytic}: analytic and weighted propagation estimates}}\\
 Lemma~\ref{lem:ell} & L & \lean{inner_X_left}, \lean{inner_Y_left}, \lean{elliptic_identity}, \lean{elliptic_estimate}\\
-Lemma~\ref{lem:clip} & L & \lean{norm_Rplus_clip_one}, \lean{norm_Rminus_le_one}, \lean{im_bound_clip_one}\\
-Proposition~\ref{prop:a0} & L & \lean{prop_a0_printed}\\
-Lemma~\ref{lem:expw} & L & \lean{exp_of_words}\\
-Lemma~\ref{lem:mw} & L & \lean{lem_m_weak_one}\\
+Lemma~\ref{lem:clip} & L & \lean{clip_paper} (from \lean{norm_Rplus_clip_one}, \lean{norm_Rminus_le_one}, \lean{im_bound_clip_one})\\
+Proposition~\ref{prop:a0} & L & \lean{prop_a0_paper} (from \lean{prop_a0_printed})\\
+Lemma~\ref{lem:expw} & L & \lean{exp_of_words_paper} (from \lean{exp_of_words})\\
+Lemma~\ref{lem:mw} & L & \lean{lem_m_weak_paper} (from \lean{lem_m_weak_one})\\
 Lemma~\ref{lem:wordphi} & L & \lean{wb_comp}\\
 Lemma~\ref{lem:m2w} & L & \lean{swX_le_swD}\\
 Lemma~\ref{lem:wave} & L & \lean{wave_weight}, \lean{wave_Bx'}, \lean{wave_By'}; \lean{wave_weightD}\\
@@ -38,13 +37,12 @@ Lemma~\ref{lem:path} & L & \lean{WOps.pathG_eq}, \lean{norm_pathH_le}, \lean{nor
 Lemma~\ref{lem:fc} & L & \lean{lem_fc_one}\\
 Lemma~\ref{lem:wc} & L & \lean{lem_wc_one}\\
 Lemma~\ref{lem:lift} & L & \lean{allWords_of_exp}, \lean{patch_smooth}, \lean{glue_smooth}, \lean{lift1}, \lean{lift1D}\\
-Lemma~\ref{lem:fdb} & L & (a) \lean{word_X0_le}; (b) \lean{fdb}\\
-Lemma~\ref{lem:sc} & L & \lean{lem_sc_one}\\
-Lemma~\ref{lem:expand} & L & (i) \lean{bP_inv}; (ii) \lean{sca}\\
-Lemma~\ref{lem:wb} & L & \lean{lem_wb_w_one}, \lean{lem_wb_u_one}\\
+Lemma~\ref{lem:fdb} & L & (a) \lean{word_X0_le}; (b) \lean{fdb_paper} (from \lean{fdb})\\
+Lemma~\ref{lem:sc} & L & \lean{lem_sc_paper} (from \lean{lem_sc_one})\\
+Lemma~\ref{lem:expand} & L & \lean{bP_inv}\\
+Lemma~\ref{lem:wb} & L & \lean{lem_wb_w_one}, \lean{lem_wb_u_one} (the factorial count of the proof is \lean{sca})\\
 Lemma~\ref{lem:unw} & L & \lean{unw_err}\\
 Lemma~\ref{lem:collect} & L & \lean{collect_remainder}; parts \lean{collect_absorb}, \lean{remF_zero_le}, \lean{collect_final}\\
-Lemma~\ref{lem:radius} & L & (i) \lean{ddBound_radius}; (ii) \lean{window_radius}\\
 Proposition~\ref{prop:cover} & P & estimate without the mollifier; not used by the theorems; self-checked, not formalized\\
 Corollary~\ref{cor:cover-trunc} & P & optimal truncation from Proposition~\ref{prop:cover}(ii); not used by the theorems; self-checked, not formalized\\
 \multicolumn{3}{@{}l}{\emph{Section~\ref{sec:companion}: power-weight and reversed-weight approximation}}\\
@@ -57,7 +55,7 @@ Lemma~\ref{os:int} & L & \lean{wI0}, \lean{wI2}\\
 Lemma~\ref{os:prof} & L & \lean{gTauM_symbol}, \lean{gTauM_expmass}, \lean{hSM_symbol}, \lean{hSM_expmass}, \lean{gTau_TailB}, \lean{bProf_symbol}, \lean{bProf_TailB}\\
 Corollary~\ref{os:cwp} & L & \lean{poisson_cw}, \lean{B_cw}\\
 Proposition~\ref{os:data} & L & \lean{os_data_printed}, \lean{os_data_printed_orig}\\
-Lemma~\ref{os:words} & L & \lean{poissonM_w}, \lean{lamM_w}, \lean{lamM_pow_w}, \lean{words_rec}, \lean{words_w}\\
+Lemma~\ref{os:words} & L & (a) \lean{poissonM_w}, \lean{lamM_w}, \lean{lamM_pow_w}; (b) \lean{words_paper} (from \lean{words_rec}, \lean{words_w})\\
 Lemma~\ref{os:transfer} & L & \lean{transfer} (there for the weight $X_0^\beta$ with any $\beta>\tfrac12$; this is the case $\beta=1$)\\
 Proposition~\ref{os:p1} & L & \lean{poincare_omP}, \lean{perio_weighted_gen} (the field \lean{perio_bd} of \lean{surfW_printed}), \lean{critSup_eq}, \lean{mS_printed_sharp}, \lean{norm_surfV_printed_le}, \lean{mS_printed_le}\\
 Proposition~\ref{pc:core} & L & \lean{dd_core_om} (the bound for the Dyson remainder of Proposition~\ref{prop:dd-id}(ii); the instance of \lean{dd_core_pc} for the weight $\omega$), with \lean{SurfW.surf_D4} (the error equals that remainder)\\

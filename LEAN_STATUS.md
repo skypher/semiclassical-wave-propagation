@@ -39,17 +39,16 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 2.8 (`lem:surf-duh`) | L | `SurfW.surf_duhamel` |
 | Corollary 2.9 (`cor:surf-dyson`) | L | `SurfW.surf_dyson` |
 | Proposition 2.10 (`prop:dd-id`) | L | `dd_D12_simplex`, `SurfW.surf_D4`, `SurfW.surf_D4_bound` |
-| Lemma 2.11 (`os:indep`) | L | `surfV_indep` |
 
 ## Section 3 (`sec:analytic`): analytic and weighted propagation estimates
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Lemma 3.1 (`lem:ell`) | L | `inner_X_left`, `inner_Y_left`, `elliptic_identity`, `elliptic_estimate` |
-| Lemma 3.12 (`lem:clip`) | L | `norm_Rplus_clip_one`, `norm_Rminus_le_one`, `im_bound_clip_one` |
-| Proposition 3.13 (`prop:a0`) | L | `prop_a0_printed` |
-| Lemma 3.7 (`lem:expw`) | L | `exp_of_words` |
-| Lemma 3.8 (`lem:mw`) | L | `lem_m_weak_one` |
+| Lemma 3.12 (`lem:clip`) | L | `clip_paper` (from `norm_Rplus_clip_one`, `norm_Rminus_le_one`, `im_bound_clip_one`) |
+| Proposition 3.13 (`prop:a0`) | L | `prop_a0_paper` (from `prop_a0_printed`) |
+| Lemma 3.7 (`lem:expw`) | L | `exp_of_words_paper` (from `exp_of_words`) |
+| Lemma 3.8 (`lem:mw`) | L | `lem_m_weak_paper` (from `lem_m_weak_one`) |
 | Lemma 3.9 (`lem:wordphi`) | L | `wb_comp` |
 | Lemma 3.10 (`lem:m2w`) | L | `swX_le_swD` |
 | Lemma 3.14 (`lem:wave`) | L | `wave_weight`, `wave_Bx'`, `wave_By'`; `wave_weightD` |
@@ -60,13 +59,12 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 3.2 (`lem:fc`) | L | `lem_fc_one` |
 | Lemma 3.3 (`lem:wc`) | L | `lem_wc_one` |
 | Lemma 3.4 (`lem:lift`) | L | `allWords_of_exp`, `patch_smooth`, `glue_smooth`, `lift1`, `lift1D` |
-| Lemma 3.5 (`lem:fdb`) | L | (a) `word_X0_le`; (b) `fdb` |
-| Lemma 3.6 (`lem:sc`) | L | `lem_sc_one` |
-| Lemma 3.20 (`lem:expand`) | L | (i) `bP_inv`; (ii) `sca` |
-| Lemma 3.21 (`lem:wb`) | L | `lem_wb_w_one`, `lem_wb_u_one` |
+| Lemma 3.5 (`lem:fdb`) | L | (a) `word_X0_le`; (b) `fdb_paper` (from `fdb`) |
+| Lemma 3.6 (`lem:sc`) | L | `lem_sc_paper` (from `lem_sc_one`) |
+| Lemma 3.20 (`lem:expand`) | L | `bP_inv` |
+| Lemma 3.21 (`lem:wb`) | L | `lem_wb_w_one`, `lem_wb_u_one` (the factorial count of the proof is `sca`) |
 | Lemma 3.22 (`lem:unw`) | L | `unw_err` |
 | Lemma 3.23 (`lem:collect`) | L | `collect_remainder`; parts `collect_absorb`, `remF_zero_le`, `collect_final` |
-| Lemma 3.25 (`lem:radius`) | L | (i) `ddBound_radius`; (ii) `window_radius` |
 | Proposition 3.26 (`prop:cover`) | P | estimate without the mollifier; not used by the theorems; self-checked, not formalized |
 | Corollary 3.28 (`cor:cover-trunc`) | P | optimal truncation from Proposition 3.26 (`prop:cover`)(ii); not used by the theorems; self-checked, not formalized |
 
@@ -87,7 +85,7 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma A.2 (`os:prof`) | L | `gTauM_symbol`, `gTauM_expmass`, `hSM_symbol`, `hSM_expmass`, `gTau_TailB`, `bProf_symbol`, `bProf_TailB` |
 | Corollary 5.5 (`os:cwp`) | L | `poisson_cw`, `B_cw` |
 | Proposition 5.6 (`os:data`) | L | `os_data_printed`, `os_data_printed_orig` |
-| Lemma 5.7 (`os:words`) | L | `poissonM_w`, `lamM_w`, `lamM_pow_w`, `words_rec`, `words_w` |
+| Lemma 5.7 (`os:words`) | L | (a) `poissonM_w`, `lamM_w`, `lamM_pow_w`; (b) `words_paper` (from `words_rec`, `words_w`) |
 | Lemma 5.8 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
 | Proposition 5.9 (`os:p1`) | L | `poincare_omP`, `perio_weighted_gen` (the field `perio_bd` of `surfW_printed`), `critSup_eq`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
 | Proposition 5.10 (`pc:core`) | L | `dd_core_om` (the bound for the Dyson remainder of Proposition 2.10 (`prop:dd-id`)(ii); the instance of `dd_core_pc` for the weight `\omega`), with `SurfW.surf_D4` (the error equals that remainder) |

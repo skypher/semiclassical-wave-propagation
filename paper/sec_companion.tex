@@ -120,7 +120,7 @@ Each step trades analytic radius for smallness or for a bound. The defect is exp
 radius $r_2$ (Lemma~\ref{lem:unw}, with $r_2/(8\varepsilon)=c_M\xi/8$). The mollified flow keeps an analytic norm while the radius
 shrinks from $r_1$ to $r_2$ (Proposition~\ref{prop:a0}; here $(r_1-r_2)/r_1=\tfrac13$). The derivatives in $a_{\mathbf s}$ cost the
 factorials of Lemma~\ref{lem:wb}(ii), applied at the radius $r_\alpha=c_M\alpha$ and written with $G=C_3c_M^{-2}$. Finally
-Lemma~\ref{lem:mw} removes the weight: $\norm{\ue^{r_\alpha\Lambda}a}\le C_*B_\beta\pwNorm a$.
+Lemma~\ref{lem:mw} removes the weight: $\norm{\ue^{r_\alpha\Lambda}a}\le C_MB_\beta\pwNorm a$.
 
 \emph{Combining the factors.} Since $F_0\le F_2$ and $\varepsilon,\alpha\le1$, the H\"older split gives
 $\norm{X_0^\lambda\mathfrak d(t')}\le C\varepsilon^{-3}\alpha^{-4}\ue^{-c_\xi\xi}F_2$ with $c_\xi:=(1-\theta)c_M/8$, and integrating over
@@ -151,11 +151,10 @@ Lemma~\ref{lem:t2} in Steps~1 and~2, with $2\lambda=\beta+\tfrac12$, and the red
 (Lemma~\ref{lem:base}(iii)); all other inputs are estimates on $\Hb$. Hence $\delta$ does not depend on $\Gamma$ or $x_0$, and $C$
 depends on them only through $P_\Gamma(\beta+\tfrac12)$.
 
-\medskip\noindent\emph{Radii $1<\alpha\le A$.} The power-weight norm increases with the radius, since
-$\ue^{\Lambda}=\ue^{-(\alpha-1)\Lambda}\ue^{\alpha\Lambda}$ and $\ue^{-\tau\Lambda}$ is a contraction for $\tau\ge0$. Apply the case already proved
-at the radius $1$ with $1$ in place of $\kappa$ (then $1\ge\hbar$), and let $\bar C,\bar\delta$ be its constants. Lemma~\ref{lem:radius} with
-$\alpha_0=1$ and $\alpha_1=A$ shows that the bound holds for $1<\alpha\le A$ with $\bar\delta A^{-1/2}$ and $A^2\bar C$; take the smaller of the two values of $\delta$ and the larger of the two values of $C$. Both
-cases have the stated dependence on $\Gamma$ and $x_0$.
+\medskip\noindent\emph{Radii $1<\alpha\le A$.} The power-weight norm does not decrease as the radius grows, since
+$\ue^{\Lambda}=\ue^{-(\alpha-1)\Lambda}\ue^{\alpha\Lambda}$ and $\ue^{-\tau\Lambda}$ is a contraction for $\tau\ge0$. So the change of radius
+(Section~\ref{subsec:dd-wb}, after \eqref{eq:radius}) with $\alpha_0=1$ extends the case already proved to $1<\alpha\le A$; take the smaller of the
+two values of $\delta$ and the larger of the two values of $C$. Both cases have the stated dependence on $\Gamma$ and $x_0$.
 \end{proof}
 
 
@@ -170,16 +169,14 @@ $c_0=c_0(\beta)\in(0,1]$.
 \emph{Radii $0<\alpha\le\tfrac12$.} Let $c_0$ and $C'$ be the constants $c_0$ and $C$ of Lemma~\ref{lem:m2w}. If $\alpha\le\tfrac12$ and
 $\alpha^3\ge\kappa\hbar$, then $\bar\alpha:=c_0\alpha\le c_0/2$, $\bar\alpha^3\ge c_0^3\kappa\hbar$ and
 $\norm{\ue^{\bar\alpha\Lambda}X_0^\beta a}\le C'\swNorm a$. Apply Theorem~\ref{thm:dd-appx} with $c_0/2$, $c_0^3\kappa$ and $\bar\alpha$
-in place of $A$, $\kappa$ and $\alpha$, and let $C_{\rm pw},\delta_{\rm pw}$ be its constants. Lemma~\ref{lem:radius}, with $\bar\alpha$ and
-$\alpha$ in the roles of $\alpha_0$ and $\alpha_1$ (so $\alpha_1/\alpha_0=1/c_0$), shows that the bound holds for $\alpha\le\tfrac12$ with the constants
-$\delta_{\rm s}:=c_0^{1/2}\delta_{\rm pw}$ and $C_{\rm s}:=C_{\rm pw}\,c_0^{-2}\max(1,C')$.
+in place of $A$, $\kappa$ and $\alpha$, and let $C_{\rm pw},\delta_{\rm pw}$ be its constants. The change of radius \eqref{eq:radius}, with
+$\bar\alpha$ and $\alpha$ in the roles of $\alpha_0$ and $\alpha_1$ (so $\alpha_1/\alpha_0=1/c_0$) and $B=\max(1,C')$, shows that the bound holds for
+$\alpha\le\tfrac12$ with the constants $\delta_{\rm s}:=c_0^{1/2}\delta_{\rm pw}$ and $C_{\rm s}:=C_{\rm pw}\,c_0^{-2}\max(1,C')$.
 
-\emph{Radii $\tfrac12<\alpha\le A$.} The reversed-weight norm increases with the radius: $\ue^{\Lambda/2}=\ue^{-(\alpha-1/2)\Lambda}\ue^{\alpha\Lambda}$,
-and $\ue^{-\tau\Lambda}$ is a contraction for $\tau\ge0$, so the norm of $a$ at the radius $\tfrac12$ is at most $\swNorm a$. Apply the first
-case at the radius $\tfrac12$ with $\tfrac18$ in place of $\kappa$ (then $(\tfrac12)^3\ge\tfrac18\hbar$ for $\hbar\le1$), and let $C_{1/2},\delta_{1/2}$ be its
-constants. Lemma~\ref{lem:radius} with $\alpha_0=\tfrac12$ and $\alpha_1=A$ shows that the bound holds for
-$\tfrac12<\alpha\le A$ with $\delta_{1/2}(2A)^{-1/2}$ and $(2A)^2C_{1/2}$. Take $\delta:=\min(\delta_{\rm s},\delta_{1/2}(2A)^{-1/2})$ and
-$C:=\max(C_{\rm s},(2A)^2C_{1/2})$.
+\emph{Radii $\tfrac12<\alpha\le A$.} The reversed-weight norm does not decrease as the radius grows:
+$\ue^{\Lambda/2}=\ue^{-(\alpha-1/2)\Lambda}\ue^{\alpha\Lambda}$, and $\ue^{-\tau\Lambda}$ is a contraction for $\tau\ge0$. So the change of radius
+(after \eqref{eq:radius}) with $\alpha_0=\tfrac12$ extends the first case to $\tfrac12<\alpha\le A$; take the smaller of the two values of $\delta$
+and the larger of the two values of $C$.
 
 In both cases the group and the base point enter only through Theorem~\ref{thm:dd-appx}, whose $\delta_{\rm pw}$ does not depend
 on them and whose $C_{\rm pw}$ depends on them only through $P_\Gamma(\beta+\tfrac12)$; Lemma~\ref{lem:m2w} holds for every base

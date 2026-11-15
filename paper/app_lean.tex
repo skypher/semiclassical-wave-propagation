@@ -1,6 +1,6 @@
 % Formalization status. \leanrepo is the public repository; \leancommit is a commit of it.
 \providecommand{\lean}[1]{\texttt{\detokenize{#1}}}
-\providecommand{\leancommit}{\texttt{65a7800}}
+\providecommand{\leancommit}{\texttt{21597dc}}
 \providecommand{\leanrepo}{\url{https://github.com/skypher/semiclassical-wave-propagation}}
 
 \section{Formalization}\label{app:lean}
@@ -38,11 +38,15 @@ for each bound on the periodization constant ($P^{\mathrm{cr}}_\Gamma$ is \lean{
 point after $C$ (\lean{pcmain_unif}, \lean{thm14Rmain_unif}, \lean{thm14R_all}). For a single group, with $P=P^{\mathrm{cr}}_\Gamma$,
 Theorem~\ref{pc:main} is \lean{pcmain_all}; Theorem~\ref{ev:mod} and the original-norm part of Corollary~\ref{ev:transfer} use this form.
 In the pointwise statements for positive injectivity radius, $\delta$ is chosen before $r_0$.
-\item \emph{Named constants.} The constants that statements fix or take from other statements have the same values in the
-formal statements: $\rho_*$, $C_2$, $C_*=\tfrac{32}5$, $c_M$, $A_{\mathrm e}$, $A_{\mathrm o}$, $c_A$, $C_3=480\max(C_2,4\ue C_1)^2$, $c_H$, $C_5$, and
-the factor $\ue^{1/2}$ of Corollary~\ref{pc:cor15}. Where a statement only asserts that a constant exists, so does the formal statement, and its proof may
-give a different admissible value; Table~\ref{tab:constants} lists the values of the printed proofs (for instance $C_4$, $C_{\mathrm{fl}}$,
-$\mathcal K_\lambda$, $B_0$, $B_\eta$).
+\item \emph{Named constants.} Where a statement fixes a constant, the formal statement has the same value; this concerns the factor
+$\ue^{1/2}$ of Corollary~\ref{pc:cor15} and the constant $c_H$ of Lemma~\ref{os:prof}(iii). Where a statement only asserts that a constant exists,
+so does the formal statement, and its proof may give a different admissible value. For Lemmas~\ref{lem:fdb}(b), \ref{lem:sc}, \ref{lem:expw},
+\ref{lem:mw} and~\ref{lem:clip}, Proposition~\ref{prop:a0} and Lemma~\ref{os:words}(b) the statements in this form are \lean{fdb_paper},
+\lean{lem_sc_paper}, \lean{exp_of_words_paper}, \lean{lem_m_weak_paper}, \lean{clip_paper}, \lean{prop_a0_paper} and \lean{words_paper}; the
+development itself uses the explicit values $\rho_*=\tfrac14\log(3/2)$,
+$C_2=\max(\ue C_1,1/\rho_*)$, $C_*=\tfrac{32}5$, $c_M=1/(4C_2)$, $C_M=C_*$, the integrals $A_{\mathrm e}$, $A_{\mathrm o}$ of the proof of
+Lemma~\ref{lem:clip}, $c_A=(1+32A_{\mathrm e}A_{\mathrm o})^{-1}$, $C_3=480\max(C_2,4\ue C_1)^2$ and $C_5=2\ue\,c_H$.
+Table~\ref{tab:constants} lists the values of the printed proofs (for instance $C_{\mathrm{fl}}$, $B_0$, $B_\eta$).
 \item \emph{The optimal-truncation corollary.} Corollary~\ref{pc:cor15} and its power-weight form are formalized for every pair of
 constants $C\ge1$, $\delta>0$ for which the estimate of their theorem holds on the group at hand (\lean{pccor15_tied},
 \lean{cor15Rmain_tiedG}, \lean{cor15R_tiedA}), with the window $\delta_1=\min(\delta,\kappa^{1/2}/\max(1,C))$, which equals
@@ -152,18 +156,18 @@ of Section~\ref{app:ws}, $c$ and $\eta$ those of Section~\ref{subsec:pc-weights}
 Constant & Fixed in & Depends on\\
 \hline
 $C_1$ & Lemma~\ref{lem:fc} & absolute\\
-$B_\beta$; $\rho_*=\tfrac14\log(3/2)$ & Lemma~\ref{lem:fdb} & $\beta$; absolute\\
-$C_2=\max(\ue C_1,1/\rho_*)$ & Lemma~\ref{lem:sc} & absolute\\
-$C_*=\tfrac{32}5$ & Lemma~\ref{lem:expw} & absolute\\
-$c_M=1/(4\max(C_2,1))$ & Lemma~\ref{lem:mw} & absolute\\
+$B_\beta$; $\rho_*$ & Lemma~\ref{lem:fdb} & $\beta$; absolute\\
+$C_2=\max(\ue C_1,1/\rho_*,1)$ & Lemma~\ref{lem:sc} & absolute\\
+$C_*$ & Lemma~\ref{lem:expw} & absolute\\
+$c_M=1/(4C_2)$; $C_M=C_*$ & Lemma~\ref{lem:mw} & absolute\\
 $c_0$ & Lemma~\ref{lem:m2w} & $\beta$\\
 $A_{\mathrm e}$, $A_{\mathrm o}$ & Lemma~\ref{lem:clip} & absolute\\
 $c_A=(1+32A_{\mathrm e}A_{\mathrm o})^{-1}$ & Proposition~\ref{prop:a0} & absolute\\
-$\mathcal K_\lambda=8\lambda^2+7\lambda$ & Section~\ref{app:ws} & $\lambda$\\
+$\mathcal K_\lambda$ & Section~\ref{app:ws} & $\lambda$\\
 $C_W$ & Lemma~\ref{lem:wmoll} & $\rho$, $\mathcal K$\\
 $C_{\mathrm{fl}}=(4\rho+3)C_W^2$; $C_{\mathrm{fl},\lambda}=C_{\mathrm{fl}}(\lambda,\mathcal K_\lambda)$ & Proposition~\ref{prop:ws} & $\rho$, $\mathcal K$; $\lambda$\\
-$C_3=480\max(C_2,4\ue C_1)^2$ & Lemma~\ref{lem:wb} & absolute\\
-$C_4=20+60(1+4C_1)^2$ & Lemma~\ref{lem:unw} & absolute\\
+$C_3$ & Lemma~\ref{lem:wb} & absolute\\
+$C_4$ & Lemma~\ref{lem:unw} & absolute\\
 $C_{\mathrm{cw}}$ & Theorem~\ref{os:cw} & $c$\\
 $C_\Lambda$; $C_{\Lambda_\eta}$ & Corollary~\ref{os:cwp} & $c$; $\eta$, $c$\\
 $C_{\mathrm d}=C_\Lambda\,\ue^{C_{\Lambda_\eta}}$ & Proposition~\ref{os:data} & $\eta$, $c$\\

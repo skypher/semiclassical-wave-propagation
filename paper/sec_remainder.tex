@@ -250,22 +250,6 @@ and Minkowski's inequality give the bound, with $|c_\hbar|^{K+1}=(\hbar/2)^{K+1}
 \end{proof}
 
 The element $\mathcal V_sg$ is defined by the periodization sum; a weight enters only to guarantee, through \textup{(W1)}, that this
-sum converges. The next lemma records that the operators $\mathcal V_s$ obtained from two admissible weights agree where both are
-defined, and compares the two weights used in Section~\ref{sec:printed}.
-
-\begin{lemma}[the quotient propagator does not depend on the weight]\label{os:indep}
-Let $\varpi_1,\varpi_2$ be two weights satisfying \textup{(W1)}, \textup{(W2)}, and let $\mathcal V^{(1)}_s$ and $\mathcal V^{(2)}_s$ be the
-operators
-\[
- \mathcal V_sg=\ue^{-is/(2\hbar)}\cU(-s)[\ue^{i\varphi/\hbar}S(s)g]_\Gamma\in L^2(M)
-\]
-on $L^2_{\varpi_1}$ and on $L^2_{\varpi_2}$, with the periodization given by \textup{(W1)} for the respective weight. Then
-$\mathcal V^{(1)}_sg=\mathcal V^{(2)}_sg$ for every $g\in L^2_{\varpi_1}\cap L^2_{\varpi_2}$. In particular this applies to $\varpi_1=X_0^{\lambda}$ with $\lambda>\tfrac12$ and to the periodization
-weight $\varpi_2=\omega$ of Section~\ref{sec:setup} (Proposition~\ref{os:p1}), and $L^2_{X_0^\lambda}\subset L^2_{\omega}$.
-\end{lemma}
-\begin{proof}
-For both weights the periodization of $\ue^{i\varphi/\hbar}S(s)g$ is the same almost everywhere absolutely convergent sum, by
-\textup{(W1)} and \textup{(W2)}, so the two elements of $L^2(M)$ coincide.
-The inclusion holds because $\omega=X_0^{1/2}(1+\tilde\psi/\log2)^{3/4}\le C_\lambda X_0^\lambda$ for $\lambda>\tfrac12$, since
-$\tilde\psi=\log X_0$.
-\end{proof}
+sum converges absolutely almost everywhere. So two weights $\varpi_1,\varpi_2$ satisfying \textup{(W1)} and \textup{(W2)} give the same element
+$\mathcal V_sg$ for every $g\in L^2_{\varpi_1}\cap L^2_{\varpi_2}$, and a bound for $\mathcal V_sg$ obtained through either weight applies.
+Section~\ref{sec:printed} uses this for the weights $X_0^{3/4}$ and $\omega$.
