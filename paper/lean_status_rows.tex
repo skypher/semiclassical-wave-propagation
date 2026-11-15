@@ -4,6 +4,7 @@
 % Format of a row:  <statement, with \ref{label}> & <L | L$'$ | P> & <\lean{name}, ...; remark>\\
 
 \multicolumn{3}{@{}l}{\emph{Main approximation results}}\\
+Theorem~\ref{thm:L2} & L & \lean{pcL2_all} (Theorem~\ref{pc:main} at $N=0$, from \lean{pcmain_all})\\
 Theorem~\ref{pc:main} & L & \lean{pcmain_unif}; for one group \lean{pcmain_all}, small-radius stage \lean{pcmain_half}\\
 Theorem~\ref{thm:dd14} & L & \lean{thm14Rmain_unif} (uniform in the group and the base point, every bounded range of radii; from \lean{thm14R_unifX}, \lean{swX_le_swD} and \lean{swNormD_mono}); for a fixed base point \lean{thm14Rmain_all}\\
 Corollary~\ref{pc:thm13} & L & (i) original norm: \lean{pcthm13_unif}; reversed-weight norm: \lean{thm13Rmain_unif}; (ii) original norm: \lean{pcthm13_fixed} (from \lean{pcthm13_all}); reversed-weight norm: \lean{thm13R_fixed} (from \lean{thm14Rmain_exp} and \lean{swNormD_mono})\\

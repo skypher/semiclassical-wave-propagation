@@ -36,7 +36,7 @@ suffix \lean{_one}.
 and~\ref{pc:cor16} (with Remark~\ref{rem:pw-cor}) are formalized in the uniform form of the text: $\delta$ is chosen first, then $C$
 for each bound on the periodization constant ($P^{\mathrm{cr}}_\Gamma$ is \lean{critSup}, $P_\Gamma(\sigma)$ is \lean{poincareSup}), and the group and the base
 point after $C$ (\lean{pcmain_unif}, \lean{thm14Rmain_unif}, \lean{thm14R_all}). For a single group, with $P=P^{\mathrm{cr}}_\Gamma$,
-Theorem~\ref{pc:main} is \lean{pcmain_all}; Theorem~\ref{ev:mod} and the original-norm part of Corollary~\ref{ev:transfer} use this form.
+Theorem~\ref{pc:main} is \lean{pcmain_all}, and Theorem~\ref{thm:L2}, stated for one group and one base point, is \lean{pcL2_all}; Theorem~\ref{ev:mod} and the original-norm part of Corollary~\ref{ev:transfer} use this form.
 In the pointwise statements for positive injectivity radius, $\delta$ is chosen before $r_0$.
 \item \emph{Named constants.} Where a statement fixes a constant, the formal statement has the same value; this concerns the factor
 $\ue^{1/2}$ of Corollary~\ref{pc:cor15} and the constant $c_H$ of Lemma~\ref{os:prof}(iii). Where a statement only asserts that a constant exists,
@@ -116,6 +116,7 @@ Proposition~\ref{prop:cover} and Corollary~\ref{cor:cover-trunc}, the estimate w
 Statement & Lean theorem or scope\\
 \hline
 \multicolumn{2}{@{}l}{\emph{Direct counterparts in the reading above}}\\
+Theorem~\ref{thm:L2} & \lean{pcL2_all}\\
 Theorem~\ref{pc:main} & \lean{pcmain_unif}; for one group \lean{pcmain_all}\\
 Theorem~\ref{thm:dd14} & \lean{thm14Rmain_unif}\\
 Corollary~\ref{pc:thm13} & (i) \lean{pcthm13_unif}, \lean{thm13Rmain_unif}; (ii) \lean{pcthm13_fixed}, \lean{thm13R_fixed}\\

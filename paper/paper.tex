@@ -56,6 +56,9 @@
 \newtheorem{proposition}[equation]{Proposition}
 \newtheorem{lemma}[equation]{Lemma}
 \newtheorem{corollary}[equation]{Corollary}
+% The headline statement of the introduction is lettered, outside the shared counter.
+\newtheorem{lettered}{Theorem}
+\renewcommand{\thelettered}{\Alph{lettered}}
 \theoremstyle{remark}
 \newtheorem{remark}[equation]{Remark}
 
@@ -166,29 +169,45 @@ amplitudes; Dyson expansion.
 \section{Introduction}\label{sec:intro}
 
 Semiclassical approximations describe the solutions of the Schr\"odinger equation
-$i\hbar\,\partial_t\psi=-\tfrac{\hbar^2}{2}\Delta\psi$ for small $\hbar$ through the geodesic flow. For hyperbolic flows, coherent-state and Egorov estimates typically control propagation up to the Ehrenfest time
-$T\sim\lambda^{-1}\log(1/\hbar)$, where $\lambda$ is a Lyapunov exponent \cite{CR97,HJ00,BGP99,BR02}. The results below concern a special family
-of Lagrangian states on hyperbolic quotients; Section~\ref{subsec:context} places them in the wider propagation
-and equidistribution literature.
+$i\hbar\,\partial_t\psi=-\tfrac{\hbar^2}{2}\Delta\psi$ for small $\hbar$ through the geodesic flow. How long do they stay
+accurate when the flow is chaotic? For hyperbolic flows, coherent-state and Egorov estimates control the approximation up to
+the Ehrenfest time $T\sim\lambda^{-1}\log(1/\hbar)$, where $\lambda$ is a Lyapunov exponent \cite{CR97,HJ00,BGP99,BR02}: the time
+at which the expansion $\ue^{\lambda t}$ of the flow magnifies the scale $\hbar$ to order one. In numerical studies of the
+stadium billiard, however, Tomsovic and Heller \cite{TH91,TH93} found semiclassical approximations that remain accurate well
+beyond the Ehrenfest time. The obstacle to a proof, as Schubert \cite{S} describes it, is that the approximation is then a
+sum of oscillating terms whose number grows exponentially with time, and the error terms are of the same nature.
 
-In 2007 R.~Schubert \cite{S} proposed that for one family of states the error of the semiclassical approximation can be
-controlled much longer. On a hyperbolic surface $M=\Gamma\backslash\Hb$ he considered Lagrangian states $a\,\ue^{i\varphi_b/\hbar}$
+In 2007 R.~Schubert \cite{S} proposed that for one family of states on hyperbolic surfaces $M=\Gamma\backslash\Hb$ the error
+can be controlled far beyond the Ehrenfest time. He considered Lagrangian states $a\,\ue^{i\varphi_b/\hbar}$
 whose phase $\varphi_b$ is attached to a boundary point $b$, so that the state is carried by an unstable
 manifold of the geodesic flow. For such a state the evolution on the universal cover factorizes exactly
 into the transport along the flow and a unitary dispersive part whose generator carries a factor $\hbar$
 (equation \eqref{eq:factor} below). Expanding the dispersive part to order $K$ gives an explicit approximation
 $u^{(K)}(t)$, and the preprint \cite{S} states that its periodization $u^{(K)}(t)_\Gamma$ is accurate in $L^2(M)$
-up to times of order $\hbar^{-1/2}$, with specified dependence on the expansion and derivative orders, for amplitudes
-measured by an analytic norm with an exponential spatial weight. The preprint was withdrawn by its author in 2011 for
-``a gap in the proof of the dispersive estimates''.
+up to times of order $\hbar^{-1/2}$, for amplitudes measured by an analytic norm with an exponential spatial weight. The
+preprint was withdrawn by its author in 2011 for ``a gap in the proof of the dispersive estimates''.
 
-Theorems~\ref{pc:main} and~\ref{thm:dd14} establish these $L^2$ approximations on every Fuchsian quotient, for Schubert's
-amplitude norm and for the norm with its two weights in the other order. In their simplest form they say that the periodized
-approximation of order $K$ has $L^2$ error at most $C^{K+1}K!\,(\hbar t/\alpha^2)^{K+1}$ times the amplitude norm for all
-$t\le\delta(\alpha/\hbar)^{1/2}$, where $\alpha$ is the analytic radius of the amplitude and $\alpha^3\ge\kappa\hbar$. Section~\ref{subsec:corrections} corrects two
-bounds of the preprint. The factorization, the approximations $u^{(K)}$, the analytic norms and the mollified flow are
-Schubert's. Section~\ref{subsec:method} describes what the proof adds, and Appendix~\ref{sec:changes} compares the results
-with \cite{S} in detail.
+We prove these approximations on every Fuchsian quotient. In its simplest form, Theorem~\ref{thm:L2}, the result says that
+the periodized approximation of order $K$ has $L^2$ error at most $C^{K+1}K!\,(\hbar t/\alpha^2)^{K+1}$ times the amplitude norm
+for all $t\le\delta(\alpha/\hbar)^{1/2}$, where $\alpha$ is the analytic radius of the amplitude and $\alpha^3\ge\kappa\hbar$. For
+fixed $\alpha$ the approximation is therefore accurate up to times of order $\hbar^{-1/2}$, its leading error is of order
+$\hbar t$, and an expansion order $K$ of order $\alpha^2/(\hbar t)$ makes the error exponentially small
+(Corollary~\ref{pc:cor15}). Theorems~\ref{pc:main} and~\ref{thm:dd14} add derivatives of the error, uniformity in the group,
+and the norm with its two weights in the other order. Section~\ref{subsec:corrections} corrects two bounds of the preprint.
+The factorization, the approximations $u^{(K)}$, the analytic norms and the mollified flow are Schubert's.
+Section~\ref{subsec:method} describes what the proof adds, and Appendix~\ref{sec:changes} compares the results with \cite{S}
+in detail.
+
+The time scale $(\alpha/\hbar)^{1/2}$ comes from a balance of two effects. On the universal cover the approximation is accurate
+for as long as $\hbar t$ is small compared with $\alpha^2$; the window is the price of passing to the quotient. The transport
+stretches the state by the factor $\ue^s$ along the unstable horocycles, and periodizing the state transported for a time $s$
+costs a factor $\ue^{\lambda s}$ with $\lambda>\tfrac12$. We avoid this cost by running the dispersive flow back to time $0$ before
+periodizing. That flow is not known to preserve the spatial weights that periodization needs, so we use the flow mollified at
+a scale $\varepsilon$, which preserves them for times up to order $\varepsilon/\hbar$. The price is a mollification error, which
+for amplitudes of analytic radius $\alpha$ is of size $\ue^{-c\alpha/\varepsilon}$ and has to pay the factor $\ue^{\lambda s}$. Both
+requirements are met when $\varepsilon$ is of order $(\alpha\hbar)^{1/2}$: then $\varepsilon/\hbar$ and $\alpha/\varepsilon$ are both of
+order $(\alpha/\hbar)^{1/2}$, the length of the window. Section~\ref{subsec:simplest} carries out this argument in the simplest
+case.
 
 Accuracy of the approximation does not by itself imply classical behaviour of expectation values.
 For suitable states attached to the cusp of the modular surface, Theorem~\ref{ev:mod} shows that the mass leaves every
@@ -330,11 +349,24 @@ x_0 & base point of the weights & m(z),\ H & local multiplicity (Section~\ref{se
 \end{center}
 
 \subsection{Main results}\label{sec:repair}\label{subsec:pc-thm}
-The principal theorem is the estimate stated in words at the beginning of this section, for Schubert's amplitude norm exactly as
-defined in \cite[Def.~1.1]{S}: its case $N=0$ bounds the $L^2$ error of the periodized approximation of order $K$ by
-$C^{K+1}K!\,(\hbar t/\alpha^2)^{K+1}$ times the original amplitude norm, where $C$ depends only on $\beta$, $\kappa$, $A$ and the bound
-$P$ for the Poincar\'e series. For fixed $\alpha$ the ratio $\hbar t/\alpha^2$ is at most of order $\hbar^{1/2}$ on the whole window. The
-theorem also controls the powers $\Delta^N$ of the Laplacian applied to the error, simultaneously in $K$ and $N$.
+We state the $L^2$ estimate first, for Schubert's amplitude norm $\pcNorm a=\norm a_{\alpha,\beta}$ exactly as defined in
+\cite[Def.~1.1]{S}.
+
+\begin{lettered}[the $L^2$ estimate]\label{thm:L2}
+Let $\Gamma$ be a Fuchsian group and $x_0\in\Hb$, and fix $\beta>\tfrac12$, $\kappa>0$ and $A>0$. There are $C,\delta>0$ such that for
+all $0<\hbar\le1$, all $\alpha\in(0,A]$ with $\alpha^3\ge\kappa\hbar$, all $K\in\mathbb N_0$, all $b\in\partial\Hb$, all $a$ with
+$\pcNorm a<\infty$, and all $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
+\[
+  \norm{\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma}_{L^2(M)}
+  \le C^{K+1}K!\,\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\pcNorm{a}.
+\]
+\end{lettered}
+
+For fixed $\alpha$ the ratio $\hbar t/\alpha^2$ is at most of order $\hbar^{1/2}$ on the whole window. The constant $\delta$ depends only
+on $\beta$, $\kappa$ and $A$, and $C$ depends on $\Gamma$ and $x_0$ only through an upper bound for the Poincar\'e series
+$P^{\mathrm{cr}}_\Gamma$. The next theorem states this uniformity and also controls the powers $\Delta^N$ of the Laplacian applied to
+the error, simultaneously in $K$ and $N$. Theorem~\ref{thm:L2} is its case $N=0$; the short deduction follows
+Theorem~\ref{thm:dd14}.
 
 \begin{theorem}[approximation in the original-norm class]\label{pc:main}\label{pc:allalpha}
 Fix $\beta>\tfrac12$, $\kappa>0$ and $A>0$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$, such that for every
@@ -348,9 +380,7 @@ $0\le t\le\delta(\alpha/\hbar)^{1/2}$,
 \]
 \end{theorem}
 
-Since $P^{\mathrm{cr}}_\Gamma$ is finite for every Fuchsian group, the estimate holds on every quotient; $\delta$ does not depend on
-$\Gamma$ or $x_0$, and $C$ depends on them only through $P^{\mathrm{cr}}_\Gamma$. The proof is in Sections~\ref{subsec:pc-proof}
-and~\ref{subsec:pc-all}. For fixed $\alpha>0$ the time window has order $\hbar^{-1/2}$. For $\alpha\le1$ its dependence on the
+The proof is in Sections~\ref{subsec:pc-proof} and~\ref{subsec:pc-all}. For $\alpha\le1$ the dependence of the time window on the
 analytic radius, $\delta(\alpha/\hbar)^{1/2}$, is more favourable than the window $\delta\alpha^{3/2}\hbar^{-1/2}$ claimed in
 \cite[Theorem~1.4]{S}; this matters for the localized amplitudes of Section~\ref{subsec:applications}, whose analytic radius
 tends to zero with $\hbar$.
@@ -362,6 +392,12 @@ own, when $\pcNorm a$ is replaced by $\swNorm a$ and the series $P^{\mathrm{cr}}
 
 Since $\beta+\tfrac12>1$, the series $P_\Gamma(\beta+\tfrac12)$ is finite for every Fuchsian group and base point (Lemma~\ref{lem:p1}).
 Theorem~\ref{thm:dd14} is proved in Section~\ref{sec:swapped}.
+
+\begin{proof}[Proof of Theorem~\ref{thm:L2}]
+The series $P^{\mathrm{cr}}_\Gamma$, taken at $x_0$, is finite (Proposition~\ref{os:p1}). Apply Theorem~\ref{pc:main} with
+$P:=P^{\mathrm{cr}}_\Gamma$ and $N=0$: then $\Delta^0$ is the identity, $C^{N+K+1}=C^{K+1}$, and $N^{2N}(\alpha\hbar)^{-2N}=1$ by the
+convention $0^0=1$.
+\end{proof}
 
 The following corollaries give the leading error, the exponential estimate obtained by choosing $K$, and pointwise
 bounds, for both norms. In them $\beta>\tfrac12$, $\kappa>0$ and $A>0$ are fixed, $\Gamma$ is a Fuchsian group, $x_0$ a base point,
@@ -602,11 +638,6 @@ trace formula for a nonlinear hyperbolic map of the torus to times $C$ times the
 time, for every constant $C$. On compact hyperbolic surfaces, Han \cite{Han26} recently obtained
 Egorov estimates for Laplace eigenfunctions at all forward logarithmic times; for backward times
 he introduced a Schr\"odinger group along the stable horocycles.
-
-Tomsovic and Heller \cite{TH91,TH93} studied semiclassical propagation for the stadium billiard and found
-accurate approximations well beyond the Ehrenfest time. Schubert \cite{S} cites these results as numerical motivation
-for controlling the error on longer time scales. According to \cite{S}, the obstacle to a proof is that the approximation
-is a sum of oscillating terms whose number grows exponentially with time, and the error terms are of the same nature.
 
 The theorems control the error of the approximation; they do not describe the approximation itself, which is again a
 sum over exponentially many sheets of the cover. Its local statistics are the subject of Berry's random-wave picture

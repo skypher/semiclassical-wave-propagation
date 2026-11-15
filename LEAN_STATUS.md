@@ -18,6 +18,7 @@ All Lean names are in the namespace `Qschubert`.
 
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
+| Theorem A (`thm:L2`) | L | `pcL2_all` (Theorem 1.1 (`pc:main`) at `N=0`, from `pcmain_all`) |
 | Theorem 1.1 (`pc:main`) | L | `pcmain_unif`; for one group `pcmain_all`, small-radius stage `pcmain_half` |
 | Theorem 1.2 (`thm:dd14`) | L | `thm14Rmain_unif` (uniform in the group and the base point, every bounded range of radii; from `thm14R_unifX`, `swX_le_swD` and `swNormD_mono`); for a fixed base point `thm14Rmain_all` |
 | Corollary 1.3 (`pc:thm13`) | L | (i) original norm: `pcthm13_unif`; reversed-weight norm: `thm13Rmain_unif`; (ii) original norm: `pcthm13_fixed` (from `pcthm13_all`); reversed-weight norm: `thm13R_fixed` (from `thm14Rmain_exp` and `swNormD_mono`) |
