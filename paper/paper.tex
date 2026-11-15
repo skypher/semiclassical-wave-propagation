@@ -36,6 +36,7 @@
 \medmuskip=4mu
 \thickmuskip=8mu
 \setlength{\emergencystretch}{2em}
+\raggedbottom
 
 \numberwithin{equation}{section}
 
@@ -331,10 +332,11 @@ x_0 & base point of the weights & m(z),\ H & local multiplicity (Section~\ref{se
 \end{center}
 
 \subsection{Main results}\label{sec:repair}\label{subsec:pc-thm}
-In words, the main estimate is the following. For an amplitude of analytic radius $\alpha$, the periodized approximation of
-order $K$ has $L^2$ error of size $(\hbar t/\alpha^2)^{K+1}$ times the amplitude norm, up to a constant depending on $K$, for all
-$t\le\delta(\alpha/\hbar)^{1/2}$; for fixed $\alpha$ the ratio $\hbar t/\alpha^2$ is at most of order $\hbar^{1/2}$ on this whole window.
-The remaining factors of the theorem record how the constants grow with $K$ and with the power $N$ of the Laplacian. Our
+In words, the main estimate is the following. Under the hypotheses of Theorem~\ref{pc:main} below, its case $N=0$ bounds the
+$L^2$ error of the periodized approximation of order $K$ by $C^{K+1}K!\,(\hbar t/\alpha^2)^{K+1}$ times the original amplitude norm,
+for all $t\le\delta(\alpha/\hbar)^{1/2}$, where $C$ depends only on $\beta$, $\kappa$, $A$ and the bound $P$ for the Poincar\'e series;
+for fixed $\alpha$ the ratio $\hbar t/\alpha^2$ is at most of order $\hbar^{1/2}$ on this whole window. The theorem also controls the
+powers $\Delta^N$ of the Laplacian applied to the error. Our
 principal theorem uses Schubert's amplitude norm exactly as defined in \cite[Def.~1.1]{S} and controls $K$ and $N$
 simultaneously.
 
@@ -731,8 +733,8 @@ proves Lemma~\ref{lem:fc}, Appendix~\ref{app:profiles} gives the profiles used i
 and~\ref{sec:expect}, Appendix~\ref{subsec:gutzmer} the comparison used for Lemma~\ref{lem:ex}, and
 Appendices~\ref{app:kernels} and~\ref{app:cusp-aux} the kernel bounds used in Proposition~\ref{pc:classes} and
 Section~\ref{sec:cusp}.
-Appendix~\ref{sec:changes} compares the results with Schubert's preprint, and
-Appendix~\ref{app:lean} documents the scope of the formalization.
+Appendix~\ref{sec:changes} compares the results with Schubert's preprint,
+Appendix~\ref{app:lean} documents the scope of the formalization, and Appendix~\ref{app:constants} lists the named constants.
 
 \input{sec_remainder}
 \input{sec_analytic}
