@@ -46,8 +46,8 @@ All Lean names are in the namespace `Qschubert`.
 | Statement | Status | Lean theorem; difference |
 |---|---|---|
 | Lemma 3.1 (`lem:ell`) | L | `inner_X_left`, `inner_Y_left`, `elliptic_identity`, `elliptic_estimate` |
-| Lemma 3.12 (`lem:clip`) | L | `norm_Rplus_le_one`, `norm_Rminus_le_one`, `im_bound_clip_one` |
-| Proposition 3.13 (`prop:a0`) | L | `prop_a0_eps_one` |
+| Lemma 3.12 (`lem:clip`) | L | `norm_Rplus_clip_one`, `norm_Rminus_le_one`, `im_bound_clip_one` |
+| Proposition 3.13 (`prop:a0`) | L | `prop_a0_printed` |
 | Lemma 3.7 (`lem:expw`) | L | `exp_of_words` |
 | Lemma 3.8 (`lem:mw`) | L | `lem_m_weak_one` |
 | Lemma 3.9 (`lem:wordphi`) | L | `wb_comp` |
@@ -86,7 +86,7 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma A.1 (`os:int`) | L | `wI0`, `wI2` |
 | Lemma A.2 (`os:prof`) | L | `gTauM_symbol`, `gTauM_expmass`, `hSM_symbol`, `hSM_expmass`, `gTau_TailB`, `bProf_symbol`, `bProf_TailB` |
 | Corollary 5.5 (`os:cwp`) | L | `poisson_cw`, `B_cw` |
-| Proposition 5.6 (`os:data`) | L | `data_factor_all`, `omP_le_exp_angle` |
+| Proposition 5.6 (`os:data`) | L | `os_data_printed`, `os_data_printed_orig` |
 | Lemma 5.7 (`os:words`) | L | `poissonM_w`, `lamM_w`, `lamM_pow_w`, `words_rec`, `words_w` |
 | Lemma 5.8 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
 | Proposition 5.9 (`os:p1`) | L | `poincare_omP`, `perio_weighted_gen` (the field `perio_bd` of `surfW_printed`), `critSup_eq`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
