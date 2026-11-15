@@ -2939,6 +2939,7 @@ import Qschubert
 #print axioms Qschubert.norm_Rplus_le_one
 #print axioms Qschubert.norm_Rminus_le_one
 #print axioms Qschubert.im_bound_one
+#print axioms Qschubert.im_bound_clip_one
 #print axioms Qschubert.prop_a0_eps_one
 #print axioms Qschubert.lem_wb_w_one
 #print axioms Qschubert.lem_wb_u_one

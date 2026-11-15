@@ -12,7 +12,7 @@ their specializations, which are the exact counterparts of the printed statement
 
 * `lem_fc_one`, `lem_wc_one`: Lemmas `lem:fc`, `lem:wc`.
 * `lem_sc_one`: Lemma `lem:sc`; `lem_m_weak_one`: Lemma `lem:mw`.
-* `norm_Rplus_le_one`, `norm_Rminus_le_one`, `im_bound_one`: Lemma `lem:clip`; `prop_a0_eps_one`: Proposition
+* `norm_Rplus_le_one`, `norm_Rminus_le_one`, `im_bound_clip_one`: Lemma `lem:clip` (`im_bound_one` is the consequence used by `prop:a0`); `prop_a0_eps_one`: Proposition
   `prop:a0`.
 * `lem_wb_w_one`, `lem_wb_u_one`: Lemma `lem:wb`.
 * `dd_core_om`: Proposition `pc:core`.
@@ -78,6 +78,24 @@ theorem im_bound_one {χ : Cutoff} {L : ℝ} (h : CutK χ) {B : ℝ} (hB : 0 ≤
     (hH : ∀ s, |s| * χ.r s ^ 2 ≤ B * ellS L s) (hL : 1 / 2 ≤ L) {τ : ℝ} (hτ0 : 0 ≤ τ) (hτ : τ ≤ 1) (u : L2H') :
     |(inner ℂ (Rop χ L (-τ) u) (Rop χ L τ u)).im| ≤ 2 * (∫ x, gK 1 x) * (∫ x, gQ 1 x) * τ * B * ellForm L u :=
   im_bound h one_lt_half_pi hB hH hL hτ0 hτ u
+
+/-- **Lemma `lem:clip` at `τ₀ = 1`, the imaginary part, as printed:**
+`|Im ⟪R_{-τ} u, R_τ u⟫| ≤ 2 A_e A_o τ ‖Λ J u‖ ‖Λ_{≤L} J u‖`. -/
+theorem im_bound_clip_one {χ : Cutoff} (h : CutK χ) (u : L2H') {L τ : ℝ} (hL : 1 / 2 ≤ L) (hτ0 : 0 ≤ τ)
+    (hτ : τ ≤ 1) :
+    |(inner ℂ (Rop χ L (-τ) u) (Rop χ L τ u)).im|
+      ≤ 2 * (∫ x, gK 1 x) * (∫ x, gQ 1 x) * τ * ‖LJ χ u‖ * ‖ellOp L (χ.J u)‖ := by
+  have h1 := abs_im_inner_le (Rop χ L (-τ) u) (Rop χ L τ u)
+  have hP := norm_Rplus_le_one h u (by linarith : (0 : ℝ) ≤ L) (by rw [abs_of_nonneg hτ0]; exact hτ)
+  have hQ := norm_Rminus_le_one h u hL hτ0 hτ
+  have hAe : 0 ≤ ∫ x, gK 1 x := integral_nonneg fun x => gK_nonneg 1 x
+  have hQ0 := norm_nonneg ((1 / 2 : ℂ) • (Rop χ L τ u - Rop χ L (-τ) u))
+  calc |(inner ℂ (Rop χ L (-τ) u) (Rop χ L τ u)).im|
+      ≤ 2 * ‖(1 / 2 : ℂ) • (Rop χ L τ u + Rop χ L (-τ) u)‖ * ‖(1 / 2 : ℂ) • (Rop χ L τ u - Rop χ L (-τ) u)‖ := h1
+    _ ≤ 2 * ((∫ x, gK 1 x) * ‖LJ χ u‖) * (τ * (∫ x, gQ 1 x) * ‖ellOp L (χ.J u)‖) := by
+        refine mul_le_mul (mul_le_mul_of_nonneg_left hP (by norm_num)) hQ hQ0 ?_
+        exact mul_nonneg (by norm_num) (mul_nonneg hAe (norm_nonneg _))
+    _ = _ := by ring
 
 /-- **Proposition `prop:a0` at `τ₀ = 1`.** -/
 theorem prop_a0_eps_one (P : MollProfile) {ε ħ α α' s₀ s₁ : ℝ} (hε : 0 < ε) (hħ : 0 < ħ) (hs₀ : 0 ≤ s₀)
