@@ -2957,3 +2957,4 @@ import Qschubert
 #print axioms Qschubert.prop_a0_paper
 #print axioms Qschubert.words_paper
 #print axioms Qschubert.comm_wave_sharp
+#print axioms Qschubert.pcL2_all
