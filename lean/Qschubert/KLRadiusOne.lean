@@ -155,4 +155,113 @@ theorem dd_core_om {kp C₁ : ℝ} (hkp : 0 < kp) (hC : 0 ≤ C₁) (hF' : FCBou
     (critW_printed (by norm_num)) (fun s z => mS_printed_le half_lt_three_quarters (by norm_num) _ s z)
     (fun _ => rfl) (fun _ => rfl) ħ σ t K N u Hω hHω
 
+/-! ### Printed-form statements
+
+The declarations above may be stronger than the printed statements (wider parameter ranges, another weight of
+the same size). The following are the printed statements themselves. -/
+
+/-- **Lemma `lem:clip`, even part, on the printed range** `L ≥ 1/2`, `0 ≤ τ ≤ 1`. -/
+theorem norm_Rplus_clip_one {χ : Cutoff} (h : CutK χ) (u : L2H') {L τ : ℝ} (hL : 1 / 2 ≤ L) (hτ0 : 0 ≤ τ)
+    (hτ : τ ≤ 1) :
+    ‖(1 / 2 : ℂ) • (Rop χ L τ u + Rop χ L (-τ) u)‖ ≤ (∫ x, gK 1 x) * ‖LJ χ u‖ :=
+  norm_Rplus_le_one h u (by linarith) (by rw [abs_of_nonneg hτ0]; exact hτ)
+
+/-- **Proposition `prop:a0` on the printed range** `0 < ε ≤ 1`. -/
+theorem prop_a0_printed (P : MollProfile) {ε ħ α α' s₀ s₁ : ℝ} (hε : 0 < ε) (_hε1 : ε ≤ 1) (hħ : 0 < ħ)
+    (hs₀ : 0 ≤ s₀) (hs₁ : 0 ≤ s₁) (hα' : 0 ≤ α') (hαα : α' ≤ α) (hα0 : 0 < α) (hα : α ≤ 1)
+    (hwin : |s₁ - s₀| ≤ cA0 1 * ((α - α') / α) * (ε / ħ)) (a : L2H') (had : a ∈ (expLambda α).domain) :
+    ∃ hd : (P.cutoffEps hε).flowEps ħ s₁ (ContinuousLinearMap.adjoint ((P.cutoffEps hε).flowEps ħ s₀) a)
+        ∈ (expLambda α').domain,
+      ‖expLambda α' ⟨_, hd⟩‖ ≤ ‖expLambda α ⟨a, had⟩‖ :=
+  prop_a0_eps_one P hε hħ hs₀ hs₁ hα' hαα hα0 hα hwin a had
+
+/-- **Proposition `os:data`, first part, as printed:** with `R = e^{σ(Λ_η - Λ)} e^{-(α-σ)Λ}`, for `0 < σ < α ≤ 1`,
+`e^{-σΛ_η} R = e^{-αΛ}` and `‖ω_c R f‖ ≤ C_d ‖ω_c f‖` at the printed critical weight
+`ω_c = X₀^{1/2} ℓ^c = omP c (d(i, ·))`, with `C_d` depending only on `η` and `c`. -/
+theorem os_data_printed {c η : ℝ} (hc1 : 1 / 2 < c) (hc2 : c < 1) (hη : 1 / 2 ≤ η) :
+    ∃ Cd : ℝ, 0 < Cd ∧ ∀ (σ α : ℝ), 0 < σ → σ < α → α ≤ 1 → ∀ f : L2H',
+      vE η σ (specE.integral (GQ σ η) (specE.integral (GW 0 (α - σ)) f)) 0 = specE.integral (GW 0 α) f
+      ∧ ∫⁻ z : ℍ, ENNReal.ofReal (omP c (dist UpperHalfPlane.I z) ^ 2
+            * ‖specE.integral (GQ σ η) (specE.integral (GW 0 (α - σ)) f) z‖ ^ 2)
+        ≤ ENNReal.ofReal (Cd ^ 2) * ∫⁻ z : ℍ, ENNReal.ofReal (omP c (dist UpperHalfPlane.I z) ^ 2 * ‖f z‖ ^ 2) := by
+  have hc0 : 0 ≤ c := by linarith
+  obtain ⟨Cd, hCd, hdata⟩ := data_factor_all hc1 hc2 hη
+  set Lc : ℝ := (1 / Real.log 2) ^ c with hLc
+  have hLc0 : 0 < Lc := by have := log_two_pos'; positivity
+  refine ⟨Lc * Cd, by positivity, fun σ α hσ hσα hα1 f => ⟨(hdata σ α hσ hσα hα1 f).1, ?_⟩⟩
+  set Rf : L2H' := specE.integral (GQ σ η) (specE.integral (GW 0 (α - σ)) f) with hRf
+  have hup : ∀ z : ℍ, ∀ v : ℝ, ENNReal.ofReal (omP c (dist UpperHalfPlane.I z) ^ 2 * v ^ 2)
+      ≤ ENNReal.ofReal (Lc ^ 2) * ENNReal.ofReal (omC c (z : ℂ) ^ 2 * v ^ 2) := fun z v => by
+    rw [← ENNReal.ofReal_mul (sq_nonneg _)]
+    refine ENNReal.ofReal_le_ofReal ?_
+    have h0 : 0 ≤ omP c (dist UpperHalfPlane.I z) := (omC_nonneg c z).trans (omC_le_omP hc0 z)
+    have h1 : omP c (dist UpperHalfPlane.I z) ^ 2 ≤ (Lc * omC c (z : ℂ)) ^ 2 :=
+      pow_le_pow_left₀ h0 (omP_le_omC hc0 z) 2
+    calc omP c (dist UpperHalfPlane.I z) ^ 2 * v ^ 2 ≤ (Lc * omC c (z : ℂ)) ^ 2 * v ^ 2 :=
+          mul_le_mul_of_nonneg_right h1 (sq_nonneg v)
+      _ = Lc ^ 2 * (omC c (z : ℂ) ^ 2 * v ^ 2) := by ring
+  have hdown : ∀ z : ℍ, ∀ v : ℝ, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * v ^ 2)
+      ≤ ENNReal.ofReal (omP c (dist UpperHalfPlane.I z) ^ 2 * v ^ 2) := fun z v =>
+    ENNReal.ofReal_le_ofReal (mul_le_mul_of_nonneg_right (pow_le_pow_left₀ (omC_nonneg c z) (omC_le_omP hc0 z) 2) (sq_nonneg v))
+  calc ∫⁻ z : ℍ, ENNReal.ofReal (omP c (dist UpperHalfPlane.I z) ^ 2 * ‖Rf z‖ ^ 2)
+      ≤ ∫⁻ z : ℍ, ENNReal.ofReal (Lc ^ 2) * ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖Rf z‖ ^ 2) :=
+        lintegral_mono fun z => hup z _
+    _ = ENNReal.ofReal (Lc ^ 2) * ∫⁻ z : ℍ, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖Rf z‖ ^ 2) :=
+        lintegral_const_mul' _ _ ENNReal.ofReal_ne_top
+    _ ≤ ENNReal.ofReal (Lc ^ 2) * (ENNReal.ofReal (Cd ^ 2)
+          * ∫⁻ z : ℍ, ENNReal.ofReal (omC c (z : ℂ) ^ 2 * ‖f z‖ ^ 2)) := by
+        gcongr
+        exact (hdata σ α hσ hσα hα1 f).2
+    _ ≤ ENNReal.ofReal (Lc ^ 2) * (ENNReal.ofReal (Cd ^ 2)
+          * ∫⁻ z : ℍ, ENNReal.ofReal (omP c (dist UpperHalfPlane.I z) ^ 2 * ‖f z‖ ^ 2)) :=
+        mul_le_mul_of_nonneg_left (mul_le_mul_of_nonneg_left (lintegral_mono fun z => hdown z _) zero_le) zero_le
+    _ = ENNReal.ofReal ((Lc * Cd) ^ 2) * ∫⁻ z : ℍ, ENNReal.ofReal (omP c (dist UpperHalfPlane.I z) ^ 2 * ‖f z‖ ^ 2) := by
+        rw [← mul_assoc, ← ENNReal.ofReal_mul (by positivity)]
+        congr 2
+        ring
+
+/-- **Proposition `os:data`, the consequence, as printed:** for `β > 1/2` and an amplitude `u` of finite original
+norm at `(α, β)`, `f̃ := R e^{αΛ} u` satisfies `u = e^{-σΛ_η} f̃` and `‖ω_c f̃‖ ≤ C ‖e^{β⟨d⟩} e^{αΛ} u‖`, with
+`C = C(η, c, β)`. Both weighted norms are written as integrals of the squared modulus. -/
+theorem os_data_printed_orig {c η β : ℝ} (hc1 : 1 / 2 < c) (hc2 : c < 1) (hη : 1 / 2 ≤ η) (hβ : 1 / 2 < β) :
+    ∃ C : ℝ, 0 < C ∧ ∀ (σ α : ℝ), 0 < σ → σ < α → α ≤ 1 → ∀ (u : L2H') (hu : u ∈ (expLambda α).domain),
+      vE η σ (specE.integral (GQ σ η) (specE.integral (GW 0 (α - σ)) (expLambda α ⟨u, hu⟩))) 0 = u
+      ∧ ∫⁻ z : ℍ, ENNReal.ofReal (omP c (dist UpperHalfPlane.I z) ^ 2
+            * ‖specE.integral (GQ σ η) (specE.integral (GW 0 (α - σ)) (expLambda α ⟨u, hu⟩)) z‖ ^ 2)
+        ≤ ENNReal.ofReal (C ^ 2) * ∫⁻ z : ℍ, ENNReal.ofReal (Real.exp (β * angleDx UpperHalfPlane.I z) ^ 2
+            * ‖(expLambda α ⟨u, hu⟩ : L2H') z‖ ^ 2) := by
+  obtain ⟨Cd, hCd, hdata⟩ := os_data_printed hc1 hc2 hη
+  set Cβ : ℝ := (1 + 1 / (β - 1 / 2)) / Real.log 2 * Real.exp β with hCβ
+  have hCβ0 : 0 < Cβ := by
+    have := log_two_pos'
+    have : 0 < β - 1 / 2 := by linarith
+    positivity
+  refine ⟨Cd * Cβ, by positivity, fun σ α hσ hσα hα1 u hu => ⟨?_, ?_⟩⟩
+  · rw [(hdata σ α hσ hσα hα1 _).1]
+    exact poisson_left_inv (by linarith) hu
+  · set f₀ : L2H' := expLambda α ⟨u, hu⟩ with hf₀
+    have hw : ∀ z : ℍ, ENNReal.ofReal (omP c (dist UpperHalfPlane.I z) ^ 2 * ‖f₀ z‖ ^ 2)
+        ≤ ENNReal.ofReal (Cβ ^ 2) * ENNReal.ofReal (Real.exp (β * angleDx UpperHalfPlane.I z) ^ 2 * ‖f₀ z‖ ^ 2) := fun z => by
+      rw [← ENNReal.ofReal_mul (sq_nonneg _)]
+      refine ENNReal.ofReal_le_ofReal ?_
+      have hc0 : 0 ≤ c := by linarith
+      have h0 : 0 ≤ omP c (dist UpperHalfPlane.I z) := (omC_nonneg c z).trans (omC_le_omP hc0 z)
+      have h1 : omP c (dist UpperHalfPlane.I z) ^ 2 ≤ (Cβ * Real.exp (β * angleDx UpperHalfPlane.I z)) ^ 2 :=
+        pow_le_pow_left₀ h0 (omP_le_exp_angle hc2.le hβ UpperHalfPlane.I z) 2
+      calc omP c (dist UpperHalfPlane.I z) ^ 2 * ‖f₀ z‖ ^ 2
+          ≤ (Cβ * Real.exp (β * angleDx UpperHalfPlane.I z)) ^ 2 * ‖f₀ z‖ ^ 2 :=
+            mul_le_mul_of_nonneg_right h1 (sq_nonneg _)
+        _ = Cβ ^ 2 * (Real.exp (β * angleDx UpperHalfPlane.I z) ^ 2 * ‖f₀ z‖ ^ 2) := by ring
+    calc _ ≤ ENNReal.ofReal (Cd ^ 2) * ∫⁻ z : ℍ, ENNReal.ofReal (omP c (dist UpperHalfPlane.I z) ^ 2 * ‖f₀ z‖ ^ 2) :=
+          (hdata σ α hσ hσα hα1 f₀).2
+      _ ≤ ENNReal.ofReal (Cd ^ 2) * ∫⁻ z : ℍ, ENNReal.ofReal (Cβ ^ 2)
+            * ENNReal.ofReal (Real.exp (β * angleDx UpperHalfPlane.I z) ^ 2 * ‖f₀ z‖ ^ 2) := by
+          gcongr with z
+          exact hw z
+      _ = ENNReal.ofReal ((Cd * Cβ) ^ 2) * ∫⁻ z : ℍ, ENNReal.ofReal (Real.exp (β * angleDx UpperHalfPlane.I z) ^ 2
+            * ‖f₀ z‖ ^ 2) := by
+          rw [lintegral_const_mul' _ _ ENNReal.ofReal_ne_top, ← mul_assoc, ← ENNReal.ofReal_mul (by positivity)]
+          congr 2
+          ring
+
 end Qschubert
