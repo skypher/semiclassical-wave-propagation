@@ -310,7 +310,7 @@ the argument bounded.
 Let $L\ge\tfrac12$ and $\Lambda_{\le L}:=\min(\Lambda,L)$. For real $s$ let $R_s:=\ue^{s\Lambda_{\le L}}XJ_\varepsilon\ue^{-s\Lambda_{\le L}}$, a bounded
 operator. Put
 \begin{gather*}
-g_{\mathrm e}(x):=\frac{(1+|x|)\,\ue^{|x|}}{2\cosh(\pi x/2)},\qquad g_{\mathrm o}(x):=\frac{(1+3|x|)\,|x|\,\ue^{|x|}}{2\cosh(\pi x/2)},\\
+g_{\mathrm e}(x):=\frac{(1+|x|)\,\ue^{|x|}}{2\cosh(\pi x/2)},\qquad g_{\mathrm o}(x):=|x|\,g_{\mathrm e}(x),\\
 A_{\mathrm e}:=\int_{\mathbb R}g_{\mathrm e}(x)\,dx,\qquad A_{\mathrm o}:=\int_{\mathbb R}g_{\mathrm o}(x)\,dx .
 \end{gather*}
 For $0\le\tau\le1$, $\varepsilon>0$ and $u\in L^2(\Hb)$,
@@ -339,7 +339,7 @@ $k_A\circ\Lambda J_\varepsilon$ with a kernel $|k_A(r,r')|\le g_{\mathrm e}(r-r'
 $\Lambda(r')\ge L$. In the remaining cases $(rr')^{1/2}\le(1+|x|)\,\Lambda_{\le L}(r')$: if $\Lambda(r')\le L$ this is the inequality
 of the even part; if $\Lambda(r')>L\ge\Lambda(r)$, then $\Lambda_{\le L}(r')=L$ and
 $(rr')^{1/2}\le r+|x|/2\le L+|x|L$, because $r\le\Lambda(r)\le L$ and $L\ge\tfrac12$. So the odd part is $k_B\circ\Lambda_{\le L}J_\varepsilon$ with
-$|k_B(r,r')|\le\tau\,|x|\,g_{\mathrm e}(x)\le\tau\,g_{\mathrm o}(x)$, and the Schur test gives $\norm{k_B}\le A_{\mathrm o}\tau$.
+$|k_B(r,r')|\le\tau\,|x|\,g_{\mathrm e}(x)=\tau\,g_{\mathrm o}(x)$, and the Schur test gives $\norm{k_B}\le A_{\mathrm o}\tau$.
 
 \emph{The imaginary part.} With $P=\tfrac12(R_\tau+R_{-\tau})u$ and $Q=\tfrac12(R_\tau-R_{-\tau})u$,
 \[\langle R_{-\tau}u,R_\tau u\rangle=\langle P-Q,P+Q\rangle=\norm P^2-\norm Q^2+2i\,\mathrm{Im}\langle P,Q\rangle,\]

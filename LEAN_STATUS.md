@@ -86,7 +86,7 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma A.1 (`os:int`) | L | `wI0`, `wI2` |
 | Lemma A.2 (`os:prof`) | L | `gTauM_symbol`, `gTauM_expmass`, `hSM_symbol`, `hSM_expmass`, `gTau_TailB`, `bProf_symbol`, `bProf_TailB` |
 | Corollary 5.5 (`os:cwp`) | L | `poisson_cw`, `B_cw` |
-| Proposition 5.6 (`os:data`) | L | `data_factor`, `omP_le_exp_angle` |
+| Proposition 5.6 (`os:data`) | L | `data_factor_all`, `omP_le_exp_angle` |
 | Lemma 5.7 (`os:words`) | L | `poissonM_w`, `lamM_w`, `lamM_pow_w`, `words_rec`, `words_w` |
 | Lemma 5.8 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
 | Proposition 5.9 (`os:p1`) | L | `poincare_omP`, `perio_weighted_gen` (the field `perio_bd` of `surfW_printed`), `critSup_eq`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
