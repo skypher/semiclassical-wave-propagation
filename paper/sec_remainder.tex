@@ -56,7 +56,7 @@ convergence, this gives
 \[
 \norm{[f]_\Gamma}^2_{L^2(M)}\le P_\Gamma(2\sigma)\int_\Hb\ue^{2\sigma d(z,x_0)}|f(z)|^2\,d\nu(z).
 \]
-In particular $\sum_\gamma|f\circ\gamma|$ converges almost everywhere and in $L^2(M)$ whenever the right side is finite. Torsion-freeness is not needed: the fixed sets of elliptic elements are null, so unfolding over a fundamental domain carries no stabilizer factor, and any multiplicity is already counted in the orbit series $P_\Gamma(2\sigma)$.
+In particular $\sum_\gamma|f\circ\gamma|$ converges almost everywhere and in $L^2(M)$ whenever the right side is finite. Elliptic elements need no separate treatment: their fixed sets are null, and multiplicities are counted in the orbit series $P_\Gamma(2\sigma)$.
 
 \emph{Transport.} Take $f=(S(t)w)\ue^{i\theta}$, so $|f|=|S(t)w|$.
 Since $(S(t)w)(z)=\ue^{-t/2}w(z_t)$, where $z_t$ is at distance $t$ from $z$, we have
@@ -243,8 +243,7 @@ Multiplication of the resulting identity by $\ue^{-i\varphi/\hbar}$ gives (i).
 
 \medskip\noindent\emph{(ii).}
 By definition $u^{(K)}(t)=\ue^{-it/(2\hbar)}\ue^{i\varphi/\hbar}S(t)a^{(K)}(t)$, so $u^{(K)}(t)_\Gamma=\cU(t)\mathcal V_ta^{(K)}(t)$. Since $\cU(t)$
-is unitary on $L^2(M)$ and commutes with $\Delta_M$, $\norm E=\norm{\Delta_M^N(\mathcal V_0a-\mathcal V_ta^{(K)}(t))}$; no commutation of
-$\cU(t)$ with periodization is used. By Corollary~\ref{cor:surf-dyson},
+is unitary on $L^2(M)$ and commutes with $\Delta_M$, $\norm E=\norm{\Delta_M^N(\mathcal V_0a-\mathcal V_ta^{(K)}(t))}$. By Corollary~\ref{cor:surf-dyson},
 $\mathcal V_0a-\mathcal V_ta^{(K)}(t)=c_\hbar^{K+1}\int_{\Sigma_{K+1}(t)}\mathcal V_{s_1}(\Delta(s_1)\cdots\Delta(s_{K+1})a)\,d\mathbf s$. By
 Lemma~\ref{lem:surf-lap}, applied $N$ times, $\Delta_M^N\mathcal V_{s_1}g=\mathcal V_{s_1}\Delta_\varphi(s_1)^Ng$. Closedness of $\Delta_M^N$
 and Minkowski's inequality give the bound, with $|c_\hbar|^{K+1}=(\hbar/2)^{K+1}$.

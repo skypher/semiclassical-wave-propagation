@@ -138,16 +138,13 @@ We study the Schr\"odinger evolution of analytic Lagrangian states attached to u
 quotients $\Gamma\backslash\Hb$, for arbitrary Fuchsian groups $\Gamma$. Following R.~Schubert's strategy in his 2007 preprint
 \emph{Semiclassical wave propagation for large times}, withdrawn in 2011, we prove that his explicit approximations are
 accurate in $L^2$ up to times of order $(\alpha/\hbar)^{1/2}$, where $\alpha$ is the analytic radius of the amplitude; for
-fixed $\alpha$ this is of order $\hbar^{-1/2}$, far beyond the Ehrenfest time. The estimates hold for Schubert's amplitude
-norm and for the variant in which its spatial and analytic weights are applied in the opposite order. Their constants
-grow factorially in the expansion order $K$ and like $N^{2N}$ in the power $N$ of the Laplacian, and optimal truncation gives
-exponentially small errors. Two bounds of the preprint need correction: the
-leading error has order $\hbar t$ rather than $\hbar$, and this order is attained on the hyperbolic plane; pointwise estimates need a factor
-$m(z)^{1/2}$ given by a local multiplicity, and the exponent $1/2$ cannot be lowered on the modular surface. For a
-family of analytic states on the modular surface, the mass leaves every compact set for all times between
-$C\log(1/\hbar)\log\log(1/\hbar)$ and a small multiple of $\hbar^{-1/2}$, and the approximation stays accurate on that range. The
-classical transport of the corresponding density on the cusp cylinder, by contrast, equidistributes. The principal $L^2$ estimates
-and the escape of mass are formalized in Lean~4.
+fixed $\alpha$ this is of order $\hbar^{-1/2}$, far beyond the Ehrenfest time. The error bounds grow only factorially in the
+expansion order, so optimal truncation gives exponentially small errors. Two bounds of the preprint need correction, and the
+corrected forms are attained: the leading error has order $\hbar t$ rather than $\hbar$, already on the hyperbolic plane, and
+pointwise bounds need a factor $m(z)^{1/2}$, where the local multiplicity $m(z)$ grows in cusps; the exponent $\tfrac12$ cannot be
+lowered on the modular surface. On the modular surface we also find analytic states whose mass leaves every compact set at all times between
+order $\log(1/\hbar)\log\log(1/\hbar)$ and a small multiple of $\hbar^{-1/2}$, while the approximation stays accurate there and the
+classical transport of the corresponding density equidistributes. The principal $L^2$ estimates and the escape of mass are formalized in Lean~4.
 
 \vskip5pt
 \noindent\textbf{Keywords.}\enspace Semiclassical analysis; time-dependent
@@ -186,7 +183,9 @@ measured by an analytic norm with an exponential spatial weight. The preprint wa
 ``a gap in the proof of the dispersive estimates''.
 
 Theorems~\ref{pc:main} and~\ref{thm:dd14} establish these $L^2$ approximations on every Fuchsian quotient, for Schubert's
-amplitude norm and for the norm with its two weights in the other order; Section~\ref{subsec:corrections} corrects two
+amplitude norm and for the norm with its two weights in the other order. In their simplest form they say that the periodized
+approximation of order $K$ has $L^2$ error at most $C^{K+1}K!\,(\hbar t/\alpha^2)^{K+1}$ times the amplitude norm for all
+$t\le\delta(\alpha/\hbar)^{1/2}$, where $\alpha$ is the analytic radius of the amplitude and $\alpha^3\ge\kappa\hbar$. Section~\ref{subsec:corrections} corrects two
 bounds of the preprint. The factorization, the approximations $u^{(K)}$, the analytic norms and the mollified flow are
 Schubert's. Section~\ref{subsec:method} describes what the proof adds, and Appendix~\ref{sec:changes} compares the results
 with \cite{S} in detail.
@@ -299,15 +298,15 @@ In the original class the norm is the weighted norm $\pcNorm a=\norm{\ue^{\beta\
 other two classes it is the analytic norm $\norm{\ue^{\alpha\Lambda}F}$ of $F$. For instance
 $F=\ue^{-\alpha\Lambda}g$ or $f=\ue^{-\beta\langle d\rangle}g$ with $0\ne g\in L^2(\Hb)$ gives a nonzero amplitude of finite norm.
 
-The constants of the theorems depend on the group and on the base point $x_0$ through two Poincar\'e-type series. With the
-periodization weight $\omega:=X_0^{1/2}\bigl(1+\tilde\psi/\log2\bigr)^{3/4}$, the critical weight of Section~\ref{sec:printed}
-with logarithmic exponent $\tfrac34$, put
+The constants of the theorems depend on the group and on the base point $x_0$ only through orbit sums of Poincar\'e type,
 \[
-  P^{\mathrm{cr}}_\Gamma:=\sup_{z\in\Hb}\sum_{\gamma\in\Gamma}\omega(\gamma z)^{-2},\qquad
-  P_\Gamma(\sigma):=\sup_{z\in\Hb}\sum_{\gamma\in\Gamma}\ue^{-\sigma\,d(x_0,\gamma z)}.
+  P_\Gamma(\sigma):=\sup_{z\in\Hb}\sum_{\gamma\in\Gamma}\ue^{-\sigma\,d(x_0,\gamma z)},\qquad
+  P^{\mathrm{cr}}_\Gamma:=\sup_{z\in\Hb}\sum_{\gamma\in\Gamma}\omega(\gamma z)^{-2},
 \]
-For every Fuchsian group and base point, $P^{\mathrm{cr}}_\Gamma$ is finite (Proposition~\ref{os:p1}), and so is
-$P_\Gamma(\sigma)$ for every $\sigma>1$ (Lemma~\ref{lem:p1}).
+with $\omega:=X_0^{1/2}\bigl(1+\tilde\psi/\log2\bigr)^{3/4}$. The first is finite for every $\sigma>1$ (Lemma~\ref{lem:p1}). The second is its critical version: $\omega^{-2}$ decays like
+$\ue^{-d}$, the borderline case $\sigma=1$, up to the logarithmic factor $(1+\tilde\psi/\log2)^{-3/2}$, which makes the sum finite for
+every Fuchsian group and base point (Proposition~\ref{os:p1}). The weight $\omega$ is the periodization weight of the proof for the
+original norm (Section~\ref{sec:printed}), where the choice of the exponent $\tfrac34$ is explained; any exponent in $(\tfrac12,1)$ would do.
 
 An unadorned norm denotes an $L^2$ norm, or the corresponding operator norm when applied to an operator.
 Amplitudes of finite norm are taken in their smooth representatives (Lemma~\ref{lem:lift}); periodizations are
@@ -331,13 +330,11 @@ x_0 & base point of the weights & m(z),\ H & local multiplicity (Section~\ref{se
 \end{center}
 
 \subsection{Main results}\label{sec:repair}\label{subsec:pc-thm}
-In words, the main estimate is the following. Under the hypotheses of Theorem~\ref{pc:main} below, its case $N=0$ bounds the
-$L^2$ error of the periodized approximation of order $K$ by $C^{K+1}K!\,(\hbar t/\alpha^2)^{K+1}$ times the original amplitude norm,
-for all $t\le\delta(\alpha/\hbar)^{1/2}$, where $C$ depends only on $\beta$, $\kappa$, $A$ and the bound $P$ for the Poincar\'e series;
-for fixed $\alpha$ the ratio $\hbar t/\alpha^2$ is at most of order $\hbar^{1/2}$ on this whole window. The theorem also controls the
-powers $\Delta^N$ of the Laplacian applied to the error. Our
-principal theorem uses Schubert's amplitude norm exactly as defined in \cite[Def.~1.1]{S} and controls $K$ and $N$
-simultaneously.
+The principal theorem is the estimate stated in words at the beginning of this section, for Schubert's amplitude norm exactly as
+defined in \cite[Def.~1.1]{S}: its case $N=0$ bounds the $L^2$ error of the periodized approximation of order $K$ by
+$C^{K+1}K!\,(\hbar t/\alpha^2)^{K+1}$ times the original amplitude norm, where $C$ depends only on $\beta$, $\kappa$, $A$ and the bound
+$P$ for the Poincar\'e series. For fixed $\alpha$ the ratio $\hbar t/\alpha^2$ is at most of order $\hbar^{1/2}$ on the whole window. The
+theorem also controls the powers $\Delta^N$ of the Laplacian applied to the error, simultaneously in $K$ and $N$.
 
 \begin{theorem}[approximation in the original-norm class]\label{pc:main}\label{pc:allalpha}
 Fix $\beta>\tfrac12$, $\kappa>0$ and $A>0$. There is $\delta>0$, and for every $P<\infty$ there is $C>0$, such that for every
@@ -408,7 +405,7 @@ with $1-\theta\le K\rho\le1-\theta/2$,
 
 Constants $C\ge1$ and $\delta$ as required exist, since $C$ in the theorem may be replaced by $\max(C,1)$. On the window
 $t\le\delta_1(\alpha/\hbar)^{1/2}$ we have $\rho\le1$ (Section~\ref{subsec:pc-cor}). For $t>0$ the range of $K$ has length
-$\theta/(2\rho)$, so it contains an integer whenever $\rho\le\theta/2$; for $t=0$ it is empty.
+$\theta/(2\rho)$, so it contains an integer whenever $\rho\le\theta/2$.
 
 
 
@@ -428,8 +425,8 @@ $b\in\partial\Hb$, all $a$ with $\norm a_{\mathcal A}<\infty$, all $0\le t\le\de
   \big|\Delta^N\big[\cU(t)[a\,\ue^{i\varphi_b/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma\big](z)\big|\\
   \le m(z)^{1/2}\,C^{N+K+2}N^{2N}K!\,(\alpha\hbar)^{-2N-2}\Big(\frac{\hbar t}{\alpha^2}\Big)^{K+1}\norm a_{\mathcal A}.
 \end{multline*}
-The error lies in $\operatorname{Dom}(\Delta^N)$, its image under $\Delta^N$ has a continuous representative, and the
-left side is the value of that representative.
+Here the error lies in $\operatorname{Dom}(\Delta^N)$, and the left side is the value of the continuous representative of its
+image under $\Delta^N$.
 If the injectivity radius of $M$ is at least $r_0>0$ (Section~\ref{sec:setup}), the factor $m(z)^{1/2}$ may be replaced by
 $1$, with the same $\delta$ and a constant $C$ depending also on $r_0$.
 \end{corollary}
@@ -739,7 +736,7 @@ and~\ref{sec:expect}, Appendix~\ref{subsec:gutzmer} the comparison used for Lemm
 Appendices~\ref{app:kernels} and~\ref{app:cusp-aux} the kernel bounds used in Proposition~\ref{pc:classes} and
 Section~\ref{sec:cusp}.
 Appendix~\ref{sec:changes} compares the results with Schubert's preprint,
-Appendix~\ref{app:lean} documents the scope of the formalization, and Appendix~\ref{app:constants} lists the named constants.
+Appendix~\ref{app:lean} documents the scope of the formalization.
 
 \input{sec_remainder}
 \input{sec_analytic}
@@ -796,7 +793,6 @@ is lost there is the explicit operator $\Delta(t)=\ue^{-2t}X^2+Y^2-Y$, on which 
 \input{app_mean}
 \input{app_comparison}
 \input{app_lean}
-\input{app_constants}
 
 \clearpage
 \section*{Acknowledgments}\addcontentsline{toc}{section}{Acknowledgments}

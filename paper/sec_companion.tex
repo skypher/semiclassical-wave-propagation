@@ -116,10 +116,11 @@ The weighted factor is only polynomially large in $\varepsilon^{-1}$; the unweig
 &\le C\alpha^{-4}\ue^{-c_M\xi/8}\,G^{N+K+1}(2N)!\,(2K+2)!\,\alpha^{-(2K+2)}(\alpha\hbar)^{-2N}\norm{\ue^{r_\alpha\Lambda}a}\\
 &\le C\alpha^{-4}\ue^{-c_M\xi/8}F_0 .
 \end{align*}
-The first inequality is Lemma~\ref{lem:unw} with $r=r_2$. The second is Proposition~\ref{prop:a0} from the radius $r_1$ to $r_2$, since
-$(r_1-r_2)/r_1=\tfrac13$, together with $r_2/(8\varepsilon)=c_M\xi/8$. The third is Lemma~\ref{lem:wb}(ii) with $r_\alpha$ in the role of
-$\alpha$, $r=r_\alpha$ and $r'=r_1$, rewritten with $r_\alpha=c_M\alpha$ and $C_3c_M^{-2}=G$. The fourth is Lemma~\ref{lem:mw}:
-$\norm{\ue^{r_\alpha\Lambda}a}\le C_*B_\beta\pwNorm a$.
+Each step trades analytic radius for smallness or for a bound. The defect is exponentially small relative to the analytic norm at the
+radius $r_2$ (Lemma~\ref{lem:unw}, with $r_2/(8\varepsilon)=c_M\xi/8$). The mollified flow keeps an analytic norm while the radius
+shrinks from $r_1$ to $r_2$ (Proposition~\ref{prop:a0}; here $(r_1-r_2)/r_1=\tfrac13$). The derivatives in $a_{\mathbf s}$ cost the
+factorials of Lemma~\ref{lem:wb}(ii), applied at the radius $r_\alpha=c_M\alpha$ and written with $G=C_3c_M^{-2}$. Finally
+Lemma~\ref{lem:mw} removes the weight: $\norm{\ue^{r_\alpha\Lambda}a}\le C_*B_\beta\pwNorm a$.
 
 \emph{Combining the factors.} Since $F_0\le F_2$ and $\varepsilon,\alpha\le1$, the H\"older split gives
 $\norm{X_0^\lambda\mathfrak d(t')}\le C\varepsilon^{-3}\alpha^{-4}\ue^{-c_\xi\xi}F_2$ with $c_\xi:=(1-\theta)c_M/8$, and integrating over

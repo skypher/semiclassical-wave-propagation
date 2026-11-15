@@ -134,3 +134,42 @@ Corollary~\ref{cor:meanJ} & Paper deduction from Proposition~\ref{prop:mean} and
 \hline
 \end{tabular}
 \end{table}
+
+\subsection{Named constants}\label{subsec:lean-constants}
+For the comparison of constants in Section~\ref{subsec:lean-reading}, Table~\ref{tab:constants} lists the named constants of
+Sections~\ref{sec:analytic}--\ref{sec:printed}, the statement or proof in which each is fixed, its dependence, and the value
+that the printed proof gives where it gives one.
+
+\begin{table}[!ht]
+\centering\small
+\caption{Named constants of Sections~\ref{sec:analytic}--\ref{sec:printed}. ``Absolute'' means independent of all parameters;
+the dependence on the fixed mollifier cutoff $\chi$ is not listed. The parameters $\rho$, $\mathcal K$ are those of the weight classes
+of Section~\ref{app:ws}, $c$ and $\eta$ those of Section~\ref{subsec:pc-weights}, and $C_{\mathrm{sh}}$ that of Lemma~\ref{os:transfer}.}\label{tab:constants}
+\begin{tabular}{@{}lll@{}}
+\hline
+Constant & Fixed in & Depends on\\
+\hline
+$C_1$ & Lemma~\ref{lem:fc} & absolute\\
+$B_\beta$; $\rho_*=\tfrac14\log(3/2)$ & Lemma~\ref{lem:fdb} & $\beta$; absolute\\
+$C_2=\max(\ue C_1,1/\rho_*)$ & Lemma~\ref{lem:sc} & absolute\\
+$C_*=\tfrac{32}5$ & Lemma~\ref{lem:expw} & absolute\\
+$c_M=1/(4\max(C_2,1))$ & Lemma~\ref{lem:mw} & absolute\\
+$c_0$ & Lemma~\ref{lem:m2w} & $\beta$\\
+$A_{\mathrm e}$, $A_{\mathrm o}$ & Lemma~\ref{lem:clip} & absolute\\
+$c_A=(1+32A_{\mathrm e}A_{\mathrm o})^{-1}$ & Proposition~\ref{prop:a0} & absolute\\
+$\mathcal K_\lambda=8\lambda^2+7\lambda$ & Section~\ref{app:ws} & $\lambda$\\
+$C_W$ & Lemma~\ref{lem:wmoll} & $\rho$, $\mathcal K$\\
+$C_{\mathrm{fl}}=(4\rho+3)C_W^2$; $C_{\mathrm{fl},\lambda}=C_{\mathrm{fl}}(\lambda,\mathcal K_\lambda)$ & Proposition~\ref{prop:ws} & $\rho$, $\mathcal K$; $\lambda$\\
+$C_3=480\max(C_2,4\ue C_1)^2$ & Lemma~\ref{lem:wb} & absolute\\
+$C_4=20+60(1+4C_1)^2$ & Lemma~\ref{lem:unw} & absolute\\
+$C_{\mathrm{cw}}$ & Theorem~\ref{os:cw} & $c$\\
+$C_\Lambda$; $C_{\Lambda_\eta}$ & Corollary~\ref{os:cwp} & $c$; $\eta$, $c$\\
+$C_{\mathrm d}=C_\Lambda\,\ue^{C_{\Lambda_\eta}}$ & Proposition~\ref{os:data} & $\eta$, $c$\\
+$c_H=1+4/\ue$; $C_5=2\ue\,c_H$ & Lemma~\ref{os:prof}(iii); Lemma~\ref{os:words} & absolute\\
+$C_{\mathrm{tr}}$ & Lemma~\ref{os:transfer} & $c$, $C_{\mathrm{sh}}$\\
+$C_{\mathrm{gr}}=2/\log2$ & Proposition~\ref{pc:core} & absolute\\
+$C_6\ge C_3$ & Proposition~\ref{pc:core}, Step~1(a) & absolute\\
+$B_0$; $B_\eta$ & Lemma~\ref{os:prof}(iv), (v) & absolute; $\eta$\\
+\hline
+\end{tabular}
+\end{table}
