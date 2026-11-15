@@ -679,28 +679,22 @@ periodized propagator applied to $a_{\mathbf s}$. No resummation of the series i
 $\alpha$ bounds a word of length $k$ in $X,Y$ applied to $a$, in the weighted $L^2$ norm, by $C^kk!\,\alpha^{-k}$ times the
 amplitude norm (Cauchy estimates,
 Lemmas~\ref{lem:fc}, \ref{lem:wc}, \ref{lem:sc} and~\ref{lem:wb}), and the integration over the simplex then gives the factor
-$C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$. On $\Hb$ itself the propagator in this integral is unitary, so this
-already proves the estimate for every $t\ge0$, with the unweighted analytic norm $\norm{\ue^{\alpha\Lambda}a}$
-(Proposition~\ref{prop:cover}(i)). The time window of the theorems comes from the quotient.
+$C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$, provided the periodized propagator is bounded on $a_{\mathbf s}$,
+uniformly in $s_1\le t$. On $\Hb$ it is unitary, and the estimate holds at all times; on a quotient this bound is the whole
+difficulty. Section~\ref{subsec:simplest} shows for $K=N=0$ how it is obtained.
 
-\emph{The periodized flow.} On $M$ the periodized propagator applied to $a_{\mathbf s}$ must be bounded in $L^2(M)$, uniformly in $s_1\le t$.
-The periodization estimate used here (Lemma~\ref{lem:t2}) needs a weight $\ue^{\lambda d}$ with $\lambda>\tfrac12$, that is, above the
-critical weight $\ue^{d/2}$, and for transported functions its bound grows like $\ue^{\lambda t}$. Applied directly, it gives the
-estimate with an extra factor $\ue^{\lambda t}$ (Proposition~\ref{prop:cover}(ii)); for a fixed order $K$ and radius $\alpha$ the bound is then
-small only up to times of order $\log(1/\hbar)$. Letting $K$ grow like $\alpha^2/(\hbar t)$ gives exponentially small errors up to times of
-order $\alpha\hbar^{-1/2}$ (Corollary~\ref{cor:cover-trunc}), but not the bounds for a fixed order, nor the original norm. To avoid this growth one periodizes at time $0$, after running the dispersive flow back over the time $s_1$, and this
-needs a weighted bound for the flow. It is not known whether the flow
-$V$ preserves weighted analytic norms on such time scales; \cite[Conjecture~1]{S} conjectures this up to times of order $1/\hbar$. As in \cite{S} we compare $V$ with the flow
-$V_\varepsilon$ of the generator mollified at scale $\varepsilon$; the estimate for $V_\varepsilon$ is the step whose proof
-in \cite{S} has the gap (Appendix~\ref{sec:changes}). The mollified flow preserves analytic norms, with a loss of radius, and
-power-weighted norms, both up to times of order $\varepsilon/\hbar$ (Propositions~\ref{prop:a0} and~\ref{prop:ws}); the first
-is proved by an energy estimate with a frequency-clipped multiplier. Without a weight, the defect $(\Delta(s)-\Delta_\varepsilon(s))v$ of the
-mollified generator $\Delta_\varepsilon(s)$ is exponentially small, of size
-$\ue^{-r/(8\varepsilon)}$, on vectors of analytic radius $r$ (Lemma~\ref{lem:unw}); with the
-weight $X_0^\beta$ the bound we use is a power of $\varepsilon^{-1}$ (Lemma~\ref{lem:path}). Interpolation gives smallness at an
-intermediate weight, still above the critical one, and this pays for the growth of the periodization bound. With
-$\varepsilon=(\alpha\hbar)^{1/2}/2$ all requirements are met for $t\le\delta(\alpha/\hbar)^{1/2}$. Section~\ref{subsec:simplest}
-carries this out for $K=N=0$ and shows where the time scale $(\alpha/\hbar)^{1/2}$ comes from.
+\emph{The periodized flow.} Periodizing directly costs a factor $\ue^{\lambda t}$ with $\lambda>\tfrac12$
+(Proposition~\ref{prop:cover}(ii)). Letting $K$ grow like $\alpha^2/(\hbar t)$ still gives exponentially small errors up to times
+of order $\alpha\hbar^{-1/2}$ (Corollary~\ref{cor:cover-trunc}), but not the bounds for a fixed order, nor the original norm. The
+proof therefore periodizes at time $0$, after running the dispersive flow back over the time $s_1$, and this needs a weighted bound
+for the flow. It is not known whether the flow $V$ preserves weighted analytic norms on such time scales; \cite[Conjecture~1]{S}
+conjectures this up to times of order $1/\hbar$. As in \cite{S} we compare $V$ with the flow $V_\varepsilon$ of the generator
+mollified at scale $\varepsilon$; the estimate for $V_\varepsilon$ is the step whose proof in \cite{S} has the gap
+(Appendix~\ref{sec:changes}). The mollified flow preserves analytic norms, with a loss of radius, and power-weighted norms, both up
+to times of order $\varepsilon/\hbar$ (Propositions~\ref{prop:a0} and~\ref{prop:ws}); the first is proved by an energy estimate
+with a frequency-clipped multiplier. The defect of the mollified generator is exponentially small on analytic vectors
+(Lemma~\ref{lem:unw}), and with $\varepsilon=(\alpha\hbar)^{1/2}/2$ this smallness pays for the growth of the periodization bound
+for $t\le\delta(\alpha/\hbar)^{1/2}$ (Section~\ref{subsec:simplest}, Step~5).
 
 \emph{The original amplitude norm.} An amplitude of the original-norm class is $a=\ue^{-\alpha\Lambda}f$,
 where $f=\ue^{\alpha\Lambda}a$ has the exponential weighted bound $\norm{\ue^{\beta\langle d\rangle}f}=\pcNorm a$.

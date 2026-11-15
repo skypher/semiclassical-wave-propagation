@@ -1,7 +1,20 @@
 \section{Expectation values and escape of mass}\label{sec:expect}
 
 We first transfer the $L^2$ approximation estimates to bounded observables, then prove Theorem~\ref{ev:mod} on the
-modular surface. The proof of Theorem~\ref{ev:mod} has seven intermediate statements: the Mellin transform of the amplitude
+modular surface.
+
+\medskip\noindent\emph{The mechanism of escape.} Since the periodization of $a$ along the translations depends only on $y$,
+the periodized leading approximation $u^{(0)}(t)_\Gamma$ is a sum over the cosets of the translation subgroup of a function of
+$\operatorname{Im}\gamma z$, of the form of an incomplete Eisenstein series. Its zero Fourier mode in $x$ has three parts
+(Lemma~\ref{ev:approxmode}): the transported profile $f_t$, which is the profile $a_0$ moved down to heights of order $\ue^{-t}$;
+a constant; and an outgoing term $\mathcal O_{f_t}$, obtained from $f_t$ through the scattering coefficient of the cusp. The
+outgoing term carries the full mass $\mu_0$ of the initial state. Heuristically it moves up the cusp at unit speed in $\log y$,
+delayed by the phase of the scattering coefficient (Remark~\ref{ev:time}); the proof uses that after the time $T(\hbar)+\log H$
+almost all of it lies above the height $H$ (Lemma~\ref{ev:outgoing}). Since $\norm{\psi(t)}^2=\mu_0+O(\hbar^n)$ and the
+approximation is accurate, almost no mass is then left in the compact set $M_H$. The classical prediction instead transports the
+density $|a_0|^2$ down to the closed horocycles at heights of order $\ue^{-t}$, and their projections equidistribute.
+
+The proof has seven intermediate statements: the Mellin transform of the amplitude
 (Lemma~\ref{ev:mellinlemma}), integrals of the amplitude against periodic functions and its periodization along the translations
 (Lemma~\ref{ev:meanlem} and Corollary~\ref{ev:perio}), the scattering formula (Lemma~\ref{ev:scattering}), the zero mode of the
 approximation (Lemma~\ref{ev:approxmode}), its initial norm (Lemma~\ref{ev:initialnorm}) and the outgoing-mass bound
