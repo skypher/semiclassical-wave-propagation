@@ -2949,3 +2949,10 @@ import Qschubert
 #print axioms Qschubert.lem_wb_u_one
 #print axioms Qschubert.dd_core_om
 #print axioms Qschubert.window_radius
+#print axioms Qschubert.fdb_paper
+#print axioms Qschubert.lem_sc_paper
+#print axioms Qschubert.exp_of_words_paper
+#print axioms Qschubert.lem_m_weak_paper
+#print axioms Qschubert.clip_paper
+#print axioms Qschubert.prop_a0_paper
+#print axioms Qschubert.words_paper
