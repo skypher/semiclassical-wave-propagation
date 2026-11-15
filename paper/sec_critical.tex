@@ -10,7 +10,7 @@
 
 To handle the original-norm class we work at the weight $X_0^{1/2}$ with a logarithmic correction, in the notation of
 Section~\ref{subsec:pc-weights}. A multiplier theorem at this weight (Theorem~\ref{os:cw}) gives a factorization
-$a=\ue^{-\sigma\Lambda_m}\tilde f$ with critically weighted data $\tilde f$ (Proposition~\ref{os:data}); word bounds
+$a=\ue^{-\sigma\Lambda_\eta}\tilde f$ with critically weighted data $\tilde f$ (Proposition~\ref{os:data}); word bounds
 (Lemma~\ref{os:words}) and transfer over shells (Section~\ref{subsec:pc-transfer}) then control the derivatives, flow and defect
 appearing in the remainder.
 
@@ -70,14 +70,14 @@ So $\sum_k(\sum_n\mathsf K(k,n)\theta_n)^2\le(C'B)^2\sum_n\theta_n^2=(C'B)^2\nor
 The cosine-transform representations and tail bounds needed to apply Theorem~\ref{os:cw}
 are given in Lemma~\ref{os:prof}, proved in Appendix~\ref{app:profiles}.
 They give the following two operator bounds: Poisson smoothing preserves the critical weight,
-and the change from $\Lambda$ to $\Lambda_m$ is bounded at that weight.
+and the change from $\Lambda$ to $\Lambda_\eta$ is bounded at that weight.
 
 \begin{corollary}[Poisson smoothing and the shifted multiplier at the critical weight]\label{os:cwp}
-Let $\tfrac12<c<1$. For $0<\tau\le1$ and $f\in L^2$, $\norm{\osomc\,\ue^{-\tau\osLam}f}\le C_\Lambda\norm{\osomc f}$. For $m\ge\tfrac12$,
-$\norm{\osomc(\Lambda_m-\osLam)f}\le C_{\Lambda_m}\norm{\osomc f}$.
+Let $\tfrac12<c<1$. For $0<\tau\le1$ and $f\in L^2$, $\norm{\osomc\,\ue^{-\tau\osLam}f}\le C_\Lambda\norm{\osomc f}$. For $\eta\ge\tfrac12$,
+$\norm{\osomc(\Lambda_\eta-\osLam)f}\le C_{\Lambda_\eta}\norm{\osomc f}$.
 \end{corollary}
 \begin{proof}
-Theorem~\ref{os:cw} with $g=g_{\tau,1/2}$ and Lemma~\ref{os:prof}(i),(iv), respectively with $g=G_m$ and Lemma~\ref{os:prof}(v).
+Theorem~\ref{os:cw} with $g=g_{\tau,1/2}$ and Lemma~\ref{os:prof}(i),(iv), respectively with $g=G_\eta$ and Lemma~\ref{os:prof}(v).
 \end{proof}
 
 \subsection{Factorization and derivative estimates for the data}\label{subsec:pc-data}
@@ -85,67 +85,67 @@ We now factor the Poisson-smoothed amplitude through the shifted semigroup and b
 The next subsection transfers these bounds to the critical weight used for periodization.
 
 \begin{proposition}[factorization of the data]\label{os:data}
-Let $\tfrac12<c<1$, $m\ge\tfrac12$ and $0<\sigma<\alpha\le1$ with $\sigma m\le\tfrac12$, and put
+Let $\tfrac12<c<1$, $\eta\ge\tfrac12$ and $0<\sigma<\alpha\le1$ with $\sigma \eta\le\tfrac12$, and put
 \[
-\mathsf R:=\ue^{-(\alpha-\sigma)\osLam}\,\ue^{\sigma(\Lambda_m-\osLam)},
+\mathsf R:=\ue^{-(\alpha-\sigma)\osLam}\,\ue^{\sigma(\Lambda_\eta-\osLam)},
 \]
-a bounded operator. Then $\ue^{-\sigma\Lambda_m}\mathsf R=\ue^{-\alpha\osLam}$, and
-$\norm{\osomc\mathsf Rf}\le C_{\mathrm d}\norm{\osomc f}$ for all $f\in L^2$, with a constant $C_{\mathrm d}$ depending only on $m$ and $c$.
+a bounded operator. Then $\ue^{-\sigma\Lambda_\eta}\mathsf R=\ue^{-\alpha\osLam}$, and
+$\norm{\osomc\mathsf Rf}\le C_{\mathrm d}\norm{\osomc f}$ for all $f\in L^2$, with a constant $C_{\mathrm d}$ depending only on $\eta$ and $c$.
 Consequently, if $\beta>\tfrac12$ and $\pcNorm a<\infty$ at $(\alpha,\beta)$, then $\tilde f:=\mathsf R\,\ue^{\alpha\osLam}a$ satisfies
 \[
-a=\ue^{-\sigma\Lambda_m}\tilde f,\qquad\norm{\osomc\tilde f}\le C\,\pcNorm a,
+a=\ue^{-\sigma\Lambda_\eta}\tilde f,\qquad\norm{\osomc\tilde f}\le C\,\pcNorm a,
 \]
-with $C=C(m,c,\beta)$.
+with $C=C(\eta,c,\beta)$.
 \end{proposition}
 \begin{proof}
-The identity is the bounded functional calculus: $-\sigma\Lambda_m+\sigma(\Lambda_m-\osLam)-(\alpha-\sigma)\osLam=-\alpha\osLam$. The operator
-$\mathsf S:=\Lambda_m-\osLam$ is bounded, and $\ue^{\sigma\mathsf S}=\sum_k\sigma^k\mathsf S^k/k!$ in operator norm. By Corollary~\ref{os:cwp},
-$\norm{\osomc\mathsf S^kf}\le C_{\Lambda_m}^k\norm{\osomc f}$, so the partial sums are bounded in the weighted norm by $\ue^{\sigma C_{\Lambda_m}}\norm{\osomc f}$, and
-Fatou's lemma gives $\norm{\osomc\ue^{\sigma\mathsf S}f}\le\ue^{C_{\Lambda_m}}\norm{\osomc f}$. Then apply Corollary~\ref{os:cwp} to
-$\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=C_\Lambda\,\ue^{C_{\Lambda_m}}$ works. For the consequence put $f=\ue^{\alpha\osLam}a$, so $a=\ue^{-\alpha\osLam}f$. Since $\tilde\psi\le d\le\langle d\rangle+1$ and
+The identity is the bounded functional calculus: $-\sigma\Lambda_\eta+\sigma(\Lambda_\eta-\osLam)-(\alpha-\sigma)\osLam=-\alpha\osLam$. The operator
+$\mathsf S:=\Lambda_\eta-\osLam$ is bounded, and $\ue^{\sigma\mathsf S}=\sum_k\sigma^k\mathsf S^k/k!$ in operator norm. By Corollary~\ref{os:cwp},
+$\norm{\osomc\mathsf S^kf}\le C_{\Lambda_\eta}^k\norm{\osomc f}$, so the partial sums are bounded in the weighted norm by $\ue^{\sigma C_{\Lambda_\eta}}\norm{\osomc f}$, and
+Fatou's lemma gives $\norm{\osomc\ue^{\sigma\mathsf S}f}\le\ue^{C_{\Lambda_\eta}}\norm{\osomc f}$. Then apply Corollary~\ref{os:cwp} to
+$\ue^{-(\alpha-\sigma)\osLam}$; so $C_{\mathrm d}=C_\Lambda\,\ue^{C_{\Lambda_\eta}}$ works. For the consequence put $f=\ue^{\alpha\osLam}a$, so $a=\ue^{-\alpha\osLam}f$. Since $\tilde\psi\le d\le\langle d\rangle+1$ and
 $\beta>\tfrac12$, $\osomc\le\ue^{d/2}(1+d/\log2)\le C_\beta\,\ue^{\beta\langle d\rangle}$.
 \end{proof}
 
 For the derivative bounds write $c_H:=1+4/\ue$, the constant in the profile bound of Lemma~\ref{os:prof}(iii).
 
 \begin{lemma}[words of the shifted Poisson semigroup at a bounded weight]\label{os:words}
-Let $m\ge\tfrac12$ and $\rho\ge0$ with $2(\rho+\tfrac12)^2<m^2$, and let $W$ be a bounded weight (Section~\ref{app:ws}) with
-$(X\log W)^2+(Y\log W)^2\le\rho^2$. Put $\mu:=m^2-\tfrac14$ and $C_5:=2\ue\,c_H$.
+Let $\eta\ge\tfrac12$ and $\rho\ge0$ with $2(\rho+\tfrac12)^2<\eta^2$, and let $W$ be a bounded weight (Section~\ref{app:ws}) with
+$(X\log W)^2+(Y\log W)^2\le\rho^2$. Put $\mu:=\eta^2-\tfrac14$ and $C_5:=2\ue\,c_H$.
 \begin{itemize}
 \item[(a)] For $\tau,s>0$ and $u\in L^2$:
 \[
-\norm{W\ue^{-\tau\Lambda_m}u}\le\sqrt2\norm{Wu},\qquad
-\norm{W\Lambda_m\ue^{-s\Lambda_m}u}\le(2c_H/s)\norm{Wu}.
+\norm{W\ue^{-\tau\Lambda_\eta}u}\le\sqrt2\norm{Wu},\qquad
+\norm{W\Lambda_\eta\ue^{-s\Lambda_\eta}u}\le(2c_H/s)\norm{Wu}.
 \]
-Hence for $j\ge1$ and $\sigma>0$, $\norm{W(\mu-\Delta)^j\ue^{-\sigma\Lambda_m}u}\le(4jc_H/\sigma)^{2j}\norm{Wu}$.
-\item[(b)] For $0<\sigma\le1$, every word $Z_S$ of length $k$ in $X,Y$, and $h\in L^2$,
+Hence for $j\ge1$ and $\sigma>0$, $\norm{W(\mu-\Delta)^j\ue^{-\sigma\Lambda_\eta}u}\le(4jc_H/\sigma)^{2j}\norm{Wu}$.
+\item[(b)] For $0<\sigma\le1$, every word $Z_I$ of length $k$ in $X,Y$, and $h\in L^2$,
 \[
-\norm{WZ_S\,\ue^{-\sigma\Lambda_m}h}\le\sqrt2\,(4+2\rho)^k\,k!\,(C_5/\sigma)^k\,\norm{Wh}.
+\norm{WZ_I\,\ue^{-\sigma\Lambda_\eta}h}\le\sqrt2\,(4+2\rho)^k\,k!\,(C_5/\sigma)^k\,\norm{Wh}.
 \]
 \end{itemize}
-In particular, let $\lambda\ge0$ with $2(\lambda+\tfrac12)^2<m^2$ and $\osX^\lambda h\in L^2$. Then
+In particular, let $\lambda\ge0$ with $2(\lambda+\tfrac12)^2<\eta^2$ and $\osX^\lambda h\in L^2$. Then
 \[
-\norm{\osX^\lambda Z_S\,\ue^{-\sigma\Lambda_m}h}\le\sqrt2\,(4+2\lambda)^k\,k!\,(C_5/\sigma)^k\,\norm{\osX^\lambda h}.
+\norm{\osX^\lambda Z_I\,\ue^{-\sigma\Lambda_\eta}h}\le\sqrt2\,(4+2\lambda)^k\,k!\,(C_5/\sigma)^k\,\norm{\osX^\lambda h}.
 \]
-Moreover $\norm{\ue^{\sigma\osLam}\ue^{-\sigma\Lambda_m}}\le1$.
+Moreover $\norm{\ue^{\sigma\osLam}\ue^{-\sigma\Lambda_\eta}}\le1$.
 \end{lemma}
 \begin{proof}
 (a) By Lemma~\ref{os:prof}(i), Lemma~\ref{lem:wave}(b) and Lemma~\ref{os:prof}(ii) with $\rho+\tfrac12$ in the role of $\lambda$,
-$\norm{W\ue^{-\tau\Lambda_m}u}\le\int g_{\tau,m}(r)\ue^{(\rho+1/2)|r|}dr\,\norm{Wu}\le\sqrt2\norm{Wu}$. The same with $h_{s,m}$ and Lemma~\ref{os:prof}(iii) gives the second
-bound. For the third write $(\mu-\Delta)^j\ue^{-\sigma\Lambda_m}=(\Lambda_m\ue^{-(\sigma/2j)\Lambda_m})^{2j}$.
+$\norm{W\ue^{-\tau\Lambda_\eta}u}\le\int g_{\tau,\eta}(r)\ue^{(\rho+1/2)|r|}dr\,\norm{Wu}\le\sqrt2\norm{Wu}$. The same with $h_{s,\eta}$ and Lemma~\ref{os:prof}(iii) gives the second
+bound. For the third write $(\mu-\Delta)^j\ue^{-\sigma\Lambda_\eta}=(\Lambda_\eta\ue^{-(\sigma/2j)\Lambda_\eta})^{2j}$.
 
-(b) Let $v_j:=(\mu-\Delta)^j\ue^{-\sigma\Lambda_m}h$. Since $\Lambda_m\ge\osLam$, $v_j\in\operatorname{Dom}(\ue^{\sigma'\osLam})$ for $\sigma'<\sigma$, so $v_j$ is smooth
+(b) Let $v_j:=(\mu-\Delta)^j\ue^{-\sigma\Lambda_\eta}h$. Since $\Lambda_\eta\ge\osLam$, $v_j\in\operatorname{Dom}(\ue^{\sigma'\osLam})$ for $\sigma'<\sigma$, so $v_j$ is smooth
 and all words applied to $v_j$ lie in $L^2$ (Lemmas~\ref{lem:wc} and~\ref{lem:lift}). Put
 \[
-\mathsf A_{k,j}:=\max_{|S|=k}\norm{WZ_Sv_j},\qquad\mathsf B_{k+1,j}:=\max_{|S|=k}\bigl(\norm{WXZ_Sv_j}^2+\norm{WYZ_Sv_j}^2\bigr)^{1/2},
+\mathsf A_{k,j}:=\max_{|I|=k}\norm{WZ_Iv_j},\qquad\mathsf B_{k+1,j}:=\max_{|I|=k}\bigl(\norm{WXZ_Iv_j}^2+\norm{WYZ_Iv_j}^2\bigr)^{1/2},
 \]
-so $\mathsf A_{k+1,j}\le\mathsf B_{k+1,j}$. Fix $S$ with $|S|=k$ and $w=Z_Sv_j$. Integration by parts gives
+so $\mathsf A_{k+1,j}\le\mathsf B_{k+1,j}$. Fix $I$ with $|I|=k$ and $w=Z_Iv_j$. Integration by parts gives
 \begin{multline*}
 \norm{WXw}^2+\norm{WYw}^2=\mathrm{Re}\langle W^2w,(\mu-\Delta)w\rangle-\mu\norm{Ww}^2\\
 -\mathrm{Re}\langle X(W^2)w,Xw\rangle-\mathrm{Re}\langle Y(W^2)w,Yw\rangle .
 \end{multline*}
-Since $[\Delta,X]=2XY$ and $[\Delta,Y]=-2X^2$, $[\Delta,Z_S]$ is a sum of $k$ words of length $k+1$ with coefficients $\pm2$, and
-$(\mu-\Delta)w=Z_Sv_{j+1}-[\Delta,Z_S]v_j$. The last two terms are at most $2\rho\norm{Ww}(\norm{WXw}^2+\norm{WYw}^2)^{1/2}$ together. Hence
+Since $[\Delta,X]=2XY$ and $[\Delta,Y]=-2X^2$, $[\Delta,Z_I]$ is a sum of $k$ words of length $k+1$ with coefficients $\pm2$, and
+$(\mu-\Delta)w=Z_Iv_{j+1}-[\Delta,Z_I]v_j$. The last two terms are at most $2\rho\norm{Ww}(\norm{WXw}^2+\norm{WYw}^2)^{1/2}$ together. Hence
 \[
 \mathsf B_{k+1,j}^2\le\mathsf A_{k,j}\mathsf A_{k,j+1}+(2k+2\rho)\mathsf A_{k,j}\,\mathsf B_{k+1,j},
 \]
@@ -160,7 +160,7 @@ $(2k+2\rho)\,n!\le(2+2\rho)(n+1)!$ and $(C_5/\sigma)^n\le(C_5/\sigma)^{n+1}/C_5$
 \mathsf A_{k+1,j}\le\sqrt2\,(4+2\rho)^k(C_5/\sigma)^{n+1}(n+1)!\,\bigl((2+2\rho)/C_5+\sqrt2\bigr)\norm{Wh},
 \]
 which is the claim for $k+1$, because $C_5\ge1$ and so $(2+2\rho)/C_5+\sqrt2\le4+2\rho$. The case $j=0$ is (b). The statement for $\osX^\lambda$ follows with $W=W_{\lambda,n}$ and $n\to\infty$, and the last
-statement from $\Lambda_m\ge\osLam$.
+statement from $\Lambda_\eta\ge\osLam$.
 \end{proof}
 
 \subsection{Transfer and periodization at the critical weight}\label{subsec:pc-transfer}

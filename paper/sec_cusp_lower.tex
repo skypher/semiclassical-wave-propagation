@@ -5,7 +5,7 @@ with time.
 
 Throughout this section $\Gamma=\mathrm{PSL}(2,\mathbb Z)$, $M=\Gamma\backslash\Hb$ (cusp at $\infty$ of width $1$), $x_0=i$, $X_0=\cosh d(i,\cdot)$,
 $b=\infty$, $\varphi=-\log y$ and $\vartheta(w):=\ue^{-d(i,w)}(1+d(i,w))^{-3/2}$. The periodization $[F]_\Gamma$ is that of Section~\ref{sec:setup}, and
-$E_K(t):=\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma$. Words $Z_S$ are products of $X$ and $Y$.
+$E_K(t):=\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma-u^{(K)}(t)_\Gamma$. Words $Z_I$ are products of $X$ and $Y$.
 
 \begin{theorem}[lower bound high in the cusp]\label{cl:main}
 Let $\beta>\tfrac12$. There are a radius $\alpha_1=\alpha_1(\beta)\in(0,\tfrac12]$ and absolute constants $\mu_*\ge1$ and $c_{\mathrm{nc}}>0$
@@ -201,7 +201,7 @@ because $H\ge\hbar^{-2}$ and $H^{-1}\log(4H)\le C\hbar^{1/2}$ for such $H$. Addi
 
 \begin{lemma}[cusp asymptotics]\label{cl:asym}
 Let $\vartheta^\star$ be either $X_0^{-2}$ or $\vartheta$, and for $v\in C^4(\Hb)$ put
-$B(v):=\sup_w\vartheta^\star(w)^{-1}\sum_{|S|\le4}|Z_Sv(w)|$. There is a $C$ (depending only on the choice of $\vartheta^\star$) such that for every $v$ with
+$B(v):=\sup_w\vartheta^\star(w)^{-1}\sum_{|I|\le4}|Z_Iv(w)|$. There is a $C$ (depending only on the choice of $\vartheta^\star$) such that for every $v$ with
 $B(v)<\infty$, $0<\hbar\le\tfrac12$,
 $t\ge2\log(1/\hbar)$, $H=\ue^t$ and $z=x+iH$,
 \begin{multline*}
@@ -231,7 +231,7 @@ so $G_{n,c}(u)=g(\tau):=\ue^{-t/2}v(Q(\tau))\,\ue^{i(t+\log(\tau^2+c^2))/\hbar}$
 \partial_\tau\bigl[\Psi(Q(\tau))\bigr]=-\frac1c\,r_1\Bigl(\frac\tau c\Bigr)(Y\Psi)(Q(\tau))-\frac1{cH}\,r_2\Bigl(\frac\tau c\Bigr)(X\Psi)(Q(\tau)) .
 \end{equation}
 Applying \eqref{cl:chain} $j$ times, $\partial_\tau^j[v(Q(\tau))]$ is a sum of at most $C_j$ terms, each of which is $c^{-j}$ times a product of
-derivatives of $r_1$ and $r_2$ at $\tau/c$, times a power $H^{-k}$ with $k\ge0$, times $(Z_Sv)(Q(\tau))$ for a word with $|S|\le j$. So
+derivatives of $r_1$ and $r_2$ at $\tau/c$, times a power $H^{-k}$ with $k\ge0$, times $(Z_Iv)(Q(\tau))$ for a word with $|I|\le j$. So
 \begin{equation}\label{cl:der}
 |\partial_\tau^j[v(Q(\tau))]|\le C_j\,c^{-j}B(v)\,\vartheta^\star(Q(\tau))\qquad(j\le4).
 \end{equation}
@@ -289,7 +289,7 @@ Summing over $(n,c)$, with $\sum_{(n,c)}\vartheta^\star_{n,c}<\infty$, and addin
 \subsection{Kernel bounds and amplitude construction}\label{subsec:cl-kernels}
 \emph{Cutoffs.} Fix a radial $\eta\in C_c^\infty(B(i,\tfrac14))$ with $\eta=1$ on $B(i,\tfrac18)$, and for $w\in\Hb$ put
 $\eta_w:=\eta\circ p_w^{-1}$, where $p_w$ is the affine map taking $i$ to $w$. Then $\eta_w=1$ on $B(w,\tfrac18)$,
-$\operatorname{supp}\eta_w\subset B(w,\tfrac14)$, and $|Z_S\eta_w|\le C_S$ uniformly in $w$ for every word $Z_S$, since $X$ and $Y$ commute with
+$\operatorname{supp}\eta_w\subset B(w,\tfrac14)$, and $|Z_I\eta_w|\le C_I$ uniformly in $w$ for every word $Z_I$, since $X$ and $Y$ commute with
 $p_w$. The proofs of Lemmas~\ref{cl:amp} and~\ref{cl:noncancel} use these cutoffs.
 \begin{lemma}[the Poisson kernel off the diagonal]\label{cl:kernel}
 Fix $d_0\in(0,1]$. For $0<\alpha\le\alpha_0<\pi/2$ the kernel $k_\alpha(r)$ of $\ue^{-\alpha\Lambda}$ extends holomorphically to
@@ -303,13 +303,13 @@ See Appendix~\ref{app:cusp-aux}.
 
 \begin{lemma}[local derivative, packing and kernel estimates]\label{cl:aux}
 \begin{enumerate}
-\item[(a)] \emph{Pointwise bounds for words.} For every word $Z_S$ there is $C_S$ such that, with $k=\lceil|S|/2\rceil+1$,
-$|Z_Sv(w)|\le C_S\sum_{j\le k}\norm{\Delta^jv}_{L^2(\Hb)}$ for all $w\in\Hb$ and $v\in\operatorname{Dom}(\Delta^k)$.
+\item[(a)] \emph{Pointwise bounds for words.} For every word $Z_I$ there is $C_I$ such that, with $k=\lceil|I|/2\rceil+1$,
+$|Z_Iv(w)|\le C_I\sum_{j\le k}\norm{\Delta^jv}_{L^2(\Hb)}$ for all $w\in\Hb$ and $v\in\operatorname{Dom}(\Delta^k)$.
 \item[(b)] \emph{Packing.} If $P\subset\Hb$ has $d(p,p')\ge\sigma_0>0$ for distinct points, then
 $\sum_{p\in P}\ue^{-d(p,w')}(1+d(p,w'))^{-3/2}\le C_{\sigma_0}$ for all $w'\in\Hb$.
 \item[(c)] For $w,w'\in\Hb$, $\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}\le\vartheta(w)\,\ue^{d(i,w')}(1+d(i,w'))^{3/2}$.
-\item[(d)] \emph{Words of the kernel.} For $d_0\in(0,1]$, every word $Z_S$ acting in $w$, $\alpha\le\tfrac12$ and $d(w,w')\ge d_0$,
-$|Z_S^w[k_\alpha(d(w,w'))]|\le C_{S,d_0}\,\alpha\,\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}$.
+\item[(d)] \emph{Words of the kernel.} For $d_0\in(0,1]$, every word $Z_I$ acting in $w$, $\alpha\le\tfrac12$ and $d(w,w')\ge d_0$,
+$|Z_I^w[k_\alpha(d(w,w'))]|\le C_{I,d_0}\,\alpha\,\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -320,9 +320,9 @@ See Appendix~\ref{app:cusp-aux}.
 \begin{itemize}
 \item[\textup{(i)}] For every $\beta\ge0$ there is $\alpha_1=\alpha_1(\beta)\in(0,\tfrac12]$ such that for all $\mu>0$ and $w_0\in\Hb$ the function
 $\ue^{\beta\langle d(w_0,\cdot)\rangle}\ue^{-\mu X_0}$ lies in $\operatorname{Dom}(\ue^{\alpha_1\Lambda})$; in particular $a=\ue^{-\mu X_0}$ has finite reversed-weight norm
-$\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}$ for every $\alpha\le\alpha_1$. Moreover $|Z_Sa|\le C_{S,\mu}X_0^{|S|}\ue^{-\mu X_0}$.
+$\norm{\ue^{\alpha\Lambda}\ue^{\beta\langle d\rangle}a}$ for every $\alpha\le\alpha_1$. Moreover $|Z_Ia|\le C_{I,\mu}X_0^{|I|}\ue^{-\mu X_0}$.
 \item[\textup{(ii)}] $a=\ue^{-\alpha\Lambda}\ue^{-\mu X_0}$ has $\pcNorm a=\norm{\ue^{\beta\langle d\rangle}\ue^{-\mu X_0}}<\infty$, and
-$|Z_Sa(w)|\le C_{S,\mu}\vartheta(w)$ uniformly in $\alpha\le\tfrac12$.
+$|Z_Ia(w)|\le C_{I,\mu}\vartheta(w)$ uniformly in $\alpha\le\tfrac12$.
 \end{itemize}
 \end{lemma}
 \begin{proof}
@@ -332,21 +332,21 @@ We use Lemma~\ref{cl:aux}.
 \[
 \ue^{\beta\langle d_{w_0}\rangle}\ue^{-\mu X_0}=\frac1{\mathfrak m_{w_0}}\cdot X_{w_0}^\beta\cdot\ue^{-\mu X_0}.
 \]
-We bound the words of the three factors; $j$ denotes the length of the word $Z_S$.
+We bound the words of the three factors; $j$ denotes the length of the word $Z_I$.
 
 \emph{The first factor.} For $w_0=i$, $\mathfrak m_i=\Phi(\tilde\psi)$ with $\Phi$ the function of the proof of Lemma~\ref{lem:m2w}.
 Since $\Phi$ is an exponential, $1/\Phi$ extends holomorphically wherever $\Phi$ does: to a neighbourhood of every point of $[0,\infty)$
 and to the strip of Step~1 of that proof, where $|1/\Phi|=\exp\beta\operatorname{Re}(\varsigma+(\tilde d+R)^{-1}-1)\le\ue^{\beta}$,
 because $|1+(1-\ue^{-2v})^{1/2}|\le3$ and $|\tilde d+R|^{-1}\le\tfrac{10}{17}$ there. Compactness of $[0,2]$ and Cauchy's estimate on
 discs of radius $\tfrac15$ around the points of $[2,\infty)$ give $|(1/\Phi)^{(k)}|\le A_\beta k!\,\rho_\beta^k$ on $[0,\infty)$, and
-Lemma~\ref{lem:wordphi} gives $|Z_S(1/\mathfrak m_i)|\le A_\beta c_\beta^{\,j}j!$ with $c_\beta:=4+3\rho_\beta$; here $A_\beta,\rho_\beta\ge1$
+Lemma~\ref{lem:wordphi} gives $|Z_I(1/\mathfrak m_i)|\le A_\beta c_\beta^{\,j}j!$ with $c_\beta:=4+3\rho_\beta$; here $A_\beta,\rho_\beta\ge1$
 depend only on $\beta$. If $q$ is the affine isometry with $q(i)=w_0$, then
 $\mathfrak m_{w_0}=\mathfrak m_i\circ q^{-1}$, and $q$ commutes with $X$ and $Y$; so the same bound holds for $1/\mathfrak m_{w_0}$.
 
 \emph{The other two factors.} Let $\Psi$ be holomorphic in $\operatorname{Re}u>0$. By the expansion in the proof of Lemma~\ref{lem:fdb}(b) and
 Lemma~\ref{lem:fdb}(a),
 \[
-|Z_S\Psi(X_0)|\le2^j\sum_k\stirling jk\,2^kX_0^k\,|\Psi^{(k)}(X_0)| ,
+|Z_I\Psi(X_0)|\le2^j\sum_k\stirling jk\,2^kX_0^k\,|\Psi^{(k)}(X_0)| ,
 \]
 with the Stirling numbers $\stirling jk$ of Lemma~\ref{lem:fdb}, and Cauchy's estimate on the disc of radius $u/2$ about $u\ge1$ gives
 $u^k|\Psi^{(k)}(u)|\le k!\,2^k\sup_{|z-u|\le u/2}|\Psi|$. For $\Psi(u)=u^\beta$ the supremum is at most $(3u/2)^\beta$, and for
@@ -354,24 +354,24 @@ $\Psi(u)=\ue^{-\mu u}$ it is at most $\ue^{-\mu u/2}$. The exponential generatin
 holomorphic in $|z|<\log\tfrac54$ and at most $9$ in modulus on $|z|=\tfrac15$ (there $|5-4\ue^z|\ge5-4\ue^{1/5}>\tfrac19$); so
 $\sum_k\stirling jk4^kk!\le9\cdot5^jj!$. Hence
 \[
-|Z_S\,\ue^{-\mu X_0}|\le9\cdot10^jj!\,\ue^{-\mu X_0/2},\qquad|Z_SX_{w_0}^\beta|\le9\cdot10^jj!\,(3X_{w_0}/2)^\beta ,
+|Z_I\,\ue^{-\mu X_0}|\le9\cdot10^jj!\,\ue^{-\mu X_0/2},\qquad|Z_IX_{w_0}^\beta|\le9\cdot10^jj!\,(3X_{w_0}/2)^\beta ,
 \]
 the second by the first argument applied to $X_0^\beta$ and composition with $q^{-1}$.
 
 \emph{Conclusion.} By the Leibniz rule for three factors, with $L:=\max(c_\beta,10)$,
 \begin{multline*}
-\bigl|Z_S\bigl(\ue^{\beta\langle d_{w_0}\rangle}\ue^{-\mu X_0}\bigr)\bigr|\le81A_\beta\,j!\sum_{j_1+j_2+j_3=j}c_\beta^{\,j_1}10^{\,j_2+j_3}\,(3X_{w_0}/2)^\beta\ue^{-\mu X_0/2}\\
+\bigl|Z_I\bigl(\ue^{\beta\langle d_{w_0}\rangle}\ue^{-\mu X_0}\bigr)\bigr|\le81A_\beta\,j!\sum_{j_1+j_2+j_3=j}c_\beta^{\,j_1}10^{\,j_2+j_3}\,(3X_{w_0}/2)^\beta\ue^{-\mu X_0/2}\\
 \le81A_\beta\,(j+1)\,j!\,(2L)^j\,(3X_{w_0}/2)^\beta\ue^{-\mu X_0/2},
 \end{multline*}
 because the sum has $\binom{j+2}2\le(j+1)2^j$ terms. Since $X_{w_0}\le2\cosh d(w_0,i)\,X_0$, the function $(3X_{w_0}/2)^\beta\ue^{-\mu X_0/2}$ lies in
 $L^2(\Hb)$. Lemma~\ref{lem:expw} (with $\alpha=1$ and $2L$ in the role of $L$) gives the claim with $\alpha_1:=1/(8L)$, which depends only on $\beta$.
 
 \emph{The word bound.} By Lemma~\ref{lem:fdb}(a), every word applied to
-$X_0$ is bounded by $C_SX_0$, and $Z_S\ue^{-\mu X_0}$ is $\ue^{-\mu X_0}$ times a sum of products of at most $|S|$ factors $-\mu Z_{S_l}X_0$. So
+$X_0$ is bounded by $C_IX_0$, and $Z_I\ue^{-\mu X_0}$ is $\ue^{-\mu X_0}$ times a sum of products of at most $|I|$ factors $-\mu Z_{I_l}X_0$. So
 \begin{equation}\label{cl:hwords}
-|Z_S\ue^{-\mu X_0}|\le C_S(1+\mu)^{|S|}X_0^{|S|}\ue^{-\mu X_0},
+|Z_I\ue^{-\mu X_0}|\le C_I(1+\mu)^{|I|}X_0^{|I|}\ue^{-\mu X_0},
 \end{equation}
-with $C_S$ independent of $\mu$; this is the word bound.
+with $C_I$ independent of $\mu$; this is the word bound.
 
 (ii) The norm is the definition: $\ue^{\alpha\Lambda}a=h:=\ue^{-\mu X_0}$. Fix $w$ and split, with the cutoff $\eta_w$ of
 Section~\ref{subsec:cl-kernels},
@@ -381,17 +381,17 @@ a=a^{\rm n}+a^{\rm f},\qquad a^{\rm n}:=\ue^{-\alpha\Lambda}(h\eta_w),\qquad a^{
 \emph{Far part.} $a^{\rm f}(\tilde w)=\int k_\alpha(d(\tilde w,w'))(1-\eta_w)(w')h(w')\,d\nu(w')$. For $\tilde w\in B(w,\tfrac1{16})$ and $w'$ in the support of
 $1-\eta_w$ we have $d(\tilde w,w')\ge\tfrac1{16}$, so by Lemma~\ref{cl:aux}(d) with $d_0=\tfrac1{16}$ one may differentiate under the integral, and at $\tilde w=w$, by Lemma~\ref{cl:aux}(c),
 \begin{multline*}
-|Z_Sa^{\rm f}(w)|\le C_S\alpha\int\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}h(w')\,d\nu(w')\\
-\le C_S\alpha\,\vartheta(w)\int\ue^{d(i,w')}(1+d(i,w'))^{3/2}\ue^{-\mu X_0(w')}d\nu(w')=C_{S,\mu}\alpha\,\vartheta(w).
+|Z_Ia^{\rm f}(w)|\le C_I\alpha\int\ue^{-d(w,w')}(1+d(w,w'))^{-3/2}h(w')\,d\nu(w')\\
+\le C_I\alpha\,\vartheta(w)\int\ue^{d(i,w')}(1+d(i,w'))^{3/2}\ue^{-\mu X_0(w')}d\nu(w')=C_{I,\mu}\alpha\,\vartheta(w).
 \end{multline*}
-\emph{Near part.} Put $k=\lceil|S|/2\rceil+1$. The operator $\ue^{-\alpha\Lambda}$ commutes with $\Delta$ and is a contraction, and $\Delta^j$ is a combination of words of length at most $2j$. So by Lemma~\ref{cl:aux}(a),
+\emph{Near part.} Put $k=\lceil|I|/2\rceil+1$. The operator $\ue^{-\alpha\Lambda}$ commutes with $\Delta$ and is a contraction, and $\Delta^j$ is a combination of words of length at most $2j$. So by Lemma~\ref{cl:aux}(a),
 the Leibniz rule and \eqref{cl:hwords},
 \[
-|Z_Sa^{\rm n}(w)|\le C_S\sum_{j\le k}\norm{\Delta^j(h\eta_w)}\le C_S(1+\mu)^{2k}\sup_{B(w,1/4)}X_0^{2k}\ue^{-\mu X_0} .
+|Z_Ia^{\rm n}(w)|\le C_I\sum_{j\le k}\norm{\Delta^j(h\eta_w)}\le C_I(1+\mu)^{2k}\sup_{B(w,1/4)}X_0^{2k}\ue^{-\mu X_0} .
 \]
 On $B(w,\tfrac14)$, $X_0\ge\cosh(\max(0,d(i,w)-\tfrac14))$, so the right side is at most
 \[
-C_{S,\mu}\exp\bigl(-\tfrac\mu2\cosh(\max(0,d(i,w)-\tfrac14))\bigr)\le C_{S,\mu}\vartheta(w).
+C_{I,\mu}\exp\bigl(-\tfrac\mu2\cosh(\max(0,d(i,w)-\tfrac14))\bigr)\le C_{I,\mu}\vartheta(w).
 \]
 Both bounds are uniform in $\alpha\le\tfrac12$.
 

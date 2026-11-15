@@ -131,16 +131,16 @@ $d^2=\operatorname{arcosh}(X_0)^2$ is a smooth function of $X_0\ge1$. \qedhere
 
 The approximations $u^{(K)}$ are always built from this representative.
 
-For an index set $S=\{i_1<\dots<i_k\}$ and letters $Z_i\in\{X,Y\}$ we write $Z_S:=Z_{i_1}\cdots Z_{i_k}$ ($Z_\emptyset:=1$),
-a word of length $|S|$; every word has this form. Weights enter through the words of $X_0$ and of its powers.
+For an index set $I=\{i_1<\dots<i_k\}$ and letters $Z_i\in\{X,Y\}$ we write $Z_I:=Z_{i_1}\cdots Z_{i_k}$ ($Z_\emptyset:=1$),
+a word of length $|I|$; every word has this form. Weights enter through the words of $X_0$ and of its powers.
 
 \begin{lemma}[words of $X_0$ and of $X_0^{-\beta}$]\label{lem:fdb}
-Let $x_0=i$, and let $Z_S$ be a word of length $j$.
+Let $x_0=i$, and let $Z_I$ be a word of length $j$.
 \begin{itemize}
-\item[\textup{(a)}] $|Z_SX_0|\le2\cdot2^j\,X_0$.
+\item[\textup{(a)}] $|Z_IX_0|\le2\cdot2^j\,X_0$.
 \item[\textup{(b)}] For $\beta\ge0$,
 \[
-X_0^\beta\,|Z_S(X_0^{-\beta})|\le B_\beta\,j!\,\rho_*^{-j},\qquad \rho_*:=\tfrac14\log(3/2)
+X_0^\beta\,|Z_I(X_0^{-\beta})|\le B_\beta\,j!\,\rho_*^{-j},\qquad \rho_*:=\tfrac14\log(3/2)
 \]
 (any fixed value below $\tfrac12\log(3/2)$ works; $\rho_*$ does not depend on $\beta$), where $B_\beta$ depends only on $\beta$.
 \end{itemize}
@@ -150,10 +150,10 @@ X_0^\beta\,|Z_S(X_0^{-\beta})|\le B_\beta\,j!\,\rho_*^{-j},\qquad \rho_*:=\tfrac
 (a) The three-dimensional space $\mathfrak A:=\operatorname{span}\{y,\;x,\;(x^2+1)/y\}$ contains $X_0=\tfrac12\bigl((x^2+1)/y+y\bigr)$,
 whose coefficient vector has $\ell^1$ norm $1$, and it is invariant under $X$ and $Y$: $Xy=0$, $Xx=y$, $X((x^2+1)/y)=2x$; $Yy=y$,
 $Yx=0$, $Y((x^2+1)/y)=-(x^2+1)/y$. In this basis the $\ell^1$-operator norms are $\norm{X}\le2$ and $\norm{Y}\le1$, so the coefficient
-vector $c$ of $Z_SX_0$ has $\norm c_1\le2^j$. Since $X_0\ge y/2$, $X_0\ge|x|$ (because $x^2+y^2+1-2y|x|=(|x|-y)^2+1$), and
+vector $c$ of $Z_IX_0$ has $\norm c_1\le2^j$. Since $X_0\ge y/2$, $X_0\ge|x|$ (because $x^2+y^2+1-2y|x|=(|x|-y)^2+1$), and
 $X_0\ge(x^2+1)/(2y)$, every $v=c_1y+c_2x+c_3(x^2+1)/y$ satisfies $|v|\le2\norm{c}_1X_0$.
 
-(b) For a smooth function $\Psi$ on $(0,\infty)$, expand by induction on $j$: $Z_S\Psi(X_0)=\sum_{\mathcal P}\Psi^{(|\mathcal P|)}(X_0)\prod_{B\in\mathcal P}Z_BX_0$, the sum over the set partitions $\mathcal P$ of $S$, where each block $B$ inherits the order of $S$.
+(b) For a smooth function $\Psi$ on $(0,\infty)$, expand by induction on $j$: $Z_I\Psi(X_0)=\sum_{\mathcal P}\Psi^{(|\mathcal P|)}(X_0)\prod_{B\in\mathcal P}Z_BX_0$, the sum over the set partitions $\mathcal P$ of $I$, where each block $B$ inherits the order of $I$.
 With $\Psi(u)=u^{-\beta}$, $|\Psi^{(k)}(u)|=(\beta)_ku^{-\beta-k}$, where $(\beta)_k:=\beta(\beta+1)\cdots(\beta+k-1)$, and
 $|Z_BX_0|\le2\cdot2^{|B|}X_0$ by (a). So the bound is $2^j\sum_k\stirling jk(\beta)_k2^k$, with the Stirling numbers of the second kind $\stirling jk$.
 The exponential generating function of $\sum_k\stirling jk(\beta)_k2^k$ is $(3-2\ue^z)^{-\beta}$, which is holomorphic on $|z|<\log(3/2)$.
@@ -170,9 +170,9 @@ Let $x_0=i$. For $\beta\ge0$, a word $Z_1\cdots Z_k$ and $0<\alpha\le1$, with $F
 
 \begin{proof}
 By the Leibniz rule for words of derivations,
-\[X_0^\beta Z_1\cdots Z_k(X_0^{-\beta}F)=\sum_{S\subseteq[k]}X_0^\beta\,Z_S(X_0^{-\beta})\cdot Z_{S^c}F\]
-pointwise. Bound each term by $B_\beta|S|!\rho_*^{-|S|}\norm{Z_{S^c}F}$, and the second factor by Lemma~\ref{lem:wc} with $\alpha''=0$: $\norm{Z_{S^c}F}\le(\ue C_1/\alpha)^{k-|S|}(k-|S|)!\,\norm{\ue^{\alpha\Lambda}F}$.
-Since $\sum_{|S|=j}j!(k-j)!=k!$, the sum is $\le B_\beta\,k!\sum_j\rho_*^{-j}(\ue C_1/\alpha)^{k-j}\le B_\beta(k+1)k!(C_2/\alpha)^k$. \qedhere
+\[X_0^\beta Z_1\cdots Z_k(X_0^{-\beta}F)=\sum_{I\subseteq[k]}X_0^\beta\,Z_I(X_0^{-\beta})\cdot Z_{I^c}F\]
+pointwise. Bound each term by $B_\beta|I|!\rho_*^{-|I|}\norm{Z_{I^c}F}$, and the second factor by Lemma~\ref{lem:wc} with $\alpha''=0$: $\norm{Z_{I^c}F}\le(\ue C_1/\alpha)^{k-|I|}(k-|I|)!\,\norm{\ue^{\alpha\Lambda}F}$.
+Since $\sum_{|I|=j}j!(k-j)!=k!$, the sum is $\le B_\beta\,k!\sum_j\rho_*^{-j}(\ue C_1/\alpha)^{k-j}\le B_\beta(k+1)k!(C_2/\alpha)^k$. \qedhere
 \end{proof}
 
 \subsection{Multiplication by spatial weights}\label{app:m}
@@ -220,7 +220,7 @@ Apply Lemma~\ref{lem:expw} with $L=\max(C_2,1)$.
 \begin{lemma}[words of a function of $\tilde\psi$]\label{lem:wordphi}
 Let $x_0=i$, $A\ge0$ and $\rho\ge0$, and let $\Phi$ be a real function that is $C^\infty$ near every point of $[0,\infty)$ and
 satisfies $|\Phi^{(k)}(v)|\le A\,k!\,\rho^k$ for all $k\ge0$ and $v\ge0$. Then $\Phi(\tilde\psi)$ is $C^\infty$ on $\Hb$, and
-$|Z_S\Phi(\tilde\psi)|\le A\,c^j\,j!$ for every word $Z_S$ of length $j$, with $c=4+3\rho$.
+$|Z_I\Phi(\tilde\psi)|\le A\,c^j\,j!$ for every word $Z_I$ of length $j$, with $c=4+3\rho$.
 \end{lemma}
 \begin{proof}
 The function $\tilde\psi=\log X_0$ is smooth with values in $[0,\infty)$, so $\Phi(\tilde\psi)$ is smooth. Put $\xi:=x/X_0$ and $\upsilon:=y/X_0$, so
@@ -228,11 +228,11 @@ $|\xi|\le1$, $0<\upsilon\le2$, $X\tilde\psi=\xi$ and $Y\tilde\psi=\upsilon-1$. T
 $X\xi=\upsilon-\xi^2$, $X\upsilon=-\xi\upsilon$, $Y\xi=\xi-\xi\upsilon$, $Y\upsilon=2\upsilon-\upsilon^2$. For
 $Q=\sum c_{ab}\xi^a\upsilon^b$ let $\norm Q_*:=\sum|c_{ab}|2^b$, so $|Q|\le\norm Q_*$ pointwise. The four formulas give
 $\norm{ZQ}_*\le4(\deg Q)\norm Q_*$, and $\norm{(Z\tilde\psi)Q}_*\le3\norm Q_*$. By induction on $j$,
-$Z_S\Phi(\tilde\psi)=\sum_{k=0}^j\Phi^{(k)}(\tilde\psi)\,Q_{S,k}(\xi,\upsilon)$ with polynomials of degree at most $j$ satisfying
-$Q_{ZS,k}=(Z\tilde\psi)Q_{S,k-1}+ZQ_{S,k}$. With $q_{j,k}:=\max_{|S|=j}\norm{Q_{S,k}}_*$ this gives
+$Z_I\Phi(\tilde\psi)=\sum_{k=0}^j\Phi^{(k)}(\tilde\psi)\,Q_{I,k}(\xi,\upsilon)$ with polynomials of degree at most $j$ satisfying
+$Q_{ZI,k}=(Z\tilde\psi)Q_{I,k-1}+ZQ_{I,k}$. With $q_{j,k}:=\max_{|I|=j}\norm{Q_{I,k}}_*$ this gives
 $q_{j+1,k}\le3q_{j,k-1}+4j\,q_{j,k}$, and then $T_j:=\sum_kk!\,\rho^kq_{j,k}$ satisfies
 $T_{j+1}\le(3\rho(j+1)+4j)T_j\le c\,(j+1)\,T_j$, so $T_j\le c^jj!$. By the hypothesis on $\Phi$,
-$|Z_S\Phi(\tilde\psi)|\le A\,T_j$.
+$|Z_I\Phi(\tilde\psi)|\le A\,T_j$.
 \end{proof}
 
 \begin{lemma}[comparison of the spatial weights]\label{lem:m2w}
@@ -263,13 +263,13 @@ $\operatorname{Re}(1-\ue^{-2v})>0$, $\operatorname{Re}\varsigma\ge0$, $\operator
 is holomorphic there with $|\Phi|\le\ue^{2\beta}$. Compactness of $[0,2]$, and Cauchy's estimate on discs of radius $\tfrac15$ around
 the points of $[2,\infty)$, give Step~1.
 
-\emph{Step 2: $|Z_S\mathfrak m|\le A\,c^j\,j!$ for every word $Z_S$ of length $j$, with $c=4+3/r_\beta$.} This is
+\emph{Step 2: $|Z_I\mathfrak m|\le A\,c^j\,j!$ for every word $Z_I$ of length $j$, with $c=4+3/r_\beta$.} This is
 Lemma~\ref{lem:wordphi} with $\rho=1/r_\beta$, by Step~1.
 
 \emph{Step 3.} By the Leibniz rule for words, Step~2 and Lemma~\ref{lem:wc} at $\alpha''=0$, for a word of length $j$,
 \[
 \begin{aligned}
-\norm{Z_S(\mathfrak mF)}&\le\sum_{S'\subseteq S}A\,c^{|S'|}|S'|!\,\Bigl(\frac{\ue C_1}{\alpha}\Bigr)^{j-|S'|}(j-|S'|)!\,\norm{\ue^{\alpha\Lambda}F}
+\norm{Z_I(\mathfrak mF)}&\le\sum_{I'\subseteq I}A\,c^{|I'|}|I'|!\,\Bigl(\frac{\ue C_1}{\alpha}\Bigr)^{j-|I'|}(j-|I'|)!\,\norm{\ue^{\alpha\Lambda}F}
 \\ &\le A\,(j+1)\,j!\,(L/\alpha)^j\norm{\ue^{\alpha\Lambda}F},
 \end{aligned}
 \]
@@ -399,8 +399,8 @@ Lemma~\ref{lem:wcomm} bounds the commutator of $\cos(s\Lambda)$ with the weight.
 (Lemma~\ref{lem:wmoll}), and
 Proposition~\ref{prop:ws} is a Gr\"onwall estimate.
 
-\medskip\noindent\textbf{Bounded weights.} A \emph{bounded weight} is a smooth function $W>0$ on $\Hb$ such that $Z_SW$ is bounded
-for every word $Z_S$ in $X,Y$, the empty word included. For $\rho,\mathcal K\ge0$ let $\mathcal W(\rho,\mathcal K)$ be the set of bounded weights
+\medskip\noindent\textbf{Bounded weights.} A \emph{bounded weight} is a smooth function $W>0$ on $\Hb$ such that $Z_IW$ is bounded
+for every word $Z_I$ in $X,Y$, the empty word included. For $\rho,\mathcal K\ge0$ let $\mathcal W(\rho,\mathcal K)$ be the set of bounded weights
 with, for $Z\in\{X,Y\}$,
 \[
 |ZW|\le\rho\,W,\qquad|Z^2W|\le\mathcal K\,W,\qquad|\Delta W|\le\mathcal K\,W,\qquad|Z^2(W^2)|\le\mathcal K\,W^2 .
@@ -578,8 +578,8 @@ bound for the integrand of the remainder into the final estimate; both approxima
 \begin{lemma}[expansion of the remainder operator]\label{lem:expand}
 \begin{itemize}
 \item[\textup{(i)}] Let $0<\hbar\le1$, $N,k\in\mathbb N_0$ and $s,s_1,\dots,s_k\ge0$. Expanding the products,
-$\Delta_\varphi(s)^N\Delta(s_1)\cdots\Delta(s_k)$ is a sum of $5^N3^k$ terms $c\,Z_S$, where each word $Z_S$ has length
-$|S|=j+r$ with $j\le2N$ and $r\le2k$, and $|c|\le2^N\hbar^{j-2N}$.
+$\Delta_\varphi(s)^N\Delta(s_1)\cdots\Delta(s_k)$ is a sum of $5^N3^k$ terms $c\,Z_I$, where each word $Z_I$ has length
+$|I|=j+r$ with $j\le2N$ and $r\le2k$, and $|c|\le2^N\hbar^{j-2N}$.
 \item[\textup{(ii)}] Let $N,q,j,L\in\mathbb N_0$ with $j\le2N$ and $L\le j+q$, and let $G\ge1$, $0<\alpha\le1$ and
 $0<\hbar\le1$. Then
 \[
@@ -602,13 +602,13 @@ $j\le2N$; and $4^L\le4^{2N+q}$. \qedhere
 \end{proof}
 
 \begin{lemma}[derivative bounds for the remainder amplitude]\label{lem:wb}
-Let $x_0=i$ and $\beta\ge0$, let $a_{\mathbf s}$ be as in Proposition~\ref{prop:dd-id}(ii), and assume $0<\hbar\le1$ and $0<\alpha\le1$. Let $Z_S$ be
+Let $x_0=i$ and $\beta\ge0$, let $a_{\mathbf s}$ be as in Proposition~\ref{prop:dd-id}(ii), and assume $0<\hbar\le1$ and $0<\alpha\le1$. Let $Z_I$ be
 a word in $X,Y$ of length at most $n$ (the empty word is the identity). There is an absolute constant $C_3\ge1$ such that
 uniformly in $\mathbf s\in\Sigma_{K+1}(t)$:
 \begin{itemize}
 \item[\textup{(i)}] with $B_\beta$ the constant of Lemma~\ref{lem:fdb},
 \[
-\norm{X_0^\beta Z_Sa_{\mathbf s}}\le B_\beta C_3^{N+K+n+1}(2N)!\,(n+2K+2)!\,\alpha^{-(n+2K+2)}(\alpha\hbar)^{-2N}\pwNorm a ;
+\norm{X_0^\beta Z_Ia_{\mathbf s}}\le B_\beta C_3^{N+K+n+1}(2N)!\,(n+2K+2)!\,\alpha^{-(n+2K+2)}(\alpha\hbar)^{-2N}\pwNorm a ;
 \]
 \item[\textup{(ii)}] for $0\le r'<r\le1$ with $r-r'\ge\alpha/4$:
 \[
@@ -618,11 +618,11 @@ uniformly in $\mathbf s\in\Sigma_{K+1}(t)$:
 \end{lemma}
 
 \begin{proof}
-Put $G:=\max(C_2,4\ue C_1)\ge1$ and $C_3:=480\,G^2$. By Lemma~\ref{lem:expand}(i) with $k=K+1$, $Z_Sa_{\mathbf s}$ is a sum of
-$5^N3^{K+1}$ terms $c\,Z_SZ_{S'}a$ with $|c|\le2^N\hbar^{j-2N}$, $j\le2N$, and words of length $L\le j+q$, $q:=n+2K+2$.
+Put $G:=\max(C_2,4\ue C_1)\ge1$ and $C_3:=480\,G^2$. By Lemma~\ref{lem:expand}(i) with $k=K+1$, $Z_Ia_{\mathbf s}$ is a sum of
+$5^N3^{K+1}$ terms $c\,Z_IZ_{I'}a$ with $|c|\le2^N\hbar^{j-2N}$, $j\le2N$, and words of length $L\le j+q$, $q:=n+2K+2$.
 By Lemma~\ref{lem:sc} and Lemma~\ref{lem:expand}(ii),
 \[
-\hbar^j\norm{X_0^\beta Z_SZ_{S'}a}\le B_\beta(L+1)L!\,(G/\alpha)^L\hbar^j\pwNorm a\le B_\beta(4G)^{2N+q}(2N)!\,q!\,\alpha^{-q-2N}\pwNorm a .
+\hbar^j\norm{X_0^\beta Z_IZ_{I'}a}\le B_\beta(L+1)L!\,(G/\alpha)^L\hbar^j\pwNorm a\le B_\beta(4G)^{2N+q}(2N)!\,q!\,\alpha^{-q-2N}\pwNorm a .
 \]
 So each term is at most
 $B_\beta\,2^N(4G)^{2N+q}(2N)!\,q!\,\alpha^{-q}(\alpha\hbar)^{-2N}\pwNorm a$. Summing over the terms, (i) follows from

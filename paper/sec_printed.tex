@@ -11,8 +11,8 @@ $c>\tfrac12$ makes the orbit series $\sum_\gamma\omega_c(\gamma z)^{-2}$ converg
 the weight. The argument of Section~\ref{sec:companion} is then run at the weight $\omega=\omega_{3/4}$, with two changes. H\"older's
 inequality between $L^2$ and $L^2_{X_0^\beta}$ is replaced by a transfer over the shells $\{n\le\tilde\psi<n+1\}$
 (Lemma~\ref{os:transfer}), which interpolates between unweighted bounds and bounds at the weight $X_0$. And the amplitude is written as
-$a=\ue^{-\sigma\Lambda_m}\tilde f$ with critically weighted data $\tilde f$ (Proposition~\ref{os:data}): unlike $\ue^{-\sigma\Lambda}$, the
-shifted semigroup $\ue^{-\sigma\Lambda_m}$ with $m=3$ preserves the weight $X_0$ (Lemma~\ref{os:words}), which the derivative bounds at
+$a=\ue^{-\sigma\Lambda_\eta}\tilde f$ with critically weighted data $\tilde f$ (Proposition~\ref{os:data}): unlike $\ue^{-\sigma\Lambda}$, the
+shifted semigroup $\ue^{-\sigma\Lambda_\eta}$ with $\eta=3$ preserves the weight $X_0$ (Lemma~\ref{os:words}), which the derivative bounds at
 that weight need.
 
 The proof of Theorem~\ref{pc:main} has three stages: factor the amplitude through critically weighted data and bound its derivatives at a power
@@ -33,7 +33,7 @@ $1_n$ denotes multiplication by the indicator of $A_n$. Since $1+n\le\ell\le3(1+
 \begin{equation}\label{os:shell}
 \ue^{n/2}(1+n)^c\le\omega_c\le3\,\ue^{1/2}\,\ue^{n/2}(1+n)^c\qquad\text{on }A_n .
 \end{equation}
-For $m\ge\tfrac12$ put $\Lambda_m:=(m^2-\tfrac14-\Delta)^{1/2}=(D^2+m^2)^{1/2}$; thus $\Lambda_{1/2}=\Lambda$ and $\Lambda_m\ge\Lambda$.
+For $\eta\ge\tfrac12$ put $\Lambda_\eta:=(\eta^2-\tfrac14-\Delta)^{1/2}=(D^2+\eta^2)^{1/2}$; thus $\Lambda_{1/2}=\Lambda$ and $\Lambda_\eta\ge\Lambda$.
 
 
 
@@ -87,8 +87,8 @@ $0\le t\le\delta'(\sigma/\hbar)^{1/2}$,
 The proof uses the following properties of $\omega=\omega_{c'}$, $c'=\tfrac34$. It is continuous and at least $1$; by \eqref{os:shell},
 $\ue^{n/2}(1+n)^{c'}\le\omega\le C_{\mathrm{sh}}\ue^{n/2}(1+n)^{c'}$ on $A_n$ with $C_{\mathrm{sh}}:=3\ue^{1/2}$; and by Proposition~\ref{os:p1}, it
 satisfies \textup{(W1)} with $\norm{f_\Gamma}^2_{L^2(M)}\le P^{\mathrm{cr}}_\Gamma\norm{\omega f}^2$, and \textup{(W2)} with the ratio bound
-$\omega(z)\le C_{\mathrm{gr}}\ue^{|s|}\omega(\Omega_sz)$, $C_{\mathrm{gr}}:=2/\log2$. The exponent $m=3$ of $\Lambda_m$ satisfies the hypothesis
-$2(\lambda+\tfrac12)^2<m^2$ of Lemma~\ref{os:words} at $\lambda=1$, which Step~1(a) of the proof uses.
+$\omega(z)\le C_{\mathrm{gr}}\ue^{|s|}\omega(\Omega_sz)$, $C_{\mathrm{gr}}:=2/\log2$. The parameter $\eta=3$ of $\Lambda_\eta$ satisfies the hypothesis
+$2(\lambda+\tfrac12)^2<\eta^2$ of Lemma~\ref{os:words} at $\lambda=1$, which Step~1(a) of the proof uses.
 
 \begin{proof}
 The proof has the structure of Section~\ref{sec:companion} (Table~\ref{tab:compare}). Step~1 supplies the word, flow and
@@ -118,19 +118,19 @@ $\ue^k\norm{1_kTu}\le\norm{\pcXzero Tu}\le\mathcal M_1\norm{\pcXzero u}\le\mathc
 $\pcXzero<\ue^{n+1}$ on $A_n$. Lemma~\ref{os:transfer} then bounds the map at the weight $\omega$.
 Write $C_{\mathrm{tr}}$ for its constant for $c=c'$ and $C_{\mathrm{sh}}$; it is independent of $K,N,\hbar$ and the integration variables.
 
-\smallskip\noindent(a) \emph{Words.} For a word $Z_S$ of length $n$ let $T_wh:=Z_S\mathcal B_{\mathbf s}\mathsf Qh$. By
-Lemma~\ref{lem:expand}(i) with $k=K+1$, $Z_S\mathcal B_{\mathbf s}$ is a sum of $5^N3^{K+1}$ terms $c\,Z_{S'}$ with $|c|\le2^N\hbar^{j-2N}$,
+\smallskip\noindent(a) \emph{Words.} For a word $Z_I$ of length $n$ let $T_wh:=Z_I\mathcal B_{\mathbf s}\mathsf Qh$. By
+Lemma~\ref{lem:expand}(i) with $k=K+1$, $Z_I\mathcal B_{\mathbf s}$ is a sum of $5^N3^{K+1}$ terms $c\,Z_{I'}$ with $|c|\le2^N\hbar^{j-2N}$,
 $j\le2N$, and words of length $L\le j+q$, $q:=n+2K+2$. By the estimate of Lemma~\ref{os:words} at the weight $\pcXzero^\lambda$, with
-$\lambda=1$ (so that $4+2\lambda=6$), $\norm{\pcXzero Z_{S'}\mathsf Qu}\le\sqrt2\,L!\,(6C_5/\sigma)^L\norm{\pcXzero u}\le2(L+1)L!\,(G_5/\sigma)^L\norm{\pcXzero u}$ with
+$\lambda=1$ (so that $4+2\lambda=6$), $\norm{\pcXzero Z_{I'}\mathsf Qu}\le\sqrt2\,L!\,(6C_5/\sigma)^L\norm{\pcXzero u}\le2(L+1)L!\,(G_5/\sigma)^L\norm{\pcXzero u}$ with
 $G_5:=6C_5\ge1$. By Lemma~\ref{lem:expand}(ii) with $G_5$ in place of $G$, each term is at most
 $2\cdot2^N(4G_5)^{2N+q}(2N)!\,q!\,\sigma^{-q}(\sigma\hbar)^{-2N}\norm{\pcXzero u}$. Summing over the terms and using
 $2(160G_5^2)^N(48G_5^2)^{K+1}(4G_5)^n\le C_6^{N+K+n+1}$ with $C_6:=\max(C_3,320\,G_5^2)$ gives
 \[
-  \norm{\pcXzero Z_S\mathcal B_{\mathbf s}\mathsf Qu}\le F_n\norm{\pcXzero u},\qquad\norm{Z_S\mathcal B_{\mathbf s}\mathsf Qu}\le F_n\norm u ;
+  \norm{\pcXzero Z_I\mathcal B_{\mathbf s}\mathsf Qu}\le F_n\norm{\pcXzero u},\qquad\norm{Z_I\mathcal B_{\mathbf s}\mathsf Qu}\le F_n\norm u ;
 \]
 the second bound is the same argument without a weight. Lemma~\ref{os:transfer} with $\mathcal M_0=\mathcal M_1=F_n$ gives
 \begin{equation}\label{pc:wbw}
-  \norm{\omega Z_S\mathcal B_{\mathbf s}\mathsf Qh}\le C_{\mathrm{tr}}\,F_n\,\norm{\omega h}.
+  \norm{\omega Z_I\mathcal B_{\mathbf s}\mathsf Qh}\le C_{\mathrm{tr}}\,F_n\,\norm{\omega h}.
 \end{equation}
 The same argument without the factor $\mathcal B_{\mathbf s}$ shows that every word applied to $a=\mathsf Qh$ lies in $L^2_{\omega}$.
 
@@ -209,7 +209,7 @@ $P^{\mathrm{cr}}_\Gamma$, which does not change under this reduction (Lemma~\ref
 $\operatorname{Dom}(\ue^{\alpha\Lambda})\subset\operatorname{Dom}(\ue^{\min(\alpha,1)\Lambda})$, $a$ is $C^\infty$ by Lemma~\ref{lem:lift}. Put $f:=\ue^{\alpha\Lambda}a$, so that $\norm{\omega f}\le C_\beta\pcNorm a$ (Section~\ref{subsec:pc-weights}).
 
 \emph{Radii $0<\alpha\le\tfrac12$.} Put $\sigma:=\alpha/6$ and $\kappa':=\kappa/216$, so that $\sigma\le\tfrac1{12}$ and $\sigma^3\ge\kappa'\hbar$.
-Proposition~\ref{os:data} with $c=c'$, $m=3$ and this $\sigma$ (here $\sigma<\alpha\le1$ and $\sigma m=\alpha/2\le\tfrac12$) gives
+Proposition~\ref{os:data} with $c=c'$, $\eta=3$ and this $\sigma$ (here $\sigma<\alpha\le1$ and $\sigma \eta=\alpha/2\le\tfrac12$) gives
 $\tilde f:=\mathsf Rf$ with $a=\ue^{-\sigma\Lambda_3}\tilde f$ and $\norm{\omega\tilde f}\le C_{\mathrm d}\norm{\omega f}\le C_{\mathrm d}C_\beta\pcNorm a$.
 Proposition~\ref{pc:core} with $h=\tilde f$, and constants $C',\delta'$, gives the bound of the theorem with $\sigma$ in place of $\alpha$,
 for $t\le\delta'(\sigma/\hbar)^{1/2}$. Lemma~\ref{lem:radius}, with $\sigma$ and $\alpha$ in the roles of $\alpha_0$ and $\alpha_1$ (so $\alpha_1/\alpha_0=6$),
@@ -220,7 +220,7 @@ So the theorem holds on $(0,\tfrac12]$ with constants that do not depend on $A$.
 $\kappa\hbar\le\alpha^3\le A^3$. Put $f_1:=\ue^{-(\alpha-1/2)\Lambda}f$, and let $j$ be an integer with $j\ge A$. Since $\ue^{-\tau\Lambda}$ is a
 semigroup, Corollary~\ref{os:cwp}, applied at most $j$ times with exponents in $(0,1]$, gives $\norm{\omega f_1}\le C_\Lambda^{\,j}\norm{\omega f}$,
 where $C_\Lambda$ is the constant of that corollary for $c=c'$ and we may take $C_\Lambda\ge1$. Now $a=\ue^{-\Lambda/2}f_1$, and Proposition~\ref{os:data}, with $\tfrac12$, $\tfrac1{12}$ and $3$ in the roles of
-$\alpha$, $\sigma$ and $m$, gives $\tilde f:=\mathsf Rf_1$ with
+$\alpha$, $\sigma$ and $\eta$, gives $\tilde f:=\mathsf Rf_1$ with
 \[
   a=\ue^{-\sigma\Lambda_3}\tilde f,\qquad\norm{\omega\tilde f}\le C_{\mathrm d}C_\Lambda^{\,j}C_\beta\,\pcNorm a .
 \]
