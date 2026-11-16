@@ -264,3 +264,4 @@ import Qschubert.KLRadiusChange
 import Qschubert.PaperConstants
 import Qschubert.KLWave2Sharp
 import Qschubert.PaperL2
+import Qschubert.PaperForms
