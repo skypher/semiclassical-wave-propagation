@@ -1,6 +1,7 @@
 # Semiclassical wave propagation beyond the Ehrenfest time on hyperbolic surfaces
 
-This repository contains the manuscript of that title and its Lean 4 formalization.
+This repository contains the manuscript of that title and its Lean 4 formalization. The manuscript is
+[`paper/paper.pdf`](paper/paper.pdf).
 
 The manuscript proves that the semiclassical approximations of Lagrangian states on hyperbolic surfaces
 introduced in
@@ -27,7 +28,7 @@ the cusp height. Schubert's files are not part of this repository.
   geometry of the sharpness argument; the proofs of Sections 3 to 5 open with the idea of the argument. The introduction states a compact escape consequence beside the
   approximation results and applications. Detailed cosine-transform profile calculations are in the first appendix;
   the critical-weight mechanism and its operator consequences remain in the main text.
-  Build from `paper/` with `pdflatex paper.tex` (run it three times).
+  `paper.pdf` is the manuscript built from these sources. To rebuild it, run `pdflatex paper.tex` three times in `paper/`.
 - `lean/`: the Lean 4 development, namespace `Qschubert` (Lean `v4.35.0`, Mathlib `v4.35.0`, `physicslib4`, and
   `PrimeNumberTheoremAnd` for the zero-free region of the Riemann zeta function).
   Appendix "Formalization" of the manuscript says which statements are formalized, in which reading, and
@@ -65,5 +66,5 @@ reading choices.
 ## License
 
 The Lean development in `lean/` (including `lean/scripts/`) and the CI workflow in `.github/` are licensed under the
-Apache License, Version 2.0 (file `LICENSE`; copyright notice in `NOTICE`). The manuscript sources in `paper/` are not
-covered by that license; all rights in them are reserved (`paper/COPYRIGHT.md`).
+Apache License, Version 2.0 (file `LICENSE`; copyright notice in `NOTICE`). The manuscript and its sources in `paper/` are
+not covered by that license; all rights in them are reserved (`paper/COPYRIGHT.md`).
