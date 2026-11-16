@@ -1,6 +1,6 @@
 % Formalization status. \leanrepo is the public repository; \leancommit is a commit of it.
 \providecommand{\lean}[1]{\texttt{\detokenize{#1}}}
-\providecommand{\leancommit}{\texttt{cb91483}}
+\providecommand{\leancommit}{\texttt{08ec33e}}
 \providecommand{\leanrepo}{\url{https://github.com/skypher/semiclassical-wave-propagation}}
 
 \section{Formalization}\label{app:lean}
@@ -39,13 +39,13 @@ point after $C$ (\lean{pcmain_unif}, \lean{thm14Rmain_unif}, \lean{thm14R_all}).
 Theorem~\ref{pc:main} is \lean{pcmain_all}, and Theorem~\ref{thm:L2}, stated for one group and one base point, is \lean{pcL2_all}; Theorem~\ref{ev:mod} and the original-norm part of Corollary~\ref{ev:transfer} use this form.
 In the pointwise statements for positive injectivity radius, $\delta$ is chosen before $r_0$.
 \item \emph{Named constants.} Where a statement fixes a constant, the formal statement has the same value; this concerns the factor
-$\ue^{1/2}$ of Corollary~\ref{pc:cor15} and the constant $c_H$ of Lemma~\ref{os:prof}(iii). Where a statement only asserts that a constant exists,
+$\ue^{1/2}$ of Corollary~\ref{pc:cor15}. Where a statement only asserts that a constant exists,
 so does the formal statement, and its proof may give a different admissible value. For Lemmas~\ref{lem:fdb}(b), \ref{lem:sc}, \ref{lem:expw},
-\ref{lem:mw} and~\ref{lem:clip}, Proposition~\ref{prop:a0} and Lemma~\ref{os:words}(b) the statements in this form are \lean{fdb_paper},
-\lean{lem_sc_paper}, \lean{exp_of_words_paper}, \lean{lem_m_weak_paper}, \lean{clip_paper}, \lean{prop_a0_paper} and \lean{words_paper}; the
+\ref{lem:mw} and~\ref{lem:clip}, Proposition~\ref{prop:a0}, Lemma~\ref{os:words}(b) and Lemma~\ref{os:prof}(iii) the statements in this form are \lean{fdb_paper},
+\lean{lem_sc_paper}, \lean{exp_of_words_paper}, \lean{lem_m_weak_paper}, \lean{clip_paper}, \lean{prop_a0_paper}, \lean{words_paper} and \lean{prof_iii_paper}; the
 development itself uses the explicit values $\rho_*=\tfrac14\log(3/2)$,
 $C_2=\max(\ue C_1,1/\rho_*)$, $C_*=\tfrac{32}5$, $c_M=1/(4C_2)$, $C_M=C_*$, the integrals $A_{\mathrm e}$, $A_{\mathrm o}$ of the proof of
-Lemma~\ref{lem:clip}, $c_A=(1+32A_{\mathrm e}A_{\mathrm o})^{-1}$, $C_3=480\max(C_2,4\ue C_1)^2$ and $C_5=2\ue\,c_H$.
+Lemma~\ref{lem:clip}, $c_A=(1+32A_{\mathrm e}A_{\mathrm o})^{-1}$, $C_3=480\max(C_2,4\ue C_1)^2$, $c_H=1+4/\ue$ and $C_5=2\ue\,c_H$.
 Table~\ref{tab:constants} lists the values of the printed proofs (for instance $C_{\mathrm{fl}}$, $B_0$, $B_\eta$).
 \item \emph{The optimal-truncation corollary.} Corollary~\ref{pc:cor15} and its power-weight form are formalized for every pair of
 constants $C\ge1$, $\delta>0$ for which the estimate of their theorem holds on the group at hand (\lean{pccor15_tied},
@@ -126,7 +126,7 @@ Proposition~\ref{prop:g5} & \lean{propG5}; negation of Schubert's bound \lean{pr
 Theorem~\ref{ev:mod}(i),(ii) & \lean{evmod}\\
 Theorem~\ref{thm:dd-appx} & \lean{thm14R_all}\\
 Theorem~\ref{os:cw} & \lean{cw_abstract}\\
-Lemma~\ref{os:transfer} & \lean{transfer}\\
+Lemma~\ref{os:transfer} & \lean{transfer_paper}\\
 Lemma~\ref{pc:g43} & (a) \lean{encard_ball_le_orbitMult}, \lean{setLIntegral_ball_le_orbitMult_mul}; (b) \lean{sobolev_M_mult}\\
 Remark~\ref{rem:pw-cor} & \lean{cor15R_tiedA}, \lean{cor16R_allmultN}; positive injectivity radius \lean{cor16R_allbgN}\\
 Corollary~\ref{ev:transfer} & \lean{evTransfer_pc_all}, \lean{evTransfer_main_unif}\\

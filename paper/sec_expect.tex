@@ -95,9 +95,9 @@ evaluates its zero Fourier mode by means of the scattering coefficient \eqref{ev
 \begin{remark}[heuristics]\label{ev:time}
 The following picture is not used in the proofs. The terms of the periodization that contribute at a point come from
 about $\ue^{t}$ sheets of the cover. Up to the Ehrenfest time $\log(1/\hbar)$ their phase gradients differ by more than $\hbar$,
-so that they are almost orthogonal one by one; beyond it the phase gradients of many pairs differ by less than $\hbar$, the
-cancellation of Remark~\ref{ev:cancel} is a property of the whole sum, and the interference between the sheets, which the
-classical prediction ignores, governs the behaviour. This is compatible with Brooks's result \cite{Bro22}. For $r>0$ and a
+so that they are almost orthogonal one by one. Beyond it the phase gradients of many pairs differ by less than $\hbar$. Then the
+cancellation of Remark~\ref{ev:cancel} is a property of the whole sum, and the behaviour is governed by the interference between
+the sheets, which the classical prediction ignores. This is compatible with Brooks's result \cite{Bro22}. For $r>0$ and a
 continuous choice of the argument, the scattering coefficient $\Phi$ of
 \eqref{ev:Phi} satisfies $-\tfrac{d}{dr}\arg\Phi(\tfrac12+ir)=2\log(r/\pi)+4\operatorname{Re}\tfrac{\zeta'}{\zeta}(1+2ir)+O(r^{-2})$. This is the
 time delay of a wave packet at $r=1/\hbar$, and its first term is twice the Ehrenfest time $\log(1/\hbar)$, up to a constant. The
@@ -151,21 +151,21 @@ $L_\alpha(i\rho)=\ue^{-\alpha(\rho^2+1/4)^{1/2}}$ for real $\rho$, by Lemma~\ref
   \int_\Hb y^wa\,d\nu=L_\alpha(w-\tfrac12)\int_\Hb y^w\mathfrak h\,d\nu ,
 \end{equation}
 where the left side converges absolutely by \eqref{ev:L1}. To prove this, let $\mathfrak h$ vanish outside $\{\tilde\psi\le R_0\}$, and for
-an integer $j\ge1$ let $\eta_j$ be the indicator function of the ball $\{\tilde\psi\le R_0+j\}$. Since
-$\ue^{-\alpha\Lambda}=\int g_\alpha(r)\cos(rD)\,dr$ (Lemma~\ref{os:prof}(i)) and $\eta_jy^{\bar w}\in L^2(\Hb)$,
+an integer $j\ge1$ let $\mathbf 1_j$ be the indicator function of the ball $\{\tilde\psi\le R_0+j\}$. Since
+$\ue^{-\alpha\Lambda}=\int g_\alpha(r)\cos(rD)\,dr$ (Lemma~\ref{os:prof}(i)) and $\mathbf 1_jy^{\bar w}\in L^2(\Hb)$,
 \[
-  \int_{\{\tilde\psi\le R_0+j\}}y^wa\,d\nu=\langle\eta_jy^{\bar w},a\rangle=\int_{\mathbb R}g_\alpha(r)\,\langle\eta_jy^{\bar w},\cos(rD)\mathfrak h\rangle\,dr .
+  \int_{\{\tilde\psi\le R_0+j\}}y^wa\,d\nu=\langle\mathbf 1_jy^{\bar w},a\rangle=\int_{\mathbb R}g_\alpha(r)\,\langle\mathbf 1_jy^{\bar w},\cos(rD)\mathfrak h\rangle\,dr .
 \]
 Let $|r|<j$. The function $v(r):=\cos(rD)\mathfrak h$ vanishes outside $\{\tilde\psi\le R_0+|r|\}$ (Lemma~\ref{os:speed}), so
-$p(r):=\langle\eta_jy^{\bar w},v(r)\rangle=\langle\eta y^{\bar w},v(r)\rangle$ for a function $\eta\in C_c^\infty(\Hb)$ that equals $1$ on $\{\tilde\psi\le R_0+j\}$. Since
+$p(r):=\langle\mathbf 1_jy^{\bar w},v(r)\rangle=\langle\eta y^{\bar w},v(r)\rangle$ for a function $\eta\in C_c^\infty(\Hb)$ that equals $1$ on $\{\tilde\psi\le R_0+j\}$. Since
 $\mathfrak h$ lies in the domain of $D^2=-\Delta-\tfrac14$, $p$ is twice continuously differentiable, and
 \[
   p''(r)=\langle\eta y^{\bar w},(\Delta+\tfrac14)v(r)\rangle=\langle(\Delta+\tfrac14)(\eta y^{\bar w}),v(r)\rangle=(w-\tfrac12)^2\,p(r)\qquad(|r|<j),
 \]
 because $(\Delta+\tfrac14)y^{\bar w}=(\bar w-\tfrac12)^2y^{\bar w}$ and $\eta=1$ on the support of $v(r)$. With $p(0)=\int_\Hb y^w\mathfrak h\,d\nu$ and $p'(0)=0$ this gives
-$p(r)=\cosh((w-\tfrac12)r)\int_\Hb y^w\mathfrak h\,d\nu$ for $|r|<j$. For $|r|\ge j$ we use $|\langle\eta_jy^{\bar w},\cos(rD)\mathfrak h\rangle|\le\norm{\eta_jy^{\bar w}}\norm{\mathfrak h}$ and
+$p(r)=\cosh((w-\tfrac12)r)\int_\Hb y^w\mathfrak h\,d\nu$ for $|r|<j$. For $|r|\ge j$ we use $|\langle\mathbf 1_jy^{\bar w},\cos(rD)\mathfrak h\rangle|\le\norm{\mathbf 1_jy^{\bar w}}\norm{\mathfrak h}$ and
 \[
-  \norm{\eta_jy^{\bar w}}^2\le\int_{\{X_0\le R\}}(1+y)\,d\nu\le2\pi R+\int_0^{2R}2(2Ry)^{1/2}\,\frac{dy}{y}=(2\pi+8)R,\qquad R=\ue^{R_0+j},
+  \norm{\mathbf 1_jy^{\bar w}}^2\le\int_{\{X_0\le R\}}(1+y)\,d\nu\le2\pi R+\int_0^{2R}2(2Ry)^{1/2}\,\frac{dy}{y}=(2\pi+8)R,\qquad R=\ue^{R_0+j},
 \]
 since $y^{2\operatorname{Re}w}\le1+y$, the ball $\{X_0\le R\}$ has area $2\pi(R-1)$, and on it $y\le2R$ and $x^2\le2Ry$. So the part $|r|\ge j$ of
 the integral is at most $C\ue^{j/2}\int_{|r|\ge j}g_\alpha\,dr\le C'(1+j)^{-3/2}$ by Lemma~\ref{os:prof}(iv). Hence
@@ -210,7 +210,7 @@ $\int_\Hb k_\alpha(d(z,w))\,d\nu(w)=2\pi\int_0^\infty k_\alpha(r)\sinh r\,dr<\in
 \[
   \tilde a(z):=\int_\Hb k_\alpha(d(z,w))\,\mathfrak h(w)\,d\nu(w).
 \]
-By subordination, $\ue^{-\alpha\Lambda}=\int_0^\infty\mu_\alpha(s)\ue^{s\Delta}ds$ with the density $\mu_\alpha$ of Appendix~\ref{app:kernels}, and
+By subordination, $\ue^{-\alpha\Lambda}=\int_0^\infty q_\alpha(s)\ue^{s\Delta}ds$ with the density $q_\alpha$ of Appendix~\ref{app:kernels}, and
 $\ue^{s\Delta}$ has the heat kernel $p_s$ given there; so Tonelli's theorem ($\mathfrak h\ge0$) gives
 $a=\tilde a$ almost everywhere. As $\mathfrak h\ge0$ is continuous and not identically zero, $0<\tilde a(z)<\infty$ for every $z$.
 

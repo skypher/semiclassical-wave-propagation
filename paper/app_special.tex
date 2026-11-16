@@ -6,6 +6,12 @@ are stated in the body of the paper.
 
 \subsection{The first-order Cauchy estimate}\label{app:fc-proof}
 \begin{proof}[Proof of Lemma~\ref{lem:fc}]
+In the Kontorovich--Lebedev picture $\Lambda$ is a multiplication operator, and $X$ and $Y-\tfrac12$ become integral operators
+whose kernels we compute explicitly. Conjugation by $\ue^{\alpha''\Lambda}$ multiplies a kernel by at most $\ue^{\alpha''|r-r'|}$, because
+$\Lambda(r)$ is $1$-Lipschitz in $r$, and the kernels decay like $\ue^{-\pi|r-r'|/2}$; the Schur test then bounds the conjugated
+operators. The kernel of $Y-\tfrac12$ has in addition a singularity $1/(r-r')$ on the diagonal, which is a truncated Hilbert
+transform.
+
 \medskip\noindent\emph{Reduction.}
 We use the Kontorovich--Lebedev picture of Section~\ref{app:kl}: after Fourier transform in $x$, on the mode $\ue^{ikx}$, $k\ne0$,
 with $\zeta=|k|y$ and the function of $y$ written as $\zeta^{1/2}f(\zeta)$, $f\in L^2(d\zeta/\zeta)$, we have $-\Delta-\tfrac14=-(\zeta\partial_\zeta)^2+\zeta^2$,
@@ -150,7 +156,7 @@ Let $\eta\ge\tfrac12$ and $\tau,s>0$.
 hence $\ue^{-\tau\Lambda_\eta}=\int_{\mathbb R}g_{\tau,\eta}(r)\cos(rD)\,dr$.
 \item[(ii)] For $\lambda\ge0$ with $2\lambda^2<\eta^2$, $\int_{\mathbb R}g_{\tau,\eta}(r)\,\ue^{\lambda|r|}\,dr\le\sqrt2$.
 \item[(iii)] The function $h_{s,\eta}:=-\partial_sg_{s,\eta}$ satisfies $\Lambda_\eta\ue^{-s\Lambda_\eta}=\int_{\mathbb R}h_{s,\eta}(r)\cos(rD)\,dr$ and,
-with $c_H:=1+4/\ue$, $\int_{\mathbb R}|h_{s,\eta}(r)|\,\ue^{\lambda|r|}\,dr\le2c_H/s$ for $\lambda$ as in (ii).
+with an absolute constant $c_H$, $\int_{\mathbb R}|h_{s,\eta}(r)|\,\ue^{\lambda|r|}\,dr\le2c_H/s$ for $\lambda$ as in (ii).
 \item[(iv)] For $\eta=\tfrac12$ and $0<\tau\le1$: $\int_{|r|\ge T}g_{\tau,1/2}(r)\,dr\le B_0\,\ue^{-T/2}(1+T)^{-3/2}$ for all $T\ge0$, with
 an absolute constant $B_0$.
 \item[(v)] The function $G_\eta(r):=\frac1{2\pi}\int_0^\infty\bigl(\ue^{-u^2/4}-\ue^{-\eta^2u^2}\bigr)u^{-3}\ue^{-r^2/(4u^2)}\,du\ge0$ is integrable,
@@ -176,7 +182,8 @@ $c_1=(\nu^2+\eta^2)^{1/2}$, $c_2=\tau/2$ gives the value. The operator identity 
 
 (iii) Differentiating under the integral,
 $h_{s,\eta}(r)=\frac1{2\pi}\int_0^\infty\bigl(\frac{s^2}{2u^5}-\frac1{u^3}\bigr)\exp(-\eta^2u^2-\frac{r^2+s^2}{4u^2})\,du$. With $x=s^2/u^2$,
-$|x/2-1|\,\ue^{-x/4}\le(1+x/2)\ue^{-x/4}\le c_H\,\ue^{-x/8}$, which gives $|h_{s,\eta}|\le(\sqrt2\,c_H/s)\,g_{s/\sqrt2,\eta}$ and
+$|x/2-1|\,\ue^{-x/4}\le(1+x/2)\ue^{-x/4}\le c_H\,\ue^{-x/8}$ with $c_H:=1+4/\ue$ (the maximum of $(1+x/2)\ue^{-x/8}$ is
+$4\ue^{-3/4}$), which gives $|h_{s,\eta}|\le(\sqrt2\,c_H/s)\,g_{s/\sqrt2,\eta}$ and
 justifies the differentiation. The cosine transform of $h_{s,\eta}$ is $-\partial_s$ of (i), and the bound follows from (ii) for $g_{s/\sqrt2,\eta}$.
 
 (iv) The mass is $\ue^{-\tau/2}\le1$ by (i) at $\nu=0$. For $T>0$, with $\varrho:=(T^2+\tau^2)^{1/2}$ and
@@ -247,14 +254,14 @@ and integrating against $|\hat f|^2$ gives (b).
 
 The two lemmas of this subsection are used in Section~\ref{sec:cusp} (Lemma~\ref{cl:kernel}), and the lower bound \eqref{os:lb}
 also in the proof of Proposition~\ref{pc:classes}. Neither is used in the proof of Theorem~\ref{pc:main}; the positivity and integrability of the Poisson kernel give the zero mode in Lemma~\ref{ev:meanlem}.
-Let $\mu_\tau(s)=\tau(4\pi)^{-1/2}s^{-3/2}\ue^{-\tau^2/(4s)}$ (so that $\ue^{-\tau\osLam}=\int_0^\infty\mu_\tau(s)\ue^{s\Delta}\,ds$, by
-the subordination identity $\ue^{-\tau\sqrt A}=\int_0^\infty\mu_\tau(s)\ue^{-sA}ds$, $A\ge0$), and let $p_s$ be the heat kernel of $\Hb$, which is
+Let $q_\tau(s)=\tau(4\pi)^{-1/2}s^{-3/2}\ue^{-\tau^2/(4s)}$ (so that $\ue^{-\tau\osLam}=\int_0^\infty q_\tau(s)\ue^{s\Delta}\,ds$, by
+the subordination identity $\ue^{-\tau\sqrt T}=\int_0^\infty q_\tau(s)\ue^{-sT}ds$ for self-adjoint $T\ge0$), and let $p_s$ be the heat kernel of $\Hb$, which is
 given by McKean's formula
 \[
 p_s(d)=\frac{\sqrt2\,\ue^{-s/4}}{(4\pi s)^{3/2}}\int_d^\infty\frac{\rho\,\ue^{-\rho^2/(4s)}}{(\cosh\rho-\cosh d)^{1/2}}\,d\rho
 \]
 (\cite[(1.7)]{GN98}). Let
-$k_\tau(r)=\int_0^\infty\mu_\tau(s)p_s(r)\,ds$ be the radial kernel of $\ue^{-\tau\osLam}$.
+$k_\tau(r)=\int_0^\infty q_\tau(s)p_s(r)\,ds$ be the radial kernel of $\ue^{-\tau\osLam}$.
 
 \begin{lemma}[Poisson kernel representation and bounds]\label{os:poisson}
 For $0<\tau\le\tau_0<\pi/2$ and $r\ge0$,
@@ -269,7 +276,7 @@ c\,\tau(\tau^2+r^2)^{-3/2}\le k_\tau(r)&\le C\,\tau(\tau^2+r^2)^{-3/2}\quad(0\le
 \end{align}
 \end{lemma}
 \begin{proof}
-Insert the formula for $p_s$ into $k_\tau=\int\mu_\tau p_s\,ds$ and interchange the integrals (Tonelli). The $s$-integral is
+Insert the formula for $p_s$ into $k_\tau=\int q_\tau p_s\,ds$ and interchange the integrals (Tonelli). The $s$-integral is
 \[
 \int_0^\infty s^{-3}\ue^{-(\rho^2+\tau^2)/(4s)-s/4}\,ds=2\frac{1/4}{(\rho^2+\tau^2)/4}K_2\Bigl(\frac{\sqrt{\rho^2+\tau^2}}2\Bigr)
 =\frac{2K_2(\sqrt{\rho^2+\tau^2}/2)}{\rho^2+\tau^2},

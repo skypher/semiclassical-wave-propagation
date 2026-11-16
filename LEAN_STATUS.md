@@ -83,11 +83,11 @@ All Lean names are in the namespace `Qschubert`.
 | Lemma 5.3 (`os:speed`) | L | `finite_speed`, `finite_speed_inner` |
 | Theorem 5.4 (`os:cw`) | L | `cw_abstract` |
 | Lemma A.1 (`os:int`) | L | `wI0`, `wI2` |
-| Lemma A.2 (`os:prof`) | L | `gTauM_symbol`, `gTauM_expmass`, `hSM_symbol`, `hSM_expmass`, `gTau_TailB`, `bProf_symbol`, `bProf_TailB` |
+| Lemma A.2 (`os:prof`) | L | `gTauM_symbol`, `gTauM_expmass`, `hSM_symbol`, `hSM_expmass` ((iii) with an absolute constant: `prof_iii_paper`), `gTau_TailB`, `bProf_symbol`, `bProf_TailB` |
 | Corollary 5.5 (`os:cwp`) | L | `poisson_cw`, `B_cw` |
 | Proposition 5.6 (`os:data`) | L | `os_data_printed`, `os_data_printed_orig` |
 | Lemma 5.7 (`os:words`) | L | (a) `poissonM_w`, `lamM_w`, `lamM_pow_w`; (b) `words_paper` (from `words_rec`, `words_w`) |
-| Lemma 5.8 (`os:transfer`) | L | `transfer` (there for the weight `X_0^β` with any `β>1/2`; this is the case `β=1`) |
+| Lemma 5.8 (`os:transfer`) | L | `transfer_paper` (from `transfer`, which allows the weight `X_0^β` with any `β>1/2` and an additive `T`) |
 | Proposition 5.9 (`os:p1`) | L | `poincare_omP`, `perio_weighted_gen` (the field `perio_bd` of `surfW_printed`), `critSup_eq`, `mS_printed_sharp`, `norm_surfV_printed_le`, `mS_printed_le` |
 | Proposition 5.10 (`pc:core`) | L | `dd_core_om` (the bound for the Dyson remainder of Proposition 2.10 (`prop:dd-id`)(ii); the instance of `dd_core_pc` for the weight `\omega`), with `SurfW.surf_D4` (the error equals that remainder) |
 

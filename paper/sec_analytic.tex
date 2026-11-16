@@ -224,21 +224,21 @@ Lemma~\ref{lem:expw} with $L=C_2\ge1$ gives the claim with $c_M:=1/(4C_2)$ and $
 \end{proof}
 
 \begin{lemma}[words of a function of $\tilde\psi$]\label{lem:wordphi}
-Let $x_0=i$, $A\ge0$ and $\rho\ge0$, and let $\Phi$ be a real function that is $C^\infty$ near every point of $[0,\infty)$ and
-satisfies $|\Phi^{(k)}(v)|\le A\,k!\,\rho^k$ for all $k\ge0$ and $v\ge0$. Then $\Phi(\tilde\psi)$ is $C^\infty$ on $\Hb$, and
-$|Z_I\Phi(\tilde\psi)|\le A\,c^j\,j!$ for every word $Z_I$ of length $j$, with $c=4+3\rho$.
+Let $x_0=i$, $B\ge0$ and $\rho\ge0$, and let $\Phi$ be a real function that is $C^\infty$ near every point of $[0,\infty)$ and
+satisfies $|\Phi^{(k)}(v)|\le B\,k!\,\rho^k$ for all $k\ge0$ and $v\ge0$. Then $\Phi(\tilde\psi)$ is $C^\infty$ on $\Hb$, and
+$|Z_I\Phi(\tilde\psi)|\le B\,c^j\,j!$ for every word $Z_I$ of length $j$, with $c=4+3\rho$.
 \end{lemma}
 \begin{proof}
-The function $\tilde\psi=\log X_0$ is smooth with values in $[0,\infty)$, so $\Phi(\tilde\psi)$ is smooth. Put $\xi:=x/X_0$ and $\upsilon:=y/X_0$, so
-$|\xi|\le1$, $0<\upsilon\le2$, $X\tilde\psi=\xi$ and $Y\tilde\psi=\upsilon-1$. The polynomials in $(\xi,\upsilon)$ are stable under $X$ and $Y$:
-$X\xi=\upsilon-\xi^2$, $X\upsilon=-\xi\upsilon$, $Y\xi=\xi-\xi\upsilon$, $Y\upsilon=2\upsilon-\upsilon^2$. For
-$Q=\sum c_{ab}\xi^a\upsilon^b$ let $\norm Q_*:=\sum|c_{ab}|2^b$, so $|Q|\le\norm Q_*$ pointwise. The four formulas give
+The function $\tilde\psi=\log X_0$ is smooth with values in $[0,\infty)$, so $\Phi(\tilde\psi)$ is smooth. Put $u_1:=x/X_0$ and $u_2:=y/X_0$, so
+$|u_1|\le1$, $0<u_2\le2$, $X\tilde\psi=u_1$ and $Y\tilde\psi=u_2-1$. The polynomials in $(u_1,u_2)$ are stable under $X$ and $Y$:
+$Xu_1=u_2-u_1^2$, $Xu_2=-u_1u_2$, $Yu_1=u_1-u_1u_2$, $Yu_2=2u_2-u_2^2$. For
+$Q=\sum c_{ab}u_1^au_2^b$ let $\norm Q_*:=\sum|c_{ab}|2^b$, so $|Q|\le\norm Q_*$ pointwise. The four formulas give
 $\norm{ZQ}_*\le4(\deg Q)\norm Q_*$, and $\norm{(Z\tilde\psi)Q}_*\le3\norm Q_*$. By induction on $j$,
-$Z_I\Phi(\tilde\psi)=\sum_{k=0}^j\Phi^{(k)}(\tilde\psi)\,Q_{I,k}(\xi,\upsilon)$ with polynomials of degree at most $j$ satisfying
+$Z_I\Phi(\tilde\psi)=\sum_{k=0}^j\Phi^{(k)}(\tilde\psi)\,Q_{I,k}(u_1,u_2)$ with polynomials of degree at most $j$ satisfying
 $Q_{ZI,k}=(Z\tilde\psi)Q_{I,k-1}+ZQ_{I,k}$. With $q_{j,k}:=\max_{|I|=j}\norm{Q_{I,k}}_*$ this gives
 $q_{j+1,k}\le3q_{j,k-1}+4j\,q_{j,k}$, and then $T_j:=\sum_kk!\,\rho^kq_{j,k}$ satisfies
 $T_{j+1}\le(3\rho(j+1)+4j)T_j\le c\,(j+1)\,T_j$, so $T_j\le c^jj!$. By the hypothesis on $\Phi$,
-$|Z_I\Phi(\tilde\psi)|\le A\,T_j$.
+$|Z_I\Phi(\tilde\psi)|\le B\,T_j$.
 \end{proof}
 
 \begin{lemma}[comparison of the spatial weights]\label{lem:m2w}
@@ -256,7 +256,7 @@ $\Hb$; so we may take $x_0=i$. Put $F:=\ue^{\beta\langle d\rangle}a\in\operatorn
 \]
 where $d\ge0$ is the function of $v\ge0$ given by $v=\log\cosh d$.
 
-\emph{Step 1: $|\Phi^{(k)}|\le A\,k!\,r_\beta^{-k}$ on $[0,\infty)$, with $A,r_\beta>0$ depending only on $\beta$.} The function $\Phi$
+\emph{Step 1: $|\Phi^{(k)}|\le B\,k!\,r_\beta^{-k}$ on $[0,\infty)$, with $B,r_\beta>0$ depending only on $\beta$.} The function $\Phi$
 extends holomorphically to a neighbourhood of every point of $[0,\infty)$. Near $0$ this holds because $d^2$ is the analytic inverse at
 $0$ of $s\mapsto\log\cosh\sqrt s$, which has derivative $\tfrac12$ there. Near a point of $(0,\infty)$ it holds because
 $d=\operatorname{arcosh}(\ue^v)$ is analytic there. On the strip $\{\operatorname{Re}v>\tfrac{17}{10},\ |\operatorname{Im}v|<\tfrac14\}$,
@@ -269,17 +269,17 @@ $\operatorname{Re}(1-\ue^{-2v})>0$, $\operatorname{Re}\varsigma\ge0$, $\operator
 is holomorphic there with $|\Phi|\le\ue^{2\beta}$. Compactness of $[0,2]$, and Cauchy's estimate on discs of radius $\tfrac15$ around
 the points of $[2,\infty)$, give Step~1.
 
-\emph{Step 2: $|Z_I\mathfrak m|\le A\,c^j\,j!$ for every word $Z_I$ of length $j$, with $c=4+3/r_\beta$.} This is
+\emph{Step 2: $|Z_I\mathfrak m|\le B\,c^j\,j!$ for every word $Z_I$ of length $j$, with $c=4+3/r_\beta$.} This is
 Lemma~\ref{lem:wordphi} with $\rho=1/r_\beta$, by Step~1.
 
 \emph{Step 3.} By the Leibniz rule for words, Step~2 and Lemma~\ref{lem:wc} at $\alpha''=0$, for a word of length $j$,
 \[
 \begin{aligned}
-\norm{Z_I(\mathfrak mF)}&\le\sum_{I'\subseteq I}A\,c^{|I'|}|I'|!\,\Bigl(\frac{\ue C_1}{\alpha}\Bigr)^{j-|I'|}(j-|I'|)!\,\norm{\ue^{\alpha\Lambda}F}
-\\ &\le A\,(j+1)\,j!\,(L/\alpha)^j\norm{\ue^{\alpha\Lambda}F},
+\norm{Z_I(\mathfrak mF)}&\le\sum_{I'\subseteq I}B\,c^{|I'|}|I'|!\,\Bigl(\frac{\ue C_1}{\alpha}\Bigr)^{j-|I'|}(j-|I'|)!\,\norm{\ue^{\alpha\Lambda}F}
+\\ &\le B\,(j+1)\,j!\,(L/\alpha)^j\norm{\ue^{\alpha\Lambda}F},
 \end{aligned}
 \]
-with $L:=\max(c,\ue C_1,1)$. Lemma~\ref{lem:expw} gives the claim with $c_0=1/(4L)$ and $C=C_*A$.
+with $L:=\max(c,\ue C_1,1)$. Lemma~\ref{lem:expw} gives the claim with $c_0=1/(4L)$ and $C=C_*B$.
 \end{proof}
 
 \subsection{Analyticity of the mollified flow}\label{app:kl}

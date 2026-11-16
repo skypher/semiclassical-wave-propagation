@@ -346,7 +346,8 @@ a & amplitude & \Gamma,\ M & group, quotient\\
 \kappa & constant in $\alpha^3\ge\kappa\hbar$ & K,\ N & expansion order, power of the Laplacian\\
 \delta & constant in $t\le\delta(\alpha/\hbar)^{1/2}$ & \varepsilon,\ \chi & mollification scale, mollifier cutoff\\
 b,\ \varphi_b & boundary point, its phase & \omega,\ \varpi & periodization weight (above), a general weight\\
-x_0 & base point of the weights & m(z),\ H & local multiplicity (Section~\ref{sec:repair}), a height in a cusp
+x_0 & base point of the weights & m(z),\ H & local multiplicity (Section~\ref{sec:repair}), a height in a cusp\\
+c_\hbar & the number $i\hbar/2$ & &
 \end{tabular}
 \end{center}
 
@@ -631,8 +632,8 @@ values up to the Ehrenfest time \cite{Sch05}, and with Vallejos and Toscano
 described how localized states become Lagrangian states on that time scale
 \cite{STV12}. Estimates for the propagator on time scales that are multiples of the
 Ehrenfest time are also the main tool in the work of Anantharaman \cite{Ana08} and of
-Anantharaman and Nonnenmacher \cite{AN07} on the entropy of semiclassical measures,
-and, on compact hyperbolic surfaces, in the proof of Dyatlov and Jin \cite{DJ18} that
+Anantharaman and Nonnenmacher \cite{AN07} on the entropy of semiclassical measures.
+On compact hyperbolic surfaces they enter the proof of Dyatlov and Jin \cite{DJ18} that
 semiclassical measures have full support. All of these use propagation estimates on time
 scales that are logarithmic in $\hbar$. On such scales, Faure \cite{Fau07} extended the semiclassical
 trace formula for a nonlinear hyperbolic map of the torus to times $C$ times the Ehrenfest
@@ -710,7 +711,7 @@ The error is then bounded by $(\hbar/2)^{K+1}$ times the integral, over the simp
 periodized propagator applied to $a_{\mathbf s}$. No resummation of the series is needed, and all derivatives fall on $a$. Analytic regularity of $a$ at radius
 $\alpha$ bounds a word of length $k$ in $X,Y$ applied to $a$, in the weighted $L^2$ norm, by $C^kk!\,\alpha^{-k}$ times the
 amplitude norm (Cauchy estimates,
-Lemmas~\ref{lem:fc}, \ref{lem:wc}, \ref{lem:sc} and~\ref{lem:wb}), and the integration over the simplex then gives the factor
+Lemmas~\ref{lem:fc}, \ref{lem:wc}, \ref{lem:sc} and~\ref{lem:wb}). The integration over the simplex then gives the factor
 $C^{N+K+1}N^{2N}K!\,(\alpha\hbar)^{-2N}(\hbar t/\alpha^2)^{K+1}$, provided the periodized propagator is bounded on $a_{\mathbf s}$,
 uniformly in $s_1\le t$. On $\Hb$ it is unitary, and the estimate holds at all times; on a quotient this bound is the whole
 difficulty. Section~\ref{subsec:simplest} shows for $K=N=0$ how it is obtained.
@@ -743,7 +744,7 @@ by Proposition~\ref{os:p1}. These estimates yield Theorem~\ref{pc:main}.
 We follow the proof of Theorem~\ref{thm:dd-appx}, the power-weight form of the approximation theorems, for $K=N=0$. This
 subsection is a guide: each step is proved where it is cited, and the general case changes the count of derivatives, not the
 steps. Let $x_0=i$, $b=\infty$, $\beta>\tfrac12$, $0<\hbar\le1$, $0<\alpha\le1$ with $\alpha^3\ge\kappa\hbar$, and
-$\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}$. Put $\lambda:=(2\beta+1)/4\in(\tfrac12,\beta)$ and $\theta:=\lambda/\beta$. We write
+$\pwNorm a=\norm{\ue^{\alpha\Lambda}X_0^\beta a}$. Put $\lambda:=(2\beta+1)/4\in(\tfrac12,\beta)$ and $\vartheta:=\lambda/\beta$. We write
 $A\lesssim B$ if $A\le CB$ with $C$ depending only on $\beta$, $\kappa$ and an upper bound for $P_\Gamma(\beta+\tfrac12)$.
 
 \emph{Step 1: the exact remainder.} For $K=N=0$ the error $E(t):=\cU(t)[a\,\ue^{i\varphi/\hbar}]_\Gamma-u^{(0)}(t)_\Gamma$ satisfies
@@ -797,23 +798,23 @@ For the second term, Duhamel's formula on $M$ (Lemma~\ref{lem:surf-duh}, with $g
 \]
 Here the defect $\mathfrak d(t')$ is periodized after transport over the time $t'$, and Lemma~\ref{lem:t2} charges
 $\ue^{\lambda t'}\norm{X_0^\lambda\mathfrak d(t')}$. The defect is small enough to pay this. By H\"older's inequality,
-$\norm{X_0^\lambda\mathfrak d}\le\norm{X_0^\beta\mathfrak d}^\theta\norm{\mathfrak d}^{1-\theta}$. With the weight $X_0^\beta$ the defect is only
+$\norm{X_0^\lambda\mathfrak d}\le\norm{X_0^\beta\mathfrak d}^\vartheta\norm{\mathfrak d}^{1-\vartheta}$. With the weight $X_0^\beta$ the defect is only
 polynomially large: $\norm{X_0^\beta\mathfrak d(t')}\lesssim\varepsilon^{-3}\alpha^{-4}\pwNorm a$ (Lemma~\ref{lem:path}(b) and Step~1).
 Without a weight it is exponentially small. The symbol $1-j_\varepsilon$ of the mollifier is exponentially small at frequencies below
 $1/(2\varepsilon)$, and at higher frequencies a function of analytic radius $r$ has spectral weight at most $\ue^{-r/(2\varepsilon)}$
-relative to its analytic norm (Lemma~\ref{lem:unw}); the mollified flow keeps an analytic norm, with a fixed fraction of the radius,
+relative to its analytic norm (Lemma~\ref{lem:unw}). The mollified flow keeps an analytic norm, with a fixed fraction of the radius,
 on this range of times (Proposition~\ref{prop:a0}). With Lemmas~\ref{lem:wb}(ii) and~\ref{lem:mw} this gives
 $\norm{\mathfrak d(t')}\lesssim\alpha^{-6}\ue^{-c\alpha/\varepsilon}\pwNorm a$ for an absolute constant $c>0$. Together,
 \[
-  \norm{\mathcal V_sg(s)-\mathcal V_0g(0)}\lesssim\hbar s\,\ue^{\lambda s}\,\varepsilon^{-3}\alpha^{-6}\,\ue^{-(1-\theta)c\alpha/\varepsilon}\,\pwNorm a .
+  \norm{\mathcal V_sg(s)-\mathcal V_0g(0)}\lesssim\hbar s\,\ue^{\lambda s}\,\varepsilon^{-3}\alpha^{-6}\,\ue^{-(1-\vartheta)c\alpha/\varepsilon}\,\pwNorm a .
 \]
 
 \emph{Step 5: the balance of scales.} Choose $\varepsilon:=(\alpha\hbar)^{1/2}/2$ and put $\xi:=(\alpha/\hbar)^{1/2}$, so that
 $\varepsilon/\hbar=\xi/2$ and $\alpha/\varepsilon=2\xi$. The mollified flow is then controlled for times up to a fixed multiple of $\xi$,
-and the defect gain is $\ue^{-2(1-\theta)c\xi}$: both scales are $\xi$. Since $\alpha^3\ge\kappa\hbar$, the factors $\alpha^{-1}\le\kappa^{-1/2}\xi$
+and the defect gain is $\ue^{-2(1-\vartheta)c\xi}$: both scales are $\xi$. Since $\alpha^3\ge\kappa\hbar$, the factors $\alpha^{-1}\le\kappa^{-1/2}\xi$
 and $\varepsilon^{-1}=2\xi/\alpha$ are bounded by powers of $\xi$, and so is $\hbar s\le\xi$ for $s\le\xi$. Let $\delta>0$ satisfy
-$\delta\le\tfrac12\min(1,c_A/3)$ and $\lambda\delta\le(1-\theta)c$. For $s\le t\le\delta\xi$ the bound of Step~4 is then at most a power of
-$\xi$ times $\ue^{-(1-\theta)c\xi}$, which is bounded. So $\norm{\mathcal V_s\Delta(s)a}\lesssim\alpha^{-2}\pwNorm a$, and Step~1 gives
+$\delta\le\tfrac12\min(1,c_A/3)$ and $\lambda\delta\le(1-\vartheta)c$. For $s\le t\le\delta\xi$ the bound of Step~4 is then at most a power of
+$\xi$ times $\ue^{-(1-\vartheta)c\xi}$, which is bounded. So $\norm{\mathcal V_s\Delta(s)a}\lesssim\alpha^{-2}\pwNorm a$, and Step~1 gives
 \[
   \norm{E(t)}_{L^2(M)}\lesssim\frac{\hbar t}{\alpha^2}\,\pwNorm a,\qquad0\le t\le\delta(\alpha/\hbar)^{1/2}.
 \]

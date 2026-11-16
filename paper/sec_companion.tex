@@ -63,7 +63,7 @@ The mollification scale and the time scale are those of Section~\ref{subsec:simp
 \varepsilon:=(\alpha\hbar)^{1/2}/2,\qquad \xi:=(\alpha/\hbar)^{1/2},
 \]
 so that $\varepsilon\le\tfrac12$, $\varepsilon/\hbar=\xi/2$ and $\alpha/\varepsilon=2\xi$. Periodization uses the weight $X_0^\lambda$ with
-$\lambda:=(2\beta+1)/4\in(1/2,\beta)$, and we put $\theta:=\lambda/\beta\in(0,1)$.
+$\lambda:=(2\beta+1)/4\in(1/2,\beta)$, and we put $\vartheta:=\lambda/\beta\in(0,1)$.
 The remainder amplitude $a_{\mathbf s}$ costs factorials: a word of length $n$ applied to it is bounded by $B_\beta F_n$, where $F_n$
 are the numbers of Lemma~\ref{lem:collect} for $\sigma:=\alpha$, $\mathcal H:=\pwNorm a$ and $G:=C_3/c_M^2$, with $c_M$ the constant of
 Lemma~\ref{lem:mw}:
@@ -103,7 +103,7 @@ Duhamel on $M$ gives $\mathcal V_{s_1}g(s_1)-\mathcal V_0g(0)=-c_\hbar\int_0^{s_
 \]
 By the unitarity of $\cU(t')$ on $M$ and Lemma~\ref{lem:t2} (exponent $\lambda$),
 \[\norm{\mathcal V_{t'}\mathfrak d(t')}=\norm{[\ue^{i\varphi/\hbar}S(t')\mathfrak d(t')]_\Gamma}\le C\ue^{\lambda t'}\norm{X_0^\lambda \mathfrak d(t')}.\]
-H\"older's inequality gives $\norm{X_0^\lambda\mathfrak d}\le\norm{X_0^\beta\mathfrak d}^\theta\norm{\mathfrak d}^{1-\theta}$, since $X_0^\lambda=(X_0^\beta)^\theta$.
+H\"older's inequality gives $\norm{X_0^\lambda\mathfrak d}\le\norm{X_0^\beta\mathfrak d}^\vartheta\norm{\mathfrak d}^{1-\vartheta}$, since $X_0^\lambda=(X_0^\beta)^\vartheta$.
 The weighted factor is only polynomially large in $\varepsilon^{-1}$; the unweighted factor is exponentially small.
 
 \emph{Weighted factor.} By Lemma~\ref{lem:path}(b) with the exponent $\beta$, and \eqref{dd:words} with $n\le2$,
@@ -125,7 +125,7 @@ factorials of Lemma~\ref{lem:wb}(ii), applied at the radius $r_\alpha=c_M\alpha$
 Lemma~\ref{lem:mw} removes the weight: $\norm{\ue^{r_\alpha\Lambda}a}\le C_MB_\beta\pwNorm a$.
 
 \emph{Combining the factors.} Since $F_0\le F_2$ and $\varepsilon,\alpha\le1$, the H\"older split gives
-$\norm{X_0^\lambda\mathfrak d(t')}\le C\varepsilon^{-3}\alpha^{-4}\ue^{-c_\xi\xi}F_2$ with $c_\xi:=(1-\theta)c_M/8$, and integrating over
+$\norm{X_0^\lambda\mathfrak d(t')}\le C\varepsilon^{-3}\alpha^{-4}\ue^{-c_\xi\xi}F_2$ with $c_\xi:=(1-\vartheta)c_M/8$, and integrating over
 $t'\in[0,s_1]$ bounds the defect part by
 \[
 C\,\hbar t\,\ue^{\lambda t}\,\varepsilon^{-3}\alpha^{-4}\ue^{-c_\xi\xi}F_2 .
@@ -144,9 +144,9 @@ for $t\le\delta\xi$ with $\delta\le1$ and $2\lambda\delta\le c_\xi$.
 
 \medskip\noindent\emph{Time windows used.} Weighted propagation and Lemma~\ref{lem:path} require $\hbar s_1\le\varepsilon$, that is $t\le\xi/2$.
 Analytic propagation requires $t\le\tfrac13c_A\varepsilon/\hbar=c_A\xi/6$.
-Lemma~\ref{lem:collect} requires $2\lambda\delta\le c_\xi$, that is $\delta\le(1-\theta)c_M/(16\lambda)$.
+Lemma~\ref{lem:collect} requires $2\lambda\delta\le c_\xi$, that is $\delta\le(1-\vartheta)c_M/(16\lambda)$.
 
-So $\delta:=\min\bigl(\tfrac12,\;c_A/6,\;(1-\theta)c_M/(16\lambda)\bigr)$ works.
+So $\delta:=\min\bigl(\tfrac12,\;c_A/6,\;(1-\vartheta)c_M/(16\lambda)\bigr)$ works.
 
 \medskip\noindent\emph{Dependence on $\Gamma$ and $x_0$.} The group enters only through the constant $2^\lambda P_\Gamma(2\lambda)^{1/2}$ of
 Lemma~\ref{lem:t2} in Steps~1 and~2, with $2\lambda=\beta+\tfrac12$, and the reduction of Step~0 preserves $P_\Gamma(\beta+\tfrac12)$
