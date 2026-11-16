@@ -531,7 +531,7 @@ why the original norm needs the separate argument of Section~\ref{sec:printed}. 
 in the proof of the dispersive estimates''. The dispersive estimates of \cite{S} are its Theorems~4.1 and~4.4, and we identify a
 gap in their proofs: they infer $\norm{\ue^Aa}\le\norm{\ue^Ba}$ from an operator inequality $A\le B$ between non-commuting
 self-adjoint operators. The exponential is not operator monotone; Appendix~\ref{sec:changes} gives a $2\times2$ counterexample
-and locates the steps.
+and locates the steps, and Section~\ref{subsec:method} describes how the proof here avoids them.
 
 \subsection{Applications}\label{subsec:applications}
 \paragraph{Localized states.}
@@ -723,11 +723,15 @@ proof therefore periodizes at time $0$, after running the dispersive flow back o
 for the flow. It is not known whether the flow $V$ preserves weighted analytic norms on such time scales; \cite[Conjecture~1]{S}
 conjectures this up to times of order $1/\hbar$. As in \cite{S} we compare $V$ with the flow $V_\varepsilon$ of the generator
 mollified at scale $\varepsilon$; the estimate for $V_\varepsilon$ is the step whose proof in \cite{S} has the gap
-(Appendix~\ref{sec:changes}). The mollified flow preserves analytic norms, with a loss of radius, and power-weighted norms, both up
-to times of order $\varepsilon/\hbar$ (Propositions~\ref{prop:a0} and~\ref{prop:ws}); the first is proved by an energy estimate
-with a frequency-clipped multiplier. The defect of the mollified generator is exponentially small on analytic vectors
-(Lemma~\ref{lem:unw}), and with $\varepsilon=(\alpha\hbar)^{1/2}/2$ this smallness pays for the growth of the periodization bound
-for $t\le\delta(\alpha/\hbar)^{1/2}$ (Section~\ref{subsec:simplest}, Step~5).
+(Appendix~\ref{sec:changes}). That estimate, \cite[Theorem~4.4]{S}, bounds $V_\varepsilon$ in a norm that carries the analytic
+and the spatial weight together; we use the two separately. The mollified flow preserves analytic norms, with a loss of radius,
+and power-weighted norms, both up to times of order $\varepsilon/\hbar$ (Propositions~\ref{prop:a0} and~\ref{prop:ws}). Both are
+proved by differentiating the norm along the flow, the first with a frequency-clipped multiplier. The defect of the mollified
+generator is exponentially small on analytic vectors (Lemma~\ref{lem:unw}), and with $\varepsilon=(\alpha\hbar)^{1/2}/2$ this
+smallness pays for the growth of the periodization bound for $t\le\delta(\alpha/\hbar)^{1/2}$ (Section~\ref{subsec:simplest},
+Step~5). No bound for $V_\varepsilon$ with both weights at once is needed: the part of the error periodized at time $0$ needs only
+the spatial weight, and the exponentially small unweighted bound for the defect is interpolated with a polynomially large
+weighted one (Section~\ref{subsec:simplest}, Step~4).
 
 \emph{The original amplitude norm.} An amplitude of the original-norm class is $a=\ue^{-\alpha\Lambda}f$,
 where $f=\ue^{\alpha\Lambda}a$ has the exponential weighted bound $\norm{\ue^{\beta\langle d\rangle}f}=\pcNorm a$.
