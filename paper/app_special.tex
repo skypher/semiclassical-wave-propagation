@@ -7,10 +7,12 @@ are stated in the body of the paper.
 \subsection{The first-order Cauchy estimate}\label{app:fc-proof}
 \begin{proof}[Proof of Lemma~\ref{lem:fc}]
 In the Kontorovich--Lebedev picture $\Lambda$ is a multiplication operator, and $X$ and $Y-\tfrac12$ become integral operators
-whose kernels we compute explicitly. Conjugation by $\ue^{\alpha''\Lambda}$ multiplies a kernel by at most $\ue^{\alpha''|r-r'|}$, because
-$\Lambda(r)$ is $1$-Lipschitz in $r$, and the kernels decay like $\ue^{-\pi|r-r'|/2}$; the Schur test then bounds the conjugated
-operators. The kernel of $Y-\tfrac12$ has in addition a singularity $1/(r-r')$ on the diagonal, which is a truncated Hilbert
-transform.
+whose kernels we compute explicitly. We first factor out $\Lambda\ue^{-(\alpha'-\alpha'')\Lambda}$, which costs at most
+$1/(\ue(\alpha'-\alpha''))$; it remains to bound the conjugated operators $\ue^{\alpha''\Lambda}Z\ue^{-\alpha''\Lambda}$ normalized by
+$\Lambda^{-1}$. Since $\Lambda(r)$ is $1$-Lipschitz, conjugation multiplies a kernel by at most $\ue^{\alpha''|r-r'|}$. Away from the
+diagonal the normalized kernels decay exponentially, at the rate $\pi/2$ up to polynomial factors before conjugation; since
+$\alpha''\le1<\pi/2$, the Schur test applies. For $Y-\tfrac12$ we separate the principal-value term on the diagonal, a truncated Hilbert transform, and
+bound the remainder by the Schur test.
 
 \medskip\noindent\emph{Reduction.}
 We use the Kontorovich--Lebedev picture of Section~\ref{app:kl}: after Fourier transform in $x$, on the mode $\ue^{ikx}$, $k\ne0$,
