@@ -100,7 +100,9 @@ The classical comparison in Theorem~\ref{ev:mod}(iii) uses the cited equidistrib
 only parts (i),(ii) are covered by \lean{evmod}, whose statement is \lean{Stmt_evmod}.
 The amplitude-class comparison (Proposition~\ref{pc:classes}), the bound on the mean (Corollary~\ref{cor:meanJ}) and the cusp
 sharpness argument of Section~\ref{sec:cusp}, including Theorem~\ref{cl:necessary}, Corollary~\ref{cl:rational}, Lemma~\ref{pc:remcusp}, Remark~\ref{rem:g4}
-and the kernel Lemmas~\ref{os:poisson} and~\ref{os:hk}, have no formal proofs.
+and the kernel Lemmas~\ref{os:poisson} and~\ref{os:hk}, have no formal proofs. The counting bound of Lemma~\ref{lem:count} is
+formalized only for an orbit, as $\#\{\gamma\in\Gamma:d(z,\gamma x_0)<R\}\le C\ue^R$ (\lean{exists_orbit_count}), the case used for
+Lemma~\ref{lem:p1} and Proposition~\ref{os:p1}.
 For cusp sharpness the development contains only implications from a formal statement of Theorem~\ref{cl:main}(ii),
 which is itself not proved formally.
 
